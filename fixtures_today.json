@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-03T22:25:41.201006",
+  "generated_at": "2026-03-03T22:28:34.683211",
   "date": "03/03/2026",
   "total": 10,
   "fixtures": [
@@ -9,7 +9,7 @@
       "league": "Serie A",
       "fixture_id": 999001,
       "date": "2026-03-03",
-      "time": "22:25",
+      "time": "22:28",
       "pred": {
         "home": 0.4914,
         "draw": 0.275,
@@ -34,7 +34,7 @@
       "league": "Premier League",
       "fixture_id": 999001,
       "date": "2026-03-03",
-      "time": "22:25",
+      "time": "22:28",
       "pred": {
         "home": 0.4914,
         "draw": 0.275,
@@ -59,7 +59,7 @@
       "league": "La Liga",
       "fixture_id": 999001,
       "date": "2026-03-03",
-      "time": "22:25",
+      "time": "22:28",
       "pred": {
         "home": 0.4914,
         "draw": 0.275,
@@ -84,7 +84,7 @@
       "league": "Bundesliga",
       "fixture_id": 999001,
       "date": "2026-03-03",
-      "time": "22:25",
+      "time": "22:28",
       "pred": {
         "home": 0.4914,
         "draw": 0.275,
@@ -109,7 +109,7 @@
       "league": "Ligue 1",
       "fixture_id": 999001,
       "date": "2026-03-03",
-      "time": "22:25",
+      "time": "22:28",
       "pred": {
         "home": 0.4914,
         "draw": 0.275,
@@ -134,7 +134,7 @@
       "league": "Serie B",
       "fixture_id": 999001,
       "date": "2026-03-03",
-      "time": "22:25",
+      "time": "22:28",
       "pred": {
         "home": 0.4914,
         "draw": 0.275,
@@ -159,7 +159,7 @@
       "league": "Championship",
       "fixture_id": 999001,
       "date": "2026-03-03",
-      "time": "22:25",
+      "time": "22:28",
       "pred": {
         "home": 0.4914,
         "draw": 0.275,
@@ -184,7 +184,7 @@
       "league": "Champions League",
       "fixture_id": 999001,
       "date": "2026-03-03",
-      "time": "22:25",
+      "time": "22:28",
       "pred": {
         "home": 0.4914,
         "draw": 0.275,
@@ -209,7 +209,7 @@
       "league": "Europa League",
       "fixture_id": 999001,
       "date": "2026-03-03",
-      "time": "22:25",
+      "time": "22:28",
       "pred": {
         "home": 0.4914,
         "draw": 0.275,
@@ -234,7 +234,7 @@
       "league": "Conference League",
       "fixture_id": 999001,
       "date": "2026-03-03",
-      "time": "22:25",
+      "time": "22:28",
       "pred": {
         "home": 0.4914,
         "draw": 0.275,

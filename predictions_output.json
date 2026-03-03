@@ -5,7 +5,7 @@
     "home": "Inter",
     "away": "Napoli",
     "date": "2026-03-03",
-    "time": "22:25",
+    "time": "22:28",
     "prediction": {
       "home": 0.4914413590445233,
       "draw": 0.275,
@@ -26,7 +26,7 @@
       "best_out": "1",
       "best_val": 0.4914413590445233
     },
-    "generated_at": "2026-03-03T22:25:26.125279"
+    "generated_at": "2026-03-03T22:28:19.303262"
   },
   {
     "league": "Premier League",
@@ -34,7 +34,7 @@
     "home": "Inter",
     "away": "Napoli",
     "date": "2026-03-03",
-    "time": "22:25",
+    "time": "22:28",
     "prediction": {
       "home": 0.4914413590445233,
       "draw": 0.275,
@@ -55,7 +55,7 @@
       "best_out": "1",
       "best_val": 0.4914413590445233
     },
-    "generated_at": "2026-03-03T22:25:27.598017"
+    "generated_at": "2026-03-03T22:28:20.946918"
   },
   {
     "league": "La Liga",
@@ -63,7 +63,7 @@
     "home": "Inter",
     "away": "Napoli",
     "date": "2026-03-03",
-    "time": "22:25",
+    "time": "22:28",
     "prediction": {
       "home": 0.4914413590445233,
       "draw": 0.275,
@@ -84,7 +84,7 @@
       "best_out": "1",
       "best_val": 0.4914413590445233
     },
-    "generated_at": "2026-03-03T22:25:29.022790"
+    "generated_at": "2026-03-03T22:28:22.476600"
   },
   {
     "league": "Bundesliga",
@@ -92,7 +92,7 @@
     "home": "Inter",
     "away": "Napoli",
     "date": "2026-03-03",
-    "time": "22:25",
+    "time": "22:28",
     "prediction": {
       "home": 0.4914413590445233,
       "draw": 0.275,
@@ -113,7 +113,7 @@
       "best_out": "1",
       "best_val": 0.4914413590445233
     },
-    "generated_at": "2026-03-03T22:25:30.526770"
+    "generated_at": "2026-03-03T22:28:23.972291"
   },
   {
     "league": "Ligue 1",
@@ -121,7 +121,7 @@
     "home": "Inter",
     "away": "Napoli",
     "date": "2026-03-03",
-    "time": "22:25",
+    "time": "22:28",
     "prediction": {
       "home": 0.4914413590445233,
       "draw": 0.275,
@@ -142,7 +142,7 @@
       "best_out": "1",
       "best_val": 0.4914413590445233
     },
-    "generated_at": "2026-03-03T22:25:32.032263"
+    "generated_at": "2026-03-03T22:28:25.485403"
   },
   {
     "league": "Serie B",
@@ -150,7 +150,7 @@
     "home": "Inter",
     "away": "Napoli",
     "date": "2026-03-03",
-    "time": "22:25",
+    "time": "22:28",
     "prediction": {
       "home": 0.4914413590445233,
       "draw": 0.275,
@@ -171,7 +171,7 @@
       "best_out": "1",
       "best_val": 0.4914413590445233
     },
-    "generated_at": "2026-03-03T22:25:33.462678"
+    "generated_at": "2026-03-03T22:28:26.946371"
   },
   {
     "league": "Championship",
@@ -179,7 +179,7 @@
     "home": "Inter",
     "away": "Napoli",
     "date": "2026-03-03",
-    "time": "22:25",
+    "time": "22:28",
     "prediction": {
       "home": 0.4914413590445233,
       "draw": 0.275,
@@ -200,7 +200,7 @@
       "best_out": "1",
       "best_val": 0.4914413590445233
     },
-    "generated_at": "2026-03-03T22:25:35.010447"
+    "generated_at": "2026-03-03T22:28:28.396889"
   },
   {
     "league": "Champions League",
@@ -208,7 +208,7 @@
     "home": "Inter",
     "away": "Napoli",
     "date": "2026-03-03",
-    "time": "22:25",
+    "time": "22:28",
     "prediction": {
       "home": 0.4914413590445233,
       "draw": 0.275,
@@ -229,7 +229,7 @@
       "best_out": "1",
       "best_val": 0.4914413590445233
     },
-    "generated_at": "2026-03-03T22:25:36.523995"
+    "generated_at": "2026-03-03T22:28:29.865700"
   },
   {
     "league": "Europa League",
@@ -237,7 +237,7 @@
     "home": "Inter",
     "away": "Napoli",
     "date": "2026-03-03",
-    "time": "22:25",
+    "time": "22:28",
     "prediction": {
       "home": 0.4914413590445233,
       "draw": 0.275,
@@ -258,7 +258,7 @@
       "best_out": "1",
       "best_val": 0.4914413590445233
     },
-    "generated_at": "2026-03-03T22:25:38.003951"
+    "generated_at": "2026-03-03T22:28:31.339330"
   },
   {
     "league": "Conference League",
@@ -266,7 +266,7 @@
     "home": "Inter",
     "away": "Napoli",
     "date": "2026-03-03",
-    "time": "22:25",
+    "time": "22:28",
     "prediction": {
       "home": 0.4914413590445233,
       "draw": 0.275,
@@ -287,6 +287,6 @@
       "best_out": "1",
       "best_val": 0.4914413590445233
     },
-    "generated_at": "2026-03-03T22:25:39.527428"
+    "generated_at": "2026-03-03T22:28:32.898568"
   }
 ]
