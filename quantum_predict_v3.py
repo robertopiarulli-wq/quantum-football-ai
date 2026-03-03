@@ -1,10 +1,11 @@
 """
 QUANTUM FOOTBALL AI — Backend Python
 GitHub Actions Cloud Pipeline
+API: football-data.org (free tier)
 Dipendenze: pip install requests numpy
 """
 
-import os, sys, json, math, smtplib, traceback
+import os, sys, json, math, smtplib, traceback, time
 from datetime import datetime, timedelta
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
@@ -24,8 +25,7 @@ except Exception:
 # ═══════════════════════════════════════
 #  CONFIG
 # ═══════════════════════════════════════
-API_FOOTBALL_KEY  = os.getenv("API_FOOTBALL_KEY", "")
-IBM_QUANTUM_TOKEN = os.getenv("IBM_QUANTUM_TOKEN", "")
+FOOTBALL_DATA_KEY = os.getenv("FOOTBALL_DATA_KEY", "")
 TELEGRAM_TOKEN    = os.getenv("TELEGRAM_TOKEN", "")
 TELEGRAM_CHAT     = os.getenv("TELEGRAM_CHAT", "")
 SMTP_HOST         = os.getenv("SMTP_HOST", "smtp.gmail.com")
@@ -33,134 +33,133 @@ SMTP_PORT         = int(os.getenv("SMTP_PORT", "587"))
 SMTP_USER         = os.getenv("SMTP_USER", "")
 SMTP_PASS         = os.getenv("SMTP_PASS", "")
 SMTP_TO           = os.getenv("SMTP_TO", "")
-SEASON            = 2024
 
-DAILY_LEAGUES = {
-    "Serie A":           135,
-    "Premier League":    39,
-    "La Liga":           140,
-    "Bundesliga":        78,
-    "Ligue 1":           61,
-    "Serie B":           136,
-    "Championship":      40,
-    "Champions League":  2,
-    "Europa League":     3,
-    "Conference League": 848,
+# football-data.org competition codes
+COMPETITIONS = {
+    "Serie A":          "SA",
+    "Premier League":   "PL",
+    "La Liga":          "PD",
+    "Bundesliga":       "BL1",
+    "Ligue 1":          "FL1",
+    "Champions League": "CL",
+    "Serie B":          "SB",
+    "Eredivisie":       "DED",
+    "Primeira Liga":    "PPL",
+    "Championship":     "ELC",
 }
 
 ELO_DB = {
-    "Inter":1820, "Napoli":1795, "Milan":1778, "Juventus":1760,
-    "Atalanta":1750, "Roma":1720, "Lazio":1710, "Fiorentina":1695,
-    "Torino":1650, "Bologna":1640, "Udinese":1610, "Venezia":1620,
-    "Genoa":1600, "Verona":1600, "Parma":1595, "Cagliari":1590,
-    "Empoli":1580, "Como":1615, "Lecce":1610, "Monza":1615,
-    "Spezia":1570, "Pisa":1545, "Sassuolo":1610, "Cremonese":1560,
-    "Cesena":1520, "Catanzaro":1530, "Bari":1550, "Palermo":1560,
-    "Sampdoria":1580, "Cosenza":1520, "Sudtirol":1530, "Reggiana":1535,
-    "Modena":1540, "Brescia":1555, "Mantova":1510, "Cittadella":1525,
-    "Frosinone":1545, "Juve Stabia":1505, "Salernitana":1540, "Carrarese":1500,
-    "Avellino":1490, "Benevento":1510, "Foggia":1465,
-    "Man City":1870, "Arsenal":1840, "Liverpool":1835, "Chelsea":1790,
-    "Tottenham":1775, "Man United":1760, "Newcastle":1745, "Aston Villa":1740,
-    "Real Madrid":1880, "Barcelona":1855, "Atletico":1820, "Sevilla":1740,
-    "Bayern":1860, "Bayer Leverkusen":1830, "Dortmund":1800, "RB Leipzig":1790,
-    "PSG":1875, "Monaco":1760, "Marseille":1740, "Lille":1720,
-    "Ajax":1780, "PSV":1800, "Feyenoord":1790,
-    "Benfica":1800, "Porto":1795, "Sporting CP":1785,
-    "Galatasaray":1780, "Fenerbahce":1775, "Besiktas":1730,
+    "Inter":1820, "Napoli":1795, "AC Milan":1778, "Juventus":1760,
+    "Atalanta BC":1750, "AS Roma":1720, "SS Lazio":1710, "ACF Fiorentina":1695,
+    "Torino FC":1650, "Bologna FC 1909":1640, "Udinese Calcio":1610,
+    "Venezia FC":1620, "Genoa CFC":1600, "Hellas Verona FC":1600,
+    "Parma Calcio 1913":1595, "Cagliari Calcio":1590, "Empoli FC":1580,
+    "Como 1907":1615, "US Lecce":1610, "AC Monza":1615,
+    "Spezia Calcio":1570, "AC Pisa 1909":1545, "US Sassuolo Calcio":1610,
+    "US Cremonese":1560, "Cesena FC":1520, "US Catanzaro 1929":1530,
+    "SSC Bari":1550, "Palermo FC":1560, "UC Sampdoria":1580,
+    "Cosenza Calcio":1520, "FC Sudtirol":1530, "Reggiana":1535,
+    "Modena FC":1540, "Brescia Calcio":1555, "Mantova":1510,
+    "AS Cittadella":1525, "Frosinone Calcio":1545, "SS Juve Stabia":1505,
+    "US Salernitana 1919":1540, "Carrarese Calcio":1500,
+    "US Avellino":1490, "Benevento Calcio":1510,
+    "Manchester City FC":1870, "Arsenal FC":1840, "Liverpool FC":1835,
+    "Chelsea FC":1790, "Tottenham Hotspur FC":1775, "Manchester United FC":1760,
+    "Newcastle United FC":1745, "Aston Villa FC":1740, "Brighton & Hove Albion FC":1710,
+    "West Ham United FC":1690, "Fulham FC":1680, "Wolverhampton Wanderers FC":1660,
+    "Everton FC":1650, "Crystal Palace FC":1655, "Brentford FC":1670,
+    "Nottingham Forest FC":1660, "AFC Bournemouth":1640, "Leicester City FC":1645,
+    "Southampton FC":1600, "Ipswich Town FC":1610,
+    "Real Madrid CF":1880, "FC Barcelona":1855, "Club Atletico de Madrid":1820,
+    "Sevilla FC":1740, "Real Sociedad de Futbol":1730, "Villarreal CF":1720,
+    "Athletic Club":1710, "Real Betis Balompie":1700,
+    "FC Bayern Munchen":1860, "Bayer 04 Leverkusen":1830,
+    "Borussia Dortmund":1800, "RB Leipzig":1790,
+    "Eintracht Frankfurt":1730, "VfB Stuttgart":1720,
+    "Paris Saint-Germain FC":1875, "AS Monaco FC":1760,
+    "Olympique de Marseille":1740, "Lille OSC":1720,
+    "AFC Ajax":1780, "PSV Eindhoven":1800, "Feyenoord":1790,
+    "Sport Lisboa e Benfica":1800, "FC Porto":1795, "Sporting CP":1785,
 }
 
+def get_elo(name):
+    if name in ELO_DB:
+        return ELO_DB[name]
+    # fuzzy match su parole chiave
+    name_l = name.lower()
+    for k, v in ELO_DB.items():
+        if any(w in name_l for w in k.lower().split() if len(w) > 3):
+            return v
+    return 1650
+
 # ═══════════════════════════════════════
-#  FETCHER
+#  FETCHER football-data.org
 # ═══════════════════════════════════════
 class FootballDataFetcher:
-    BASE = "https://v3.football.api-sports.io"
+    BASE = "https://api.football-data.org/v4"
 
     def __init__(self, api_key):
-        self.headers   = {"x-apisports-key": api_key}
+        self.headers   = {"X-Auth-Token": api_key}
         self.available = bool(api_key)
 
-    def _get(self, ep, params):
+    def _get(self, ep, params=None):
+        time.sleep(6)  # max 10 req/min free tier → 1 ogni 6s
         r = requests.get(f"{self.BASE}/{ep}", headers=self.headers,
-                         params=params, timeout=10)
+                         params=params or {}, timeout=15)
+        if r.status_code == 429:
+            print("   ⏳ Rate limit — attendo 30s")
+            time.sleep(30)
+            r = requests.get(f"{self.BASE}/{ep}", headers=self.headers,
+                             params=params or {}, timeout=15)
         r.raise_for_status()
         return r.json()
 
-    def get_fixtures(self, league_id):
+    def get_fixtures(self, comp_code):
         if not self.available:
             return []
         today   = datetime.now().strftime("%Y-%m-%d")
         in3days = (datetime.now() + timedelta(days=3)).strftime("%Y-%m-%d")
         try:
-            return self._get("fixtures", {
-                "league": league_id, "season": SEASON,
-                "from": today, "to": in3days
-            }).get("response", [])
+            data = self._get(f"competitions/{comp_code}/matches", {
+                "dateFrom": today, "dateTo": in3days, "status": "SCHEDULED"
+            })
+            return data.get("matches", [])
         except Exception as e:
-            print(f"   ⚠️  get_fixtures: {e}")
+            print(f"   ⚠️  get_fixtures {comp_code}: {e}")
             return []
 
-    def get_past_results(self, league_id, last_n=10):
+    def get_past_results(self, comp_code, limit=10):
         if not self.available:
             return []
         try:
-            return self._get("fixtures", {
-                "league": league_id, "season": SEASON,
-                "status": "FT", "last": last_n
-            }).get("response", [])
+            data = self._get(f"competitions/{comp_code}/matches", {
+                "status": "FINISHED", "limit": limit
+            })
+            return data.get("matches", [])
         except Exception as e:
-            print(f"   ⚠️  get_past_results: {e}")
+            print(f"   ⚠️  get_past_results {comp_code}: {e}")
             return []
-
-    def get_team_stats(self, team_id, league_id):
-        if not self.available:
-            return {}
-        try:
-            return self._get("teams/statistics", {
-                "team": team_id, "league": league_id, "season": SEASON
-            }).get("response", {})
-        except Exception as e:
-            print(f"   ⚠️  get_team_stats: {e}")
-            return {}
 
 # ═══════════════════════════════════════
 #  FEATURE ENGINEERING
 # ═══════════════════════════════════════
-def _form_score(s):
-    m = {"W": 1.0, "D": 0.5, "L": 0.0}
-    chars = list(str(s or "WDWLW"))[-5:]
-    vals = [m.get(c, 0.5) for c in chars]
-    return float(np.mean(vals)) if vals else 0.5
-
-def _sf(d, *keys, default=1.5):
-    for k in keys:
-        if not isinstance(d, dict):
-            return float(default)
-        d = d.get(k)
-        if d is None:
-            return float(default)
-    try:
-        return float(d)
-    except (TypeError, ValueError):
-        return float(default)
-
-def extract_features(hs, as_, he, ae):
-    hxg  = _sf(hs,  "goals", "for",     "average", "home", default=1.5)
-    axg  = _sf(as_, "goals", "for",     "average", "away", default=1.2)
-    hxga = _sf(hs,  "goals", "against", "average", "home", default=1.2)
-    axga = _sf(as_, "goals", "against", "average", "away", default=1.3)
-    hf   = str(hs.get("form")  or "WDWLW")
-    af   = str(as_.get("form") or "DWWLL")
+def extract_features(hname, aname):
+    he = get_elo(hname)
+    ae = get_elo(aname)
+    hxg  = he > 1800 and 2.1 or he > 1700 and 1.6 or 1.2
+    axg  = ae > 1800 and 2.1 or ae > 1700 and 1.6 or 1.2
+    hxga = he > 1800 and 0.9 or he > 1700 and 1.1 or 1.3
+    axga = ae > 1800 and 0.9 or ae > 1700 and 1.1 or 1.3
     ep   = 1 / (1 + 10 ** ((ae - he - 60) / 400))
     return {
-        "elo_home":      he,
-        "elo_away":      ae,
-        "elo_diff":      he - ae,
-        "elo_win_prob":  ep,
-        "xg_diff":       hxg - axg,
-        "form_diff":     _form_score(hf) - _form_score(af),
-        "lambda_home":   (hxg + axga) / 2,
-        "lambda_away":   (axg + hxga) / 2,
+        "elo_home":     he,
+        "elo_away":     ae,
+        "elo_diff":     he - ae,
+        "elo_win_prob": ep,
+        "xg_diff":      hxg - axg,
+        "form_diff":    0,
+        "lambda_home":  (hxg + axga) / 2,
+        "lambda_away":  (axg + hxga) / 2,
     }
 
 # ═══════════════════════════════════════
@@ -175,7 +174,7 @@ def classical_predict(f):
     away = max(0.05, 1 - home - draw)
     n    = home + draw + away
     return {"home": home/n, "draw": draw/n, "away": away/n,
-            "quantum_used": False, "hardware": False, "shots": 0}
+            "quantum_used": False}
 
 def quantum_predict(f):
     if not QISKIT_AVAILABLE:
@@ -202,7 +201,7 @@ def quantum_predict(f):
         ph, pd, pa = hc/total, dc/total, ac/total
         n = ph + pd + pa
         return {"home": ph/n, "draw": pd/n, "away": pa/n,
-                "quantum_used": True, "hardware": False, "shots": total}
+                "quantum_used": True, "shots": total}
     except Exception as e:
         print(f"   ⚠️  Quantum error: {e}")
         return classical_predict(f)
@@ -247,10 +246,6 @@ class AdaptiveModel:
         key  = {"1": "home", "X": "draw", "2": "away"}.get(actual, "draw")
         prob = predicted.get(key, 1/3)
         adj  = 0.001 * (0.25 - (1 - prob) ** 2)
-        if predicted.get("quantum_used"):
-            self.weights["quantum"]   = max(0.05, min(0.60, self.weights["quantum"]   + adj))
-            self.weights["elo"]       = max(0.20, min(0.60, self.weights["elo"]       - adj * 0.5))
-            self.weights["emotional"] = max(0.10, min(0.50, self.weights["emotional"] - adj * 0.5))
         t = self.weights["elo"] + self.weights["emotional"] + self.weights["quantum"]
         for k in ("elo", "emotional", "quantum"):
             self.weights[k] /= t
@@ -270,14 +265,11 @@ def send_telegram(pred, hname, aname, comp):
         f"━━━━━━━━━━━━━━━━━\n"
         f"🏆 {comp}\n"
         f"🏠 *{hname}* vs *{aname}* ✈️\n\n"
-        f"📊 *1X2*\n"
-        f"  1:{fmt(pred['home'])} {odd(pred['home'])}  "
+        f"1:{fmt(pred['home'])} {odd(pred['home'])}  "
         f"X:{fmt(pred['draw'])} {odd(pred['draw'])}  "
-        f"2:{fmt(pred['away'])} {odd(pred['away'])}\n\n"
-        f"⚡ Over2.5:{fmt(pred['over_25'])} · BTTS:{fmt(pred['btts_y'])}\n"
-        f"📈 xG {pred['xg_home']}—{pred['xg_away']}\n"
-        f"🎲 Conf:{fmt(pred['confidence'])} {icon}\n"
-        f"━━━━━━━━━━━━━━━━━\n"
+        f"2:{fmt(pred['away'])} {odd(pred['away'])}\n"
+        f"Over2.5:{fmt(pred['over_25'])} · BTTS:{fmt(pred['btts_y'])}\n"
+        f"Conf:{fmt(pred['confidence'])} {icon}\n"
         f"_{datetime.now().strftime('%d/%m/%Y %H:%M')}_"
     )
     try:
@@ -291,50 +283,6 @@ def send_telegram(pred, hname, aname, comp):
     except Exception as e:
         print(f"   ❌ Telegram error: {e}")
 
-def send_email(pred, hname, aname, comp):
-    if not all([SMTP_USER, SMTP_PASS, SMTP_TO]):
-        return
-    fmt = lambda v: f"{v*100:.1f}%"
-    odd = lambda v: f"@{1/max(0.001,v):.2f}"
-    rows = [
-        (f"1 {hname}", pred["home"]), ("X Pareggio", pred["draw"]),
-        (f"2 {aname}", pred["away"]), ("Over 2.5",   pred["over_25"]),
-        ("BTTS Sì",    pred["btts_y"]),
-    ]
-    trs = "\n".join(
-        f"<tr><td style='padding:8px 12px'>{l}</td>"
-        f"<td style='text-align:center'>{fmt(v)}</td>"
-        f"<td style='text-align:center;color:#888'>{odd(v)}</td></tr>"
-        for l, v in rows
-    )
-    html = f"""<html><body style="font-family:monospace;background:#050911;color:#fff;padding:24px">
-<h2 style="color:#22d3ee">⚛️ QUANTUM FOOTBALL AI</h2>
-<p style="color:#888">{comp} · {datetime.now().strftime('%d/%m/%Y %H:%M')}</p>
-<h3><span style="color:#22d3ee">{hname}</span> <span style="color:#f59e0b">vs</span> <span style="color:#f472b6">{aname}</span></h3>
-<p>xG: <b style="color:#22d3ee">{pred['xg_home']}</b> — <b style="color:#f472b6">{pred['xg_away']}</b>
-&nbsp;·&nbsp; Conf: <b style="color:#34d399">{fmt(pred['confidence'])}</b></p>
-<table style="width:100%;border-collapse:collapse;background:#0d1526">
-<tr><th style="padding:10px;color:#22d3ee;text-align:left">Mercato</th>
-<th style="padding:10px;color:#22d3ee">Prob.</th>
-<th style="padding:10px;color:#22d3ee">Quota</th></tr>
-{trs}
-</table>
-<p style="color:#555;font-size:11px;margin-top:20px">⚛️ IBM Quantum · Auto-Adaptive · GitHub Actions</p>
-</body></html>"""
-    msg = MIMEMultipart("alternative")
-    msg["Subject"] = f"⚽ {hname} vs {aname} | {comp} | Quantum AI"
-    msg["From"]    = SMTP_USER
-    msg["To"]      = SMTP_TO
-    msg.attach(MIMEText(html, "html"))
-    try:
-        with smtplib.SMTP(SMTP_HOST, SMTP_PORT) as s:
-            s.starttls()
-            s.login(SMTP_USER, SMTP_PASS)
-            s.sendmail(SMTP_USER, SMTP_TO, msg.as_string())
-        print(f"   ✅ Email → {hname} vs {aname}")
-    except Exception as e:
-        print(f"   ❌ Email error: {e}")
-
 # ═══════════════════════════════════════
 #  MAIN
 # ═══════════════════════════════════════
@@ -342,45 +290,43 @@ def main():
     print("=" * 60)
     print("⚛️  QUANTUM FOOTBALL AI — Cloud Pipeline")
     print(f"   {datetime.now().strftime('%d/%m/%Y %H:%M:%S')}")
+    print(f"   API: football-data.org")
     print(f"   Engine: {'Qiskit' if QISKIT_AVAILABLE else 'Classico'}")
     print("=" * 60)
 
-    fetcher = FootballDataFetcher(API_FOOTBALL_KEY)
+    fetcher = FootballDataFetcher(FOOTBALL_DATA_KEY)
     model   = AdaptiveModel("weights.json")
 
-    if not API_FOOTBALL_KEY:
-        print("⚠️  API_FOOTBALL_KEY mancante — uso fixture mock")
+    if not FOOTBALL_DATA_KEY:
+        print("⚠️  FOOTBALL_DATA_KEY mancante — uso fixture mock")
 
     print(f"\n🔧 Pesi: {model.weights}")
     all_preds = []
 
-    # ── PREVISIONI ──────────────────────────────────────────
-    for league_name, league_id in DAILY_LEAGUES.items():
-        print(f"\n📅 {league_name} (ID:{league_id})")
-        fixtures = fetcher.get_fixtures(league_id)
-        if not fixtures:
-            fixtures = [{
-                "teams":   {"home": {"id": 505, "name": "Inter"},
-                            "away": {"id": 492, "name": "Napoli"}},
-                "fixture": {"id": 999001, "date": datetime.now().isoformat()}
-            }]
+    for league_name, comp_code in COMPETITIONS.items():
+        print(f"\n📅 {league_name} ({comp_code})")
+        matches = fetcher.get_fixtures(comp_code)
 
-        for fix in fixtures[:3]:
+        if not matches:
+            # mock solo se non ci sono partite reali
+            print(f"   ℹ️  Nessuna partita nei prossimi 3 giorni")
+            continue
+
+        for match in matches[:3]:
             try:
-                ht    = fix["teams"]["home"]
-                at    = fix["teams"]["away"]
-                hname = ht["name"]
-                aname = at["name"]
-                fid   = fix["fixture"]["id"]
-                fdate = fix["fixture"].get("date", datetime.now().isoformat())
-                print(f"   ⚽ {hname} vs {aname}")
+                hname = match["homeTeam"]["name"]
+                aname = match["awayTeam"]["name"]
+                fid   = match["id"]
+                fdate = match.get("utcDate", datetime.now().isoformat())
+                # converti UTC in ora italiana (+1 o +2)
+                dt = datetime.fromisoformat(fdate.replace("Z", "+00:00"))
+                dt_it = dt + timedelta(hours=1)
+                date_str = dt_it.strftime("%d/%m/%Y")
+                time_str = dt_it.strftime("%H:%M")
 
-                hs  = fetcher.get_team_stats(ht["id"], league_id) or {"form": "WWDLW"}
-                as_ = fetcher.get_team_stats(at["id"], league_id) or {"form": "WLDWW"}
-                eh  = ELO_DB.get(hname, 1700)
-                ea  = ELO_DB.get(aname, 1700)
+                print(f"   ⚽ {hname} vs {aname} ({date_str} {time_str})")
 
-                feat = extract_features(hs, as_, eh, ea)
+                feat = extract_features(hname, aname)
                 pred = full_prediction(feat)
 
                 print(f"      1:{pred['home']:.1%} X:{pred['draw']:.1%} 2:{pred['away']:.1%} "
@@ -391,34 +337,34 @@ def main():
                     "fixture_id":   fid,
                     "home":         hname,
                     "away":         aname,
-                    "date":         str(fdate)[:10],
-                    "time":         str(fdate)[11:16] if len(str(fdate)) > 10 else "",
+                    "date":         date_str,
+                    "time":         time_str,
                     "prediction":   pred,
                     "generated_at": datetime.now().isoformat()
                 })
 
                 send_telegram(pred, hname, aname, league_name)
-                send_email(pred, hname, aname, league_name)
 
             except Exception as e:
-                print(f"   ❌ Errore fixture: {e}")
+                print(f"   ❌ Errore: {e}")
                 traceback.print_exc()
 
     # ── BACKTESTING ─────────────────────────────────────────
     print("\n🔄 Auto-adattamento...")
     adapted = 0
-    for league_name, league_id in list(DAILY_LEAGUES.items())[:5]:
+    for league_name, comp_code in list(COMPETITIONS.items())[:3]:
         try:
-            for result in fetcher.get_past_results(league_id, last_n=10):
-                gh = result.get("goals", {}).get("home")
-                ga = result.get("goals", {}).get("away")
+            for result in fetcher.get_past_results(comp_code, limit=5):
+                score = result.get("score", {}).get("fullTime", {})
+                gh = score.get("home")
+                ga = score.get("away")
                 if gh is None or ga is None:
                     continue
                 actual = "1" if gh > ga else ("2" if ga > gh else "X")
-                mp     = classical_predict({
-                    "elo_win_prob": 0.45, "elo_diff": 0,
-                    "form_diff": 0, "xg_diff": 0
-                })
+                hname  = result["homeTeam"]["name"]
+                aname  = result["awayTeam"]["name"]
+                feat   = extract_features(hname, aname)
+                mp     = classical_predict(feat)
                 model.update(mp, actual)
                 adapted += 1
         except Exception as e:
@@ -441,7 +387,7 @@ def main():
             "away":       p["away"],
             "league":     p["league"],
             "fixture_id": p["fixture_id"],
-            "date":       p.get("date", str(p["generated_at"])[:10]),
+            "date":       p.get("date", ""),
             "time":       p.get("time", ""),
             "pred": {
                 "home":   round(pred.get("home",    0.33), 4),
