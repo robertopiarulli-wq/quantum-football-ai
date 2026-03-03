@@ -9,25 +9,27 @@ jobs:
   predict:
     name: Run Quantum Predictions
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 20
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+
+      - name: Debug - mostra contenuto repo
+        run: |
+          echo "=== FILE NELLA ROOT ==="
+          ls -la
+          echo ""
+          echo "=== PYTHON VERSION ==="
+          python3 --version
 
       - name: Setup Python 3.11
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
-      - name: Install required dependencies
-        run: |
-          pip install --upgrade pip
-          pip install requests numpy
-
-      - name: Install Qiskit (optional - fallback to classical if fails)
-        run: |
-          pip install qiskit==1.0.2 qiskit-aer==0.14.0 qiskit-ibm-runtime==0.20.0 || echo "⚠️ Qiskit non installato, verrà usato modello classico"
+      - name: Install dependencies
+        run: pip install requests
 
       - name: Run quantum predictions
         env:
@@ -38,7 +40,7 @@ jobs:
           SMTP_USER: ${{ secrets.SMTP_USER }}
           SMTP_PASS: ${{ secrets.SMTP_PASS }}
           SMTP_TO: ${{ secrets.SMTP_TO }}
-        run: python quantum_predict_v3.py
+        run: python quantum_predict.py
 
       - name: Upload results
         if: always()
