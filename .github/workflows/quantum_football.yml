@@ -1,0 +1,78 @@
+name: quantum-football-daily
+on:
+  schedule:
+    - cron: "0 7 * * *"   # ogni giorno alle 7:00 UTC (9:00 ora italiana)
+  workflow_dispatch:        # permette avvio manuale dal sito
+
+jobs:
+  predict:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Installa dipendenze
+        run: |
+          pip install requests qiskit qiskit-aer qiskit-ibm-runtime \
+                      pandas numpy scikit-learn
+
+      - name: Esegui previsioni quantistiche
+        run: python quantum_predict.py
+        env:
+          API_FOOTBALL_KEY:  ${{ secrets.API_FOOTBALL_KEY }}
+          IBM_QUANTUM_TOKEN: ${{ secrets.IBM_QUANTUM_TOKEN }}
+          TELEGRAM_TOKEN:    ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT:     ${{ secrets.TELEGRAM_CHAT }}
+          SMTP_USER:         ${{ secrets.SMTP_USER }}
+          SMTP_PASS:         ${{ secrets.SMTP_PASS }}
+          SMTP_TO:           ${{ secrets.SMTP_TO }}
+
+      - name: Salva risultati come artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: predictions-${{ github.run_number }}
+          path: predictions_output.json
+```
+
+→ clicca **"Commit changes"**
+
+---
+
+## 🌐 FASE 5 — Pubblica la Dashboard (Vercel — gratis)
+
+**5.1** Vai su **vercel.com** → Sign Up con il tuo account GitHub
+
+**5.2** Clicca **"New Project"** → seleziona il tuo repo `quantum-football-ai`
+
+**5.3** Nella configurazione seleziona:
+- Framework: **Vite** (o Create React App)
+- Root directory: lascia `/`
+
+**5.4** Clicca **Deploy** → in 2 minuti ti dà un URL tipo:
+`https://quantum-football-ai.vercel.app`
+
+> ⚠️ Se Vercel da errore perché il file è `.jsx` standalone, crea prima un progetto Vite in locale con `npm create vite@latest` poi sostituisci `App.jsx` con il tuo file e fai push su GitHub.
+
+---
+
+## ▶️ FASE 6 — Primo Test Manuale
+
+→ Nel tuo repo GitHub vai su **Actions** (menu in alto)
+→ clicca sul workflow **"quantum-football-daily"**
+→ clicca **"Run workflow"** → **"Run workflow"** (bottone verde)
+→ aspetta ~2 minuti → se vedi ✅ verde funziona tutto
+→ controlla Telegram e Email: dovresti ricevere gli alert!
+
+---
+
+## 📋 Riepilogo finale
+```
+github.com/tuo-repo          → codice + GitHub Actions (gratis)
+vercel.app/tuo-progetto      → dashboard visuale (gratis)
+api-sports.io                → dati partite reali (gratis 100/giorno)
+quantum.ibm.com              → circuiti IBM Quantum (gratis)
+Telegram @BotFather          → alert messaggi (gratis)
+Gmail App Password           → alert email (gratis)
