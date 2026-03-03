@@ -41,7 +41,7 @@ jobs:
           git config user.name "Quantum Football Bot"
           git config user.email "bot@quantum-football.ai"
           git add predictions_output.json weights.json fixtures_today.json || true
-          git diff --staged --quiet || git commit -m "🤖 Previsioni $(date '+%d/%m/%Y %H:%M')"
+          git commit -m "🤖 Previsioni $(date '+%d/%m/%Y %H:%M')" || true
           git push || true
 
       - name: Upload artifact
