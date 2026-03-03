@@ -40,9 +40,11 @@ jobs:
         run: |
           git config user.name "Quantum Football Bot"
           git config user.email "bot@quantum-football.ai"
-          git add predictions_output.json weights.json fixtures_today.json
+          git add -f predictions_output.json || true
+          git add -f weights.json || true
+          git add -f fixtures_today.json || true
           git status
-          git commit -m "🤖 Previsioni $(date '+%d/%m/%Y %H:%M')" || echo "COMMIT FALLITO"
+          git commit -m "🤖 Previsioni $(date '+%d/%m/%Y %H:%M')" || echo "Nessuna modifica da committare"
           git push https://x-access-token:${{ github.token }}@github.com/robertopiarulli-wq/quantum-football-ai.git || echo "PUSH FALLITO"
 
       - name: Upload artifact
