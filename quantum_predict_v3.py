@@ -80,7 +80,7 @@ class FootballDataFetcher:
 
     def _get(self, ep, params):
         r = requests.get(f"{self.BASE}/{ep}", headers=self.headers,
-                         params=params, timeout=10)
+                         params=params, timeout=15)
         r.raise_for_status()
         return r.json()
 
@@ -520,6 +520,39 @@ def main():
         json.dump(all_predictions, f, indent=2, default=str)
 
     print(f"\n✅ {len(all_predictions)} previsioni → predictions_output.json")
+    
+    # Salva fixtures_today.json per la dashboard
+    fixtures_for_dashboard = []
+    for p in all_preds:
+        pred = p.get("prediction", {})
+        fixtures_for_dashboard.append({
+            "home": p["home"], "away": p["away"],
+            "league": p["league"], "fixture_id": p["fixture_id"],
+            "date": str(p["generated_at"])[:10],
+            "pred": {
+                "home":   round(pred.get("home",0.33), 4),
+                "draw":   round(pred.get("draw",0.33), 4),
+                "away":   round(pred.get("away",0.33), 4),
+                "dc1x":   round(pred.get("dc_1x", pred.get("home",0)+pred.get("draw",0)), 4),
+                "dcx2":   round(pred.get("dc_x2", pred.get("draw",0)+pred.get("away",0)), 4),
+                "dc12":   round(pred.get("dc_12", pred.get("home",0)+pred.get("away",0)), 4),
+                "over25": round(pred.get("over_25",0.5), 4),
+                "under25":round(pred.get("under_25",0.5), 4),
+                "bttsY":  round(pred.get("btts_y",0.5), 4),
+                "xg_h":   str(pred.get("xg_home","1.50")),
+                "xg_a":   str(pred.get("xg_away","1.20")),
+                "conf":   round(pred.get("confidence",0.5), 4),
+                "best":   pred.get("best_out","1"),
+            }
+        })
+    with open("fixtures_today.json","w") as f:
+        import json as _j
+        _j.dump({"generated_at": datetime.now().isoformat(),
+                 "date": datetime.now().strftime("%d/%m/%Y"),
+                 "total": len(fixtures_for_dashboard),
+                 "fixtures": fixtures_for_dashboard}, f, indent=2, default=str)
+    print(f"✅ fixtures_today.json salvato ({len(fixtures_for_dashboard)} partite)")
+
     print("✅ Pipeline completata!")
 
 
