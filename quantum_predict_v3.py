@@ -80,7 +80,7 @@ class FootballDataFetcher:
 
     def _get(self, ep, params):
         r = requests.get(f"{self.BASE}/{ep}", headers=self.headers,
-                         params=params, timeout=15)
+                         params=params, timeout=10)
         r.raise_for_status()
         return r.json()
 
