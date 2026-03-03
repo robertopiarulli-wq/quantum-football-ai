@@ -20,6 +20,9 @@ const LEAGUES = [
   { key:"Eliteserien",   flag:"🇳🇴", tier:1 },
   { key:"Super League GR",flag:"🇬🇷",tier:1 },
   { key:"Serie B",       flag:"🇮🇹", tier:2 },
+  { key:"Serie C Gr.A",  flag:"🇮🇹", tier:3 },
+  { key:"Serie C Gr.B",  flag:"🇮🇹", tier:3 },
+  { key:"Serie C Gr.C",  flag:"🇮🇹", tier:3 },
   { key:"Championship",  flag:"🏴󠁧󠁢󠁥󠁮󠁧󠁿", tier:2 },
   { key:"2. Bundesliga", flag:"🇩🇪", tier:2 },
   { key:"Segunda Div",   flag:"🇪🇸", tier:2 },
@@ -33,7 +36,7 @@ const LEAGUES = [
 ];
 
 const TEAMS = {
-  "Serie A":        ["Inter","Napoli","Milan","Juventus","Atalanta","Roma","Lazio","Fiorentina","Torino","Bologna","Udinese","Genoa","Verona","Parma","Cagliari","Empoli"],
+  "Serie A":        ["Inter","Napoli","Milan","Juventus","Atalanta","Roma","Lazio","Fiorentina","Torino","Bologna","Udinese","Venezia","Genoa","Verona","Parma","Cagliari","Empoli","Como","Lecce","Monza"],
   "Premier League": ["Man City","Arsenal","Liverpool","Chelsea","Tottenham","Man United","Newcastle","Aston Villa","Brighton","West Ham","Fulham","Wolves","Everton","Crystal Palace","Brentford","Nottm Forest"],
   "La Liga":        ["Real Madrid","Barcelona","Atletico","Sevilla","Real Sociedad","Villarreal","Athletic Bilbao","Betis","Valencia","Girona","Celta Vigo","Osasuna","Getafe","Alaves","Mallorca"],
   "Bundesliga":     ["Bayern","Bayer Leverkusen","Borussia Dortmund","RB Leipzig","Eintracht","Stuttgart","Wolfsburg","Freiburg","Mainz","Hoffenheim","Augsburg","Werder Bremen","Köln","Union Berlin"],
@@ -47,16 +50,19 @@ const TEAMS = {
   "Allsvenskan":    ["Malmo FF","Djurgarden","AIK","Hammarby","IFK Goteborg","Elfsborg"],
   "Eliteserien":    ["Bodo/Glimt","Rosenborg","Molde","Viking","Valerenga","Lillestrom"],
   "Super League GR":["Olympiacos","Panathinaikos","AEK Athens","PAOK","Aris","Paok Saloniki"],
-  "Serie B":        ["Sassuolo","Spezia","Sampdoria","Palermo","Bari","Cremonese","Catanzaro","Cesena","Modena","Reggiana","Sudtirol","Cosenza","Pisa"],
-  "Championship":   ["Leeds","Leicester","Middlesbrough","Burnley","Sunderland","Sheffield Wed","Cardiff","Ipswich","Watford","West Brom","Norwich","QPR"],
-  "2. Bundesliga":  ["Hamburg","Schalke","Kaiserslautern","Koln","Hannover 96","Nurnberg","Darmstadt","Fortuna Dusseldorf"],
-  "Segunda Div":    ["Valladolid","Zaragoza","Almeria","Malaga","Elche","Levante","Granada","Huesca"],
-  "Ligue 2":        ["Caen","Auxerre","Bordeaux","Grenoble","Valenciennes","Metz","Troyes","Amiens"],
-  "League One":     ["Bristol Rovers","Derby","Exeter","Peterborough","Portsmouth","Charlton","Burton"],
+  "Serie B":        ["Spezia","Pisa","Sassuolo","Cremonese","Cesena","Catanzaro","Bari","Palermo","Sampdoria","Cosenza","Sudtirol","Reggiana","Modena","Brescia","Mantova","Cittadella","Frosinone","Juve Stabia","Salernitana","Carrarese"],
+  "Serie C Gr.A":   ["Padova","Vicenza","Atalanta U23","Trento","Feralpisalo","Renate","Lecco","Novara","Arzignano","Pro Vercelli","Triestina","Union Clodiense","AlbinoLeffe","Lumezzane","Virtus Verona"],
+  "Serie C Gr.B":   ["Torres","Pontedera","Arezzo","Pescara","Gubbio","Pineto","Perugia","Vis Pesaro","Rimini","Ascoli","Sestri Levante","Lucchese","Milan U23","Spal","Carpi"],
+  "Serie C Gr.C":   ["Benevento","Avellino","Monopoli","Potenza","Cerignola","Crotone","Trapani","Picerno","Giugliano","Foggia","Messina","Casertana","Juventus U23","Cavese","Latina"],
+  "Championship":   ["Leeds","Burnley","Middlesbrough","Sunderland","Sheffield Wed","Cardiff","Watford","West Brom","Norwich","QPR","Stoke","Hull","Coventry","Millwall","Preston","Bristol City","Swansea","Derby","Plymouth","Luton","Portsmouth","Oxford"],
+  "2. Bundesliga":  ["Hamburg","Schalke","Kaiserslautern","Hannover 96","Nurnberg","Darmstadt","Fortuna Dusseldorf","Magdeburg","Hertha BSC","Eintracht Braunschweig","Karlsruher SC","SSV Ulm","Jahn Regensburg","SpVgg Greuther Furth","Preussen Munster","Greuther Furth"],
+  "Segunda Div":    ["Valladolid","Zaragoza","Almeria","Elche","Levante","Granada","Huesca","Mirandes","Racing Santander","Leganes","Oviedo","Burgos","Eldense","Castellon","Cartagena","Espanyol","Sporting Gijon","Villarreal B"],
+  "Ligue 2":        ["Caen","Auxerre","Bordeaux","Grenoble","Valenciennes","Metz","Troyes","Amiens","Rodez","Laval","Quevilly","Saint-Etienne","Dunkerque","Concarneau","Angers","Pau","Red Star","Gueugnon"],
+  "League One":     ["Birmingham","Wrexham","Stockport","Charlton","Huddersfield","Bolton","Barnsley","Bristol Rovers","Peterborough","Exeter","Shrewsbury","Reading","Wigan","Stevenage","Northampton","Blackpool","Lincoln","Burton","Cambridge","Wycombe"],
   "Champions Lg":   ["Real Madrid","Man City","Bayern","PSG","Barcelona","Inter","Arsenal","Dortmund","PSV","Atletico","Liverpool","Feyenoord","Porto","Benfica","Napoli","Celtic"],
   "Europa Lg":      ["Roma","Lazio","Sevilla","Ajax","Bayer Leverkusen","West Ham","Villarreal","Fiorentina","Sociedad","Atalanta"],
   "Conference Lg":  ["Fiorentina","Club Brugge","Gent","Aston Villa","Olympiacos","Panathinaikos","Betis","Fenerbahce"],
-  "Coppa Italia":   ["Inter","Juventus","Milan","Napoli","Roma","Lazio","Atalanta","Fiorentina"],
+  "Coppa Italia":   ["Inter","Juventus","Milan","Napoli","Roma","Lazio","Atalanta","Fiorentina","Venezia","Bologna","Torino","Genoa","Udinese","Empoli","Como","Lecce","Monza","Parma","Cagliari","Verona","Spezia","Pisa","Sassuolo","Cremonese","Bari","Palermo","Salernitana","Frosinone","Avellino","Benevento","Catanzaro","Cesena"],
   "FA Cup":         ["Man City","Arsenal","Chelsea","Liverpool","Tottenham","Man United","Newcastle","Aston Villa"],
 };
 
@@ -100,7 +106,7 @@ const BASE_STATS = {
   "Valladolid":1580,"Zaragoza":1560,"Almeria":1570,"Malaga":1550,"Elche":1560,"Levante":1570,"Granada":1565,"Huesca":1545,
   "Caen":1560,"Auxerre":1570,"Bordeaux":1590,"Grenoble":1540,"Valenciennes":1520,"Metz":1575,"Troyes":1555,"Amiens":1545,
   "Bristol Rovers":1530,"Derby":1560,"Exeter":1510,"Peterborough":1525,"Portsmouth":1540,"Charlton":1535,"Burton":1505,
-  "Celtic":1750,"Dortmund":1800,
+  "Celtic":1750,"Dortmund":1800,"Venezia":1620,"Como":1615,"Lecce":1610,"Monza":1615,"Avellino":1490,"Benevento":1510,"Salernitana":1540,"Frosinone":1545,
   "Sociedad":1730,"West Ham":1690,
 };
 
@@ -302,12 +308,12 @@ export default function App() {
   const [ready,setReady]     = useState(false);
   // tabs
   const [tab,setTab]         = useState("search");
-  // SEARCH
-  const [srchQ,setSrchQ]         = useState("");
-  const [srchLeague,setSrchLeague] = useState("Serie A");
-  const [srchHome,setSrchHome]   = useState("");
-  const [srchAway,setSrchAway]   = useState("");
-  const [srchPred,setSrchPred]   = useState(null);
+  // SEARCH — selezione libera per lega
+  const [homeLeague,setHomeLeague] = useState("Serie A");
+  const [awayLeague,setAwayLeague] = useState("Serie A");
+  const [srchHome,setSrchHome]     = useState("");
+  const [srchAway,setSrchAway]     = useState("");
+  const [srchPred,setSrchPred]     = useState(null);
   const [srchLoading,setSrchLoading] = useState(false);
   // RANKING
   const [rnkLeague,setRnkLeague] = useState("Serie A");
@@ -333,26 +339,20 @@ export default function App() {
     setTimeout(tick,300);
   },[]);
 
-  // derive teams for selected league (search)
-  const srchTeams = TEAMS[srchLeague] || [];
-  // filter team list by search query
-  const filteredTeams = useMemo(()=>{
-    if(!srchQ.trim()) return srchTeams;
-    const q = srchQ.toLowerCase();
-    return srchTeams.filter(t=>t.toLowerCase().includes(q));
-  },[srchQ, srchTeams]);
+  const homeTeams = TEAMS[homeLeague] || [];
+  const awayTeams = TEAMS[awayLeague] || [];
 
-  // compute prediction for search tab
   const runSearch = useCallback(()=>{
     if(!srchHome || !srchAway || srchHome===srchAway) return;
     setSrchLoading(true); setSrchPred(null);
     setTimeout(()=>{
       const r = computeMatch(srchHome, srchAway);
       setSrchPred(r); setCycles(c=>c+1);
-      setHistory(h=>[{league:srchLeague,home:srchHome,away:srchAway,result:r,ts:new Date().toLocaleTimeString("it-IT")},...h.slice(0,29)]);
+      const lgLabel = homeLeague===awayLeague ? homeLeague : homeLeague+" / "+awayLeague;
+      setHistory(h=>[{league:lgLabel,home:srchHome,away:srchAway,result:r,ts:new Date().toLocaleTimeString("it-IT")},...h.slice(0,29)]);
       setSrchLoading(false);
     },900);
-  },[srchHome,srchAway,srchLeague]);
+  },[srchHome,srchAway,homeLeague,awayLeague]);
 
   // generate ranking
   const runRanking = useCallback(()=>{
@@ -475,45 +475,30 @@ export default function App() {
           <div style={{display:"grid",gridTemplateColumns:"360px 1fr",gap:18}}>
             <div style={{display:"flex",flexDirection:"column",gap:13}}>
 
-              {/* League select */}
-              <div style={{background:C.card,border:`1px solid ${C.purple}33`,borderRadius:14,padding:16}}>
-                <div style={{fontSize:9,color:C.purple,letterSpacing:2,marginBottom:10}}>🌍 CAMPIONATO</div>
-                <select value={srchLeague} onChange={e=>{setSrchLeague(e.target.value);setSrchHome("");setSrchAway("");setSrchPred(null);setSrchQ("");}} style={{width:"100%",background:"#0a1220",border:`1px solid ${C.purple}44`,color:"#fff",padding:"8px",borderRadius:8,fontSize:11,fontFamily:"inherit",outline:"none"}}>
-                  {LEAGUES.map(l=><option key={l.key} value={l.key}>{l.flag} {l.key} {l.tier===2?"· Div 2":l.tier===3?"· Div 3":l.tier===0?"· Coppa":""}</option>)}
+              {/* HOME team selector */}
+              <div style={{background:C.card,border:`1px solid ${C.cyan}33`,borderRadius:14,padding:16}}>
+                <div style={{fontSize:9,color:C.cyan,letterSpacing:2,marginBottom:10}}>🏠 SQUADRA CASA</div>
+                <select value={homeLeague} onChange={e=>{setHomeLeague(e.target.value);setSrchHome("");setSrchPred(null);}} style={{width:"100%",background:"#0a1220",border:`1px solid ${C.cyan}33`,color:"#aaa",padding:"7px",borderRadius:8,fontSize:10,fontFamily:"inherit",outline:"none",marginBottom:8}}>
+                  {LEAGUES.map(l=><option key={l.key} value={l.key}>{l.flag} {l.key}</option>)}
                 </select>
-                <div style={{marginTop:6,fontSize:9,color:"#555"}}>{srchTeams.length} squadre disponibili</div>
+                <select value={srchHome} onChange={e=>setSrchHome(e.target.value)} style={{width:"100%",background:"#0a1220",border:`1px solid ${C.cyan}55`,color:"#fff",padding:"9px",borderRadius:8,fontSize:11,fontFamily:"inherit",outline:"none",fontWeight:700}}>
+                  <option value="">— seleziona squadra —</option>
+                  {homeTeams.map(t=><option key={t} value={t}>{t}</option>)}
+                </select>
+                {srchHome&&<div style={{marginTop:6,fontSize:9,color:C.cyan}}>ELO: {BASE_STATS[srchHome]||1650}</div>}
               </div>
 
-              {/* Search box */}
-              <div style={{background:C.card,border:`1px solid ${C.cyan}33`,borderRadius:14,padding:16}}>
-                <div style={{fontSize:9,color:C.cyan,letterSpacing:2,marginBottom:10}}>🔍 FILTRA SQUADRA</div>
-                <input value={srchQ} onChange={e=>setSrchQ(e.target.value)} placeholder="es: Inter, Bayern, Arsenal..." style={{width:"100%",background:"#0a1220",border:`1px solid ${C.cyan}44`,color:"#fff",padding:"9px 10px",borderRadius:8,fontSize:11,fontFamily:"inherit",outline:"none",boxSizing:"border-box"}}/>
-
-                {/* Home */}
-                <div style={{marginTop:12}}>
-                  <div style={{fontSize:8,color:C.cyan,marginBottom:5,letterSpacing:1}}>🏠 CASA</div>
-                  <select value={srchHome} onChange={e=>setSrchHome(e.target.value)} style={{width:"100%",background:"#0a1220",border:`1px solid ${C.cyan}44`,color:"#fff",padding:"8px",borderRadius:8,fontSize:11,fontFamily:"inherit",outline:"none"}}>
-                    <option value="">— seleziona —</option>
-                    {filteredTeams.map(t=><option key={t} value={t}>{t}</option>)}
-                  </select>
-                </div>
-
-                {/* Away */}
-                <div style={{marginTop:10}}>
-                  <div style={{fontSize:8,color:C.pink,marginBottom:5,letterSpacing:1}}>✈️ TRASFERTA</div>
-                  <select value={srchAway} onChange={e=>setSrchAway(e.target.value)} style={{width:"100%",background:"#0a1220",border:`1px solid ${C.pink}44`,color:"#fff",padding:"8px",borderRadius:8,fontSize:11,fontFamily:"inherit",outline:"none"}}>
-                    <option value="">— seleziona —</option>
-                    {filteredTeams.filter(t=>t!==srchHome).map(t=><option key={t} value={t}>{t}</option>)}
-                  </select>
-                </div>
-
-                {srchHome&&srchAway&&(
-                  <div style={{marginTop:10,padding:"8px 10px",background:"rgba(0,0,0,0.2)",borderRadius:8,fontSize:9,color:"#888",display:"flex",justifyContent:"space-between"}}>
-                    <span>ELO: <span style={{color:C.cyan}}>{BASE_STATS[srchHome]||1650}</span></span>
-                    <span style={{color:C.amber}}>VS</span>
-                    <span>ELO: <span style={{color:C.pink}}>{BASE_STATS[srchAway]||1650}</span></span>
-                  </div>
-                )}
+              {/* AWAY team selector */}
+              <div style={{background:C.card,border:`1px solid ${C.pink}33`,borderRadius:14,padding:16}}>
+                <div style={{fontSize:9,color:C.pink,letterSpacing:2,marginBottom:10}}>✈️ SQUADRA TRASFERTA</div>
+                <select value={awayLeague} onChange={e=>{setAwayLeague(e.target.value);setSrchAway("");setSrchPred(null);}} style={{width:"100%",background:"#0a1220",border:`1px solid ${C.pink}33`,color:"#aaa",padding:"7px",borderRadius:8,fontSize:10,fontFamily:"inherit",outline:"none",marginBottom:8}}>
+                  {LEAGUES.map(l=><option key={l.key} value={l.key}>{l.flag} {l.key}</option>)}
+                </select>
+                <select value={srchAway} onChange={e=>setSrchAway(e.target.value)} style={{width:"100%",background:"#0a1220",border:`1px solid ${C.pink}55`,color:"#fff",padding:"9px",borderRadius:8,fontSize:11,fontFamily:"inherit",outline:"none",fontWeight:700}}>
+                  <option value="">— seleziona squadra —</option>
+                  {awayTeams.filter(t=>t!==srchHome||homeLeague!==awayLeague).map(t=><option key={t} value={t}>{t}</option>)}
+                </select>
+                {srchAway&&<div style={{marginTop:6,fontSize:9,color:C.pink}}>ELO: {BASE_STATS[srchAway]||1650}</div>}
               </div>
 
               <button onClick={runSearch} disabled={!srchHome||!srchAway||srchHome===srchAway||srchLoading} style={{padding:"13px",borderRadius:10,fontSize:10,letterSpacing:3,cursor:(!srchHome||!srchAway||srchLoading)?"not-allowed":"pointer",border:`1px solid ${C.cyan}`,background:srchLoading?"rgba(34,211,238,0.04)":"linear-gradient(135deg,rgba(34,211,238,0.13),rgba(167,139,250,0.08))",color:!srchHome||!srchAway?"#333":C.cyan,fontFamily:"inherit",fontWeight:900,transition:"all 0.3s"}}>
