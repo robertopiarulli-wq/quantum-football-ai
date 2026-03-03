@@ -2,8 +2,8 @@ name: Quantum Football AI - Daily Predictions
 
 "on":
   schedule:
-    - cron: "0 7 * * *"   # ogni giorno alle 09:00 ora italiana (UTC+2)
-  workflow_dispatch:        # permette esecuzione manuale da GitHub Actions
+    - cron: "0 7 * * *"
+  workflow_dispatch:
 
 jobs:
   predict:
@@ -19,12 +19,12 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-          cache: "pip"
+          cache: pip
 
       - name: Install dependencies
         run: |
           pip install --upgrade pip
-          pip install requests numpy pandas scikit-learn qiskit qiskit-aer qiskit-ibm-runtime
+          pip install requests numpy qiskit qiskit-aer qiskit-ibm-runtime
 
       - name: Run quantum predictions
         env:
@@ -35,12 +35,11 @@ jobs:
           SMTP_USER: ${{ secrets.SMTP_USER }}
           SMTP_PASS: ${{ secrets.SMTP_PASS }}
           SMTP_TO: ${{ secrets.SMTP_TO }}
-        run: |
-          python quantum_predict.py
+        run: python quantum_predict.py
 
-      - name: Upload prediction results
-        uses: actions/upload-artifact@v4
+      - name: Upload results
         if: always()
+        uses: actions/upload-artifact@v4
         with:
           name: predictions-${{ github.run_number }}
           path: |
