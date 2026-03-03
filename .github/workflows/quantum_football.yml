@@ -10,18 +10,12 @@ jobs:
     name: Run Quantum Predictions
     runs-on: ubuntu-latest
     timeout-minutes: 20
+    permissions:
+      contents: write
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
-      - name: Debug - mostra contenuto repo
-        run: |
-          echo "=== FILE NELLA ROOT ==="
-          ls -la
-          echo ""
-          echo "=== PYTHON VERSION ==="
-          python3 --version
 
       - name: Setup Python 3.11
         uses: actions/setup-python@v5
@@ -42,7 +36,15 @@ jobs:
           SMTP_TO: ${{ secrets.SMTP_TO }}
         run: python quantum_predict_v3.py
 
-      - name: Upload results
+      - name: Commit risultati nel repo
+        run: |
+          git config user.name "Quantum Football Bot"
+          git config user.email "bot@quantum-football.ai"
+          git add predictions_output.json weights.json fixtures_today.json || true
+          git diff --staged --quiet || git commit -m "🤖 Previsioni $(date '+%d/%m/%Y %H:%M')"
+          git push || true
+
+      - name: Upload artifact
         if: always()
         uses: actions/upload-artifact@v4
         with:
@@ -50,5 +52,6 @@ jobs:
           path: |
             predictions_output.json
             weights.json
+            fixtures_today.json
           retention-days: 30
           if-no-files-found: warn
