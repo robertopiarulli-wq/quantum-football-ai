@@ -24,7 +24,7 @@
       "best_out": "1",
       "best_val": 0.6514612635526893
     },
-    "generated_at": "2026-03-04T16:33:08.411765"
+    "generated_at": "2026-03-04T16:46:37.802356"
   },
   {
     "league": "Serie A",
@@ -51,7 +51,7 @@
       "best_out": "1",
       "best_val": 0.412699353253537
     },
-    "generated_at": "2026-03-04T16:33:08.411803"
+    "generated_at": "2026-03-04T16:46:37.802393"
   },
   {
     "league": "Serie A",
@@ -78,7 +78,7 @@
       "best_out": "1",
       "best_val": 0.6457469266479579
     },
-    "generated_at": "2026-03-04T16:33:08.411829"
+    "generated_at": "2026-03-04T16:46:37.802419"
   },
   {
     "league": "Premier League",
@@ -105,7 +105,7 @@
       "best_out": "1",
       "best_val": 0.3793871841659987
     },
-    "generated_at": "2026-03-04T16:33:15.630433"
+    "generated_at": "2026-03-04T16:46:44.792494"
   },
   {
     "league": "Premier League",
@@ -132,7 +132,7 @@
       "best_out": "2",
       "best_val": 0.48739679670925684
     },
-    "generated_at": "2026-03-04T16:33:15.630465"
+    "generated_at": "2026-03-04T16:46:44.792528"
   },
   {
     "league": "Premier League",
@@ -159,7 +159,7 @@
       "best_out": "1",
       "best_val": 0.4324631174083814
     },
-    "generated_at": "2026-03-04T16:33:15.630489"
+    "generated_at": "2026-03-04T16:46:44.792554"
   },
   {
     "league": "La Liga",
@@ -186,7 +186,7 @@
       "best_out": "1",
       "best_val": 0.4454986786718095
     },
-    "generated_at": "2026-03-04T16:33:22.417864"
+    "generated_at": "2026-03-04T16:46:51.793248"
   },
   {
     "league": "La Liga",
@@ -213,7 +213,7 @@
       "best_out": "2",
       "best_val": 0.636830072276731
     },
-    "generated_at": "2026-03-04T16:33:22.417983"
+    "generated_at": "2026-03-04T16:46:51.793348"
   },
   {
     "league": "La Liga",
@@ -240,7 +240,7 @@
       "best_out": "1",
       "best_val": 0.4454986786718095
     },
-    "generated_at": "2026-03-04T16:33:22.418110"
+    "generated_at": "2026-03-04T16:46:51.793475"
   },
   {
     "league": "Bundesliga",
@@ -267,7 +267,7 @@
       "best_out": "2",
       "best_val": 0.5711394245831221
     },
-    "generated_at": "2026-03-04T16:33:29.146110"
+    "generated_at": "2026-03-04T16:46:58.351397"
   },
   {
     "league": "Bundesliga",
@@ -294,7 +294,7 @@
       "best_out": "1",
       "best_val": 0.5471394245831221
     },
-    "generated_at": "2026-03-04T16:33:29.146238"
+    "generated_at": "2026-03-04T16:46:58.351521"
   },
   {
     "league": "Bundesliga",
@@ -321,7 +321,7 @@
       "best_out": "2",
       "best_val": 0.5711394245831221
     },
-    "generated_at": "2026-03-04T16:33:29.146315"
+    "generated_at": "2026-03-04T16:46:58.351595"
   },
   {
     "league": "Ligue 1",
@@ -348,7 +348,7 @@
       "best_out": "1",
       "best_val": 0.6190072897556675
     },
-    "generated_at": "2026-03-04T16:33:35.911645"
+    "generated_at": "2026-03-04T16:47:05.085076"
   },
   {
     "league": "Ligue 1",
@@ -375,7 +375,7 @@
       "best_out": "1",
       "best_val": 0.4454986786718095
     },
-    "generated_at": "2026-03-04T16:33:35.911804"
+    "generated_at": "2026-03-04T16:47:05.085213"
   },
   {
     "league": "Ligue 1",
@@ -402,7 +402,7 @@
       "best_out": "1",
       "best_val": 0.4454986786718095
     },
-    "generated_at": "2026-03-04T16:33:35.911933"
+    "generated_at": "2026-03-04T16:47:05.085348"
   },
   {
     "league": "Eredivisie",
@@ -429,7 +429,7 @@
       "best_out": "1",
       "best_val": 0.4454986786718095
     },
-    "generated_at": "2026-03-04T16:33:56.387746"
+    "generated_at": "2026-03-04T16:47:24.761099"
   },
   {
     "league": "Eredivisie",
@@ -456,7 +456,7 @@
       "best_out": "2",
       "best_val": 0.48439679670925684
     },
-    "generated_at": "2026-03-04T16:33:56.387829"
+    "generated_at": "2026-03-04T16:47:24.761182"
   },
   {
     "league": "Eredivisie",
@@ -483,7 +483,7 @@
       "best_out": "1",
       "best_val": 0.4454986786718095
     },
-    "generated_at": "2026-03-04T16:33:56.387941"
+    "generated_at": "2026-03-04T16:47:24.761310"
   },
   {
     "league": "Primeira Liga",
@@ -510,7 +510,7 @@
       "best_out": "1",
       "best_val": 0.4454986786718095
     },
-    "generated_at": "2026-03-04T16:34:03.170736"
+    "generated_at": "2026-03-04T16:47:31.314825"
   },
   {
     "league": "Primeira Liga",
@@ -537,7 +537,7 @@
       "best_out": "1",
       "best_val": 0.4454986786718095
     },
-    "generated_at": "2026-03-04T16:34:03.170858"
+    "generated_at": "2026-03-04T16:47:31.314956"
   },
   {
     "league": "Primeira Liga",
@@ -564,7 +564,7 @@
       "best_out": "1",
       "best_val": 0.4454986786718095
     },
-    "generated_at": "2026-03-04T16:34:03.170974"
+    "generated_at": "2026-03-04T16:47:31.315079"
   },
   {
     "league": "Championship",
@@ -591,7 +591,7 @@
       "best_out": "2",
       "best_val": 0.4544631174083814
     },
-    "generated_at": "2026-03-04T16:34:09.968598"
+    "generated_at": "2026-03-04T16:47:37.849768"
   },
   {
     "league": "Championship",
@@ -618,7 +618,7 @@
       "best_out": "1",
       "best_val": 0.4454986786718095
     },
-    "generated_at": "2026-03-04T16:34:09.968744"
+    "generated_at": "2026-03-04T16:47:37.849903"
   },
   {
     "league": "Championship",
@@ -645,6 +645,6 @@
       "best_out": "1",
       "best_val": 0.721969053437879
     },
-    "generated_at": "2026-03-04T16:34:09.968839"
+    "generated_at": "2026-03-04T16:47:37.850001"
   }
 ]
