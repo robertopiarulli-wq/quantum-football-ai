@@ -254,23 +254,28 @@ class AdaptiveModel:
 # ═══════════════════════════════════════
 #  ALERTS
 # ═══════════════════════════════════════
-def send_telegram(pred, hname, aname, comp):
+def send_telegram(pred, hname, aname, comp, date_str="", time_str="", rank=1):
     if not TELEGRAM_TOKEN or not TELEGRAM_CHAT:
         return
     fmt  = lambda v: f"{v*100:.1f}%"
     odd  = lambda v: f"@{1/max(0.001,v):.2f}"
     icon = "🔥" if pred["confidence"] > 0.75 else "✅" if pred["confidence"] > 0.55 else "⚠️"
+    medal = "🥇" if rank == 1 else "🥈" if rank == 2 else "🥉" if rank == 3 else f"#{rank}"
+    when  = f"{date_str} {time_str}".strip() or datetime.now().strftime("%d/%m/%Y")
     msg  = (
         f"⚽ *QUANTUM FOOTBALL AI* ⚛️\n"
         f"━━━━━━━━━━━━━━━━━\n"
+        f"{medal} Top {rank} per confidenza\n"
         f"🏆 {comp}\n"
+        f"📅 {when}\n"
         f"🏠 *{hname}* vs *{aname}* ✈️\n\n"
         f"1:{fmt(pred['home'])} {odd(pred['home'])}  "
         f"X:{fmt(pred['draw'])} {odd(pred['draw'])}  "
         f"2:{fmt(pred['away'])} {odd(pred['away'])}\n"
         f"Over2.5:{fmt(pred['over_25'])} · BTTS:{fmt(pred['btts_y'])}\n"
+        f"xG: {pred['xg_home']}—{pred['xg_away']}\n"
         f"Conf:{fmt(pred['confidence'])} {icon}\n"
-        f"_{datetime.now().strftime('%d/%m/%Y %H:%M')}_"
+        f"_Generato: {datetime.now().strftime('%d/%m/%Y %H:%M')}_"
     )
     try:
         r = requests.post(
@@ -282,6 +287,289 @@ def send_telegram(pred, hname, aname, comp):
         print(f"   {'✅' if r.ok else '❌'} Telegram → {hname} vs {aname}")
     except Exception as e:
         print(f"   ❌ Telegram error: {e}")
+
+def send_email(pred, hname, aname, comp, date_str="", time_str="", rank=1):
+    if not all([SMTP_USER, SMTP_PASS, SMTP_TO]):
+        return
+    fmt  = lambda v: f"{v*100:.1f}%"
+    odd  = lambda v: f"@{1/max(0.001,v):.2f}"
+    medal = "🥇" if rank == 1 else "🥈" if rank == 2 else "🥉" if rank == 3 else f"#{rank}"
+    when  = f"{date_str} {time_str}".strip() or datetime.now().strftime("%d/%m/%Y")
+    rows = [
+        (f"1 {hname}", pred["home"]), ("X Pareggio", pred["draw"]),
+        (f"2 {aname}",  pred["away"]),  ("Over 2.5",   pred["over_25"]),
+        ("BTTS Sì",     pred["btts_y"]),
+    ]
+    trs = "\n".join(
+        f"<tr><td style='padding:8px 12px'>{l}</td>"
+        f"<td style='text-align:center;font-weight:bold'>{fmt(v)}</td>"
+        f"<td style='text-align:center;color:#888'>{odd(v)}</td></tr>"
+        for l, v in rows
+    )
+    html = f"""<html><body style="font-family:monospace;background:#050911;color:#fff;padding:24px">
+<h2 style="color:#22d3ee">⚽ QUANTUM FOOTBALL AI ⚛️</h2>
+<p style="color:#f59e0b">{medal} Top {rank} per confidenza</p>
+<p style="color:#888">🏆 {comp} · 📅 {when}</p>
+<h3><span style="color:#22d3ee">{hname}</span> <span style="color:#f59e0b">vs</span> <span style="color:#f472b6">{aname}</span></h3>
+<p>xG: <b style="color:#22d3ee">{pred['xg_home']}</b> — <b style="color:#f472b6">{pred['xg_away']}</b>
+&nbsp;·&nbsp; Conf: <b style="color:#34d399">{fmt(pred['confidence'])}</b></p>
+<table style="width:100%;border-collapse:collapse;background:#0d1526">
+<tr><th style="padding:10px;color:#22d3ee;text-align:left">Mercato</th>
+<th style="padding:10px;color:#22d3ee">Prob.</th>
+<th style="padding:10px;color:#22d3ee">Quota</th></tr>
+{trs}
+</table>
+<p style="color:#555;font-size:11px;margin-top:20px">⚛️ Generato: {datetime.now().strftime('%d/%m/%Y %H:%M')}</p>
+</body></html>"""
+    msg = MIMEMultipart("alternative")
+    msg["Subject"] = f"{medal} {hname} vs {aname} | {comp} | {when} | Quantum AI"
+    msg["From"]    = SMTP_USER
+    msg["To"]      = SMTP_TO
+    msg.attach(MIMEText(html, "html"))
+    try:
+        with smtplib.SMTP(SMTP_HOST, SMTP_PORT) as s:
+            s.starttls()
+            s.login(SMTP_USER, SMTP_PASS)
+            s.sendmail(SMTP_USER, SMTP_TO, msg.as_string())
+        print(f"   ✅ Email → {hname} vs {aname}")
+    except Exception as e:
+        print(f"   ❌ Email error: {e}")
+
+
+# ═══════════════════════════════════════
+#  HISTORY DATABASE
+# ═══════════════════════════════════════
+HISTORY_FILE = "history.json"
+
+def load_history():
+    try:
+        with open(HISTORY_FILE) as f:
+            return json.load(f)
+    except (FileNotFoundError, json.JSONDecodeError):
+        return {"predictions": [], "last_updated": ""}
+
+def save_history(h):
+    with open(HISTORY_FILE, "w") as f:
+        json.dump(h, f, indent=2, default=str)
+
+def record_predictions(all_preds, history):
+    """Salva le nuove previsioni nel database storico."""
+    existing_ids = {p["fixture_id"] for p in history["predictions"]}
+    added = 0
+    for p in all_preds:
+        fid = str(p["fixture_id"])
+        if fid not in existing_ids:
+            pred = p["prediction"]
+            history["predictions"].append({
+                "fixture_id":  fid,
+                "home":        p["home"],
+                "away":        p["away"],
+                "league":      p["league"],
+                "date":        p.get("date", ""),
+                "time":        p.get("time", ""),
+                "predicted_at":p["generated_at"],
+                # previsioni
+                "pred_home":   round(pred.get("home",   0.33), 4),
+                "pred_draw":   round(pred.get("draw",   0.33), 4),
+                "pred_away":   round(pred.get("away",   0.33), 4),
+                "pred_over25": round(pred.get("over_25",0.50), 4),
+                "pred_btts":   round(pred.get("btts_y", 0.50), 4),
+                "pred_best":   pred.get("best_out", "1"),
+                "pred_conf":   round(pred.get("confidence", 0.50), 4),
+                # risultato reale — da compilare dopo
+                "result":      None,   # "1", "X", "2"
+                "goals_home":  None,
+                "goals_away":  None,
+                "correct_1x2": None,   # True/False
+                "correct_over":None,
+                "correct_btts":None,
+                "verified_at": None,
+            })
+            added += 1
+    history["last_updated"] = datetime.now().isoformat()
+    return added
+
+def verify_results(history, fetcher, competitions):
+    """Controlla i risultati reali delle partite previste non ancora verificate."""
+    pending = [p for p in history["predictions"]
+               if p["result"] is None and p.get("date")]
+    if not pending:
+        return 0
+
+    # Raggruppa per campionato
+    by_league = {}
+    for p in pending:
+        league = p["league"]
+        if league not in by_league:
+            by_league[league] = []
+        by_league[league].append(p)
+
+    verified = 0
+    comp_map = {v: k for k, v in competitions.items()}
+
+    for league_name, preds in by_league.items():
+        comp_code = competitions.get(league_name)
+        if not comp_code:
+            continue
+        try:
+            results = fetcher.get_past_results(comp_code, limit=20)
+            result_map = {}
+            for r in results:
+                fid  = str(r["id"])
+                sc   = r.get("score", {}).get("fullTime", {})
+                gh   = sc.get("home")
+                ga   = sc.get("away")
+                if gh is not None and ga is not None:
+                    result_map[fid] = (gh, ga)
+
+            for p in preds:
+                fid = str(p["fixture_id"])
+                if fid in result_map:
+                    gh, ga = result_map[fid]
+                    outcome = "1" if gh > ga else ("2" if ga > gh else "X")
+                    actual_over = (gh + ga) > 2
+                    actual_btts = gh > 0 and ga > 0
+
+                    p["result"]      = outcome
+                    p["goals_home"]  = gh
+                    p["goals_away"]  = ga
+                    p["correct_1x2"] = (p["pred_best"] == outcome)
+                    p["correct_over"]= (p["pred_over25"] > 0.5) == actual_over
+                    p["correct_btts"]= (p["pred_btts"]  > 0.5) == actual_btts
+                    p["verified_at"] = datetime.now().isoformat()
+                    verified += 1
+                    status = "✅" if p["correct_1x2"] else "❌"
+                    print(f"   {status} {p['home']} vs {p['away']}: "
+                          f"previsto {p['pred_best']}, reale {outcome} ({gh}-{ga})")
+        except Exception as e:
+            print(f"   ⚠️  verify {league_name}: {e}")
+
+    return verified
+
+def calc_stats(predictions, days=7):
+    """Calcola statistiche sulle previsioni verificate degli ultimi N giorni."""
+    cutoff = datetime.now() - timedelta(days=days)
+    recent = [p for p in predictions
+              if p.get("verified_at") and
+              datetime.fromisoformat(p["verified_at"]) >= cutoff]
+
+    if not recent:
+        return None
+
+    total   = len(recent)
+    c1x2    = sum(1 for p in recent if p.get("correct_1x2"))
+    cover   = sum(1 for p in recent if p.get("correct_over"))
+    cbtts   = sum(1 for p in recent if p.get("correct_btts"))
+
+    # Per campionato
+    by_league = {}
+    for p in recent:
+        lg = p["league"]
+        if lg not in by_league:
+            by_league[lg] = {"total": 0, "correct": 0}
+        by_league[lg]["total"]  += 1
+        by_league[lg]["correct"] += int(bool(p.get("correct_1x2")))
+
+    # Top confidence accuracy
+    high_conf = [p for p in recent if p.get("pred_conf", 0) > 0.6]
+    hc_acc = sum(1 for p in high_conf if p.get("correct_1x2")) / max(1, len(high_conf))
+
+    return {
+        "total":      total,
+        "acc_1x2":    c1x2 / total,
+        "acc_over":   cover / total,
+        "acc_btts":   cbtts / total,
+        "by_league":  by_league,
+        "high_conf":  {"total": len(high_conf), "acc": hc_acc},
+    }
+
+def send_weekly_report(history):
+    """Invia report settimanale ogni domenica."""
+    today = datetime.now().weekday()  # 6 = domenica
+    if today != 6:
+        return
+
+    stats = calc_stats(history["predictions"], days=7)
+    if not stats:
+        print("   ℹ️  Nessun dato verificato per il report settimanale")
+        return
+
+    fmt = lambda v: f"{v*100:.1f}%"
+    total_stored = len(history["predictions"])
+    total_verified = sum(1 for p in history["predictions"] if p.get("result"))
+
+    # Telegram
+    if TELEGRAM_TOKEN and TELEGRAM_CHAT:
+        lines = [
+            "📊 *REPORT SETTIMANALE — QUANTUM FOOTBALL AI*",
+            f"━━━━━━━━━━━━━━━━━",
+            f"📅 Settimana al {datetime.now().strftime('%d/%m/%Y')}",
+            f"",
+            f"🎯 *Accuratezza 1X2:* {fmt(stats['acc_1x2'])} ({stats['total']} partite)",
+            f"⚽ *Over 2.5:* {fmt(stats['acc_over'])}",
+            f"🔁 *BTTS:* {fmt(stats['acc_btts'])}",
+            f"🔥 *Alta conf (>60%):* {fmt(stats['high_conf']['acc'])} su {stats['high_conf']['total']} partite",
+            f"",
+            f"📈 *Per campionato:*",
+        ]
+        for lg, s in sorted(stats["by_league"].items(),
+                            key=lambda x: x[1]["correct"]/max(1,x[1]["total"]), reverse=True):
+            acc = s["correct"] / max(1, s["total"])
+            lines.append(f"  {lg}: {fmt(acc)} ({s['correct']}/{s['total']})")
+        lines += [
+            f"",
+            f"💾 Database: {total_verified}/{total_stored} partite verificate",
+        ]
+        try:
+            requests.post(
+                f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage",
+                json={"chat_id": TELEGRAM_CHAT, "text": "\n".join(lines),
+                      "parse_mode": "Markdown", "disable_web_page_preview": True},
+                timeout=10
+            )
+            print("   ✅ Report settimanale Telegram inviato")
+        except Exception as e:
+            print(f"   ❌ Report Telegram error: {e}")
+
+    # Email
+    if all([SMTP_USER, SMTP_PASS, SMTP_TO]):
+        league_rows = "".join(
+            f"<tr><td style='padding:6px 12px'>{lg}</td>"
+            f"<td style='text-align:center'>{fmt(s['correct']/max(1,s['total']))}</td>"
+            f"<td style='text-align:center;color:#888'>{s['correct']}/{s['total']}</td></tr>"
+            for lg, s in sorted(stats["by_league"].items(),
+                                key=lambda x: x[1]["correct"]/max(1,x[1]["total"]), reverse=True)
+        )
+        html = f"""<html><body style="font-family:monospace;background:#050911;color:#fff;padding:24px">
+<h2 style="color:#22d3ee">📊 Report Settimanale — Quantum Football AI</h2>
+<p style="color:#888">Settimana al {datetime.now().strftime('%d/%m/%Y')} · {stats['total']} partite analizzate</p>
+<table style="width:100%;border-collapse:collapse;background:#0d1526;margin-bottom:20px">
+<tr><th style="padding:10px;color:#22d3ee;text-align:left">Metrica</th><th style="padding:10px;color:#22d3ee">Accuratezza</th></tr>
+<tr><td style="padding:8px 12px">🎯 1X2</td><td style="text-align:center;font-weight:bold;color:#34d399">{fmt(stats['acc_1x2'])}</td></tr>
+<tr><td style="padding:8px 12px">⚽ Over 2.5</td><td style="text-align:center;font-weight:bold">{fmt(stats['acc_over'])}</td></tr>
+<tr><td style="padding:8px 12px">🔁 BTTS</td><td style="text-align:center;font-weight:bold">{fmt(stats['acc_btts'])}</td></tr>
+<tr><td style="padding:8px 12px">🔥 Alta confidenza (&gt;60%)</td><td style="text-align:center;font-weight:bold;color:#f59e0b">{fmt(stats['high_conf']['acc'])} ({stats['high_conf']['total']} partite)</td></tr>
+</table>
+<h3 style="color:#a78bfa">Per campionato</h3>
+<table style="width:100%;border-collapse:collapse;background:#0d1526">
+<tr><th style="padding:10px;color:#22d3ee;text-align:left">Campionato</th><th style="padding:10px;color:#22d3ee">Acc.</th><th style="padding:10px;color:#22d3ee">Partite</th></tr>
+{league_rows}
+</table>
+<p style="color:#555;font-size:11px;margin-top:20px">💾 Database: {total_verified}/{total_stored} partite verificate · ⚛️ Quantum Football AI</p>
+</body></html>"""
+        msg = MIMEMultipart("alternative")
+        msg["Subject"] = f"📊 Report Settimanale Quantum Football AI — {datetime.now().strftime('%d/%m/%Y')}"
+        msg["From"]    = SMTP_USER
+        msg["To"]      = SMTP_TO
+        msg.attach(MIMEText(html, "html"))
+        try:
+            with smtplib.SMTP(SMTP_HOST, SMTP_PORT) as s:
+                s.starttls()
+                s.login(SMTP_USER, SMTP_PASS)
+                s.sendmail(SMTP_USER, SMTP_TO, msg.as_string())
+            print("   ✅ Report settimanale Email inviato")
+        except Exception as e:
+            print(f"   ❌ Report Email error: {e}")
 
 # ═══════════════════════════════════════
 #  MAIN
@@ -343,7 +631,7 @@ def main():
                     "generated_at": datetime.now().isoformat()
                 })
 
-                send_telegram(pred, hname, aname, league_name)
+                # alert inviato dopo ranking (vedi sotto)
 
             except Exception as e:
                 print(f"   ❌ Errore: {e}")
@@ -377,6 +665,40 @@ def main():
     with open("predictions_output.json", "w") as f:
         json.dump(all_preds, f, indent=2, default=str)
     print(f"\n✅ {len(all_preds)} previsioni → predictions_output.json")
+
+    # ── TOP 10 ALERT ────────────────────────────────────────
+    top10 = sorted(all_preds, key=lambda x: x["prediction"].get("confidence", 0), reverse=True)[:10]
+    print(f"\n📢 Invio alert TOP {len(top10)} per confidenza...")
+    # Invia prima messaggio riepilogativo
+    if TELEGRAM_TOKEN and TELEGRAM_CHAT:
+        fmt = lambda v: f"{v*100:.1f}%"
+        lines = ["⚽ *QUANTUM FOOTBALL AI — TOP 10* ⚛️", "━━━━━━━━━━━━━━━━━"]
+        for i, p in enumerate(top10, 1):
+            pred = p["prediction"]
+            medal = "🥇" if i==1 else "🥈" if i==2 else "🥉" if i==3 else f"#{i}"
+            when = f"{p.get('date','')} {p.get('time','')}".strip()
+            bo = pred.get("best_out","1")
+            bv = pred.get("best_val",0)
+            lines.append(f"{medal} {p['home']} vs {p['away']}")
+            lines.append(f"   📅{when} · {p['league']}")
+            lines.append(f"   Esito:{bo} {fmt(bv)} · Conf:{fmt(pred.get('confidence',0))}")
+        try:
+            requests.post(
+                f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage",
+                json={"chat_id": TELEGRAM_CHAT, "text": "\n".join(lines),
+                      "parse_mode": "Markdown", "disable_web_page_preview": True},
+                timeout=10
+            )
+            print("   ✅ Riepilogo Top 10 inviato")
+        except Exception as e:
+            print(f"   ❌ Riepilogo error: {e}")
+    # Invia dettaglio per ognuna
+    for i, p in enumerate(top10, 1):
+        pred = p["prediction"]
+        send_telegram(pred, p["home"], p["away"], p["league"],
+                      p.get("date",""), p.get("time",""), rank=i)
+        send_email(pred, p["home"], p["away"], p["league"],
+                   p.get("date",""), p.get("time",""), rank=i)
 
     # ── SALVA fixtures_today.json (per la dashboard) ────────
     fixtures_dashboard = []
@@ -417,6 +739,37 @@ def main():
         }, f, indent=2, default=str)
 
     print(f"✅ {len(fixtures_dashboard)} fixture → fixtures_today.json")
+
+    # ── HISTORY DATABASE ────────────────────────────────────
+    print("\n📚 Aggiornamento database storico...")
+    history = load_history()
+
+    # 1. Verifica risultati partite precedenti
+    print("   🔍 Verifica risultati partite precedenti...")
+    verified = verify_results(history, fetcher, COMPETITIONS)
+    print(f"   ✅ {verified} risultati verificati")
+
+    # 2. Registra nuove previsioni
+    added = record_predictions(all_preds, history)
+    print(f"   ✅ {added} nuove previsioni registrate")
+
+    # 3. Salva database
+    save_history(history)
+    total_db = len(history["predictions"])
+    total_ver = sum(1 for p in history["predictions"] if p.get("result"))
+    print(f"   💾 Database: {total_ver} verificate / {total_db} totali")
+
+    # 4. Stats rapide
+    stats = calc_stats(history["predictions"], days=7)
+    if stats and stats["total"] > 0:
+        print(f"   📊 Accuracy 7gg: 1X2={stats['acc_1x2']*100:.1f}% "
+              f"Over={stats['acc_over']*100:.1f}% BTTS={stats['acc_btts']*100:.1f}%")
+
+    # 5. Report settimanale (solo domenica)
+    if datetime.now().weekday() == 6:
+        print("   📬 Domenica — invio report settimanale...")
+        send_weekly_report(history)
+
     print("✅ Pipeline completata!")
 
 
