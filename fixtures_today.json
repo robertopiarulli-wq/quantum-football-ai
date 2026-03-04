@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-03-04T00:00:53.719739",
+  "generated_at": "2026-03-04T08:04:19.954969",
   "date": "04/03/2026",
-  "total": 18,
+  "total": 24,
   "fixtures": [
     {
       "home": "SSC Napoli",
@@ -26,6 +26,56 @@
         "conf": 0.2234,
         "best": "1",
         "bestP": 0.6515
+      }
+    },
+    {
+      "home": "Cagliari Calcio",
+      "away": "Como 1907",
+      "league": "Serie A",
+      "fixture_id": 537088,
+      "date": "07/03/2026",
+      "time": "15:00",
+      "pred": {
+        "home": 0.4127,
+        "draw": 0.275,
+        "away": 0.3123,
+        "dc1x": 0.6877,
+        "dcx2": 0.5873,
+        "dc12": 0.725,
+        "over25": 0.4562,
+        "under25": 0.5438,
+        "bttsY": 0.5091,
+        "bttsN": 0.4909,
+        "xg_h": "1.25",
+        "xg_a": "1.25",
+        "conf": 0.0135,
+        "best": "1",
+        "bestP": 0.4127
+      }
+    },
+    {
+      "home": "Atalanta BC",
+      "away": "Udinese Calcio",
+      "league": "Serie A",
+      "fixture_id": 537087,
+      "date": "07/03/2026",
+      "time": "18:00",
+      "pred": {
+        "home": 0.6457,
+        "draw": 0.252,
+        "away": 0.1023,
+        "dc1x": 0.8977,
+        "dcx2": 0.3543,
+        "dc12": 0.748,
+        "over25": 0.4816,
+        "under25": 0.5184,
+        "bttsY": 0.5231,
+        "bttsN": 0.4769,
+        "xg_h": "1.45",
+        "xg_a": "1.15",
+        "conf": 0.2145,
+        "best": "1",
+        "bestP": 0.6457
       }
     },
     {
@@ -154,6 +204,31 @@
       }
     },
     {
+      "home": "CA Osasuna",
+      "away": "RCD Mallorca",
+      "league": "La Liga",
+      "fixture_id": 544479,
+      "date": "07/03/2026",
+      "time": "14:00",
+      "pred": {
+        "home": 0.4455,
+        "draw": 0.28,
+        "away": 0.2745,
+        "dc1x": 0.7255,
+        "dcx2": 0.5545,
+        "dc12": 0.72,
+        "over25": 0.4562,
+        "under25": 0.5438,
+        "bttsY": 0.5091,
+        "bttsN": 0.4909,
+        "xg_h": "1.25",
+        "xg_a": "1.25",
+        "conf": 0.0247,
+        "best": "1",
+        "bestP": 0.4455
+      }
+    },
+    {
       "home": "Hamburger SV",
       "away": "Bayer 04 Leverkusen",
       "league": "Bundesliga",
@@ -204,6 +279,31 @@
       }
     },
     {
+      "home": "SC Freiburg",
+      "away": "Bayer 04 Leverkusen",
+      "league": "Bundesliga",
+      "fixture_id": 540622,
+      "date": "07/03/2026",
+      "time": "15:30",
+      "pred": {
+        "home": 0.1849,
+        "draw": 0.244,
+        "away": 0.5711,
+        "dc1x": 0.4289,
+        "dcx2": 0.8151,
+        "dc12": 0.756,
+        "over25": 0.5185,
+        "under25": 0.4815,
+        "bttsY": 0.5313,
+        "bttsN": 0.4687,
+        "xg_h": "1.05",
+        "xg_a": "1.7",
+        "conf": 0.1115,
+        "best": "2",
+        "bestP": 0.5711
+      }
+    },
+    {
       "home": "Paris Saint-Germain FC",
       "away": "AS Monaco FC",
       "league": "Ligue 1",
@@ -226,6 +326,56 @@
         "conf": 0.1763,
         "best": "1",
         "bestP": 0.619
+      }
+    },
+    {
+      "home": "FC Nantes",
+      "away": "Angers SCO",
+      "league": "Ligue 1",
+      "fixture_id": 542623,
+      "date": "07/03/2026",
+      "time": "17:00",
+      "pred": {
+        "home": 0.4455,
+        "draw": 0.28,
+        "away": 0.2745,
+        "dc1x": 0.7255,
+        "dcx2": 0.5545,
+        "dc12": 0.72,
+        "over25": 0.4562,
+        "under25": 0.5438,
+        "bttsY": 0.5091,
+        "bttsN": 0.4909,
+        "xg_h": "1.25",
+        "xg_a": "1.25",
+        "conf": 0.0247,
+        "best": "1",
+        "bestP": 0.4455
+      }
+    },
+    {
+      "home": "AJ Auxerre",
+      "away": "RC Strasbourg Alsace",
+      "league": "Ligue 1",
+      "fixture_id": 542622,
+      "date": "07/03/2026",
+      "time": "19:00",
+      "pred": {
+        "home": 0.4455,
+        "draw": 0.28,
+        "away": 0.2745,
+        "dc1x": 0.7255,
+        "dcx2": 0.5545,
+        "dc12": 0.72,
+        "over25": 0.4562,
+        "under25": 0.5438,
+        "bttsY": 0.5091,
+        "bttsN": 0.4909,
+        "xg_h": "1.25",
+        "xg_a": "1.25",
+        "conf": 0.0247,
+        "best": "1",
+        "bestP": 0.4455
       }
     },
     {
