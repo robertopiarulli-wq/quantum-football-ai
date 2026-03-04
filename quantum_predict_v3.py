@@ -692,13 +692,85 @@ def main():
             print("   ✅ Riepilogo Top 10 inviato")
         except Exception as e:
             print(f"   ❌ Riepilogo error: {e}")
-    # Invia dettaglio per ognuna
+    # Invia dettaglio Telegram per ognuna
     for i, p in enumerate(top10, 1):
         pred = p["prediction"]
         send_telegram(pred, p["home"], p["away"], p["league"],
                       p.get("date",""), p.get("time",""), rank=i)
-        send_email(pred, p["home"], p["away"], p["league"],
-                   p.get("date",""), p.get("time",""), rank=i)
+
+    # Invia UN'UNICA email riepilogativa con tutte le Top 10
+    if all([SMTP_USER, SMTP_PASS, SMTP_TO]):
+        fmt = lambda v: f"{v*100:.1f}%"
+        odd = lambda v: f"@{1/max(0.001,v):.2f}"
+        rows = ""
+        for i, p in enumerate(top10, 1):
+            pred = p["prediction"]
+            medal = "🥇" if i==1 else "🥈" if i==2 else "🥉" if i==3 else f"#{i}"
+            when  = f"{p.get('date','')} {p.get('time','')}".strip()
+            bo    = pred.get("best_out","1")
+            bname = {"1": p["home"], "X": "Pareggio", "2": p["away"]}.get(bo, bo)
+            conf  = pred.get("confidence", 0)
+            conf_color = "#34d399" if conf > 0.70 else "#f59e0b" if conf > 0.55 else "#f87171"
+            rows += f"""
+            <tr style="border-bottom:1px solid #1a2035">
+              <td style="padding:10px 12px;color:#f59e0b;font-size:16px">{medal}</td>
+              <td style="padding:10px 12px">
+                <span style="color:#22d3ee;font-weight:bold">{p['home']}</span>
+                <span style="color:#555;margin:0 6px">vs</span>
+                <span style="color:#f472b6;font-weight:bold">{p['away']}</span><br>
+                <span style="color:#555;font-size:11px">🏆 {p['league']} · 📅 {when}</span>
+              </td>
+              <td style="padding:10px 8px;text-align:center">
+                <span style="color:#22d3ee">{fmt(pred.get('home',0))}</span><br>
+                <span style="color:#555;font-size:10px">{odd(pred.get('home',0))}</span>
+              </td>
+              <td style="padding:10px 8px;text-align:center">
+                <span style="color:#f59e0b">{fmt(pred.get('draw',0))}</span><br>
+                <span style="color:#555;font-size:10px">{odd(pred.get('draw',0))}</span>
+              </td>
+              <td style="padding:10px 8px;text-align:center">
+                <span style="color:#f472b6">{fmt(pred.get('away',0))}</span><br>
+                <span style="color:#555;font-size:10px">{odd(pred.get('away',0))}</span>
+              </td>
+              <td style="padding:10px 8px;text-align:center;color:#f97316">{fmt(pred.get('over_25',0))}</td>
+              <td style="padding:10px 8px;text-align:center;color:#34d399">{fmt(pred.get('btts_y',0))}</td>
+              <td style="padding:10px 8px;text-align:center;font-weight:bold;color:{conf_color}">{fmt(conf)}</td>
+            </tr>"""
+
+        html = f"""<html><body style="font-family:monospace;background:#050911;color:#fff;padding:24px;margin:0">
+<h2 style="color:#22d3ee;letter-spacing:3px">⚛️⚽ QUANTUM FOOTBALL AI</h2>
+<p style="color:#888">📅 {datetime.now().strftime('%d/%m/%Y %H:%M')} · Top 10 previsioni per confidenza</p>
+<table style="width:100%;border-collapse:collapse;background:#0d1526;border-radius:12px;overflow:hidden">
+  <thead>
+    <tr style="background:#0a1a30">
+      <th style="padding:10px 12px;color:#22d3ee;text-align:left">#</th>
+      <th style="padding:10px 12px;color:#22d3ee;text-align:left">Partita</th>
+      <th style="padding:10px 8px;color:#22d3ee;text-align:center">1</th>
+      <th style="padding:10px 8px;color:#22d3ee;text-align:center">X</th>
+      <th style="padding:10px 8px;color:#22d3ee;text-align:center">2</th>
+      <th style="padding:10px 8px;color:#f97316;text-align:center">O2.5</th>
+      <th style="padding:10px 8px;color:#34d399;text-align:center">BTTS</th>
+      <th style="padding:10px 8px;color:#a78bfa;text-align:center">Conf</th>
+    </tr>
+  </thead>
+  <tbody>{rows}</tbody>
+</table>
+<p style="color:#555;font-size:11px;margin-top:20px">⚛️ IBM Quantum · Auto-Adaptive · GitHub Actions</p>
+</body></html>"""
+
+        msg = MIMEMultipart("alternative")
+        msg["Subject"] = f"⚽ Top 10 Previsioni Quantum — {datetime.now().strftime('%d/%m/%Y')}"
+        msg["From"]    = SMTP_USER
+        msg["To"]      = SMTP_TO
+        msg.attach(MIMEText(html, "html"))
+        try:
+            with smtplib.SMTP(SMTP_HOST, SMTP_PORT) as s:
+                s.starttls()
+                s.login(SMTP_USER, SMTP_PASS)
+                s.sendmail(SMTP_USER, SMTP_TO, msg.as_string())
+            print("   ✅ Email riepilogativa Top 10 inviata")
+        except Exception as e:
+            print(f"   ❌ Email error: {e}")
 
     # ── SALVA fixtures_today.json (per la dashboard) ────────
     fixtures_dashboard = []
