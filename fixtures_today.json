@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-03-03T23:17:26.717178",
-  "date": "03/03/2026",
-  "total": 12,
+  "generated_at": "2026-03-04T00:00:53.719739",
+  "date": "04/03/2026",
+  "total": 18,
   "fixtures": [
     {
       "home": "SSC Napoli",
@@ -254,12 +254,112 @@
       }
     },
     {
+      "home": "FC Groningen",
+      "away": "AFC Ajax",
+      "league": "Eredivisie",
+      "fixture_id": 537667,
+      "date": "07/03/2026",
+      "time": "16:30",
+      "pred": {
+        "home": 0.2616,
+        "draw": 0.254,
+        "away": 0.4844,
+        "dc1x": 0.5156,
+        "dcx2": 0.7384,
+        "dc12": 0.746,
+        "over25": 0.4816,
+        "under25": 0.5184,
+        "bttsY": 0.5231,
+        "bttsN": 0.4769,
+        "xg_h": "1.15",
+        "xg_a": "1.45",
+        "conf": 0.0443,
+        "best": "2",
+        "bestP": 0.4844
+      }
+    },
+    {
+      "home": "PSV",
+      "away": "AZ",
+      "league": "Eredivisie",
+      "fixture_id": 537673,
+      "date": "07/03/2026",
+      "time": "20:00",
+      "pred": {
+        "home": 0.4455,
+        "draw": 0.28,
+        "away": 0.2745,
+        "dc1x": 0.7255,
+        "dcx2": 0.5545,
+        "dc12": 0.72,
+        "over25": 0.4562,
+        "under25": 0.5438,
+        "bttsY": 0.5091,
+        "bttsN": 0.4909,
+        "xg_h": "1.25",
+        "xg_a": "1.25",
+        "conf": 0.0247,
+        "best": "1",
+        "bestP": 0.4455
+      }
+    },
+    {
       "home": "FC Famalic\u00e3o",
       "away": "FC Arouca",
       "league": "Primeira Liga",
       "fixture_id": 545918,
       "date": "06/03/2026",
       "time": "21:15",
+      "pred": {
+        "home": 0.4455,
+        "draw": 0.28,
+        "away": 0.2745,
+        "dc1x": 0.7255,
+        "dcx2": 0.5545,
+        "dc12": 0.72,
+        "over25": 0.4562,
+        "under25": 0.5438,
+        "bttsY": 0.5091,
+        "bttsN": 0.4909,
+        "xg_h": "1.25",
+        "xg_a": "1.25",
+        "conf": 0.0247,
+        "best": "1",
+        "bestP": 0.4455
+      }
+    },
+    {
+      "home": "FC Alverca",
+      "away": "AVS",
+      "league": "Primeira Liga",
+      "fixture_id": 545916,
+      "date": "07/03/2026",
+      "time": "16:30",
+      "pred": {
+        "home": 0.4455,
+        "draw": 0.28,
+        "away": 0.2745,
+        "dc1x": 0.7255,
+        "dcx2": 0.5545,
+        "dc12": 0.72,
+        "over25": 0.4562,
+        "under25": 0.5438,
+        "bttsY": 0.5091,
+        "bttsN": 0.4909,
+        "xg_h": "1.25",
+        "xg_a": "1.25",
+        "conf": 0.0247,
+        "best": "1",
+        "bestP": 0.4455
+      }
+    },
+    {
+      "home": "Moreirense FC",
+      "away": "CD Nacional",
+      "league": "Primeira Liga",
+      "fixture_id": 545921,
+      "date": "07/03/2026",
+      "time": "16:30",
       "pred": {
         "home": 0.4455,
         "draw": 0.28,
@@ -301,6 +401,56 @@
         "conf": 0.0294,
         "best": "2",
         "bestP": 0.4545
+      }
+    },
+    {
+      "home": "Blackburn Rovers FC",
+      "away": "Portsmouth FC",
+      "league": "Championship",
+      "fixture_id": 541132,
+      "date": "07/03/2026",
+      "time": "13:30",
+      "pred": {
+        "home": 0.4455,
+        "draw": 0.28,
+        "away": 0.2745,
+        "dc1x": 0.7255,
+        "dcx2": 0.5545,
+        "dc12": 0.72,
+        "over25": 0.4562,
+        "under25": 0.5438,
+        "bttsY": 0.5091,
+        "bttsN": 0.4909,
+        "xg_h": "1.25",
+        "xg_a": "1.25",
+        "conf": 0.0247,
+        "best": "1",
+        "bestP": 0.4455
+      }
+    },
+    {
+      "home": "Hull City AFC",
+      "away": "Millwall FC",
+      "league": "Championship",
+      "fixture_id": 541136,
+      "date": "07/03/2026",
+      "time": "13:30",
+      "pred": {
+        "home": 0.722,
+        "draw": 0.2294,
+        "away": 0.0486,
+        "dc1x": 0.9514,
+        "dcx2": 0.278,
+        "dc12": 0.7706,
+        "over25": 0.5185,
+        "under25": 0.4815,
+        "bttsY": 0.5313,
+        "bttsN": 0.4687,
+        "xg_h": "1.7",
+        "xg_a": "1.05",
+        "conf": 0.3447,
+        "best": "1",
+        "bestP": 0.722
       }
     }
   ]
