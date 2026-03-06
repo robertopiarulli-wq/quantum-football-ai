@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-03-05T08:06:33.336347",
-  "date": "05/03/2026",
-  "total": 22,
+  "generated_at": "2026-03-06T08:03:32.769463",
+  "date": "06/03/2026",
+  "total": 21,
   "fixtures": [
     {
       "home": "SSC Napoli",
@@ -76,31 +76,6 @@
         "conf": 0.2145,
         "best": "1",
         "bestP": 0.6457
-      }
-    },
-    {
-      "home": "Tottenham Hotspur FC",
-      "away": "Crystal Palace FC",
-      "league": "Premier League",
-      "fixture_id": 538073,
-      "date": "05/03/2026",
-      "time": "21:00",
-      "pred": {
-        "home": 0.6221,
-        "draw": 0.256,
-        "away": 0.1219,
-        "dc1x": 0.8781,
-        "dcx2": 0.3779,
-        "dc12": 0.744,
-        "over25": 0.4816,
-        "under25": 0.5184,
-        "bttsY": 0.5231,
-        "bttsN": 0.4769,
-        "xg_h": "1.45",
-        "xg_a": "1.15",
-        "conf": 0.1802,
-        "best": "1",
-        "bestP": 0.6221
       }
     },
     {

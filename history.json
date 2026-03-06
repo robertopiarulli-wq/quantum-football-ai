@@ -567,13 +567,13 @@
       "pred_btts": 0.5231,
       "pred_best": "1",
       "pred_conf": 0.1802,
-      "result": null,
-      "goals_home": null,
-      "goals_away": null,
-      "correct_1x2": null,
-      "correct_over": null,
-      "correct_btts": null,
-      "verified_at": null
+      "result": "2",
+      "goals_home": 1,
+      "goals_away": 3,
+      "correct_1x2": false,
+      "correct_over": false,
+      "correct_btts": true,
+      "verified_at": "2026-03-06T08:04:28.383417"
     },
     {
       "fixture_id": "544478",
@@ -622,5 +622,5 @@
       "verified_at": null
     }
   ],
-  "last_updated": "2026-03-05T08:07:28.608352"
+  "last_updated": "2026-03-06T08:04:28.383678"
 }
