@@ -600,7 +600,7 @@ def main():
             print(f"   ℹ️  Nessuna partita nei prossimi 3 giorni")
             continue
 
-        for match in matches[:3]:
+        for match in matches[:10]:
             try:
                 hname = match["homeTeam"]["name"]
                 aname = match["awayTeam"]["name"]
