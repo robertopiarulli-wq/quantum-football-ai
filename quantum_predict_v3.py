@@ -118,11 +118,11 @@ class FootballDataFetcher:
         if not self.available:
             return []
         today   = datetime.now().strftime("%Y-%m-%d")
-        in3days = (datetime.now() + timedelta(days=3)).strftime("%Y-%m-%d")
-        try:
-            data = self._get(f"competitions/{comp_code}/matches", {
-                "dateFrom": today, "dateTo": in3days, "status": "SCHEDULED"
-            })
+in7days = (datetime.now() + timedelta(days=7)).strftime("%Y-%m-%d")
+try:
+    data = self._get(f"competitions/{comp_code}/matches", {
+        "dateFrom": today, "dateTo": in7days, "status": "SCHEDULED"
+    })
             return data.get("matches", [])
         except Exception as e:
             print(f"   ⚠️  get_fixtures {comp_code}: {e}")
