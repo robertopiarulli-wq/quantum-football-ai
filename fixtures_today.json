@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-03-07T07:52:54.870863",
+  "generated_at": "2026-03-07T08:49:43.068098",
   "date": "07/03/2026",
-  "total": 24,
+  "total": 27,
   "fixtures": [
     {
       "home": "Cagliari Calcio",
@@ -76,6 +76,81 @@
         "conf": 0.3372,
         "best": "1",
         "bestP": 0.7159
+      }
+    },
+    {
+      "home": "Sunderland AFC",
+      "away": "Brighton & Hove Albion FC",
+      "league": "Premier League",
+      "fixture_id": 538075,
+      "date": "14/03/2026",
+      "time": "16:00",
+      "pred": {
+        "home": 0.354,
+        "draw": 0.268,
+        "away": 0.378,
+        "dc1x": 0.622,
+        "dcx2": 0.646,
+        "dc12": 0.732,
+        "over25": 0.4816,
+        "under25": 0.5184,
+        "bttsY": 0.5231,
+        "bttsN": 0.4769,
+        "xg_h": "1.15",
+        "xg_a": "1.45",
+        "conf": 0.0094,
+        "best": "2",
+        "bestP": 0.378
+      }
+    },
+    {
+      "home": "Burnley FC",
+      "away": "AFC Bournemouth",
+      "league": "Premier League",
+      "fixture_id": 538079,
+      "date": "14/03/2026",
+      "time": "16:00",
+      "pred": {
+        "home": 0.4604,
+        "draw": 0.278,
+        "away": 0.2616,
+        "dc1x": 0.7384,
+        "dcx2": 0.5396,
+        "dc12": 0.722,
+        "over25": 0.4562,
+        "under25": 0.5438,
+        "bttsY": 0.5091,
+        "bttsN": 0.4909,
+        "xg_h": "1.25",
+        "xg_a": "1.25",
+        "conf": 0.0317,
+        "best": "1",
+        "bestP": 0.4604
+      }
+    },
+    {
+      "home": "Arsenal FC",
+      "away": "Everton FC",
+      "league": "Premier League",
+      "fixture_id": 538077,
+      "date": "14/03/2026",
+      "time": "18:30",
+      "pred": {
+        "home": 0.7098,
+        "draw": 0.2405,
+        "away": 0.0497,
+        "dc1x": 0.9503,
+        "dcx2": 0.2902,
+        "dc12": 0.7595,
+        "over25": 0.5185,
+        "under25": 0.4815,
+        "bttsY": 0.5313,
+        "bttsN": 0.4687,
+        "xg_h": "1.7",
+        "xg_a": "1.05",
+        "conf": 0.3308,
+        "best": "1",
+        "bestP": 0.7098
       }
     },
     {
