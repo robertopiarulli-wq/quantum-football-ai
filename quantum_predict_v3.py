@@ -177,10 +177,22 @@ class FootballDataFetcher:
                     team_stats[team]["last_date"] = rdate
 
         def form_score(results_list, n=5):
+            """Trend ponderato: partite recenti pesano di più."""
             res = results_list[-n:]
             if not res:
                 return 0.50
-            return sum(1.0 if r=="W" else 0.5 if r=="D" else 0.0 for r in res) / len(res)
+            # Pesi esponenziali: ultima partita = peso massimo
+            weights = [1.5 ** i for i in range(len(res))]
+            scores  = [1.0 if r=="W" else 0.5 if r=="D" else 0.0 for r in res]
+            return sum(w * s for w, s in zip(weights, scores)) / sum(weights)
+
+        def trend_score(results_list):
+            """Trend delle ultime 3 vs ultime 10 — rileva crisi o rimonte."""
+            if len(results_list) < 3:
+                return 0.0
+            recent3 = form_score(results_list[-3:], n=3)
+            all10   = form_score(results_list[-10:], n=10)
+            return round(recent3 - all10, 3)  # positivo = in forma, negativo = in crisi
 
         def avg(lst):
             return round(sum(lst)/max(1,len(lst)), 2)
@@ -200,6 +212,9 @@ class FootballDataFetcher:
                 "form":       round(form_score(s["results"]), 3),
                 "home_form":  round(form_score(s["home_results"]), 3),
                 "away_form":  round(form_score(s["away_results"]), 3),
+                "trend":      trend_score(s["results"]),
+                "home_trend": trend_score(s["home_results"]),
+                "away_trend": trend_score(s["away_results"]),
                 "xg":         avg(s["gf"]),
                 "xga":        avg(s["gc"]),
                 "home_xg":    avg(s["home_gf"]),
@@ -304,7 +319,7 @@ def get_elo_dynamic(name, dynamic_elo):
 #  FEATURE ENGINEERING
 # ═══════════════════════════════════════
 def extract_features(hname, aname, form_map=None, dynamic_elo=None,
-                     h2h=None, standings=None):
+                     h2h=None, standings=None, comp_code=""):
     delo = dynamic_elo or {}
     he = get_elo_dynamic(hname, delo)
     ae = get_elo_dynamic(aname, delo)
@@ -353,6 +368,10 @@ def extract_features(hname, aname, form_map=None, dynamic_elo=None,
     ep = 1 / (1 + 10 ** ((ae - he - 60) / 400))
     ep = max(0.05, min(0.95, ep + fatigue_adj + h2h_adj + motivation_adj))
 
+    # Trend recente (crisi o rimonta)
+    h_trend = hform_data.get("home_trend", hform_data.get("trend", 0.0))
+    a_trend = aform_data.get("away_trend", aform_data.get("trend", 0.0))
+
     src_h = "API" if hform_data else "ELO"
     src_a = "API" if aform_data else "ELO"
     return {
@@ -367,6 +386,9 @@ def extract_features(hname, aname, form_map=None, dynamic_elo=None,
         "h_fatigue_days": h_fatigue,
         "a_fatigue_days": a_fatigue,
         "h2h_matches":    h2h.get("matches", 0) if h2h else 0,
+        "h_trend":        h_trend,
+        "a_trend":        a_trend,
+        "comp_code":      comp_code,
         "src_home":       src_h,
         "src_away":       src_a,
     }
@@ -374,16 +396,38 @@ def extract_features(hname, aname, form_map=None, dynamic_elo=None,
 # ═══════════════════════════════════════
 #  QUANTUM / CLASSICAL ENGINE
 # ═══════════════════════════════════════
+# Caratteristiche storiche per campionato
+LEAGUE_PROFILE = {
+    "SA":  {"draw_bias": +0.04, "home_bias": +0.02, "goals_factor": 0.95},  # Serie A: più pareggi
+    "PL":  {"draw_bias": -0.02, "home_bias": +0.00, "goals_factor": 1.10},  # Premier: più gol
+    "PD":  {"draw_bias": +0.02, "home_bias": +0.03, "goals_factor": 1.00},  # La Liga
+    "BL1": {"draw_bias": -0.03, "home_bias": +0.01, "goals_factor": 1.15},  # Bundesliga: più gol
+    "FL1": {"draw_bias": +0.01, "home_bias": +0.02, "goals_factor": 1.05},  # Ligue 1
+    "CL":  {"draw_bias": -0.02, "home_bias": -0.01, "goals_factor": 1.05},  # Champions
+    "SB":  {"draw_bias": +0.05, "home_bias": +0.03, "goals_factor": 0.90},  # Serie B
+    "DED": {"draw_bias": -0.01, "home_bias": +0.01, "goals_factor": 1.10},  # Eredivisie
+    "PPL": {"draw_bias": +0.02, "home_bias": +0.03, "goals_factor": 0.95},  # Primeira Liga
+    "ELC": {"draw_bias": +0.00, "home_bias": +0.01, "goals_factor": 1.00},  # Championship
+}
+
 def classical_predict(f):
     ep   = f["elo_win_prob"]
     fd   = f.get("form_diff", 0)
     xgd  = f.get("xg_diff", 0)
-    draw = max(0.12, 0.28 - abs(f.get("elo_diff", 0)) * 0.0002)
-    home = max(0.05, ep + fd * 0.1 + xgd * 0.03 - draw / 2)
+    # Trend: crisi o rimonta recente
+    h_trend = f.get("h_trend", 0.0)
+    a_trend = f.get("a_trend", 0.0)
+    trend_adj = (h_trend - a_trend) * 0.08
+
+    # Pesi campionato
+    lp = LEAGUE_PROFILE.get(f.get("comp_code", ""), {"draw_bias": 0, "home_bias": 0, "goals_factor": 1.0})
+
+    draw = max(0.10, 0.28 + lp["draw_bias"] - abs(f.get("elo_diff", 0)) * 0.0002)
+    home = max(0.05, ep + fd * 0.1 + xgd * 0.03 + lp["home_bias"] + trend_adj - draw / 2)
     away = max(0.05, 1 - home - draw)
     n    = home + draw + away
     return {"home": home/n, "draw": draw/n, "away": away/n,
-            "quantum_used": False}
+            "quantum_used": False, "goals_factor": lp["goals_factor"]}
 
 def quantum_predict(f):
     if not QISKIT_AVAILABLE:
@@ -415,25 +459,62 @@ def quantum_predict(f):
         print(f"   ⚠️  Quantum error: {e}")
         return classical_predict(f)
 
+# Calibrazione confidenza da history (aggiornata in main)
+_CALIBRATION = {}  # {bucket: actual_accuracy} es. {"0.6": 0.58}
+
+def calibrate_confidence(raw_conf):
+    """Aggiusta la confidenza in base all'accuratezza storica reale."""
+    if not _CALIBRATION:
+        return raw_conf
+    # Trova il bucket più vicino
+    buckets = sorted(_CALIBRATION.keys())
+    bucket = min(buckets, key=lambda b: abs(float(b) - raw_conf))
+    actual = _CALIBRATION[bucket]
+    # Blend: 70% calibrato, 30% raw
+    return round(0.7 * actual + 0.3 * raw_conf, 4)
+
+def build_calibration(history_predictions):
+    """Costruisce mappa confidenza → accuratezza reale da history.json."""
+    verified = [p for p in history_predictions if p.get("result") and p.get("pred_conf")]
+    if len(verified) < 20:
+        return {}
+    buckets = {}
+    for p in verified:
+        b = round(round(p["pred_conf"] / 0.1) * 0.1, 1)
+        key = str(b)
+        if key not in buckets:
+            buckets[key] = {"correct": 0, "total": 0}
+        buckets[key]["total"] += 1
+        if p.get("correct_1x2"):
+            buckets[key]["correct"] += 1
+    return {k: round(v["correct"] / max(1, v["total"]), 3)
+            for k, v in buckets.items() if v["total"] >= 5}
+
 def full_prediction(f):
     base = quantum_predict(f)
     h, d, a = base["home"], base["draw"], base["away"]
     lh = f["lambda_home"]
     la = f["lambda_away"]
+    # Applica goals_factor del campionato
+    gf = base.get("goals_factor", 1.0)
+    lh = lh * gf
+    la = la * gf
     pover = max(0.20, min(0.85,
         1 - sum(math.exp(-(lh+la)) * (lh+la)**k / math.factorial(k) for k in range(3))
     ))
     pbtts = max(0.15, min(0.82, (1 - math.exp(-lh)) * (1 - math.exp(-la))))
     ent   = -(h*math.log(max(0.001,h)) + d*math.log(max(0.001,d)) + a*math.log(max(0.001,a)))
-    conf  = 1 - ent / math.log(3)
-    bv    = max(h, d, a)
-    bo    = "1" if bv == h else ("2" if bv == a else "X")
+    raw_conf = 1 - ent / math.log(3)
+    conf = calibrate_confidence(raw_conf)
+    bv   = max(h, d, a)
+    bo   = "1" if bv == h else ("2" if bv == a else "X")
     return {**base,
             "dc_1x": h+d, "dc_x2": d+a, "dc_12": h+a,
             "over_25": pover, "under_25": 1-pover,
             "btts_y": pbtts, "btts_n": 1-pbtts,
             "xg_home": round(lh, 2), "xg_away": round(la, 2),
-            "confidence": conf, "best_out": bo, "best_val": bv}
+            "confidence": conf, "raw_confidence": round(raw_conf, 4),
+            "best_out": bo, "best_val": bv}
 
 # ═══════════════════════════════════════
 #  ADAPTIVE MODEL
@@ -804,6 +885,18 @@ def main():
     dynamic_elo = load_dynamic_elo()
     print(f"   📊 ELO dinamico: {len(dynamic_elo)} squadre in database")
 
+    # ── CALIBRAZIONE CONFIDENZA ──────────────────────────────
+    global _CALIBRATION
+    try:
+        _hist_temp = load_history()
+        _CALIBRATION = build_calibration(_hist_temp["predictions"])
+        if _CALIBRATION:
+            print(f"   🎯 Calibrazione confidenza: {len(_CALIBRATION)} bucket da history")
+        else:
+            print(f"   🎯 Calibrazione: non ancora disponibile (servono >20 partite verificate)")
+    except Exception as e:
+        print(f"   ⚠️  Calibrazione error: {e}")
+
     for league_name, comp_code in COMPETITIONS.items():
         print(f"\n📅 {league_name} ({comp_code})")
         matches = fetcher.get_fixtures(comp_code)
@@ -848,7 +941,7 @@ def main():
 
                 feat = extract_features(hname, aname, form_map=form_map,
                                        dynamic_elo=dynamic_elo, h2h=h2h,
-                                       standings=standings)
+                                       standings=standings, comp_code=comp_code)
                 pred = full_prediction(feat)
                 src_h = feat.get("src_home", "ELO")
                 src_a = feat.get("src_away", "ELO")
