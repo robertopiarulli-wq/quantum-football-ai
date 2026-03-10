@@ -128,6 +128,30 @@ class FootballDataFetcher:
             print(f"   ⚠️  get_fixtures {comp_code}: {e}")
             return []
 
+    def get_first_leg_scores(self, comp_code):
+        """Recupera i risultati delle partite di andata per le coppe (ultimi 30gg)."""
+        try:
+            past30 = (datetime.now() - timedelta(days=30)).strftime("%Y-%m-%d")
+            today  = datetime.now().strftime("%Y-%m-%d")
+            data   = self._get(f"competitions/{comp_code}/matches", {
+                "dateFrom": past30, "dateTo": today, "status": "FINISHED"
+            })
+            matches = data.get("matches", [])
+            # Mappa: (homeTeam, awayTeam) → score andata
+            # In un doppio confronto A vs B → B vs A è il ritorno
+            first_leg_map = {}
+            for m in matches:
+                ht = m["homeTeam"]["name"]
+                at = m["awayTeam"]["name"]
+                sc = m.get("score", {}).get("fullTime", {})
+                gh = sc.get("home")
+                ga = sc.get("away")
+                if gh is not None and ga is not None:
+                    first_leg_map[(ht, at)] = {"home_goals": gh, "away_goals": ga}
+            return first_leg_map
+        except Exception:
+            return {}
+
     def get_past_results(self, comp_code, limit=10):
         if not self.available:
             return []
@@ -319,7 +343,7 @@ def get_elo_dynamic(name, dynamic_elo):
 #  FEATURE ENGINEERING
 # ═══════════════════════════════════════
 def extract_features(hname, aname, form_map=None, dynamic_elo=None,
-                     h2h=None, standings=None, comp_code=""):
+                     h2h=None, standings=None, comp_code="", first_leg=None):
     delo = dynamic_elo or {}
     he = get_elo_dynamic(hname, delo)
     ae = get_elo_dynamic(aname, delo)
@@ -365,8 +389,26 @@ def extract_features(hname, aname, form_map=None, dynamic_elo=None,
         if hpos == 1: motivation_adj -= 0.02
         if apos == 1: motivation_adj += 0.02
 
+    # Andata/ritorno: aggiusta in base al risultato dell'andata
+    first_leg_adj = 0.0
+    first_leg_info = {}
+    if first_leg:
+        gh1 = first_leg.get("home_goals", 0)
+        ga1 = first_leg.get("away_goals", 0)
+        # La squadra che deve rimontare è più motivata ma rischia di più
+        goal_diff = gh1 - ga1  # positivo = casa in vantaggio dall'andata
+        if goal_diff >= 2:
+            first_leg_adj = -0.08  # casa molto avanti, ospite attacca
+        elif goal_diff == 1:
+            first_leg_adj = -0.04
+        elif goal_diff == -1:
+            first_leg_adj = +0.04  # casa deve rimontare
+        elif goal_diff <= -2:
+            first_leg_adj = +0.08
+        first_leg_info = {"gh1": gh1, "ga1": ga1, "diff": goal_diff}
+
     ep = 1 / (1 + 10 ** ((ae - he - 60) / 400))
-    ep = max(0.05, min(0.95, ep + fatigue_adj + h2h_adj + motivation_adj))
+    ep = max(0.05, min(0.95, ep + fatigue_adj + h2h_adj + motivation_adj + first_leg_adj))
 
     # Trend recente (crisi o rimonta)
     h_trend = hform_data.get("home_trend", hform_data.get("trend", 0.0))
@@ -389,6 +431,7 @@ def extract_features(hname, aname, form_map=None, dynamic_elo=None,
         "h_trend":        h_trend,
         "a_trend":        a_trend,
         "comp_code":      comp_code,
+        "first_leg":      first_leg_info,
         "src_home":       src_h,
         "src_away":       src_a,
     }
@@ -655,6 +698,11 @@ def record_predictions(all_preds, history):
                 "home":        p["home"],
                 "away":        p["away"],
                 "league":      p["league"],
+                "comp_code":   p.get("comp_code", ""),
+                "season":      p.get("season", ""),
+                "stage":       p.get("stage", ""),
+                "matchday":    p.get("matchday", None),
+                "first_leg":   p.get("first_leg", None),
                 "date":        p.get("date", ""),
                 "time":        p.get("time", ""),
                 "predicted_at":p["generated_at"],
@@ -666,6 +714,7 @@ def record_predictions(all_preds, history):
                 "pred_btts":   round(pred.get("btts_y", 0.50), 4),
                 "pred_best":   pred.get("best_out", "1"),
                 "pred_conf":   round(pred.get("confidence", 0.50), 4),
+                "pred_raw_conf": round(pred.get("raw_confidence", pred.get("confidence", 0.50)), 4),
                 # risultato reale — da compilare dopo
                 "result":      None,   # "1", "X", "2"
                 "goals_home":  None,
@@ -736,12 +785,17 @@ def verify_results(history, fetcher, competitions):
 
     return verified
 
-def calc_stats(predictions, days=7):
+def calc_stats(predictions, days=7, season=None, comp_code=None):
     """Calcola statistiche sulle previsioni verificate degli ultimi N giorni."""
     cutoff = datetime.now() - timedelta(days=days)
     recent = [p for p in predictions
               if p.get("verified_at") and
               datetime.fromisoformat(p["verified_at"]) >= cutoff]
+    # Filtro opzionale per stagione e campionato
+    if season:
+        recent = [p for p in recent if p.get("season") == season]
+    if comp_code:
+        recent = [p for p in recent if p.get("comp_code") == comp_code]
 
     if not recent:
         return None
@@ -779,7 +833,12 @@ def send_weekly_report(history):
     if today != 6:
         return
 
-    stats = calc_stats(history["predictions"], days=7)
+    month = datetime.now().month
+    year  = datetime.now().year
+    current_season = f"{year-1}/{year}" if month < 7 else f"{year}/{year+1}"
+    stats = calc_stats(history["predictions"], days=7, season=current_season)
+    if not stats:  # fallback senza filtro stagione
+        stats = calc_stats(history["predictions"], days=7)
     if not stats:
         print("   ℹ️  Nessun dato verificato per il report settimanale")
         return
@@ -922,6 +981,22 @@ def main():
         except Exception as e:
             print(f"   ⚠️  Classifica non disponibile: {e}")
 
+        # ── RISULTATI ANDATA per coppe (knockout) ───────────
+        first_leg_map = {}
+        knockout_comps = {"CL", "EL", "ECL"}  # coppe europee con doppia sfida
+        if comp_code in knockout_comps:
+            try:
+                first_leg_map = fetcher.get_first_leg_scores(comp_code)
+                if first_leg_map:
+                    print(f"   🔄 Andate disponibili: {len(first_leg_map)} partite")
+            except Exception as e:
+                print(f"   ⚠️  Andate non disponibili: {e}")
+
+        # ── STAGIONE corrente ────────────────────────────────
+        month = datetime.now().month
+        year  = datetime.now().year
+        season = f"{year-1}/{year}" if month < 7 else f"{year}/{year+1}"
+
         for match in matches[:10]:
             try:
                 hname = match["homeTeam"]["name"]
@@ -939,19 +1014,25 @@ def main():
                 # H2H dai risultati già scaricati — nessuna chiamata API aggiuntiva
                 h2h = fetcher.get_h2h_from_results(hname, aname, past_results, limit=10)
 
+                # Risultato andata (per coppe)
+                first_leg = first_leg_map.get((aname, hname)) or first_leg_map.get((hname, aname))
+
                 feat = extract_features(hname, aname, form_map=form_map,
                                        dynamic_elo=dynamic_elo, h2h=h2h,
-                                       standings=standings, comp_code=comp_code)
+                                       standings=standings, comp_code=comp_code,
+                                       first_leg=first_leg)
                 pred = full_prediction(feat)
                 src_h = feat.get("src_home", "ELO")
                 src_a = feat.get("src_away", "ELO")
                 h_fat = feat.get("h_fatigue_days", 99)
                 a_fat = feat.get("a_fatigue_days", 99)
+                fl    = feat.get("first_leg", {})
                 flags = []
                 if src_h == "API" or src_a == "API": flags.append("📡API")
                 if h2h and h2h.get("matches", 0) > 0: flags.append(f"H2H:{h2h['matches']}")
                 if h_fat < 4: flags.append(f"⚡H:{h_fat}gg")
                 if a_fat < 4: flags.append(f"⚡A:{a_fat}gg")
+                if fl: flags.append(f"🔄Andata:{fl.get('gh1',0)}-{fl.get('ga1',0)}")
                 if flags:
                     print(f"      {' '.join(flags)}")
 
@@ -960,11 +1041,16 @@ def main():
 
                 all_preds.append({
                     "league":       league_name,
+                    "comp_code":    comp_code,
+                    "season":       season,
                     "fixture_id":   fid,
                     "home":         hname,
                     "away":         aname,
                     "date":         date_str,
                     "time":         time_str,
+                    "stage":        match.get("stage", ""),
+                    "matchday":     match.get("matchday", None),
+                    "first_leg":    fl if fl else None,
                     "prediction":   pred,
                     "generated_at": datetime.now().isoformat()
                 })
@@ -978,7 +1064,7 @@ def main():
     # ── BACKTESTING ─────────────────────────────────────────
     print("\n🔄 Auto-adattamento...")
     adapted = 0
-    for league_name, comp_code in list(COMPETITIONS.items())[:3]:
+    for league_name, comp_code in COMPETITIONS.items():  # tutti i campionati
         try:
             for result in fetcher.get_past_results(comp_code, limit=5):
                 score = result.get("score", {}).get("fullTime", {})
@@ -1178,7 +1264,12 @@ def main():
     print(f"   💾 Database: {total_ver} verificate / {total_db} totali")
 
     # 4. Stats rapide
-    stats = calc_stats(history["predictions"], days=7)
+    month = datetime.now().month
+    year  = datetime.now().year
+    current_season = f"{year-1}/{year}" if month < 7 else f"{year}/{year+1}"
+    stats = calc_stats(history["predictions"], days=7, season=current_season)
+    if not stats:  # fallback senza filtro stagione
+        stats = calc_stats(history["predictions"], days=7)
     if stats and stats["total"] > 0:
         print(f"   📊 Accuracy 7gg: 1X2={stats['acc_1x2']*100:.1f}% "
               f"Over={stats['acc_over']*100:.1f}% BTTS={stats['acc_btts']*100:.1f}%")
