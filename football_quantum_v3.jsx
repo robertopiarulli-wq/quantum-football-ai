@@ -408,8 +408,7 @@ export default function App(){
 
               <button onClick={runManual} disabled={!homeInput||!awayInput||homeInput===awayInput||manualLoading} style={{padding:"13px",borderRadius:10,fontSize:10,letterSpacing:3,cursor:"pointer",border:`1px solid ${C.cyan}`,background:`${C.cyan}0d`,color:C.cyan,fontFamily:"inherit",fontWeight:900}}>
 
-                {manualLoading?"🔍 CERCO...
-":"🔍 CERCA PARTITA"}
+                {manualLoading?"🔍 CERCO...":"🔍 CERCA PARTITA"}
 
               </button>
 
