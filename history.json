@@ -1095,7 +1095,8 @@
       "correct_1x2": true,
       "correct_over": false,
       "correct_btts": true,
-      "verified_at": "2026-03-10T08:09:39.194908"
+      "verified_at": "2026-03-10T08:09:39.194908",
+      "elo_updated": true
     },
     {
       "fixture_id": "537096",
@@ -1307,7 +1308,8 @@
       "correct_1x2": false,
       "correct_over": false,
       "correct_btts": true,
-      "verified_at": "2026-03-10T08:09:46.529325"
+      "verified_at": "2026-03-10T08:09:46.529325",
+      "elo_updated": true
     },
     {
       "fixture_id": "544481",
@@ -2062,7 +2064,8 @@
       "correct_1x2": false,
       "correct_over": true,
       "correct_btts": false,
-      "verified_at": "2026-03-10T08:10:15.644062"
+      "verified_at": "2026-03-10T08:10:15.644062",
+      "elo_updated": true
     },
     {
       "fixture_id": "545928",
@@ -3635,5 +3638,5 @@
       "verified_at": null
     }
   ],
-  "last_updated": "2026-03-10T08:10:23.108076"
+  "last_updated": "2026-03-10T08:59:35.834076"
 }
