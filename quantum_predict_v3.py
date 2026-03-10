@@ -407,7 +407,16 @@ def extract_features(hname, aname, form_map=None, dynamic_elo=None,
             first_leg_adj = +0.08
         first_leg_info = {"gh1": gh1, "ga1": ga1, "diff": goal_diff}
 
-    ep = 1 / (1 + 10 ** ((ae - he - 60) / 400))
+    home_bonus = LEAGUE_PROFILE.get(comp_code, {}).get("home_elo_bonus", 60)
+    ep = 1 / (1 + 10 ** ((ae - he - home_bonus) / 400))
+
+    # Penalità confidenza per big match: entrambe top (ELO > 1780)
+    big_match_penalty = 0.0
+    if he > 1780 and ae > 1780:
+        elo_gap = abs(he - ae)
+        if elo_gap < 50:   big_match_penalty = 0.12  # praticamente pari
+        elif elo_gap < 100: big_match_penalty = 0.07
+
     ep = max(0.05, min(0.95, ep + fatigue_adj + h2h_adj + motivation_adj + first_leg_adj))
 
     # Trend recente (crisi o rimonta)
@@ -430,10 +439,11 @@ def extract_features(hname, aname, form_map=None, dynamic_elo=None,
         "h2h_matches":    h2h.get("matches", 0) if h2h else 0,
         "h_trend":        h_trend,
         "a_trend":        a_trend,
-        "comp_code":      comp_code,
-        "first_leg":      first_leg_info,
-        "src_home":       src_h,
-        "src_away":       src_a,
+        "comp_code":        comp_code,
+        "first_leg":        first_leg_info,
+        "big_match_penalty": big_match_penalty,
+        "src_home":         src_h,
+        "src_away":         src_a,
     }
 
 # ═══════════════════════════════════════
@@ -441,16 +451,21 @@ def extract_features(hname, aname, form_map=None, dynamic_elo=None,
 # ═══════════════════════════════════════
 # Caratteristiche storiche per campionato
 LEAGUE_PROFILE = {
-    "SA":  {"draw_bias": +0.04, "home_bias": +0.02, "goals_factor": 0.95},  # Serie A: più pareggi
-    "PL":  {"draw_bias": -0.02, "home_bias": +0.00, "goals_factor": 1.10},  # Premier: più gol
-    "PD":  {"draw_bias": +0.02, "home_bias": +0.03, "goals_factor": 1.00},  # La Liga
-    "BL1": {"draw_bias": -0.03, "home_bias": +0.01, "goals_factor": 1.15},  # Bundesliga: più gol
-    "FL1": {"draw_bias": +0.01, "home_bias": +0.02, "goals_factor": 1.05},  # Ligue 1
-    "CL":  {"draw_bias": -0.02, "home_bias": -0.01, "goals_factor": 1.05},  # Champions
-    "SB":  {"draw_bias": +0.05, "home_bias": +0.03, "goals_factor": 0.90},  # Serie B
-    "DED": {"draw_bias": -0.01, "home_bias": +0.01, "goals_factor": 1.10},  # Eredivisie
-    "PPL": {"draw_bias": +0.02, "home_bias": +0.03, "goals_factor": 0.95},  # Primeira Liga
-    "ELC": {"draw_bias": +0.00, "home_bias": +0.01, "goals_factor": 1.00},  # Championship
+    # draw_bias: tendenza ai pareggi vs media
+    # home_bias: vantaggio casa aggiuntivo
+    # goals_factor: moltiplicatore gol medi
+    # home_elo_bonus: punti ELO extra per giocare in casa (default 60)
+    "SA":  {"draw_bias": +0.04, "home_bias": +0.02, "goals_factor": 0.95, "home_elo_bonus": 65},
+    "PL":  {"draw_bias": -0.02, "home_bias": +0.00, "goals_factor": 1.10, "home_elo_bonus": 55},
+    "PD":  {"draw_bias": +0.02, "home_bias": +0.03, "goals_factor": 1.00, "home_elo_bonus": 60},
+    "BL1": {"draw_bias": -0.03, "home_bias": +0.01, "goals_factor": 1.15, "home_elo_bonus": 55},
+    "FL1": {"draw_bias": +0.01, "home_bias": +0.02, "goals_factor": 1.05, "home_elo_bonus": 60},
+    "CL":  {"draw_bias": -0.02, "home_bias": -0.01, "goals_factor": 1.05, "home_elo_bonus": 30},  # meno vantaggio casa
+    "EL":  {"draw_bias": -0.01, "home_bias": -0.01, "goals_factor": 1.05, "home_elo_bonus": 35},
+    "SB":  {"draw_bias": +0.05, "home_bias": +0.03, "goals_factor": 0.90, "home_elo_bonus": 70},
+    "DED": {"draw_bias": -0.01, "home_bias": +0.01, "goals_factor": 1.10, "home_elo_bonus": 55},
+    "PPL": {"draw_bias": +0.02, "home_bias": +0.03, "goals_factor": 0.95, "home_elo_bonus": 60},
+    "ELC": {"draw_bias": +0.00, "home_bias": +0.01, "goals_factor": 1.00, "home_elo_bonus": 58},
 }
 
 def classical_predict(f):
@@ -548,6 +563,9 @@ def full_prediction(f):
     pbtts = max(0.15, min(0.82, (1 - math.exp(-lh)) * (1 - math.exp(-la))))
     ent   = -(h*math.log(max(0.001,h)) + d*math.log(max(0.001,d)) + a*math.log(max(0.001,a)))
     raw_conf = 1 - ent / math.log(3)
+    # Applica penalità big match
+    bmp = f.get("big_match_penalty", 0.0)
+    raw_conf = max(0.01, raw_conf - bmp)
     conf = calibrate_confidence(raw_conf)
     bv   = max(h, d, a)
     bo   = "1" if bv == h else ("2" if bv == a else "X")
@@ -1033,6 +1051,7 @@ def main():
                 if h_fat < 4: flags.append(f"⚡H:{h_fat}gg")
                 if a_fat < 4: flags.append(f"⚡A:{a_fat}gg")
                 if fl: flags.append(f"🔄Andata:{fl.get('gh1',0)}-{fl.get('ga1',0)}")
+                if feat.get("big_match_penalty", 0) > 0: flags.append("🔥BigMatch")
                 if flags:
                     print(f"      {' '.join(flags)}")
 
