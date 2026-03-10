@@ -201,7 +201,7 @@ export default function App(){
         setFixError("File fixtures_today.json non trovato nel repo. Esegui il workflow manualmente da GitHub Actions.");
         setFixLoading(false);
       });
-  },[ready]);  },[ready]);
+  },[ready]);
 
   // Carica predictions_output.json per tab CERCA
   useEffect(()=>{
@@ -600,6 +600,8 @@ export default function App(){
             </div>
 
           </div>
+
+        )}
 
         {tab==="log"&&(
           <div>
