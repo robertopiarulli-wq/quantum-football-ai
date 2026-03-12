@@ -12,13 +12,13 @@
     "matchday": 29,
     "first_leg": null,
     "prediction": {
-      "home": 0.48480384063889104,
+      "home": 0.434803840638891,
       "draw": 0.3099,
-      "away": 0.20529615936110895,
+      "away": 0.255296159361109,
       "quantum_used": false,
       "goals_factor": 0.95,
-      "dc_1x": 0.7947038406388911,
-      "dc_x2": 0.515196159361109,
+      "dc_1x": 0.7447038406388911,
+      "dc_x2": 0.565196159361109,
       "dc_12": 0.6900999999999999,
       "over_25": 0.32325591617567073,
       "under_25": 0.6767440838243293,
@@ -26,12 +26,12 @@
       "btts_n": 0.6013971466523985,
       "xg_home": 0.95,
       "xg_away": 1.05,
-      "confidence": 0.3229,
-      "raw_confidence": 0.0542,
+      "confidence": 0.2308,
+      "raw_confidence": 0.0226,
       "best_out": "1",
-      "best_val": 0.48480384063889104
+      "best_val": 0.434803840638891
     },
-    "generated_at": "2026-03-11T09:08:18.905111"
+    "generated_at": "2026-03-12T09:11:37.588418"
   },
   {
     "league": "Serie A",
@@ -46,13 +46,13 @@
     "matchday": 29,
     "first_leg": null,
     "prediction": {
-      "home": 0.26871274004131773,
+      "home": 0.31871274004131767,
       "draw": 0.29913999999999996,
-      "away": 0.4321472599586823,
+      "away": 0.3821472599586824,
       "quantum_used": false,
       "goals_factor": 0.95,
-      "dc_1x": 0.5678527400413177,
-      "dc_x2": 0.7312872599586823,
+      "dc_1x": 0.6178527400413176,
+      "dc_x2": 0.6812872599586823,
       "dc_12": 0.70086,
       "over_25": 0.5105306802343157,
       "under_25": 0.4894693197656843,
@@ -60,12 +60,12 @@
       "btts_n": 0.49049388223434,
       "xg_home": 1.76,
       "xg_away": 0.95,
-      "confidence": 0.2188,
-      "raw_confidence": 0.0199,
+      "confidence": 0.227,
+      "raw_confidence": 0.01,
       "best_out": "2",
-      "best_val": 0.4321472599586823
+      "best_val": 0.3821472599586824
     },
-    "generated_at": "2026-03-11T09:08:18.905219"
+    "generated_at": "2026-03-12T09:11:37.588524"
   },
   {
     "league": "Serie A",
@@ -80,26 +80,26 @@
     "matchday": 29,
     "first_leg": null,
     "prediction": {
-      "home": 0.679328566968047,
-      "draw": 0.27291551579957785,
-      "away": 0.04775591723237521,
+      "home": 0.6612506746153639,
+      "draw": 0.28574,
+      "away": 0.0530093253846361,
       "quantum_used": false,
       "goals_factor": 0.95,
-      "dc_1x": 0.9522440827676248,
-      "dc_x2": 0.32067143303195306,
-      "dc_12": 0.7270844842004223,
+      "dc_1x": 0.9469906746153639,
+      "dc_x2": 0.3387493253846361,
+      "dc_12": 0.71426,
       "over_25": 0.393593626654829,
       "under_25": 0.606406373345171,
       "btts_y": 0.4148274383320412,
       "btts_n": 0.5851725616679588,
       "xg_home": 1.5,
       "xg_away": 0.76,
-      "confidence": 0.3921,
-      "raw_confidence": 0.3061,
+      "confidence": 0.4351,
+      "raw_confidence": 0.2835,
       "best_out": "1",
-      "best_val": 0.679328566968047
+      "best_val": 0.6612506746153639
     },
-    "generated_at": "2026-03-11T09:08:18.905325"
+    "generated_at": "2026-03-12T09:11:37.588635"
   },
   {
     "league": "Serie A",
@@ -128,12 +128,12 @@
       "btts_n": 0.5143421734279604,
       "xg_home": 1.08,
       "xg_away": 1.33,
-      "confidence": 0.2158,
+      "confidence": 0.227,
       "raw_confidence": 0.01,
       "best_out": "2",
       "best_val": 0.3800563170559411
     },
-    "generated_at": "2026-03-11T09:08:18.905422"
+    "generated_at": "2026-03-12T09:11:37.588717"
   },
   {
     "league": "Serie A",
@@ -162,12 +162,12 @@
       "btts_n": 0.4872370653402355,
       "xg_home": 1.21,
       "xg_away": 1.32,
-      "confidence": 0.2158,
+      "confidence": 0.227,
       "raw_confidence": 0.01,
       "best_out": "1",
       "best_val": 0.3407826734626223
     },
-    "generated_at": "2026-03-11T09:08:18.905511"
+    "generated_at": "2026-03-12T09:11:37.588792"
   },
   {
     "league": "Serie A",
@@ -196,12 +196,12 @@
       "btts_n": 0.6277647168336074,
       "xg_home": 0.85,
       "xg_away": 1.05,
-      "confidence": 0.2228,
+      "confidence": 0.234,
       "raw_confidence": 0.0332,
       "best_out": "2",
       "best_val": 0.4536290086853781
     },
-    "generated_at": "2026-03-11T09:08:18.905623"
+    "generated_at": "2026-03-12T09:11:37.588864"
   },
   {
     "league": "Serie A",
@@ -216,13 +216,13 @@
     "matchday": 29,
     "first_leg": null,
     "prediction": {
-      "home": 0.30888710388613805,
+      "home": 0.258887103886138,
       "draw": 0.31526000000000004,
-      "away": 0.375852896113862,
+      "away": 0.42585289611386207,
       "quantum_used": false,
       "goals_factor": 0.95,
-      "dc_1x": 0.6241471038861381,
-      "dc_x2": 0.6911128961138621,
+      "dc_1x": 0.5741471038861381,
+      "dc_x2": 0.7411128961138621,
       "dc_12": 0.6847400000000001,
       "over_25": 0.4929941368432319,
       "under_25": 0.5070058631567681,
@@ -230,12 +230,12 @@
       "btts_n": 0.46667369305132556,
       "xg_home": 1.19,
       "xg_away": 1.46,
-      "confidence": 0.2158,
-      "raw_confidence": 0.01,
+      "confidence": 0.2298,
+      "raw_confidence": 0.0194,
       "best_out": "2",
-      "best_val": 0.375852896113862
+      "best_val": 0.42585289611386207
     },
-    "generated_at": "2026-03-11T09:08:18.905711"
+    "generated_at": "2026-03-12T09:11:37.588933"
   },
   {
     "league": "Serie A",
@@ -250,13 +250,13 @@
     "matchday": 29,
     "first_leg": null,
     "prediction": {
-      "home": 0.3649715784540253,
+      "home": 0.31497157845402535,
       "draw": 0.30624,
-      "away": 0.3287884215459747,
+      "away": 0.37878842154597464,
       "quantum_used": false,
       "goals_factor": 0.95,
-      "dc_1x": 0.6712115784540253,
-      "dc_x2": 0.6350284215459747,
+      "dc_1x": 0.6212115784540253,
+      "dc_x2": 0.6850284215459747,
       "dc_12": 0.6937599999999999,
       "over_25": 0.3502336383010801,
       "under_25": 0.6497663616989199,
@@ -264,12 +264,12 @@
       "btts_n": 0.5877928700402336,
       "xg_home": 1.22,
       "xg_away": 0.88,
-      "confidence": 0.2158,
+      "confidence": 0.227,
       "raw_confidence": 0.01,
-      "best_out": "1",
-      "best_val": 0.3649715784540253
+      "best_out": "2",
+      "best_val": 0.37878842154597464
     },
-    "generated_at": "2026-03-11T09:08:18.905830"
+    "generated_at": "2026-03-12T09:11:37.589041"
   },
   {
     "league": "Serie A",
@@ -284,26 +284,26 @@
     "matchday": 29,
     "first_leg": null,
     "prediction": {
-      "home": 0.22201570745928342,
-      "draw": 0.30662000000000006,
-      "away": 0.4713642925407166,
+      "home": 0.17201570745928346,
+      "draw": 0.30662,
+      "away": 0.5213642925407166,
       "quantum_used": false,
       "goals_factor": 0.95,
-      "dc_1x": 0.5286357074592835,
-      "dc_x2": 0.7779842925407167,
-      "dc_12": 0.69338,
+      "dc_1x": 0.47863570745928347,
+      "dc_x2": 0.8279842925407166,
+      "dc_12": 0.6933800000000001,
       "over_25": 0.43244522224724113,
       "under_25": 0.5675547777527589,
       "btts_y": 0.4753708279930082,
       "btts_n": 0.5246291720069918,
       "xg_home": 0.98,
       "xg_away": 1.42,
-      "confidence": 0.2258,
-      "raw_confidence": 0.0432,
+      "confidence": 0.3364,
+      "raw_confidence": 0.0854,
       "best_out": "2",
-      "best_val": 0.4713642925407166
+      "best_val": 0.5213642925407166
     },
-    "generated_at": "2026-03-11T09:08:18.905926"
+    "generated_at": "2026-03-12T09:11:37.589115"
   },
   {
     "league": "Serie A",
@@ -332,12 +332,12 @@
       "btts_n": 0.553856821256236,
       "xg_home": 1.18,
       "xg_away": 1.03,
-      "confidence": 0.3446,
+      "confidence": 0.3488,
       "raw_confidence": 0.1268,
       "best_out": "2",
       "best_val": 0.5660239060166589
     },
-    "generated_at": "2026-03-11T09:08:18.906014"
+    "generated_at": "2026-03-12T09:11:37.589186"
   },
   {
     "league": "Premier League",
@@ -366,12 +366,12 @@
       "btts_n": 0.450835604076847,
       "xg_home": 1.65,
       "xg_away": 1.14,
-      "confidence": 0.3226,
+      "confidence": 0.3268,
       "raw_confidence": 0.0533,
       "best_out": "2",
       "best_val": 0.4994750817090513
     },
-    "generated_at": "2026-03-11T09:08:39.819126"
+    "generated_at": "2026-03-12T09:11:58.216771"
   },
   {
     "league": "Premier League",
@@ -400,12 +400,12 @@
       "btts_n": 0.30217202189689507,
       "xg_home": 1.8,
       "xg_away": 1.8,
-      "confidence": 0.223,
+      "confidence": 0.2342,
       "raw_confidence": 0.0339,
       "best_out": "2",
       "best_val": 0.46461376941566823
     },
-    "generated_at": "2026-03-11T09:08:39.819295"
+    "generated_at": "2026-03-12T09:11:58.216942"
   },
   {
     "league": "Premier League",
@@ -434,12 +434,12 @@
       "btts_n": 0.474048394944655,
       "xg_home": 1.85,
       "xg_away": 0.98,
-      "confidence": 0.346,
+      "confidence": 0.3957,
       "raw_confidence": 0.1525,
       "best_out": "1",
       "best_val": 0.6132585194246843
     },
-    "generated_at": "2026-03-11T09:08:39.819391"
+    "generated_at": "2026-03-12T09:11:58.217019"
   },
   {
     "league": "Premier League",
@@ -468,12 +468,12 @@
       "btts_n": 0.4410617095217497,
       "xg_home": 1.65,
       "xg_away": 1.18,
-      "confidence": 0.2229,
+      "confidence": 0.2341,
       "raw_confidence": 0.0336,
       "best_out": "1",
       "best_val": 0.46262499980288513
     },
-    "generated_at": "2026-03-11T09:08:39.819479"
+    "generated_at": "2026-03-12T09:11:58.217089"
   },
   {
     "league": "Premier League",
@@ -502,12 +502,12 @@
       "btts_n": 0.3764074847101083,
       "xg_home": 1.29,
       "xg_away": 1.96,
-      "confidence": 0.3852,
+      "confidence": 0.4349,
       "raw_confidence": 0.2828,
       "best_out": "2",
       "best_val": 0.6967096433349851
     },
-    "generated_at": "2026-03-11T09:08:39.819586"
+    "generated_at": "2026-03-12T09:11:58.217158"
   },
   {
     "league": "Premier League",
@@ -536,12 +536,12 @@
       "btts_n": 0.4126828205584159,
       "xg_home": 1.65,
       "xg_away": 1.3,
-      "confidence": 0.3344,
+      "confidence": 0.3386,
       "raw_confidence": 0.0926,
       "best_out": "2",
       "best_val": 0.5523431174083814
     },
-    "generated_at": "2026-03-11T09:08:39.819708"
+    "generated_at": "2026-03-12T09:11:58.217258"
   },
   {
     "league": "Premier League",
@@ -570,12 +570,12 @@
       "btts_n": 0.3834758397800334,
       "xg_home": 1.81,
       "xg_away": 1.34,
-      "confidence": 0.2237,
+      "confidence": 0.2349,
       "raw_confidence": 0.0362,
       "best_out": "1",
       "best_val": 0.4691878237854281
     },
-    "generated_at": "2026-03-11T09:08:39.819795"
+    "generated_at": "2026-03-12T09:11:58.217327"
   },
   {
     "league": "Premier League",
@@ -604,12 +604,12 @@
       "btts_n": 0.4202218080242053,
       "xg_home": 1.5,
       "xg_away": 1.38,
-      "confidence": 0.2205,
+      "confidence": 0.2317,
       "raw_confidence": 0.0258,
       "best_out": "2",
       "best_val": 0.4447006467464629
     },
-    "generated_at": "2026-03-11T09:08:39.819883"
+    "generated_at": "2026-03-12T09:11:58.217397"
   },
   {
     "league": "Premier League",
@@ -638,12 +638,12 @@
       "btts_n": 0.3547704042746841,
       "xg_home": 1.85,
       "xg_away": 1.45,
-      "confidence": 0.324,
+      "confidence": 0.3282,
       "raw_confidence": 0.058,
       "best_out": "1",
       "best_val": 0.5068279941447481
     },
-    "generated_at": "2026-03-11T09:08:39.819968"
+    "generated_at": "2026-03-12T09:11:58.217471"
   },
   {
     "league": "Premier League",
@@ -672,12 +672,12 @@
       "btts_n": 0.5486115908692089,
       "xg_home": 1.77,
       "xg_away": 0.79,
-      "confidence": 0.217,
+      "confidence": 0.2282,
       "raw_confidence": 0.014,
       "best_out": "1",
       "best_val": 0.3985062305843319
     },
-    "generated_at": "2026-03-11T09:08:39.820055"
+    "generated_at": "2026-03-12T09:11:58.217539"
   },
   {
     "league": "La Liga",
@@ -706,12 +706,12 @@
       "btts_n": 0.45361539546553453,
       "xg_home": 1.39,
       "xg_away": 1.3,
-      "confidence": 0.2249,
+      "confidence": 0.2361,
       "raw_confidence": 0.0404,
       "best_out": "2",
       "best_val": 0.4755867161284776
     },
-    "generated_at": "2026-03-11T09:09:00.576218"
+    "generated_at": "2026-03-12T09:12:18.892665"
   },
   {
     "league": "La Liga",
@@ -740,12 +740,12 @@
       "btts_n": 0.4668372499419381,
       "xg_home": 1.31,
       "xg_away": 1.31,
-      "confidence": 0.2178,
+      "confidence": 0.229,
       "raw_confidence": 0.0166,
       "best_out": "2",
       "best_val": 0.4251742036889859
     },
-    "generated_at": "2026-03-11T09:09:00.576316"
+    "generated_at": "2026-03-12T09:12:18.892762"
   },
   {
     "league": "La Liga",
@@ -760,13 +760,13 @@
     "matchday": 28,
     "first_leg": null,
     "prediction": {
-      "home": 0.4469786786718096,
+      "home": 0.39697867867180947,
       "draw": 0.30000000000000004,
-      "away": 0.25302132132819033,
+      "away": 0.3030213213281905,
       "quantum_used": false,
       "goals_factor": 1.0,
-      "dc_1x": 0.7469786786718097,
-      "dc_x2": 0.5530213213281904,
+      "dc_1x": 0.6969786786718095,
+      "dc_x2": 0.6030213213281905,
       "dc_12": 0.7,
       "over_25": 0.5124796340963444,
       "under_25": 0.48752036590365555,
@@ -774,12 +774,12 @@
       "btts_n": 0.5138606501793812,
       "xg_home": 1.87,
       "xg_away": 0.85,
-      "confidence": 0.2209,
-      "raw_confidence": 0.0271,
+      "confidence": 0.227,
+      "raw_confidence": 0.01,
       "best_out": "1",
-      "best_val": 0.4469786786718096
+      "best_val": 0.39697867867180947
     },
-    "generated_at": "2026-03-11T09:09:00.576409"
+    "generated_at": "2026-03-12T09:12:18.892835"
   },
   {
     "league": "La Liga",
@@ -794,13 +794,13 @@
     "matchday": 28,
     "first_leg": null,
     "prediction": {
-      "home": 0.3178647281035958,
+      "home": 0.26786472810359574,
       "draw": 0.2968000000000001,
-      "away": 0.3853352718964042,
+      "away": 0.43533527189640425,
       "quantum_used": false,
       "goals_factor": 1.0,
-      "dc_1x": 0.614664728103596,
-      "dc_x2": 0.6821352718964043,
+      "dc_1x": 0.5646647281035959,
+      "dc_x2": 0.7321352718964044,
       "dc_12": 0.7032,
       "over_25": 0.3651967762233804,
       "under_25": 0.6348032237766196,
@@ -808,12 +808,12 @@
       "btts_n": 0.5693012731931625,
       "xg_home": 1.19,
       "xg_away": 0.97,
-      "confidence": 0.2158,
-      "raw_confidence": 0.01,
+      "confidence": 0.2303,
+      "raw_confidence": 0.0211,
       "best_out": "2",
-      "best_val": 0.3853352718964042
+      "best_val": 0.43533527189640425
     },
-    "generated_at": "2026-03-11T09:09:00.576495"
+    "generated_at": "2026-03-12T09:12:18.892904"
   },
   {
     "league": "La Liga",
@@ -828,26 +828,26 @@
     "matchday": 28,
     "first_leg": null,
     "prediction": {
-      "home": 0.7251678559987751,
-      "draw": 0.2292456020689622,
-      "away": 0.0455865419322626,
+      "home": 0.7120407914640708,
+      "draw": 0.24019527399905125,
+      "away": 0.04776393453687783,
       "quantum_used": false,
       "goals_factor": 1.0,
-      "dc_1x": 0.9544134580677373,
-      "dc_x2": 0.2748321440012248,
-      "dc_12": 0.7707543979310377,
+      "dc_1x": 0.9522360654631221,
+      "dc_x2": 0.28795920853592905,
+      "dc_12": 0.7598047260009486,
       "over_25": 0.5677887756457284,
       "under_25": 0.4322112243542716,
       "btts_y": 0.5016282694088284,
       "btts_n": 0.49837173059117157,
       "xg_home": 2.12,
       "xg_away": 0.84,
-      "confidence": 0.406,
-      "raw_confidence": 0.3524,
+      "confidence": 0.4507,
+      "raw_confidence": 0.3358,
       "best_out": "1",
-      "best_val": 0.7251678559987751
+      "best_val": 0.7120407914640708
     },
-    "generated_at": "2026-03-11T09:09:00.576601"
+    "generated_at": "2026-03-12T09:12:18.892973"
   },
   {
     "league": "La Liga",
@@ -876,12 +876,12 @@
       "btts_n": 0.42635683693682636,
       "xg_home": 1.54,
       "xg_away": 1.31,
-      "confidence": 0.2175,
+      "confidence": 0.2287,
       "raw_confidence": 0.0155,
       "best_out": "1",
       "best_val": 0.42103867867180944
     },
-    "generated_at": "2026-03-11T09:09:00.576689"
+    "generated_at": "2026-03-12T09:12:18.893041"
   },
   {
     "league": "La Liga",
@@ -896,26 +896,26 @@
     "matchday": 28,
     "first_leg": null,
     "prediction": {
-      "home": 0.6811807137364372,
-      "draw": 0.2696551969680467,
-      "away": 0.04916408929551609,
+      "home": 0.6427624649385735,
+      "draw": 0.27424000000000004,
+      "away": 0.08299753506142649,
       "quantum_used": false,
       "goals_factor": 1.0,
-      "dc_1x": 0.9508359107044839,
-      "dc_x2": 0.31881928626356276,
-      "dc_12": 0.7303448030319533,
+      "dc_1x": 0.9170024649385735,
+      "dc_x2": 0.3572375350614265,
+      "dc_12": 0.72576,
       "over_25": 0.633496110716894,
       "under_25": 0.36650388928310595,
       "btts_y": 0.5197179594135545,
       "btts_n": 0.4802820405864455,
       "xg_home": 2.42,
       "xg_away": 0.84,
-      "confidence": 0.3919,
-      "raw_confidence": 0.3054,
+      "confidence": 0.4191,
+      "raw_confidence": 0.2304,
       "best_out": "1",
-      "best_val": 0.6811807137364372
+      "best_val": 0.6427624649385735
     },
-    "generated_at": "2026-03-11T09:09:00.576771"
+    "generated_at": "2026-03-12T09:12:18.893106"
   },
   {
     "league": "La Liga",
@@ -930,26 +930,26 @@
     "matchday": 28,
     "first_leg": null,
     "prediction": {
-      "home": 0.30762472810359565,
-      "draw": 0.29680000000000006,
-      "away": 0.3955752718964043,
+      "home": 0.3576247281035958,
+      "draw": 0.2968000000000001,
+      "away": 0.3455752718964042,
       "quantum_used": false,
       "goals_factor": 1.0,
-      "dc_1x": 0.6044247281035957,
-      "dc_x2": 0.6923752718964044,
-      "dc_12": 0.7031999999999999,
+      "dc_1x": 0.654424728103596,
+      "dc_x2": 0.6423752718964043,
+      "dc_12": 0.7032,
       "over_25": 0.5039227010241988,
       "under_25": 0.4960772989758012,
       "btts_y": 0.5433520869611432,
       "btts_n": 0.45664791303885677,
       "xg_home": 1.46,
       "xg_away": 1.23,
-      "confidence": 0.2158,
+      "confidence": 0.227,
       "raw_confidence": 0.01,
-      "best_out": "2",
-      "best_val": 0.3955752718964043
+      "best_out": "1",
+      "best_val": 0.3576247281035958
     },
-    "generated_at": "2026-03-11T09:09:00.576910"
+    "generated_at": "2026-03-12T09:12:18.893231"
   },
   {
     "league": "La Liga",
@@ -978,12 +978,12 @@
       "btts_n": 0.49435936603557973,
       "xg_home": 1.5,
       "xg_away": 1.05,
-      "confidence": 0.2179,
+      "confidence": 0.2291,
       "raw_confidence": 0.0169,
       "best_out": "1",
       "best_val": 0.4251447281035959
     },
-    "generated_at": "2026-03-11T09:09:00.576995"
+    "generated_at": "2026-03-12T09:12:18.893297"
   },
   {
     "league": "La Liga",
@@ -998,13 +998,13 @@
     "matchday": 28,
     "first_leg": null,
     "prediction": {
-      "home": 0.40598472573510513,
+      "home": 0.4559847257351052,
       "draw": 0.29918000000000006,
-      "away": 0.2948352742648948,
+      "away": 0.24483527426489476,
       "quantum_used": false,
       "goals_factor": 1.0,
-      "dc_1x": 0.7051647257351052,
-      "dc_x2": 0.5940152742648949,
+      "dc_1x": 0.7551647257351053,
+      "dc_x2": 0.5440152742648948,
       "dc_12": 0.70082,
       "over_25": 0.41585802852564924,
       "under_25": 0.5841419714743508,
@@ -1012,12 +1012,12 @@
       "btts_n": 0.5373694836363094,
       "xg_home": 1.39,
       "xg_away": 0.96,
-      "confidence": 0.2159,
-      "raw_confidence": 0.0105,
+      "confidence": 0.2336,
+      "raw_confidence": 0.0318,
       "best_out": "1",
-      "best_val": 0.40598472573510513
+      "best_val": 0.4559847257351052
     },
-    "generated_at": "2026-03-11T09:09:00.577076"
+    "generated_at": "2026-03-12T09:12:18.893364"
   },
   {
     "league": "Bundesliga",
@@ -1032,13 +1032,13 @@
     "matchday": 26,
     "first_leg": null,
     "prediction": {
-      "home": 0.6418948761881335,
+      "home": 0.5918948761881334,
       "draw": 0.22071999999999997,
-      "away": 0.13738512381186657,
+      "away": 0.18738512381186662,
       "quantum_used": false,
       "goals_factor": 1.15,
-      "dc_1x": 0.8626148761881334,
-      "dc_x2": 0.35810512381186654,
+      "dc_1x": 0.8126148761881333,
+      "dc_x2": 0.4081051238118666,
       "dc_12": 0.77928,
       "over_25": 0.5974282317032902,
       "under_25": 0.4025717682967098,
@@ -1046,12 +1046,12 @@
       "btts_n": 0.3825710929730798,
       "xg_home": 1.64,
       "xg_away": 1.45,
-      "confidence": 0.3571,
-      "raw_confidence": 0.1892,
+      "confidence": 0.3493,
+      "raw_confidence": 0.1283,
       "best_out": "1",
-      "best_val": 0.6418948761881335
+      "best_val": 0.5918948761881334
     },
-    "generated_at": "2026-03-11T09:09:21.020579"
+    "generated_at": "2026-03-12T09:12:38.875119"
   },
   {
     "league": "Bundesliga",
@@ -1080,12 +1080,12 @@
       "btts_n": 0.2495360746001154,
       "xg_home": 1.72,
       "xg_away": 2.44,
-      "confidence": 0.2158,
+      "confidence": 0.227,
       "raw_confidence": 0.01,
       "best_out": "2",
       "best_val": 0.4941803011624648
     },
-    "generated_at": "2026-03-11T09:09:21.020728"
+    "generated_at": "2026-03-12T09:12:38.875258"
   },
   {
     "league": "Bundesliga",
@@ -1114,12 +1114,12 @@
       "btts_n": 0.316032465543132,
       "xg_home": 2.59,
       "xg_away": 1.35,
-      "confidence": 0.2264,
+      "confidence": 0.2376,
       "raw_confidence": 0.0453,
       "best_out": "1",
       "best_val": 0.4852101957872621
     },
-    "generated_at": "2026-03-11T09:09:21.020817"
+    "generated_at": "2026-03-12T09:12:38.875328"
   },
   {
     "league": "Bundesliga",
@@ -1148,12 +1148,12 @@
       "btts_n": 0.35866370751537024,
       "xg_home": 2.49,
       "xg_away": 1.2,
-      "confidence": 0.3551,
+      "confidence": 0.4048,
       "raw_confidence": 0.1828,
       "best_out": "1",
       "best_val": 0.6385432876442065
     },
-    "generated_at": "2026-03-11T09:09:21.020900"
+    "generated_at": "2026-03-12T09:12:38.875396"
   },
   {
     "league": "Bundesliga",
@@ -1168,13 +1168,13 @@
     "matchday": 26,
     "first_leg": null,
     "prediction": {
-      "home": 0.5542329357647493,
+      "home": 0.6042329357647493,
       "draw": 0.23151999999999998,
-      "away": 0.21424706423525072,
+      "away": 0.16424706423525068,
       "quantum_used": false,
       "goals_factor": 1.15,
-      "dc_1x": 0.7857529357647492,
-      "dc_x2": 0.4457670642352507,
+      "dc_1x": 0.8357529357647493,
+      "dc_x2": 0.39576706423525065,
       "dc_12": 0.76848,
       "over_25": 0.6961450072564872,
       "under_25": 0.3038549927435128,
@@ -1182,12 +1182,12 @@
       "btts_n": 0.34700426396397077,
       "xg_home": 2.3,
       "xg_away": 1.29,
-      "confidence": 0.3346,
-      "raw_confidence": 0.0935,
+      "confidence": 0.3542,
+      "raw_confidence": 0.1445,
       "best_out": "1",
-      "best_val": 0.5542329357647493
+      "best_val": 0.6042329357647493
     },
-    "generated_at": "2026-03-11T09:09:21.020980"
+    "generated_at": "2026-03-12T09:12:38.875460"
   },
   {
     "league": "Bundesliga",
@@ -1216,12 +1216,12 @@
       "btts_n": 0.386384165053259,
       "xg_home": 1.89,
       "xg_away": 1.28,
-      "confidence": 0.2203,
+      "confidence": 0.2315,
       "raw_confidence": 0.025,
       "best_out": "1",
       "best_val": 0.435609314091342
     },
-    "generated_at": "2026-03-11T09:09:21.021072"
+    "generated_at": "2026-03-12T09:12:38.875522"
   },
   {
     "league": "Bundesliga",
@@ -1236,26 +1236,26 @@
     "matchday": 26,
     "first_leg": null,
     "prediction": {
-      "home": 0.34457206921782335,
+      "home": 0.39457206921782345,
       "draw": 0.24744000000000002,
-      "away": 0.40798793078217666,
+      "away": 0.3579879307821766,
       "quantum_used": false,
       "goals_factor": 1.15,
-      "dc_1x": 0.5920120692178233,
-      "dc_x2": 0.6554279307821766,
-      "dc_12": 0.75256,
+      "dc_1x": 0.6420120692178235,
+      "dc_x2": 0.6054279307821766,
+      "dc_12": 0.7525600000000001,
       "over_25": 0.6878943013445454,
       "under_25": 0.31210569865545457,
       "btts_y": 0.6879124627720634,
       "btts_n": 0.3120875372279366,
       "xg_home": 1.87,
       "xg_away": 1.68,
-      "confidence": 0.2183,
-      "raw_confidence": 0.0183,
-      "best_out": "2",
-      "best_val": 0.40798793078217666
+      "confidence": 0.229,
+      "raw_confidence": 0.0167,
+      "best_out": "1",
+      "best_val": 0.39457206921782345
     },
-    "generated_at": "2026-03-11T09:09:21.021179"
+    "generated_at": "2026-03-12T09:12:38.875599"
   },
   {
     "league": "Bundesliga",
@@ -1270,13 +1270,13 @@
     "matchday": 26,
     "first_leg": null,
     "prediction": {
-      "home": 0.5600034793452628,
+      "home": 0.5100034793452628,
       "draw": 0.24528000000000003,
-      "away": 0.19471652065473713,
+      "away": 0.24471652065473717,
       "quantum_used": false,
       "goals_factor": 1.15,
-      "dc_1x": 0.8052834793452629,
-      "dc_x2": 0.43999652065473716,
+      "dc_1x": 0.7552834793452629,
+      "dc_x2": 0.4899965206547372,
       "dc_12": 0.75472,
       "over_25": 0.6698056996226208,
       "under_25": 0.3301943003773792,
@@ -1284,12 +1284,12 @@
       "btts_n": 0.35825321649194897,
       "xg_home": 2.16,
       "xg_away": 1.29,
-      "confidence": 0.3368,
-      "raw_confidence": 0.1007,
+      "confidence": 0.3288,
+      "raw_confidence": 0.0601,
       "best_out": "1",
-      "best_val": 0.5600034793452628
+      "best_val": 0.5100034793452628
     },
-    "generated_at": "2026-03-11T09:09:21.021303"
+    "generated_at": "2026-03-12T09:12:38.875662"
   },
   {
     "league": "Bundesliga",
@@ -1318,12 +1318,12 @@
       "btts_n": 0.3584049742076567,
       "xg_home": 1.77,
       "xg_away": 1.48,
-      "confidence": 0.3224,
+      "confidence": 0.3266,
       "raw_confidence": 0.0527,
       "best_out": "2",
       "best_val": 0.4966812059305253
     },
-    "generated_at": "2026-03-11T09:09:21.021397"
+    "generated_at": "2026-03-12T09:12:38.875725"
   },
   {
     "league": "Ligue 1",
@@ -1352,12 +1352,12 @@
       "btts_n": 0.41652866225141383,
       "xg_home": 2.28,
       "xg_away": 1.05,
-      "confidence": 0.3453,
+      "confidence": 0.3495,
       "raw_confidence": 0.1292,
       "best_out": "1",
       "best_val": 0.5781650516520528
     },
-    "generated_at": "2026-03-11T09:09:41.485781"
+    "generated_at": "2026-03-12T09:12:58.904906"
   },
   {
     "league": "Ligue 1",
@@ -1386,12 +1386,12 @@
       "btts_n": 0.3380182240203984,
       "xg_home": 1.62,
       "xg_away": 1.75,
-      "confidence": 0.2158,
+      "confidence": 0.227,
       "raw_confidence": 0.01,
       "best_out": "1",
       "best_val": 0.3706514420581961
     },
-    "generated_at": "2026-03-11T09:09:41.485876"
+    "generated_at": "2026-03-12T09:12:58.904991"
   },
   {
     "league": "Ligue 1",
@@ -1406,13 +1406,13 @@
     "matchday": 26,
     "first_leg": null,
     "prediction": {
-      "home": 0.49790854721750233,
+      "home": 0.4479085472175023,
       "draw": 0.2836,
-      "away": 0.21849145278249765,
+      "away": 0.2684914527824977,
       "quantum_used": false,
       "goals_factor": 1.05,
-      "dc_1x": 0.7815085472175023,
-      "dc_x2": 0.5020914527824977,
+      "dc_1x": 0.7315085472175022,
+      "dc_x2": 0.5520914527824977,
       "dc_12": 0.7163999999999999,
       "over_25": 0.5798276679017681,
       "under_25": 0.4201723320982319,
@@ -1420,12 +1420,12 @@
       "btts_n": 0.4252906646626642,
       "xg_home": 1.88,
       "xg_away": 1.13,
-      "confidence": 0.3234,
-      "raw_confidence": 0.0561,
+      "confidence": 0.2318,
+      "raw_confidence": 0.0259,
       "best_out": "1",
-      "best_val": 0.49790854721750233
+      "best_val": 0.4479085472175023
     },
-    "generated_at": "2026-03-11T09:09:41.485960"
+    "generated_at": "2026-03-12T09:12:58.905060"
   },
   {
     "league": "Ligue 1",
@@ -1440,13 +1440,13 @@
     "matchday": 26,
     "first_leg": null,
     "prediction": {
-      "home": 0.5980063882812006,
+      "home": 0.5480063882812005,
       "draw": 0.27120000000000005,
-      "away": 0.13079361171879939,
+      "away": 0.18079361171879943,
       "quantum_used": false,
       "goals_factor": 1.05,
-      "dc_1x": 0.8692063882812007,
-      "dc_x2": 0.40199361171879944,
+      "dc_1x": 0.8192063882812006,
+      "dc_x2": 0.4519936117187995,
       "dc_12": 0.7287999999999999,
       "over_25": 0.6586176137790595,
       "under_25": 0.3413823862209405,
@@ -1454,12 +1454,12 @@
       "btts_n": 0.3516200089339123,
       "xg_home": 2.01,
       "xg_away": 1.38,
-      "confidence": 0.3471,
-      "raw_confidence": 0.1558,
+      "confidence": 0.3397,
+      "raw_confidence": 0.0964,
       "best_out": "1",
-      "best_val": 0.5980063882812006
+      "best_val": 0.5480063882812005
     },
-    "generated_at": "2026-03-11T09:09:41.486039"
+    "generated_at": "2026-03-12T09:12:58.905124"
   },
   {
     "league": "Ligue 1",
@@ -1474,13 +1474,13 @@
     "matchday": 26,
     "first_leg": null,
     "prediction": {
-      "home": 0.43689867867180954,
+      "home": 0.3868986786718095,
       "draw": 0.29000000000000004,
-      "away": 0.2731013213281904,
+      "away": 0.32310132132819047,
       "quantum_used": false,
       "goals_factor": 1.05,
-      "dc_1x": 0.7268986786718096,
-      "dc_x2": 0.5631013213281905,
+      "dc_1x": 0.6768986786718095,
+      "dc_x2": 0.6131013213281905,
       "dc_12": 0.71,
       "over_25": 0.4930562179922041,
       "under_25": 0.5069437820077959,
@@ -1488,12 +1488,12 @@
       "btts_n": 0.4970695167382323,
       "xg_home": 1.69,
       "xg_away": 0.96,
-      "confidence": 0.2192,
-      "raw_confidence": 0.0213,
+      "confidence": 0.227,
+      "raw_confidence": 0.01,
       "best_out": "1",
-      "best_val": 0.43689867867180954
+      "best_val": 0.3868986786718095
     },
-    "generated_at": "2026-03-11T09:09:41.486116"
+    "generated_at": "2026-03-12T09:12:58.905187"
   },
   {
     "league": "Ligue 1",
@@ -1522,12 +1522,12 @@
       "btts_n": 0.4590757077906955,
       "xg_home": 1.37,
       "xg_away": 1.29,
-      "confidence": 0.2158,
+      "confidence": 0.227,
       "raw_confidence": 0.01,
       "best_out": "1",
       "best_val": 0.3584647281035958
     },
-    "generated_at": "2026-03-11T09:09:41.486193"
+    "generated_at": "2026-03-12T09:12:58.905250"
   },
   {
     "league": "Ligue 1",
@@ -1542,13 +1542,13 @@
     "matchday": 26,
     "first_leg": null,
     "prediction": {
-      "home": 0.3036895172526215,
+      "home": 0.35368951725262154,
       "draw": 0.28918000000000005,
-      "away": 0.40713048274737845,
+      "away": 0.3571304827473784,
       "quantum_used": false,
       "goals_factor": 1.05,
-      "dc_1x": 0.5928695172526215,
-      "dc_x2": 0.6963104827473785,
+      "dc_1x": 0.6428695172526215,
+      "dc_x2": 0.6463104827473785,
       "dc_12": 0.71082,
       "over_25": 0.41908337219159386,
       "under_25": 0.5809166278084061,
@@ -1556,12 +1556,12 @@
       "btts_n": 0.5353871532937672,
       "xg_home": 0.96,
       "xg_away": 1.4,
-      "confidence": 0.2161,
-      "raw_confidence": 0.011,
+      "confidence": 0.227,
+      "raw_confidence": 0.01,
       "best_out": "2",
-      "best_val": 0.40713048274737845
+      "best_val": 0.3571304827473784
     },
-    "generated_at": "2026-03-11T09:09:41.486270"
+    "generated_at": "2026-03-12T09:12:58.905311"
   },
   {
     "league": "Ligue 1",
@@ -1590,148 +1590,12 @@
       "btts_n": 0.39050051159995103,
       "xg_home": 1.8,
       "xg_away": 1.31,
-      "confidence": 0.2158,
+      "confidence": 0.227,
       "raw_confidence": 0.01,
       "best_out": "2",
       "best_val": 0.397383229339421
     },
-    "generated_at": "2026-03-11T09:09:41.486346"
-  },
-  {
-    "league": "Champions League",
-    "comp_code": "CL",
-    "season": "2025/2026",
-    "fixture_id": 552075,
-    "home": "Bayer 04 Leverkusen",
-    "away": "Arsenal FC",
-    "date": "11/03/2026",
-    "time": "18:45",
-    "stage": "LAST_16",
-    "matchday": 1,
-    "first_leg": null,
-    "prediction": {
-      "home": 0.3091574614404906,
-      "draw": 0.25648000000000004,
-      "away": 0.43436253855950935,
-      "quantum_used": false,
-      "goals_factor": 1.05,
-      "dc_1x": 0.5656374614404907,
-      "dc_x2": 0.6908425385595094,
-      "dc_12": 0.74352,
-      "over_25": 0.6726306609840456,
-      "under_25": 0.32736933901595444,
-      "btts_y": 0.5700638886520998,
-      "btts_n": 0.4299361113479002,
-      "xg_home": 0.97,
-      "xg_away": 2.49,
-      "confidence": 0.2158,
-      "raw_confidence": 0.01,
-      "best_out": "2",
-      "best_val": 0.43436253855950935
-    },
-    "generated_at": "2026-03-11T09:10:08.716923"
-  },
-  {
-    "league": "Champions League",
-    "comp_code": "CL",
-    "season": "2025/2026",
-    "fixture_id": 552068,
-    "home": "Paris Saint-Germain FC",
-    "away": "Chelsea FC",
-    "date": "11/03/2026",
-    "time": "21:00",
-    "stage": "LAST_16",
-    "matchday": 1,
-    "first_leg": null,
-    "prediction": {
-      "home": 0.5569479941447482,
-      "draw": 0.243,
-      "away": 0.20005200585525185,
-      "quantum_used": false,
-      "goals_factor": 1.05,
-      "dc_1x": 0.7999479941447482,
-      "dc_x2": 0.44305200585525184,
-      "dc_12": 0.757,
-      "over_25": 0.803271677566559,
-      "under_25": 0.19672832243344096,
-      "btts_y": 0.7628658092256213,
-      "btts_n": 0.2371341907743787,
-      "xg_home": 2.55,
-      "xg_away": 1.76,
-      "confidence": 0.221,
-      "raw_confidence": 0.0274,
-      "best_out": "1",
-      "best_val": 0.5569479941447482
-    },
-    "generated_at": "2026-03-11T09:10:08.716997"
-  },
-  {
-    "league": "Champions League",
-    "comp_code": "CL",
-    "season": "2025/2026",
-    "fixture_id": 552070,
-    "home": "Real Madrid CF",
-    "away": "Manchester City FC",
-    "date": "11/03/2026",
-    "time": "21:00",
-    "stage": "LAST_16",
-    "matchday": 1,
-    "first_leg": null,
-    "prediction": {
-      "home": 0.6659716337622926,
-      "draw": 0.258,
-      "away": 0.07602836623770737,
-      "quantum_used": false,
-      "goals_factor": 1.05,
-      "dc_1x": 0.9239716337622926,
-      "dc_x2": 0.3340283662377074,
-      "dc_12": 0.742,
-      "over_25": 0.6775313752256272,
-      "under_25": 0.32246862477437277,
-      "btts_y": 0.6653646830161352,
-      "btts_n": 0.33463531698386484,
-      "xg_home": 2.05,
-      "xg_away": 1.44,
-      "confidence": 0.3477,
-      "raw_confidence": 0.1371,
-      "best_out": "1",
-      "best_val": 0.6659716337622926
-    },
-    "generated_at": "2026-03-11T09:10:08.717103"
-  },
-  {
-    "league": "Champions League",
-    "comp_code": "CL",
-    "season": "2025/2026",
-    "fixture_id": 552074,
-    "home": "FK Bod\u00f8/Glimt",
-    "away": "Sporting Clube de Portugal",
-    "date": "11/03/2026",
-    "time": "21:00",
-    "stage": "LAST_16",
-    "matchday": 1,
-    "first_leg": null,
-    "prediction": {
-      "home": 0.4383464920222119,
-      "draw": 0.26,
-      "away": 0.3016535079777881,
-      "quantum_used": false,
-      "goals_factor": 1.05,
-      "dc_1x": 0.6983464920222119,
-      "dc_x2": 0.5616535079777881,
-      "dc_12": 0.74,
-      "over_25": 0.7191914192864626,
-      "under_25": 0.2808085807135374,
-      "btts_y": 0.7051764538607533,
-      "btts_n": 0.29482354613924666,
-      "xg_home": 2.1,
-      "xg_away": 1.63,
-      "confidence": 0.2197,
-      "raw_confidence": 0.0231,
-      "best_out": "1",
-      "best_val": 0.4383464920222119
-    },
-    "generated_at": "2026-03-11T09:10:08.717285"
+    "generated_at": "2026-03-12T09:12:58.905372"
   },
   {
     "league": "Champions League",
@@ -1744,15 +1608,19 @@
     "time": "18:45",
     "stage": "LAST_16",
     "matchday": 2,
-    "first_leg": null,
+    "first_leg": {
+      "gh1": 3,
+      "ga1": 0,
+      "diff": 3
+    },
     "prediction": {
-      "home": 0.4447064920222119,
+      "home": 0.26570649202221186,
       "draw": 0.26,
-      "away": 0.2952935079777881,
+      "away": 0.47429350797778813,
       "quantum_used": false,
       "goals_factor": 1.05,
-      "dc_1x": 0.7047064920222119,
-      "dc_x2": 0.5552935079777881,
+      "dc_1x": 0.5257064920222119,
+      "dc_x2": 0.7342935079777881,
       "dc_12": 0.74,
       "over_25": 0.7191914192864626,
       "under_25": 0.2808085807135374,
@@ -1760,12 +1628,12 @@
       "btts_n": 0.32986457994968854,
       "xg_home": 2.39,
       "xg_away": 1.34,
-      "confidence": 0.2204,
-      "raw_confidence": 0.0253,
-      "best_out": "1",
-      "best_val": 0.4447064920222119
+      "confidence": 0.2356,
+      "raw_confidence": 0.0386,
+      "best_out": "2",
+      "best_val": 0.47429350797778813
     },
-    "generated_at": "2026-03-11T09:10:08.717483"
+    "generated_at": "2026-03-12T09:13:25.533864"
   },
   {
     "league": "Champions League",
@@ -1778,28 +1646,32 @@
     "time": "21:00",
     "stage": "LAST_16",
     "matchday": 2,
-    "first_leg": null,
+    "first_leg": {
+      "gh1": 5,
+      "ga1": 2,
+      "diff": 3
+    },
     "prediction": {
-      "home": 0.3275032476552573,
+      "home": 0.1485032476552573,
       "draw": 0.243,
-      "away": 0.4294967523447427,
+      "away": 0.6084967523447428,
       "quantum_used": false,
       "goals_factor": 1.05,
-      "dc_1x": 0.5705032476552573,
-      "dc_x2": 0.6724967523447427,
-      "dc_12": 0.757,
+      "dc_1x": 0.3915032476552573,
+      "dc_x2": 0.8514967523447428,
+      "dc_12": 0.7570000000000001,
       "over_25": 0.6871689530929359,
       "under_25": 0.3128310469070641,
       "btts_y": 0.6758791182761597,
       "btts_n": 0.32412088172384035,
       "xg_home": 2.05,
       "xg_away": 1.5,
-      "confidence": 0.2158,
-      "raw_confidence": 0.01,
+      "confidence": 0.336,
+      "raw_confidence": 0.0841,
       "best_out": "2",
-      "best_val": 0.4294967523447427
+      "best_val": 0.6084967523447428
     },
-    "generated_at": "2026-03-11T09:10:08.717609"
+    "generated_at": "2026-03-12T09:13:25.533935"
   },
   {
     "league": "Champions League",
@@ -1812,15 +1684,19 @@
     "time": "21:00",
     "stage": "LAST_16",
     "matchday": 2,
-    "first_leg": null,
+    "first_leg": {
+      "gh1": 3,
+      "ga1": 0,
+      "diff": 3
+    },
     "prediction": {
-      "home": 0.28061056389226857,
+      "home": 0.20061056389226856,
       "draw": 0.258,
-      "away": 0.4613894361077314,
+      "away": 0.5413894361077314,
       "quantum_used": false,
       "goals_factor": 1.05,
-      "dc_1x": 0.5386105638922686,
-      "dc_x2": 0.7193894361077314,
+      "dc_1x": 0.45861056389226856,
+      "dc_x2": 0.7993894361077314,
       "dc_12": 0.742,
       "over_25": 0.6871689530929359,
       "under_25": 0.3128310469070641,
@@ -1828,12 +1704,12 @@
       "btts_n": 0.31349814811352594,
       "xg_home": 1.89,
       "xg_away": 1.65,
-      "confidence": 0.2158,
+      "confidence": 0.227,
       "raw_confidence": 0.01,
       "best_out": "2",
-      "best_val": 0.4613894361077314
+      "best_val": 0.5413894361077314
     },
-    "generated_at": "2026-03-11T09:10:08.717716"
+    "generated_at": "2026-03-12T09:13:25.533996"
   },
   {
     "league": "Champions League",
@@ -1846,15 +1722,19 @@
     "time": "21:00",
     "stage": "LAST_16",
     "matchday": 2,
-    "first_leg": null,
+    "first_leg": {
+      "gh1": 1,
+      "ga1": 1,
+      "diff": 0
+    },
     "prediction": {
-      "home": 0.50899650553181,
+      "home": 0.40999650553181,
       "draw": 0.25648000000000004,
-      "away": 0.23452349446818999,
+      "away": 0.33352349446818996,
       "quantum_used": false,
       "goals_factor": 1.05,
-      "dc_1x": 0.76547650553181,
-      "dc_x2": 0.49100349446819,
+      "dc_1x": 0.66647650553181,
+      "dc_x2": 0.59000349446819,
       "dc_12": 0.74352,
       "over_25": 0.6039561100015773,
       "under_25": 0.39604388999842266,
@@ -1862,12 +1742,12 @@
       "btts_n": 0.41545906550407563,
       "xg_home": 1.99,
       "xg_away": 1.13,
-      "confidence": 0.2158,
+      "confidence": 0.227,
       "raw_confidence": 0.01,
       "best_out": "1",
-      "best_val": 0.50899650553181
+      "best_val": 0.40999650553181
     },
-    "generated_at": "2026-03-11T09:10:08.717819"
+    "generated_at": "2026-03-12T09:13:25.534085"
   },
   {
     "league": "Champions League",
@@ -1900,12 +1780,12 @@
       "btts_n": 0.20443982186797083,
       "xg_home": 2.34,
       "xg_away": 2.13,
-      "confidence": 0.3256,
+      "confidence": 0.3298,
       "raw_confidence": 0.0634,
       "best_out": "1",
       "best_val": 0.5146145778809852
     },
-    "generated_at": "2026-03-11T09:10:08.717929"
+    "generated_at": "2026-03-12T09:13:25.534161"
   },
   {
     "league": "Champions League",
@@ -1938,12 +1818,88 @@
       "btts_n": 0.2986651212152104,
       "xg_home": 2.6,
       "xg_away": 1.42,
-      "confidence": 0.3517,
+      "confidence": 0.4014,
       "raw_confidence": 0.1713,
       "best_out": "1",
       "best_val": 0.628052865649684
     },
-    "generated_at": "2026-03-11T09:10:08.718136"
+    "generated_at": "2026-03-12T09:13:25.534331"
+  },
+  {
+    "league": "Champions League",
+    "comp_code": "CL",
+    "season": "2025/2026",
+    "fixture_id": 552079,
+    "home": "FC Bayern M\u00fcnchen",
+    "away": "Atalanta BC",
+    "date": "18/03/2026",
+    "time": "21:00",
+    "stage": "LAST_16",
+    "matchday": 2,
+    "first_leg": {
+      "gh1": 1,
+      "ga1": 6,
+      "diff": -5
+    },
+    "prediction": {
+      "home": 0.6948098289712569,
+      "draw": 0.23678000000000002,
+      "away": 0.06841017102874311,
+      "quantum_used": false,
+      "goals_factor": 1.05,
+      "dc_1x": 0.9315898289712569,
+      "dc_x2": 0.30519017102874313,
+      "dc_12": 0.76322,
+      "over_25": 0.5751275066839815,
+      "under_25": 0.4248724933160185,
+      "btts_y": 0.44554859184521617,
+      "btts_n": 0.5544514081547838,
+      "xg_home": 2.31,
+      "xg_away": 0.68,
+      "confidence": 0.4377,
+      "raw_confidence": 0.2922,
+      "best_out": "1",
+      "best_val": 0.6948098289712569
+    },
+    "generated_at": "2026-03-12T09:13:25.534511"
+  },
+  {
+    "league": "Champions League",
+    "comp_code": "CL",
+    "season": "2025/2026",
+    "fixture_id": 552081,
+    "home": "Tottenham Hotspur FC",
+    "away": "Club Atl\u00e9tico de Madrid",
+    "date": "18/03/2026",
+    "time": "21:00",
+    "stage": "LAST_16",
+    "matchday": 2,
+    "first_leg": {
+      "gh1": 5,
+      "ga1": 2,
+      "diff": 3
+    },
+    "prediction": {
+      "home": 0.4446062072803141,
+      "draw": 0.23820000000000002,
+      "away": 0.3171937927196859,
+      "quantum_used": false,
+      "goals_factor": 1.05,
+      "dc_1x": 0.682806207280314,
+      "dc_x2": 0.5553937927196859,
+      "dc_12": 0.7618,
+      "over_25": 0.7012170499300547,
+      "under_25": 0.29878295006994526,
+      "btts_y": 0.5693014560476327,
+      "btts_n": 0.4306985439523673,
+      "xg_home": 2.68,
+      "xg_away": 0.95,
+      "confidence": 0.2328,
+      "raw_confidence": 0.0294,
+      "best_out": "1",
+      "best_val": 0.4446062072803141
+    },
+    "generated_at": "2026-03-12T09:13:25.534632"
   },
   {
     "league": "Eredivisie",
@@ -1958,13 +1914,13 @@
     "matchday": 27,
     "first_leg": null,
     "prediction": {
-      "home": 0.32262634606850177,
+      "home": 0.37262634606850187,
       "draw": 0.26566,
-      "away": 0.4117136539314983,
+      "away": 0.3617136539314981,
       "quantum_used": false,
       "goals_factor": 1.1,
-      "dc_1x": 0.5882863460685017,
-      "dc_x2": 0.6773736539314983,
+      "dc_1x": 0.6382863460685019,
+      "dc_x2": 0.6273736539314981,
       "dc_12": 0.73434,
       "over_25": 0.5725396735434634,
       "under_25": 0.42746032645653664,
@@ -1972,12 +1928,12 @@
       "btts_n": 0.4033874045942146,
       "xg_home": 1.62,
       "xg_away": 1.36,
-      "confidence": 0.2172,
-      "raw_confidence": 0.0147,
-      "best_out": "2",
-      "best_val": 0.4117136539314983
+      "confidence": 0.227,
+      "raw_confidence": 0.01,
+      "best_out": "1",
+      "best_val": 0.37262634606850187
     },
-    "generated_at": "2026-03-11T09:10:35.787061"
+    "generated_at": "2026-03-12T09:13:52.323966"
   },
   {
     "league": "Eredivisie",
@@ -2006,12 +1962,12 @@
       "btts_n": 0.3248578442765375,
       "xg_home": 2.07,
       "xg_away": 1.48,
-      "confidence": 0.2164,
+      "confidence": 0.2276,
       "raw_confidence": 0.0121,
       "best_out": "1",
       "best_val": 0.40297675234474273
     },
-    "generated_at": "2026-03-11T09:10:35.787158"
+    "generated_at": "2026-03-12T09:13:52.324043"
   },
   {
     "league": "Eredivisie",
@@ -2026,13 +1982,13 @@
     "matchday": 27,
     "first_leg": null,
     "prediction": {
-      "home": 0.4704367523447428,
+      "home": 0.42043675234474276,
       "draw": 0.27,
-      "away": 0.2595632476552572,
+      "away": 0.3095632476552572,
       "quantum_used": false,
       "goals_factor": 1.1,
-      "dc_1x": 0.7404367523447428,
-      "dc_x2": 0.5295632476552572,
+      "dc_1x": 0.6904367523447428,
+      "dc_x2": 0.5795632476552572,
       "dc_12": 0.73,
       "over_25": 0.846843610360496,
       "under_25": 0.15315638963950395,
@@ -2040,12 +1996,12 @@
       "btts_n": 0.19494251146951103,
       "xg_home": 2.71,
       "xg_away": 1.99,
-      "confidence": 0.2238,
-      "raw_confidence": 0.0366,
+      "confidence": 0.2289,
+      "raw_confidence": 0.0162,
       "best_out": "1",
-      "best_val": 0.4704367523447428
+      "best_val": 0.42043675234474276
     },
-    "generated_at": "2026-03-11T09:10:35.787244"
+    "generated_at": "2026-03-12T09:13:52.324109"
   },
   {
     "league": "Eredivisie",
@@ -2060,13 +2016,13 @@
     "matchday": 27,
     "first_leg": null,
     "prediction": {
-      "home": 0.46103675234474273,
+      "home": 0.4110367523447427,
       "draw": 0.27,
-      "away": 0.26896324765525725,
+      "away": 0.3189632476552573,
       "quantum_used": false,
       "goals_factor": 1.1,
-      "dc_1x": 0.7310367523447427,
-      "dc_x2": 0.5389632476552573,
+      "dc_1x": 0.6810367523447427,
+      "dc_x2": 0.5889632476552573,
       "dc_12": 0.73,
       "over_25": 0.6405735336749162,
       "under_25": 0.3594264663250838,
@@ -2074,12 +2030,12 @@
       "btts_n": 0.35029398089424035,
       "xg_home": 1.78,
       "xg_away": 1.52,
-      "confidence": 0.2223,
-      "raw_confidence": 0.0318,
+      "confidence": 0.2281,
+      "raw_confidence": 0.0138,
       "best_out": "1",
-      "best_val": 0.46103675234474273
+      "best_val": 0.4110367523447427
     },
-    "generated_at": "2026-03-11T09:10:35.787325"
+    "generated_at": "2026-03-12T09:13:52.324175"
   },
   {
     "league": "Eredivisie",
@@ -2094,13 +2050,13 @@
     "matchday": 27,
     "first_leg": null,
     "prediction": {
-      "home": 0.6361957908054792,
+      "home": 0.5861957908054791,
       "draw": 0.24834000000000003,
-      "away": 0.1154642091945208,
+      "away": 0.16546420919452084,
       "quantum_used": false,
       "goals_factor": 1.1,
-      "dc_1x": 0.8845357908054792,
-      "dc_x2": 0.36380420919452083,
+      "dc_1x": 0.8345357908054791,
+      "dc_x2": 0.4138042091945209,
       "dc_12": 0.75166,
       "over_25": 0.6237365583501413,
       "under_25": 0.3762634416498587,
@@ -2108,12 +2064,12 @@
       "btts_n": 0.38982112156032045,
       "xg_home": 1.99,
       "xg_away": 1.23,
-      "confidence": 0.3592,
-      "raw_confidence": 0.1963,
+      "confidence": 0.3496,
+      "raw_confidence": 0.1292,
       "best_out": "1",
-      "best_val": 0.6361957908054792
+      "best_val": 0.5861957908054791
     },
-    "generated_at": "2026-03-11T09:10:35.787409"
+    "generated_at": "2026-03-12T09:13:52.324239"
   },
   {
     "league": "Eredivisie",
@@ -2128,13 +2084,13 @@
     "matchday": 27,
     "first_leg": null,
     "prediction": {
-      "home": 0.361818245890011,
+      "home": 0.41181824589001104,
       "draw": 0.2668000000000001,
-      "away": 0.371381754109989,
+      "away": 0.321381754109989,
       "quantum_used": false,
       "goals_factor": 1.1,
-      "dc_1x": 0.6286182458900111,
-      "dc_x2": 0.6381817541099891,
+      "dc_1x": 0.6786182458900112,
+      "dc_x2": 0.5881817541099891,
       "dc_12": 0.7332000000000001,
       "over_25": 0.5675617305258795,
       "under_25": 0.43243826947412045,
@@ -2142,12 +2098,12 @@
       "btts_n": 0.41828838457463224,
       "xg_home": 1.73,
       "xg_away": 1.23,
-      "confidence": 0.2158,
-      "raw_confidence": 0.01,
-      "best_out": "2",
-      "best_val": 0.371381754109989
+      "confidence": 0.2284,
+      "raw_confidence": 0.0145,
+      "best_out": "1",
+      "best_val": 0.41181824589001104
     },
-    "generated_at": "2026-03-11T09:10:35.787573"
+    "generated_at": "2026-03-12T09:13:52.324361"
   },
   {
     "league": "Eredivisie",
@@ -2176,12 +2132,12 @@
       "btts_n": 0.2898470134336839,
       "xg_home": 2.71,
       "xg_away": 1.43,
-      "confidence": 0.2196,
+      "confidence": 0.2308,
       "raw_confidence": 0.0226,
       "best_out": "1",
       "best_val": 0.43921096111685315
     },
-    "generated_at": "2026-03-11T09:10:35.787714"
+    "generated_at": "2026-03-12T09:13:52.324474"
   },
   {
     "league": "Eredivisie",
@@ -2196,13 +2152,13 @@
     "matchday": 27,
     "first_leg": null,
     "prediction": {
-      "home": 0.4288582458900108,
-      "draw": 0.26680000000000004,
-      "away": 0.3043417541099892,
+      "home": 0.478858245890011,
+      "draw": 0.2668000000000001,
+      "away": 0.254341754109989,
       "quantum_used": false,
       "goals_factor": 1.1,
-      "dc_1x": 0.6956582458900109,
-      "dc_x2": 0.5711417541099892,
+      "dc_1x": 0.7456582458900112,
+      "dc_x2": 0.5211417541099891,
       "dc_12": 0.7332000000000001,
       "over_25": 0.7459499084324588,
       "under_25": 0.2540500915675412,
@@ -2210,12 +2166,12 @@
       "btts_n": 0.3093057610035236,
       "xg_home": 2.5,
       "xg_away": 1.4,
-      "confidence": 0.2185,
-      "raw_confidence": 0.0191,
+      "confidence": 0.2364,
+      "raw_confidence": 0.0412,
       "best_out": "1",
-      "best_val": 0.4288582458900108
+      "best_val": 0.478858245890011
     },
-    "generated_at": "2026-03-11T09:10:35.787800"
+    "generated_at": "2026-03-12T09:13:52.324538"
   },
   {
     "league": "Eredivisie",
@@ -2244,12 +2200,12 @@
       "btts_n": 0.38140351899749214,
       "xg_home": 1.89,
       "xg_away": 1.3,
-      "confidence": 0.216,
+      "confidence": 0.2272,
       "raw_confidence": 0.0106,
       "best_out": "2",
       "best_val": 0.3885290388831468
     },
-    "generated_at": "2026-03-11T09:10:35.787879"
+    "generated_at": "2026-03-12T09:13:52.324619"
   },
   {
     "league": "Primeira Liga",
@@ -2264,13 +2220,13 @@
     "matchday": 26,
     "first_leg": null,
     "prediction": {
-      "home": 0.37048472810359573,
+      "home": 0.4204847281035958,
       "draw": 0.29680000000000006,
-      "away": 0.33271527189640426,
+      "away": 0.2827152718964042,
       "quantum_used": false,
       "goals_factor": 0.95,
-      "dc_1x": 0.6672847281035958,
-      "dc_x2": 0.6295152718964043,
+      "dc_1x": 0.7172847281035959,
+      "dc_x2": 0.5795152718964043,
       "dc_12": 0.7032,
       "over_25": 0.3322549086067672,
       "under_25": 0.6677450913932328,
@@ -2278,12 +2234,12 @@
       "btts_n": 0.5974841802254645,
       "xg_home": 1.13,
       "xg_away": 0.9,
-      "confidence": 0.2158,
-      "raw_confidence": 0.01,
+      "confidence": 0.2285,
+      "raw_confidence": 0.0152,
       "best_out": "1",
-      "best_val": 0.37048472810359573
+      "best_val": 0.4204847281035958
     },
-    "generated_at": "2026-03-11T09:10:56.309490"
+    "generated_at": "2026-03-12T09:14:12.422634"
   },
   {
     "league": "Primeira Liga",
@@ -2298,13 +2254,13 @@
     "matchday": 26,
     "first_leg": null,
     "prediction": {
-      "home": 0.35055867867180945,
+      "home": 0.4005586786718096,
       "draw": 0.30000000000000004,
-      "away": 0.3494413213281905,
+      "away": 0.29944132132819035,
       "quantum_used": false,
       "goals_factor": 0.95,
-      "dc_1x": 0.6505586786718095,
-      "dc_x2": 0.6494413213281905,
+      "dc_1x": 0.7005586786718097,
+      "dc_x2": 0.5994413213281904,
       "dc_12": 0.7,
       "over_25": 0.4847039369787983,
       "under_25": 0.5152960630212017,
@@ -2312,12 +2268,12 @@
       "btts_n": 0.5120087008416333,
       "xg_home": 1.71,
       "xg_away": 0.91,
-      "confidence": 0.2158,
+      "confidence": 0.227,
       "raw_confidence": 0.01,
       "best_out": "1",
-      "best_val": 0.35055867867180945
+      "best_val": 0.4005586786718096
     },
-    "generated_at": "2026-03-11T09:10:56.309605"
+    "generated_at": "2026-03-12T09:14:12.422732"
   },
   {
     "league": "Primeira Liga",
@@ -2332,13 +2288,13 @@
     "matchday": 26,
     "first_leg": null,
     "prediction": {
-      "home": 0.2011102994294452,
+      "home": 0.15111029942944515,
       "draw": 0.27004000000000006,
-      "away": 0.5288497005705548,
+      "away": 0.5788497005705548,
       "quantum_used": false,
       "goals_factor": 0.95,
-      "dc_1x": 0.47115029942944525,
-      "dc_x2": 0.7988897005705549,
+      "dc_1x": 0.4211502994294452,
+      "dc_x2": 0.8488897005705549,
       "dc_12": 0.7299599999999999,
       "over_25": 0.5151526745891432,
       "under_25": 0.48484732541085684,
@@ -2346,12 +2302,12 @@
       "btts_n": 0.498269776974235,
       "xg_home": 0.91,
       "xg_away": 1.82,
-      "confidence": 0.33,
-      "raw_confidence": 0.0779,
+      "confidence": 0.3499,
+      "raw_confidence": 0.1302,
       "best_out": "2",
-      "best_val": 0.5288497005705548
+      "best_val": 0.5788497005705548
     },
-    "generated_at": "2026-03-11T09:10:56.309748"
+    "generated_at": "2026-03-12T09:14:12.422852"
   },
   {
     "league": "Primeira Liga",
@@ -2380,12 +2336,12 @@
       "btts_n": 0.3554918267857632,
       "xg_home": 1.66,
       "xg_away": 1.59,
-      "confidence": 0.2158,
+      "confidence": 0.227,
       "raw_confidence": 0.01,
       "best_out": "2",
       "best_val": 0.35330132132819037
     },
-    "generated_at": "2026-03-11T09:10:56.309832"
+    "generated_at": "2026-03-12T09:14:12.422915"
   },
   {
     "league": "Primeira Liga",
@@ -2400,13 +2356,13 @@
     "matchday": 26,
     "first_leg": null,
     "prediction": {
-      "home": 0.4075047281035958,
+      "home": 0.35750472810359574,
       "draw": 0.29680000000000006,
-      "away": 0.2956952718964042,
+      "away": 0.34569527189640425,
       "quantum_used": false,
       "goals_factor": 0.95,
-      "dc_1x": 0.7043047281035959,
-      "dc_x2": 0.5924952718964043,
+      "dc_1x": 0.6543047281035959,
+      "dc_x2": 0.6424952718964043,
       "dc_12": 0.7032,
       "over_25": 0.3973875040402626,
       "under_25": 0.6026124959597374,
@@ -2414,12 +2370,12 @@
       "btts_n": 0.5414298792803671,
       "xg_home": 1.04,
       "xg_away": 1.23,
-      "confidence": 0.2161,
-      "raw_confidence": 0.0109,
+      "confidence": 0.227,
+      "raw_confidence": 0.01,
       "best_out": "1",
-      "best_val": 0.4075047281035958
+      "best_val": 0.35750472810359574
     },
-    "generated_at": "2026-03-11T09:10:56.309912"
+    "generated_at": "2026-03-12T09:14:12.422978"
   },
   {
     "league": "Primeira Liga",
@@ -2434,26 +2390,26 @@
     "matchday": 26,
     "first_leg": null,
     "prediction": {
-      "home": 0.3766410641268197,
+      "home": 0.3266410641268197,
       "draw": 0.29680000000000006,
-      "away": 0.3265589358731803,
+      "away": 0.37655893587318023,
       "quantum_used": false,
       "goals_factor": 0.95,
-      "dc_1x": 0.6734410641268198,
-      "dc_x2": 0.6233589358731804,
-      "dc_12": 0.7032,
+      "dc_1x": 0.6234410641268198,
+      "dc_x2": 0.6733589358731803,
+      "dc_12": 0.7031999999999999,
       "over_25": 0.47515011894174775,
       "under_25": 0.5248498810582523,
       "btts_y": 0.5240346206978636,
       "btts_n": 0.47596537930213645,
       "xg_home": 1.31,
       "xg_away": 1.27,
-      "confidence": 0.2158,
+      "confidence": 0.227,
       "raw_confidence": 0.01,
-      "best_out": "1",
-      "best_val": 0.3766410641268197
+      "best_out": "2",
+      "best_val": 0.37655893587318023
     },
-    "generated_at": "2026-03-11T09:10:56.309990"
+    "generated_at": "2026-03-12T09:14:12.423042"
   },
   {
     "league": "Primeira Liga",
@@ -2468,13 +2424,13 @@
     "matchday": 26,
     "first_leg": null,
     "prediction": {
-      "home": 0.5703281976572323,
+      "home": 0.6203281976572323,
       "draw": 0.27096000000000003,
-      "away": 0.15871180234276766,
+      "away": 0.10871180234276762,
       "quantum_used": false,
       "goals_factor": 0.95,
-      "dc_1x": 0.8412881976572324,
-      "dc_x2": 0.4296718023427677,
+      "dc_1x": 0.8912881976572324,
+      "dc_x2": 0.37967180234276765,
       "dc_12": 0.7290399999999999,
       "over_25": 0.40621398421065025,
       "under_25": 0.5937860157893498,
@@ -2482,216 +2438,12 @@
       "btts_n": 0.5964766603589817,
       "xg_home": 1.61,
       "xg_away": 0.7,
-      "confidence": 0.3428,
-      "raw_confidence": 0.1205,
+      "confidence": 0.4066,
+      "raw_confidence": 0.1887,
       "best_out": "1",
-      "best_val": 0.5703281976572323
+      "best_val": 0.6203281976572323
     },
-    "generated_at": "2026-03-11T09:10:56.310068"
-  },
-  {
-    "league": "Championship",
-    "comp_code": "ELC",
-    "season": "2025/2026",
-    "fixture_id": 541144,
-    "home": "Birmingham City FC",
-    "away": "Queens Park Rangers FC",
-    "date": "11/03/2026",
-    "time": "20:45",
-    "stage": "REGULAR_SEASON",
-    "matchday": 37,
-    "first_leg": null,
-    "prediction": {
-      "home": 0.42208188496423016,
-      "draw": 0.28,
-      "away": 0.2979181150357698,
-      "quantum_used": false,
-      "goals_factor": 1.0,
-      "dc_1x": 0.7020818849642302,
-      "dc_x2": 0.5779181150357698,
-      "dc_12": 0.72,
-      "over_25": 0.5039227010241988,
-      "under_25": 0.4960772989758012,
-      "btts_y": 0.5154819742073298,
-      "btts_n": 0.4845180257926702,
-      "xg_home": 1.69,
-      "xg_away": 1.0,
-      "confidence": 0.2175,
-      "raw_confidence": 0.0158,
-      "best_out": "1",
-      "best_val": 0.42208188496423016
-    },
-    "generated_at": "2026-03-11T09:11:16.997241"
-  },
-  {
-    "league": "Championship",
-    "comp_code": "ELC",
-    "season": "2025/2026",
-    "fixture_id": 541147,
-    "home": "Norwich City FC",
-    "away": "Sheffield United FC",
-    "date": "11/03/2026",
-    "time": "20:45",
-    "stage": "REGULAR_SEASON",
-    "matchday": 37,
-    "first_leg": null,
-    "prediction": {
-      "home": 0.6034798405303332,
-      "draw": 0.23600000000000002,
-      "away": 0.16052015946966677,
-      "quantum_used": false,
-      "goals_factor": 1.0,
-      "dc_1x": 0.8394798405303332,
-      "dc_x2": 0.3965201594696668,
-      "dc_12": 0.764,
-      "over_25": 0.4803144776963284,
-      "under_25": 0.5196855223036716,
-      "btts_y": 0.5277243592696561,
-      "btts_n": 0.4722756407303439,
-      "xg_home": 1.34,
-      "xg_away": 1.25,
-      "confidence": 0.3501,
-      "raw_confidence": 0.1451,
-      "best_out": "1",
-      "best_val": 0.6034798405303332
-    },
-    "generated_at": "2026-03-11T09:11:16.997402"
-  },
-  {
-    "league": "Championship",
-    "comp_code": "ELC",
-    "season": "2025/2026",
-    "fixture_id": 541153,
-    "home": "Middlesbrough FC",
-    "away": "Charlton Athletic FC",
-    "date": "11/03/2026",
-    "time": "20:45",
-    "stage": "REGULAR_SEASON",
-    "matchday": 37,
-    "first_leg": null,
-    "prediction": {
-      "home": 0.3243418849642301,
-      "draw": 0.28,
-      "away": 0.39565811503576986,
-      "quantum_used": false,
-      "goals_factor": 1.0,
-      "dc_1x": 0.6043418849642301,
-      "dc_x2": 0.6756581150357699,
-      "dc_12": 0.72,
-      "over_25": 0.3999795672704174,
-      "under_25": 0.6000204327295826,
-      "btts_y": 0.4259427573125934,
-      "btts_n": 0.5740572426874067,
-      "xg_home": 1.48,
-      "xg_away": 0.8,
-      "confidence": 0.2158,
-      "raw_confidence": 0.01,
-      "best_out": "2",
-      "best_val": 0.39565811503576986
-    },
-    "generated_at": "2026-03-11T09:11:16.997537"
-  },
-  {
-    "league": "Championship",
-    "comp_code": "ELC",
-    "season": "2025/2026",
-    "fixture_id": 541154,
-    "home": "Oxford United FC",
-    "away": "Blackburn Rovers FC",
-    "date": "11/03/2026",
-    "time": "20:45",
-    "stage": "REGULAR_SEASON",
-    "matchday": 37,
-    "first_leg": null,
-    "prediction": {
-      "home": 0.5243182428425361,
-      "draw": 0.258,
-      "away": 0.21768175715746385,
-      "quantum_used": false,
-      "goals_factor": 1.0,
-      "dc_1x": 0.7823182428425361,
-      "dc_x2": 0.47568175715746386,
-      "dc_12": 0.742,
-      "over_25": 0.38531910555023496,
-      "under_25": 0.614680894449765,
-      "btts_y": 0.45140272645066276,
-      "btts_n": 0.5485972735493372,
-      "xg_home": 1.08,
-      "xg_away": 1.15,
-      "confidence": 0.3281,
-      "raw_confidence": 0.0716,
-      "best_out": "1",
-      "best_val": 0.5243182428425361
-    },
-    "generated_at": "2026-03-11T09:11:16.997687"
-  },
-  {
-    "league": "Championship",
-    "comp_code": "ELC",
-    "season": "2025/2026",
-    "fixture_id": 541155,
-    "home": "West Bromwich Albion FC",
-    "away": "Southampton FC",
-    "date": "11/03/2026",
-    "time": "20:45",
-    "stage": "REGULAR_SEASON",
-    "matchday": 37,
-    "first_leg": null,
-    "prediction": {
-      "home": 0.3346446279338725,
-      "draw": 0.27,
-      "away": 0.3953553720661275,
-      "quantum_used": false,
-      "goals_factor": 1.0,
-      "dc_1x": 0.6046446279338725,
-      "dc_x2": 0.6653553720661275,
-      "dc_12": 0.73,
-      "over_25": 0.5666528143641323,
-      "under_25": 0.4333471856358677,
-      "btts_y": 0.5954910786502186,
-      "btts_n": 0.40450892134978145,
-      "xg_home": 1.45,
-      "xg_away": 1.5,
-      "confidence": 0.216,
-      "raw_confidence": 0.0108,
-      "best_out": "2",
-      "best_val": 0.3953553720661275
-    },
-    "generated_at": "2026-03-11T09:11:16.997797"
-  },
-  {
-    "league": "Championship",
-    "comp_code": "ELC",
-    "season": "2025/2026",
-    "fixture_id": 541152,
-    "home": "Coventry City FC",
-    "away": "Preston North End FC",
-    "date": "11/03/2026",
-    "time": "21:00",
-    "stage": "REGULAR_SEASON",
-    "matchday": 37,
-    "first_leg": null,
-    "prediction": {
-      "home": 0.46667290200795697,
-      "draw": 0.2768000000000001,
-      "away": 0.25652709799204304,
-      "quantum_used": false,
-      "goals_factor": 1.0,
-      "dc_1x": 0.7434729020079571,
-      "dc_x2": 0.5333270979920431,
-      "dc_12": 0.7232000000000001,
-      "over_25": 0.4790570906454853,
-      "under_25": 0.5209429093545147,
-      "btts_y": 0.4923422961060518,
-      "btts_n": 0.5076577038939483,
-      "xg_home": 1.65,
-      "xg_away": 0.94,
-      "confidence": 0.2233,
-      "raw_confidence": 0.035,
-      "best_out": "1",
-      "best_val": 0.46667290200795697
-    },
-    "generated_at": "2026-03-11T09:11:16.997970"
+    "generated_at": "2026-03-12T09:14:12.423104"
   },
   {
     "league": "Championship",
@@ -2720,12 +2472,12 @@
       "btts_n": 0.4354517172726262,
       "xg_home": 1.59,
       "xg_away": 1.24,
-      "confidence": 0.2158,
+      "confidence": 0.227,
       "raw_confidence": 0.01,
       "best_out": "2",
       "best_val": 0.36276985476809703
     },
-    "generated_at": "2026-03-11T09:11:16.998137"
+    "generated_at": "2026-03-12T09:14:32.762527"
   },
   {
     "league": "Championship",
@@ -2740,26 +2492,26 @@
     "matchday": 38,
     "first_leg": null,
     "prediction": {
-      "home": 0.4506805808158319,
-      "draw": 0.26680000000000004,
-      "away": 0.2825194191841681,
+      "home": 0.4818005808158319,
+      "draw": 0.2668000000000001,
+      "away": 0.25139941918416814,
       "quantum_used": false,
       "goals_factor": 1.0,
-      "dc_1x": 0.717480580815832,
-      "dc_x2": 0.5493194191841682,
+      "dc_1x": 0.748600580815832,
+      "dc_x2": 0.5181994191841682,
       "dc_12": 0.7332000000000001,
-      "over_25": 0.6180053228337827,
-      "under_25": 0.38199467716621727,
-      "btts_y": 0.6095135814135035,
-      "btts_n": 0.39048641858649646,
-      "xg_home": 1.95,
-      "xg_away": 1.24,
-      "confidence": 0.2209,
-      "raw_confidence": 0.0271,
+      "over_25": 0.6106255891550805,
+      "under_25": 0.3893744108449195,
+      "btts_y": 0.5998797123863169,
+      "btts_n": 0.4001202876136831,
+      "xg_home": 1.96,
+      "xg_away": 1.2,
+      "confidence": 0.2369,
+      "raw_confidence": 0.0429,
       "best_out": "1",
-      "best_val": 0.4506805808158319
+      "best_val": 0.4818005808158319
     },
-    "generated_at": "2026-03-11T09:11:16.998237"
+    "generated_at": "2026-03-12T09:14:32.762705"
   },
   {
     "league": "Championship",
@@ -2774,26 +2526,26 @@
     "matchday": 38,
     "first_leg": null,
     "prediction": {
-      "home": 0.445939081666732,
+      "home": 0.405539081666732,
       "draw": 0.2736,
-      "away": 0.280460918333268,
+      "away": 0.32086091833326796,
       "quantum_used": false,
       "goals_factor": 1.0,
-      "dc_1x": 0.719539081666732,
-      "dc_x2": 0.554060918333268,
+      "dc_1x": 0.679139081666732,
+      "dc_x2": 0.594460918333268,
       "dc_12": 0.7263999999999999,
-      "over_25": 0.3999795672704174,
-      "under_25": 0.6000204327295826,
-      "btts_y": 0.4464102422679013,
-      "btts_n": 0.5535897577320987,
-      "xg_home": 1.38,
-      "xg_away": 0.91,
-      "confidence": 0.2203,
-      "raw_confidence": 0.0249,
+      "over_25": 0.3893264056522563,
+      "under_25": 0.6106735943477437,
+      "btts_y": 0.4409336529829026,
+      "btts_n": 0.5590663470170973,
+      "xg_home": 1.33,
+      "xg_away": 0.92,
+      "confidence": 0.2276,
+      "raw_confidence": 0.0121,
       "best_out": "1",
-      "best_val": 0.445939081666732
+      "best_val": 0.405539081666732
     },
-    "generated_at": "2026-03-11T09:11:16.998340"
+    "generated_at": "2026-03-12T09:14:32.762797"
   },
   {
     "league": "Championship",
@@ -2808,25 +2560,229 @@
     "matchday": 38,
     "first_leg": null,
     "prediction": {
-      "home": 0.4709813597120025,
+      "home": 0.48768135971200255,
       "draw": 0.26120000000000004,
-      "away": 0.26781864028799746,
+      "away": 0.2511186402879974,
       "quantum_used": false,
       "goals_factor": 1.0,
-      "dc_1x": 0.7321813597120026,
-      "dc_x2": 0.5290186402879975,
+      "dc_1x": 0.7488813597120025,
+      "dc_x2": 0.5123186402879975,
       "dc_12": 0.7387999999999999,
-      "over_25": 0.39865069187801216,
-      "under_25": 0.6013493081219878,
-      "btts_y": 0.4625182312098927,
-      "btts_n": 0.5374817687901072,
-      "xg_home": 1.16,
-      "xg_away": 1.12,
-      "confidence": 0.2239,
-      "raw_confidence": 0.0369,
+      "over_25": 0.3813056014693528,
+      "under_25": 0.6186943985306472,
+      "btts_y": 0.44821847193149805,
+      "btts_n": 0.5517815280685019,
+      "xg_home": 1.13,
+      "xg_away": 1.08,
+      "confidence": 0.2379,
+      "raw_confidence": 0.0462,
       "best_out": "1",
-      "best_val": 0.4709813597120025
+      "best_val": 0.48768135971200255
     },
-    "generated_at": "2026-03-11T09:11:16.998468"
+    "generated_at": "2026-03-12T09:14:32.762918"
+  },
+  {
+    "league": "Championship",
+    "comp_code": "ELC",
+    "season": "2025/2026",
+    "fixture_id": 541156,
+    "home": "Birmingham City FC",
+    "away": "Sheffield United FC",
+    "date": "14/03/2026",
+    "time": "16:00",
+    "stage": "REGULAR_SEASON",
+    "matchday": 38,
+    "first_leg": null,
+    "prediction": {
+      "home": 0.3543701452319028,
+      "draw": 0.27680000000000005,
+      "away": 0.36882985476809715,
+      "quantum_used": false,
+      "goals_factor": 1.0,
+      "dc_1x": 0.6311701452319028,
+      "dc_x2": 0.6456298547680972,
+      "dc_12": 0.7232,
+      "over_25": 0.5269630462332469,
+      "under_25": 0.47303695376675314,
+      "btts_y": 0.5441442307495679,
+      "btts_n": 0.45585576925043214,
+      "xg_home": 1.68,
+      "xg_away": 1.1,
+      "confidence": 0.227,
+      "raw_confidence": 0.01,
+      "best_out": "2",
+      "best_val": 0.36882985476809715
+    },
+    "generated_at": "2026-03-12T09:14:32.763003"
+  },
+  {
+    "league": "Championship",
+    "comp_code": "ELC",
+    "season": "2025/2026",
+    "fixture_id": 541158,
+    "home": "Leicester City FC",
+    "away": "Queens Park Rangers FC",
+    "date": "14/03/2026",
+    "time": "16:00",
+    "stage": "REGULAR_SEASON",
+    "matchday": 38,
+    "first_leg": null,
+    "prediction": {
+      "home": 0.4028776767507914,
+      "draw": 0.27812000000000003,
+      "away": 0.31900232324920863,
+      "quantum_used": false,
+      "goals_factor": 1.0,
+      "dc_1x": 0.6809976767507915,
+      "dc_x2": 0.5971223232492087,
+      "dc_12": 0.7218800000000001,
+      "over_25": 0.48157042406394945,
+      "under_25": 0.5184295759360505,
+      "btts_y": 0.5222182816682711,
+      "btts_n": 0.4777817183317289,
+      "xg_home": 1.46,
+      "xg_away": 1.14,
+      "confidence": 0.2273,
+      "raw_confidence": 0.0109,
+      "best_out": "1",
+      "best_val": 0.4028776767507914
+    },
+    "generated_at": "2026-03-12T09:14:32.763088"
+  },
+  {
+    "league": "Championship",
+    "comp_code": "ELC",
+    "season": "2025/2026",
+    "fixture_id": 541160,
+    "home": "Millwall FC",
+    "away": "Blackburn Rovers FC",
+    "date": "14/03/2026",
+    "time": "16:00",
+    "stage": "REGULAR_SEASON",
+    "matchday": 38,
+    "first_leg": null,
+    "prediction": {
+      "home": 0.4522529020079569,
+      "draw": 0.27680000000000005,
+      "away": 0.2709470979920431,
+      "quantum_used": false,
+      "goals_factor": 1.0,
+      "dc_1x": 0.729052902007957,
+      "dc_x2": 0.5477470979920431,
+      "dc_12": 0.7232000000000001,
+      "over_25": 0.4171752074102224,
+      "under_25": 0.5828247925897776,
+      "btts_y": 0.4682494603982158,
+      "btts_n": 0.5317505396017842,
+      "xg_home": 1.35,
+      "xg_away": 1.0,
+      "confidence": 0.2323,
+      "raw_confidence": 0.0277,
+      "best_out": "1",
+      "best_val": 0.4522529020079569
+    },
+    "generated_at": "2026-03-12T09:14:32.763171"
+  },
+  {
+    "league": "Championship",
+    "comp_code": "ELC",
+    "season": "2025/2026",
+    "fixture_id": 541161,
+    "home": "Norwich City FC",
+    "away": "Preston North End FC",
+    "date": "14/03/2026",
+    "time": "16:00",
+    "stage": "REGULAR_SEASON",
+    "matchday": 38,
+    "first_leg": null,
+    "prediction": {
+      "home": 0.7005198405303332,
+      "draw": 0.23600000000000002,
+      "away": 0.06348015946966676,
+      "quantum_used": false,
+      "goals_factor": 1.0,
+      "dc_1x": 0.9365198405303332,
+      "dc_x2": 0.2994801594696668,
+      "dc_12": 0.764,
+      "over_25": 0.4289843722492831,
+      "under_25": 0.5710156277507169,
+      "btts_y": 0.48704803733358004,
+      "btts_n": 0.51295196266642,
+      "xg_home": 1.23,
+      "xg_away": 1.17,
+      "confidence": 0.4411,
+      "raw_confidence": 0.3036,
+      "best_out": "1",
+      "best_val": 0.7005198405303332
+    },
+    "generated_at": "2026-03-12T09:14:32.763337"
+  },
+  {
+    "league": "Championship",
+    "comp_code": "ELC",
+    "season": "2025/2026",
+    "fixture_id": 541164,
+    "home": "Sheffield Wednesday FC",
+    "away": "Ipswich Town FC",
+    "date": "14/03/2026",
+    "time": "16:00",
+    "stage": "REGULAR_SEASON",
+    "matchday": 38,
+    "first_leg": null,
+    "prediction": {
+      "home": 0.31868285098899546,
+      "draw": 0.27552,
+      "away": 0.4057971490110046,
+      "quantum_used": false,
+      "goals_factor": 1.0,
+      "dc_1x": 0.5942028509889954,
+      "dc_x2": 0.6813171490110046,
+      "dc_12": 0.72448,
+      "over_25": 0.5493950317778418,
+      "under_25": 0.45060496822215823,
+      "btts_y": 0.5356652159058075,
+      "btts_n": 0.4643347840941925,
+      "xg_home": 1.0,
+      "xg_away": 1.88,
+      "confidence": 0.2276,
+      "raw_confidence": 0.0119,
+      "best_out": "2",
+      "best_val": 0.4057971490110046
+    },
+    "generated_at": "2026-03-12T09:14:32.763423"
+  },
+  {
+    "league": "Championship",
+    "comp_code": "ELC",
+    "season": "2025/2026",
+    "fixture_id": 541165,
+    "home": "Stoke City FC",
+    "away": "Watford FC",
+    "date": "14/03/2026",
+    "time": "16:00",
+    "stage": "REGULAR_SEASON",
+    "matchday": 38,
+    "first_leg": null,
+    "prediction": {
+      "home": 0.344130145231903,
+      "draw": 0.2768000000000001,
+      "away": 0.379069854768097,
+      "quantum_used": false,
+      "goals_factor": 1.0,
+      "dc_1x": 0.6209301452319032,
+      "dc_x2": 0.6558698547680971,
+      "dc_12": 0.7232000000000001,
+      "over_25": 0.4484686561232474,
+      "under_25": 0.5515313438767526,
+      "btts_y": 0.49836512097281976,
+      "btts_n": 0.5016348790271803,
+      "xg_home": 1.36,
+      "xg_away": 1.11,
+      "confidence": 0.227,
+      "raw_confidence": 0.01,
+      "best_out": "2",
+      "best_val": 0.379069854768097
+    },
+    "generated_at": "2026-03-12T09:14:32.763570"
   }
 ]
