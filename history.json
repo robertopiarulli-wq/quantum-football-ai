@@ -1714,7 +1714,8 @@
       "correct_1x2": false,
       "correct_over": false,
       "correct_btts": true,
-      "verified_at": "2026-03-12T09:16:32.211529"
+      "verified_at": "2026-03-12T09:16:32.211529",
+      "elo_updated": true
     },
     {
       "fixture_id": "552068",
@@ -1737,7 +1738,8 @@
       "correct_1x2": true,
       "correct_over": true,
       "correct_btts": true,
-      "verified_at": "2026-03-12T09:16:32.211546"
+      "verified_at": "2026-03-12T09:16:32.211546",
+      "elo_updated": true
     },
     {
       "fixture_id": "552070",
@@ -1760,7 +1762,8 @@
       "correct_1x2": true,
       "correct_over": true,
       "correct_btts": false,
-      "verified_at": "2026-03-12T09:16:32.211551"
+      "verified_at": "2026-03-12T09:16:32.211551",
+      "elo_updated": true
     },
     {
       "fixture_id": "552074",
@@ -1783,7 +1786,8 @@
       "correct_1x2": false,
       "correct_over": true,
       "correct_btts": false,
-      "verified_at": "2026-03-12T09:16:32.211554"
+      "verified_at": "2026-03-12T09:16:32.211554",
+      "elo_updated": true
     },
     {
       "fixture_id": "537674",
@@ -3047,7 +3051,8 @@
       "correct_1x2": true,
       "correct_over": false,
       "correct_btts": false,
-      "verified_at": "2026-03-12T09:16:53.862623"
+      "verified_at": "2026-03-12T09:16:53.862623",
+      "elo_updated": true
     },
     {
       "fixture_id": "541147",
@@ -3070,7 +3075,8 @@
       "correct_1x2": true,
       "correct_over": true,
       "correct_btts": true,
-      "verified_at": "2026-03-12T09:16:53.862640"
+      "verified_at": "2026-03-12T09:16:53.862640",
+      "elo_updated": true
     },
     {
       "fixture_id": "541153",
@@ -3093,7 +3099,8 @@
       "correct_1x2": false,
       "correct_over": true,
       "correct_btts": true,
-      "verified_at": "2026-03-12T09:16:53.862644"
+      "verified_at": "2026-03-12T09:16:53.862644",
+      "elo_updated": true
     },
     {
       "fixture_id": "537097",
@@ -3553,7 +3560,8 @@
       "correct_1x2": true,
       "correct_over": true,
       "correct_btts": true,
-      "verified_at": "2026-03-12T09:16:53.862647"
+      "verified_at": "2026-03-12T09:16:53.862647",
+      "elo_updated": true
     },
     {
       "fixture_id": "537104",
@@ -3798,7 +3806,8 @@
       "correct_1x2": false,
       "correct_over": false,
       "correct_btts": true,
-      "verified_at": "2026-03-12T09:16:53.862651"
+      "verified_at": "2026-03-12T09:16:53.862651",
+      "elo_updated": true
     },
     {
       "fixture_id": "541152",
@@ -3827,7 +3836,8 @@
       "correct_1x2": true,
       "correct_over": false,
       "correct_btts": true,
-      "verified_at": "2026-03-12T09:16:53.862654"
+      "verified_at": "2026-03-12T09:16:53.862654",
+      "elo_updated": true
     },
     {
       "fixture_id": "541167",
@@ -4184,7 +4194,123 @@
       "correct_over": null,
       "correct_btts": null,
       "verified_at": null
+    },
+    {
+      "fixture_id": "540647",
+      "home": "RB Leipzig",
+      "away": "TSG 1899 Hoffenheim",
+      "league": "Bundesliga",
+      "comp_code": "BL1",
+      "season": "2025/2026",
+      "stage": "REGULAR_SEASON",
+      "matchday": 27,
+      "first_leg": null,
+      "date": "20/03/2026",
+      "time": "20:30",
+      "predicted_at": "2026-03-13T09:06:36.214335",
+      "pred_home": 0.5571,
+      "pred_draw": 0.2232,
+      "pred_away": 0.2197,
+      "pred_over25": 0.7713,
+      "pred_btts": 0.7541,
+      "pred_best": "1",
+      "pred_conf": 0.3437,
+      "pred_raw_conf": 0.0956,
+      "result": null,
+      "goals_home": null,
+      "goals_away": null,
+      "correct_1x2": null,
+      "correct_over": null,
+      "correct_btts": null,
+      "verified_at": null
+    },
+    {
+      "fixture_id": "542647",
+      "home": "Racing Club de Lens",
+      "away": "Angers SCO",
+      "league": "Ligue 1",
+      "comp_code": "FL1",
+      "season": "2025/2026",
+      "stage": "REGULAR_SEASON",
+      "matchday": 27,
+      "first_leg": null,
+      "date": "20/03/2026",
+      "time": "20:45",
+      "predicted_at": "2026-03-13T09:06:55.883131",
+      "pred_home": 0.4282,
+      "pred_draw": 0.29,
+      "pred_away": 0.2818,
+      "pred_over25": 0.4163,
+      "pred_btts": 0.3759,
+      "pred_best": "1",
+      "pred_conf": 0.23,
+      "pred_raw_conf": 0.0178,
+      "result": null,
+      "goals_home": null,
+      "goals_away": null,
+      "correct_1x2": null,
+      "correct_over": null,
+      "correct_btts": null,
+      "verified_at": null
+    },
+    {
+      "fixture_id": "537688",
+      "home": "Heracles Almelo",
+      "away": "SBV Excelsior",
+      "league": "Eredivisie",
+      "comp_code": "DED",
+      "season": "2025/2026",
+      "stage": "REGULAR_SEASON",
+      "matchday": 28,
+      "first_leg": null,
+      "date": "20/03/2026",
+      "time": "20:00",
+      "predicted_at": "2026-03-13T09:07:48.287435",
+      "pred_home": 0.3788,
+      "pred_draw": 0.2668,
+      "pred_away": 0.3544,
+      "pred_over25": 0.733,
+      "pred_btts": 0.7222,
+      "pred_best": "1",
+      "pred_conf": 0.2277,
+      "pred_raw_conf": 0.01,
+      "result": null,
+      "goals_home": null,
+      "goals_away": null,
+      "correct_1x2": null,
+      "correct_over": null,
+      "correct_btts": null,
+      "verified_at": null
+    },
+    {
+      "fixture_id": "545935",
+      "home": "CF Estrela da Amadora",
+      "away": "Casa Pia AC",
+      "league": "Primeira Liga",
+      "comp_code": "PPL",
+      "season": "2025/2026",
+      "stage": "REGULAR_SEASON",
+      "matchday": 27,
+      "first_leg": null,
+      "date": "20/03/2026",
+      "time": "21:15",
+      "predicted_at": "2026-03-13T09:08:07.947229",
+      "pred_home": 0.391,
+      "pred_draw": 0.3,
+      "pred_away": 0.309,
+      "pred_over25": 0.4619,
+      "pred_btts": 0.5091,
+      "pred_best": "1",
+      "pred_conf": 0.2277,
+      "pred_raw_conf": 0.01,
+      "result": null,
+      "goals_home": null,
+      "goals_away": null,
+      "correct_1x2": null,
+      "correct_over": null,
+      "correct_btts": null,
+      "verified_at": null
     }
   ],
-  "last_updated": "2026-03-12T09:16:53.863075"
+  "last_updated": "2026-03-13T09:10:44.550433"
 }
