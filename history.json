@@ -3285,7 +3285,8 @@
       "correct_1x2": false,
       "correct_over": false,
       "correct_btts": false,
-      "verified_at": "2026-03-17T10:15:00.125196"
+      "verified_at": "2026-03-17T10:15:00.125196",
+      "elo_updated": true
     },
     {
       "fixture_id": "544488",
@@ -3644,7 +3645,8 @@
       "correct_1x2": true,
       "correct_over": false,
       "correct_btts": false,
-      "verified_at": "2026-03-17T10:15:07.325464"
+      "verified_at": "2026-03-17T10:15:07.325464",
+      "elo_updated": true
     },
     {
       "fixture_id": "544489",
@@ -3667,7 +3669,8 @@
       "correct_1x2": false,
       "correct_over": true,
       "correct_btts": false,
-      "verified_at": "2026-03-17T10:15:14.109486"
+      "verified_at": "2026-03-17T10:15:14.109486",
+      "elo_updated": true
     },
     {
       "fixture_id": "552082",
@@ -3684,13 +3687,13 @@
       "pred_btts": 0.6701,
       "pred_best": "1",
       "pred_conf": 0.2364,
-      "result": null,
-      "goals_home": null,
-      "goals_away": null,
-      "correct_1x2": null,
-      "correct_over": null,
-      "correct_btts": null,
-      "verified_at": null
+      "result": "1",
+      "goals_home": 5,
+      "goals_away": 0,
+      "correct_1x2": true,
+      "correct_over": true,
+      "correct_btts": false,
+      "verified_at": "2026-03-18T09:43:58.686445"
     },
     {
       "fixture_id": "552076",
@@ -3707,13 +3710,13 @@
       "pred_btts": 0.6759,
       "pred_best": "2",
       "pred_conf": 0.2279,
-      "result": null,
-      "goals_home": null,
-      "goals_away": null,
-      "correct_1x2": null,
-      "correct_over": null,
-      "correct_btts": null,
-      "verified_at": null
+      "result": "2",
+      "goals_home": 0,
+      "goals_away": 3,
+      "correct_1x2": true,
+      "correct_over": true,
+      "correct_btts": false,
+      "verified_at": "2026-03-18T09:43:58.686460"
     },
     {
       "fixture_id": "552078",
@@ -3736,13 +3739,13 @@
       "pred_best": "2",
       "pred_conf": 0.2158,
       "pred_raw_conf": 0.01,
-      "result": null,
-      "goals_home": null,
-      "goals_away": null,
-      "correct_1x2": null,
-      "correct_over": null,
-      "correct_btts": null,
-      "verified_at": null
+      "result": "2",
+      "goals_home": 1,
+      "goals_away": 2,
+      "correct_1x2": true,
+      "correct_over": true,
+      "correct_btts": true,
+      "verified_at": "2026-03-18T09:43:58.686465"
     },
     {
       "fixture_id": "552083",
@@ -3765,13 +3768,13 @@
       "pred_best": "1",
       "pred_conf": 0.2158,
       "pred_raw_conf": 0.01,
-      "result": null,
-      "goals_home": null,
-      "goals_away": null,
-      "correct_1x2": null,
-      "correct_over": null,
-      "correct_btts": null,
-      "verified_at": null
+      "result": "1",
+      "goals_home": 2,
+      "goals_away": 0,
+      "correct_1x2": true,
+      "correct_over": false,
+      "correct_btts": false,
+      "verified_at": "2026-03-18T09:43:58.686469"
     },
     {
       "fixture_id": "552080",
@@ -5453,7 +5456,8 @@
       "correct_1x2": true,
       "correct_over": true,
       "correct_btts": false,
-      "verified_at": "2026-03-17T10:15:55.300488"
+      "verified_at": "2026-03-17T10:15:55.300488",
+      "elo_updated": true
     },
     {
       "fixture_id": "541143",
@@ -5476,13 +5480,13 @@
       "pred_best": "2",
       "pred_conf": 0.2196,
       "pred_raw_conf": 0.0109,
-      "result": null,
-      "goals_home": null,
-      "goals_away": null,
-      "correct_1x2": null,
-      "correct_over": null,
-      "correct_btts": null,
-      "verified_at": null
+      "result": "1",
+      "goals_home": 3,
+      "goals_away": 1,
+      "correct_1x2": false,
+      "correct_over": false,
+      "correct_btts": false,
+      "verified_at": "2026-03-18T09:44:53.890829"
     },
     {
       "fixture_id": "541141",
@@ -6469,7 +6473,36 @@
       "correct_over": null,
       "correct_btts": null,
       "verified_at": null
+    },
+    {
+      "fixture_id": "541176",
+      "home": "Sheffield United FC",
+      "away": "Wrexham AFC",
+      "league": "Championship",
+      "comp_code": "ELC",
+      "season": "2025/2026",
+      "stage": "REGULAR_SEASON",
+      "matchday": 39,
+      "first_leg": null,
+      "date": "21/03/2026",
+      "time": "16:00",
+      "predicted_at": "2026-03-18T09:42:38.416472",
+      "pred_home": 0.3903,
+      "pred_draw": 0.2766,
+      "pred_away": 0.3331,
+      "pred_over25": 0.4702,
+      "pred_btts": 0.5183,
+      "pred_best": "1",
+      "pred_conf": 0.1906,
+      "pred_raw_conf": 0.01,
+      "result": null,
+      "goals_home": null,
+      "goals_away": null,
+      "correct_1x2": null,
+      "correct_over": null,
+      "correct_btts": null,
+      "verified_at": null
     }
   ],
-  "last_updated": "2026-03-17T10:15:55.300942"
+  "last_updated": "2026-03-18T09:44:53.891317"
 }
