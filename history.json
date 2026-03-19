@@ -3693,7 +3693,8 @@
       "correct_1x2": true,
       "correct_over": true,
       "correct_btts": false,
-      "verified_at": "2026-03-18T09:43:58.686445"
+      "verified_at": "2026-03-18T09:43:58.686445",
+      "elo_updated": true
     },
     {
       "fixture_id": "552076",
@@ -3716,7 +3717,8 @@
       "correct_1x2": true,
       "correct_over": true,
       "correct_btts": false,
-      "verified_at": "2026-03-18T09:43:58.686460"
+      "verified_at": "2026-03-18T09:43:58.686460",
+      "elo_updated": true
     },
     {
       "fixture_id": "552078",
@@ -3745,7 +3747,8 @@
       "correct_1x2": true,
       "correct_over": true,
       "correct_btts": true,
-      "verified_at": "2026-03-18T09:43:58.686465"
+      "verified_at": "2026-03-18T09:43:58.686465",
+      "elo_updated": true
     },
     {
       "fixture_id": "552083",
@@ -3774,7 +3777,8 @@
       "correct_1x2": true,
       "correct_over": false,
       "correct_btts": false,
-      "verified_at": "2026-03-18T09:43:58.686469"
+      "verified_at": "2026-03-18T09:43:58.686469",
+      "elo_updated": true
     },
     {
       "fixture_id": "552080",
@@ -3801,13 +3805,13 @@
       "pred_best": "1",
       "pred_conf": 0.3256,
       "pred_raw_conf": 0.0634,
-      "result": null,
-      "goals_home": null,
-      "goals_away": null,
-      "correct_1x2": null,
-      "correct_over": null,
-      "correct_btts": null,
-      "verified_at": null
+      "result": "1",
+      "goals_home": 7,
+      "goals_away": 2,
+      "correct_1x2": true,
+      "correct_over": true,
+      "correct_btts": true,
+      "verified_at": "2026-03-19T09:15:20.936572"
     },
     {
       "fixture_id": "552077",
@@ -3834,13 +3838,13 @@
       "pred_best": "1",
       "pred_conf": 0.3517,
       "pred_raw_conf": 0.1713,
-      "result": null,
-      "goals_home": null,
-      "goals_away": null,
-      "correct_1x2": null,
-      "correct_over": null,
-      "correct_btts": null,
-      "verified_at": null
+      "result": "1",
+      "goals_home": 4,
+      "goals_away": 0,
+      "correct_1x2": true,
+      "correct_over": true,
+      "correct_btts": false,
+      "verified_at": "2026-03-19T09:15:20.936590"
     },
     {
       "fixture_id": "541155",
@@ -4047,13 +4051,13 @@
       "pred_best": "1",
       "pred_conf": 0.4377,
       "pred_raw_conf": 0.2922,
-      "result": null,
-      "goals_home": null,
-      "goals_away": null,
-      "correct_1x2": null,
-      "correct_over": null,
-      "correct_btts": null,
-      "verified_at": null
+      "result": "1",
+      "goals_home": 4,
+      "goals_away": 1,
+      "correct_1x2": true,
+      "correct_over": true,
+      "correct_btts": false,
+      "verified_at": "2026-03-19T09:15:20.936595"
     },
     {
       "fixture_id": "552081",
@@ -4080,13 +4084,13 @@
       "pred_best": "1",
       "pred_conf": 0.2328,
       "pred_raw_conf": 0.0294,
-      "result": null,
-      "goals_home": null,
-      "goals_away": null,
-      "correct_1x2": null,
-      "correct_over": null,
-      "correct_btts": null,
-      "verified_at": null
+      "result": "1",
+      "goals_home": 3,
+      "goals_away": 2,
+      "correct_1x2": true,
+      "correct_over": true,
+      "correct_btts": true,
+      "verified_at": "2026-03-19T09:15:20.936598"
     },
     {
       "fixture_id": "541156",
@@ -5486,7 +5490,8 @@
       "correct_1x2": false,
       "correct_over": false,
       "correct_btts": false,
-      "verified_at": "2026-03-18T09:44:53.890829"
+      "verified_at": "2026-03-18T09:44:53.890829",
+      "elo_updated": true
     },
     {
       "fixture_id": "541141",
@@ -5509,13 +5514,13 @@
       "pred_best": "2",
       "pred_conf": 0.226,
       "pred_raw_conf": 0.0323,
-      "result": null,
-      "goals_home": null,
-      "goals_away": null,
-      "correct_1x2": null,
-      "correct_over": null,
-      "correct_btts": null,
-      "verified_at": null
+      "result": "1",
+      "goals_home": 1,
+      "goals_away": 0,
+      "correct_1x2": false,
+      "correct_over": true,
+      "correct_btts": false,
+      "verified_at": "2026-03-19T09:16:16.102628"
     },
     {
       "fixture_id": "541174",
@@ -6502,7 +6507,36 @@
       "correct_over": null,
       "correct_btts": null,
       "verified_at": null
+    },
+    {
+      "fixture_id": "541177",
+      "home": "Southampton FC",
+      "away": "Oxford United FC",
+      "league": "Championship",
+      "comp_code": "ELC",
+      "season": "2025/2026",
+      "stage": "REGULAR_SEASON",
+      "matchday": 39,
+      "first_leg": null,
+      "date": "21/03/2026",
+      "time": "16:00",
+      "predicted_at": "2026-03-19T09:13:58.992608",
+      "pred_home": 0.2965,
+      "pred_draw": 0.271,
+      "pred_away": 0.4324,
+      "pred_over25": 0.404,
+      "pred_btts": 0.4455,
+      "pred_best": "2",
+      "pred_conf": 0.1935,
+      "pred_raw_conf": 0.0198,
+      "result": null,
+      "goals_home": null,
+      "goals_away": null,
+      "correct_1x2": null,
+      "correct_over": null,
+      "correct_btts": null,
+      "verified_at": null
     }
   ],
-  "last_updated": "2026-03-18T09:44:53.891317"
+  "last_updated": "2026-03-19T09:16:16.103086"
 }
