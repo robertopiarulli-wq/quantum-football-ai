@@ -4483,7 +4483,8 @@
       "correct_1x2": false,
       "correct_over": true,
       "correct_btts": true,
-      "verified_at": "2026-03-21T17:12:09.092879"
+      "verified_at": "2026-03-21T17:12:09.092879",
+      "elo_updated": true
     },
     {
       "fixture_id": "542643",
@@ -4564,13 +4565,13 @@
       "pred_best": "2",
       "pred_conf": 0.2341,
       "pred_raw_conf": 0.0315,
-      "result": null,
-      "goals_home": null,
-      "goals_away": null,
-      "correct_1x2": null,
-      "correct_over": null,
-      "correct_btts": null,
-      "verified_at": null
+      "result": "2",
+      "goals_home": 1,
+      "goals_away": 2,
+      "correct_1x2": true,
+      "correct_over": true,
+      "correct_btts": true,
+      "verified_at": "2026-03-21T17:36:51.755938"
     },
     {
       "fixture_id": "545936",
@@ -4717,7 +4718,8 @@
       "correct_1x2": false,
       "correct_over": true,
       "correct_btts": true,
-      "verified_at": "2026-03-21T17:12:37.809986"
+      "verified_at": "2026-03-21T17:12:37.809986",
+      "elo_updated": true
     },
     {
       "fixture_id": "537106",
@@ -4805,7 +4807,8 @@
       "correct_1x2": false,
       "correct_over": true,
       "correct_btts": true,
-      "verified_at": "2026-03-21T17:12:44.859142"
+      "verified_at": "2026-03-21T17:12:44.859142",
+      "elo_updated": true
     },
     {
       "fixture_id": "538089",
@@ -4834,7 +4837,8 @@
       "correct_1x2": true,
       "correct_over": true,
       "correct_btts": true,
-      "verified_at": "2026-03-21T17:12:44.859155"
+      "verified_at": "2026-03-21T17:12:44.859155",
+      "elo_updated": true
     },
     {
       "fixture_id": "538088",
@@ -4921,7 +4925,8 @@
       "correct_1x2": false,
       "correct_over": true,
       "correct_btts": true,
-      "verified_at": "2026-03-21T17:12:52.250768"
+      "verified_at": "2026-03-21T17:12:52.250768",
+      "elo_updated": true
     },
     {
       "fixture_id": "544494",
@@ -4944,13 +4949,13 @@
       "pred_best": "1",
       "pred_conf": 0.2193,
       "pred_raw_conf": 0.01,
-      "result": null,
-      "goals_home": null,
-      "goals_away": null,
-      "correct_1x2": null,
-      "correct_over": null,
-      "correct_btts": null,
-      "verified_at": null
+      "result": "2",
+      "goals_home": 1,
+      "goals_away": 2,
+      "correct_1x2": false,
+      "correct_over": false,
+      "correct_btts": false,
+      "verified_at": "2026-03-21T17:37:20.496107"
     },
     {
       "fixture_id": "544495",
@@ -5037,7 +5042,8 @@
       "correct_1x2": true,
       "correct_over": false,
       "correct_btts": false,
-      "verified_at": "2026-03-21T17:12:09.092893"
+      "verified_at": "2026-03-21T17:12:09.092893",
+      "elo_updated": true
     },
     {
       "fixture_id": "540645",
@@ -5066,7 +5072,8 @@
       "correct_1x2": false,
       "correct_over": true,
       "correct_btts": true,
-      "verified_at": "2026-03-21T17:12:09.092898"
+      "verified_at": "2026-03-21T17:12:09.092898",
+      "elo_updated": true
     },
     {
       "fixture_id": "540646",
@@ -5095,7 +5102,8 @@
       "correct_1x2": true,
       "correct_over": true,
       "correct_btts": false,
-      "verified_at": "2026-03-21T17:12:09.092902"
+      "verified_at": "2026-03-21T17:12:09.092902",
+      "elo_updated": true
     },
     {
       "fixture_id": "540648",
@@ -5592,7 +5600,8 @@
       "correct_1x2": false,
       "correct_over": true,
       "correct_btts": false,
-      "verified_at": "2026-03-21T17:12:59.445476"
+      "verified_at": "2026-03-21T17:12:59.445476",
+      "elo_updated": true
     },
     {
       "fixture_id": "541171",
@@ -5621,7 +5630,8 @@
       "correct_1x2": true,
       "correct_over": true,
       "correct_btts": true,
-      "verified_at": "2026-03-21T17:12:59.445489"
+      "verified_at": "2026-03-21T17:12:59.445489",
+      "elo_updated": true
     },
     {
       "fixture_id": "541173",
@@ -5650,7 +5660,8 @@
       "correct_1x2": false,
       "correct_over": true,
       "correct_btts": false,
-      "verified_at": "2026-03-21T17:12:59.445493"
+      "verified_at": "2026-03-21T17:12:59.445493",
+      "elo_updated": true
     },
     {
       "fixture_id": "541169",
@@ -5679,7 +5690,8 @@
       "correct_1x2": true,
       "correct_over": true,
       "correct_btts": false,
-      "verified_at": "2026-03-21T17:12:59.445497"
+      "verified_at": "2026-03-21T17:12:59.445497",
+      "elo_updated": true
     },
     {
       "fixture_id": "541170",
@@ -5708,7 +5720,8 @@
       "correct_1x2": true,
       "correct_over": true,
       "correct_btts": true,
-      "verified_at": "2026-03-21T17:12:59.445500"
+      "verified_at": "2026-03-21T17:12:59.445500",
+      "elo_updated": true
     },
     {
       "fixture_id": "541172",
@@ -5737,7 +5750,8 @@
       "correct_1x2": true,
       "correct_over": true,
       "correct_btts": true,
-      "verified_at": "2026-03-21T17:12:59.445503"
+      "verified_at": "2026-03-21T17:12:59.445503",
+      "elo_updated": true
     },
     {
       "fixture_id": "537113",
@@ -6491,7 +6505,8 @@
       "correct_1x2": false,
       "correct_over": true,
       "correct_btts": true,
-      "verified_at": "2026-03-21T17:12:59.445505"
+      "verified_at": "2026-03-21T17:12:59.445505",
+      "elo_updated": true
     },
     {
       "fixture_id": "541176",
@@ -6520,7 +6535,8 @@
       "correct_1x2": false,
       "correct_over": false,
       "correct_btts": true,
-      "verified_at": "2026-03-21T17:12:59.445508"
+      "verified_at": "2026-03-21T17:12:59.445508",
+      "elo_updated": true
     },
     {
       "fixture_id": "541177",
@@ -6549,7 +6565,8 @@
       "correct_1x2": false,
       "correct_over": true,
       "correct_btts": true,
-      "verified_at": "2026-03-21T17:12:59.445511"
+      "verified_at": "2026-03-21T17:12:59.445511",
+      "elo_updated": true
     },
     {
       "fixture_id": "541179",
@@ -6578,7 +6595,8 @@
       "correct_1x2": false,
       "correct_over": false,
       "correct_btts": false,
-      "verified_at": "2026-03-21T17:12:59.445514"
+      "verified_at": "2026-03-21T17:12:59.445514",
+      "elo_updated": true
     },
     {
       "fixture_id": "541178",
@@ -6610,5 +6628,5 @@
       "verified_at": null
     }
   ],
-  "last_updated": "2026-03-21T17:12:59.445879"
+  "last_updated": "2026-03-21T17:37:34.732987"
 }
