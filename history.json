@@ -4507,13 +4507,13 @@
       "pred_best": "2",
       "pred_conf": 0.2277,
       "pred_raw_conf": 0.01,
-      "result": null,
-      "goals_home": null,
-      "goals_away": null,
-      "correct_1x2": null,
-      "correct_over": null,
-      "correct_btts": null,
-      "verified_at": null
+      "result": "1",
+      "goals_home": 1,
+      "goals_away": 0,
+      "correct_1x2": false,
+      "correct_over": false,
+      "correct_btts": false,
+      "verified_at": "2026-03-21T18:11:41.174074"
     },
     {
       "fixture_id": "542640",
@@ -4601,7 +4601,8 @@
       "correct_1x2": false,
       "correct_over": false,
       "correct_btts": false,
-      "verified_at": "2026-03-21T17:55:41.584136"
+      "verified_at": "2026-03-21T17:55:41.584136",
+      "elo_updated": true
     },
     {
       "fixture_id": "545939",
@@ -4630,7 +4631,8 @@
       "correct_1x2": true,
       "correct_over": true,
       "correct_btts": true,
-      "verified_at": "2026-03-21T17:55:41.584154"
+      "verified_at": "2026-03-21T17:55:41.584154",
+      "elo_updated": true
     },
     {
       "fixture_id": "541166",
@@ -6630,5 +6632,5 @@
       "verified_at": null
     }
   ],
-  "last_updated": "2026-03-21T17:56:23.420670"
+  "last_updated": "2026-03-21T18:12:29.759903"
 }
