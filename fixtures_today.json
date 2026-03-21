@@ -1,58 +1,8 @@
 {
-  "generated_at": "2026-03-20T09:09:26.074188",
-  "date": "20/03/2026",
-  "total": 74,
+  "generated_at": "2026-03-21T07:59:45.107802",
+  "date": "21/03/2026",
+  "total": 66,
   "fixtures": [
-    {
-      "home": "Cagliari Calcio",
-      "away": "SSC Napoli",
-      "league": "Serie A",
-      "fixture_id": 537109,
-      "date": "20/03/2026",
-      "time": "18:30",
-      "pred": {
-        "home": 0.1587,
-        "draw": 0.2985,
-        "away": 0.5428,
-        "dc1x": 0.4572,
-        "dcx2": 0.8413,
-        "dc12": 0.7015,
-        "over25": 0.3999,
-        "under25": 0.6001,
-        "bttsY": 0.4624,
-        "bttsN": 0.5376,
-        "xg_h": "1.08",
-        "xg_a": "1.21",
-        "conf": 0.3594,
-        "best": "2",
-        "bestP": 0.5428
-      }
-    },
-    {
-      "home": "Genoa CFC",
-      "away": "Udinese Calcio",
-      "league": "Serie A",
-      "fixture_id": 537110,
-      "date": "20/03/2026",
-      "time": "20:45",
-      "pred": {
-        "home": 0.4619,
-        "draw": 0.313,
-        "away": 0.2251,
-        "dc1x": 0.7749,
-        "dcx2": 0.5381,
-        "dc12": 0.687,
-        "over25": 0.4715,
-        "under25": 0.5285,
-        "bttsY": 0.5184,
-        "bttsN": 0.4816,
-        "xg_h": "1.38",
-        "xg_a": "1.18",
-        "conf": 0.1992,
-        "best": "1",
-        "bestP": 0.4619
-      }
-    },
     {
       "home": "Parma Calcio 1913",
       "away": "US Cremonese",
@@ -161,21 +111,21 @@
       "date": "22/03/2026",
       "time": "15:00",
       "pred": {
-        "home": 0.574,
-        "draw": 0.2964,
-        "away": 0.1296,
-        "dc1x": 0.8704,
-        "dcx2": 0.426,
-        "dc12": 0.7036,
+        "home": 0.5518,
+        "draw": 0.3,
+        "away": 0.1482,
+        "dc1x": 0.8518,
+        "dcx2": 0.4482,
+        "dc12": 0.7,
         "over25": 0.425,
         "under25": 0.575,
         "bttsY": 0.419,
         "bttsN": 0.581,
         "xg_h": "1.65",
         "xg_a": "0.73",
-        "conf": 0.3705,
+        "conf": 0.3628,
         "best": "1",
-        "bestP": 0.574
+        "bestP": 0.5518
       }
     },
     {
@@ -254,31 +204,6 @@
       }
     },
     {
-      "home": "AFC Bournemouth",
-      "away": "Manchester United FC",
-      "league": "Premier League",
-      "fixture_id": 538085,
-      "date": "20/03/2026",
-      "time": "21:00",
-      "pred": {
-        "home": 0.1776,
-        "draw": 0.2331,
-        "away": 0.5893,
-        "dc1x": 0.4107,
-        "dcx2": 0.8224,
-        "dc12": 0.7669,
-        "over25": 0.5945,
-        "under25": 0.4055,
-        "bttsY": 0.6146,
-        "bttsN": 0.3854,
-        "xg_h": "1.65",
-        "xg_a": "1.43",
-        "conf": 0.3667,
-        "best": "2",
-        "bestP": 0.5893
-      }
-    },
-    {
       "home": "Brighton & Hove Albion FC",
       "away": "Liverpool FC",
       "league": "Premier League",
@@ -286,21 +211,21 @@
       "date": "21/03/2026",
       "time": "13:30",
       "pred": {
-        "home": 0.2157,
-        "draw": 0.2429,
-        "away": 0.5414,
-        "dc1x": 0.4586,
-        "dcx2": 0.7843,
-        "dc12": 0.7571,
+        "home": 0.2023,
+        "draw": 0.2409,
+        "away": 0.5568,
+        "dc1x": 0.4432,
+        "dcx2": 0.7977,
+        "dc12": 0.7591,
         "over25": 0.5873,
         "under25": 0.4127,
         "bttsY": 0.6081,
         "bttsN": 0.3919,
         "xg_h": "1.65",
         "xg_a": "1.4",
-        "conf": 0.3534,
+        "conf": 0.3573,
         "best": "2",
-        "bestP": 0.5414
+        "bestP": 0.5568
       }
     },
     {
@@ -386,21 +311,21 @@
       "date": "22/03/2026",
       "time": "13:00",
       "pred": {
-        "home": 0.5508,
-        "draw": 0.2338,
-        "away": 0.2154,
-        "dc1x": 0.7846,
-        "dcx2": 0.4492,
-        "dc12": 0.7662,
+        "home": 0.5369,
+        "draw": 0.2361,
+        "away": 0.227,
+        "dc1x": 0.773,
+        "dcx2": 0.4631,
+        "dc12": 0.7639,
         "over25": 0.5701,
         "under25": 0.4299,
         "bttsY": 0.5759,
         "bttsN": 0.4241,
         "xg_h": "1.8",
         "xg_a": "1.17",
-        "conf": 0.3555,
+        "conf": 0.3521,
         "best": "1",
-        "bestP": 0.5508
+        "bestP": 0.5369
       }
     },
     {
@@ -436,46 +361,21 @@
       "date": "22/03/2026",
       "time": "15:15",
       "pred": {
-        "home": 0.4604,
-        "draw": 0.2408,
-        "away": 0.2987,
-        "dc1x": 0.7013,
-        "dcx2": 0.5396,
-        "dc12": 0.7592,
+        "home": 0.4777,
+        "draw": 0.2381,
+        "away": 0.2842,
+        "dc1x": 0.7158,
+        "dcx2": 0.5223,
+        "dc12": 0.7619,
         "over25": 0.5787,
         "under25": 0.4213,
         "bttsY": 0.6047,
         "bttsN": 0.3953,
         "xg_h": "1.54",
         "xg_a": "1.47",
-        "conf": 0.1979,
+        "conf": 0.2003,
         "best": "1",
-        "bestP": 0.4604
-      }
-    },
-    {
-      "home": "Villarreal CF",
-      "away": "Real Sociedad de F\u00fatbol",
-      "league": "La Liga",
-      "fixture_id": 544500,
-      "date": "20/03/2026",
-      "time": "21:00",
-      "pred": {
-        "home": 0.5775,
-        "draw": 0.2845,
-        "away": 0.1381,
-        "dc1x": 0.8619,
-        "dcx2": 0.4225,
-        "dc12": 0.7155,
-        "over25": 0.5436,
-        "under25": 0.4564,
-        "bttsY": 0.5332,
-        "bttsN": 0.4668,
-        "xg_h": "1.85",
-        "xg_a": "1.0",
-        "conf": 0.3694,
-        "best": "1",
-        "bestP": 0.5775
+        "bestP": 0.4777
       }
     },
     {
@@ -611,21 +511,21 @@
       "date": "22/03/2026",
       "time": "14:00",
       "pred": {
-        "home": 0.7145,
-        "draw": 0.2389,
-        "away": 0.0465,
-        "dc1x": 0.9535,
-        "dcx2": 0.2855,
-        "dc12": 0.7611,
+        "home": 0.7187,
+        "draw": 0.2351,
+        "away": 0.0462,
+        "dc1x": 0.9538,
+        "dcx2": 0.2813,
+        "dc12": 0.7649,
         "over25": 0.6159,
         "under25": 0.3841,
         "bttsY": 0.4674,
         "bttsN": 0.5326,
         "xg_h": "2.46",
         "xg_a": "0.71",
-        "conf": 0.6851,
+        "conf": 0.6866,
         "best": "1",
-        "bestP": 0.7145
+        "bestP": 0.7187
       }
     },
     {
@@ -686,46 +586,21 @@
       "date": "22/03/2026",
       "time": "21:00",
       "pred": {
-        "home": 0.6789,
-        "draw": 0.2574,
-        "away": 0.0637,
-        "dc1x": 0.9363,
-        "dcx2": 0.3211,
-        "dc12": 0.7426,
+        "home": 0.691,
+        "draw": 0.2547,
+        "away": 0.0543,
+        "dc1x": 0.9457,
+        "dcx2": 0.309,
+        "dc12": 0.7453,
         "over25": 0.4651,
         "under25": 0.5349,
         "bttsY": 0.4676,
         "bttsN": 0.5324,
         "xg_h": "1.68",
         "xg_a": "0.85",
-        "conf": 0.668,
+        "conf": 0.6751,
         "best": "1",
-        "bestP": 0.6789
-      }
-    },
-    {
-      "home": "RB Leipzig",
-      "away": "TSG 1899 Hoffenheim",
-      "league": "Bundesliga",
-      "fixture_id": 540647,
-      "date": "20/03/2026",
-      "time": "20:30",
-      "pred": {
-        "home": 0.5349,
-        "draw": 0.2269,
-        "away": 0.2383,
-        "dc1x": 0.7617,
-        "dcx2": 0.4651,
-        "dc12": 0.7731,
-        "over25": 0.7713,
-        "under25": 0.2287,
-        "bttsY": 0.7541,
-        "bttsN": 0.2459,
-        "xg_h": "2.12",
-        "xg_a": "1.94",
-        "conf": 0.3517,
-        "best": "1",
-        "bestP": 0.5349
+        "bestP": 0.691
       }
     },
     {
@@ -811,21 +686,21 @@
       "date": "21/03/2026",
       "time": "15:30",
       "pred": {
-        "home": 0.546,
-        "draw": 0.2449,
-        "away": 0.2091,
-        "dc1x": 0.7909,
-        "dcx2": 0.454,
-        "dc12": 0.7551,
+        "home": 0.5721,
+        "draw": 0.2413,
+        "away": 0.1867,
+        "dc1x": 0.8133,
+        "dcx2": 0.4279,
+        "dc12": 0.7587,
         "over25": 0.8126,
         "under25": 0.1874,
         "bttsY": 0.6564,
         "bttsN": 0.3436,
         "xg_h": "3.23",
         "xg_a": "1.15",
-        "conf": 0.3546,
+        "conf": 0.3618,
         "best": "1",
-        "bestP": 0.546
+        "bestP": 0.5721
       }
     },
     {
@@ -929,31 +804,6 @@
       }
     },
     {
-      "home": "Racing Club de Lens",
-      "away": "Angers SCO",
-      "league": "Ligue 1",
-      "fixture_id": 542647,
-      "date": "20/03/2026",
-      "time": "20:45",
-      "pred": {
-        "home": 0.4295,
-        "draw": 0.2898,
-        "away": 0.2807,
-        "dc1x": 0.7193,
-        "dcx2": 0.5705,
-        "dc12": 0.7102,
-        "over25": 0.4163,
-        "under25": 0.5837,
-        "bttsY": 0.3759,
-        "bttsN": 0.6241,
-        "xg_h": "1.74",
-        "xg_a": "0.61",
-        "conf": 0.1931,
-        "best": "1",
-        "bestP": 0.4295
-      }
-    },
-    {
       "home": "Toulouse FC",
       "away": "FC Lorient",
       "league": "Ligue 1",
@@ -1009,7 +859,7 @@
       "league": "Ligue 1",
       "fixture_id": 542644,
       "date": "21/03/2026",
-      "time": "21:00",
+      "time": "21:05",
       "pred": {
         "home": 0.05,
         "draw": 0.2408,
@@ -1151,31 +1001,6 @@
         "conf": 0.1906,
         "best": "2",
         "bestP": 0.4023
-      }
-    },
-    {
-      "home": "Heracles Almelo",
-      "away": "SBV Excelsior",
-      "league": "Eredivisie",
-      "fixture_id": 537688,
-      "date": "20/03/2026",
-      "time": "20:00",
-      "pred": {
-        "home": 0.3952,
-        "draw": 0.2671,
-        "away": 0.3377,
-        "dc1x": 0.6623,
-        "dcx2": 0.6048,
-        "dc12": 0.7329,
-        "over25": 0.733,
-        "under25": 0.267,
-        "bttsY": 0.7222,
-        "bttsN": 0.2778,
-        "xg_h": "2.04",
-        "xg_a": "1.78",
-        "conf": 0.191,
-        "best": "1",
-        "bestP": 0.3952
       }
     },
     {
@@ -1379,31 +1204,6 @@
       }
     },
     {
-      "home": "CF Estrela da Amadora",
-      "away": "Casa Pia AC",
-      "league": "Primeira Liga",
-      "fixture_id": 545935,
-      "date": "20/03/2026",
-      "time": "21:15",
-      "pred": {
-        "home": 0.371,
-        "draw": 0.2969,
-        "away": 0.3321,
-        "dc1x": 0.6679,
-        "dcx2": 0.629,
-        "dc12": 0.7031,
-        "over25": 0.4619,
-        "under25": 0.5381,
-        "bttsY": 0.5091,
-        "bttsN": 0.4909,
-        "xg_h": "1.39",
-        "xg_a": "1.14",
-        "conf": 0.1906,
-        "best": "1",
-        "bestP": 0.371
-      }
-    },
-    {
       "home": "Moreirense FC",
       "away": "FC Arouca",
       "league": "Primeira Liga",
@@ -1604,31 +1404,6 @@
       }
     },
     {
-      "home": "Preston North End FC",
-      "away": "Stoke City FC",
-      "league": "Championship",
-      "fixture_id": 541174,
-      "date": "20/03/2026",
-      "time": "21:00",
-      "pred": {
-        "home": 0.3391,
-        "draw": 0.2741,
-        "away": 0.3869,
-        "dc1x": 0.6131,
-        "dcx2": 0.6609,
-        "dc12": 0.7259,
-        "over25": 0.3585,
-        "under25": 0.6415,
-        "bttsY": 0.4288,
-        "bttsN": 0.5712,
-        "xg_h": "1.1",
-        "xg_a": "1.02",
-        "conf": 0.1906,
-        "best": "2",
-        "bestP": 0.3869
-      }
-    },
-    {
       "home": "Blackburn Rovers FC",
       "away": "Middlesbrough FC",
       "league": "Championship",
@@ -1736,21 +1511,21 @@
       "date": "21/03/2026",
       "time": "16:00",
       "pred": {
-        "home": 0.4075,
-        "draw": 0.2799,
-        "away": 0.3127,
-        "dc1x": 0.6873,
-        "dcx2": 0.5925,
-        "dc12": 0.7201,
+        "home": 0.4352,
+        "draw": 0.2761,
+        "away": 0.2886,
+        "dc1x": 0.7114,
+        "dcx2": 0.5648,
+        "dc12": 0.7239,
         "over25": 0.3987,
         "under25": 0.6013,
         "bttsY": 0.4623,
         "bttsN": 0.5377,
         "xg_h": "1.1",
         "xg_a": "1.18",
-        "conf": 0.1911,
+        "conf": 0.1938,
         "best": "1",
-        "bestP": 0.4075
+        "bestP": 0.4352
       }
     },
     {
@@ -1811,11 +1586,11 @@
       "date": "21/03/2026",
       "time": "16:00",
       "pred": {
-        "home": 0.4124,
+        "home": 0.3624,
         "draw": 0.28,
-        "away": 0.3076,
-        "dc1x": 0.6924,
-        "dcx2": 0.5876,
+        "away": 0.3576,
+        "dc1x": 0.6424,
+        "dcx2": 0.6376,
         "dc12": 0.72,
         "over25": 0.4702,
         "under25": 0.5298,
@@ -1823,9 +1598,9 @@
         "bttsN": 0.4817,
         "xg_h": "1.36",
         "xg_a": "1.19",
-        "conf": 0.1915,
+        "conf": 0.1906,
         "best": "1",
-        "bestP": 0.4124
+        "bestP": 0.3624
       }
     },
     {
@@ -1836,21 +1611,46 @@
       "date": "21/03/2026",
       "time": "16:00",
       "pred": {
-        "home": 0.2965,
-        "draw": 0.271,
-        "away": 0.4324,
-        "dc1x": 0.5676,
-        "dcx2": 0.7035,
-        "dc12": 0.729,
+        "home": 0.3214,
+        "draw": 0.2748,
+        "away": 0.4038,
+        "dc1x": 0.5962,
+        "dcx2": 0.6786,
+        "dc12": 0.7252,
         "over25": 0.404,
         "under25": 0.596,
         "bttsY": 0.4455,
         "bttsN": 0.5545,
         "xg_h": "1.41",
         "xg_a": "0.89",
-        "conf": 0.1935,
+        "conf": 0.1911,
         "best": "2",
-        "bestP": 0.4324
+        "bestP": 0.4038
+      }
+    },
+    {
+      "home": "Watford FC",
+      "away": "Leicester City FC",
+      "league": "Championship",
+      "fixture_id": 541179,
+      "date": "21/03/2026",
+      "time": "16:00",
+      "pred": {
+        "home": 0.3875,
+        "draw": 0.2783,
+        "away": 0.3341,
+        "dc1x": 0.6659,
+        "dcx2": 0.6125,
+        "dc12": 0.7217,
+        "over25": 0.5282,
+        "under25": 0.4718,
+        "bttsY": 0.5548,
+        "bttsN": 0.4452,
+        "xg_h": "1.6",
+        "xg_a": "1.19",
+        "conf": 0.1906,
+        "best": "1",
+        "bestP": 0.3875
       }
     }
   ]
