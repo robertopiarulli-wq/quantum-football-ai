@@ -5,6 +5,7 @@ import React, { useState, useEffect, useRef, useCallback, useMemo } from "react"
 // ═══════════════════════════════════════════════════════
 const GITHUB_FIXTURES = "https://raw.githubusercontent.com/robertopiarulli-wq/quantum-football-ai/main/fixtures_today.json";
 const GITHUB_PREDICTIONS = "https://raw.githubusercontent.com/robertopiarulli-wq/quantum-football-ai/main/predictions_output.json";
+const GITHUB_HISTORY = "https://raw.githubusercontent.com/robertopiarulli-wq/quantum-football-ai/main/history.json";
 
 const ELO_DB = {
   "Inter":1820,"Napoli":1795,"Milan":1778,"Juventus":1760,"Atalanta":1750,
@@ -175,6 +176,8 @@ export default function App(){
   const[history,setHistory]=useState([]);
   const[cycles,setCycles]=useState(0);
   const[allPreds,setAllPreds]=useState([]);
+  const[histData,setHistData]=useState(null);
+  const[histLoading,setHistLoading]=useState(false);
 
   useEffect(()=>{
     let i=0;
@@ -213,6 +216,22 @@ export default function App(){
       })
       .catch(()=>{});
   },[ready]);
+
+  // Carica history.json per tab PERFORMANCE
+  useEffect(()=>{
+    if(!ready||tab!=="perf"||histData||histLoading)return;
+    setHistLoading(true);
+    fetch(GITHUB_HISTORY)
+      .then(r=>r.ok?r.json():null)
+      .then(d=>{
+        if(d&&d.predictions){
+          const verified=d.predictions.filter(p=>p.result!==null&&p.result!==undefined);
+          setHistData(verified);
+        }
+        setHistLoading(false);
+      })
+      .catch(()=>setHistLoading(false));
+  },[ready,tab,histData,histLoading]);
 
   const leagues=useMemo(()=>{
     const s=new Set(fixtures.map(f=>f.league));
@@ -312,7 +331,7 @@ export default function App(){
 
       {/* TABS */}
       <div style={{display:"flex",padding:"0 20px",borderBottom:"1px solid "+C.border,overflowX:"auto"}}>
-        {[["oggi","📅 OGGI"],["ranking","📊 RANKING"],["cerca","🔍 CERCA"],["log","📋 LOG"]].map(([t,l])=>(
+        {[["oggi","📅 OGGI"],["ranking","📊 RANKING"],["cerca","🔍 CERCA"],["perf","📈 PERFORMANCE"],["log","📋 LOG"]].map(([t,l])=>(
           <button key={t} onClick={()=>setTab(t)} style={{background:"none",border:"none",color:tab===t?C.cyan:"#555",padding:"11px 16px",cursor:"pointer",fontSize:10,letterSpacing:2,whiteSpace:"nowrap",borderBottom:tab===t?`2px solid ${C.cyan}`:"2px solid transparent",fontFamily:"inherit"}}>{l}</button>
         ))}
       </div>
@@ -601,6 +620,174 @@ export default function App(){
           </div>
 
         )}
+
+        {tab==="perf"&&(()=>{
+          if(histLoading)return <div style={{textAlign:"center",padding:60,color:C.cyan}}><div style={{fontSize:10,letterSpacing:3,marginBottom:12}}>📊 CARICAMENTO DATI STORICI...</div><Wave w={400}/></div>;
+          if(!histData)return <div style={{textAlign:"center",padding:60,color:"#333"}}><div style={{fontSize:40,marginBottom:12}}>📈</div><div style={{fontSize:11,letterSpacing:3}}>Caricamento in corso...</div></div>;
+
+          const v=histData;
+          const total=v.length;
+          if(total===0)return <div style={{textAlign:"center",padding:60,color:"#333"}}>Nessun dato verificato ancora.</div>;
+
+          const acc1x2=v.filter(p=>p.correct_1x2).length/total;
+          const accOver=v.filter(p=>p.correct_over).length/total;
+          const accBtts=v.filter(p=>p.correct_btts).length/total;
+
+          // Trend settimanale
+          const weekMap={};
+          v.forEach(p=>{
+            if(!p.verified_at)return;
+            const dt=new Date(p.verified_at);
+            const yr=dt.getFullYear();
+            const wk=Math.ceil((((dt-new Date(yr,0,1))/86400000)+new Date(yr,0,1).getDay()+1)/7);
+            const key=`${yr}-W${String(wk).padStart(2,'0')}`;
+            if(!weekMap[key])weekMap[key]={total:0,c1x2:0,cover:0};
+            weekMap[key].total++;
+            if(p.correct_1x2)weekMap[key].c1x2++;
+            if(p.correct_over)weekMap[key].cover++;
+          });
+          const weeks=Object.entries(weekMap).sort((a,b)=>a[0]>b[0]?1:-1).slice(-6);
+
+          // Per campionato
+          const lgMap={};
+          v.forEach(p=>{
+            const lg=p.league||"?";
+            if(!lgMap[lg])lgMap[lg]={total:0,c1x2:0,cover:0};
+            lgMap[lg].total++;
+            if(p.correct_1x2)lgMap[lg].c1x2++;
+            if(p.correct_over)lgMap[lg].cover++;
+          });
+          const leagues2=Object.entries(lgMap).sort((a,b)=>b[1].total-a[1].total);
+
+          // Confidenza bucket
+          const confBuckets=[[0,0.20,"<20%"],[0.20,0.25,"20-25%"],[0.25,0.35,"25-35%"],[0.35,0.50,"35-50%"],[0.50,1,"50%+"]];
+          const confData=confBuckets.map(([lo,hi,lbl])=>{
+            const bp=v.filter(p=>(p.pred_conf||0)>=lo&&(p.pred_conf||0)<hi);
+            const acc=bp.length?bp.filter(p=>p.correct_1x2).length/bp.length:0;
+            return{lbl,acc,n:bp.length};
+          }).filter(d=>d.n>0);
+
+          // Distribuzione risultati vs previsioni
+          const res={1:0,X:0,2:0};
+          const pred={1:0,X:0,2:0};
+          v.forEach(p=>{res[p.result]=(res[p.result]||0)+1;pred[p.pred_best]=(pred[p.pred_best]||0)+1;});
+
+          return(
+          <div style={{display:"flex",flexDirection:"column",gap:16}}>
+
+            {/* KPI globali */}
+            <div style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:10}}>
+              {[
+                ["🎯 ACC. 1X2",acc1x2,C.cyan],
+                ["⚽ OVER 2.5",accOver,C.green],
+                ["🔁 BTTS",accBtts,C.purple],
+                ["📊 PARTITE",total/100,"#aaa"],
+              ].map(([lbl,val,col])=>(
+                <div key={lbl} style={{background:C.card,border:`1px solid ${col}33`,borderRadius:14,padding:16,textAlign:"center"}}>
+                  <div style={{fontSize:8,color:"#555",letterSpacing:2,marginBottom:6}}>{lbl}</div>
+                  <div style={{fontSize:26,fontWeight:900,color:col}}>{lbl==="📊 PARTITE"?total:(val*100).toFixed(1)+"%"}</div>
+                  {lbl!=="📊 PARTITE"&&<div style={{fontSize:8,color:val>0.45?C.green:val>0.35?C.amber:"#f44",marginTop:4}}>{val>0.45?"✅ Buono":val>0.35?"⚠️ Ok":"❌ Da migliorare"}</div>}
+                </div>
+              ))}
+            </div>
+
+            <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:14}}>
+
+              {/* Trend settimanale */}
+              <div style={{background:C.card,borderRadius:14,padding:16}}>
+                <div style={{fontSize:9,color:C.cyan,letterSpacing:2,marginBottom:14}}>📈 TREND SETTIMANALE 1X2</div>
+                {weeks.map(([wk,ws])=>{
+                  const a=ws.c1x2/ws.total;
+                  return(
+                  <div key={wk} style={{marginBottom:10}}>
+                    <div style={{display:"flex",justifyContent:"space-between",fontSize:9,marginBottom:3}}>
+                      <span style={{color:"#555"}}>{wk}</span>
+                      <span style={{color:a>0.45?C.green:a>0.35?C.amber:"#f55",fontWeight:900}}>{(a*100).toFixed(0)}% <span style={{color:"#444",fontWeight:400}}>({ws.total}p)</span></span>
+                    </div>
+                    <div style={{background:"#111",borderRadius:4,height:5}}>
+                      <div style={{background:a>0.45?C.green:a>0.35?C.amber:"#f55",width:`${a*100}%`,height:"100%",borderRadius:4}}/>
+                    </div>
+                  </div>
+                )})}
+              </div>
+
+              {/* Confidenza vs accuracy */}
+              <div style={{background:C.card,borderRadius:14,padding:16}}>
+                <div style={{fontSize:9,color:C.purple,letterSpacing:2,marginBottom:14}}>🎯 CONFIDENZA vs ACCURACY</div>
+                {confData.map(d=>(
+                  <div key={d.lbl} style={{marginBottom:10}}>
+                    <div style={{display:"flex",justifyContent:"space-between",fontSize:9,marginBottom:3}}>
+                      <span style={{color:"#555"}}>Conf {d.lbl}</span>
+                      <span style={{color:d.acc>0.5?C.green:d.acc>0.35?C.amber:"#f55",fontWeight:900}}>{(d.acc*100).toFixed(0)}% <span style={{color:"#444",fontWeight:400}}>({d.n}p)</span></span>
+                    </div>
+                    <div style={{background:"#111",borderRadius:4,height:5}}>
+                      <div style={{background:d.acc>0.5?C.green:d.acc>0.35?C.amber:"#f55",width:`${d.acc*100}%`,height:"100%",borderRadius:4}}/>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Per campionato */}
+            <div style={{background:C.card,borderRadius:14,padding:16}}>
+              <div style={{fontSize:9,color:C.amber,letterSpacing:2,marginBottom:14}}>🏆 ACCURACY PER CAMPIONATO</div>
+              <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(220px,1fr))",gap:8}}>
+                {leagues2.map(([lg,s])=>{
+                  const a=s.c1x2/s.total;
+                  const ao=s.cover/s.total;
+                  return(
+                  <div key={lg} style={{background:"#0a1220",borderRadius:10,padding:12}}>
+                    <div style={{fontSize:9,color:"#aaa",fontWeight:700,marginBottom:6}}>{lg}</div>
+                    <div style={{display:"flex",gap:8,marginBottom:6}}>
+                      <div style={{flex:1,textAlign:"center"}}>
+                        <div style={{fontSize:8,color:"#444"}}>1X2</div>
+                        <div style={{fontSize:16,fontWeight:900,color:a>0.5?C.green:a>0.38?C.amber:"#f55"}}>{(a*100).toFixed(0)}%</div>
+                      </div>
+                      <div style={{flex:1,textAlign:"center"}}>
+                        <div style={{fontSize:8,color:"#444"}}>OVER</div>
+                        <div style={{fontSize:16,fontWeight:900,color:ao>0.5?C.green:ao>0.38?C.amber:"#f55"}}>{(ao*100).toFixed(0)}%</div>
+                      </div>
+                      <div style={{flex:1,textAlign:"center"}}>
+                        <div style={{fontSize:8,color:"#444"}}>PARTITE</div>
+                        <div style={{fontSize:16,fontWeight:900,color:"#555"}}>{s.total}</div>
+                      </div>
+                    </div>
+                    <div style={{background:"#111",borderRadius:3,height:3}}>
+                      <div style={{background:a>0.5?C.green:a>0.38?C.amber:"#f55",width:`${a*100}%`,height:"100%",borderRadius:3}}/>
+                    </div>
+                  </div>
+                )})}
+              </div>
+            </div>
+
+            {/* Distribuzione 1X2 */}
+            <div style={{background:C.card,borderRadius:14,padding:16}}>
+              <div style={{fontSize:9,color:"#555",letterSpacing:2,marginBottom:14}}>📊 PREVISIONI vs RISULTATI REALI</div>
+              <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:20}}>
+                {[["PREVISIONI",pred],["RISULTATI REALI",res]].map(([title,data2])=>(
+                  <div key={title}>
+                    <div style={{fontSize:8,color:"#444",marginBottom:8}}>{title}</div>
+                    {["1","X","2"].map(k=>{
+                      const val=(data2[k]||0)/total;
+                      const col=k==="1"?C.cyan:k==="X"?C.amber:C.pink;
+                      return(
+                      <div key={k} style={{marginBottom:6}}>
+                        <div style={{display:"flex",justifyContent:"space-between",fontSize:9,marginBottom:2}}>
+                          <span style={{color:col}}>{k==="1"?"Casa":k==="X"?"Pareggio":"Trasferta"}</span>
+                          <span style={{color:col,fontWeight:900}}>{(val*100).toFixed(0)}% ({data2[k]||0})</span>
+                        </div>
+                        <div style={{background:"#111",borderRadius:3,height:4}}>
+                          <div style={{background:col,width:`${val*100}%`,height:"100%",borderRadius:3}}/>
+                        </div>
+                      </div>
+                    )})}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+          </div>
+        );})()}
 
         {tab==="log"&&(
           <div>
