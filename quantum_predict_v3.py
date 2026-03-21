@@ -453,6 +453,22 @@ def extract_features(hname, aname, form_map=None, dynamic_elo=None,
 #  QUANTUM / CLASSICAL ENGINE
 # ═══════════════════════════════════════
 # Caratteristiche storiche per campionato
+# Accuracy storica reale del nostro modello per campionato (da history.json)
+# Aggiornare periodicamente dai dati reali
+LEAGUE_ACCURACY = {
+    "SA":  0.50,  # Serie A — buono
+    "PL":  0.27,  # Premier League — scarso (ELO datati)
+    "PD":  0.55,  # La Liga — ottimo
+    "BL1": 0.40,  # Bundesliga
+    "FL1": 0.39,  # Ligue 1
+    "CL":  0.75,  # Champions League — eccellente
+    "DED": 0.37,  # Eredivisie
+    "PPL": 0.35,  # Primeira Liga
+    "ELC": 0.38,  # Championship
+    "SB":  0.40,  # Serie B (stima)
+}
+LEAGUE_ACCURACY_DEFAULT = 0.42  # media globale
+
 LEAGUE_PROFILE = {
     # draw_bias: calibrato su dati reali — SA 14%, PL 47%, PPL 41%, BL1 30%, FL1 28%
     # home_elo_bonus: vantaggio casa in punti ELO
@@ -562,11 +578,69 @@ def full_prediction(f):
         1 - sum(math.exp(-(lh+la)) * (lh+la)**k / math.factorial(k) for k in range(3))
     ))
     pbtts = max(0.15, min(0.82, (1 - math.exp(-lh)) * (1 - math.exp(-la))))
-    ent   = -(h*math.log(max(0.001,h)) + d*math.log(max(0.001,d)) + a*math.log(max(0.001,a)))
-    raw_conf = 1 - ent / math.log(3)
-    # Applica penalità big match
+    # ═══════════════════════════════════════
+    # NUOVA CONFIDENZA — basata sul consenso dei segnali
+    # Non misura lo squilibrio ELO ma la coerenza tra tutti i fattori
+    # ═══════════════════════════════════════
+
+    # 1. ACCORDO ELO vs FORM
+    # Il vincitore previsto da ELO concorda con la form reale?
+    elo_dir  = 1 if h > a else (-1 if a > h else 0)
+    form_dir = 1 if f.get("form_diff", 0) > 0.05 else (-1 if f.get("form_diff", 0) < -0.05 else 0)
+    if elo_dir == 0 or form_dir == 0:
+        elo_form_agreement = 0.5   # neutro
+    elif elo_dir == form_dir:
+        elo_form_agreement = 1.0   # concordano
+    else:
+        elo_form_agreement = 0.0   # discordano
+
+    # 2. FORZA DEL SEGNALE DOMINANTE
+    # Quanto è netto il vantaggio? (non solo ELO ma anche form e xG)
+    best_prob = max(h, d, a)
+    signal_strength = min(1.0, max(0.0, (best_prob - 0.33) / 0.40))  # 0 a 33%, 1 a 73%+
+
+    # 3. TREND DELLA SQUADRA FAVORITA
+    if h >= a:
+        fav_trend = f.get("h_trend", 0.0)
+    else:
+        fav_trend = f.get("a_trend", 0.0)
+    trend_score = min(1.0, max(0.0, (fav_trend + 0.5)))  # normalizza da [-0.5,0.5] a [0,1]
+
+    # 4. STANCHEZZA ASSENTE
+    h_fat = f.get("h_fatigue_days", 99)
+    a_fat = f.get("a_fatigue_days", 99)
+    fatigue_penalty = 0.0
+    if h_fat < 3 or a_fat < 3:
+        fatigue_penalty = 0.15
+    elif h_fat < 4 or a_fat < 4:
+        fatigue_penalty = 0.08
+
+    # 5. ACCURACY STORICA DEL CAMPIONATO
+    comp = f.get("comp_code", "")
+    league_base = LEAGUE_ACCURACY.get(comp, LEAGUE_ACCURACY_DEFAULT)
+    # Normalizza: 0.27 (PL) → 0.0, 0.75 (CL) → 1.0
+    league_score = (league_base - 0.27) / (0.75 - 0.27)
+    league_score = max(0.0, min(1.0, league_score))
+
+    # 6. H2H COERENTE (bonus se disponibile e concorda)
+    h2h_bonus = 0.05 if f.get("h2h_matches", 0) >= 3 else 0.0
+
+    # 7. BIG MATCH PENALTY (entrambe top, risultato imprevedibile)
     bmp = f.get("big_match_penalty", 0.0)
-    raw_conf = max(0.01, raw_conf - bmp)
+
+    # COMPOSIZIONE FINALE
+    # Pesi: signal_strength è il fattore principale, gli altri modulano
+    raw_conf = (
+        signal_strength    * 0.30 +   # forza del segnale dominante
+        elo_form_agreement * 0.30 +   # accordo ELO vs form (peso aumentato)
+        trend_score        * 0.20 +   # trend squadra favorita
+        league_score       * 0.20     # affidabilità storica campionato
+    ) + h2h_bonus - fatigue_penalty - bmp
+
+    # Ceiling realistico: la confidenza max è l'accuracy storica del campionato
+    # es. PL max 45%, CL max 85%, media max 65%
+    ceiling = min(0.85, league_base * 1.20)
+    raw_conf = max(0.05, min(ceiling, raw_conf))
     conf = calibrate_confidence(raw_conf)
     # Fix draw prediction — calibrato su dati reali (69% dei pareggi ha gap|1-2|<25%)
     gap_12 = abs(h - a)
