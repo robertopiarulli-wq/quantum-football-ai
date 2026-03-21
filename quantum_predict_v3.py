@@ -629,19 +629,29 @@ def full_prediction(f):
     bmp = f.get("big_match_penalty", 0.0)
 
     # COMPOSIZIONE FINALE
-    # Pesi: signal_strength è il fattore principale, gli altri modulano
-    raw_conf = (
-        signal_strength    * 0.30 +   # forza del segnale dominante
-        elo_form_agreement * 0.30 +   # accordo ELO vs form (peso aumentato)
-        trend_score        * 0.20 +   # trend squadra favorita
-        league_score       * 0.20     # affidabilità storica campionato
+    # I 4 segnali producono valori in range [0,1]
+    # La somma ponderata sta naturalmente in [0,1]
+    # Ogni segnale contribuisce in modo diverso per ogni partita
+    score = (
+        signal_strength    * 0.40 +   # forza del segnale dominante (principale)
+        elo_form_agreement * 0.30 +   # accordo ELO vs form
+        trend_score        * 0.15 +   # trend squadra favorita
+        league_score       * 0.15     # affidabilità storica campionato
     ) + h2h_bonus - fatigue_penalty - bmp
 
-    # Ceiling realistico: la confidenza max è l'accuracy storica del campionato
-    # es. PL max 45%, CL max 85%, media max 65%
-    ceiling = min(0.85, league_base * 1.20)
-    raw_conf = max(0.05, min(ceiling, raw_conf))
-    conf = calibrate_confidence(raw_conf)
+    score = max(0.0, min(1.0, score))
+
+    # Mappa score [0,1] → confidenza finale [conf_min, conf_max]
+    # conf_min e conf_max dipendono dall'accuracy storica del campionato
+    # PL (acc=0.27): conf_min=0.10, conf_max=0.38
+    # SA (acc=0.50): conf_min=0.18, conf_max=0.62
+    # CL (acc=0.75): conf_min=0.25, conf_max=0.85
+    conf_min = max(0.05, league_base * 0.45)
+    conf_max = min(0.85, league_base * 1.25)
+    raw_conf = conf_min + score * (conf_max - conf_min)
+
+    # Calibrazione storica applicata SENZA superare il ceiling
+    conf = min(conf_max, calibrate_confidence(raw_conf))
     # Fix draw prediction — calibrato su dati reali (69% dei pareggi ha gap|1-2|<25%)
     gap_12 = abs(h - a)
     league_draw_bias = LEAGUE_PROFILE.get(f.get("comp_code",""), {}).get("draw_bias", 0)
