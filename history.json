@@ -4513,7 +4513,8 @@
       "correct_1x2": false,
       "correct_over": false,
       "correct_btts": false,
-      "verified_at": "2026-03-21T18:11:41.174074"
+      "verified_at": "2026-03-21T18:11:41.174074",
+      "elo_updated": true
     },
     {
       "fixture_id": "542640",
@@ -6632,5 +6633,5 @@
       "verified_at": null
     }
   ],
-  "last_updated": "2026-03-21T18:12:29.759903"
+  "last_updated": "2026-03-21T18:23:06.959867"
 }
