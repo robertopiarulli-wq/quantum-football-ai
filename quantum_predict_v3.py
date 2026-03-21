@@ -650,8 +650,9 @@ def full_prediction(f):
     conf_max = min(0.85, league_base * 1.25)
     raw_conf = conf_min + score * (conf_max - conf_min)
 
-    # Calibrazione storica applicata SENZA superare il ceiling
-    conf = min(conf_max, calibrate_confidence(raw_conf))
+    # NON applichiamo calibrate_confidence — la nuova formula incorpora già
+    # l'accuracy storica per campionato. La calibrazione appiattiva tutto al ceiling.
+    conf = round(raw_conf, 4)
     # Fix draw prediction — calibrato su dati reali (69% dei pareggi ha gap|1-2|<25%)
     gap_12 = abs(h - a)
     league_draw_bias = LEAGUE_PROFILE.get(f.get("comp_code",""), {}).get("draw_bias", 0)
