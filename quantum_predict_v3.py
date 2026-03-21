@@ -63,13 +63,16 @@ ELO_DB = {
     "AS Cittadella":1525, "Frosinone Calcio":1545, "SS Juve Stabia":1505,
     "US Salernitana 1919":1540, "Carrarese Calcio":1500,
     "US Avellino":1490, "Benevento Calcio":1510,
-    "Manchester City FC":1870, "Arsenal FC":1840, "Liverpool FC":1835,
-    "Chelsea FC":1790, "Tottenham Hotspur FC":1775, "Manchester United FC":1760,
-    "Newcastle United FC":1745, "Aston Villa FC":1740, "Brighton & Hove Albion FC":1710,
-    "West Ham United FC":1690, "Fulham FC":1680, "Wolverhampton Wanderers FC":1660,
-    "Everton FC":1650, "Crystal Palace FC":1655, "Brentford FC":1670,
-    "Nottingham Forest FC":1660, "AFC Bournemouth":1640, "Leicester City FC":1645,
-    "Southampton FC":1600, "Ipswich Town FC":1610,
+    # Premier League — ELO aggiornati stagione 2025/26
+    "Liverpool FC":1860, "Arsenal FC":1845, "Nottingham Forest FC":1760,
+    "Chelsea FC":1755, "Newcastle United FC":1750, "Manchester City FC":1745,
+    "Aston Villa FC":1730, "Fulham FC":1710, "Brighton & Hove Albion FC":1705,
+    "Brentford FC":1695, "Tottenham Hotspur FC":1690, "AFC Bournemouth":1685,
+    "Crystal Palace FC":1660, "Manchester United FC":1650, "West Ham United FC":1640,
+    "Everton FC":1635, "Wolverhampton Wanderers FC":1625, "Ipswich Town FC":1615,
+    "Leicester City FC":1610, "Southampton FC":1580,
+    # Championship 2025/26
+    "Sunderland AFC":1640, "Leeds United FC":1650, "Burnley FC":1635,
     "Real Madrid CF":1880, "FC Barcelona":1855, "Club Atletico de Madrid":1820,
     "Sevilla FC":1740, "Real Sociedad de Futbol":1730, "Villarreal CF":1720,
     "Athletic Club":1710, "Real Betis Balompie":1700,
@@ -567,8 +570,17 @@ def full_prediction(f):
     bmp = f.get("big_match_penalty", 0.0)
     raw_conf = max(0.01, raw_conf - bmp)
     conf = calibrate_confidence(raw_conf)
-    bv   = max(h, d, a)
-    bo   = "1" if bv == h else ("2" if bv == a else "X")
+    # Fix draw prediction: se la differenza 1-2 è piccola e X è rilevante, scegli X
+    gap_12 = abs(h - a)
+    if d >= 0.24 and gap_12 < 0.10:
+        bo = "X"
+        bv = d
+    elif d >= 0.27 and gap_12 < 0.15:
+        bo = "X"
+        bv = d
+    else:
+        bv = max(h, d, a)
+        bo = "1" if bv == h else ("2" if bv == a else "X")
     return {**base,
             "dc_1x": h+d, "dc_x2": d+a, "dc_12": h+a,
             "over_25": pover, "under_25": 1-pover,
@@ -832,8 +844,8 @@ def calc_stats(predictions, days=7, season=None, comp_code=None):
         by_league[lg]["total"]  += 1
         by_league[lg]["correct"] += int(bool(p.get("correct_1x2")))
 
-    # Top confidence accuracy
-    high_conf = [p for p in recent if p.get("pred_conf", 0) > 0.6]
+    # Top confidence accuracy — soglia 0.25 (realistico per il nostro modello)
+    high_conf = [p for p in recent if p.get("pred_conf", 0) >= 0.25]
     hc_acc = sum(1 for p in high_conf if p.get("correct_1x2")) / max(1, len(high_conf))
 
     return {
@@ -857,6 +869,17 @@ def send_weekly_report(history):
     stats = calc_stats(history["predictions"], days=7, season=current_season)
     if not stats:  # fallback senza filtro stagione
         stats = calc_stats(history["predictions"], days=7)
+
+    # Statistiche per campionato (stagione corrente, tutti i giorni)
+    from collections import defaultdict
+    league_stats = defaultdict(lambda: {"total":0,"correct_1x2":0,"correct_over":0})
+    for p in history["predictions"]:
+        if p.get("result") is None: continue
+        if p.get("season") and p["season"] != current_season: continue
+        lg = p.get("league","?")
+        league_stats[lg]["total"] += 1
+        if p.get("correct_1x2"): league_stats[lg]["correct_1x2"] += 1
+        if p.get("correct_over"): league_stats[lg]["correct_over"] += 1
     if not stats:
         print("   ℹ️  Nessun dato verificato per il report settimanale")
         return
@@ -1110,8 +1133,16 @@ def main():
     print(f"\n✅ {len(all_preds)} previsioni → predictions_output.json")
 
     # ── TOP 10 ALERT ────────────────────────────────────────
-    top10 = sorted(all_preds, key=lambda x: x["prediction"].get("confidence", 0), reverse=True)[:10]
-    print(f"\n📢 Invio alert TOP {len(top10)} per confidenza...")
+    # Solo previsioni con confidenza > 25% — qualità sopra quantità
+    CONF_MIN_ALERT = 0.25
+    filtered_alert = [p for p in all_preds if p["prediction"].get("confidence", 0) >= CONF_MIN_ALERT]
+    top10 = sorted(filtered_alert, key=lambda x: x["prediction"].get("confidence", 0), reverse=True)[:10]
+    if not top10:
+        # Fallback: top 5 qualunque confidenza
+        top10 = sorted(all_preds, key=lambda x: x["prediction"].get("confidence", 0), reverse=True)[:5]
+        print(f"\n📢 Nessuna previsione con conf>{CONF_MIN_ALERT:.0%} — invio top 5 ({top10[0]['prediction'].get('confidence',0):.1%} max)")
+    else:
+        print(f"\n📢 {len(filtered_alert)} previsioni conf>{CONF_MIN_ALERT:.0%} → invio top {len(top10)}")
     # Invia prima messaggio riepilogativo
     if TELEGRAM_TOKEN and TELEGRAM_CHAT:
         fmt = lambda v: f"{v*100:.1f}%"
@@ -1289,6 +1320,17 @@ def main():
     stats = calc_stats(history["predictions"], days=7, season=current_season)
     if not stats:  # fallback senza filtro stagione
         stats = calc_stats(history["predictions"], days=7)
+
+    # Statistiche per campionato (stagione corrente, tutti i giorni)
+    from collections import defaultdict
+    league_stats = defaultdict(lambda: {"total":0,"correct_1x2":0,"correct_over":0})
+    for p in history["predictions"]:
+        if p.get("result") is None: continue
+        if p.get("season") and p["season"] != current_season: continue
+        lg = p.get("league","?")
+        league_stats[lg]["total"] += 1
+        if p.get("correct_1x2"): league_stats[lg]["correct_1x2"] += 1
+        if p.get("correct_over"): league_stats[lg]["correct_over"] += 1
     if stats and stats["total"] > 0:
         print(f"   📊 Accuracy 7gg: 1X2={stats['acc_1x2']*100:.1f}% "
               f"Over={stats['acc_over']*100:.1f}% BTTS={stats['acc_btts']*100:.1f}%")
