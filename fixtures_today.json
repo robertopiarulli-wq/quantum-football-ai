@@ -1,33 +1,8 @@
 {
-  "generated_at": "2026-03-21T18:22:12.083678",
-  "date": "21/03/2026",
-  "total": 34,
+  "generated_at": "2026-03-22T08:03:53.674408",
+  "date": "22/03/2026",
+  "total": 28,
   "fixtures": [
-    {
-      "home": "Juventus FC",
-      "away": "US Sassuolo Calcio",
-      "league": "Serie A",
-      "fixture_id": 537113,
-      "date": "21/03/2026",
-      "time": "20:45",
-      "pred": {
-        "home": 0.5485,
-        "draw": 0.2317,
-        "away": 0.2198,
-        "dc1x": 0.7802,
-        "dcx2": 0.4515,
-        "dc12": 0.7683,
-        "over25": 0.4859,
-        "under25": 0.5141,
-        "bttsY": 0.5102,
-        "bttsN": 0.4898,
-        "xg_h": "1.6",
-        "xg_a": "1.02",
-        "conf": 0.4857,
-        "best": "1",
-        "bestP": 0.5485
-      }
-    },
     {
       "home": "Como 1907",
       "away": "AC Pisa 1909",
@@ -154,31 +129,6 @@
       }
     },
     {
-      "home": "Leeds United FC",
-      "away": "Brentford FC",
-      "league": "Premier League",
-      "fixture_id": 538090,
-      "date": "21/03/2026",
-      "time": "21:00",
-      "pred": {
-        "home": 0.2197,
-        "draw": 0.3561,
-        "away": 0.4241,
-        "dc1x": 0.5759,
-        "dcx2": 0.7803,
-        "dc12": 0.6439,
-        "over25": 0.618,
-        "under25": 0.382,
-        "bttsY": 0.6318,
-        "bttsN": 0.3682,
-        "xg_h": "1.73",
-        "xg_a": "1.46",
-        "conf": 0.2242,
-        "best": "X",
-        "bestP": 0.3561
-      }
-    },
-    {
       "home": "Newcastle United FC",
       "away": "Sunderland AFC",
       "league": "Premier League",
@@ -251,31 +201,6 @@
         "conf": 0.1557,
         "best": "X",
         "bestP": 0.3381
-      }
-    },
-    {
-      "home": "Sevilla FC",
-      "away": "Valencia CF",
-      "league": "La Liga",
-      "fixture_id": 544496,
-      "date": "21/03/2026",
-      "time": "21:00",
-      "pred": {
-        "home": 0.516,
-        "draw": 0.2948,
-        "away": 0.1892,
-        "dc1x": 0.8108,
-        "dcx2": 0.484,
-        "dc12": 0.7052,
-        "over25": 0.5198,
-        "under25": 0.4802,
-        "bttsY": 0.541,
-        "bttsN": 0.459,
-        "xg_h": "1.65",
-        "xg_a": "1.11",
-        "conf": 0.5327,
-        "best": "1",
-        "bestP": 0.516
       }
     },
     {
@@ -454,31 +379,6 @@
       }
     },
     {
-      "home": "OGC Nice",
-      "away": "Paris Saint-Germain FC",
-      "league": "Ligue 1",
-      "fixture_id": 542644,
-      "date": "21/03/2026",
-      "time": "21:05",
-      "pred": {
-        "home": 0.05,
-        "draw": 0.2608,
-        "away": 0.6892,
-        "dc1x": 0.3108,
-        "dcx2": 0.95,
-        "dc12": 0.7392,
-        "over25": 0.5926,
-        "under25": 0.4074,
-        "bttsY": 0.6028,
-        "bttsN": 0.3972,
-        "xg_h": "1.29",
-        "xg_a": "1.78",
-        "conf": 0.4148,
-        "best": "2",
-        "bestP": 0.6892
-      }
-    },
-    {
       "home": "Olympique Lyonnais",
       "away": "AS Monaco FC",
       "league": "Ligue 1",
@@ -604,31 +504,6 @@
       }
     },
     {
-      "home": "PEC Zwolle",
-      "away": "NAC Breda",
-      "league": "Eredivisie",
-      "fixture_id": 537690,
-      "date": "21/03/2026",
-      "time": "21:00",
-      "pred": {
-        "home": 0.3941,
-        "draw": 0.2965,
-        "away": 0.3094,
-        "dc1x": 0.6906,
-        "dcx2": 0.6059,
-        "dc12": 0.7035,
-        "over25": 0.5588,
-        "under25": 0.4412,
-        "bttsY": 0.5591,
-        "bttsN": 0.4409,
-        "xg_h": "1.82",
-        "xg_a": "1.1",
-        "conf": 0.2988,
-        "best": "X",
-        "bestP": 0.2965
-      }
-    },
-    {
       "home": "NEC",
       "away": "SC Heerenveen",
       "league": "Eredivisie",
@@ -751,31 +626,6 @@
         "conf": 0.3016,
         "best": "X",
         "bestP": 0.3
-      }
-    },
-    {
-      "home": "CD Tondela",
-      "away": "AVS",
-      "league": "Primeira Liga",
-      "fixture_id": 545934,
-      "date": "21/03/2026",
-      "time": "21:30",
-      "pred": {
-        "home": 0.3403,
-        "draw": 0.3499,
-        "away": 0.3098,
-        "dc1x": 0.6902,
-        "dcx2": 0.6597,
-        "dc12": 0.6501,
-        "over25": 0.4847,
-        "under25": 0.5153,
-        "bttsY": 0.495,
-        "bttsN": 0.505,
-        "xg_h": "1.67",
-        "xg_a": "0.94",
-        "conf": 0.2322,
-        "best": "X",
-        "bestP": 0.3499
       }
     },
     {
