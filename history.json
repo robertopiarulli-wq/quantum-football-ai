@@ -5173,7 +5173,8 @@
       "correct_1x2": false,
       "correct_over": true,
       "correct_btts": true,
-      "verified_at": "2026-03-23T09:44:18.976324"
+      "verified_at": "2026-03-23T09:44:18.976324",
+      "elo_updated": true
     },
     {
       "fixture_id": "542644",
@@ -5232,7 +5233,8 @@
       "correct_1x2": true,
       "correct_over": true,
       "correct_btts": true,
-      "verified_at": "2026-03-23T09:44:25.848546"
+      "verified_at": "2026-03-23T09:44:25.848546",
+      "elo_updated": true
     },
     {
       "fixture_id": "542642",
@@ -5261,7 +5263,8 @@
       "correct_1x2": true,
       "correct_over": true,
       "correct_btts": true,
-      "verified_at": "2026-03-23T09:44:25.848561"
+      "verified_at": "2026-03-23T09:44:25.848561",
+      "elo_updated": true
     },
     {
       "fixture_id": "537691",
@@ -5350,7 +5353,8 @@
       "correct_1x2": false,
       "correct_over": true,
       "correct_btts": true,
-      "verified_at": "2026-03-23T09:44:32.901924"
+      "verified_at": "2026-03-23T09:44:32.901924",
+      "elo_updated": true
     },
     {
       "fixture_id": "537685",
@@ -5379,7 +5383,8 @@
       "correct_1x2": true,
       "correct_over": false,
       "correct_btts": false,
-      "verified_at": "2026-03-23T09:44:32.901940"
+      "verified_at": "2026-03-23T09:44:32.901940",
+      "elo_updated": true
     },
     {
       "fixture_id": "545940",
@@ -5828,7 +5833,8 @@
       "correct_1x2": true,
       "correct_over": true,
       "correct_btts": true,
-      "verified_at": "2026-03-23T09:44:40.041191"
+      "verified_at": "2026-03-23T09:44:40.041191",
+      "elo_updated": true
     },
     {
       "fixture_id": "537108",
@@ -5857,7 +5863,8 @@
       "correct_1x2": true,
       "correct_over": true,
       "correct_btts": true,
-      "verified_at": "2026-03-23T09:44:40.041207"
+      "verified_at": "2026-03-23T09:44:40.041207",
+      "elo_updated": true
     },
     {
       "fixture_id": "537112",
@@ -5886,7 +5893,8 @@
       "correct_1x2": true,
       "correct_over": true,
       "correct_btts": true,
-      "verified_at": "2026-03-23T09:44:40.041211"
+      "verified_at": "2026-03-23T09:44:40.041211",
+      "elo_updated": true
     },
     {
       "fixture_id": "537107",
@@ -5915,7 +5923,8 @@
       "correct_1x2": true,
       "correct_over": true,
       "correct_btts": true,
-      "verified_at": "2026-03-23T09:44:40.041214"
+      "verified_at": "2026-03-23T09:44:40.041214",
+      "elo_updated": true
     },
     {
       "fixture_id": "538092",
@@ -5944,7 +5953,8 @@
       "correct_1x2": false,
       "correct_over": true,
       "correct_btts": true,
-      "verified_at": "2026-03-23T09:44:47.189409"
+      "verified_at": "2026-03-23T09:44:47.189409",
+      "elo_updated": true
     },
     {
       "fixture_id": "538086",
@@ -5973,7 +5983,8 @@
       "correct_1x2": true,
       "correct_over": false,
       "correct_btts": false,
-      "verified_at": "2026-03-23T09:44:47.189425"
+      "verified_at": "2026-03-23T09:44:47.189425",
+      "elo_updated": true
     },
     {
       "fixture_id": "538093",
@@ -6002,7 +6013,8 @@
       "correct_1x2": false,
       "correct_over": true,
       "correct_btts": false,
-      "verified_at": "2026-03-23T09:44:47.189429"
+      "verified_at": "2026-03-23T09:44:47.189429",
+      "elo_updated": true
     },
     {
       "fixture_id": "544496",
@@ -6061,7 +6073,8 @@
       "correct_1x2": true,
       "correct_over": false,
       "correct_btts": true,
-      "verified_at": "2026-03-23T09:44:54.146808"
+      "verified_at": "2026-03-23T09:44:54.146808",
+      "elo_updated": true
     },
     {
       "fixture_id": "544497",
@@ -6090,7 +6103,8 @@
       "correct_1x2": false,
       "correct_over": false,
       "correct_btts": false,
-      "verified_at": "2026-03-23T09:44:54.146824"
+      "verified_at": "2026-03-23T09:44:54.146824",
+      "elo_updated": true
     },
     {
       "fixture_id": "544491",
@@ -6119,7 +6133,8 @@
       "correct_1x2": true,
       "correct_over": false,
       "correct_btts": false,
-      "verified_at": "2026-03-23T09:44:54.146829"
+      "verified_at": "2026-03-23T09:44:54.146829",
+      "elo_updated": true
     },
     {
       "fixture_id": "540642",
@@ -6148,7 +6163,8 @@
       "correct_1x2": false,
       "correct_over": true,
       "correct_btts": true,
-      "verified_at": "2026-03-23T09:44:18.976340"
+      "verified_at": "2026-03-23T09:44:18.976340",
+      "elo_updated": true
     },
     {
       "fixture_id": "540644",
@@ -6177,7 +6193,8 @@
       "correct_1x2": true,
       "correct_over": true,
       "correct_btts": true,
-      "verified_at": "2026-03-23T09:44:18.976345"
+      "verified_at": "2026-03-23T09:44:18.976345",
+      "elo_updated": true
     },
     {
       "fixture_id": "542646",
@@ -6206,7 +6223,8 @@
       "correct_1x2": false,
       "correct_over": true,
       "correct_btts": true,
-      "verified_at": "2026-03-23T09:44:25.848567"
+      "verified_at": "2026-03-23T09:44:25.848567",
+      "elo_updated": true
     },
     {
       "fixture_id": "542648",
@@ -6235,7 +6253,8 @@
       "correct_1x2": false,
       "correct_over": false,
       "correct_btts": false,
-      "verified_at": "2026-03-23T09:44:25.848571"
+      "verified_at": "2026-03-23T09:44:25.848571",
+      "elo_updated": true
     },
     {
       "fixture_id": "542641",
@@ -6264,7 +6283,8 @@
       "correct_1x2": false,
       "correct_over": true,
       "correct_btts": true,
-      "verified_at": "2026-03-23T09:44:25.848575"
+      "verified_at": "2026-03-23T09:44:25.848575",
+      "elo_updated": true
     },
     {
       "fixture_id": "537686",
@@ -6293,7 +6313,8 @@
       "correct_1x2": false,
       "correct_over": false,
       "correct_btts": true,
-      "verified_at": "2026-03-23T09:44:32.901945"
+      "verified_at": "2026-03-23T09:44:32.901945",
+      "elo_updated": true
     },
     {
       "fixture_id": "537684",
@@ -6322,7 +6343,8 @@
       "correct_1x2": true,
       "correct_over": true,
       "correct_btts": false,
-      "verified_at": "2026-03-23T09:44:32.901949"
+      "verified_at": "2026-03-23T09:44:32.901949",
+      "elo_updated": true
     },
     {
       "fixture_id": "537692",
@@ -6351,7 +6373,8 @@
       "correct_1x2": false,
       "correct_over": true,
       "correct_btts": true,
-      "verified_at": "2026-03-23T09:44:32.901952"
+      "verified_at": "2026-03-23T09:44:32.901952",
+      "elo_updated": true
     },
     {
       "fixture_id": "545937",
@@ -6380,7 +6403,8 @@
       "correct_1x2": false,
       "correct_over": true,
       "correct_btts": true,
-      "verified_at": "2026-03-23T09:45:01.494559"
+      "verified_at": "2026-03-23T09:45:01.494559",
+      "elo_updated": true
     },
     {
       "fixture_id": "545938",
@@ -6409,7 +6433,8 @@
       "correct_1x2": true,
       "correct_over": false,
       "correct_btts": false,
-      "verified_at": "2026-03-23T09:45:01.494578"
+      "verified_at": "2026-03-23T09:45:01.494578",
+      "elo_updated": true
     },
     {
       "fixture_id": "545941",
@@ -6438,7 +6463,8 @@
       "correct_1x2": true,
       "correct_over": false,
       "correct_btts": true,
-      "verified_at": "2026-03-23T09:45:01.494583"
+      "verified_at": "2026-03-23T09:45:01.494583",
+      "elo_updated": true
     },
     {
       "fixture_id": "537105",
@@ -6467,7 +6493,8 @@
       "correct_1x2": false,
       "correct_over": true,
       "correct_btts": false,
-      "verified_at": "2026-03-23T09:44:40.041218"
+      "verified_at": "2026-03-23T09:44:40.041218",
+      "elo_updated": true
     },
     {
       "fixture_id": "544498",
@@ -6496,7 +6523,8 @@
       "correct_1x2": true,
       "correct_over": false,
       "correct_btts": false,
-      "verified_at": "2026-03-23T09:44:54.146833"
+      "verified_at": "2026-03-23T09:44:54.146833",
+      "elo_updated": true
     },
     {
       "fixture_id": "541175",
@@ -6649,5 +6677,5 @@
       "elo_updated": true
     }
   ],
-  "last_updated": "2026-03-23T09:45:01.494902"
+  "last_updated": "2026-03-23T10:35:11.808752"
 }
