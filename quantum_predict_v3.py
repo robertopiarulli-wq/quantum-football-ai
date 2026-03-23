@@ -455,19 +455,35 @@ def extract_features(hname, aname, form_map=None, dynamic_elo=None,
 # Caratteristiche storiche per campionato
 # Accuracy storica reale del nostro modello per campionato (da history.json)
 # Aggiornare periodicamente dai dati reali
+# Accuracy aggiornata su 225 partite verificate — 23/03/2026
 LEAGUE_ACCURACY = {
-    "SA":  0.50,  # Serie A — buono
-    "PL":  0.27,  # Premier League — scarso (ELO datati)
-    "PD":  0.55,  # La Liga — ottimo
-    "BL1": 0.40,  # Bundesliga
-    "FL1": 0.39,  # Ligue 1
+    "SA":  0.48,  # Serie A — stabile
+    "PL":  0.26,  # Premier League — difficile
+    "PD":  0.52,  # La Liga — buono
+    "BL1": 0.44,  # Bundesliga — in miglioramento
+    "FL1": 0.35,  # Ligue 1 — in calo
     "CL":  0.75,  # Champions League — eccellente
-    "DED": 0.37,  # Eredivisie
-    "PPL": 0.35,  # Primeira Liga
+    "DED": 0.39,  # Eredivisie — in miglioramento
+    "PPL": 0.31,  # Primeira Liga — in calo
     "ELC": 0.38,  # Championship
     "SB":  0.40,  # Serie B (stima)
 }
-LEAGUE_ACCURACY_DEFAULT = 0.42  # media globale
+LEAGUE_ACCURACY_DEFAULT = 0.41  # media globale aggiornata
+
+# Quale metrica secondaria funziona meglio per campionato (da dati reali)
+# "O" = Over/Under più affidabile, "B" = BTTS più affidabile
+LEAGUE_SECONDARY = {
+    "SA":  "B",   # BTTS 52% vs Over 32%
+    "PL":  "O",   # Over 58% vs BTTS 42%
+    "PD":  "B",   # BTTS 70% vs Over 52%
+    "BL1": "B",   # BTTS 56% vs Over 36%
+    "FL1": "O",   # Over 62% vs BTTS 24%
+    "CL":  "O",   # Over 75% vs BTTS 50%
+    "DED": "B",   # BTTS 64% vs Over 50%
+    "PPL": "O",   # Over 68% vs BTTS 59%
+    "ELC": "O",   # Over 50% vs BTTS 46%
+    "SB":  "B",   # default
+}
 
 LEAGUE_PROFILE = {
     # draw_bias: calibrato su dati reali — SA 14%, PL 47%, PPL 41%, BL1 30%, FL1 28%
@@ -602,29 +618,44 @@ def full_prediction(f):
     btts_valid = lh > 1.5 and la > 1.5
     btts_candidate = p_o15 if not btts_valid else pbtts  # placeholder
 
-    # Costruisci lista candidati con etichetta e probabilità
-    candidates = [
+    # Preferenza seconda gamba per campionato (da dati storici reali)
+    comp_code_combo = f.get("comp_code", "")
+    secondary_pref = LEAGUE_SECONDARY.get(comp_code_combo, "O")  # "O"=Over/Under, "B"=BTTS
+
+    # Costruisci candidati Over/Under
+    ou_candidates = [
         ("O1.5", p_o15),
         ("O2.5", p_o25),
         ("U2.5", p_u25),
         ("U3.5", p_u35),
     ]
-    if btts_valid:
-        candidates.append(("BTTS", pbtts))
+    # Candidato BTTS solo se xG entrambe > 1.5
+    btts_candidate = [("BTTS", pbtts)] if btts_valid else []
 
-    # Filtra per soglia e ordina per probabilità
-    valid_candidates = [(lbl, p) for lbl, p in candidates if p >= COMBO_THRESHOLD]
-    valid_candidates.sort(key=lambda x: -x[1])
+    # Ordina per probabilità
+    best_ou = sorted(ou_candidates, key=lambda x: -x[1])[0]
+    best_btts = btts_candidate[0] if btts_candidate else None
 
-    # Seconda gamba = candidato con prob più alta
-    if valid_candidates:
-        combo_leg = valid_candidates[0][0]
-        combo_prob = valid_candidates[0][1]
+    # Scegli seconda gamba in base alla preferenza del campionato
+    if secondary_pref == "B" and best_btts and best_btts[1] >= COMBO_THRESHOLD:
+        # Campionato BTTS-friendly: usa BTTS se supera soglia
+        combo_leg, combo_prob = best_btts
+    elif secondary_pref == "B" and best_btts:
+        # BTTS non supera soglia — confronta con miglior O/U
+        if best_btts[1] > best_ou[1]:
+            combo_leg, combo_prob = best_btts
+        else:
+            combo_leg, combo_prob = best_ou
     else:
-        # Nessuno supera 60% — prendi il migliore comunque con flag di bassa certezza
-        all_sorted = sorted(candidates, key=lambda x: -x[1])
-        combo_leg = all_sorted[0][0]
-        combo_prob = all_sorted[0][1]
+        # Campionato Over-friendly: usa miglior O/U
+        combo_leg, combo_prob = best_ou
+
+    # Verifica soglia certezza
+    valid_candidates = [(lbl, p) for lbl, p in ou_candidates + (btts_candidate) if p >= COMBO_THRESHOLD]
+    if not valid_candidates:
+        # Nessuno supera soglia — usa comunque il migliore
+        all_cands = ou_candidates + btts_candidate
+        combo_leg, combo_prob = sorted(all_cands, key=lambda x: -x[1])[0]
 
     # Fissa = best_out (calcolato dopo, ma usiamo h/d/a già disponibili)
     # Determiniamo qui per uso in combo
@@ -716,12 +747,13 @@ def full_prediction(f):
     # NON applichiamo calibrate_confidence — la nuova formula incorpora già
     # l'accuracy storica per campionato. La calibrazione appiattiva tutto al ceiling.
     conf = round(raw_conf, 4)
-    # Fix draw prediction — calibrato su dati reali (69% dei pareggi ha gap|1-2|<25%)
+    # Fix draw prediction — ricalibrato su 225 partite verificate (23/03/2026)
+    # Soglia ottimale: gap<30% draw>=24% → F1=0.427, recall=75%
     gap_12 = abs(h - a)
     league_draw_bias = LEAGUE_PROFILE.get(f.get("comp_code",""), {}).get("draw_bias", 0)
-    # Soglia gap adattiva: più alto il draw_bias del campionato, più ampia la finestra
-    gap_threshold = 0.20 + (league_draw_bias * 2)  # PL/PPL: ~0.21, SA: ~0.28
-    if d >= 0.25 and gap_12 < gap_threshold:
+    # Soglia gap adattiva per campionato
+    gap_threshold = 0.28 + (league_draw_bias * 1.5)
+    if d >= 0.24 and gap_12 < gap_threshold:
         bo = "X"
         bv = d
     else:
@@ -901,6 +933,12 @@ def record_predictions(all_preds, history):
                 "pred_best":   pred.get("best_out", "1"),
                 "pred_conf":   round(pred.get("confidence", 0.50), 4),
                 "pred_raw_conf": round(pred.get("raw_confidence", pred.get("confidence", 0.50)), 4),
+                "pred_combo_label": pred.get("combo_label", ""),
+                "pred_combo_leg":   pred.get("combo_leg", ""),
+                "pred_combo_prob":  round(pred.get("combo_prob", 0), 4),
+                "pred_over15":  round(pred.get("over_15", 0), 4),
+                "pred_under35": round(pred.get("under_35", 0), 4),
+                "correct_combo": None,  # da verificare dopo
                 # risultato reale — da compilare dopo
                 "result":      None,   # "1", "X", "2"
                 "goals_home":  None,
@@ -961,6 +999,23 @@ def verify_results(history, fetcher, competitions):
                     p["correct_1x2"] = (p["pred_best"] == outcome)
                     p["correct_over"]= (p["pred_over25"] > 0.5) == actual_over
                     p["correct_btts"]= (p["pred_btts"]  > 0.5) == actual_btts
+                    # Verifica combo
+                    combo_leg = p.get("pred_combo_leg", "")
+                    if combo_leg and p.get("pred_best"):
+                        fissa_ok = (p["pred_best"] == outcome)
+                        if combo_leg == "O1.5":
+                            leg_ok = (gh + ga) > 1
+                        elif combo_leg == "O2.5":
+                            leg_ok = actual_over
+                        elif combo_leg == "U2.5":
+                            leg_ok = not actual_over
+                        elif combo_leg == "U3.5":
+                            leg_ok = (gh + ga) <= 3
+                        elif combo_leg == "BTTS":
+                            leg_ok = actual_btts
+                        else:
+                            leg_ok = False
+                        p["correct_combo"] = fissa_ok and leg_ok
                     p["verified_at"] = datetime.now().isoformat()
                     verified += 1
                     status = "✅" if p["correct_1x2"] else "❌"
