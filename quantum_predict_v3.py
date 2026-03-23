@@ -578,6 +578,69 @@ def full_prediction(f):
         1 - sum(math.exp(-(lh+la)) * (lh+la)**k / math.factorial(k) for k in range(3))
     ))
     pbtts = max(0.15, min(0.82, (1 - math.exp(-lh)) * (1 - math.exp(-la))))
+
+    # ── CALCOLO TUTTE LE PROBABILITÀ O/U ─────────────────────
+    def poisson_prob(lam, k):
+        return math.exp(-lam) * lam**k / math.factorial(k)
+
+    lam = lh + la
+    p_o15 = max(0.10, min(0.95, 1 - poisson_prob(lam, 0) - poisson_prob(lam, 1)))
+    p_o25 = pover
+    p_u25 = 1 - pover
+    p_u35 = max(0.10, min(0.95,
+        poisson_prob(lam,0)+poisson_prob(lam,1)+poisson_prob(lam,2)+poisson_prob(lam,3)
+    ))
+    p_o35 = 1 - p_u35
+
+    # ── LOGICA COMBO: FISSA + SECONDA GAMBA ──────────────────
+    # Seconda gamba = la più probabile tra O/U e BTTS
+    # con soglia minima 60% e regole su xG
+
+    COMBO_THRESHOLD = 0.60
+
+    # BTTS valido solo se entrambe le squadre hanno xG > 1.5
+    btts_valid = lh > 1.5 and la > 1.5
+    btts_candidate = p_o15 if not btts_valid else pbtts  # placeholder
+
+    # Costruisci lista candidati con etichetta e probabilità
+    candidates = [
+        ("O1.5", p_o15),
+        ("O2.5", p_o25),
+        ("U2.5", p_u25),
+        ("U3.5", p_u35),
+    ]
+    if btts_valid:
+        candidates.append(("BTTS", pbtts))
+
+    # Filtra per soglia e ordina per probabilità
+    valid_candidates = [(lbl, p) for lbl, p in candidates if p >= COMBO_THRESHOLD]
+    valid_candidates.sort(key=lambda x: -x[1])
+
+    # Seconda gamba = candidato con prob più alta
+    if valid_candidates:
+        combo_leg = valid_candidates[0][0]
+        combo_prob = valid_candidates[0][1]
+    else:
+        # Nessuno supera 60% — prendi il migliore comunque con flag di bassa certezza
+        all_sorted = sorted(candidates, key=lambda x: -x[1])
+        combo_leg = all_sorted[0][0]
+        combo_prob = all_sorted[0][1]
+
+    # Fissa = best_out (calcolato dopo, ma usiamo h/d/a già disponibili)
+    # Determiniamo qui per uso in combo
+    gap_12_temp = abs(h - a)
+    ldb_temp = LEAGUE_PROFILE.get(f.get("comp_code",""), {}).get("draw_bias", 0)
+    gap_thr_temp = 0.20 + (ldb_temp * 2)
+    if d >= 0.25 and gap_12_temp < gap_thr_temp:
+        fissa = "X"
+        fissa_prob = d
+    else:
+        fissa = "1" if max(h,d,a)==h else ("X" if max(h,d,a)==d else "2")
+        fissa_prob = max(h,d,a)
+
+    combo_label = f"{fissa}+{combo_leg}"
+    combo_score = round(fissa_prob * combo_prob, 4)
+    combo_certain = combo_prob >= COMBO_THRESHOLD
     # ═══════════════════════════════════════
     # NUOVA CONFIDENZA — basata sul consenso dei segnali
     # Non misura lo squilibrio ELO ma la coerenza tra tutti i fattori
@@ -667,8 +730,15 @@ def full_prediction(f):
     return {**base,
             "dc_1x": h+d, "dc_x2": d+a, "dc_12": h+a,
             "over_25": pover, "under_25": 1-pover,
+            "over_15": round(p_o15, 4), "under_35": round(p_u35, 4),
+            "over_35": round(p_o35, 4),
             "btts_y": pbtts, "btts_n": 1-pbtts,
             "xg_home": round(lh, 2), "xg_away": round(la, 2),
+            "combo_label":   combo_label,
+            "combo_leg":     combo_leg,
+            "combo_prob":    round(combo_prob, 4),
+            "combo_score":   combo_score,
+            "combo_certain": combo_certain,
             "confidence": conf, "raw_confidence": round(raw_conf, 4),
             "best_out": bo, "best_val": bv}
 
@@ -721,6 +791,9 @@ def send_telegram(pred, hname, aname, comp, date_str="", time_str="", rank=1):
         f"Over2.5:{fmt(pred['over_25'])} · BTTS:{fmt(pred['btts_y'])}\n"
         f"xG: {pred['xg_home']}—{pred['xg_away']}\n"
         f"Conf:{fmt(pred['confidence'])} {icon}\n"
+        f"{'🎯' if pred.get('combo_certain') else '💡'} "
+        f"*COMBO: {pred.get('combo_label','—')}* "
+        f"({fmt(pred.get('combo_prob',0))})\n"
         f"_Generato: {datetime.now().strftime('%d/%m/%Y %H:%M')}_"
     )
     try:
@@ -1291,6 +1364,10 @@ def main():
               </td>
               <td style="padding:10px 8px;text-align:center;color:#f97316">{fmt(pred.get('over_25',0))}</td>
               <td style="padding:10px 8px;text-align:center;color:#34d399">{fmt(pred.get('btts_y',0))}</td>
+              <td style="padding:10px 8px;text-align:center;font-weight:bold;color:{'#4caf50' if pred.get('combo_certain') else '#f59e0b'}">
+                {pred.get('combo_label','—')}<br>
+                <span style="font-size:10px;color:#888">{fmt(pred.get('combo_prob',0))}</span>
+              </td>
               <td style="padding:10px 8px;text-align:center;font-weight:bold;color:{conf_color}">{fmt(conf)}</td>
             </tr>"""
 
@@ -1307,6 +1384,7 @@ def main():
       <th style="padding:10px 8px;color:#22d3ee;text-align:center">2</th>
       <th style="padding:10px 8px;color:#f97316;text-align:center">O2.5</th>
       <th style="padding:10px 8px;color:#34d399;text-align:center">BTTS</th>
+      <th style="padding:10px 8px;color:#4caf50;text-align:center">🎯 COMBO</th>
       <th style="padding:10px 8px;color:#a78bfa;text-align:center">Conf</th>
     </tr>
   </thead>
