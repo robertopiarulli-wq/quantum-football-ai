@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-03-29T09:07:21.660037",
-  "date": "29/03/2026",
-  "total": 59,
+  "generated_at": "2026-03-30T10:52:18.655902",
+  "date": "30/03/2026",
+  "total": 66,
   "fixtures": [
     {
       "home": "US Sassuolo Calcio",
@@ -151,6 +151,106 @@
         "conf": 0.4259,
         "best": "X",
         "bestP": 0.2407
+      }
+    },
+    {
+      "home": "Udinese Calcio",
+      "away": "Como 1907",
+      "league": "Serie A",
+      "fixture_id": 537122,
+      "date": "06/04/2026",
+      "time": "11:30",
+      "pred": {
+        "home": 0.258,
+        "draw": 0.2418,
+        "away": 0.5002,
+        "dc1x": 0.4998,
+        "dcx2": 0.742,
+        "dc12": 0.7582,
+        "over25": 0.386,
+        "under25": 0.614,
+        "bttsY": 0.4344,
+        "bttsN": 0.5656,
+        "xg_h": "0.88",
+        "xg_a": "1.35",
+        "conf": 0.4519,
+        "best": "2",
+        "bestP": 0.5002
+      }
+    },
+    {
+      "home": "US Lecce",
+      "away": "Atalanta BC",
+      "league": "Serie A",
+      "fixture_id": 537124,
+      "date": "06/04/2026",
+      "time": "14:00",
+      "pred": {
+        "home": 0.2471,
+        "draw": 0.2265,
+        "away": 0.5264,
+        "dc1x": 0.4736,
+        "dcx2": 0.7529,
+        "dc12": 0.7735,
+        "over25": 0.3143,
+        "under25": 0.6857,
+        "bttsY": 0.382,
+        "bttsN": 0.618,
+        "xg_h": "0.82",
+        "xg_a": "1.14",
+        "conf": 0.3436,
+        "best": "2",
+        "bestP": 0.5264
+      }
+    },
+    {
+      "home": "Juventus FC",
+      "away": "Genoa CFC",
+      "league": "Serie A",
+      "fixture_id": 537117,
+      "date": "06/04/2026",
+      "time": "17:00",
+      "pred": {
+        "home": 0.4836,
+        "draw": 0.2397,
+        "away": 0.2767,
+        "dc1x": 0.7233,
+        "dcx2": 0.5164,
+        "dc12": 0.7603,
+        "over25": 0.4942,
+        "under25": 0.5058,
+        "bttsY": 0.5086,
+        "bttsN": 0.4914,
+        "xg_h": "1.66",
+        "xg_a": "0.99",
+        "conf": 0.4409,
+        "best": "1",
+        "bestP": 0.4836
+      }
+    },
+    {
+      "home": "SSC Napoli",
+      "away": "AC Milan",
+      "league": "Serie A",
+      "fixture_id": 537121,
+      "date": "06/04/2026",
+      "time": "19:45",
+      "pred": {
+        "home": 0.2947,
+        "draw": 0.2291,
+        "away": 0.4762,
+        "dc1x": 0.5238,
+        "dcx2": 0.7053,
+        "dc12": 0.7709,
+        "over25": 0.4312,
+        "under25": 0.5688,
+        "bttsY": 0.4887,
+        "bttsN": 0.5113,
+        "xg_h": "1.17",
+        "xg_a": "1.23",
+        "conf": 0.3212,
+        "best": "2",
+        "bestP": 0.4762
       }
     },
     {
@@ -376,6 +476,31 @@
         "conf": 0.4524,
         "best": "X",
         "bestP": 0.3092
+      }
+    },
+    {
+      "home": "Girona FC",
+      "away": "Villarreal CF",
+      "league": "La Liga",
+      "fixture_id": 544504,
+      "date": "06/04/2026",
+      "time": "20:00",
+      "pred": {
+        "home": 0.2621,
+        "draw": 0.292,
+        "away": 0.446,
+        "dc1x": 0.554,
+        "dcx2": 0.7379,
+        "dc12": 0.708,
+        "over25": 0.527,
+        "under25": 0.473,
+        "bttsY": 0.5635,
+        "bttsN": 0.4365,
+        "xg_h": "1.32",
+        "xg_a": "1.46",
+        "conf": 0.3473,
+        "best": "X",
+        "bestP": 0.292
       }
     },
     {
@@ -1226,6 +1351,56 @@
         "conf": 0.3035,
         "best": "1",
         "bestP": 0.5955
+      }
+    },
+    {
+      "home": "FC Arouca",
+      "away": "GD Estoril Praia",
+      "league": "Primeira Liga",
+      "fixture_id": 545950,
+      "date": "06/04/2026",
+      "time": "18:45",
+      "pred": {
+        "home": 0.3413,
+        "draw": 0.3488,
+        "away": 0.3098,
+        "dc1x": 0.6902,
+        "dcx2": 0.6587,
+        "dc12": 0.6512,
+        "over25": 0.6302,
+        "under25": 0.3698,
+        "bttsY": 0.6442,
+        "bttsN": 0.3558,
+        "xg_h": "1.57",
+        "xg_a": "1.68",
+        "conf": 0.1683,
+        "best": "X",
+        "bestP": 0.3488
+      }
+    },
+    {
+      "home": "Casa Pia AC",
+      "away": "Sport Lisboa e Benfica",
+      "league": "Primeira Liga",
+      "fixture_id": 545949,
+      "date": "06/04/2026",
+      "time": "20:45",
+      "pred": {
+        "home": 0.0643,
+        "draw": 0.3132,
+        "away": 0.6225,
+        "dc1x": 0.3775,
+        "dcx2": 0.9357,
+        "dc12": 0.6868,
+        "over25": 0.4989,
+        "under25": 0.5011,
+        "bttsY": 0.4895,
+        "bttsN": 0.5105,
+        "xg_h": "0.89",
+        "xg_a": "1.78",
+        "conf": 0.311,
+        "best": "2",
+        "bestP": 0.6225
       }
     },
     {
