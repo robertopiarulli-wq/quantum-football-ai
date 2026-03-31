@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-03-30T10:52:18.655902",
-  "date": "30/03/2026",
-  "total": 66,
+  "generated_at": "2026-03-31T08:11:34.408648",
+  "date": "31/03/2026",
+  "total": 68,
   "fixtures": [
     {
       "home": "US Sassuolo Calcio",
@@ -951,6 +951,56 @@
         "conf": 0.3167,
         "best": "X",
         "bestP": 0.3027
+      }
+    },
+    {
+      "home": "Real Madrid CF",
+      "away": "FC Bayern M\u00fcnchen",
+      "league": "Champions League",
+      "fixture_id": 556719,
+      "date": "07/04/2026",
+      "time": "20:00",
+      "pred": {
+        "home": 0.6847,
+        "draw": 0.2074,
+        "away": 0.1078,
+        "dc1x": 0.8922,
+        "dcx2": 0.3153,
+        "dc12": 0.7926,
+        "over25": 0.7849,
+        "under25": 0.2151,
+        "bttsY": 0.766,
+        "bttsN": 0.234,
+        "xg_h": "2.05",
+        "xg_a": "2.12",
+        "conf": 0.7967,
+        "best": "1",
+        "bestP": 0.6847
+      }
+    },
+    {
+      "home": "Sporting Clube de Portugal",
+      "away": "Arsenal FC",
+      "league": "Champions League",
+      "fixture_id": 556721,
+      "date": "07/04/2026",
+      "time": "20:00",
+      "pred": {
+        "home": 0.2108,
+        "draw": 0.2111,
+        "away": 0.5781,
+        "dc1x": 0.4219,
+        "dcx2": 0.7892,
+        "dc12": 0.7889,
+        "over25": 0.6726,
+        "under25": 0.3274,
+        "bttsY": 0.6732,
+        "bttsN": 0.3268,
+        "xg_h": "1.89",
+        "xg_a": "1.58",
+        "conf": 0.5765,
+        "best": "2",
+        "bestP": 0.5781
       }
     },
     {
