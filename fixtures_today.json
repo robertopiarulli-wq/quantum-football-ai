@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-04-02T08:09:51.826149",
-  "date": "02/04/2026",
-  "total": 70,
+  "generated_at": "2026-04-03T08:06:09.092452",
+  "date": "03/04/2026",
+  "total": 75,
   "fixtures": [
     {
       "home": "US Sassuolo Calcio",
@@ -251,6 +251,31 @@
         "conf": 0.3212,
         "best": "2",
         "bestP": 0.4762
+      }
+    },
+    {
+      "home": "West Ham United FC",
+      "away": "Wolverhampton Wanderers FC",
+      "league": "Premier League",
+      "fixture_id": 538104,
+      "date": "10/04/2026",
+      "time": "20:00",
+      "pred": {
+        "home": 0.3719,
+        "draw": 0.3556,
+        "away": 0.2725,
+        "dc1x": 0.7275,
+        "dcx2": 0.6281,
+        "dc12": 0.6444,
+        "over25": 0.5278,
+        "under25": 0.4722,
+        "bttsY": 0.5626,
+        "bttsN": 0.4374,
+        "xg_h": "1.5",
+        "xg_a": "1.29",
+        "conf": 0.204,
+        "best": "X",
+        "bestP": 0.3556
       }
     },
     {
@@ -729,6 +754,31 @@
       }
     },
     {
+      "home": "FC Augsburg",
+      "away": "TSG 1899 Hoffenheim",
+      "league": "Bundesliga",
+      "fixture_id": 540665,
+      "date": "10/04/2026",
+      "time": "19:30",
+      "pred": {
+        "home": 0.2836,
+        "draw": 0.3133,
+        "away": 0.4031,
+        "dc1x": 0.5969,
+        "dcx2": 0.7164,
+        "dc12": 0.6867,
+        "over25": 0.734,
+        "under25": 0.266,
+        "bttsY": 0.7224,
+        "bttsN": 0.2776,
+        "xg_h": "1.77",
+        "xg_a": "2.05",
+        "conf": 0.2677,
+        "best": "X",
+        "bestP": 0.3133
+      }
+    },
+    {
       "home": "Paris Saint-Germain FC",
       "away": "Toulouse FC",
       "league": "Ligue 1",
@@ -951,6 +1001,31 @@
         "conf": 0.3167,
         "best": "X",
         "bestP": 0.3027
+      }
+    },
+    {
+      "home": "Paris FC",
+      "away": "AS Monaco FC",
+      "league": "Ligue 1",
+      "fixture_id": 542659,
+      "date": "10/04/2026",
+      "time": "18:00",
+      "pred": {
+        "home": 0.1742,
+        "draw": 0.2866,
+        "away": 0.5392,
+        "dc1x": 0.4608,
+        "dcx2": 0.8258,
+        "dc12": 0.7134,
+        "over25": 0.6173,
+        "under25": 0.3827,
+        "bttsY": 0.6327,
+        "bttsN": 0.3673,
+        "xg_h": "1.49",
+        "xg_a": "1.7",
+        "conf": 0.3357,
+        "best": "2",
+        "bestP": 0.5392
       }
     },
     {
@@ -1279,6 +1354,31 @@
       }
     },
     {
+      "home": "FC Twente '65",
+      "away": "FC Volendam",
+      "league": "Eredivisie",
+      "fixture_id": 537710,
+      "date": "10/04/2026",
+      "time": "19:00",
+      "pred": {
+        "home": 0.5114,
+        "draw": 0.2875,
+        "away": 0.201,
+        "dc1x": 0.799,
+        "dcx2": 0.4886,
+        "dc12": 0.7125,
+        "over25": 0.537,
+        "under25": 0.463,
+        "bttsY": 0.4859,
+        "bttsN": 0.5141,
+        "xg_h": "2.0",
+        "xg_a": "0.83",
+        "conf": 0.3579,
+        "best": "1",
+        "bestP": 0.5114
+      }
+    },
+    {
       "home": "Gil Vicente FC",
       "away": "AVS",
       "league": "Primeira Liga",
@@ -1501,6 +1601,31 @@
         "conf": 0.311,
         "best": "2",
         "bestP": 0.6225
+      }
+    },
+    {
+      "home": "FC Famalic\u00e3o",
+      "away": "Moreirense FC",
+      "league": "Primeira Liga",
+      "fixture_id": 545958,
+      "date": "10/04/2026",
+      "time": "20:45",
+      "pred": {
+        "home": 0.5134,
+        "draw": 0.3389,
+        "away": 0.1477,
+        "dc1x": 0.8523,
+        "dcx2": 0.4866,
+        "dc12": 0.6611,
+        "over25": 0.405,
+        "under25": 0.595,
+        "bttsY": 0.431,
+        "bttsN": 0.569,
+        "xg_h": "1.49",
+        "xg_a": "0.81",
+        "conf": 0.284,
+        "best": "X",
+        "bestP": 0.3389
       }
     },
     {
