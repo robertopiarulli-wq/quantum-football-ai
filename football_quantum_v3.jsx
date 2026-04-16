@@ -281,7 +281,14 @@ export default function App(){
 
   const ranked=useMemo(()=>{
     return[...fixtures].sort((a,b)=>{
-      const v=f=>f.pred?rnkSort==="conf"?f.pred.conf:rnkSort==="home"?f.pred.home:rnkSort==="away"?f.pred.away:rnkSort==="draw"?f.pred.draw:rnkSort==="over"?f.pred.over25:f.pred.bttsY:0;
+      const ppScore=f=>{
+      if(!f.pp)return 0;
+      const d=Math.abs(f.pp.pp_D||0);
+      const r=f.pp.pp_result||"";
+      const w=r==="1"||r==="2"?1.0:r==="12"?0.6:0.3;
+      return d*w;
+    };
+    const v=f=>f.pred?rnkSort==="conf"?f.pred.conf:rnkSort==="home"?f.pred.home:rnkSort==="away"?f.pred.away:rnkSort==="draw"?f.pred.draw:rnkSort==="over"?f.pred.over25:rnkSort==="pp"?ppScore(f):f.pred.bttsY:0;
       return v(b)-v(a);
     });
   },[fixtures,rnkSort]);
@@ -412,20 +419,20 @@ export default function App(){
           <div>
             <div style={{display:"flex",gap:8,alignItems:"center",marginBottom:14,flexWrap:"wrap"}}>
               <div style={{fontSize:9,color:"#555",letterSpacing:2}}>ORDINA PER:</div>
-              {[["conf","🎲 Conf"],["home","1️⃣ Casa"],["draw","➖ Pari"],["away","2️⃣ Trasf"],["over","⚽ Over"],["btts","🔁 BTTS"]].map(([v,l])=>(
+              {[["conf","🎲 Conf"],["home","1️⃣ Casa"],["draw","➖ Pari"],["away","2️⃣ Trasf"],["over","⚽ Over"],["btts","🔁 BTTS"],["pp","⚡ PP%"]].map(([v,l])=>(
                 <button key={v} onClick={()=>setRnkSort(v)} style={{padding:"5px 11px",borderRadius:99,fontSize:9,cursor:"pointer",border:`1px solid ${rnkSort===v?C.cyan:C.border}`,background:rnkSort===v?`${C.cyan}15`:"transparent",color:rnkSort===v?C.cyan:"#666",fontFamily:"inherit"}}>{l}</button>
               ))}
             </div>
             {ranked.length===0&&<div style={{textAlign:"center",padding:60,color:"#333",fontSize:10}}>Nessuna partita — esegui il workflow da GitHub Actions</div>}
             {ranked.length>0&&(
               <div>
-                <div style={{display:"grid",gridTemplateColumns:"36px 1fr 1fr 62px 62px 62px 62px 62px 72px",gap:6,padding:"7px 10px",fontSize:8,color:"#555",letterSpacing:1,borderBottom:"1px solid "+C.border,marginBottom:4}}>
+                <div style={{display:"grid",gridTemplateColumns:"36px 1fr 1fr 62px 62px 62px 62px 62px 72px 62px",gap:6,padding:"7px 10px",fontSize:8,color:"#555",letterSpacing:1,borderBottom:"1px solid "+C.border,marginBottom:4}}>
                   <div>#</div><div>CASA</div><div>TRASFERTA</div>
                   <div style={{textAlign:"center"}}>1</div><div style={{textAlign:"center"}}>X</div><div style={{textAlign:"center"}}>2</div>
-                  <div style={{textAlign:"center"}}>O2.5</div><div style={{textAlign:"center"}}>BTTS</div><div style={{textAlign:"center"}}>CONF</div>
+                  <div style={{textAlign:"center"}}>O2.5</div><div style={{textAlign:"center"}}>BTTS</div><div style={{textAlign:"center"}}>CONF</div><div style={{textAlign:"center",color:rnkSort==="pp"?"#a78bfa":"#555"}}>PP%</div>
                 </div>
                 {ranked.map((f,i)=>!f.pred?null:(
-                  <div key={i} style={{display:"grid",gridTemplateColumns:"36px 1fr 1fr 62px 62px 62px 62px 62px 72px",gap:6,padding:"8px 10px",marginBottom:3,borderRadius:9,background:i<3?`${C.cyan}04`:C.card,border:`1px solid ${i<3?C.cyan+"22":C.border}`,alignItems:"center"}}>
+                  <div key={i} style={{display:"grid",gridTemplateColumns:"36px 1fr 1fr 62px 62px 62px 62px 62px 72px 62px",gap:6,padding:"8px 10px",marginBottom:3,borderRadius:9,background:i<3?`${C.cyan}04`:C.card,border:`1px solid ${i<3?C.cyan+"22":C.border}`,alignItems:"center"}}>
                     <div style={{fontSize:11,color:C.amber}}>{i===0?"🥇":i===1?"🥈":i===2?"🥉":i+1}</div>
                     <div style={{fontSize:11,fontWeight:700,color:C.cyan,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{f.home}</div>
                     <div style={{fontSize:11,fontWeight:700,color:C.pink,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{f.away}</div>
@@ -435,6 +442,15 @@ export default function App(){
                     <div style={{textAlign:"center",fontSize:11,color:rnkSort==="over"?"#f97316":"#bbb"}}>{pct(f.pred.over25)}</div>
                     <div style={{textAlign:"center",fontSize:11,color:rnkSort==="btts"?C.green:"#bbb"}}>{pct(f.pred.bttsY)}</div>
                     <div style={{textAlign:"center",fontSize:10,fontWeight:700,color:confColor(f.pred.conf)}}>{pct(f.pred.conf)}</div>
+                    <div style={{textAlign:"center",fontSize:10,fontWeight:rnkSort==="pp"?900:400,color:rnkSort==="pp"?"#a78bfa":"#555"}}>
+                      {f.pp?(()=>{
+                        const d=Math.abs(f.pp.pp_D||0);
+                        const r=f.pp.pp_result||"";
+                        const w=r==="1"||r==="2"?1.0:r==="12"?0.6:0.3;
+                        const sc=(d*w).toFixed(1);
+                        return <span><span style={{fontWeight:700}}>{f.pp.pp_label?.replace(/[🎯🛡️🔀]/g,"").trim()}</span><br/><span style={{fontSize:8,color:"#a78bfa"}}>{sc}</span></span>;
+                      })():"—"}
+                    </div>
                   </div>
                 ))}
               </div>
