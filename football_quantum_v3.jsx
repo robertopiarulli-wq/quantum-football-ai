@@ -134,13 +134,13 @@ function FixCard({fix,expanded,onToggle}){
         <span>xG <b>{p.xg_h}–{p.xg_a}</b></span>
         <span>Conf <b style={{color:confColor(p.conf)}}>{pct(p.conf)}</b></span>
       </div>
-      {f.pp&&f.pp.pp_label&&(
+      {fix.pp&&fix.pp.pp_label&&(
         <div style={{marginTop:4,display:"flex",alignItems:"center",gap:8,fontSize:9}}>
           <span style={{color:"#a78bfa",letterSpacing:1}}>⚡ PP</span>
-          <span style={{fontWeight:900,color:f.pp.pp_result==="1"?C.cyan:f.pp.pp_result==="2"?C.pink:f.pp.pp_result==="12"?C.amber:f.pp.pp_result==="1X"?"#34d399":f.pp.pp_result==="X2"?"#f97316":"#aaa"}}>{f.pp.pp_label}</span>
-          <span style={{color:"#444"}}>I={f.pp.pp_i_casa>0?"+":""}{f.pp.pp_i_casa?.toFixed(1)}/{f.pp.pp_i_ospite>0?"+":""}{f.pp.pp_i_ospite?.toFixed(1)}</span>
-          <span style={{color:"#444"}}>D={f.pp.pp_D>0?"+":""}{f.pp.pp_D?.toFixed(1)}</span>
-          <span style={{background:"#0a1a2e",borderRadius:4,padding:"1px 6px",color:"#a78bfa"}}>{f.pp.pp_pct?.toFixed(0)}%</span>
+          <span style={{fontWeight:900,color:fix.pp.pp_result==="1"?C.cyan:fix.pp.pp_result==="2"?C.pink:fix.pp.pp_result==="12"?C.amber:fix.pp.pp_result==="1X"?"#34d399":fix.pp.pp_result==="X2"?"#f97316":"#aaa"}}>{fix.pp.pp_label}</span>
+          <span style={{color:"#444"}}>I={fix.pp.pp_i_casa>0?"+":""}{fix.pp.pp_i_casa?.toFixed(1)}/{fix.pp.pp_i_ospite>0?"+":""}{fix.pp.pp_i_ospite?.toFixed(1)}</span>
+          <span style={{color:"#444"}}>D={fix.pp.pp_D>0?"+":""}{fix.pp.pp_D?.toFixed(1)}</span>
+          <span style={{background:"#0a1a2e",borderRadius:4,padding:"1px 6px",color:"#a78bfa"}}>{fix.pp.pp_pct?.toFixed(0)}%</span>
         </div>
       )}
       {expanded&&(
@@ -157,27 +157,27 @@ function FixCard({fix,expanded,onToggle}){
             <Bar val={p.dcx2} color={C.pink} label="X2"/>
             <Bar val={p.dc12} color={C.green} label="12"/>
           </div>
-          {f.pp&&f.pp.pp_label&&(
+          {fix.pp&&fix.pp.pp_label&&(
             <div style={{gridColumn:"1/-1",marginTop:8,padding:"10px 12px",background:"rgba(167,139,250,0.06)",border:"1px solid rgba(167,139,250,0.2)",borderRadius:10}}>
               <div style={{fontSize:8,color:"#a78bfa",letterSpacing:2,marginBottom:6}}>⚡ PP INDEX · KPZ / α⁻¹=137 · ULTIME 3 PARTITE</div>
               <div style={{display:"flex",alignItems:"center",gap:12,flexWrap:"wrap"}}>
-                <div style={{fontSize:14,fontWeight:900,color:f.pp.pp_result==="1"?C.cyan:f.pp.pp_result==="2"?C.pink:f.pp.pp_result==="12"?C.amber:f.pp.pp_result==="1X"?"#34d399":f.pp.pp_result==="X2"?"#f97316":"#aaa"}}>
-                  {f.pp.pp_label}
+                <div style={{fontSize:14,fontWeight:900,color:fix.pp.pp_result==="1"?C.cyan:fix.pp.pp_result==="2"?C.pink:fix.pp.pp_result==="12"?C.amber:fix.pp.pp_result==="1X"?"#34d399":fix.pp.pp_result==="X2"?"#f97316":"#aaa"}}>
+                  {fix.pp.pp_label}
                 </div>
                 <div style={{fontSize:9,color:"#555",display:"flex",gap:10}}>
-                  <span>I casa: <b style={{color:"#ccc"}}>{f.pp.pp_i_casa>0?"+":""}{f.pp.pp_i_casa?.toFixed(2)}</b></span>
-                  <span>I ospite: <b style={{color:"#ccc"}}>{f.pp.pp_i_ospite>0?"+":""}{f.pp.pp_i_ospite?.toFixed(2)}</b></span>
-                  <span>D: <b style={{color:"#a78bfa"}}>{f.pp.pp_D>0?"+":""}{f.pp.pp_D?.toFixed(2)}</b></span>
+                  <span>I casa: <b style={{color:"#ccc"}}>{fix.pp.pp_i_casa>0?"+":""}{fix.pp.pp_i_casa?.toFixed(2)}</b></span>
+                  <span>I ospite: <b style={{color:"#ccc"}}>{fix.pp.pp_i_ospite>0?"+":""}{fix.pp.pp_i_ospite?.toFixed(2)}</b></span>
+                  <span>D: <b style={{color:"#a78bfa"}}>{fix.pp.pp_D>0?"+":""}{fix.pp.pp_D?.toFixed(2)}</b></span>
                 </div>
                 <div style={{marginLeft:"auto",background:"#0a1a2e",borderRadius:6,padding:"4px 10px",textAlign:"center"}}>
                   <div style={{fontSize:8,color:"#555"}}>SCALA</div>
-                  <div style={{fontSize:13,fontWeight:900,color:"#a78bfa"}}>{f.pp.pp_pct?.toFixed(0)}%</div>
+                  <div style={{fontSize:13,fontWeight:900,color:"#a78bfa"}}>{fix.pp.pp_pct?.toFixed(0)}%</div>
                 </div>
               </div>
               <div style={{marginTop:8,background:"#0a0f1a",borderRadius:4,height:6,position:"relative"}}>
                 <div style={{position:"absolute",left:0,top:0,width:"100%",height:"100%",borderRadius:4,background:"linear-gradient(90deg,#f472b6,#555,#22d3ee)"}}/>
                 <div style={{position:"absolute",top:-3,width:3,height:12,background:"#fff",borderRadius:2,
-                  left:`${Math.max(0,Math.min(100,f.pp.pp_pct))}%`,transform:"translateX(-50%)"`}}/>
+                  left:`${Math.max(0,Math.min(100,fix.pp.pp_pct))}%`,transform:"translateX(-50%)"`}}/>
               </div>
               <div style={{display:"flex",justifyContent:"space-between",fontSize:7,color:"#333",marginTop:2}}>
                 <span>-13.7 (Ospite domina)</span><span>0 (Equilibrio)</span><span>+13.7 (Casa domina)</span>
