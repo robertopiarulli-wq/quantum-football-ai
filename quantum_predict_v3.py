@@ -249,6 +249,13 @@ class FootballDataFetcher:
                 "away_xg":    avg(s["away_gf"]),
                 "away_xga":   avg(s["away_gc"]),
                 "fatigue_days": fatigue,
+                # PP Index raw data — ultime 3 partite casa/trasferta
+                "last3_home_results": s["home_results"][-3:],
+                "last3_home_gf":      s["home_gf"][-3:],
+                "last3_home_gc":      s["home_gc"][-3:],
+                "last3_away_results": s["away_results"][-3:],
+                "last3_away_gf":      s["away_gf"][-3:],
+                "last3_away_gc":      s["away_gc"][-3:],
             }
         return form_map, results  # results riusato per H2H senza nuove chiamate API
 
@@ -341,6 +348,140 @@ def get_elo_dynamic(name, dynamic_elo):
     if name in dynamic_elo:
         return dynamic_elo[name]
     return get_elo(name)
+
+# ═══════════════════════════════════════
+#  PP INDEX — Modello KPZ / Costante α⁻¹=137
+#  Basato sulle ultime 3 partite (270 minuti ≈ 137×2)
+#  Scala: -13.7 → +13.7 (range 27.4)
+# ═══════════════════════════════════════
+
+def calc_pp_index(results_list, gf_list, gc_list, is_home):
+    """
+    Calcola l'Indice PP per una squadra sulle ultime 3 partite.
+    
+    Formula: I = (Punti × 0.6) + (GF × peso_gf) - (GS × peso_gs)
+    
+    Pesi:
+      Casa:       GF × 0.3 × 1.0,  GS × 0.1 × 1.5 (fragilità domestica pesa di più)
+      Trasferta:  GF × 0.3 × 1.2,  GS × 0.1 × 1.0
+    
+    Scala massima (5V, 15GF, 0GS):
+      Casa:      (9×0.6) + (9×0.3×1.0) - (0×0.1×1.5) = 5.4 + 2.7 = 8.1 → cap 13.7
+      Trasferta: (9×0.6) + (9×0.3×1.2) - (0×0.1×1.0) = 5.4 + 3.24 = 8.64 → cap 13.7
+    """
+    if not results_list:
+        return 0.0
+
+    # Punti dalle ultime 3 partite
+    points = sum(3 if r == "W" else 1 if r == "D" else 0 for r in results_list[-3:])
+
+    # Gol fatti e subiti ultime 3
+    gf = sum(gf_list[-3:]) if gf_list else 0
+    gs = sum(gc_list[-3:]) if gc_list else 0
+
+    if is_home:
+        peso_gf = 0.3 * 1.0   # gol in casa
+        peso_gs = 0.1 * 1.5   # gol subiti in casa pesano di più
+    else:
+        peso_gf = 0.3 * 1.2   # gol in trasferta valgono di più
+        peso_gs = 0.1 * 1.0   # gol subiti in trasferta
+
+    I = (points * 0.6) + (gf * peso_gf) - (gs * peso_gs)
+    return round(I, 3)
+
+
+def calc_pp_distance(i_casa, i_ospite):
+    """
+    Calcola la distanza lineare D tra i due indici PP.
+    
+    Regole:
+    - Segni concordi (entrambi +, entrambi -): D = I_casa - I_ospite
+    - Segni discordi: D = |I_casa| + |I_ospite| con segno a favore del positivo
+    """
+    if (i_casa >= 0 and i_ospite >= 0) or (i_casa < 0 and i_ospite < 0):
+        # Concordi: semplice sottrazione
+        return round(i_casa - i_ospite, 3)
+    else:
+        # Discordi: somma valori assoluti, segno a favore del positivo
+        dist = abs(i_casa) + abs(i_ospite)
+        if i_casa >= 0:
+            return round(dist, 3)   # casa positiva → D positivo
+        else:
+            return round(-dist, 3)  # ospite positiva → D negativo
+
+
+def pp_prediction(hname, aname, form_map):
+    """
+    Calcola la previsione PP (KPZ) per una partita.
+    
+    Tabella decisionale:
+    | D > +4, I_casa > I_ospite  | FISSA 1        |
+    | D > +4, I_ospite > I_casa  | FISSA 2        |
+    | -4 ≤ D ≤ +4                | Doppia 1-2     |
+    | D < -4, neg/misti, I_ospite meno negativa, scarto ≥ 4 | X2 |
+    | D < -4, neg/misti, I_casa meno negativa    | 1X             |
+    
+    Returns dict con: i_casa, i_ospite, D, pp_result, pp_label
+    """
+    hdata = form_map.get(hname, {})
+    adata = form_map.get(aname, {})
+
+    # Calcola indici PP
+    i_casa = calc_pp_index(
+        hdata.get("last3_home_results", []),
+        hdata.get("last3_home_gf", []),
+        hdata.get("last3_home_gc", []),
+        is_home=True
+    )
+    i_ospite = calc_pp_index(
+        adata.get("last3_away_results", []),
+        adata.get("last3_away_gf", []),
+        adata.get("last3_away_gc", []),
+        is_home=False
+    )
+
+    # Distanza lineare
+    D = calc_pp_distance(i_casa, i_ospite)
+
+    # Decisione
+    both_negative = i_casa < 0 and i_ospite < 0
+    mixed = (i_casa >= 0) != (i_ospite >= 0)  # segni discordi
+
+    if D > 4:
+        if i_casa >= i_ospite:
+            pp_result = "1"
+            pp_label  = "🎯 FISSA 1"
+        else:
+            pp_result = "2"
+            pp_label  = "🎯 FISSA 2"
+
+    elif D < -4:
+        if both_negative or mixed:
+            scarto = abs(i_casa - i_ospite)
+            if i_ospite > i_casa and scarto >= 4:
+                pp_result = "X2"
+                pp_label  = "🛡️ X2"
+            else:
+                pp_result = "1X"
+                pp_label  = "🛡️ 1X"
+        else:
+            # Entrambi positivi, D < -4 → ospite domina
+            pp_result = "2"
+            pp_label  = "🎯 FISSA 2"
+
+    else:
+        # -4 ≤ D ≤ +4
+        pp_result = "12"
+        pp_label  = "🔀 1-2"
+
+    return {
+        "pp_i_casa":   i_casa,
+        "pp_i_ospite": i_ospite,
+        "pp_D":        D,
+        "pp_result":   pp_result,
+        "pp_label":    pp_label,
+        "pp_pct":      round((D + 13.7) / 27.4 * 100, 1),  # posizione % sulla scala
+    }
 
 # ═══════════════════════════════════════
 #  FEATURE ENGINEERING
@@ -802,7 +943,7 @@ class AdaptiveModel:
 # ═══════════════════════════════════════
 #  ALERTS
 # ═══════════════════════════════════════
-def send_telegram(pred, hname, aname, comp, date_str="", time_str="", rank=1):
+def send_telegram(pred, hname, aname, comp, date_str="", time_str="", rank=1, pp=None):
     if not TELEGRAM_TOKEN or not TELEGRAM_CHAT:
         return
     fmt  = lambda v: f"{v*100:.1f}%"
@@ -828,6 +969,12 @@ def send_telegram(pred, hname, aname, comp, date_str="", time_str="", rank=1):
         f"({fmt(pred.get('combo_prob',0))})\n"
         f"_Generato: {datetime.now().strftime('%d/%m/%Y %H:%M')}_"
     )
+    if pp:
+        msg += (
+            f"\n⚡ *PP Index:* {pp.get('pp_label','—')} "
+            f"(I={pp.get('pp_i_casa',0):+.1f}/{pp.get('pp_i_ospite',0):+.1f} "
+            f"D={pp.get('pp_D',0):+.1f} · {pp.get('pp_pct',50):.0f}%)"
+        )
     try:
         r = requests.post(
             f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage",
@@ -1274,6 +1421,7 @@ def main():
                                        standings=standings, comp_code=comp_code,
                                        first_leg=first_leg)
                 pred = full_prediction(feat)
+                pp   = pp_prediction(hname, aname, form_map)
                 src_h = feat.get("src_home", "ELO")
                 src_a = feat.get("src_away", "ELO")
                 h_fat = feat.get("h_fatigue_days", 99)
@@ -1291,6 +1439,7 @@ def main():
 
                 print(f"      1:{pred['home']:.1%} X:{pred['draw']:.1%} 2:{pred['away']:.1%} "
                       f"O2.5:{pred['over_25']:.1%} Conf:{pred['confidence']:.1%}")
+                print(f"      PP: {pp['pp_label']} (I={pp['pp_i_casa']:+.1f}/{pp['pp_i_ospite']:+.1f} D={pp['pp_D']:+.1f} {pp['pp_pct']:.0f}%)")
 
                 all_preds.append({
                     "league":       league_name,
@@ -1305,6 +1454,7 @@ def main():
                     "matchday":     match.get("matchday", None),
                     "first_leg":    fl if fl else None,
                     "prediction":   pred,
+                    "pp":           pp,
                     "generated_at": datetime.now().isoformat()
                 })
 
@@ -1386,7 +1536,7 @@ def main():
             for i, p in enumerate(top10, 1):
                 pred = p["prediction"]
                 send_telegram(pred, p["home"], p["away"], p["league"],
-                              p.get("date",""), p.get("time",""), rank=i)
+                              p.get("date",""), p.get("time",""), rank=i, pp=p.get("pp"))
 
             # Invia UN'UNICA email riepilogativa con tutte le Top 10
             if all([SMTP_USER, SMTP_PASS, SMTP_TO]):
@@ -1494,7 +1644,10 @@ def main():
                 "conf":   round(pred.get("confidence", 0.50), 4),
                 "best":   pred.get("best_out", "1"),
                 "bestP":  round(pred.get("best_val", 0.33), 4),
-            }
+                "combo":  pred.get("combo_label", ""),
+                "comboP": round(pred.get("combo_prob", 0), 4),
+            },
+            "pp": p.get("pp", {})
         })
 
     with open("fixtures_today.json", "w") as f:
