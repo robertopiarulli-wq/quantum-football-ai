@@ -177,7 +177,7 @@ function FixCard({fix,expanded,onToggle}){
               <div style={{marginTop:8,background:"#0a0f1a",borderRadius:4,height:6,position:"relative"}}>
                 <div style={{position:"absolute",left:0,top:0,width:"100%",height:"100%",borderRadius:4,background:"linear-gradient(90deg,#f472b6,#555,#22d3ee)"}}/>
                 <div style={{position:"absolute",top:-3,width:3,height:12,background:"#fff",borderRadius:2,
-                  left:`${Math.max(0,Math.min(100,fix.pp.pp_pct))}%`,transform:"translateX(-50%)"`}}/>
+                  left:`${Math.max(0,Math.min(100,fix.pp.pp_pct))}%`,transform:"translateX(-50%)"}}/>
               </div>
               <div style={{display:"flex",justifyContent:"space-between",fontSize:7,color:"#333",marginTop:2}}>
                 <span>-13.7 (Ospite domina)</span><span>0 (Equilibrio)</span><span>+13.7 (Casa domina)</span>
