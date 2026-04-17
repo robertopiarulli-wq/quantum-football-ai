@@ -249,13 +249,13 @@ class FootballDataFetcher:
                 "away_xg":    avg(s["away_gf"]),
                 "away_xga":   avg(s["away_gc"]),
                 "fatigue_days": fatigue,
-                # PP Index raw data — ultime 3 partite casa/trasferta
-                "last3_home_results": s["home_results"][-3:],
-                "last3_home_gf":      s["home_gf"][-3:],
-                "last3_home_gc":      s["home_gc"][-3:],
-                "last3_away_results": s["away_results"][-3:],
-                "last3_away_gf":      s["away_gf"][-3:],
-                "last3_away_gc":      s["away_gc"][-3:],
+                # PP Index raw data — ultime 5 partite casa/trasferta
+                "last3_home_results": s["home_results"][-5:],
+                "last3_home_gf":      s["home_gf"][-5:],
+                "last3_home_gc":      s["home_gc"][-5:],
+                "last3_away_results": s["away_results"][-5:],
+                "last3_away_gf":      s["away_gf"][-5:],
+                "last3_away_gc":      s["away_gc"][-5:],
             }
         return form_map, results  # results riusato per H2H senza nuove chiamate API
 
@@ -357,34 +357,29 @@ def get_elo_dynamic(name, dynamic_elo):
 
 def calc_pp_index(results_list, gf_list, gc_list, is_home):
     """
-    Calcola l'Indice PP per una squadra sulle ultime 3 partite.
-    
+    Calcola l'Indice PP per una squadra sulle ultime 5 partite.
     Formula: I = (Punti × 0.6) + (GF × peso_gf) - (GS × peso_gs)
-    
     Pesi:
-      Casa:       GF × 0.3 × 1.0,  GS × 0.1 × 1.5 (fragilità domestica pesa di più)
-      Trasferta:  GF × 0.3 × 1.2,  GS × 0.1 × 1.0
-    
-    Scala massima (5V, 15GF, 0GS):
-      Casa:      (9×0.6) + (9×0.3×1.0) - (0×0.1×1.5) = 5.4 + 2.7 = 8.1 → cap 13.7
-      Trasferta: (9×0.6) + (9×0.3×1.2) - (0×0.1×1.0) = 5.4 + 3.24 = 8.64 → cap 13.7
+      Casa:       GF × 0.30,  GS × 0.15 (fragilità domestica pesa di più)
+      Trasferta:  GF × 0.36,  GS × 0.10
+    Scala: max teorico ≈ +13.7, min teorico ≈ -13.7 (5 partite)
     """
     if not results_list:
         return 0.0
 
-    # Punti dalle ultime 3 partite
-    points = sum(3 if r == "W" else 1 if r == "D" else 0 for r in results_list[-3:])
+    # Punti dalle ultime 5 partite
+    points = sum(3 if r == "W" else 1 if r == "D" else 0 for r in results_list[-5:])
 
-    # Gol fatti e subiti ultime 3
-    gf = sum(gf_list[-3:]) if gf_list else 0
-    gs = sum(gc_list[-3:]) if gc_list else 0
+    # Gol fatti e subiti ultime 5
+    gf = sum(gf_list[-5:]) if gf_list else 0
+    gs = sum(gc_list[-5:]) if gc_list else 0
 
     if is_home:
-        peso_gf = 0.3 * 1.0   # gol in casa
-        peso_gs = 0.1 * 1.5   # gol subiti in casa pesano di più
+        peso_gf = 0.30
+        peso_gs = 0.15
     else:
-        peso_gf = 0.3 * 1.2   # gol in trasferta valgono di più
-        peso_gs = 0.1 * 1.0   # gol subiti in trasferta
+        peso_gf = 0.36
+        peso_gs = 0.10
 
     I = (points * 0.6) + (gf * peso_gf) - (gs * peso_gs)
     return round(I, 3)
@@ -392,41 +387,42 @@ def calc_pp_index(results_list, gf_list, gc_list, is_home):
 
 def calc_pp_distance(i_casa, i_ospite):
     """
-    Calcola la distanza lineare D tra i due indici PP.
-    
-    Regole:
-    - Segni concordi (entrambi +, entrambi -): D = I_casa - I_ospite
-    - Segni discordi: D = |I_casa| + |I_ospite| con segno a favore del positivo
+    Distanza lineare D con metodo Parisi.
+    - Segni concordi: D = I_casa - I_ospite  (es. -9 e -7 → D = -2)
+    - Segni discordi: D = |I_casa| + |I_ospite| con segno del positivo
+      (es. casa +4, ospite -9 → D = +13; casa -9, ospite +4 → D = -13)
+    La predominanza è sempre di chi ha I più alto (meno negativo o più positivo).
     """
     if (i_casa >= 0 and i_ospite >= 0) or (i_casa < 0 and i_ospite < 0):
-        # Concordi: semplice sottrazione
         return round(i_casa - i_ospite, 3)
     else:
-        # Discordi: somma valori assoluti, segno a favore del positivo
         dist = abs(i_casa) + abs(i_ospite)
-        if i_casa >= 0:
-            return round(dist, 3)   # casa positiva → D positivo
-        else:
-            return round(-dist, 3)  # ospite positiva → D negativo
+        return round(dist if i_casa >= 0 else -dist, 3)
 
 
 def pp_prediction(hname, aname, form_map):
     """
-    Calcola la previsione PP (KPZ) per una partita.
-    
-    Tabella decisionale:
-    | D > +4, I_casa > I_ospite  | FISSA 1        |
-    | D > +4, I_ospite > I_casa  | FISSA 2        |
-    | -4 ≤ D ≤ +4                | Doppia 1-2     |
-    | D < -4, neg/misti, I_ospite meno negativa, scarto ≥ 4 | X2 |
-    | D < -4, neg/misti, I_casa meno negativa    | 1X             |
-    
-    Returns dict con: i_casa, i_ospite, D, pp_result, pp_label
+    Previsione PP (KPZ/Parisi) — ultime 5 partite, scala ±13.7
+
+    Tabella decisionale (D = I_casa - I_ospite con metodo Parisi):
+
+    |D| > 8:
+      I_casa > I_ospite  → FISSA 1
+      I_ospite > I_casa  → FISSA 2
+
+    4 < |D| ≤ 8:
+      → Doppia 1-2
+
+    2 < |D| ≤ 4:
+      I_casa > I_ospite  → Doppia 1X
+      I_ospite > I_casa  → Doppia X2
+
+    |D| ≤ 2:
+      → FISSA X
     """
     hdata = form_map.get(hname, {})
     adata = form_map.get(aname, {})
 
-    # Calcola indici PP
     i_casa = calc_pp_index(
         hdata.get("last3_home_results", []),
         hdata.get("last3_home_gf", []),
@@ -440,39 +436,29 @@ def pp_prediction(hname, aname, form_map):
         is_home=False
     )
 
-    # Distanza lineare
     D = calc_pp_distance(i_casa, i_ospite)
+    abs_D = abs(D)
 
-    # Decisione
-    both_negative = i_casa < 0 and i_ospite < 0
-    mixed = (i_casa >= 0) != (i_ospite >= 0)  # segni discordi
+    # Chi predomina — sempre chi ha I più alto
+    casa_predomina = i_casa >= i_ospite
 
-    if D > 4:
-        if i_casa >= i_ospite:
-            pp_result = "1"
-            pp_label  = "🎯 FISSA 1"
+    if abs_D > 8:
+        if casa_predomina:
+            pp_result, pp_label = "1",  "🎯 FISSA 1"
         else:
-            pp_result = "2"
-            pp_label  = "🎯 FISSA 2"
+            pp_result, pp_label = "2",  "🎯 FISSA 2"
 
-    elif D < -4:
-        if both_negative or mixed:
-            scarto = abs(i_casa - i_ospite)
-            if i_ospite > i_casa and scarto >= 4:
-                pp_result = "X2"
-                pp_label  = "🛡️ X2"
-            else:
-                pp_result = "1X"
-                pp_label  = "🛡️ 1X"
+    elif abs_D > 4:
+        pp_result, pp_label = "12", "🔀 1-2"
+
+    elif abs_D > 2:
+        if casa_predomina:
+            pp_result, pp_label = "1X", "🛡️ 1X"
         else:
-            # Entrambi positivi, D < -4 → ospite domina
-            pp_result = "2"
-            pp_label  = "🎯 FISSA 2"
+            pp_result, pp_label = "X2", "🛡️ X2"
 
     else:
-        # -4 ≤ D ≤ +4
-        pp_result = "12"
-        pp_label  = "🔀 1-2"
+        pp_result, pp_label = "X",  "⚖️ FISSA X"
 
     return {
         "pp_i_casa":   i_casa,
@@ -480,8 +466,9 @@ def pp_prediction(hname, aname, form_map):
         "pp_D":        D,
         "pp_result":   pp_result,
         "pp_label":    pp_label,
-        "pp_pct":      round((D + 13.7) / 27.4 * 100, 1),  # posizione % sulla scala
+        "pp_pct":      round((D + 13.7) / 27.4 * 100, 1),
     }
+
 
 # ═══════════════════════════════════════
 #  FEATURE ENGINEERING
