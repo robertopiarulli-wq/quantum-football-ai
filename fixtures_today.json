@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-04-16T22:01:44.193850",
-  "date": "16/04/2026",
-  "total": 72,
+  "generated_at": "2026-04-17T08:29:36.597617",
+  "date": "17/04/2026",
+  "total": 73,
   "fixtures": [
     {
       "home": "US Sassuolo Calcio",
@@ -1366,6 +1366,41 @@
         "pp_result": "12",
         "pp_label": "\ud83d\udd00 1-2",
         "pp_pct": 48.5
+      }
+    },
+    {
+      "home": "RB Leipzig",
+      "away": "1. FC Union Berlin",
+      "league": "Bundesliga",
+      "fixture_id": 540682,
+      "date": "24/04/2026",
+      "time": "19:30",
+      "pred": {
+        "home": 0.6792,
+        "draw": 0.2725,
+        "away": 0.0484,
+        "dc1x": 0.9516,
+        "dcx2": 0.3208,
+        "dc12": 0.7275,
+        "over25": 0.7042,
+        "under25": 0.2958,
+        "bttsY": 0.6431,
+        "bttsN": 0.3569,
+        "xg_h": "2.42",
+        "xg_a": "1.22",
+        "conf": 0.4806,
+        "best": "1",
+        "bestP": 0.6792,
+        "combo": "1+O1.5",
+        "comboP": 0.8782
+      },
+      "pp": {
+        "pp_i_casa": 7.65,
+        "pp_i_ospite": 1.82,
+        "pp_D": 5.83,
+        "pp_result": "1",
+        "pp_label": "\ud83c\udfaf FISSA 1",
+        "pp_pct": 71.3
       }
     },
     {

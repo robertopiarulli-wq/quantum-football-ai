@@ -15071,7 +15071,42 @@
       "correct_over": null,
       "correct_btts": null,
       "verified_at": null
+    },
+    {
+      "fixture_id": "540682",
+      "home": "RB Leipzig",
+      "away": "1. FC Union Berlin",
+      "league": "Bundesliga",
+      "comp_code": "BL1",
+      "season": "2025/2026",
+      "stage": "REGULAR_SEASON",
+      "matchday": 31,
+      "first_leg": null,
+      "date": "24/04/2026",
+      "time": "19:30",
+      "predicted_at": "2026-04-17T08:26:39.015771",
+      "pred_home": 0.6792,
+      "pred_draw": 0.2725,
+      "pred_away": 0.0484,
+      "pred_over25": 0.7042,
+      "pred_btts": 0.6431,
+      "pred_best": "1",
+      "pred_conf": 0.4806,
+      "pred_raw_conf": 0.4806,
+      "pred_combo_label": "1+O1.5",
+      "pred_combo_leg": "O1.5",
+      "pred_combo_prob": 0.8782,
+      "pred_over15": 0.8782,
+      "pred_under35": 0.5068,
+      "correct_combo": null,
+      "result": null,
+      "goals_home": null,
+      "goals_away": null,
+      "correct_1x2": null,
+      "correct_over": null,
+      "correct_btts": null,
+      "verified_at": null
     }
   ],
-  "last_updated": "2026-04-16T22:02:39.536837"
+  "last_updated": "2026-04-17T08:30:38.017446"
 }
