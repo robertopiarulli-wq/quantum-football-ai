@@ -3,56 +3,6 @@
     "league": "Serie A",
     "comp_code": "SA",
     "season": "2025/2026",
-    "fixture_id": 537140,
-    "home": "US Sassuolo Calcio",
-    "away": "Como 1907",
-    "date": "17/04/2026",
-    "time": "17:30",
-    "stage": "REGULAR_SEASON",
-    "matchday": 33,
-    "first_leg": null,
-    "prediction": {
-      "home": 0.29776472555557043,
-      "draw": 0.23861999999999997,
-      "away": 0.4636152744444296,
-      "quantum_used": false,
-      "goals_factor": 0.95,
-      "dc_1x": 0.5363847255555704,
-      "dc_x2": 0.7022352744444296,
-      "dc_12": 0.7613800000000001,
-      "over_25": 0.394858960766888,
-      "under_25": 0.605141039233112,
-      "over_15": 0.6612,
-      "under_35": 0.8063,
-      "over_35": 0.1937,
-      "btts_y": 0.4437622809369955,
-      "btts_n": 0.5562377190630046,
-      "xg_home": 0.91,
-      "xg_away": 1.35,
-      "combo_label": "2+U3.5",
-      "combo_leg": "U3.5",
-      "combo_prob": 0.8063,
-      "combo_score": 0.3738,
-      "combo_certain": true,
-      "confidence": 0.4374,
-      "raw_confidence": 0.4374,
-      "best_out": "2",
-      "best_val": 0.4636152744444296
-    },
-    "pp": {
-      "pp_i_casa": 4.35,
-      "pp_i_ospite": 5.54,
-      "pp_D": -1.19,
-      "pp_result": "12",
-      "pp_label": "\ud83d\udd00 1-2",
-      "pp_pct": 45.7
-    },
-    "generated_at": "2026-04-17T08:25:36.831847"
-  },
-  {
-    "league": "Serie A",
-    "comp_code": "SA",
-    "season": "2025/2026",
     "fixture_id": 537137,
     "home": "FC Internazionale Milano",
     "away": "Cagliari Calcio",
@@ -90,14 +40,14 @@
       "best_val": 0.6928801294086872
     },
     "pp": {
-      "pp_i_casa": 6.15,
-      "pp_i_ospite": 1.08,
-      "pp_D": 5.07,
+      "pp_i_casa": 11.85,
+      "pp_i_ospite": 3.3,
+      "pp_D": 8.55,
       "pp_result": "1",
       "pp_label": "\ud83c\udfaf FISSA 1",
-      "pp_pct": 68.5
+      "pp_pct": 81.2
     },
-    "generated_at": "2026-04-17T08:25:36.831988"
+    "generated_at": "2026-04-17T17:27:30.769101"
   },
   {
     "league": "Serie A",
@@ -140,14 +90,14 @@
       "best_val": 0.49657767587163165
     },
     "pp": {
-      "pp_i_casa": 3.15,
-      "pp_i_ospite": 1.42,
-      "pp_D": 1.73,
-      "pp_result": "12",
-      "pp_label": "\ud83d\udd00 1-2",
-      "pp_pct": 56.3
+      "pp_i_casa": 5.25,
+      "pp_i_ospite": 5.74,
+      "pp_D": -0.49,
+      "pp_result": "X",
+      "pp_label": "\u2696\ufe0f FISSA X",
+      "pp_pct": 48.2
     },
-    "generated_at": "2026-04-17T08:25:36.832114"
+    "generated_at": "2026-04-17T17:27:30.769256"
   },
   {
     "league": "Serie A",
@@ -190,14 +140,14 @@
       "best_val": 0.24295999999999998
     },
     "pp": {
-      "pp_i_casa": 6.6,
-      "pp_i_ospite": 2.22,
-      "pp_D": 4.38,
-      "pp_result": "1",
-      "pp_label": "\ud83c\udfaf FISSA 1",
-      "pp_pct": 66.0
+      "pp_i_casa": 9.75,
+      "pp_i_ospite": 3.94,
+      "pp_D": 5.81,
+      "pp_result": "12",
+      "pp_label": "\ud83d\udd00 1-2",
+      "pp_pct": 71.2
     },
-    "generated_at": "2026-04-17T08:25:36.832241"
+    "generated_at": "2026-04-17T17:27:30.769390"
   },
   {
     "league": "Serie A",
@@ -240,14 +190,14 @@
       "best_val": 0.24552
     },
     "pp": {
-      "pp_i_casa": 5.85,
-      "pp_i_ospite": 3.9,
-      "pp_D": 1.95,
-      "pp_result": "12",
-      "pp_label": "\ud83d\udd00 1-2",
-      "pp_pct": 57.1
+      "pp_i_casa": 10.95,
+      "pp_i_ospite": 7.02,
+      "pp_D": 3.93,
+      "pp_result": "1X",
+      "pp_label": "\ud83d\udee1\ufe0f 1X",
+      "pp_pct": 64.3
     },
-    "generated_at": "2026-04-17T08:25:36.832362"
+    "generated_at": "2026-04-17T17:27:30.769548"
   },
   {
     "league": "Serie A",
@@ -290,14 +240,14 @@
       "best_val": 0.6428613590445234
     },
     "pp": {
-      "pp_i_casa": -0.6,
-      "pp_i_ospite": 2.74,
-      "pp_D": -3.34,
-      "pp_result": "12",
-      "pp_label": "\ud83d\udd00 1-2",
-      "pp_pct": 37.8
+      "pp_i_casa": -0.3,
+      "pp_i_ospite": 3.56,
+      "pp_D": -3.86,
+      "pp_result": "X2",
+      "pp_label": "\ud83d\udee1\ufe0f X2",
+      "pp_pct": 35.9
     },
-    "generated_at": "2026-04-17T08:25:36.832484"
+    "generated_at": "2026-04-17T17:27:30.769672"
   },
   {
     "league": "Serie A",
@@ -340,14 +290,14 @@
       "best_val": 0.6615803575170613
     },
     "pp": {
-      "pp_i_casa": -0.45,
-      "pp_i_ospite": 2.32,
-      "pp_D": -2.77,
+      "pp_i_casa": 0.0,
+      "pp_i_ospite": 7.62,
+      "pp_D": -7.62,
       "pp_result": "12",
       "pp_label": "\ud83d\udd00 1-2",
-      "pp_pct": 39.9
+      "pp_pct": 22.2
     },
-    "generated_at": "2026-04-17T08:25:36.832600"
+    "generated_at": "2026-04-17T17:27:30.769799"
   },
   {
     "league": "Serie A",
@@ -390,14 +340,14 @@
       "best_val": 0.5376959922664282
     },
     "pp": {
-      "pp_i_casa": 2.25,
-      "pp_i_ospite": 2.12,
-      "pp_D": 0.13,
-      "pp_result": "12",
-      "pp_label": "\ud83d\udd00 1-2",
-      "pp_pct": 50.5
+      "pp_i_casa": 2.1,
+      "pp_i_ospite": 3.14,
+      "pp_D": -1.04,
+      "pp_result": "X",
+      "pp_label": "\u2696\ufe0f FISSA X",
+      "pp_pct": 46.2
     },
-    "generated_at": "2026-04-17T08:25:36.832765"
+    "generated_at": "2026-04-17T17:27:30.769921"
   },
   {
     "league": "Serie A",
@@ -440,14 +390,14 @@
       "best_val": 0.45154471895181947
     },
     "pp": {
-      "pp_i_casa": 6.15,
-      "pp_i_ospite": 6.74,
-      "pp_D": -0.59,
-      "pp_result": "12",
-      "pp_label": "\ud83d\udd00 1-2",
-      "pp_pct": 47.8
+      "pp_i_casa": 6.75,
+      "pp_i_ospite": 9.58,
+      "pp_D": -2.83,
+      "pp_result": "X2",
+      "pp_label": "\ud83d\udee1\ufe0f X2",
+      "pp_pct": 39.7
     },
-    "generated_at": "2026-04-17T08:25:36.832906"
+    "generated_at": "2026-04-17T17:27:30.770079"
   },
   {
     "league": "Serie A",
@@ -490,14 +440,64 @@
       "best_val": 0.6518649806013241
     },
     "pp": {
-      "pp_i_casa": 1.5,
-      "pp_i_ospite": 5.0,
-      "pp_D": -3.5,
+      "pp_i_casa": 4.35,
+      "pp_i_ospite": 7.58,
+      "pp_D": -3.23,
+      "pp_result": "X2",
+      "pp_label": "\ud83d\udee1\ufe0f X2",
+      "pp_pct": 38.2
+    },
+    "generated_at": "2026-04-17T17:27:30.770200"
+  },
+  {
+    "league": "Serie A",
+    "comp_code": "SA",
+    "season": "2025/2026",
+    "fixture_id": 537154,
+    "home": "SSC Napoli",
+    "away": "US Cremonese",
+    "date": "24/04/2026",
+    "time": "19:45",
+    "stage": "REGULAR_SEASON",
+    "matchday": 34,
+    "first_leg": null,
+    "prediction": {
+      "home": 0.7002422606702042,
+      "draw": 0.21686,
+      "away": 0.08289773932979577,
+      "quantum_used": false,
+      "goals_factor": 0.95,
+      "dc_1x": 0.9171022606702042,
+      "dc_x2": 0.29975773932979577,
+      "dc_12": 0.78314,
+      "over_25": 0.394858960766888,
+      "under_25": 0.605141039233112,
+      "over_15": 0.6612,
+      "under_35": 0.8063,
+      "over_35": 0.1937,
+      "btts_y": 0.4176679027960941,
+      "btts_n": 0.5823320972039059,
+      "xg_home": 1.49,
+      "xg_away": 0.77,
+      "combo_label": "1+U3.5",
+      "combo_leg": "U3.5",
+      "combo_prob": 0.8063,
+      "combo_score": 0.5646,
+      "combo_certain": true,
+      "confidence": 0.5317,
+      "raw_confidence": 0.5317,
+      "best_out": "1",
+      "best_val": 0.7002422606702042
+    },
+    "pp": {
+      "pp_i_casa": 9.75,
+      "pp_i_ospite": 2.44,
+      "pp_D": 7.31,
       "pp_result": "12",
       "pp_label": "\ud83d\udd00 1-2",
-      "pp_pct": 37.2
+      "pp_pct": 76.7
     },
-    "generated_at": "2026-04-17T08:25:36.833024"
+    "generated_at": "2026-04-17T17:27:30.770304"
   },
   {
     "league": "Premier League",
@@ -540,14 +540,14 @@
       "best_val": 0.35728000000000004
     },
     "pp": {
-      "pp_i_casa": 1.5,
-      "pp_i_ospite": 3.18,
-      "pp_D": -1.68,
-      "pp_result": "12",
-      "pp_label": "\ud83d\udd00 1-2",
-      "pp_pct": 43.9
+      "pp_i_casa": 1.95,
+      "pp_i_ospite": 3.3,
+      "pp_D": -1.35,
+      "pp_result": "X",
+      "pp_label": "\u2696\ufe0f FISSA X",
+      "pp_pct": 45.1
     },
-    "generated_at": "2026-04-17T08:25:57.459461"
+    "generated_at": "2026-04-17T17:27:51.010923"
   },
   {
     "league": "Premier League",
@@ -590,14 +590,14 @@
       "best_val": 0.35124000000000005
     },
     "pp": {
-      "pp_i_casa": 2.4,
-      "pp_i_ospite": 3.62,
-      "pp_D": -1.22,
+      "pp_i_casa": 2.25,
+      "pp_i_ospite": 8.56,
+      "pp_D": -6.31,
       "pp_result": "12",
       "pp_label": "\ud83d\udd00 1-2",
-      "pp_pct": 45.5
+      "pp_pct": 27.0
     },
-    "generated_at": "2026-04-17T08:25:57.459589"
+    "generated_at": "2026-04-17T17:27:51.011055"
   },
   {
     "league": "Premier League",
@@ -640,14 +640,14 @@
       "best_val": 0.35464000000000007
     },
     "pp": {
-      "pp_i_casa": 0.3,
-      "pp_i_ospite": 0.62,
-      "pp_D": -0.32,
-      "pp_result": "12",
-      "pp_label": "\ud83d\udd00 1-2",
-      "pp_pct": 48.8
+      "pp_i_casa": 2.25,
+      "pp_i_ospite": 1.02,
+      "pp_D": 1.23,
+      "pp_result": "X",
+      "pp_label": "\u2696\ufe0f FISSA X",
+      "pp_pct": 54.5
     },
-    "generated_at": "2026-04-17T08:25:57.459708"
+    "generated_at": "2026-04-17T17:27:51.011179"
   },
   {
     "league": "Premier League",
@@ -690,14 +690,14 @@
       "best_val": 0.3548800000000001
     },
     "pp": {
-      "pp_i_casa": -0.9,
-      "pp_i_ospite": 7.2,
-      "pp_D": -8.1,
-      "pp_result": "X2",
-      "pp_label": "\ud83d\udee1\ufe0f X2",
-      "pp_pct": 20.4
+      "pp_i_casa": 0.0,
+      "pp_i_ospite": 7.26,
+      "pp_D": -7.26,
+      "pp_result": "12",
+      "pp_label": "\ud83d\udd00 1-2",
+      "pp_pct": 23.5
     },
-    "generated_at": "2026-04-17T08:25:57.459845"
+    "generated_at": "2026-04-17T17:27:51.011294"
   },
   {
     "league": "Premier League",
@@ -740,14 +740,14 @@
       "best_val": 0.35400000000000004
     },
     "pp": {
-      "pp_i_casa": 0.15,
-      "pp_i_ospite": 3.44,
-      "pp_D": -3.29,
-      "pp_result": "12",
-      "pp_label": "\ud83d\udd00 1-2",
-      "pp_pct": 38.0
+      "pp_i_casa": 3.45,
+      "pp_i_ospite": 6.98,
+      "pp_D": -3.53,
+      "pp_result": "X2",
+      "pp_label": "\ud83d\udee1\ufe0f X2",
+      "pp_pct": 37.1
     },
-    "generated_at": "2026-04-17T08:25:57.459972"
+    "generated_at": "2026-04-17T17:27:51.011426"
   },
   {
     "league": "Premier League",
@@ -790,14 +790,14 @@
       "best_val": 0.34786000000000006
     },
     "pp": {
-      "pp_i_casa": 1.2,
-      "pp_i_ospite": 0.72,
-      "pp_D": 0.48,
-      "pp_result": "12",
-      "pp_label": "\ud83d\udd00 1-2",
-      "pp_pct": 51.8
+      "pp_i_casa": 2.55,
+      "pp_i_ospite": 3.1,
+      "pp_D": -0.55,
+      "pp_result": "X",
+      "pp_label": "\u2696\ufe0f FISSA X",
+      "pp_pct": 48.0
     },
-    "generated_at": "2026-04-17T08:25:57.460082"
+    "generated_at": "2026-04-17T17:27:51.011547"
   },
   {
     "league": "Premier League",
@@ -840,14 +840,14 @@
       "best_val": 0.34822000000000003
     },
     "pp": {
-      "pp_i_casa": 2.85,
-      "pp_i_ospite": 5.44,
-      "pp_D": -2.59,
-      "pp_result": "12",
-      "pp_label": "\ud83d\udd00 1-2",
-      "pp_pct": 40.5
+      "pp_i_casa": 4.8,
+      "pp_i_ospite": 5.2,
+      "pp_D": -0.4,
+      "pp_result": "X",
+      "pp_label": "\u2696\ufe0f FISSA X",
+      "pp_pct": 48.5
     },
-    "generated_at": "2026-04-17T08:25:57.460193"
+    "generated_at": "2026-04-17T17:27:51.011660"
   },
   {
     "league": "Premier League",
@@ -890,14 +890,14 @@
       "best_val": 0.33488000000000007
     },
     "pp": {
-      "pp_i_casa": 4.95,
-      "pp_i_ospite": 2.48,
-      "pp_D": 2.47,
-      "pp_result": "12",
-      "pp_label": "\ud83d\udd00 1-2",
-      "pp_pct": 59.0
+      "pp_i_casa": 5.7,
+      "pp_i_ospite": 5.06,
+      "pp_D": 0.64,
+      "pp_result": "X",
+      "pp_label": "\u2696\ufe0f FISSA X",
+      "pp_pct": 52.3
     },
-    "generated_at": "2026-04-17T08:25:57.460303"
+    "generated_at": "2026-04-17T17:27:51.011774"
   },
   {
     "league": "Premier League",
@@ -940,14 +940,14 @@
       "best_val": 0.35868000000000005
     },
     "pp": {
-      "pp_i_casa": 5.85,
-      "pp_i_ospite": 6.42,
-      "pp_D": -0.57,
-      "pp_result": "12",
-      "pp_label": "\ud83d\udd00 1-2",
-      "pp_pct": 47.9
+      "pp_i_casa": 9.0,
+      "pp_i_ospite": 10.52,
+      "pp_D": -1.52,
+      "pp_result": "X",
+      "pp_label": "\u2696\ufe0f FISSA X",
+      "pp_pct": 44.5
     },
-    "generated_at": "2026-04-17T08:25:57.460417"
+    "generated_at": "2026-04-17T17:27:51.011891"
   },
   {
     "league": "Premier League",
@@ -991,13 +991,13 @@
     },
     "pp": {
       "pp_i_casa": 4.95,
-      "pp_i_ospite": 2.18,
-      "pp_D": 2.77,
-      "pp_result": "12",
-      "pp_label": "\ud83d\udd00 1-2",
-      "pp_pct": 60.1
+      "pp_i_ospite": 5.12,
+      "pp_D": -0.17,
+      "pp_result": "X",
+      "pp_label": "\u2696\ufe0f FISSA X",
+      "pp_pct": 49.4
     },
-    "generated_at": "2026-04-17T08:25:57.460526"
+    "generated_at": "2026-04-17T17:27:51.012003"
   },
   {
     "league": "La Liga",
@@ -1020,19 +1020,19 @@
       "dc_1x": 0.7168380557441059,
       "dc_x2": 0.5902419442558943,
       "dc_12": 0.69292,
-      "over_25": 0.3826441036171737,
-      "under_25": 0.6173558963828263,
-      "over_15": 0.6503,
-      "under_35": 0.8154,
-      "over_35": 0.1846,
-      "btts_y": 0.43994397301324273,
-      "btts_n": 0.5600560269867573,
+      "over_25": 0.39066073300172177,
+      "under_25": 0.6093392669982782,
+      "over_15": 0.6575,
+      "under_35": 0.8094,
+      "over_35": 0.1906,
+      "btts_y": 0.4482788860052713,
+      "btts_n": 0.5517211139947287,
       "xg_home": 1.28,
-      "xg_away": 0.94,
+      "xg_away": 0.97,
       "combo_label": "X+U3.5",
       "combo_leg": "U3.5",
-      "combo_prob": 0.8154,
-      "combo_score": 0.2504,
+      "combo_prob": 0.8094,
+      "combo_score": 0.2486,
       "combo_certain": true,
       "confidence": 0.4476,
       "raw_confidence": 0.4476,
@@ -1040,14 +1040,14 @@
       "best_val": 0.3070800000000001
     },
     "pp": {
-      "pp_i_casa": 2.1,
-      "pp_i_ospite": 1.08,
-      "pp_D": 1.02,
-      "pp_result": "12",
-      "pp_label": "\ud83d\udd00 1-2",
-      "pp_pct": 53.7
+      "pp_i_casa": 6.9,
+      "pp_i_ospite": 4.1,
+      "pp_D": 2.8,
+      "pp_result": "1X",
+      "pp_label": "\ud83d\udee1\ufe0f 1X",
+      "pp_pct": 60.2
     },
-    "generated_at": "2026-04-17T08:26:18.424596"
+    "generated_at": "2026-04-17T17:28:11.341142"
   },
   {
     "league": "La Liga",
@@ -1090,14 +1090,14 @@
       "best_val": 0.5311580696989715
     },
     "pp": {
-      "pp_i_casa": 7.2,
-      "pp_i_ospite": 2.32,
-      "pp_D": 4.88,
-      "pp_result": "1",
-      "pp_label": "\ud83c\udfaf FISSA 1",
-      "pp_pct": 67.8
+      "pp_i_casa": 7.05,
+      "pp_i_ospite": 5.0,
+      "pp_D": 2.05,
+      "pp_result": "1X",
+      "pp_label": "\ud83d\udee1\ufe0f 1X",
+      "pp_pct": 57.5
     },
-    "generated_at": "2026-04-17T08:26:18.424725"
+    "generated_at": "2026-04-17T17:28:11.341271"
   },
   {
     "league": "La Liga",
@@ -1140,14 +1140,14 @@
       "best_val": 0.658467522817108
     },
     "pp": {
-      "pp_i_casa": 6.0,
-      "pp_i_ospite": 4.74,
-      "pp_D": 1.26,
-      "pp_result": "12",
-      "pp_label": "\ud83d\udd00 1-2",
-      "pp_pct": 54.6
+      "pp_i_casa": 8.7,
+      "pp_i_ospite": 5.4,
+      "pp_D": 3.3,
+      "pp_result": "1X",
+      "pp_label": "\ud83d\udee1\ufe0f 1X",
+      "pp_pct": 62.0
     },
-    "generated_at": "2026-04-17T08:26:18.424866"
+    "generated_at": "2026-04-17T17:28:11.341391"
   },
   {
     "league": "La Liga",
@@ -1190,14 +1190,14 @@
       "best_val": 0.2986200000000001
     },
     "pp": {
-      "pp_i_casa": 4.8,
-      "pp_i_ospite": 0.82,
-      "pp_D": 3.98,
-      "pp_result": "12",
-      "pp_label": "\ud83d\udd00 1-2",
-      "pp_pct": 64.5
+      "pp_i_casa": 7.8,
+      "pp_i_ospite": 5.4,
+      "pp_D": 2.4,
+      "pp_result": "1X",
+      "pp_label": "\ud83d\udee1\ufe0f 1X",
+      "pp_pct": 58.8
     },
-    "generated_at": "2026-04-17T08:26:18.424988"
+    "generated_at": "2026-04-17T17:28:11.341531"
   },
   {
     "league": "La Liga",
@@ -1240,14 +1240,14 @@
       "best_val": 0.30498000000000003
     },
     "pp": {
-      "pp_i_casa": 5.25,
-      "pp_i_ospite": 2.74,
-      "pp_D": 2.51,
-      "pp_result": "12",
-      "pp_label": "\ud83d\udd00 1-2",
-      "pp_pct": 59.2
+      "pp_i_casa": 5.7,
+      "pp_i_ospite": 3.04,
+      "pp_D": 2.66,
+      "pp_result": "1X",
+      "pp_label": "\ud83d\udee1\ufe0f 1X",
+      "pp_pct": 59.7
     },
-    "generated_at": "2026-04-17T08:26:18.425105"
+    "generated_at": "2026-04-17T17:28:11.341650"
   },
   {
     "league": "La Liga",
@@ -1290,14 +1290,14 @@
       "best_val": 0.30790000000000006
     },
     "pp": {
-      "pp_i_casa": 6.0,
-      "pp_i_ospite": 2.22,
-      "pp_D": 3.78,
-      "pp_result": "12",
-      "pp_label": "\ud83d\udd00 1-2",
-      "pp_pct": 63.8
+      "pp_i_casa": 9.6,
+      "pp_i_ospite": 6.9,
+      "pp_D": 2.7,
+      "pp_result": "1X",
+      "pp_label": "\ud83d\udee1\ufe0f 1X",
+      "pp_pct": 59.9
     },
-    "generated_at": "2026-04-17T08:26:18.425219"
+    "generated_at": "2026-04-17T17:28:11.341766"
   },
   {
     "league": "La Liga",
@@ -1340,14 +1340,14 @@
       "best_val": 0.7004731903788424
     },
     "pp": {
-      "pp_i_casa": 7.95,
-      "pp_i_ospite": 5.96,
-      "pp_D": 1.99,
+      "pp_i_casa": 13.5,
+      "pp_i_ospite": 7.68,
+      "pp_D": 5.82,
       "pp_result": "12",
       "pp_label": "\ud83d\udd00 1-2",
-      "pp_pct": 57.3
+      "pp_pct": 71.2
     },
-    "generated_at": "2026-04-17T08:26:18.425331"
+    "generated_at": "2026-04-17T17:28:11.341882"
   },
   {
     "league": "La Liga",
@@ -1390,14 +1390,14 @@
       "best_val": 0.30268
     },
     "pp": {
-      "pp_i_casa": 5.55,
-      "pp_i_ospite": 1.24,
-      "pp_D": 4.31,
-      "pp_result": "1",
-      "pp_label": "\ud83c\udfaf FISSA 1",
-      "pp_pct": 65.7
+      "pp_i_casa": 7.8,
+      "pp_i_ospite": 3.36,
+      "pp_D": 4.44,
+      "pp_result": "12",
+      "pp_label": "\ud83d\udd00 1-2",
+      "pp_pct": 66.2
     },
-    "generated_at": "2026-04-17T08:26:18.425443"
+    "generated_at": "2026-04-17T17:28:11.341997"
   },
   {
     "league": "La Liga",
@@ -1440,14 +1440,14 @@
       "best_val": 0.30302
     },
     "pp": {
-      "pp_i_casa": 5.55,
-      "pp_i_ospite": 0.72,
-      "pp_D": 4.83,
-      "pp_result": "1",
-      "pp_label": "\ud83c\udfaf FISSA 1",
-      "pp_pct": 67.6
+      "pp_i_casa": 9.0,
+      "pp_i_ospite": 2.16,
+      "pp_D": 6.84,
+      "pp_result": "12",
+      "pp_label": "\ud83d\udd00 1-2",
+      "pp_pct": 75.0
     },
-    "generated_at": "2026-04-17T08:26:18.425553"
+    "generated_at": "2026-04-17T17:28:11.342106"
   },
   {
     "league": "La Liga",
@@ -1462,42 +1462,42 @@
     "matchday": 33,
     "first_leg": null,
     "prediction": {
-      "home": 0.2867015105490257,
+      "home": 0.2849015105490257,
       "draw": 0.29976,
-      "away": 0.41353848945097427,
+      "away": 0.4153384894509743,
       "quantum_used": false,
       "goals_factor": 1.0,
-      "dc_1x": 0.5864615105490257,
-      "dc_x2": 0.7132984894509743,
+      "dc_1x": 0.5846615105490257,
+      "dc_x2": 0.7150984894509743,
       "dc_12": 0.70024,
-      "over_25": 0.35306814921315377,
-      "under_25": 0.6469318507868462,
-      "over_15": 0.6229,
-      "under_35": 0.8367,
-      "over_35": 0.1633,
-      "btts_y": 0.42136828497698975,
-      "btts_n": 0.5786317150230103,
+      "over_25": 0.3611577333603433,
+      "under_25": 0.6388422666396567,
+      "over_15": 0.6306,
+      "under_35": 0.831,
+      "over_35": 0.169,
+      "btts_y": 0.4270965189700888,
+      "btts_n": 0.5729034810299112,
       "xg_home": 0.95,
-      "xg_away": 1.16,
+      "xg_away": 1.19,
       "combo_label": "X+U3.5",
       "combo_leg": "U3.5",
-      "combo_prob": 0.8367,
-      "combo_score": 0.2508,
+      "combo_prob": 0.831,
+      "combo_score": 0.2491,
       "combo_certain": true,
-      "confidence": 0.3362,
-      "raw_confidence": 0.3362,
+      "confidence": 0.3369,
+      "raw_confidence": 0.3369,
       "best_out": "X",
       "best_val": 0.29976
     },
     "pp": {
-      "pp_i_casa": 4.05,
-      "pp_i_ospite": 3.18,
-      "pp_D": 0.87,
-      "pp_result": "12",
-      "pp_label": "\ud83d\udd00 1-2",
-      "pp_pct": 53.2
+      "pp_i_casa": 6.15,
+      "pp_i_ospite": 5.66,
+      "pp_D": 0.49,
+      "pp_result": "X",
+      "pp_label": "\u2696\ufe0f FISSA X",
+      "pp_pct": 51.8
     },
-    "generated_at": "2026-04-17T08:26:18.425664"
+    "generated_at": "2026-04-17T17:28:11.342217"
   },
   {
     "league": "Bundesliga",
@@ -1540,14 +1540,14 @@
       "best_val": 0.3098
     },
     "pp": {
-      "pp_i_casa": -0.15,
-      "pp_i_ospite": 1.78,
-      "pp_D": -1.93,
-      "pp_result": "12",
-      "pp_label": "\ud83d\udd00 1-2",
-      "pp_pct": 43.0
+      "pp_i_casa": 4.35,
+      "pp_i_ospite": 2.0,
+      "pp_D": 2.35,
+      "pp_result": "1X",
+      "pp_label": "\ud83d\udee1\ufe0f 1X",
+      "pp_pct": 58.6
     },
-    "generated_at": "2026-04-17T08:26:39.014763"
+    "generated_at": "2026-04-17T17:28:31.655541"
   },
   {
     "league": "Bundesliga",
@@ -1590,14 +1590,14 @@
       "best_val": 0.31930000000000003
     },
     "pp": {
-      "pp_i_casa": 2.1,
-      "pp_i_ospite": 2.44,
-      "pp_D": -0.34,
-      "pp_result": "12",
-      "pp_label": "\ud83d\udd00 1-2",
-      "pp_pct": 48.8
+      "pp_i_casa": 2.4,
+      "pp_i_ospite": 5.82,
+      "pp_D": -3.42,
+      "pp_result": "X2",
+      "pp_label": "\ud83d\udee1\ufe0f X2",
+      "pp_pct": 37.5
     },
-    "generated_at": "2026-04-17T08:26:39.014908"
+    "generated_at": "2026-04-17T17:28:31.655664"
   },
   {
     "league": "Bundesliga",
@@ -1640,14 +1640,14 @@
       "best_val": 0.6705014542106331
     },
     "pp": {
-      "pp_i_casa": 4.65,
-      "pp_i_ospite": 0.82,
-      "pp_D": 3.83,
+      "pp_i_casa": 9.75,
+      "pp_i_ospite": 3.3,
+      "pp_D": 6.45,
       "pp_result": "12",
       "pp_label": "\ud83d\udd00 1-2",
-      "pp_pct": 64.0
+      "pp_pct": 73.5
     },
-    "generated_at": "2026-04-17T08:26:39.015026"
+    "generated_at": "2026-04-17T17:28:31.655777"
   },
   {
     "league": "Bundesliga",
@@ -1690,14 +1690,14 @@
       "best_val": 0.6668
     },
     "pp": {
-      "pp_i_casa": 0.6,
-      "pp_i_ospite": 6.06,
-      "pp_D": -5.46,
-      "pp_result": "2",
-      "pp_label": "\ud83c\udfaf FISSA 2",
-      "pp_pct": 30.1
+      "pp_i_casa": 5.85,
+      "pp_i_ospite": 11.36,
+      "pp_D": -5.51,
+      "pp_result": "12",
+      "pp_label": "\ud83d\udd00 1-2",
+      "pp_pct": 29.9
     },
-    "generated_at": "2026-04-17T08:26:39.015140"
+    "generated_at": "2026-04-17T17:28:31.655891"
   },
   {
     "league": "Bundesliga",
@@ -1740,14 +1740,14 @@
       "best_val": 0.316
     },
     "pp": {
-      "pp_i_casa": 2.55,
-      "pp_i_ospite": 0.94,
-      "pp_D": 1.61,
-      "pp_result": "12",
-      "pp_label": "\ud83d\udd00 1-2",
-      "pp_pct": 55.9
+      "pp_i_casa": 2.85,
+      "pp_i_ospite": 1.96,
+      "pp_D": 0.89,
+      "pp_result": "X",
+      "pp_label": "\u2696\ufe0f FISSA X",
+      "pp_pct": 53.2
     },
-    "generated_at": "2026-04-17T08:26:39.015248"
+    "generated_at": "2026-04-17T17:28:31.656000"
   },
   {
     "league": "Bundesliga",
@@ -1790,14 +1790,14 @@
       "best_val": 0.3031
     },
     "pp": {
-      "pp_i_casa": 5.4,
-      "pp_i_ospite": 4.74,
-      "pp_D": 0.66,
-      "pp_result": "12",
-      "pp_label": "\ud83d\udd00 1-2",
-      "pp_pct": 52.4
+      "pp_i_casa": 7.95,
+      "pp_i_ospite": 8.02,
+      "pp_D": -0.07,
+      "pp_result": "X",
+      "pp_label": "\u2696\ufe0f FISSA X",
+      "pp_pct": 49.7
     },
-    "generated_at": "2026-04-17T08:26:39.015354"
+    "generated_at": "2026-04-17T17:28:31.656105"
   },
   {
     "league": "Bundesliga",
@@ -1840,14 +1840,14 @@
       "best_val": 0.3172
     },
     "pp": {
-      "pp_i_casa": 1.05,
-      "pp_i_ospite": 0.82,
-      "pp_D": 0.23,
+      "pp_i_casa": 5.4,
+      "pp_i_ospite": 1.14,
+      "pp_D": 4.26,
       "pp_result": "12",
       "pp_label": "\ud83d\udd00 1-2",
-      "pp_pct": 50.8
+      "pp_pct": 65.5
     },
-    "generated_at": "2026-04-17T08:26:39.015459"
+    "generated_at": "2026-04-17T17:28:31.656210"
   },
   {
     "league": "Bundesliga",
@@ -1890,14 +1890,14 @@
       "best_val": 0.31414000000000003
     },
     "pp": {
-      "pp_i_casa": 8.25,
-      "pp_i_ospite": 5.9,
-      "pp_D": 2.35,
-      "pp_result": "12",
-      "pp_label": "\ud83d\udd00 1-2",
-      "pp_pct": 58.6
+      "pp_i_casa": 11.4,
+      "pp_i_ospite": 8.94,
+      "pp_D": 2.46,
+      "pp_result": "1X",
+      "pp_label": "\ud83d\udee1\ufe0f 1X",
+      "pp_pct": 59.0
     },
-    "generated_at": "2026-04-17T08:26:39.015564"
+    "generated_at": "2026-04-17T17:28:31.656318"
   },
   {
     "league": "Bundesliga",
@@ -1940,14 +1940,14 @@
       "best_val": 0.3138
     },
     "pp": {
-      "pp_i_casa": 5.4,
-      "pp_i_ospite": 5.8,
-      "pp_D": -0.4,
-      "pp_result": "12",
-      "pp_label": "\ud83d\udd00 1-2",
-      "pp_pct": 48.5
+      "pp_i_casa": 5.7,
+      "pp_i_ospite": 7.82,
+      "pp_D": -2.12,
+      "pp_result": "X2",
+      "pp_label": "\ud83d\udee1\ufe0f X2",
+      "pp_pct": 42.3
     },
-    "generated_at": "2026-04-17T08:26:39.015675"
+    "generated_at": "2026-04-17T17:28:31.656442"
   },
   {
     "league": "Bundesliga",
@@ -1990,14 +1990,14 @@
       "best_val": 0.6791816842848308
     },
     "pp": {
-      "pp_i_casa": 7.65,
-      "pp_i_ospite": 1.82,
-      "pp_D": 5.83,
-      "pp_result": "1",
-      "pp_label": "\ud83c\udfaf FISSA 1",
-      "pp_pct": 71.3
+      "pp_i_casa": 9.45,
+      "pp_i_ospite": 2.14,
+      "pp_D": 7.31,
+      "pp_result": "12",
+      "pp_label": "\ud83d\udd00 1-2",
+      "pp_pct": 76.7
     },
-    "generated_at": "2026-04-17T08:26:39.015771"
+    "generated_at": "2026-04-17T17:28:31.656546"
   },
   {
     "league": "Ligue 1",
@@ -2040,14 +2040,14 @@
       "best_val": 0.30984000000000006
     },
     "pp": {
-      "pp_i_casa": 6.0,
-      "pp_i_ospite": 2.9,
-      "pp_D": 3.1,
+      "pp_i_casa": 10.65,
+      "pp_i_ospite": 2.96,
+      "pp_D": 7.69,
       "pp_result": "12",
       "pp_label": "\ud83d\udd00 1-2",
-      "pp_pct": 61.3
+      "pp_pct": 78.1
     },
-    "generated_at": "2026-04-17T08:26:59.584976"
+    "generated_at": "2026-04-17T17:28:51.685061"
   },
   {
     "league": "Ligue 1",
@@ -2090,14 +2090,14 @@
       "best_val": 0.28890000000000005
     },
     "pp": {
-      "pp_i_casa": 3.9,
-      "pp_i_ospite": 2.12,
-      "pp_D": 1.78,
+      "pp_i_casa": 8.55,
+      "pp_i_ospite": 2.74,
+      "pp_D": 5.81,
       "pp_result": "12",
       "pp_label": "\ud83d\udd00 1-2",
-      "pp_pct": 56.5
+      "pp_pct": 71.2
     },
-    "generated_at": "2026-04-17T08:26:59.585143"
+    "generated_at": "2026-04-17T17:28:51.685246"
   },
   {
     "league": "Ligue 1",
@@ -2140,14 +2140,14 @@
       "best_val": 0.30938000000000004
     },
     "pp": {
-      "pp_i_casa": 0.15,
-      "pp_i_ospite": 1.08,
-      "pp_D": -0.93,
-      "pp_result": "12",
-      "pp_label": "\ud83d\udd00 1-2",
-      "pp_pct": 46.6
+      "pp_i_casa": 4.35,
+      "pp_i_ospite": 0.78,
+      "pp_D": 3.57,
+      "pp_result": "1X",
+      "pp_label": "\ud83d\udee1\ufe0f 1X",
+      "pp_pct": 63.0
     },
-    "generated_at": "2026-04-17T08:26:59.585262"
+    "generated_at": "2026-04-17T17:28:51.685443"
   },
   {
     "league": "Ligue 1",
@@ -2190,14 +2190,14 @@
       "best_val": 0.6054909359766831
     },
     "pp": {
-      "pp_i_casa": 5.55,
-      "pp_i_ospite": 2.48,
-      "pp_D": 3.07,
-      "pp_result": "12",
-      "pp_label": "\ud83d\udd00 1-2",
-      "pp_pct": 61.2
+      "pp_i_casa": 6.0,
+      "pp_i_ospite": 5.42,
+      "pp_D": 0.58,
+      "pp_result": "X",
+      "pp_label": "\u2696\ufe0f FISSA X",
+      "pp_pct": 52.1
     },
-    "generated_at": "2026-04-17T08:26:59.585404"
+    "generated_at": "2026-04-17T17:28:51.685622"
   },
   {
     "league": "Ligue 1",
@@ -2240,14 +2240,14 @@
       "best_val": 0.6289127475008158
     },
     "pp": {
-      "pp_i_casa": 7.05,
-      "pp_i_ospite": 1.88,
-      "pp_D": 5.17,
-      "pp_result": "1",
-      "pp_label": "\ud83c\udfaf FISSA 1",
-      "pp_pct": 68.9
+      "pp_i_casa": 12.6,
+      "pp_i_ospite": 5.26,
+      "pp_D": 7.34,
+      "pp_result": "12",
+      "pp_label": "\ud83d\udd00 1-2",
+      "pp_pct": 76.8
     },
-    "generated_at": "2026-04-17T08:26:59.585568"
+    "generated_at": "2026-04-17T17:28:51.685784"
   },
   {
     "league": "Ligue 1",
@@ -2290,14 +2290,14 @@
       "best_val": 0.29444000000000004
     },
     "pp": {
-      "pp_i_casa": 0.75,
-      "pp_i_ospite": 2.32,
-      "pp_D": -1.57,
-      "pp_result": "12",
-      "pp_label": "\ud83d\udd00 1-2",
-      "pp_pct": 44.3
+      "pp_i_casa": 1.2,
+      "pp_i_ospite": 3.78,
+      "pp_D": -2.58,
+      "pp_result": "X2",
+      "pp_label": "\ud83d\udee1\ufe0f X2",
+      "pp_pct": 40.6
     },
-    "generated_at": "2026-04-17T08:26:59.585733"
+    "generated_at": "2026-04-17T17:28:51.685954"
   },
   {
     "league": "Ligue 1",
@@ -2340,14 +2340,14 @@
       "best_val": 0.3096600000000001
     },
     "pp": {
-      "pp_i_casa": 2.4,
-      "pp_i_ospite": 1.66,
-      "pp_D": 0.74,
-      "pp_result": "12",
-      "pp_label": "\ud83d\udd00 1-2",
-      "pp_pct": 52.7
+      "pp_i_casa": 1.95,
+      "pp_i_ospite": 3.64,
+      "pp_D": -1.69,
+      "pp_result": "X",
+      "pp_label": "\u2696\ufe0f FISSA X",
+      "pp_pct": 43.8
     },
-    "generated_at": "2026-04-17T08:26:59.585926"
+    "generated_at": "2026-04-17T17:28:51.686124"
   },
   {
     "league": "Ligue 1",
@@ -2390,14 +2390,14 @@
       "best_val": 0.30996000000000007
     },
     "pp": {
-      "pp_i_casa": 3.9,
-      "pp_i_ospite": 9.06,
-      "pp_D": -5.16,
-      "pp_result": "2",
-      "pp_label": "\ud83c\udfaf FISSA 2",
-      "pp_pct": 31.2
+      "pp_i_casa": 6.45,
+      "pp_i_ospite": 8.72,
+      "pp_D": -2.27,
+      "pp_result": "X2",
+      "pp_label": "\ud83d\udee1\ufe0f X2",
+      "pp_pct": 41.7
     },
-    "generated_at": "2026-04-17T08:26:59.586092"
+    "generated_at": "2026-04-17T17:28:51.686295"
   },
   {
     "league": "Ligue 1",
@@ -2440,14 +2440,14 @@
       "best_val": 0.7077960298393083
     },
     "pp": {
-      "pp_i_casa": 5.1,
-      "pp_i_ospite": 1.62,
-      "pp_D": 3.48,
+      "pp_i_casa": 11.1,
+      "pp_i_ospite": 3.84,
+      "pp_D": 7.26,
       "pp_result": "12",
       "pp_label": "\ud83d\udd00 1-2",
-      "pp_pct": 62.7
+      "pp_pct": 76.5
     },
-    "generated_at": "2026-04-17T08:26:59.586255"
+    "generated_at": "2026-04-17T17:28:51.686497"
   },
   {
     "league": "Ligue 1",
@@ -2490,14 +2490,14 @@
       "best_val": 0.723916867426339
     },
     "pp": {
-      "pp_i_casa": 5.1,
-      "pp_i_ospite": 1.1,
-      "pp_D": 4.0,
-      "pp_result": "12",
-      "pp_label": "\ud83d\udd00 1-2",
-      "pp_pct": 64.6
+      "pp_i_casa": 11.1,
+      "pp_i_ospite": 1.32,
+      "pp_D": 9.78,
+      "pp_result": "1",
+      "pp_label": "\ud83c\udfaf FISSA 1",
+      "pp_pct": 85.7
     },
-    "generated_at": "2026-04-17T08:26:59.586409"
+    "generated_at": "2026-04-17T17:28:51.686670"
   },
   {
     "league": "Eredivisie",
@@ -2540,14 +2540,14 @@
       "best_val": 0.29986
     },
     "pp": {
-      "pp_i_casa": 4.95,
-      "pp_i_ospite": 0.36,
-      "pp_D": 4.59,
-      "pp_result": "1",
-      "pp_label": "\ud83c\udfaf FISSA 1",
-      "pp_pct": 66.8
+      "pp_i_casa": 5.55,
+      "pp_i_ospite": 1.54,
+      "pp_D": 4.01,
+      "pp_result": "12",
+      "pp_label": "\ud83d\udd00 1-2",
+      "pp_pct": 64.6
     },
-    "generated_at": "2026-04-17T08:27:33.536023"
+    "generated_at": "2026-04-17T17:29:25.086122"
   },
   {
     "league": "Eredivisie",
@@ -2590,14 +2590,14 @@
       "best_val": 0.29710000000000003
     },
     "pp": {
-      "pp_i_casa": 6.6,
-      "pp_i_ospite": -0.34,
-      "pp_D": 6.94,
-      "pp_result": "1",
-      "pp_label": "\ud83c\udfaf FISSA 1",
-      "pp_pct": 75.3
+      "pp_i_casa": 9.45,
+      "pp_i_ospite": 4.24,
+      "pp_D": 5.21,
+      "pp_result": "12",
+      "pp_label": "\ud83d\udd00 1-2",
+      "pp_pct": 69.0
     },
-    "generated_at": "2026-04-17T08:27:33.536167"
+    "generated_at": "2026-04-17T17:29:25.086245"
   },
   {
     "league": "Eredivisie",
@@ -2640,14 +2640,14 @@
       "best_val": 0.29574000000000006
     },
     "pp": {
-      "pp_i_casa": 4.95,
-      "pp_i_ospite": 1.22,
-      "pp_D": 3.73,
-      "pp_result": "12",
-      "pp_label": "\ud83d\udd00 1-2",
-      "pp_pct": 63.6
+      "pp_i_casa": 10.2,
+      "pp_i_ospite": 1.7,
+      "pp_D": 8.5,
+      "pp_result": "1",
+      "pp_label": "\ud83c\udfaf FISSA 1",
+      "pp_pct": 81.0
     },
-    "generated_at": "2026-04-17T08:27:33.536284"
+    "generated_at": "2026-04-17T17:29:25.086360"
   },
   {
     "league": "Primeira Liga",
@@ -2690,14 +2690,14 @@
       "best_val": 0.3350600000000001
     },
     "pp": {
-      "pp_i_casa": 2.85,
-      "pp_i_ospite": 0.9,
-      "pp_D": 1.95,
-      "pp_result": "12",
-      "pp_label": "\ud83d\udd00 1-2",
-      "pp_pct": 57.1
+      "pp_i_casa": 2.4,
+      "pp_i_ospite": 0.66,
+      "pp_D": 1.74,
+      "pp_result": "X",
+      "pp_label": "\u2696\ufe0f FISSA X",
+      "pp_pct": 56.4
     },
-    "generated_at": "2026-04-17T08:27:54.024539"
+    "generated_at": "2026-04-17T17:29:45.208032"
   },
   {
     "league": "Primeira Liga",
@@ -2740,14 +2740,14 @@
       "best_val": 0.34198
     },
     "pp": {
-      "pp_i_casa": 2.25,
-      "pp_i_ospite": 4.4,
-      "pp_D": -2.15,
-      "pp_result": "12",
-      "pp_label": "\ud83d\udd00 1-2",
-      "pp_pct": 42.2
+      "pp_i_casa": 2.7,
+      "pp_i_ospite": 5.42,
+      "pp_D": -2.72,
+      "pp_result": "X2",
+      "pp_label": "\ud83d\udee1\ufe0f X2",
+      "pp_pct": 40.1
     },
-    "generated_at": "2026-04-17T08:27:54.024661"
+    "generated_at": "2026-04-17T17:29:45.208155"
   },
   {
     "league": "Primeira Liga",
@@ -2790,14 +2790,14 @@
       "best_val": 0.3426
     },
     "pp": {
-      "pp_i_casa": 3.9,
-      "pp_i_ospite": 3.6,
-      "pp_D": 0.3,
-      "pp_result": "12",
-      "pp_label": "\ud83d\udd00 1-2",
-      "pp_pct": 51.1
+      "pp_i_casa": 7.2,
+      "pp_i_ospite": 4.36,
+      "pp_D": 2.84,
+      "pp_result": "1X",
+      "pp_label": "\ud83d\udee1\ufe0f 1X",
+      "pp_pct": 60.4
     },
-    "generated_at": "2026-04-17T08:27:54.024771"
+    "generated_at": "2026-04-17T17:29:45.208268"
   },
   {
     "league": "Primeira Liga",
@@ -2840,14 +2840,14 @@
       "best_val": 0.34552000000000005
     },
     "pp": {
-      "pp_i_casa": 3.6,
-      "pp_i_ospite": 0.36,
-      "pp_D": 3.24,
+      "pp_i_casa": 9.15,
+      "pp_i_ospite": 1.2,
+      "pp_D": 7.95,
       "pp_result": "12",
       "pp_label": "\ud83d\udd00 1-2",
-      "pp_pct": 61.8
+      "pp_pct": 79.0
     },
-    "generated_at": "2026-04-17T08:27:54.024904"
+    "generated_at": "2026-04-17T17:29:45.208380"
   },
   {
     "league": "Primeira Liga",
@@ -2890,14 +2890,14 @@
       "best_val": 0.34288
     },
     "pp": {
-      "pp_i_casa": 5.1,
-      "pp_i_ospite": 0.56,
-      "pp_D": 4.54,
-      "pp_result": "1",
-      "pp_label": "\ud83c\udfaf FISSA 1",
-      "pp_pct": 66.6
+      "pp_i_casa": 7.5,
+      "pp_i_ospite": 1.58,
+      "pp_D": 5.92,
+      "pp_result": "12",
+      "pp_label": "\ud83d\udd00 1-2",
+      "pp_pct": 71.6
     },
-    "generated_at": "2026-04-17T08:27:54.025017"
+    "generated_at": "2026-04-17T17:29:45.208511"
   },
   {
     "league": "Primeira Liga",
@@ -2940,14 +2940,14 @@
       "best_val": 0.32578000000000007
     },
     "pp": {
-      "pp_i_casa": 7.5,
-      "pp_i_ospite": 5.7,
-      "pp_D": 1.8,
-      "pp_result": "12",
-      "pp_label": "\ud83d\udd00 1-2",
-      "pp_pct": 56.6
+      "pp_i_casa": 12.45,
+      "pp_i_ospite": 8.72,
+      "pp_D": 3.73,
+      "pp_result": "1X",
+      "pp_label": "\ud83d\udee1\ufe0f 1X",
+      "pp_pct": 63.6
     },
-    "generated_at": "2026-04-17T08:27:54.025121"
+    "generated_at": "2026-04-17T17:29:45.208619"
   },
   {
     "league": "Primeira Liga",
@@ -2990,14 +2990,14 @@
       "best_val": 0.6485911058822706
     },
     "pp": {
-      "pp_i_casa": 6.15,
-      "pp_i_ospite": 3.14,
-      "pp_D": 3.01,
+      "pp_i_casa": 9.0,
+      "pp_i_ospite": 2.74,
+      "pp_D": 6.26,
       "pp_result": "12",
       "pp_label": "\ud83d\udd00 1-2",
-      "pp_pct": 61.0
+      "pp_pct": 72.8
     },
-    "generated_at": "2026-04-17T08:27:54.025228"
+    "generated_at": "2026-04-17T17:29:45.208726"
   },
   {
     "league": "Primeira Liga",
@@ -3040,14 +3040,14 @@
       "best_val": 0.34808000000000006
     },
     "pp": {
-      "pp_i_casa": 3.0,
-      "pp_i_ospite": 4.14,
-      "pp_D": -1.14,
+      "pp_i_casa": 8.1,
+      "pp_i_ospite": 3.54,
+      "pp_D": 4.56,
       "pp_result": "12",
       "pp_label": "\ud83d\udd00 1-2",
-      "pp_pct": 45.8
+      "pp_pct": 66.6
     },
-    "generated_at": "2026-04-17T08:27:54.025334"
+    "generated_at": "2026-04-17T17:29:45.208831"
   },
   {
     "league": "Primeira Liga",
@@ -3090,14 +3090,14 @@
       "best_val": 0.34724
     },
     "pp": {
-      "pp_i_casa": 0.45,
-      "pp_i_ospite": 2.28,
-      "pp_D": -1.83,
+      "pp_i_casa": 0.0,
+      "pp_i_ospite": 5.02,
+      "pp_D": -5.02,
       "pp_result": "12",
       "pp_label": "\ud83d\udd00 1-2",
-      "pp_pct": 43.3
+      "pp_pct": 31.7
     },
-    "generated_at": "2026-04-17T08:27:54.025439"
+    "generated_at": "2026-04-17T17:29:45.208937"
   },
   {
     "league": "Primeira Liga",
@@ -3140,14 +3140,14 @@
       "best_val": 0.34058
     },
     "pp": {
-      "pp_i_casa": 3.9,
-      "pp_i_ospite": 4.74,
-      "pp_D": -0.84,
-      "pp_result": "12",
-      "pp_label": "\ud83d\udd00 1-2",
-      "pp_pct": 46.9
+      "pp_i_casa": 7.2,
+      "pp_i_ospite": 10.14,
+      "pp_D": -2.94,
+      "pp_result": "X2",
+      "pp_label": "\ud83d\udee1\ufe0f X2",
+      "pp_pct": 39.3
     },
-    "generated_at": "2026-04-17T08:27:54.025534"
+    "generated_at": "2026-04-17T17:29:45.209030"
   },
   {
     "league": "Championship",
@@ -3190,14 +3190,14 @@
       "best_val": 0.5081157413356842
     },
     "pp": {
-      "pp_i_casa": 1.95,
-      "pp_i_ospite": 6.0,
-      "pp_D": -4.05,
-      "pp_result": "2",
-      "pp_label": "\ud83c\udfaf FISSA 2",
-      "pp_pct": 35.2
+      "pp_i_casa": 4.05,
+      "pp_i_ospite": 10.94,
+      "pp_D": -6.89,
+      "pp_result": "12",
+      "pp_label": "\ud83d\udd00 1-2",
+      "pp_pct": 24.9
     },
-    "generated_at": "2026-04-17T08:28:15.043209"
+    "generated_at": "2026-04-17T17:30:05.895065"
   },
   {
     "league": "Championship",
@@ -3240,14 +3240,14 @@
       "best_val": 0.2969800000000001
     },
     "pp": {
-      "pp_i_casa": 6.75,
-      "pp_i_ospite": 3.7,
-      "pp_D": 3.05,
+      "pp_i_casa": 11.7,
+      "pp_i_ospite": 4.46,
+      "pp_D": 7.24,
       "pp_result": "12",
       "pp_label": "\ud83d\udd00 1-2",
-      "pp_pct": 61.1
+      "pp_pct": 76.4
     },
-    "generated_at": "2026-04-17T08:28:15.043377"
+    "generated_at": "2026-04-17T17:30:05.895224"
   },
   {
     "league": "Championship",
@@ -3290,14 +3290,14 @@
       "best_val": 0.29954000000000003
     },
     "pp": {
-      "pp_i_casa": 2.1,
-      "pp_i_ospite": 3.54,
-      "pp_D": -1.44,
-      "pp_result": "12",
-      "pp_label": "\ud83d\udd00 1-2",
-      "pp_pct": 44.7
+      "pp_i_casa": 4.65,
+      "pp_i_ospite": 5.82,
+      "pp_D": -1.17,
+      "pp_result": "X",
+      "pp_label": "\u2696\ufe0f FISSA X",
+      "pp_pct": 45.7
     },
-    "generated_at": "2026-04-17T08:28:15.043528"
+    "generated_at": "2026-04-17T17:30:05.895371"
   },
   {
     "league": "Championship",
@@ -3340,14 +3340,14 @@
       "best_val": 0.29578000000000004
     },
     "pp": {
-      "pp_i_casa": 3.15,
-      "pp_i_ospite": 2.32,
-      "pp_D": 0.83,
-      "pp_result": "12",
-      "pp_label": "\ud83d\udd00 1-2",
-      "pp_pct": 53.0
+      "pp_i_casa": 3.0,
+      "pp_i_ospite": 4.3,
+      "pp_D": -1.3,
+      "pp_result": "X",
+      "pp_label": "\u2696\ufe0f FISSA X",
+      "pp_pct": 45.3
     },
-    "generated_at": "2026-04-17T08:28:15.043673"
+    "generated_at": "2026-04-17T17:30:05.895538"
   },
   {
     "league": "Championship",
@@ -3390,14 +3390,14 @@
       "best_val": 0.29364
     },
     "pp": {
-      "pp_i_casa": 1.65,
-      "pp_i_ospite": 4.48,
-      "pp_D": -2.83,
+      "pp_i_casa": 2.55,
+      "pp_i_ospite": 9.88,
+      "pp_D": -7.33,
       "pp_result": "12",
       "pp_label": "\ud83d\udd00 1-2",
-      "pp_pct": 39.7
+      "pp_pct": 23.2
     },
-    "generated_at": "2026-04-17T08:28:15.043844"
+    "generated_at": "2026-04-17T17:30:05.895682"
   },
   {
     "league": "Championship",
@@ -3440,14 +3440,14 @@
       "best_val": 0.29784000000000005
     },
     "pp": {
-      "pp_i_casa": 3.0,
-      "pp_i_ospite": -0.04,
-      "pp_D": 3.04,
-      "pp_result": "12",
-      "pp_label": "\ud83d\udd00 1-2",
-      "pp_pct": 61.1
+      "pp_i_casa": 5.55,
+      "pp_i_ospite": 2.08,
+      "pp_D": 3.47,
+      "pp_result": "1X",
+      "pp_label": "\ud83d\udee1\ufe0f 1X",
+      "pp_pct": 62.7
     },
-    "generated_at": "2026-04-17T08:28:15.043992"
+    "generated_at": "2026-04-17T17:30:05.895821"
   },
   {
     "league": "Championship",
@@ -3490,14 +3490,14 @@
       "best_val": 0.29598
     },
     "pp": {
-      "pp_i_casa": 3.15,
-      "pp_i_ospite": 3.62,
-      "pp_D": -0.47,
-      "pp_result": "12",
-      "pp_label": "\ud83d\udd00 1-2",
-      "pp_pct": 48.3
+      "pp_i_casa": 3.75,
+      "pp_i_ospite": 4.38,
+      "pp_D": -0.63,
+      "pp_result": "X",
+      "pp_label": "\u2696\ufe0f FISSA X",
+      "pp_pct": 47.7
     },
-    "generated_at": "2026-04-17T08:28:15.044149"
+    "generated_at": "2026-04-17T17:30:05.895959"
   },
   {
     "league": "Championship",
@@ -3540,14 +3540,14 @@
       "best_val": 0.29308000000000006
     },
     "pp": {
-      "pp_i_casa": 1.2,
-      "pp_i_ospite": 3.88,
-      "pp_D": -2.68,
+      "pp_i_casa": 1.05,
+      "pp_i_ospite": 5.6,
+      "pp_D": -4.55,
       "pp_result": "12",
       "pp_label": "\ud83d\udd00 1-2",
-      "pp_pct": 40.2
+      "pp_pct": 33.4
     },
-    "generated_at": "2026-04-17T08:28:15.044292"
+    "generated_at": "2026-04-17T17:30:05.896107"
   },
   {
     "league": "Championship",
@@ -3590,14 +3590,14 @@
       "best_val": 0.29108
     },
     "pp": {
-      "pp_i_casa": 2.85,
-      "pp_i_ospite": 6.78,
-      "pp_D": -3.93,
+      "pp_i_casa": 5.7,
+      "pp_i_ospite": 12.5,
+      "pp_D": -6.8,
       "pp_result": "12",
       "pp_label": "\ud83d\udd00 1-2",
-      "pp_pct": 35.7
+      "pp_pct": 25.2
     },
-    "generated_at": "2026-04-17T08:28:15.044433"
+    "generated_at": "2026-04-17T17:30:05.896247"
   },
   {
     "league": "Championship",
@@ -3640,13 +3640,13 @@
       "best_val": 0.2992000000000001
     },
     "pp": {
-      "pp_i_casa": 3.9,
-      "pp_i_ospite": 0.92,
-      "pp_D": 2.98,
-      "pp_result": "12",
-      "pp_label": "\ud83d\udd00 1-2",
-      "pp_pct": 60.9
+      "pp_i_casa": 6.0,
+      "pp_i_ospite": 5.6,
+      "pp_D": 0.4,
+      "pp_result": "X",
+      "pp_label": "\u2696\ufe0f FISSA X",
+      "pp_pct": 51.5
     },
-    "generated_at": "2026-04-17T08:28:15.044572"
+    "generated_at": "2026-04-17T17:30:05.896386"
   }
 ]

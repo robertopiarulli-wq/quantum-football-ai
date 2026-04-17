@@ -1,43 +1,8 @@
 {
-  "generated_at": "2026-04-17T08:29:36.597617",
+  "generated_at": "2026-04-17T17:31:24.523004",
   "date": "17/04/2026",
   "total": 73,
   "fixtures": [
-    {
-      "home": "US Sassuolo Calcio",
-      "away": "Como 1907",
-      "league": "Serie A",
-      "fixture_id": 537140,
-      "date": "17/04/2026",
-      "time": "17:30",
-      "pred": {
-        "home": 0.2978,
-        "draw": 0.2386,
-        "away": 0.4636,
-        "dc1x": 0.5364,
-        "dcx2": 0.7022,
-        "dc12": 0.7614,
-        "over25": 0.3949,
-        "under25": 0.6051,
-        "bttsY": 0.4438,
-        "bttsN": 0.5562,
-        "xg_h": "0.91",
-        "xg_a": "1.35",
-        "conf": 0.4374,
-        "best": "2",
-        "bestP": 0.4636,
-        "combo": "2+U3.5",
-        "comboP": 0.8063
-      },
-      "pp": {
-        "pp_i_casa": 4.35,
-        "pp_i_ospite": 5.54,
-        "pp_D": -1.19,
-        "pp_result": "12",
-        "pp_label": "\ud83d\udd00 1-2",
-        "pp_pct": 45.7
-      }
-    },
     {
       "home": "FC Internazionale Milano",
       "away": "Cagliari Calcio",
@@ -65,12 +30,12 @@
         "comboP": 0.8004
       },
       "pp": {
-        "pp_i_casa": 6.15,
-        "pp_i_ospite": 1.08,
-        "pp_D": 5.07,
+        "pp_i_casa": 11.85,
+        "pp_i_ospite": 3.3,
+        "pp_D": 8.55,
         "pp_result": "1",
         "pp_label": "\ud83c\udfaf FISSA 1",
-        "pp_pct": 68.5
+        "pp_pct": 81.2
       }
     },
     {
@@ -100,12 +65,12 @@
         "comboP": 0.8747
       },
       "pp": {
-        "pp_i_casa": 3.15,
-        "pp_i_ospite": 1.42,
-        "pp_D": 1.73,
-        "pp_result": "12",
-        "pp_label": "\ud83d\udd00 1-2",
-        "pp_pct": 56.3
+        "pp_i_casa": 5.25,
+        "pp_i_ospite": 5.74,
+        "pp_D": -0.49,
+        "pp_result": "X",
+        "pp_label": "\u2696\ufe0f FISSA X",
+        "pp_pct": 48.2
       }
     },
     {
@@ -135,12 +100,12 @@
         "comboP": 0.8771
       },
       "pp": {
-        "pp_i_casa": 6.6,
-        "pp_i_ospite": 2.22,
-        "pp_D": 4.38,
-        "pp_result": "1",
-        "pp_label": "\ud83c\udfaf FISSA 1",
-        "pp_pct": 66.0
+        "pp_i_casa": 9.75,
+        "pp_i_ospite": 3.94,
+        "pp_D": 5.81,
+        "pp_result": "12",
+        "pp_label": "\ud83d\udd00 1-2",
+        "pp_pct": 71.2
       }
     },
     {
@@ -170,12 +135,12 @@
         "comboP": 0.8423
       },
       "pp": {
-        "pp_i_casa": 5.85,
-        "pp_i_ospite": 3.9,
-        "pp_D": 1.95,
-        "pp_result": "12",
-        "pp_label": "\ud83d\udd00 1-2",
-        "pp_pct": 57.1
+        "pp_i_casa": 10.95,
+        "pp_i_ospite": 7.02,
+        "pp_D": 3.93,
+        "pp_result": "1X",
+        "pp_label": "\ud83d\udee1\ufe0f 1X",
+        "pp_pct": 64.3
       }
     },
     {
@@ -205,12 +170,12 @@
         "comboP": 0.7559
       },
       "pp": {
-        "pp_i_casa": -0.6,
-        "pp_i_ospite": 2.74,
-        "pp_D": -3.34,
-        "pp_result": "12",
-        "pp_label": "\ud83d\udd00 1-2",
-        "pp_pct": 37.8
+        "pp_i_casa": -0.3,
+        "pp_i_ospite": 3.56,
+        "pp_D": -3.86,
+        "pp_result": "X2",
+        "pp_label": "\ud83d\udee1\ufe0f X2",
+        "pp_pct": 35.9
       }
     },
     {
@@ -240,12 +205,12 @@
         "comboP": 0.8176
       },
       "pp": {
-        "pp_i_casa": -0.45,
-        "pp_i_ospite": 2.32,
-        "pp_D": -2.77,
+        "pp_i_casa": 0.0,
+        "pp_i_ospite": 7.62,
+        "pp_D": -7.62,
         "pp_result": "12",
         "pp_label": "\ud83d\udd00 1-2",
-        "pp_pct": 39.9
+        "pp_pct": 22.2
       }
     },
     {
@@ -275,12 +240,12 @@
         "comboP": 0.8502
       },
       "pp": {
-        "pp_i_casa": 2.25,
-        "pp_i_ospite": 2.12,
-        "pp_D": 0.13,
-        "pp_result": "12",
-        "pp_label": "\ud83d\udd00 1-2",
-        "pp_pct": 50.5
+        "pp_i_casa": 2.1,
+        "pp_i_ospite": 3.14,
+        "pp_D": -1.04,
+        "pp_result": "X",
+        "pp_label": "\u2696\ufe0f FISSA X",
+        "pp_pct": 46.2
       }
     },
     {
@@ -310,12 +275,12 @@
         "comboP": 0.7458
       },
       "pp": {
-        "pp_i_casa": 6.15,
-        "pp_i_ospite": 6.74,
-        "pp_D": -0.59,
-        "pp_result": "12",
-        "pp_label": "\ud83d\udd00 1-2",
-        "pp_pct": 47.8
+        "pp_i_casa": 6.75,
+        "pp_i_ospite": 9.58,
+        "pp_D": -2.83,
+        "pp_result": "X2",
+        "pp_label": "\ud83d\udee1\ufe0f X2",
+        "pp_pct": 39.7
       }
     },
     {
@@ -345,12 +310,47 @@
         "comboP": 0.8195
       },
       "pp": {
-        "pp_i_casa": 1.5,
-        "pp_i_ospite": 5.0,
-        "pp_D": -3.5,
+        "pp_i_casa": 4.35,
+        "pp_i_ospite": 7.58,
+        "pp_D": -3.23,
+        "pp_result": "X2",
+        "pp_label": "\ud83d\udee1\ufe0f X2",
+        "pp_pct": 38.2
+      }
+    },
+    {
+      "home": "SSC Napoli",
+      "away": "US Cremonese",
+      "league": "Serie A",
+      "fixture_id": 537154,
+      "date": "24/04/2026",
+      "time": "19:45",
+      "pred": {
+        "home": 0.7002,
+        "draw": 0.2169,
+        "away": 0.0829,
+        "dc1x": 0.9171,
+        "dcx2": 0.2998,
+        "dc12": 0.7831,
+        "over25": 0.3949,
+        "under25": 0.6051,
+        "bttsY": 0.4177,
+        "bttsN": 0.5823,
+        "xg_h": "1.49",
+        "xg_a": "0.77",
+        "conf": 0.5317,
+        "best": "1",
+        "bestP": 0.7002,
+        "combo": "1+U3.5",
+        "comboP": 0.8063
+      },
+      "pp": {
+        "pp_i_casa": 9.75,
+        "pp_i_ospite": 2.44,
+        "pp_D": 7.31,
         "pp_result": "12",
         "pp_label": "\ud83d\udd00 1-2",
-        "pp_pct": 37.2
+        "pp_pct": 76.7
       }
     },
     {
@@ -380,12 +380,12 @@
         "comboP": 0.8148
       },
       "pp": {
-        "pp_i_casa": 1.5,
-        "pp_i_ospite": 3.18,
-        "pp_D": -1.68,
-        "pp_result": "12",
-        "pp_label": "\ud83d\udd00 1-2",
-        "pp_pct": 43.9
+        "pp_i_casa": 1.95,
+        "pp_i_ospite": 3.3,
+        "pp_D": -1.35,
+        "pp_result": "X",
+        "pp_label": "\u2696\ufe0f FISSA X",
+        "pp_pct": 45.1
       }
     },
     {
@@ -415,12 +415,12 @@
         "comboP": 0.8963
       },
       "pp": {
-        "pp_i_casa": 2.4,
-        "pp_i_ospite": 3.62,
-        "pp_D": -1.22,
+        "pp_i_casa": 2.25,
+        "pp_i_ospite": 8.56,
+        "pp_D": -6.31,
         "pp_result": "12",
         "pp_label": "\ud83d\udd00 1-2",
-        "pp_pct": 45.5
+        "pp_pct": 27.0
       }
     },
     {
@@ -450,12 +450,12 @@
         "comboP": 0.7361
       },
       "pp": {
-        "pp_i_casa": 0.3,
-        "pp_i_ospite": 0.62,
-        "pp_D": -0.32,
-        "pp_result": "12",
-        "pp_label": "\ud83d\udd00 1-2",
-        "pp_pct": 48.8
+        "pp_i_casa": 2.25,
+        "pp_i_ospite": 1.02,
+        "pp_D": 1.23,
+        "pp_result": "X",
+        "pp_label": "\u2696\ufe0f FISSA X",
+        "pp_pct": 54.5
       }
     },
     {
@@ -485,12 +485,12 @@
         "comboP": 0.7887
       },
       "pp": {
-        "pp_i_casa": -0.9,
-        "pp_i_ospite": 7.2,
-        "pp_D": -8.1,
-        "pp_result": "X2",
-        "pp_label": "\ud83d\udee1\ufe0f X2",
-        "pp_pct": 20.4
+        "pp_i_casa": 0.0,
+        "pp_i_ospite": 7.26,
+        "pp_D": -7.26,
+        "pp_result": "12",
+        "pp_label": "\ud83d\udd00 1-2",
+        "pp_pct": 23.5
       }
     },
     {
@@ -520,12 +520,12 @@
         "comboP": 0.8367
       },
       "pp": {
-        "pp_i_casa": 0.15,
-        "pp_i_ospite": 3.44,
-        "pp_D": -3.29,
-        "pp_result": "12",
-        "pp_label": "\ud83d\udd00 1-2",
-        "pp_pct": 38.0
+        "pp_i_casa": 3.45,
+        "pp_i_ospite": 6.98,
+        "pp_D": -3.53,
+        "pp_result": "X2",
+        "pp_label": "\ud83d\udee1\ufe0f X2",
+        "pp_pct": 37.1
       }
     },
     {
@@ -555,12 +555,12 @@
         "comboP": 0.8148
       },
       "pp": {
-        "pp_i_casa": 1.2,
-        "pp_i_ospite": 0.72,
-        "pp_D": 0.48,
-        "pp_result": "12",
-        "pp_label": "\ud83d\udd00 1-2",
-        "pp_pct": 51.8
+        "pp_i_casa": 2.55,
+        "pp_i_ospite": 3.1,
+        "pp_D": -0.55,
+        "pp_result": "X",
+        "pp_label": "\u2696\ufe0f FISSA X",
+        "pp_pct": 48.0
       }
     },
     {
@@ -590,12 +590,12 @@
         "comboP": 0.7768
       },
       "pp": {
-        "pp_i_casa": 2.85,
-        "pp_i_ospite": 5.44,
-        "pp_D": -2.59,
-        "pp_result": "12",
-        "pp_label": "\ud83d\udd00 1-2",
-        "pp_pct": 40.5
+        "pp_i_casa": 4.8,
+        "pp_i_ospite": 5.2,
+        "pp_D": -0.4,
+        "pp_result": "X",
+        "pp_label": "\u2696\ufe0f FISSA X",
+        "pp_pct": 48.5
       }
     },
     {
@@ -625,12 +625,12 @@
         "comboP": 0.8046
       },
       "pp": {
-        "pp_i_casa": 4.95,
-        "pp_i_ospite": 2.48,
-        "pp_D": 2.47,
-        "pp_result": "12",
-        "pp_label": "\ud83d\udd00 1-2",
-        "pp_pct": 59.0
+        "pp_i_casa": 5.7,
+        "pp_i_ospite": 5.06,
+        "pp_D": 0.64,
+        "pp_result": "X",
+        "pp_label": "\u2696\ufe0f FISSA X",
+        "pp_pct": 52.3
       }
     },
     {
@@ -660,12 +660,12 @@
         "comboP": 0.8093
       },
       "pp": {
-        "pp_i_casa": 5.85,
-        "pp_i_ospite": 6.42,
-        "pp_D": -0.57,
-        "pp_result": "12",
-        "pp_label": "\ud83d\udd00 1-2",
-        "pp_pct": 47.9
+        "pp_i_casa": 9.0,
+        "pp_i_ospite": 10.52,
+        "pp_D": -1.52,
+        "pp_result": "X",
+        "pp_label": "\u2696\ufe0f FISSA X",
+        "pp_pct": 44.5
       }
     },
     {
@@ -696,11 +696,11 @@
       },
       "pp": {
         "pp_i_casa": 4.95,
-        "pp_i_ospite": 2.18,
-        "pp_D": 2.77,
-        "pp_result": "12",
-        "pp_label": "\ud83d\udd00 1-2",
-        "pp_pct": 60.1
+        "pp_i_ospite": 5.12,
+        "pp_D": -0.17,
+        "pp_result": "X",
+        "pp_label": "\u2696\ufe0f FISSA X",
+        "pp_pct": 49.4
       }
     },
     {
@@ -717,25 +717,25 @@
         "dc1x": 0.7168,
         "dcx2": 0.5902,
         "dc12": 0.6929,
-        "over25": 0.3826,
-        "under25": 0.6174,
-        "bttsY": 0.4399,
-        "bttsN": 0.5601,
+        "over25": 0.3907,
+        "under25": 0.6093,
+        "bttsY": 0.4483,
+        "bttsN": 0.5517,
         "xg_h": "1.28",
-        "xg_a": "0.94",
+        "xg_a": "0.97",
         "conf": 0.4476,
         "best": "X",
         "bestP": 0.3071,
         "combo": "X+U3.5",
-        "comboP": 0.8154
+        "comboP": 0.8094
       },
       "pp": {
-        "pp_i_casa": 2.1,
-        "pp_i_ospite": 1.08,
-        "pp_D": 1.02,
-        "pp_result": "12",
-        "pp_label": "\ud83d\udd00 1-2",
-        "pp_pct": 53.7
+        "pp_i_casa": 6.9,
+        "pp_i_ospite": 4.1,
+        "pp_D": 2.8,
+        "pp_result": "1X",
+        "pp_label": "\ud83d\udee1\ufe0f 1X",
+        "pp_pct": 60.2
       }
     },
     {
@@ -765,12 +765,12 @@
         "comboP": 0.7486
       },
       "pp": {
-        "pp_i_casa": 7.2,
-        "pp_i_ospite": 2.32,
-        "pp_D": 4.88,
-        "pp_result": "1",
-        "pp_label": "\ud83c\udfaf FISSA 1",
-        "pp_pct": 67.8
+        "pp_i_casa": 7.05,
+        "pp_i_ospite": 5.0,
+        "pp_D": 2.05,
+        "pp_result": "1X",
+        "pp_label": "\ud83d\udee1\ufe0f 1X",
+        "pp_pct": 57.5
       }
     },
     {
@@ -800,12 +800,12 @@
         "comboP": 0.7909
       },
       "pp": {
-        "pp_i_casa": 6.0,
-        "pp_i_ospite": 4.74,
-        "pp_D": 1.26,
-        "pp_result": "12",
-        "pp_label": "\ud83d\udd00 1-2",
-        "pp_pct": 54.6
+        "pp_i_casa": 8.7,
+        "pp_i_ospite": 5.4,
+        "pp_D": 3.3,
+        "pp_result": "1X",
+        "pp_label": "\ud83d\udee1\ufe0f 1X",
+        "pp_pct": 62.0
       }
     },
     {
@@ -835,12 +835,12 @@
         "comboP": 0.7468
       },
       "pp": {
-        "pp_i_casa": 4.8,
-        "pp_i_ospite": 0.82,
-        "pp_D": 3.98,
-        "pp_result": "12",
-        "pp_label": "\ud83d\udd00 1-2",
-        "pp_pct": 64.5
+        "pp_i_casa": 7.8,
+        "pp_i_ospite": 5.4,
+        "pp_D": 2.4,
+        "pp_result": "1X",
+        "pp_label": "\ud83d\udee1\ufe0f 1X",
+        "pp_pct": 58.8
       }
     },
     {
@@ -870,12 +870,12 @@
         "comboP": 0.7756
       },
       "pp": {
-        "pp_i_casa": 5.25,
-        "pp_i_ospite": 2.74,
-        "pp_D": 2.51,
-        "pp_result": "12",
-        "pp_label": "\ud83d\udd00 1-2",
-        "pp_pct": 59.2
+        "pp_i_casa": 5.7,
+        "pp_i_ospite": 3.04,
+        "pp_D": 2.66,
+        "pp_result": "1X",
+        "pp_label": "\ud83d\udee1\ufe0f 1X",
+        "pp_pct": 59.7
       }
     },
     {
@@ -905,12 +905,12 @@
         "comboP": 0.7706
       },
       "pp": {
-        "pp_i_casa": 6.0,
-        "pp_i_ospite": 2.22,
-        "pp_D": 3.78,
-        "pp_result": "12",
-        "pp_label": "\ud83d\udd00 1-2",
-        "pp_pct": 63.8
+        "pp_i_casa": 9.6,
+        "pp_i_ospite": 6.9,
+        "pp_D": 2.7,
+        "pp_result": "1X",
+        "pp_label": "\ud83d\udee1\ufe0f 1X",
+        "pp_pct": 59.9
       }
     },
     {
@@ -940,12 +940,12 @@
         "comboP": 0.8167
       },
       "pp": {
-        "pp_i_casa": 7.95,
-        "pp_i_ospite": 5.96,
-        "pp_D": 1.99,
+        "pp_i_casa": 13.5,
+        "pp_i_ospite": 7.68,
+        "pp_D": 5.82,
         "pp_result": "12",
         "pp_label": "\ud83d\udd00 1-2",
-        "pp_pct": 57.3
+        "pp_pct": 71.2
       }
     },
     {
@@ -975,12 +975,12 @@
         "comboP": 0.7917
       },
       "pp": {
-        "pp_i_casa": 5.55,
-        "pp_i_ospite": 1.24,
-        "pp_D": 4.31,
-        "pp_result": "1",
-        "pp_label": "\ud83c\udfaf FISSA 1",
-        "pp_pct": 65.7
+        "pp_i_casa": 7.8,
+        "pp_i_ospite": 3.36,
+        "pp_D": 4.44,
+        "pp_result": "12",
+        "pp_label": "\ud83d\udd00 1-2",
+        "pp_pct": 66.2
       }
     },
     {
@@ -1010,12 +1010,12 @@
         "comboP": 0.785
       },
       "pp": {
-        "pp_i_casa": 5.55,
-        "pp_i_ospite": 0.72,
-        "pp_D": 4.83,
-        "pp_result": "1",
-        "pp_label": "\ud83c\udfaf FISSA 1",
-        "pp_pct": 67.6
+        "pp_i_casa": 9.0,
+        "pp_i_ospite": 2.16,
+        "pp_D": 6.84,
+        "pp_result": "12",
+        "pp_label": "\ud83d\udd00 1-2",
+        "pp_pct": 75.0
       }
     },
     {
@@ -1026,31 +1026,31 @@
       "date": "23/04/2026",
       "time": "20:30",
       "pred": {
-        "home": 0.2867,
+        "home": 0.2849,
         "draw": 0.2998,
-        "away": 0.4135,
-        "dc1x": 0.5865,
-        "dcx2": 0.7133,
+        "away": 0.4153,
+        "dc1x": 0.5847,
+        "dcx2": 0.7151,
         "dc12": 0.7002,
-        "over25": 0.3531,
-        "under25": 0.6469,
-        "bttsY": 0.4214,
-        "bttsN": 0.5786,
+        "over25": 0.3612,
+        "under25": 0.6388,
+        "bttsY": 0.4271,
+        "bttsN": 0.5729,
         "xg_h": "0.95",
-        "xg_a": "1.16",
-        "conf": 0.3362,
+        "xg_a": "1.19",
+        "conf": 0.3369,
         "best": "X",
         "bestP": 0.2998,
         "combo": "X+U3.5",
-        "comboP": 0.8367
+        "comboP": 0.831
       },
       "pp": {
-        "pp_i_casa": 4.05,
-        "pp_i_ospite": 3.18,
-        "pp_D": 0.87,
-        "pp_result": "12",
-        "pp_label": "\ud83d\udd00 1-2",
-        "pp_pct": 53.2
+        "pp_i_casa": 6.15,
+        "pp_i_ospite": 5.66,
+        "pp_D": 0.49,
+        "pp_result": "X",
+        "pp_label": "\u2696\ufe0f FISSA X",
+        "pp_pct": 51.8
       }
     },
     {
@@ -1080,12 +1080,12 @@
         "comboP": 0.6447
       },
       "pp": {
-        "pp_i_casa": -0.15,
-        "pp_i_ospite": 1.78,
-        "pp_D": -1.93,
-        "pp_result": "12",
-        "pp_label": "\ud83d\udd00 1-2",
-        "pp_pct": 43.0
+        "pp_i_casa": 4.35,
+        "pp_i_ospite": 2.0,
+        "pp_D": 2.35,
+        "pp_result": "1X",
+        "pp_label": "\ud83d\udee1\ufe0f 1X",
+        "pp_pct": 58.6
       }
     },
     {
@@ -1115,12 +1115,12 @@
         "comboP": 0.8299
       },
       "pp": {
-        "pp_i_casa": 2.1,
-        "pp_i_ospite": 2.44,
-        "pp_D": -0.34,
-        "pp_result": "12",
-        "pp_label": "\ud83d\udd00 1-2",
-        "pp_pct": 48.8
+        "pp_i_casa": 2.4,
+        "pp_i_ospite": 5.82,
+        "pp_D": -3.42,
+        "pp_result": "X2",
+        "pp_label": "\ud83d\udee1\ufe0f X2",
+        "pp_pct": 37.5
       }
     },
     {
@@ -1150,12 +1150,12 @@
         "comboP": 0.8798
       },
       "pp": {
-        "pp_i_casa": 4.65,
-        "pp_i_ospite": 0.82,
-        "pp_D": 3.83,
+        "pp_i_casa": 9.75,
+        "pp_i_ospite": 3.3,
+        "pp_D": 6.45,
         "pp_result": "12",
         "pp_label": "\ud83d\udd00 1-2",
-        "pp_pct": 64.0
+        "pp_pct": 73.5
       }
     },
     {
@@ -1185,12 +1185,12 @@
         "comboP": 0.6982
       },
       "pp": {
-        "pp_i_casa": 0.6,
-        "pp_i_ospite": 6.06,
-        "pp_D": -5.46,
-        "pp_result": "2",
-        "pp_label": "\ud83c\udfaf FISSA 2",
-        "pp_pct": 30.1
+        "pp_i_casa": 5.85,
+        "pp_i_ospite": 11.36,
+        "pp_D": -5.51,
+        "pp_result": "12",
+        "pp_label": "\ud83d\udd00 1-2",
+        "pp_pct": 29.9
       }
     },
     {
@@ -1220,12 +1220,12 @@
         "comboP": 0.7156
       },
       "pp": {
-        "pp_i_casa": 2.55,
-        "pp_i_ospite": 0.94,
-        "pp_D": 1.61,
-        "pp_result": "12",
-        "pp_label": "\ud83d\udd00 1-2",
-        "pp_pct": 55.9
+        "pp_i_casa": 2.85,
+        "pp_i_ospite": 1.96,
+        "pp_D": 0.89,
+        "pp_result": "X",
+        "pp_label": "\u2696\ufe0f FISSA X",
+        "pp_pct": 53.2
       }
     },
     {
@@ -1255,12 +1255,12 @@
         "comboP": 0.6759
       },
       "pp": {
-        "pp_i_casa": 5.4,
-        "pp_i_ospite": 4.74,
-        "pp_D": 0.66,
-        "pp_result": "12",
-        "pp_label": "\ud83d\udd00 1-2",
-        "pp_pct": 52.4
+        "pp_i_casa": 7.95,
+        "pp_i_ospite": 8.02,
+        "pp_D": -0.07,
+        "pp_result": "X",
+        "pp_label": "\u2696\ufe0f FISSA X",
+        "pp_pct": 49.7
       }
     },
     {
@@ -1290,12 +1290,12 @@
         "comboP": 0.8637
       },
       "pp": {
-        "pp_i_casa": 1.05,
-        "pp_i_ospite": 0.82,
-        "pp_D": 0.23,
+        "pp_i_casa": 5.4,
+        "pp_i_ospite": 1.14,
+        "pp_D": 4.26,
         "pp_result": "12",
         "pp_label": "\ud83d\udd00 1-2",
-        "pp_pct": 50.8
+        "pp_pct": 65.5
       }
     },
     {
@@ -1325,12 +1325,12 @@
         "comboP": 0.82
       },
       "pp": {
-        "pp_i_casa": 8.25,
-        "pp_i_ospite": 5.9,
-        "pp_D": 2.35,
-        "pp_result": "12",
-        "pp_label": "\ud83d\udd00 1-2",
-        "pp_pct": 58.6
+        "pp_i_casa": 11.4,
+        "pp_i_ospite": 8.94,
+        "pp_D": 2.46,
+        "pp_result": "1X",
+        "pp_label": "\ud83d\udee1\ufe0f 1X",
+        "pp_pct": 59.0
       }
     },
     {
@@ -1360,12 +1360,12 @@
         "comboP": 0.6814
       },
       "pp": {
-        "pp_i_casa": 5.4,
-        "pp_i_ospite": 5.8,
-        "pp_D": -0.4,
-        "pp_result": "12",
-        "pp_label": "\ud83d\udd00 1-2",
-        "pp_pct": 48.5
+        "pp_i_casa": 5.7,
+        "pp_i_ospite": 7.82,
+        "pp_D": -2.12,
+        "pp_result": "X2",
+        "pp_label": "\ud83d\udee1\ufe0f X2",
+        "pp_pct": 42.3
       }
     },
     {
@@ -1395,12 +1395,12 @@
         "comboP": 0.8782
       },
       "pp": {
-        "pp_i_casa": 7.65,
-        "pp_i_ospite": 1.82,
-        "pp_D": 5.83,
-        "pp_result": "1",
-        "pp_label": "\ud83c\udfaf FISSA 1",
-        "pp_pct": 71.3
+        "pp_i_casa": 9.45,
+        "pp_i_ospite": 2.14,
+        "pp_D": 7.31,
+        "pp_result": "12",
+        "pp_label": "\ud83d\udd00 1-2",
+        "pp_pct": 76.7
       }
     },
     {
@@ -1430,12 +1430,12 @@
         "comboP": 0.7774
       },
       "pp": {
-        "pp_i_casa": 6.0,
-        "pp_i_ospite": 2.9,
-        "pp_D": 3.1,
+        "pp_i_casa": 10.65,
+        "pp_i_ospite": 2.96,
+        "pp_D": 7.69,
         "pp_result": "12",
         "pp_label": "\ud83d\udd00 1-2",
-        "pp_pct": 61.3
+        "pp_pct": 78.1
       }
     },
     {
@@ -1465,12 +1465,12 @@
         "comboP": 0.8417
       },
       "pp": {
-        "pp_i_casa": 3.9,
-        "pp_i_ospite": 2.12,
-        "pp_D": 1.78,
+        "pp_i_casa": 8.55,
+        "pp_i_ospite": 2.74,
+        "pp_D": 5.81,
         "pp_result": "12",
         "pp_label": "\ud83d\udd00 1-2",
-        "pp_pct": 56.5
+        "pp_pct": 71.2
       }
     },
     {
@@ -1500,12 +1500,12 @@
         "comboP": 0.7876
       },
       "pp": {
-        "pp_i_casa": 0.15,
-        "pp_i_ospite": 1.08,
-        "pp_D": -0.93,
-        "pp_result": "12",
-        "pp_label": "\ud83d\udd00 1-2",
-        "pp_pct": 46.6
+        "pp_i_casa": 4.35,
+        "pp_i_ospite": 0.78,
+        "pp_D": 3.57,
+        "pp_result": "1X",
+        "pp_label": "\ud83d\udee1\ufe0f 1X",
+        "pp_pct": 63.0
       }
     },
     {
@@ -1535,12 +1535,12 @@
         "comboP": 0.8164
       },
       "pp": {
-        "pp_i_casa": 5.55,
-        "pp_i_ospite": 2.48,
-        "pp_D": 3.07,
-        "pp_result": "12",
-        "pp_label": "\ud83d\udd00 1-2",
-        "pp_pct": 61.2
+        "pp_i_casa": 6.0,
+        "pp_i_ospite": 5.42,
+        "pp_D": 0.58,
+        "pp_result": "X",
+        "pp_label": "\u2696\ufe0f FISSA X",
+        "pp_pct": 52.1
       }
     },
     {
@@ -1570,12 +1570,12 @@
         "comboP": 0.7981
       },
       "pp": {
-        "pp_i_casa": 7.05,
-        "pp_i_ospite": 1.88,
-        "pp_D": 5.17,
-        "pp_result": "1",
-        "pp_label": "\ud83c\udfaf FISSA 1",
-        "pp_pct": 68.9
+        "pp_i_casa": 12.6,
+        "pp_i_ospite": 5.26,
+        "pp_D": 7.34,
+        "pp_result": "12",
+        "pp_label": "\ud83d\udd00 1-2",
+        "pp_pct": 76.8
       }
     },
     {
@@ -1605,12 +1605,12 @@
         "comboP": 0.742
       },
       "pp": {
-        "pp_i_casa": 0.75,
-        "pp_i_ospite": 2.32,
-        "pp_D": -1.57,
-        "pp_result": "12",
-        "pp_label": "\ud83d\udd00 1-2",
-        "pp_pct": 44.3
+        "pp_i_casa": 1.2,
+        "pp_i_ospite": 3.78,
+        "pp_D": -2.58,
+        "pp_result": "X2",
+        "pp_label": "\ud83d\udee1\ufe0f X2",
+        "pp_pct": 40.6
       }
     },
     {
@@ -1640,12 +1640,12 @@
         "comboP": 0.8013
       },
       "pp": {
-        "pp_i_casa": 2.4,
-        "pp_i_ospite": 1.66,
-        "pp_D": 0.74,
-        "pp_result": "12",
-        "pp_label": "\ud83d\udd00 1-2",
-        "pp_pct": 52.7
+        "pp_i_casa": 1.95,
+        "pp_i_ospite": 3.64,
+        "pp_D": -1.69,
+        "pp_result": "X",
+        "pp_label": "\u2696\ufe0f FISSA X",
+        "pp_pct": 43.8
       }
     },
     {
@@ -1675,12 +1675,12 @@
         "comboP": 0.8164
       },
       "pp": {
-        "pp_i_casa": 3.9,
-        "pp_i_ospite": 9.06,
-        "pp_D": -5.16,
-        "pp_result": "2",
-        "pp_label": "\ud83c\udfaf FISSA 2",
-        "pp_pct": 31.2
+        "pp_i_casa": 6.45,
+        "pp_i_ospite": 8.72,
+        "pp_D": -2.27,
+        "pp_result": "X2",
+        "pp_label": "\ud83d\udee1\ufe0f X2",
+        "pp_pct": 41.7
       }
     },
     {
@@ -1710,12 +1710,12 @@
         "comboP": 0.8105
       },
       "pp": {
-        "pp_i_casa": 5.1,
-        "pp_i_ospite": 1.62,
-        "pp_D": 3.48,
+        "pp_i_casa": 11.1,
+        "pp_i_ospite": 3.84,
+        "pp_D": 7.26,
         "pp_result": "12",
         "pp_label": "\ud83d\udd00 1-2",
-        "pp_pct": 62.7
+        "pp_pct": 76.5
       }
     },
     {
@@ -1745,12 +1745,12 @@
         "comboP": 0.7668
       },
       "pp": {
-        "pp_i_casa": 5.1,
-        "pp_i_ospite": 1.1,
-        "pp_D": 4.0,
-        "pp_result": "12",
-        "pp_label": "\ud83d\udd00 1-2",
-        "pp_pct": 64.6
+        "pp_i_casa": 11.1,
+        "pp_i_ospite": 1.32,
+        "pp_D": 9.78,
+        "pp_result": "1",
+        "pp_label": "\ud83c\udfaf FISSA 1",
+        "pp_pct": 85.7
       }
     },
     {
@@ -1780,12 +1780,12 @@
         "comboP": 0.6834
       },
       "pp": {
-        "pp_i_casa": 4.95,
-        "pp_i_ospite": 0.36,
-        "pp_D": 4.59,
-        "pp_result": "1",
-        "pp_label": "\ud83c\udfaf FISSA 1",
-        "pp_pct": 66.8
+        "pp_i_casa": 5.55,
+        "pp_i_ospite": 1.54,
+        "pp_D": 4.01,
+        "pp_result": "12",
+        "pp_label": "\ud83d\udd00 1-2",
+        "pp_pct": 64.6
       }
     },
     {
@@ -1815,12 +1815,12 @@
         "comboP": 0.8621
       },
       "pp": {
-        "pp_i_casa": 6.6,
-        "pp_i_ospite": -0.34,
-        "pp_D": 6.94,
-        "pp_result": "1",
-        "pp_label": "\ud83c\udfaf FISSA 1",
-        "pp_pct": 75.3
+        "pp_i_casa": 9.45,
+        "pp_i_ospite": 4.24,
+        "pp_D": 5.21,
+        "pp_result": "12",
+        "pp_label": "\ud83d\udd00 1-2",
+        "pp_pct": 69.0
       }
     },
     {
@@ -1850,12 +1850,12 @@
         "comboP": 0.7685
       },
       "pp": {
-        "pp_i_casa": 4.95,
-        "pp_i_ospite": 1.22,
-        "pp_D": 3.73,
-        "pp_result": "12",
-        "pp_label": "\ud83d\udd00 1-2",
-        "pp_pct": 63.6
+        "pp_i_casa": 10.2,
+        "pp_i_ospite": 1.7,
+        "pp_D": 8.5,
+        "pp_result": "1",
+        "pp_label": "\ud83c\udfaf FISSA 1",
+        "pp_pct": 81.0
       }
     },
     {
@@ -1885,12 +1885,12 @@
         "comboP": 0.7653
       },
       "pp": {
-        "pp_i_casa": 2.85,
-        "pp_i_ospite": 0.9,
-        "pp_D": 1.95,
-        "pp_result": "12",
-        "pp_label": "\ud83d\udd00 1-2",
-        "pp_pct": 57.1
+        "pp_i_casa": 2.4,
+        "pp_i_ospite": 0.66,
+        "pp_D": 1.74,
+        "pp_result": "X",
+        "pp_label": "\u2696\ufe0f FISSA X",
+        "pp_pct": 56.4
       }
     },
     {
@@ -1920,12 +1920,12 @@
         "comboP": 0.7718
       },
       "pp": {
-        "pp_i_casa": 2.25,
-        "pp_i_ospite": 4.4,
-        "pp_D": -2.15,
-        "pp_result": "12",
-        "pp_label": "\ud83d\udd00 1-2",
-        "pp_pct": 42.2
+        "pp_i_casa": 2.7,
+        "pp_i_ospite": 5.42,
+        "pp_D": -2.72,
+        "pp_result": "X2",
+        "pp_label": "\ud83d\udee1\ufe0f X2",
+        "pp_pct": 40.1
       }
     },
     {
@@ -1955,12 +1955,12 @@
         "comboP": 0.7359
       },
       "pp": {
-        "pp_i_casa": 3.9,
-        "pp_i_ospite": 3.6,
-        "pp_D": 0.3,
-        "pp_result": "12",
-        "pp_label": "\ud83d\udd00 1-2",
-        "pp_pct": 51.1
+        "pp_i_casa": 7.2,
+        "pp_i_ospite": 4.36,
+        "pp_D": 2.84,
+        "pp_result": "1X",
+        "pp_label": "\ud83d\udee1\ufe0f 1X",
+        "pp_pct": 60.4
       }
     },
     {
@@ -1990,12 +1990,12 @@
         "comboP": 0.7609
       },
       "pp": {
-        "pp_i_casa": 3.6,
-        "pp_i_ospite": 0.36,
-        "pp_D": 3.24,
+        "pp_i_casa": 9.15,
+        "pp_i_ospite": 1.2,
+        "pp_D": 7.95,
         "pp_result": "12",
         "pp_label": "\ud83d\udd00 1-2",
-        "pp_pct": 61.8
+        "pp_pct": 79.0
       }
     },
     {
@@ -2025,12 +2025,12 @@
         "comboP": 0.794
       },
       "pp": {
-        "pp_i_casa": 5.1,
-        "pp_i_ospite": 0.56,
-        "pp_D": 4.54,
-        "pp_result": "1",
-        "pp_label": "\ud83c\udfaf FISSA 1",
-        "pp_pct": 66.6
+        "pp_i_casa": 7.5,
+        "pp_i_ospite": 1.58,
+        "pp_D": 5.92,
+        "pp_result": "12",
+        "pp_label": "\ud83d\udd00 1-2",
+        "pp_pct": 71.6
       }
     },
     {
@@ -2060,12 +2060,12 @@
         "comboP": 0.7749
       },
       "pp": {
-        "pp_i_casa": 7.5,
-        "pp_i_ospite": 5.7,
-        "pp_D": 1.8,
-        "pp_result": "12",
-        "pp_label": "\ud83d\udd00 1-2",
-        "pp_pct": 56.6
+        "pp_i_casa": 12.45,
+        "pp_i_ospite": 8.72,
+        "pp_D": 3.73,
+        "pp_result": "1X",
+        "pp_label": "\ud83d\udee1\ufe0f 1X",
+        "pp_pct": 63.6
       }
     },
     {
@@ -2095,12 +2095,12 @@
         "comboP": 0.7487
       },
       "pp": {
-        "pp_i_casa": 6.15,
-        "pp_i_ospite": 3.14,
-        "pp_D": 3.01,
+        "pp_i_casa": 9.0,
+        "pp_i_ospite": 2.74,
+        "pp_D": 6.26,
         "pp_result": "12",
         "pp_label": "\ud83d\udd00 1-2",
-        "pp_pct": 61.0
+        "pp_pct": 72.8
       }
     },
     {
@@ -2130,12 +2130,12 @@
         "comboP": 0.7908
       },
       "pp": {
-        "pp_i_casa": 3.0,
-        "pp_i_ospite": 4.14,
-        "pp_D": -1.14,
+        "pp_i_casa": 8.1,
+        "pp_i_ospite": 3.54,
+        "pp_D": 4.56,
         "pp_result": "12",
         "pp_label": "\ud83d\udd00 1-2",
-        "pp_pct": 45.8
+        "pp_pct": 66.6
       }
     },
     {
@@ -2165,12 +2165,12 @@
         "comboP": 0.788
       },
       "pp": {
-        "pp_i_casa": 0.45,
-        "pp_i_ospite": 2.28,
-        "pp_D": -1.83,
+        "pp_i_casa": 0.0,
+        "pp_i_ospite": 5.02,
+        "pp_D": -5.02,
         "pp_result": "12",
         "pp_label": "\ud83d\udd00 1-2",
-        "pp_pct": 43.3
+        "pp_pct": 31.7
       }
     },
     {
@@ -2200,12 +2200,12 @@
         "comboP": 0.7726
       },
       "pp": {
-        "pp_i_casa": 3.9,
-        "pp_i_ospite": 4.74,
-        "pp_D": -0.84,
-        "pp_result": "12",
-        "pp_label": "\ud83d\udd00 1-2",
-        "pp_pct": 46.9
+        "pp_i_casa": 7.2,
+        "pp_i_ospite": 10.14,
+        "pp_D": -2.94,
+        "pp_result": "X2",
+        "pp_label": "\ud83d\udee1\ufe0f X2",
+        "pp_pct": 39.3
       }
     },
     {
@@ -2235,12 +2235,12 @@
         "comboP": 0.7371
       },
       "pp": {
-        "pp_i_casa": 1.95,
-        "pp_i_ospite": 6.0,
-        "pp_D": -4.05,
-        "pp_result": "2",
-        "pp_label": "\ud83c\udfaf FISSA 2",
-        "pp_pct": 35.2
+        "pp_i_casa": 4.05,
+        "pp_i_ospite": 10.94,
+        "pp_D": -6.89,
+        "pp_result": "12",
+        "pp_label": "\ud83d\udd00 1-2",
+        "pp_pct": 24.9
       }
     },
     {
@@ -2270,12 +2270,12 @@
         "comboP": 0.7629
       },
       "pp": {
-        "pp_i_casa": 6.75,
-        "pp_i_ospite": 3.7,
-        "pp_D": 3.05,
+        "pp_i_casa": 11.7,
+        "pp_i_ospite": 4.46,
+        "pp_D": 7.24,
         "pp_result": "12",
         "pp_label": "\ud83d\udd00 1-2",
-        "pp_pct": 61.1
+        "pp_pct": 76.4
       }
     },
     {
@@ -2305,12 +2305,12 @@
         "comboP": 0.7522
       },
       "pp": {
-        "pp_i_casa": 2.1,
-        "pp_i_ospite": 3.54,
-        "pp_D": -1.44,
-        "pp_result": "12",
-        "pp_label": "\ud83d\udd00 1-2",
-        "pp_pct": 44.7
+        "pp_i_casa": 4.65,
+        "pp_i_ospite": 5.82,
+        "pp_D": -1.17,
+        "pp_result": "X",
+        "pp_label": "\u2696\ufe0f FISSA X",
+        "pp_pct": 45.7
       }
     },
     {
@@ -2340,12 +2340,12 @@
         "comboP": 0.7618
       },
       "pp": {
-        "pp_i_casa": 3.15,
-        "pp_i_ospite": 2.32,
-        "pp_D": 0.83,
-        "pp_result": "12",
-        "pp_label": "\ud83d\udd00 1-2",
-        "pp_pct": 53.0
+        "pp_i_casa": 3.0,
+        "pp_i_ospite": 4.3,
+        "pp_D": -1.3,
+        "pp_result": "X",
+        "pp_label": "\u2696\ufe0f FISSA X",
+        "pp_pct": 45.3
       }
     },
     {
@@ -2375,12 +2375,12 @@
         "comboP": 0.7412
       },
       "pp": {
-        "pp_i_casa": 1.65,
-        "pp_i_ospite": 4.48,
-        "pp_D": -2.83,
+        "pp_i_casa": 2.55,
+        "pp_i_ospite": 9.88,
+        "pp_D": -7.33,
         "pp_result": "12",
         "pp_label": "\ud83d\udd00 1-2",
-        "pp_pct": 39.7
+        "pp_pct": 23.2
       }
     },
     {
@@ -2410,12 +2410,12 @@
         "comboP": 0.744
       },
       "pp": {
-        "pp_i_casa": 3.0,
-        "pp_i_ospite": -0.04,
-        "pp_D": 3.04,
-        "pp_result": "12",
-        "pp_label": "\ud83d\udd00 1-2",
-        "pp_pct": 61.1
+        "pp_i_casa": 5.55,
+        "pp_i_ospite": 2.08,
+        "pp_D": 3.47,
+        "pp_result": "1X",
+        "pp_label": "\ud83d\udee1\ufe0f 1X",
+        "pp_pct": 62.7
       }
     },
     {
@@ -2445,12 +2445,12 @@
         "comboP": 0.7819
       },
       "pp": {
-        "pp_i_casa": 3.15,
-        "pp_i_ospite": 3.62,
-        "pp_D": -0.47,
-        "pp_result": "12",
-        "pp_label": "\ud83d\udd00 1-2",
-        "pp_pct": 48.3
+        "pp_i_casa": 3.75,
+        "pp_i_ospite": 4.38,
+        "pp_D": -0.63,
+        "pp_result": "X",
+        "pp_label": "\u2696\ufe0f FISSA X",
+        "pp_pct": 47.7
       }
     },
     {
@@ -2480,12 +2480,12 @@
         "comboP": 0.7839
       },
       "pp": {
-        "pp_i_casa": 1.2,
-        "pp_i_ospite": 3.88,
-        "pp_D": -2.68,
+        "pp_i_casa": 1.05,
+        "pp_i_ospite": 5.6,
+        "pp_D": -4.55,
         "pp_result": "12",
         "pp_label": "\ud83d\udd00 1-2",
-        "pp_pct": 40.2
+        "pp_pct": 33.4
       }
     },
     {
@@ -2515,12 +2515,12 @@
         "comboP": 0.8082
       },
       "pp": {
-        "pp_i_casa": 2.85,
-        "pp_i_ospite": 6.78,
-        "pp_D": -3.93,
+        "pp_i_casa": 5.7,
+        "pp_i_ospite": 12.5,
+        "pp_D": -6.8,
         "pp_result": "12",
         "pp_label": "\ud83d\udd00 1-2",
-        "pp_pct": 35.7
+        "pp_pct": 25.2
       }
     },
     {
@@ -2550,12 +2550,12 @@
         "comboP": 0.7479
       },
       "pp": {
-        "pp_i_casa": 3.9,
-        "pp_i_ospite": 0.92,
-        "pp_D": 2.98,
-        "pp_result": "12",
-        "pp_label": "\ud83d\udd00 1-2",
-        "pp_pct": 60.9
+        "pp_i_casa": 6.0,
+        "pp_i_ospite": 5.6,
+        "pp_D": 0.4,
+        "pp_result": "X",
+        "pp_label": "\u2696\ufe0f FISSA X",
+        "pp_pct": 51.5
       }
     }
   ]
