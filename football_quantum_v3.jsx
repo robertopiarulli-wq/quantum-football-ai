@@ -804,12 +804,6 @@ export default function App(){
                       <div style={{background:d.acc>0.5?C.green:d.acc>0.35?C.amber:"#f55",width:`${d.acc*100}%`,height:"100%",borderRadius:4}}/>
                     </div>
                   </div>
-                  {rnkExpanded===i&&(
-                    <div style={{marginBottom:8,marginTop:-2}}>
-                      <FixCard fix={f} expanded={true} onToggle={()=>setRnkExpanded(null)}/>
-                    </div>
-                  )}
-                  </div>
                 ))}
               </div>
             </div>
