@@ -176,7 +176,8 @@ function FixCard({fix,expanded,onToggle}){
               </div>
               <div style={{marginTop:8,background:"#0a0f1a",borderRadius:4,height:6,position:"relative"}}>
                 <div style={{position:"absolute",left:0,top:0,width:"100%",height:"100%",borderRadius:4,background:"linear-gradient(90deg,#f472b6,#555,#22d3ee)"}}/>
-                <div style={{position:"absolute",top:-3,width:3,height:12,background:"#fff",borderRadius:2,left:`${Math.max(0,Math.min(100,fix.pp.pp_pct))}%`,transform:"translateX(-50%)"}}/>
+                <div style={{position:"absolute",top:-3,width:3,height:12,background:"#fff",borderRadius:2,
+                  left:`${Math.max(0,Math.min(100,fix.pp.pp_pct))}%`,transform:"translateX(-50%)"}}/>
               </div>
               <div style={{display:"flex",justifyContent:"space-between",fontSize:7,color:"#333",marginTop:2}}>
                 <span>-13.7 (Ospite domina)</span><span>0 (Equilibrio)</span><span>+13.7 (Casa domina)</span>
@@ -213,7 +214,6 @@ export default function App(){
   const[allPreds,setAllPreds]=useState([]);
   const[histData,setHistData]=useState(null);
   const[histLoading,setHistLoading]=useState(false);
-  const[rnkExpanded,setRnkExpanded]=useState(null);
 
   useEffect(()=>{
     let i=0;
@@ -276,12 +276,7 @@ export default function App(){
 
   const filtered=useMemo(()=>{
     const base=filterLeague==="Tutti"?fixtures:fixtures.filter(f=>f.league===filterLeague);
-    // Ordine cronologico: per data e ora
-    return[...base].sort((a,b)=>{
-      const da=`${a.date||""} ${a.time||""}`.trim();
-      const db=`${b.date||""} ${b.time||""}`.trim();
-      return da.localeCompare(db);
-    });
+    return[...base].sort((a,b)=>((a.date||"")+(a.time||"")).localeCompare((b.date||"")+(b.time||"")));
   },[fixtures,filterLeague]);
 
   const ranked=useMemo(()=>{
@@ -424,7 +419,7 @@ export default function App(){
           <div>
             <div style={{display:"flex",gap:8,alignItems:"center",marginBottom:14,flexWrap:"wrap"}}>
               <div style={{fontSize:9,color:"#555",letterSpacing:2}}>ORDINA PER:</div>
-              {[["conf","🎲 Conf"],["home","1️⃣ Casa"],["draw","➖ Pari"],["away","2️⃣ Trasf"],["over","⚽ Over"],["btts","🔁 BTTS"],["pp","⚡ PP%"]].map(([v,l])=>(
+              {[["conf","🎲 Conf"],["home","1️⃣ Casa"],["draw","➖ Pari"],["away","2️⃣ Trasf"],["over","⚽ Over"],["btts","🔁 BTTS"],["pp","⚡ PP"],["pp","⚡ PP%"]].map(([v,l])=>(
                 <button key={v} onClick={()=>setRnkSort(v)} style={{padding:"5px 11px",borderRadius:99,fontSize:9,cursor:"pointer",border:`1px solid ${rnkSort===v?C.cyan:C.border}`,background:rnkSort===v?`${C.cyan}15`:"transparent",color:rnkSort===v?C.cyan:"#666",fontFamily:"inherit"}}>{l}</button>
               ))}
             </div>
@@ -437,8 +432,7 @@ export default function App(){
                   <div style={{textAlign:"center"}}>O2.5</div><div style={{textAlign:"center"}}>BTTS</div><div style={{textAlign:"center"}}>CONF</div><div style={{textAlign:"center",color:rnkSort==="pp"?"#a78bfa":"#555"}}>PP%</div>
                 </div>
                 {ranked.map((f,i)=>!f.pred?null:(
-                  <React.Fragment key={i}>
-                  <div onClick={()=>setRnkExpanded(rnkExpanded===i?null:i)} style={{display:"grid",gridTemplateColumns:"36px 1fr 1fr 62px 62px 62px 62px 62px 72px 62px",gap:6,padding:"8px 10px",marginBottom:3,borderRadius:9,background:i<3?`${C.cyan}04`:C.card,border:`1px solid ${rnkExpanded===i?C.cyan+"88":i<3?C.cyan+"22":C.border}`,alignItems:"center",cursor:"pointer"}}>
+                  <React.Fragment key={i}><div onClick={()=>setRnkExpanded(rnkExpanded===i?null:i)} style={{display:"grid",gridTemplateColumns:"36px 1fr 1fr 62px 62px 62px 62px 62px 72px 62px",gap:6,padding:"8px 10px",marginBottom:3,cursor:"pointer",borderRadius:9,background:i<3?`${C.cyan}04`:C.card,border:`1px solid ${i<3?C.cyan+"22":C.border}`,alignItems:"center"}}>
                     <div style={{fontSize:11,color:C.amber}}>{i===0?"🥇":i===1?"🥈":i===2?"🥉":i+1}</div>
                     <div style={{fontSize:11,fontWeight:700,color:C.cyan,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{f.home}</div>
                     <div style={{fontSize:11,fontWeight:700,color:C.pink,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{f.away}</div>
@@ -450,18 +444,15 @@ export default function App(){
                     <div style={{textAlign:"center",fontSize:10,fontWeight:700,color:confColor(f.pred.conf)}}>{pct(f.pred.conf)}</div>
                     <div style={{textAlign:"center",fontSize:10,fontWeight:rnkSort==="pp"?900:400,color:rnkSort==="pp"?"#a78bfa":"#555"}}>
                       {f.pp?(()=>{
+                        const d=Math.abs(f.pp.pp_D||0);
                         const r=f.pp.pp_result||"";
-                        const d=f.pp.pp_D||0;
-                        const col=r==="1"?C.cyan:r==="2"?C.pink:r==="X"?C.amber:r==="1X"?"#34d399":r==="X2"?"#f97316":"#888";
-                        return <span style={{color:col}}><span style={{fontWeight:700}}>{f.pp.pp_label?.replace(/[🎯🛡️⚖️🔀]/g,"").trim()}</span><br/><span style={{fontSize:8,color:"#a78bfa"}}>{d>0?"+":""}{d.toFixed(1)}</span></span>;
+                        const w=r==="1"||r==="2"?1.0:r==="12"?0.6:0.3;
+                        const sc=(d*w).toFixed(1);
+                        return <span><span style={{fontWeight:700}}>{f.pp.pp_label?.replace(/[🎯🛡️🔀]/g,"").trim()}</span><br/><span style={{fontSize:8,color:"#a78bfa"}}>{sc}</span></span>;
                       })():"—"}
                     </div>
                   </div>
-                  {rnkExpanded===i&&(
-                    <div style={{marginBottom:8,marginTop:-2}}>
-                      <FixCard fix={f} expanded={true} onToggle={()=>setRnkExpanded(null)}/>
-                    </div>
-                  )}
+                  {rnkExpanded===i&&(<div style={{marginBottom:4}}><FixCard fix={f} expanded={true} onToggle={()=>setRnkExpanded(null)}/></div>)}
                   </React.Fragment>
                 ))}
               </div>
@@ -645,26 +636,10 @@ export default function App(){
 
                   {/* Source badge */}
                   <div style={{fontSize:9,color:"#2a5",padding:"6px 12px",background:"#0a2a1a",borderRadius:8,textAlign:"center"}}>
+
                     {p.source||"🐍 Motore Python · Dati reali API · Identico al ranking"}
                   </div>
-
-                  {/* PP Index */}
-                  {manualPred.pp&&manualPred.pp.pp_label&&(
-                    <div style={{background:"rgba(167,139,250,0.06)",border:"1px solid rgba(167,139,250,0.2)",borderRadius:10,padding:"10px 14px"}}>
-                      <div style={{fontSize:8,color:"#a78bfa",letterSpacing:2,marginBottom:8}}>⚡ PP INDEX · KPZ/PARISI · ULTIME 5 PARTITE</div>
-                      <div style={{display:"flex",alignItems:"center",gap:12,flexWrap:"wrap"}}>
-                        <div style={{fontSize:16,fontWeight:900,color:manualPred.pp.pp_result==="1"?C.cyan:manualPred.pp.pp_result==="2"?C.pink:manualPred.pp.pp_result==="X"?C.amber:manualPred.pp.pp_result==="1X"?"#34d399":manualPred.pp.pp_result==="X2"?"#f97316":"#aaa"}}>
-                          {manualPred.pp.pp_label}
-                        </div>
-                        <div style={{fontSize:9,color:"#555",display:"flex",gap:10}}>
-                          <span>I casa: <b style={{color:"#ccc"}}>{manualPred.pp.pp_i_casa>0?"+":""}{manualPred.pp.pp_i_casa?.toFixed(2)}</b></span>
-                          <span>I ospite: <b style={{color:"#ccc"}}>{manualPred.pp.pp_i_ospite>0?"+":""}{manualPred.pp.pp_i_ospite?.toFixed(2)}</b></span>
-                          <span>D: <b style={{color:"#a78bfa"}}>{manualPred.pp.pp_D>0?"+":""}{manualPred.pp.pp_D?.toFixed(2)}</b></span>
-                          <span>Scala: <b style={{color:"#a78bfa"}}>{manualPred.pp.pp_pct?.toFixed(0)}%</b></span>
-                        </div>
-                      </div>
-                    </div>
-                  )}
+                  {manualPred.pp&&manualPred.pp.pp_label&&(<div style={{background:"rgba(167,139,250,0.06)",border:"1px solid rgba(167,139,250,0.2)",borderRadius:10,padding:"10px 14px",marginTop:8}}><div style={{fontSize:8,color:"#a78bfa",letterSpacing:2,marginBottom:6}}>⚡ PP INDEX · KPZ/PARISI</div><div style={{display:"flex",gap:10,flexWrap:"wrap",fontSize:9}}><span style={{fontSize:14,fontWeight:900,color:manualPred.pp.pp_result==="1"?C.cyan:manualPred.pp.pp_result==="2"?C.pink:manualPred.pp.pp_result==="X"?C.amber:"#aaa"}}>{manualPred.pp.pp_label}</span><span>I casa: <b>{manualPred.pp.pp_i_casa?.toFixed(2)}</b></span><span>I ospite: <b>{manualPred.pp.pp_i_ospite?.toFixed(2)}</b></span><span>D: <b style={{color:"#a78bfa"}}>{manualPred.pp.pp_D?.toFixed(2)}</b></span><span>Scala: <b style={{color:"#a78bfa"}}>{manualPred.pp.pp_pct?.toFixed(0)}%</b></span></div></div>)}
 
 
                   {/* History */}
@@ -861,13 +836,11 @@ export default function App(){
                       </div>
                     )})}
                   </div>
-                </div>
+                ))}
+              </div>
             </div>
 
           </div>
-        </div>
-        </div>
-        </div>
         );})()}
 
         {tab==="log"&&(
