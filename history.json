@@ -12441,7 +12441,8 @@
       "correct_1x2": true,
       "correct_over": false,
       "correct_btts": true,
-      "verified_at": "2026-04-18T07:30:06.081120"
+      "verified_at": "2026-04-18T07:30:06.081120",
+      "elo_updated": true
     },
     {
       "fixture_id": "542674",
@@ -12476,7 +12477,8 @@
       "correct_1x2": false,
       "correct_over": true,
       "correct_btts": true,
-      "verified_at": "2026-04-18T07:30:14.316685"
+      "verified_at": "2026-04-18T07:30:14.316685",
+      "elo_updated": true
     },
     {
       "fixture_id": "545961",
@@ -12511,7 +12513,8 @@
       "correct_1x2": true,
       "correct_over": true,
       "correct_btts": true,
-      "verified_at": "2026-04-18T07:30:21.733269"
+      "verified_at": "2026-04-18T07:30:21.733269",
+      "elo_updated": true
     },
     {
       "fixture_id": "537140",
@@ -12546,7 +12549,8 @@
       "correct_1x2": false,
       "correct_over": false,
       "correct_btts": false,
-      "verified_at": "2026-04-18T07:30:29.128693"
+      "verified_at": "2026-04-18T07:30:29.128693",
+      "elo_updated": true
     },
     {
       "fixture_id": "538107",
@@ -12827,7 +12831,8 @@
       "correct_1x2": true,
       "correct_over": true,
       "correct_btts": false,
-      "verified_at": "2026-04-18T07:30:29.128713"
+      "verified_at": "2026-04-18T07:30:29.128713",
+      "elo_updated": true
     },
     {
       "fixture_id": "537142",
@@ -13600,7 +13605,8 @@
       "correct_1x2": true,
       "correct_over": true,
       "correct_btts": true,
-      "verified_at": "2026-04-18T07:30:43.819301"
+      "verified_at": "2026-04-18T07:30:43.819301",
+      "elo_updated": true
     },
     {
       "fixture_id": "541218",
@@ -15316,7 +15322,42 @@
       "correct_over": null,
       "correct_btts": null,
       "verified_at": null
+    },
+    {
+      "fixture_id": "545971",
+      "home": "CD Tondela",
+      "away": "CD Nacional",
+      "league": "Primeira Liga",
+      "comp_code": "PPL",
+      "season": "2025/2026",
+      "stage": "REGULAR_SEASON",
+      "matchday": 31,
+      "first_leg": null,
+      "date": "26/04/2026",
+      "time": "01:00",
+      "predicted_at": "2026-04-18T08:01:06.940866",
+      "pred_home": 0.3572,
+      "pred_draw": 0.348,
+      "pred_away": 0.2947,
+      "pred_over25": 0.313,
+      "pred_btts": 0.3906,
+      "pred_best": "X",
+      "pred_conf": 0.2418,
+      "pred_raw_conf": 0.2418,
+      "pred_combo_label": "X+U3.5",
+      "pred_combo_leg": "U3.5",
+      "pred_combo_prob": 0.864,
+      "pred_over15": 0.5835,
+      "pred_under35": 0.864,
+      "correct_combo": null,
+      "result": null,
+      "goals_home": null,
+      "goals_away": null,
+      "correct_1x2": null,
+      "correct_over": null,
+      "correct_btts": null,
+      "verified_at": null
     }
   ],
-  "last_updated": "2026-04-18T07:30:58.023744"
+  "last_updated": "2026-04-18T08:03:58.185269"
 }

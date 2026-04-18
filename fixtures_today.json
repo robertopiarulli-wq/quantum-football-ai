@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-18T07:29:58.570658",
+  "generated_at": "2026-04-18T08:02:46.620397",
   "date": "18/04/2026",
   "total": 73,
   "fixtures": [
@@ -2139,41 +2139,6 @@
       }
     },
     {
-      "home": "Casa Pia AC",
-      "away": "Sporting Clube de Braga",
-      "league": "Primeira Liga",
-      "fixture_id": 545930,
-      "date": "23/04/2026",
-      "time": "20:15",
-      "pred": {
-        "home": 0.2437,
-        "draw": 0.3406,
-        "away": 0.4158,
-        "dc1x": 0.5842,
-        "dcx2": 0.7563,
-        "dc12": 0.6594,
-        "over25": 0.5357,
-        "under25": 0.4643,
-        "bttsY": 0.5474,
-        "bttsN": 0.4526,
-        "xg_h": "1.1",
-        "xg_a": "1.72",
-        "conf": 0.2569,
-        "best": "X",
-        "bestP": 0.3406,
-        "combo": "X+O1.5",
-        "comboP": 0.7726
-      },
-      "pp": {
-        "pp_i_casa": 7.2,
-        "pp_i_ospite": 10.14,
-        "pp_D": -2.94,
-        "pp_result": "X2",
-        "pp_label": "\ud83d\udee1\ufe0f X2",
-        "pp_pct": 39.3
-      }
-    },
-    {
       "home": "Gil Vicente FC",
       "away": "Casa Pia AC",
       "league": "Primeira Liga",
@@ -2206,6 +2171,41 @@
         "pp_result": "1",
         "pp_label": "\ud83c\udfaf FISSA 1",
         "pp_pct": 81.0
+      }
+    },
+    {
+      "home": "CD Tondela",
+      "away": "CD Nacional",
+      "league": "Primeira Liga",
+      "fixture_id": 545971,
+      "date": "26/04/2026",
+      "time": "01:00",
+      "pred": {
+        "home": 0.3572,
+        "draw": 0.348,
+        "away": 0.2947,
+        "dc1x": 0.7053,
+        "dcx2": 0.6428,
+        "dc12": 0.652,
+        "over25": 0.313,
+        "under25": 0.687,
+        "bttsY": 0.3906,
+        "bttsN": 0.6094,
+        "xg_h": "0.98",
+        "xg_a": "0.98",
+        "conf": 0.2418,
+        "best": "X",
+        "bestP": 0.348,
+        "combo": "X+U3.5",
+        "comboP": 0.864
+      },
+      "pp": {
+        "pp_i_casa": 3.0,
+        "pp_i_ospite": 0.42,
+        "pp_D": 2.58,
+        "pp_result": "1X",
+        "pp_label": "\ud83d\udee1\ufe0f 1X",
+        "pp_pct": 59.4
       }
     },
     {
