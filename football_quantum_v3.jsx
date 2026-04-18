@@ -176,8 +176,7 @@ function FixCard({fix,expanded,onToggle}){
               </div>
               <div style={{marginTop:8,background:"#0a0f1a",borderRadius:4,height:6,position:"relative"}}>
                 <div style={{position:"absolute",left:0,top:0,width:"100%",height:"100%",borderRadius:4,background:"linear-gradient(90deg,#f472b6,#555,#22d3ee)"}}/>
-                <div style={{position:"absolute",top:-3,width:3,height:12,background:"#fff",borderRadius:2,
-                  left:`${Math.max(0,Math.min(100,fix.pp.pp_pct))}%`,transform:"translateX(-50%)"}}/>
+                <div style={{position:"absolute",top:-3,width:3,height:12,background:"#fff",borderRadius:2,left:`${Math.max(0,Math.min(100,fix.pp.pp_pct))}%`,transform:"translateX(-50%)"}}/>
               </div>
               <div style={{display:"flex",justifyContent:"space-between",fontSize:7,color:"#333",marginTop:2}}>
                 <span>-13.7 (Ospite domina)</span><span>0 (Equilibrio)</span><span>+13.7 (Casa domina)</span>
@@ -438,7 +437,7 @@ export default function App(){
                   <div style={{textAlign:"center"}}>O2.5</div><div style={{textAlign:"center"}}>BTTS</div><div style={{textAlign:"center"}}>CONF</div><div style={{textAlign:"center",color:rnkSort==="pp"?"#a78bfa":"#555"}}>PP%</div>
                 </div>
                 {ranked.map((f,i)=>!f.pred?null:(
-                  <div key={i}>
+                  <React.Fragment key={i}>
                   <div onClick={()=>setRnkExpanded(rnkExpanded===i?null:i)} style={{display:"grid",gridTemplateColumns:"36px 1fr 1fr 62px 62px 62px 62px 62px 72px 62px",gap:6,padding:"8px 10px",marginBottom:3,borderRadius:9,background:i<3?`${C.cyan}04`:C.card,border:`1px solid ${rnkExpanded===i?C.cyan+"88":i<3?C.cyan+"22":C.border}`,alignItems:"center",cursor:"pointer"}}>
                     <div style={{fontSize:11,color:C.amber}}>{i===0?"🥇":i===1?"🥈":i===2?"🥉":i+1}</div>
                     <div style={{fontSize:11,fontWeight:700,color:C.cyan,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{f.home}</div>
@@ -463,7 +462,7 @@ export default function App(){
                       <FixCard fix={f} expanded={true} onToggle={()=>setRnkExpanded(null)}/>
                     </div>
                   )}
-                  </div>
+                  </React.Fragment>
                 ))}
               </div>
             )}
@@ -862,17 +861,13 @@ export default function App(){
                       </div>
                     )})}
                   </div>
-                  {rnkExpanded===i&&(
-                    <div style={{marginBottom:8,marginTop:-2}}>
-                      <FixCard fix={f} expanded={true} onToggle={()=>setRnkExpanded(null)}/>
-                    </div>
-                  )}
-                  </div>
-                ))}
-              </div>
+                </div>
             </div>
 
           </div>
+        </div>
+        </div>
+        </div>
         );})()}
 
         {tab==="log"&&(
