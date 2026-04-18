@@ -205,6 +205,7 @@ export default function App(){
   const[expanded,setExpanded]=useState(null);
   const[filterLeague,setFilterLeague]=useState("Tutti");
   const[rnkSort,setRnkSort]=useState("conf");
+  const[rnkExpanded,setRnkExpanded]=useState(null);
   const[homeInput,setHomeInput]=useState("");
   const[awayInput,setAwayInput]=useState("");
   const[manualPred,setManualPred]=useState(null);
