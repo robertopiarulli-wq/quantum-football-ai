@@ -875,16 +875,19 @@ def full_prediction(f):
     # NON applichiamo calibrate_confidence — la nuova formula incorpora già
     # l'accuracy storica per campionato. La calibrazione appiattiva tutto al ceiling.
     conf = round(raw_conf, 4)
-    # Fix draw prediction — ricalibrato su 225 partite verificate (23/03/2026)
-    # Soglia ottimale: gap<30% draw>=24% → F1=0.427, recall=75%
+    # Fix draw prediction — logica pulita basata su probabilità assolute
+    # X solo quando draw è genuinamente il segnale più forte
     gap_12 = abs(h - a)
-    league_draw_bias = LEAGUE_PROFILE.get(f.get("comp_code",""), {}).get("draw_bias", 0)
-    # Soglia gap adattiva per campionato
-    gap_threshold = 0.28 + (league_draw_bias * 1.5)
-    if d >= 0.24 and gap_12 < gap_threshold:
+    if d >= 0.30 and d == max(h, d, a):
+        # Draw è il valore più alto → X chiaro
+        bo = "X"
+        bv = d
+    elif d >= 0.27 and gap_12 < 0.06:
+        # Draw molto alto E le due squadre quasi identiche → X
         bo = "X"
         bv = d
     else:
+        # Vince chi ha la probabilità più alta (1 o 2)
         bv = max(h, d, a)
         bo = "1" if bv == h else ("2" if bv == a else "X")
     return {**base,
