@@ -215,6 +215,10 @@ export default function App(){
   const[allPreds,setAllPreds]=useState([]);
   const[histData,setHistData]=useState(null);
   const[histLoading,setHistLoading]=useState(false);
+  const[risultatiData,setRisultatiData]=useState(null);
+  const[risultatiLoading,setRisultatiLoading]=useState(false);
+  const[risultatiSearch,setRisultatiSearch]=useState("");
+  const[risultatiDate,setRisultatiDate]=useState("");
 
   useEffect(()=>{
     let i=0;
@@ -269,6 +273,24 @@ export default function App(){
       })
       .catch(()=>setHistLoading(false));
   },[ready,tab,histData,histLoading]);
+
+  // Carica history.json per tab RISULTATI
+  useEffect(()=>{
+    if(!ready||tab!=="risultati"||risultatiData||risultatiLoading)return;
+    setRisultatiLoading(true);
+    fetch(GITHUB_HISTORY)
+      .then(r=>r.ok?r.json():null)
+      .then(d=>{
+        if(d&&d.predictions){
+          const verified=d.predictions
+            .filter(p=>p.result!==null&&p.result!==undefined)
+            .sort((a,b)=>(b.date||"").localeCompare(a.date||""));
+          setRisultatiData(verified);
+        }
+        setRisultatiLoading(false);
+      })
+      .catch(()=>setRisultatiLoading(false));
+  },[ready,tab,risultatiData,risultatiLoading]);
 
   const leagues=useMemo(()=>{
     const s=new Set(fixtures.map(f=>f.league));
@@ -375,7 +397,7 @@ export default function App(){
 
       {/* TABS */}
       <div style={{display:"flex",padding:"0 20px",borderBottom:"1px solid "+C.border,overflowX:"auto"}}>
-        {[["oggi","📅 OGGI"],["ranking","📊 RANKING"],["cerca","🔍 CERCA"],["perf","📈 PERFORMANCE"],["log","📋 LOG"]].map(([t,l])=>(
+        {[["oggi","📅 OGGI"],["ranking","📊 RANKING"],["cerca","🔍 CERCA"],["perf","📈 PERFORMANCE"],["risultati","🏁 RISULTATI"],["log","📋 LOG"]].map(([t,l])=>(
           <button key={t} onClick={()=>setTab(t)} style={{background:"none",border:"none",color:tab===t?C.cyan:"#555",padding:"11px 16px",cursor:"pointer",fontSize:10,letterSpacing:2,whiteSpace:"nowrap",borderBottom:tab===t?`2px solid ${C.cyan}`:"2px solid transparent",fontFamily:"inherit"}}>{l}</button>
         ))}
       </div>
@@ -841,6 +863,101 @@ export default function App(){
               </div>
             </div>
 
+          </div>
+        );})()}
+
+        {tab==="risultati"&&(()=>{
+          if(risultatiLoading)return(<div style={{textAlign:"center",padding:60,color:C.cyan}}><div style={{fontSize:10,letterSpacing:3,marginBottom:12}}>📊 CARICAMENTO RISULTATI...</div><Wave w={400}/></div>);
+          if(!risultatiData)return(<div style={{textAlign:"center",padding:60,color:"#333"}}><div style={{fontSize:40,marginBottom:12}}>🏁</div><div style={{fontSize:11,letterSpacing:3}}>Caricamento...</div></div>);
+
+          // Filtri
+          const norm=s=>(s||"").toLowerCase();
+          const filtered2=risultatiData.filter(p=>{
+            const matchSearch=!risultatiSearch||
+              norm(p.home).includes(norm(risultatiSearch))||
+              norm(p.away).includes(norm(risultatiSearch))||
+              norm(p.league).includes(norm(risultatiSearch));
+            const matchDate=!risultatiDate||p.date===risultatiDate;
+            return matchSearch&&matchDate;
+          });
+
+          // Date disponibili
+          const dates=[...new Set(risultatiData.map(p=>p.date||"").filter(Boolean))].sort((a,b)=>b.localeCompare(a));
+
+          const acc1x2=filtered2.length?filtered2.filter(p=>p.correct_1x2).length/filtered2.length:0;
+          const accOver=filtered2.length?filtered2.filter(p=>p.correct_over).length/filtered2.length:0;
+
+          return(
+          <div>
+            {/* Filtri */}
+            <div style={{display:"flex",gap:10,marginBottom:16,flexWrap:"wrap",alignItems:"center"}}>
+              <input value={risultatiSearch} onChange={e=>setRisultatiSearch(e.target.value)}
+                placeholder="🔍 Cerca squadra o campionato..."
+                style={{flex:1,minWidth:200,background:"#0a1220",border:`1px solid ${C.border}`,color:"#fff",padding:"8px 12px",borderRadius:8,fontSize:11,fontFamily:"inherit",outline:"none"}}/>
+              <select value={risultatiDate} onChange={e=>setRisultatiDate(e.target.value)}
+                style={{background:"#0a1220",border:`1px solid ${C.border}`,color:"#fff",padding:"8px 12px",borderRadius:8,fontSize:11,fontFamily:"inherit",outline:"none"}}>
+                <option value="">📅 Tutte le date</option>
+                {dates.map(d=><option key={d} value={d}>{d}</option>)}
+              </select>
+              {(risultatiSearch||risultatiDate)&&(
+                <button onClick={()=>{setRisultatiSearch("");setRisultatiDate("");}}
+                  style={{background:"#1a1a2e",border:`1px solid ${C.border}`,color:"#888",padding:"8px 12px",borderRadius:8,fontSize:11,fontFamily:"inherit",cursor:"pointer"}}>
+                  ✕ Reset
+                </button>
+              )}
+              <div style={{fontSize:9,color:"#555",letterSpacing:1}}>
+                {filtered2.length} risultati · 1X2: <span style={{color:acc1x2>0.5?C.green:acc1x2>0.38?C.amber:"#f55"}}>{(acc1x2*100).toFixed(0)}%</span> · Over: <span style={{color:accOver>0.5?C.green:accOver>0.38?C.amber:"#f55"}}>{(accOver*100).toFixed(0)}%</span>
+              </div>
+            </div>
+
+            {/* Lista risultati */}
+            <div style={{display:"flex",flexDirection:"column",gap:6}}>
+              {filtered2.slice(0,100).map((p,i)=>{
+                const ok=p.correct_1x2;
+                const okO=p.correct_over;
+                const okB=p.correct_btts;
+                const okC=p.correct_combo;
+                const ppR=p.pred_combo_leg?`${p.pred_best}+${p.pred_combo_leg}`:"";
+                return(
+                <div key={i} style={{background:C.card,border:`1px solid ${ok?C.green+"33":"#f5545433"}`,borderRadius:10,padding:"10px 14px",display:"grid",gridTemplateColumns:"80px 1fr 1fr 60px 60px 60px 60px 80px 70px",gap:6,alignItems:"center"}}>
+                  <div style={{fontSize:8,color:"#555"}}>{p.date||""}<br/>{p.time||""}</div>
+                  <div style={{fontSize:10,fontWeight:700,color:C.cyan,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{p.home}</div>
+                  <div style={{fontSize:10,fontWeight:700,color:C.pink,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{p.away}</div>
+                  <div style={{textAlign:"center"}}>
+                    <div style={{fontSize:8,color:"#555"}}>PREV</div>
+                    <div style={{fontSize:12,fontWeight:900,color:C.amber}}>{p.pred_best}</div>
+                  </div>
+                  <div style={{textAlign:"center"}}>
+                    <div style={{fontSize:8,color:"#555"}}>REALE</div>
+                    <div style={{fontSize:12,fontWeight:900,color:ok?C.green:"#f55"}}>{p.result} {ok?"✅":"❌"}</div>
+                  </div>
+                  <div style={{textAlign:"center"}}>
+                    <div style={{fontSize:8,color:"#555"}}>GOL</div>
+                    <div style={{fontSize:11,fontWeight:700,color:"#aaa"}}>{p.goals_home??"-"}-{p.goals_away??"-"}</div>
+                  </div>
+                  <div style={{textAlign:"center"}}>
+                    <div style={{fontSize:7,color:"#555"}}>O·B·C</div>
+                    <div style={{fontSize:10}}>{okO===true?"✅":okO===false?"❌":"—"} {okB===true?"✅":okB===false?"❌":"—"} {okC===true?"✅":okC===false?"❌":"—"}</div>
+                  </div>
+                  <div style={{textAlign:"center"}}>
+                    <div style={{fontSize:7,color:"#555"}}>CONF</div>
+                    <div style={{fontSize:9,color:confColor(p.pred_conf||0)}}>{((p.pred_conf||0)*100).toFixed(0)}%</div>
+                    {ppR&&<div style={{fontSize:7,color:"#a78bfa",marginTop:2}}>{ppR}</div>}
+                  </div>
+                  <div style={{textAlign:"center"}}>
+                    <div style={{fontSize:7,color:"#555"}}>PP</div>
+                    {p.pp_label?(
+                      <div style={{fontSize:8,fontWeight:700,color:p.pp_result==="1"?C.cyan:p.pp_result==="2"?C.pink:p.pp_result==="X"?"#f59e0b":p.pp_result==="1X"?"#34d399":p.pp_result==="X2"?"#f97316":"#888"}}>
+                        {p.pp_label.replace(/[🎯🛡️⚖️🔀]/g,"").trim()}
+                        {p.correct_pp!==null&&p.correct_pp!==undefined&&<span style={{marginLeft:3}}>{p.correct_pp?"✅":"❌"}</span>}
+                      </div>
+                    ):<div style={{fontSize:8,color:"#444"}}>—</div>}
+                  </div>
+                </div>
+              )})}
+              {filtered2.length>100&&<div style={{textAlign:"center",fontSize:9,color:"#555",padding:10}}>Mostrati 100 di {filtered2.length} — usa la ricerca per filtrare</div>}
+              {filtered2.length===0&&<div style={{textAlign:"center",padding:40,color:"#333",fontSize:11}}>Nessun risultato trovato</div>}
+            </div>
           </div>
         );})()}
 
