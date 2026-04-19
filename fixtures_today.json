@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-19T08:09:08.130346",
+  "generated_at": "2026-04-19T08:36:30.758308",
   "date": "19/04/2026",
   "total": 73,
   "fixtures": [
@@ -2034,6 +2034,41 @@
       }
     },
     {
+      "home": "Casa Pia AC",
+      "away": "Sporting Clube de Braga",
+      "league": "Primeira Liga",
+      "fixture_id": 545930,
+      "date": "23/04/2026",
+      "time": "20:15",
+      "pred": {
+        "home": 0.1804,
+        "draw": 0.3406,
+        "away": 0.479,
+        "dc1x": 0.521,
+        "dcx2": 0.8196,
+        "dc12": 0.6594,
+        "over25": 0.5094,
+        "under25": 0.4906,
+        "bttsY": 0.5267,
+        "bttsN": 0.4733,
+        "xg_h": "1.05",
+        "xg_a": "1.66",
+        "conf": 0.2354,
+        "best": "X",
+        "bestP": 0.3406,
+        "combo": "X+O1.5",
+        "comboP": 0.7536
+      },
+      "pp": {
+        "pp_i_casa": 6.75,
+        "pp_i_ospite": 10.14,
+        "pp_D": -3.39,
+        "pp_result": "X2",
+        "pp_label": "\ud83d\udee1\ufe0f X2",
+        "pp_pct": 37.6
+      }
+    },
+    {
       "home": "Gil Vicente FC",
       "away": "Casa Pia AC",
       "league": "Primeira Liga",
@@ -2171,41 +2206,6 @@
         "pp_result": "12",
         "pp_label": "\ud83d\udd00 1-2",
         "pp_pct": 25.0
-      }
-    },
-    {
-      "home": "GD Estoril Praia",
-      "away": "FC Famalic\u00e3o",
-      "league": "Primeira Liga",
-      "fixture_id": 545974,
-      "date": "26/04/2026",
-      "time": "01:00",
-      "pred": {
-        "home": 0.2409,
-        "draw": 0.3388,
-        "away": 0.4203,
-        "dc1x": 0.5797,
-        "dcx2": 0.7591,
-        "dc12": 0.6612,
-        "over25": 0.457,
-        "under25": 0.543,
-        "bttsY": 0.5037,
-        "bttsN": 0.4963,
-        "xg_h": "1.4",
-        "xg_a": "1.11",
-        "conf": 0.2627,
-        "best": "X",
-        "bestP": 0.3388,
-        "combo": "X+U3.5",
-        "comboP": 0.7569
-      },
-      "pp": {
-        "pp_i_casa": 3.9,
-        "pp_i_ospite": 3.54,
-        "pp_D": 0.36,
-        "pp_result": "X",
-        "pp_label": "\u2696\ufe0f FISSA X",
-        "pp_pct": 51.3
       }
     },
     {
