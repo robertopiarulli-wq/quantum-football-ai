@@ -110,9 +110,9 @@ function FixCard({fix,expanded,onToggle}){
   if(!p)return null;
   return(
     <div style={{background:C.card,border:`1px solid ${expanded?C.cyan+"44":C.border}`,borderRadius:12,padding:14,cursor:"pointer",transition:"border-color 0.2s"}} onClick={onToggle}>
-      <div style={{display:"flex",justifyContent:"space-between",fontSize:8,color:"#555",marginBottom:8}}>
-        <span style={{color:C.purple}}>{fix.league}</span>
-        <span>{fix.date} {fix.time||""}</span>
+      <div style={{display:"flex",justifyContent:"space-between",fontSize:8,color:"#888",marginBottom:8}}>
+        <span style={{color:C.purple,fontSize:9}}>{fix.league}</span>
+        <span style={{fontSize:11,fontWeight:600,color:"#aaa",marginLeft:8}}>{fix.date} {fix.time||""}</span>
       </div>
       <div style={{textAlign:"center",fontSize:13,fontWeight:700,marginBottom:10}}>
         <span style={{color:C.cyan}}>{fix.home}</span>
@@ -584,7 +584,7 @@ export default function App(){
 
                       <div style={{fontSize:16,fontWeight:900}}><span style={{color:C.cyan}}>{manualPred.home}</span><span style={{color:"#333",margin:"0 12px"}}>vs</span><span style={{color:C.pink}}>{manualPred.away}</span></div>
 
-                      <div style={{fontSize:9,color:"#444",marginTop:6}}>{p.date?`📅 ${p.date}`:""}{p.time?` 🕐 ${p.time}`:""}</div>
+                      <div style={{fontSize:11,color:"#aaa",fontWeight:600,marginTop:6}}>{p.date?`📅 ${p.date}`:""}{p.time?` 🕐 ${p.time}`:""}</div>
 
                     </div>
 
@@ -920,7 +920,7 @@ export default function App(){
                 const ppR=p.pred_combo_leg?`${p.pred_best}+${p.pred_combo_leg}`:"";
                 return(
                 <div key={i} style={{background:C.card,border:`1px solid ${ok?C.green+"33":"#f5545433"}`,borderRadius:10,padding:"10px 14px",display:"grid",gridTemplateColumns:"80px 1fr 1fr 60px 60px 60px 60px 80px 70px",gap:6,alignItems:"center"}}>
-                  <div style={{fontSize:8,color:"#555"}}>{p.date||""}<br/>{p.time||""}</div>
+                  <div style={{fontSize:11,color:"#aaa",fontWeight:600}}>{p.date||""}<br/><span style={{fontSize:10,color:"#777"}}>{p.time||""}</span></div>
                   <div style={{fontSize:10,fontWeight:700,color:C.cyan,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{p.home}</div>
                   <div style={{fontSize:10,fontWeight:700,color:C.pink,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{p.away}</div>
                   <div style={{textAlign:"center"}}>
