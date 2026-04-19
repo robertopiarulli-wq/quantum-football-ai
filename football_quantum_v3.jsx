@@ -397,7 +397,7 @@ export default function App(){
 
       {/* TABS */}
       <div style={{display:"flex",padding:"0 20px",borderBottom:"1px solid "+C.border,overflowX:"auto"}}>
-        {[["oggi","📅 OGGI"],["ranking","📊 RANKING"],["cerca","🔍 CERCA"],["perf","📈 PERFORMANCE"],["risultati","🏁 RISULTATI"],["log","📋 LOG"]].map(([t,l])=>(
+        {[["oggi","📅 OGGI"],["ranking","📊 RANKING"],["top","🏆 TOP"],["cerca","🔍 CERCA"],["perf","📈 PERFORMANCE"],["risultati","🏁 RISULTATI"],["log","📋 LOG"]].map(([t,l])=>(
           <button key={t} onClick={()=>setTab(t)} style={{background:"none",border:"none",color:tab===t?C.cyan:"#555",padding:"11px 16px",cursor:"pointer",fontSize:10,letterSpacing:2,whiteSpace:"nowrap",borderBottom:tab===t?`2px solid ${C.cyan}`:"2px solid transparent",fontFamily:"inherit"}}>{l}</button>
         ))}
       </div>
@@ -449,14 +449,15 @@ export default function App(){
             {ranked.length===0&&<div style={{textAlign:"center",padding:60,color:"#333",fontSize:10}}>Nessuna partita — esegui il workflow da GitHub Actions</div>}
             {ranked.length>0&&(
               <div>
-                <div style={{display:"grid",gridTemplateColumns:"36px 1fr 1fr 62px 62px 62px 62px 62px 72px 62px",gap:6,padding:"7px 10px",fontSize:8,color:"#555",letterSpacing:1,borderBottom:"1px solid "+C.border,marginBottom:4}}>
-                  <div>#</div><div>CASA</div><div>TRASFERTA</div>
+                <div style={{display:"grid",gridTemplateColumns:"36px 80px 1fr 1fr 62px 62px 62px 62px 62px 72px 62px",gap:6,padding:"7px 10px",fontSize:8,color:"#555",letterSpacing:1,borderBottom:"1px solid "+C.border,marginBottom:4}}>
+                  <div>#</div><div style={{fontSize:8,color:"#555"}}>DATA</div><div>CASA</div><div>TRASFERTA</div>
                   <div style={{textAlign:"center"}}>1</div><div style={{textAlign:"center"}}>X</div><div style={{textAlign:"center"}}>2</div>
                   <div style={{textAlign:"center"}}>O2.5</div><div style={{textAlign:"center"}}>BTTS</div><div style={{textAlign:"center"}}>CONF</div><div style={{textAlign:"center",color:rnkSort==="pp"?"#a78bfa":"#555"}}>PP%</div>
                 </div>
                 {ranked.map((f,i)=>!f.pred?null:(
-                  <React.Fragment key={i}><div onClick={()=>setRnkExpanded(rnkExpanded===i?null:i)} style={{display:"grid",gridTemplateColumns:"36px 1fr 1fr 62px 62px 62px 62px 62px 72px 62px",gap:6,padding:"8px 10px",marginBottom:3,cursor:"pointer",borderRadius:9,background:i<3?`${C.cyan}04`:C.card,border:`1px solid ${i<3?C.cyan+"22":C.border}`,alignItems:"center"}}>
+                  <React.Fragment key={i}><div onClick={()=>setRnkExpanded(rnkExpanded===i?null:i)} style={{display:"grid",gridTemplateColumns:"36px 80px 1fr 1fr 62px 62px 62px 62px 62px 72px 62px",gap:6,padding:"8px 10px",marginBottom:3,cursor:"pointer",borderRadius:9,background:i<3?`${C.cyan}04`:C.card,border:`1px solid ${i<3?C.cyan+"22":C.border}`,alignItems:"center"}}>
                     <div style={{fontSize:11,color:C.amber}}>{i===0?"🥇":i===1?"🥈":i===2?"🥉":i+1}</div>
+                    <div style={{fontSize:9,color:"#aaa",lineHeight:1.4}}><div style={{fontWeight:600}}>{f.date||"—"}</div><div style={{color:"#555",fontSize:8}}>{f.time||""}</div></div>
                     <div style={{fontSize:11,fontWeight:700,color:C.cyan,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{f.home}</div>
                     <div style={{fontSize:11,fontWeight:700,color:C.pink,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{f.away}</div>
                     <div style={{textAlign:"center",fontSize:11,color:rnkSort==="home"?C.cyan:"#bbb"}}>{pct(f.pred.home)}</div>
@@ -484,6 +485,77 @@ export default function App(){
         )}
 
         {/* ══ CERCA ══ */}
+        {tab==="top"&&(()=>{
+          if(!fixtures||fixtures.length===0)return(
+            <div style={{textAlign:"center",padding:60,color:"#333"}}>
+              <div style={{fontSize:40,marginBottom:12}}>🏆</div>
+              <div style={{fontSize:11,letterSpacing:3}}>Nessuna partita disponibile</div>
+            </div>
+          );
+
+          // Tutte le partite che rispettano almeno un criterio
+          const topAll=fixtures.filter(f=>f.pred&&(
+            f.pred.home>=0.60||f.pred.away>=0.60||f.pred.draw>=0.35
+          )).map(f=>{
+            // Determina il segno dominante e il suo valore
+            const p=f.pred;
+            let sign,signVal,signCol;
+            if(p.home>=0.60){sign="1";signVal=p.home;signCol=C.cyan;}
+            else if(p.away>=0.60){sign="2";signVal=p.away;signCol=C.pink;}
+            else{sign="X";signVal=p.draw;signCol=C.amber;}
+            return{...f,sign,signVal,signCol};
+          }).sort((a,b)=>b.signVal-a.signVal);
+
+          return(
+          <div>
+            <div style={{fontSize:9,color:"#555",marginBottom:16,letterSpacing:1}}>
+              {topAll.length} PARTITE · 🔵 1&gt;60% · 🟡 X&gt;35% · 🔴 2&gt;60%
+            </div>
+            <div style={{display:"flex",flexDirection:"column",gap:10}}>
+              {topAll.length===0&&<div style={{textAlign:"center",padding:40,color:"#333",fontSize:11}}>Nessuna partita supera le soglie oggi</div>}
+              {topAll.map((f,i)=>{
+                const p=f.pred;
+                const pp=f.pp;
+                const ppCol=pp?.pp_result==="1"?C.cyan:pp?.pp_result==="2"?C.pink:pp?.pp_result==="X"?C.amber:pp?.pp_result==="1X"?"#34d399":pp?.pp_result==="X2"?"#f97316":"#888";
+                return(
+                <div key={i} style={{background:C.card,border:`1px solid ${f.signCol}44`,borderRadius:12,padding:14}}>
+                  <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",marginBottom:8}}>
+                    <div>
+                      <div style={{fontSize:9,color:"#555"}}>{f.league}</div>
+                      <div style={{fontSize:11,color:"#aaa",fontWeight:600}}>{f.date} <span style={{color:"#666",fontSize:10}}>{f.time}</span></div>
+                    </div>
+                    <div style={{textAlign:"center"}}>
+                      <div style={{fontSize:9,color:"#555"}}>SEGNO</div>
+                      <div style={{fontSize:28,fontWeight:900,color:f.signCol,lineHeight:1}}>{f.sign}</div>
+                      <div style={{fontSize:12,fontWeight:700,color:f.signCol}}>{(f.signVal*100).toFixed(1)}%</div>
+                    </div>
+                  </div>
+                  <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:10}}>
+                    <span style={{fontSize:13,fontWeight:700,color:C.cyan}}>{f.home}</span>
+                    <span style={{fontSize:10,color:"#333"}}>vs</span>
+                    <span style={{fontSize:13,fontWeight:700,color:C.pink}}>{f.away}</span>
+                  </div>
+                  <div style={{display:"flex",gap:10,flexWrap:"wrap",fontSize:9,marginBottom:8}}>
+                    <span>1: <b style={{color:C.cyan}}>{(p.home*100).toFixed(1)}%</b></span>
+                    <span>X: <b style={{color:C.amber}}>{(p.draw*100).toFixed(1)}%</b></span>
+                    <span>2: <b style={{color:C.pink}}>{(p.away*100).toFixed(1)}%</b></span>
+                    <span style={{color:"#444"}}>·</span>
+                    <span>O2.5: <b>{(p.over25*100).toFixed(1)}%</b></span>
+                    <span>BTTS: <b>{(p.bttsY*100).toFixed(1)}%</b></span>
+                    <span style={{color:"#444"}}>·</span>
+                    <span style={{color:"#555"}}>xG <b style={{color:"#aaa"}}>{p.xg_h}—{p.xg_a}</b></span>
+                    <span style={{color:"#a78bfa"}}>Conf <b>{(p.conf*100).toFixed(1)}%</b></span>
+                  </div>
+                  <div style={{display:"flex",gap:6,flexWrap:"wrap"}}>
+                    {p.combo&&<div style={{fontSize:9,color:"#4caf50",background:"#0a2a1a",padding:"2px 8px",borderRadius:4}}>🎯 {p.combo} ({(p.comboP*100).toFixed(0)}%)</div>}
+                    {pp?.pp_label&&<div style={{fontSize:9,color:ppCol,background:"rgba(167,139,250,0.06)",padding:"2px 8px",borderRadius:4}}>⚡ {pp.pp_label} D={pp.pp_D?.toFixed(1)}</div>}
+                  </div>
+                </div>
+              )})}
+            </div>
+          </div>
+        );})()}
+
         {tab==="cerca"&&(
           <div style={{display:"grid",gridTemplateColumns:"300px 1fr",gap:18}}>
 
