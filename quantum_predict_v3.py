@@ -1073,6 +1073,14 @@ def record_predictions(all_preds, history):
                 "pred_over15":  round(pred.get("over_15", 0), 4),
                 "pred_under35": round(pred.get("under_35", 0), 4),
                 "correct_combo": None,  # da verificare dopo
+                # PP Index — modello KPZ/Parisi
+                "pp_result":   p.get("pp", {}).get("pp_result", ""),
+                "pp_label":    p.get("pp", {}).get("pp_label", ""),
+                "pp_i_casa":   p.get("pp", {}).get("pp_i_casa", None),
+                "pp_i_ospite": p.get("pp", {}).get("pp_i_ospite", None),
+                "pp_D":        p.get("pp", {}).get("pp_D", None),
+                "pp_pct":      p.get("pp", {}).get("pp_pct", None),
+                "correct_pp":  None,  # da verificare dopo
                 # risultato reale — da compilare dopo
                 "result":      None,   # "1", "X", "2"
                 "goals_home":  None,
@@ -1150,6 +1158,21 @@ def verify_results(history, fetcher, competitions):
                         else:
                             leg_ok = False
                         p["correct_combo"] = fissa_ok and leg_ok
+                    # Verifica PP Index
+                    pp_result = p.get("pp_result", "")
+                    if pp_result:
+                        if pp_result in ("1", "2"):
+                            p["correct_pp"] = (outcome == pp_result)
+                        elif pp_result == "X":
+                            p["correct_pp"] = (outcome == "X")
+                        elif pp_result == "1X":
+                            p["correct_pp"] = (outcome in ("1", "X"))
+                        elif pp_result == "X2":
+                            p["correct_pp"] = (outcome in ("X", "2"))
+                        elif pp_result == "12":
+                            p["correct_pp"] = (outcome in ("1", "2"))
+                        else:
+                            p["correct_pp"] = None
                     p["verified_at"] = datetime.now().isoformat()
                     verified += 1
                     status = "✅" if p["correct_1x2"] else "❌"
