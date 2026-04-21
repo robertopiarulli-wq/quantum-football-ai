@@ -13269,7 +13269,8 @@
       "correct_1x2": false,
       "correct_over": true,
       "correct_btts": true,
-      "verified_at": "2026-04-20T09:10:43.954926"
+      "verified_at": "2026-04-20T09:10:43.954926",
+      "elo_updated": true
     },
     {
       "fixture_id": "542667",
@@ -13304,7 +13305,8 @@
       "correct_1x2": false,
       "correct_over": true,
       "correct_btts": true,
-      "verified_at": "2026-04-20T09:10:51.099257"
+      "verified_at": "2026-04-20T09:10:51.099257",
+      "elo_updated": true
     },
     {
       "fixture_id": "542669",
@@ -13339,7 +13341,8 @@
       "correct_1x2": false,
       "correct_over": false,
       "correct_btts": true,
-      "verified_at": "2026-04-20T09:10:51.099279"
+      "verified_at": "2026-04-20T09:10:51.099279",
+      "elo_updated": true
     },
     {
       "fixture_id": "542670",
@@ -13374,7 +13377,8 @@
       "correct_1x2": true,
       "correct_over": false,
       "correct_btts": true,
-      "verified_at": "2026-04-20T09:10:51.099284"
+      "verified_at": "2026-04-20T09:10:51.099284",
+      "elo_updated": true
     },
     {
       "fixture_id": "545964",
@@ -13481,7 +13485,8 @@
       "correct_1x2": true,
       "correct_over": false,
       "correct_btts": false,
-      "verified_at": "2026-04-20T09:10:58.130823"
+      "verified_at": "2026-04-20T09:10:58.130823",
+      "elo_updated": true
     },
     {
       "fixture_id": "541204",
@@ -13912,7 +13917,8 @@
       "correct_1x2": true,
       "correct_over": true,
       "correct_btts": true,
-      "verified_at": "2026-04-20T09:11:05.846192"
+      "verified_at": "2026-04-20T09:11:05.846192",
+      "elo_updated": true
     },
     {
       "fixture_id": "537139",
@@ -13947,7 +13953,8 @@
       "correct_1x2": true,
       "correct_over": false,
       "correct_btts": false,
-      "verified_at": "2026-04-20T09:11:05.846215"
+      "verified_at": "2026-04-20T09:11:05.846215",
+      "elo_updated": true
     },
     {
       "fixture_id": "537138",
@@ -13982,7 +13989,8 @@
       "correct_1x2": false,
       "correct_over": true,
       "correct_btts": false,
-      "verified_at": "2026-04-20T09:11:05.846220"
+      "verified_at": "2026-04-20T09:11:05.846220",
+      "elo_updated": true
     },
     {
       "fixture_id": "538113",
@@ -14017,7 +14025,8 @@
       "correct_1x2": false,
       "correct_over": true,
       "correct_btts": true,
-      "verified_at": "2026-04-20T09:11:12.946634"
+      "verified_at": "2026-04-20T09:11:12.946634",
+      "elo_updated": true
     },
     {
       "fixture_id": "538105",
@@ -14052,7 +14061,8 @@
       "correct_1x2": false,
       "correct_over": false,
       "correct_btts": false,
-      "verified_at": "2026-04-20T09:11:12.946656"
+      "verified_at": "2026-04-20T09:11:12.946656",
+      "elo_updated": true
     },
     {
       "fixture_id": "538109",
@@ -14087,7 +14097,8 @@
       "correct_1x2": false,
       "correct_over": true,
       "correct_btts": true,
-      "verified_at": "2026-04-20T09:11:12.946662"
+      "verified_at": "2026-04-20T09:11:12.946662",
+      "elo_updated": true
     },
     {
       "fixture_id": "538111",
@@ -14122,7 +14133,8 @@
       "correct_1x2": false,
       "correct_over": true,
       "correct_btts": true,
-      "verified_at": "2026-04-20T09:11:12.946665"
+      "verified_at": "2026-04-20T09:11:12.946665",
+      "elo_updated": true
     },
     {
       "fixture_id": "540670",
@@ -14157,7 +14169,8 @@
       "correct_1x2": false,
       "correct_over": true,
       "correct_btts": true,
-      "verified_at": "2026-04-20T09:10:43.954951"
+      "verified_at": "2026-04-20T09:10:43.954951",
+      "elo_updated": true
     },
     {
       "fixture_id": "540668",
@@ -14192,7 +14205,8 @@
       "correct_1x2": true,
       "correct_over": false,
       "correct_btts": true,
-      "verified_at": "2026-04-20T09:10:43.954956"
+      "verified_at": "2026-04-20T09:10:43.954956",
+      "elo_updated": true
     },
     {
       "fixture_id": "542673",
@@ -14227,7 +14241,8 @@
       "correct_1x2": false,
       "correct_over": true,
       "correct_btts": false,
-      "verified_at": "2026-04-20T09:10:51.099289"
+      "verified_at": "2026-04-20T09:10:51.099289",
+      "elo_updated": true
     },
     {
       "fixture_id": "542672",
@@ -14262,7 +14277,8 @@
       "correct_1x2": false,
       "correct_over": true,
       "correct_btts": true,
-      "verified_at": "2026-04-20T09:10:51.099293"
+      "verified_at": "2026-04-20T09:10:51.099293",
+      "elo_updated": true
     },
     {
       "fixture_id": "545965",
@@ -14297,7 +14313,8 @@
       "correct_1x2": false,
       "correct_over": true,
       "correct_btts": true,
-      "verified_at": "2026-04-20T09:10:58.130845"
+      "verified_at": "2026-04-20T09:10:58.130845",
+      "elo_updated": true
     },
     {
       "fixture_id": "545968",
@@ -14332,7 +14349,8 @@
       "correct_1x2": true,
       "correct_over": true,
       "correct_btts": true,
-      "verified_at": "2026-04-20T09:10:58.130851"
+      "verified_at": "2026-04-20T09:10:58.130851",
+      "elo_updated": true
     },
     {
       "fixture_id": "545969",
@@ -14367,7 +14385,8 @@
       "correct_1x2": true,
       "correct_over": false,
       "correct_btts": false,
-      "verified_at": "2026-04-20T09:10:58.130855"
+      "verified_at": "2026-04-20T09:10:58.130855",
+      "elo_updated": true
     },
     {
       "fixture_id": "545962",
@@ -14395,14 +14414,14 @@
       "pred_combo_prob": 0.788,
       "pred_over15": 0.788,
       "pred_under35": 0.6659,
-      "correct_combo": null,
-      "result": null,
-      "goals_home": null,
-      "goals_away": null,
-      "correct_1x2": null,
-      "correct_over": null,
-      "correct_btts": null,
-      "verified_at": null
+      "correct_combo": false,
+      "result": "1",
+      "goals_home": 1,
+      "goals_away": 0,
+      "correct_1x2": false,
+      "correct_over": false,
+      "correct_btts": false,
+      "verified_at": "2026-04-21T08:56:19.712611"
     },
     {
       "fixture_id": "541224",
@@ -14466,14 +14485,14 @@
       "pred_combo_prob": 0.8195,
       "pred_over15": 0.6452,
       "pred_under35": 0.8195,
-      "correct_combo": null,
-      "result": null,
-      "goals_home": null,
-      "goals_away": null,
-      "correct_1x2": null,
-      "correct_over": null,
-      "correct_btts": null,
-      "verified_at": null
+      "correct_combo": false,
+      "result": "X",
+      "goals_home": 1,
+      "goals_away": 1,
+      "correct_1x2": false,
+      "correct_over": true,
+      "correct_btts": false,
+      "verified_at": "2026-04-21T08:56:27.100806"
     },
     {
       "fixture_id": "538106",
@@ -14501,14 +14520,14 @@
       "pred_combo_prob": 0.7716,
       "pred_over15": 0.7716,
       "pred_under35": 0.6884,
-      "correct_combo": null,
-      "result": null,
-      "goals_home": null,
-      "goals_away": null,
-      "correct_1x2": null,
-      "correct_over": null,
-      "correct_btts": null,
-      "verified_at": null
+      "correct_combo": false,
+      "result": "X",
+      "goals_home": 0,
+      "goals_away": 0,
+      "correct_1x2": true,
+      "correct_over": false,
+      "correct_btts": false,
+      "verified_at": "2026-04-21T08:56:34.126606"
     },
     {
       "fixture_id": "544531",
@@ -16086,7 +16105,8 @@
       "correct_1x2": true,
       "correct_over": false,
       "correct_btts": true,
-      "verified_at": "2026-04-20T09:11:34.858695"
+      "verified_at": "2026-04-20T09:11:34.858695",
+      "elo_updated": true
     },
     {
       "fixture_id": "541228",
@@ -17242,7 +17262,133 @@
       "correct_over": null,
       "correct_btts": null,
       "verified_at": null
+    },
+    {
+      "fixture_id": "537152",
+      "home": "SS Lazio",
+      "away": "Udinese Calcio",
+      "league": "Serie A",
+      "comp_code": "SA",
+      "season": "2025/2026",
+      "stage": "REGULAR_SEASON",
+      "matchday": 34,
+      "first_leg": null,
+      "date": "27/04/2026",
+      "time": "19:45",
+      "predicted_at": "2026-04-21T08:51:56.795160",
+      "pred_home": 0.54,
+      "pred_draw": 0.2268,
+      "pred_away": 0.2332,
+      "pred_over25": 0.4631,
+      "pred_btts": 0.5129,
+      "pred_best": "1",
+      "pred_conf": 0.3578,
+      "pred_raw_conf": 0.3578,
+      "pred_combo_label": "1+U3.5",
+      "pred_combo_leg": "U3.5",
+      "pred_combo_prob": 0.7518,
+      "pred_over15": 0.7182,
+      "pred_under35": 0.7518,
+      "correct_combo": null,
+      "pp_result": "X",
+      "pp_label": "\u2696\ufe0f FISSA X",
+      "pp_i_casa": 7.2,
+      "pp_i_ospite": 6.58,
+      "pp_D": 0.62,
+      "pp_pct": 52.3,
+      "correct_pp": null,
+      "result": null,
+      "goals_home": null,
+      "goals_away": null,
+      "correct_1x2": null,
+      "correct_over": null,
+      "correct_btts": null,
+      "verified_at": null
+    },
+    {
+      "fixture_id": "538122",
+      "home": "Manchester United FC",
+      "away": "Brentford FC",
+      "league": "Premier League",
+      "comp_code": "PL",
+      "season": "2025/2026",
+      "stage": "REGULAR_SEASON",
+      "matchday": 34,
+      "first_leg": null,
+      "date": "27/04/2026",
+      "time": "20:00",
+      "predicted_at": "2026-04-21T08:52:17.385706",
+      "pred_home": 0.4414,
+      "pred_draw": 0.3413,
+      "pred_away": 0.2174,
+      "pred_over25": 0.6339,
+      "pred_btts": 0.6309,
+      "pred_best": "1",
+      "pred_conf": 0.1212,
+      "pred_raw_conf": 0.1212,
+      "pred_combo_label": "X+O1.5",
+      "pred_combo_leg": "O1.5",
+      "pred_combo_prob": 0.8373,
+      "pred_over15": 0.8373,
+      "pred_under35": 0.5876,
+      "correct_combo": null,
+      "pp_result": "X",
+      "pp_label": "\u2696\ufe0f FISSA X",
+      "pp_i_casa": 9.6,
+      "pp_i_ospite": 8.98,
+      "pp_D": 0.62,
+      "pp_pct": 52.3,
+      "correct_pp": null,
+      "result": null,
+      "goals_home": null,
+      "goals_away": null,
+      "correct_1x2": null,
+      "correct_over": null,
+      "correct_btts": null,
+      "verified_at": null
+    },
+    {
+      "fixture_id": "552092",
+      "home": "Paris Saint-Germain FC",
+      "away": "FC Bayern M\u00fcnchen",
+      "league": "Champions League",
+      "comp_code": "CL",
+      "season": "2025/2026",
+      "stage": "SEMI_FINALS",
+      "matchday": 1,
+      "first_leg": null,
+      "date": "28/04/2026",
+      "time": "20:00",
+      "predicted_at": "2026-04-21T08:53:46.081118",
+      "pred_home": 0.7519,
+      "pred_draw": 0.202,
+      "pred_away": 0.0461,
+      "pred_over25": 0.8293,
+      "pred_btts": 0.8023,
+      "pred_best": "1",
+      "pred_conf": 0.7402,
+      "pred_raw_conf": 0.7402,
+      "pred_combo_label": "1+O1.5",
+      "pred_combo_leg": "O1.5",
+      "pred_combo_prob": 0.9402,
+      "pred_over15": 0.9402,
+      "pred_under35": 0.338,
+      "correct_combo": null,
+      "pp_result": "X",
+      "pp_label": "\u2696\ufe0f FISSA X",
+      "pp_i_casa": 9.9,
+      "pp_i_ospite": 11.18,
+      "pp_D": -1.28,
+      "pp_pct": 45.3,
+      "correct_pp": null,
+      "result": null,
+      "goals_home": null,
+      "goals_away": null,
+      "correct_1x2": null,
+      "correct_over": null,
+      "correct_btts": null,
+      "verified_at": null
     }
   ],
-  "last_updated": "2026-04-20T09:11:34.859473"
+  "last_updated": "2026-04-21T08:57:09.944276"
 }
