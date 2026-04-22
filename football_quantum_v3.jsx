@@ -305,11 +305,32 @@ export default function App(){
   const ranked=useMemo(()=>{
     return[...fixtures].sort((a,b)=>{
       const ppScore=f=>{
-      if(!f.pp)return 0;
-      const d=Math.abs(f.pp.pp_D||0);
-      const r=f.pp.pp_result||"";
-      const w=r==="1"||r==="2"?1.0:r==="12"?0.6:0.3;
-      return d*w;
+      if(!f.pred)return 0;
+      const h=f.pred.home||0,x=f.pred.draw||0,a=f.pred.away||0;
+      const r=(f.pp&&f.pp.pp_result)||"";
+      // Score = somma delle % Poisson dei segni indicati dal PP
+      // Regola fissa: se segno singolo ≥60% rimane fissa (score = % singola)
+      if(r==="1")return h>=0.60?h:h;
+      if(r==="2")return a>=0.60?a:a;
+      if(r==="X")return x+Math.max(h,a);  // X + il più alto tra 1 e 2
+      if(r==="1X")return h+x;
+      if(r==="X2")return x+a;
+      if(r==="12")return h+a;
+      // fallback: miglior valore singolo
+      return Math.max(h,x,a);
+    };
+    // Label PP rank: quale combinazione viene usata
+    const ppLabel=f=>{
+      if(!f.pred)return"—";
+      const h=f.pred.home||0,x=f.pred.draw||0,a=f.pred.away||0;
+      const r=(f.pp&&f.pp.pp_result)||"";
+      if(r==="1")return h>=0.60?"🎯 FISSA 1":"1";
+      if(r==="2")return a>=0.60?"🎯 FISSA 2":"2";
+      if(r==="X"){const s=h>=a?"X1":"X2";return s;}
+      if(r==="1X")return"1X";
+      if(r==="X2")return"X2";
+      if(r==="12")return"12";
+      return"—";
     };
     const v=f=>f.pred?rnkSort==="conf"?f.pred.conf:rnkSort==="home"?f.pred.home:rnkSort==="away"?f.pred.away:rnkSort==="draw"?f.pred.draw:rnkSort==="over"?f.pred.over25:rnkSort==="pp"?ppScore(f):f.pred.bttsY:0;
       return v(b)-v(a);
@@ -442,7 +463,7 @@ export default function App(){
           <div>
             <div style={{display:"flex",gap:8,alignItems:"center",marginBottom:14,flexWrap:"wrap"}}>
               <div style={{fontSize:9,color:"#555",letterSpacing:2}}>ORDINA PER:</div>
-              {[["conf","🎲 Conf"],["home","1️⃣ Casa"],["draw","➖ Pari"],["away","2️⃣ Trasf"],["over","⚽ Over"],["btts","🔁 BTTS"],["pp","⚡ PP"],["pp","⚡ PP%"]].map(([v,l])=>(
+              {[["conf","🎲 Conf"],["home","1️⃣ Casa"],["draw","➖ Pari"],["away","2️⃣ Trasf"],["over","⚽ Over"],["btts","🔁 BTTS"],["pp","⚡ PP Rank"],["pp","⚡ PP%"]].map(([v,l])=>(
                 <button key={v} onClick={()=>setRnkSort(v)} style={{padding:"5px 11px",borderRadius:99,fontSize:9,cursor:"pointer",border:`1px solid ${rnkSort===v?C.cyan:C.border}`,background:rnkSort===v?`${C.cyan}15`:"transparent",color:rnkSort===v?C.cyan:"#666",fontFamily:"inherit"}}>{l}</button>
               ))}
             </div>
@@ -467,12 +488,12 @@ export default function App(){
                     <div style={{textAlign:"center",fontSize:11,color:rnkSort==="btts"?C.green:"#bbb"}}>{pct(f.pred.bttsY)}</div>
                     <div style={{textAlign:"center",fontSize:10,fontWeight:700,color:confColor(f.pred.conf)}}>{pct(f.pred.conf)}</div>
                     <div style={{textAlign:"center",fontSize:10,fontWeight:rnkSort==="pp"?900:400,color:rnkSort==="pp"?"#a78bfa":"#555"}}>
-                      {f.pp?(()=>{
-                        const d=Math.abs(f.pp.pp_D||0);
-                        const r=f.pp.pp_result||"";
-                        const w=r==="1"||r==="2"?1.0:r==="12"?0.6:0.3;
-                        const sc=(d*w).toFixed(1);
-                        return <span><span style={{fontWeight:700}}>{f.pp.pp_label?.replace(/[🎯🛡️🔀]/g,"").trim()}</span><br/><span style={{fontSize:8,color:"#a78bfa"}}>{sc}</span></span>;
+                      {f.pred?(()=>{
+                        const lbl=ppLabel(f);
+                        const sc=ppScore(f);
+                        const r=(f.pp&&f.pp.pp_result)||"";
+                        const col=r==="1"?C.cyan:r==="2"?C.pink:r==="X"?C.amber:r==="1X"?"#34d399":r==="X2"?"#f97316":r==="12"?"#a78bfa":"#888";
+                        return<span style={{color:col}}><b>{lbl}</b><br/><span style={{fontSize:8,color:"#a78bfa"}}>{(sc*100).toFixed(0)}%</span></span>;
                       })():"—"}
                     </div>
                   </div>
