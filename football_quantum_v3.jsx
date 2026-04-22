@@ -302,36 +302,32 @@ export default function App(){
     return[...base].sort((a,b)=>((a.date||"")+(a.time||"")).localeCompare((b.date||"")+(b.time||"")));
   },[fixtures,filterLeague]);
 
+  const ppScore=f=>{
+    if(!f.pred)return 0;
+    const h=f.pred.home||0,x=f.pred.draw||0,a=f.pred.away||0;
+    const r=(f.pp&&f.pp.pp_result)||"";
+    if(r==="1")return h;
+    if(r==="2")return a;
+    if(r==="X")return x+Math.max(h,a);
+    if(r==="1X")return h+x;
+    if(r==="X2")return x+a;
+    if(r==="12")return h+a;
+    return Math.max(h,x,a);
+  };
+  const ppLabel=f=>{
+    if(!f.pred)return"—";
+    const h=f.pred.home||0,x=f.pred.draw||0,a=f.pred.away||0;
+    const r=(f.pp&&f.pp.pp_result)||"";
+    if(r==="1")return h>=0.60?"🎯 FISSA 1":"1";
+    if(r==="2")return a>=0.60?"🎯 FISSA 2":"2";
+    if(r==="X")return a>h?"X2":"X1";
+    if(r==="1X")return"1X";
+    if(r==="X2")return"X2";
+    if(r==="12")return"12";
+    return"—";
+  };
   const ranked=useMemo(()=>{
     return[...fixtures].sort((a,b)=>{
-      const ppScore=f=>{
-      if(!f.pred)return 0;
-      const h=f.pred.home||0,x=f.pred.draw||0,a=f.pred.away||0;
-      const r=(f.pp&&f.pp.pp_result)||"";
-      // Score = somma delle % Poisson dei segni indicati dal PP
-      // Regola fissa: se segno singolo ≥60% rimane fissa (score = % singola)
-      if(r==="1")return h>=0.60?h:h;
-      if(r==="2")return a>=0.60?a:a;
-      if(r==="X")return x+Math.max(h,a);  // X + il più alto tra 1 e 2
-      if(r==="1X")return h+x;
-      if(r==="X2")return x+a;
-      if(r==="12")return h+a;
-      // fallback: miglior valore singolo
-      return Math.max(h,x,a);
-    };
-    // Label PP rank: quale combinazione viene usata
-    const ppLabel=f=>{
-      if(!f.pred)return"—";
-      const h=f.pred.home||0,x=f.pred.draw||0,a=f.pred.away||0;
-      const r=(f.pp&&f.pp.pp_result)||"";
-      if(r==="1")return h>=0.60?"🎯 FISSA 1":"1";
-      if(r==="2")return a>=0.60?"🎯 FISSA 2":"2";
-      if(r==="X"){const s=h>=a?"X1":"X2";return s;}
-      if(r==="1X")return"1X";
-      if(r==="X2")return"X2";
-      if(r==="12")return"12";
-      return"—";
-    };
     const v=f=>f.pred?rnkSort==="conf"?f.pred.conf:rnkSort==="home"?f.pred.home:rnkSort==="away"?f.pred.away:rnkSort==="draw"?f.pred.draw:rnkSort==="over"?f.pred.over25:rnkSort==="pp"?ppScore(f):f.pred.bttsY:0;
       return v(b)-v(a);
     });
@@ -569,7 +565,7 @@ export default function App(){
                   </div>
                   <div style={{display:"flex",gap:6,flexWrap:"wrap"}}>
                     {p.combo&&<div style={{fontSize:9,color:"#4caf50",background:"#0a2a1a",padding:"2px 8px",borderRadius:4}}>🎯 {p.combo} ({(p.comboP*100).toFixed(0)}%)</div>}
-                    {pp?.pp_label&&<div style={{fontSize:9,color:ppCol,background:"rgba(167,139,250,0.06)",padding:"2px 8px",borderRadius:4}}>⚡ {pp.pp_label} D={pp.pp_D?.toFixed(1)}</div>}
+                    {f.pp&&<div style={{fontSize:9,color:ppCol,background:"rgba(167,139,250,0.06)",padding:"2px 8px",borderRadius:4}}>⚡ {ppLabel(f)} <span style={{color:"#666"}}>({(ppScore(f)*100).toFixed(0)}%)</span></div>}
                   </div>
                 </div>
               )})}
