@@ -328,7 +328,7 @@ export default function App(){
   };
   const ranked=useMemo(()=>{
     return[...fixtures].sort((a,b)=>{
-    const v=f=>f.pred?rnkSort==="conf"?f.pred.conf:rnkSort==="home"?f.pred.home:rnkSort==="away"?f.pred.away:rnkSort==="draw"?f.pred.draw:rnkSort==="over"?f.pred.over25:rnkSort==="pp"?ppScore(f):f.pred.bttsY:0;
+    const v=f=>f.pred?rnkSort==="conf"?f.pred.conf:rnkSort==="home"?f.pred.home:rnkSort==="away"?f.pred.away:rnkSort==="draw"?f.pred.draw:rnkSort==="over"?f.pred.over25:rnkSort==="pp"?ppScore(f):rnkSort==="ppd"?Math.abs(f.pp?.pp_D||0):f.pred.bttsY:0;
       return v(b)-v(a);
     });
   },[fixtures,rnkSort]);
@@ -459,7 +459,7 @@ export default function App(){
           <div>
             <div style={{display:"flex",gap:8,alignItems:"center",marginBottom:14,flexWrap:"wrap"}}>
               <div style={{fontSize:9,color:"#555",letterSpacing:2}}>ORDINA PER:</div>
-              {[["conf","🎲 Conf"],["home","1️⃣ Casa"],["draw","➖ Pari"],["away","2️⃣ Trasf"],["over","⚽ Over"],["btts","🔁 BTTS"],["pp","⚡ PP Rank"],["pp","⚡ PP%"]].map(([v,l])=>(
+              {[["conf","🎲 Conf"],["home","1️⃣ Casa"],["draw","➖ Pari"],["away","2️⃣ Trasf"],["over","⚽ Over"],["btts","🔁 BTTS"],["pp","⚡ PP Rank"],["ppd","⚡ PP D"]].map(([v,l])=>(
                 <button key={v} onClick={()=>setRnkSort(v)} style={{padding:"5px 11px",borderRadius:99,fontSize:9,cursor:"pointer",border:`1px solid ${rnkSort===v?C.cyan:C.border}`,background:rnkSort===v?`${C.cyan}15`:"transparent",color:rnkSort===v?C.cyan:"#666",fontFamily:"inherit"}}>{l}</button>
               ))}
             </div>
@@ -469,7 +469,7 @@ export default function App(){
                 <div style={{display:"grid",gridTemplateColumns:"36px 80px 1fr 1fr 62px 62px 62px 62px 62px 72px 62px 70px",gap:6,padding:"7px 10px",fontSize:8,color:"#555",letterSpacing:1,borderBottom:"1px solid "+C.border,marginBottom:4}}>
                   <div>#</div><div style={{fontSize:8,color:"#555"}}>DATA</div><div>CASA</div><div>TRASFERTA</div>
                   <div style={{textAlign:"center"}}>1</div><div style={{textAlign:"center"}}>X</div><div style={{textAlign:"center"}}>2</div>
-                  <div style={{textAlign:"center"}}>O2.5</div><div style={{textAlign:"center"}}>BTTS</div><div style={{textAlign:"center"}}>CONF</div><div style={{textAlign:"center",color:rnkSort==="pp"?"#a78bfa":"#555"}}>PP Rank</div><div style={{textAlign:"center",color:"#a78bfa"}}>PP</div>
+                  <div style={{textAlign:"center"}}>O2.5</div><div style={{textAlign:"center"}}>BTTS</div><div style={{textAlign:"center"}}>CONF</div><div style={{textAlign:"center",color:rnkSort==="pp"?"#a78bfa":"#555"}}>PP Rank</div><div style={{textAlign:"center",color:rnkSort==="ppd"?"#a78bfa":"#555"}}>PP D</div>
                 </div>
                 {ranked.map((f,i)=>!f.pred?null:(
                   <React.Fragment key={i}><div onClick={()=>setRnkExpanded(rnkExpanded===i?null:i)} style={{display:"grid",gridTemplateColumns:"36px 80px 1fr 1fr 62px 62px 62px 62px 62px 72px 62px 70px",gap:6,padding:"8px 10px",marginBottom:3,cursor:"pointer",borderRadius:9,background:i<3?`${C.cyan}04`:C.card,border:`1px solid ${i<3?C.cyan+"22":C.border}`,alignItems:"center"}}>
