@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-04-22T14:50:47.473759",
+  "generated_at": "2026-04-22T15:12:40.044205",
   "date": "22/04/2026",
-  "total": 71,
+  "total": 73,
   "fixtures": [
     {
       "home": "SSC Napoli",
@@ -1681,6 +1681,76 @@
         "pp_result": "12",
         "pp_label": "\ud83d\udd00 1-2",
         "pp_pct": 68.5
+      }
+    },
+    {
+      "home": "Paris Saint-Germain FC",
+      "away": "FC Bayern M\u00fcnchen",
+      "league": "Champions League",
+      "fixture_id": 552092,
+      "date": "28/04/2026",
+      "time": "20:00",
+      "pred": {
+        "home": 0.7335,
+        "draw": 0.2185,
+        "away": 0.0481,
+        "dc1x": 0.9519,
+        "dcx2": 0.2665,
+        "dc12": 0.7815,
+        "over25": 0.8293,
+        "under25": 0.1707,
+        "bttsY": 0.8023,
+        "bttsN": 0.1977,
+        "xg_h": "2.2",
+        "xg_a": "2.33",
+        "conf": 0.7402,
+        "best": "1",
+        "bestP": 0.7335,
+        "combo": "1+O1.5",
+        "comboP": 0.9402
+      },
+      "pp": {
+        "pp_i_casa": 9.9,
+        "pp_i_ospite": 11.18,
+        "pp_D": -1.28,
+        "pp_result": "X",
+        "pp_label": "\u2696\ufe0f FISSA X",
+        "pp_pct": 45.3
+      }
+    },
+    {
+      "home": "Club Atl\u00e9tico de Madrid",
+      "away": "Arsenal FC",
+      "league": "Champions League",
+      "fixture_id": 552093,
+      "date": "29/04/2026",
+      "time": "20:00",
+      "pred": {
+        "home": 0.1066,
+        "draw": 0.2204,
+        "away": 0.6731,
+        "dc1x": 0.3269,
+        "dcx2": 0.8934,
+        "dc12": 0.7796,
+        "over25": 0.704,
+        "under25": 0.296,
+        "bttsY": 0.7011,
+        "bttsN": 0.2989,
+        "xg_h": "1.75",
+        "xg_a": "1.89",
+        "conf": 0.7796,
+        "best": "2",
+        "bestP": 0.6731,
+        "combo": "2+O1.5",
+        "comboP": 0.878
+      },
+      "pp": {
+        "pp_i_casa": 8.1,
+        "pp_i_ospite": 11.56,
+        "pp_D": -3.46,
+        "pp_result": "X2",
+        "pp_label": "\ud83d\udee1\ufe0f X2",
+        "pp_pct": 37.4
       }
     },
     {
