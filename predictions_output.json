@@ -47,7 +47,7 @@
       "pp_label": "\ud83d\udd00 1-2",
       "pp_pct": 67.4
     },
-    "generated_at": "2026-04-22T15:25:47.772322"
+    "generated_at": "2026-04-22T15:36:44.515875"
   },
   {
     "league": "Serie A",
@@ -97,7 +97,7 @@
       "pp_label": "\ud83d\udee1\ufe0f 1X",
       "pp_pct": 64.1
     },
-    "generated_at": "2026-04-22T15:25:47.772467"
+    "generated_at": "2026-04-22T15:36:44.516043"
   },
   {
     "league": "Serie A",
@@ -147,7 +147,7 @@
       "pp_label": "\ud83d\udee1\ufe0f 1X",
       "pp_pct": 59.1
     },
-    "generated_at": "2026-04-22T15:25:47.772599"
+    "generated_at": "2026-04-22T15:36:44.516172"
   },
   {
     "league": "Serie A",
@@ -197,7 +197,7 @@
       "pp_label": "\ud83d\udee1\ufe0f X2",
       "pp_pct": 41.1
     },
-    "generated_at": "2026-04-22T15:25:47.772740"
+    "generated_at": "2026-04-22T15:36:44.516306"
   },
   {
     "league": "Serie A",
@@ -247,7 +247,7 @@
       "pp_label": "\u2696\ufe0f FISSA X",
       "pp_pct": 50.3
     },
-    "generated_at": "2026-04-22T15:25:47.772887"
+    "generated_at": "2026-04-22T15:36:44.516428"
   },
   {
     "league": "Serie A",
@@ -297,7 +297,7 @@
       "pp_label": "\u2696\ufe0f FISSA X",
       "pp_pct": 51.8
     },
-    "generated_at": "2026-04-22T15:25:47.773019"
+    "generated_at": "2026-04-22T15:36:44.516545"
   },
   {
     "league": "Serie A",
@@ -347,7 +347,7 @@
       "pp_label": "\u2696\ufe0f FISSA X",
       "pp_pct": 49.2
     },
-    "generated_at": "2026-04-22T15:25:47.773139"
+    "generated_at": "2026-04-22T15:36:44.516661"
   },
   {
     "league": "Serie A",
@@ -397,7 +397,7 @@
       "pp_label": "\ud83d\udd00 1-2",
       "pp_pct": 33.2
     },
-    "generated_at": "2026-04-22T15:25:47.773301"
+    "generated_at": "2026-04-22T15:36:44.516822"
   },
   {
     "league": "Serie A",
@@ -447,7 +447,7 @@
       "pp_label": "\ud83d\udd00 1-2",
       "pp_pct": 31.6
     },
-    "generated_at": "2026-04-22T15:25:47.773427"
+    "generated_at": "2026-04-22T15:36:44.516969"
   },
   {
     "league": "Serie A",
@@ -497,7 +497,7 @@
       "pp_label": "\u2696\ufe0f FISSA X",
       "pp_pct": 52.3
     },
-    "generated_at": "2026-04-22T15:25:47.773545"
+    "generated_at": "2026-04-22T15:36:44.517088"
   },
   {
     "league": "Premier League",
@@ -547,7 +547,7 @@
       "pp_label": "\u2696\ufe0f FISSA X",
       "pp_pct": 48.3
     },
-    "generated_at": "2026-04-22T15:26:08.220891"
+    "generated_at": "2026-04-22T15:37:05.416975"
   },
   {
     "league": "Premier League",
@@ -584,8 +584,8 @@
       "combo_prob": 0.7834,
       "combo_score": 0.5014,
       "combo_certain": true,
-      "confidence": 0.2298,
-      "raw_confidence": 0.2298,
+      "confidence": 0.2444,
+      "raw_confidence": 0.2444,
       "best_out": "2",
       "best_val": 0.64008
     },
@@ -597,7 +597,7 @@
       "pp_label": "\ud83c\udfaf FISSA 2",
       "pp_pct": 19.9
     },
-    "generated_at": "2026-04-22T15:26:08.221030"
+    "generated_at": "2026-04-22T15:37:05.417111"
   },
   {
     "league": "Premier League",
@@ -647,7 +647,7 @@
       "pp_label": "\ud83d\udee1\ufe0f X2",
       "pp_pct": 41.3
     },
-    "generated_at": "2026-04-22T15:26:08.221157"
+    "generated_at": "2026-04-22T15:37:05.417237"
   },
   {
     "league": "Premier League",
@@ -697,7 +697,7 @@
       "pp_label": "\ud83d\udee1\ufe0f 1X",
       "pp_pct": 60.2
     },
-    "generated_at": "2026-04-22T15:26:08.221273"
+    "generated_at": "2026-04-22T15:37:05.417353"
   },
   {
     "league": "Premier League",
@@ -747,7 +747,7 @@
       "pp_label": "\ud83d\udee1\ufe0f 1X",
       "pp_pct": 60.5
     },
-    "generated_at": "2026-04-22T15:26:08.221394"
+    "generated_at": "2026-04-22T15:37:05.417467"
   },
   {
     "league": "Premier League",
@@ -797,7 +797,7 @@
       "pp_label": "\u2696\ufe0f FISSA X",
       "pp_pct": 52.8
     },
-    "generated_at": "2026-04-22T15:26:08.221514"
+    "generated_at": "2026-04-22T15:37:05.417581"
   },
   {
     "league": "Premier League",
@@ -847,7 +847,7 @@
       "pp_label": "\ud83d\udee1\ufe0f 1X",
       "pp_pct": 61.9
     },
-    "generated_at": "2026-04-22T15:26:08.221631"
+    "generated_at": "2026-04-22T15:37:05.417691"
   },
   {
     "league": "Premier League",
@@ -862,13 +862,13 @@
     "matchday": 34,
     "first_leg": null,
     "prediction": {
-      "home": 0.47899613192439217,
+      "home": 0.5289961319243922,
       "draw": 0.33488,
-      "away": 0.18612386807560782,
+      "away": 0.13612386807560778,
       "quantum_used": false,
       "goals_factor": 1.1,
-      "dc_1x": 0.8138761319243921,
-      "dc_x2": 0.5210038680756078,
+      "dc_1x": 0.8638761319243922,
+      "dc_x2": 0.4710038680756078,
       "dc_12": 0.6651199999999999,
       "over_25": 0.5511390443904132,
       "under_25": 0.44886095560958683,
@@ -879,15 +879,15 @@
       "btts_n": 0.4801761292583593,
       "xg_home": 1.96,
       "xg_away": 0.93,
-      "combo_label": "X+O1.5",
+      "combo_label": "1+O1.5",
       "combo_leg": "O1.5",
       "combo_prob": 0.7834,
-      "combo_score": 0.2623,
+      "combo_score": 0.4144,
       "combo_certain": true,
-      "confidence": 0.1934,
-      "raw_confidence": 0.1934,
+      "confidence": 0.2183,
+      "raw_confidence": 0.2183,
       "best_out": "1",
-      "best_val": 0.47899613192439217
+      "best_val": 0.5289961319243922
     },
     "pp": {
       "pp_i_casa": 7.5,
@@ -897,7 +897,7 @@
       "pp_label": "\ud83d\udee1\ufe0f 1X",
       "pp_pct": 59.6
     },
-    "generated_at": "2026-04-22T15:26:08.221745"
+    "generated_at": "2026-04-22T15:37:05.417804"
   },
   {
     "league": "Premier League",
@@ -947,7 +947,7 @@
       "pp_label": "\u2696\ufe0f FISSA X",
       "pp_pct": 52.3
     },
-    "generated_at": "2026-04-22T15:26:08.221886"
+    "generated_at": "2026-04-22T15:37:05.417936"
   },
   {
     "league": "La Liga",
@@ -997,7 +997,7 @@
       "pp_label": "\ud83d\udee1\ufe0f 1X",
       "pp_pct": 59.7
     },
-    "generated_at": "2026-04-22T15:26:28.050711"
+    "generated_at": "2026-04-22T15:37:26.146609"
   },
   {
     "league": "La Liga",
@@ -1047,7 +1047,7 @@
       "pp_label": "\ud83d\udee1\ufe0f 1X",
       "pp_pct": 59.9
     },
-    "generated_at": "2026-04-22T15:26:28.050920"
+    "generated_at": "2026-04-22T15:37:26.146747"
   },
   {
     "league": "La Liga",
@@ -1097,7 +1097,7 @@
       "pp_label": "\ud83d\udd00 1-2",
       "pp_pct": 71.2
     },
-    "generated_at": "2026-04-22T15:26:28.051075"
+    "generated_at": "2026-04-22T15:37:26.146873"
   },
   {
     "league": "La Liga",
@@ -1147,7 +1147,7 @@
       "pp_label": "\ud83d\udd00 1-2",
       "pp_pct": 66.2
     },
-    "generated_at": "2026-04-22T15:26:28.051209"
+    "generated_at": "2026-04-22T15:37:26.147018"
   },
   {
     "league": "La Liga",
@@ -1197,7 +1197,7 @@
       "pp_label": "\ud83d\udd00 1-2",
       "pp_pct": 75.0
     },
-    "generated_at": "2026-04-22T15:26:28.051333"
+    "generated_at": "2026-04-22T15:37:26.147139"
   },
   {
     "league": "La Liga",
@@ -1247,7 +1247,7 @@
       "pp_label": "\u2696\ufe0f FISSA X",
       "pp_pct": 53.1
     },
-    "generated_at": "2026-04-22T15:26:28.051452"
+    "generated_at": "2026-04-22T15:37:26.147260"
   },
   {
     "league": "La Liga",
@@ -1297,7 +1297,7 @@
       "pp_label": "\ud83d\udee1\ufe0f X2",
       "pp_pct": 40.8
     },
-    "generated_at": "2026-04-22T15:26:28.051572"
+    "generated_at": "2026-04-22T15:37:26.147378"
   },
   {
     "league": "La Liga",
@@ -1347,7 +1347,7 @@
       "pp_label": "\ud83d\udd00 1-2",
       "pp_pct": 64.7
     },
-    "generated_at": "2026-04-22T15:26:28.051692"
+    "generated_at": "2026-04-22T15:37:26.147495"
   },
   {
     "league": "La Liga",
@@ -1397,7 +1397,7 @@
       "pp_label": "\u2696\ufe0f FISSA X",
       "pp_pct": 49.3
     },
-    "generated_at": "2026-04-22T15:26:28.051809"
+    "generated_at": "2026-04-22T15:37:26.147611"
   },
   {
     "league": "La Liga",
@@ -1447,7 +1447,7 @@
       "pp_label": "\ud83d\udee1\ufe0f 1X",
       "pp_pct": 61.5
     },
-    "generated_at": "2026-04-22T15:26:28.051951"
+    "generated_at": "2026-04-22T15:37:26.147726"
   },
   {
     "league": "Bundesliga",
@@ -1497,7 +1497,7 @@
       "pp_label": "\ud83d\udd00 1-2",
       "pp_pct": 76.7
     },
-    "generated_at": "2026-04-22T15:26:47.802189"
+    "generated_at": "2026-04-22T15:37:47.189449"
   },
   {
     "league": "Bundesliga",
@@ -1512,13 +1512,13 @@
     "matchday": 31,
     "first_leg": null,
     "prediction": {
-      "home": 0.07057905126558497,
+      "home": 0.05,
       "draw": 0.29825999999999997,
-      "away": 0.6311609487344151,
+      "away": 0.65174,
       "quantum_used": false,
       "goals_factor": 1.15,
-      "dc_1x": 0.3688390512655849,
-      "dc_x2": 0.929420948734415,
+      "dc_1x": 0.34825999999999996,
+      "dc_x2": 0.95,
       "dc_12": 0.70174,
       "over_25": 0.7237161422757485,
       "under_25": 0.27628385772425146,
@@ -1532,12 +1532,12 @@
       "combo_label": "2+O1.5",
       "combo_leg": "O1.5",
       "combo_prob": 0.8887,
-      "combo_score": 0.5609,
+      "combo_score": 0.5792,
       "combo_certain": true,
-      "confidence": 0.4015,
-      "raw_confidence": 0.4015,
+      "confidence": 0.4087,
+      "raw_confidence": 0.4087,
       "best_out": "2",
-      "best_val": 0.6311609487344151
+      "best_val": 0.65174
     },
     "pp": {
       "pp_i_casa": 6.15,
@@ -1547,7 +1547,7 @@
       "pp_label": "\ud83d\udd00 1-2",
       "pp_pct": 26.1
     },
-    "generated_at": "2026-04-22T15:26:47.802339"
+    "generated_at": "2026-04-22T15:37:47.189578"
   },
   {
     "league": "Bundesliga",
@@ -1597,7 +1597,7 @@
       "pp_label": "\ud83d\udee1\ufe0f X2",
       "pp_pct": 40.9
     },
-    "generated_at": "2026-04-22T15:26:47.802465"
+    "generated_at": "2026-04-22T15:37:47.189696"
   },
   {
     "league": "Bundesliga",
@@ -1647,7 +1647,7 @@
       "pp_label": "\ud83d\udee1\ufe0f 1X",
       "pp_pct": 61.1
     },
-    "generated_at": "2026-04-22T15:26:47.802582"
+    "generated_at": "2026-04-22T15:37:47.189813"
   },
   {
     "league": "Bundesliga",
@@ -1697,7 +1697,7 @@
       "pp_label": "\u2696\ufe0f FISSA X",
       "pp_pct": 46.0
     },
-    "generated_at": "2026-04-22T15:26:47.802695"
+    "generated_at": "2026-04-22T15:37:47.189947"
   },
   {
     "league": "Bundesliga",
@@ -1747,7 +1747,7 @@
       "pp_label": "\u2696\ufe0f FISSA X",
       "pp_pct": 56.5
     },
-    "generated_at": "2026-04-22T15:26:47.802806"
+    "generated_at": "2026-04-22T15:37:47.190063"
   },
   {
     "league": "Bundesliga",
@@ -1797,7 +1797,7 @@
       "pp_label": "\u2696\ufe0f FISSA X",
       "pp_pct": 46.8
     },
-    "generated_at": "2026-04-22T15:26:47.802941"
+    "generated_at": "2026-04-22T15:37:47.190172"
   },
   {
     "league": "Bundesliga",
@@ -1812,14 +1812,14 @@
     "matchday": 31,
     "first_leg": null,
     "prediction": {
-      "home": 0.42644183964578364,
+      "home": 0.4764418396457837,
       "draw": 0.3042200000000001,
-      "away": 0.26933816035421637,
+      "away": 0.2193381603542163,
       "quantum_used": false,
       "goals_factor": 1.15,
-      "dc_1x": 0.7306618396457838,
-      "dc_x2": 0.5735581603542165,
-      "dc_12": 0.6957800000000001,
+      "dc_1x": 0.7806618396457838,
+      "dc_x2": 0.5235581603542164,
+      "dc_12": 0.69578,
       "over_25": 0.6230623177387716,
       "under_25": 0.37693768226122837,
       "over_15": 0.8306,
@@ -1834,10 +1834,10 @@
       "combo_prob": 0.8306,
       "combo_score": 0.2527,
       "combo_certain": true,
-      "confidence": 0.3267,
-      "raw_confidence": 0.3267,
+      "confidence": 0.369,
+      "raw_confidence": 0.369,
       "best_out": "1",
-      "best_val": 0.42644183964578364
+      "best_val": 0.4764418396457837
     },
     "pp": {
       "pp_i_casa": 10.35,
@@ -1847,7 +1847,7 @@
       "pp_label": "\ud83d\udd00 1-2",
       "pp_pct": 68.0
     },
-    "generated_at": "2026-04-22T15:26:47.803056"
+    "generated_at": "2026-04-22T15:37:47.190281"
   },
   {
     "league": "Bundesliga",
@@ -1897,7 +1897,7 @@
       "pp_label": "\ud83d\udee1\ufe0f 1X",
       "pp_pct": 63.9
     },
-    "generated_at": "2026-04-22T15:26:47.803165"
+    "generated_at": "2026-04-22T15:37:47.190388"
   },
   {
     "league": "Ligue 1",
@@ -1947,7 +1947,7 @@
       "pp_label": "\ud83d\udd00 1-2",
       "pp_pct": 75.8
     },
-    "generated_at": "2026-04-22T15:27:07.889081"
+    "generated_at": "2026-04-22T15:38:08.404072"
   },
   {
     "league": "Ligue 1",
@@ -1997,7 +1997,7 @@
       "pp_label": "\ud83d\udee1\ufe0f 1X",
       "pp_pct": 60.3
     },
-    "generated_at": "2026-04-22T15:27:07.889307"
+    "generated_at": "2026-04-22T15:38:08.404222"
   },
   {
     "league": "Ligue 1",
@@ -2047,7 +2047,7 @@
       "pp_label": "\u2696\ufe0f FISSA X",
       "pp_pct": 56.8
     },
-    "generated_at": "2026-04-22T15:27:07.889531"
+    "generated_at": "2026-04-22T15:38:08.404369"
   },
   {
     "league": "Ligue 1",
@@ -2097,7 +2097,7 @@
       "pp_label": "\ud83d\udd00 1-2",
       "pp_pct": 24.3
     },
-    "generated_at": "2026-04-22T15:27:07.889725"
+    "generated_at": "2026-04-22T15:38:08.404523"
   },
   {
     "league": "Ligue 1",
@@ -2147,7 +2147,7 @@
       "pp_label": "\ud83d\udd00 1-2",
       "pp_pct": 29.1
     },
-    "generated_at": "2026-04-22T15:27:07.889948"
+    "generated_at": "2026-04-22T15:38:08.404696"
   },
   {
     "league": "Ligue 1",
@@ -2197,7 +2197,7 @@
       "pp_label": "\u2696\ufe0f FISSA X",
       "pp_pct": 53.6
     },
-    "generated_at": "2026-04-22T15:27:07.890144"
+    "generated_at": "2026-04-22T15:38:08.404872"
   },
   {
     "league": "Ligue 1",
@@ -2247,7 +2247,7 @@
       "pp_label": "\ud83d\udd00 1-2",
       "pp_pct": 70.9
     },
-    "generated_at": "2026-04-22T15:27:07.890329"
+    "generated_at": "2026-04-22T15:38:08.405111"
   },
   {
     "league": "Ligue 1",
@@ -2297,7 +2297,7 @@
       "pp_label": "\ud83d\udee1\ufe0f X2",
       "pp_pct": 37.8
     },
-    "generated_at": "2026-04-22T15:27:07.890496"
+    "generated_at": "2026-04-22T15:38:08.405302"
   },
   {
     "league": "Ligue 1",
@@ -2347,7 +2347,7 @@
       "pp_label": "\ud83d\udd00 1-2",
       "pp_pct": 72.6
     },
-    "generated_at": "2026-04-22T15:27:07.890668"
+    "generated_at": "2026-04-22T15:38:08.405466"
   },
   {
     "league": "Ligue 1",
@@ -2397,7 +2397,7 @@
       "pp_label": "\ud83d\udd00 1-2",
       "pp_pct": 68.5
     },
-    "generated_at": "2026-04-22T15:27:07.890840"
+    "generated_at": "2026-04-22T15:38:08.405631"
   },
   {
     "league": "Champions League",
@@ -2447,7 +2447,7 @@
       "pp_label": "\u2696\ufe0f FISSA X",
       "pp_pct": 45.3
     },
-    "generated_at": "2026-04-22T15:27:34.118956"
+    "generated_at": "2026-04-22T15:38:35.383691"
   },
   {
     "league": "Champions League",
@@ -2497,7 +2497,7 @@
       "pp_label": "\ud83d\udee1\ufe0f X2",
       "pp_pct": 37.4
     },
-    "generated_at": "2026-04-22T15:27:34.119088"
+    "generated_at": "2026-04-22T15:38:35.383798"
   },
   {
     "league": "Eredivisie",
@@ -2547,7 +2547,7 @@
       "pp_label": "\ud83d\udd00 1-2",
       "pp_pct": 64.6
     },
-    "generated_at": "2026-04-22T15:28:00.430789"
+    "generated_at": "2026-04-22T15:39:02.789228"
   },
   {
     "league": "Eredivisie",
@@ -2597,7 +2597,7 @@
       "pp_label": "\ud83d\udd00 1-2",
       "pp_pct": 69.0
     },
-    "generated_at": "2026-04-22T15:28:00.430974"
+    "generated_at": "2026-04-22T15:39:02.789354"
   },
   {
     "league": "Eredivisie",
@@ -2647,7 +2647,507 @@
       "pp_label": "\ud83c\udfaf FISSA 1",
       "pp_pct": 81.0
     },
-    "generated_at": "2026-04-22T15:28:00.431109"
+    "generated_at": "2026-04-22T15:39:02.789472"
+  },
+  {
+    "league": "Primeira Liga",
+    "comp_code": "PPL",
+    "season": "2025/2026",
+    "fixture_id": 545930,
+    "home": "Casa Pia AC",
+    "away": "Sporting Clube de Braga",
+    "date": "23/04/2026",
+    "time": "19:00",
+    "stage": "REGULAR_SEASON",
+    "matchday": 26,
+    "first_leg": null,
+    "prediction": {
+      "home": 0.2821840716441791,
+      "draw": 0.34084000000000003,
+      "away": 0.37697592835582094,
+      "quantum_used": false,
+      "goals_factor": 0.95,
+      "dc_1x": 0.6230240716441791,
+      "dc_x2": 0.717815928355821,
+      "dc_12": 0.65916,
+      "over_25": 0.5093715384478017,
+      "under_25": 0.4906284615521983,
+      "over_15": 0.7536,
+      "under_35": 0.7114,
+      "over_35": 0.2886,
+      "btts_y": 0.5266977963693206,
+      "btts_n": 0.47330220363067943,
+      "xg_home": 1.05,
+      "xg_away": 1.66,
+      "combo_label": "X+O1.5",
+      "combo_leg": "O1.5",
+      "combo_prob": 0.7536,
+      "combo_score": 0.2568,
+      "combo_certain": true,
+      "confidence": 0.2101,
+      "raw_confidence": 0.2101,
+      "best_out": "2",
+      "best_val": 0.37697592835582094
+    },
+    "pp": {
+      "pp_i_casa": 6.75,
+      "pp_i_ospite": 10.14,
+      "pp_D": -3.39,
+      "pp_result": "X2",
+      "pp_label": "\ud83d\udee1\ufe0f X2",
+      "pp_pct": 37.6
+    },
+    "generated_at": "2026-04-22T15:39:23.650396"
+  },
+  {
+    "league": "Primeira Liga",
+    "comp_code": "PPL",
+    "season": "2025/2026",
+    "fixture_id": 545976,
+    "home": "FC Alverca",
+    "away": "FC Arouca",
+    "date": "24/04/2026",
+    "time": "20:15",
+    "stage": "REGULAR_SEASON",
+    "matchday": 31,
+    "first_leg": null,
+    "prediction": {
+      "home": 0.343387498263266,
+      "draw": 0.34616,
+      "away": 0.310452501736734,
+      "quantum_used": false,
+      "goals_factor": 0.95,
+      "dc_1x": 0.689547498263266,
+      "dc_x2": 0.656612501736734,
+      "dc_12": 0.65384,
+      "over_25": 0.48944927677015926,
+      "under_25": 0.5105507232298407,
+      "over_15": 0.7386,
+      "under_35": 0.7291,
+      "over_35": 0.2709,
+      "btts_y": 0.529967495505783,
+      "btts_n": 0.47003250449421696,
+      "xg_home": 1.46,
+      "xg_away": 1.17,
+      "combo_label": "X+O1.5",
+      "combo_leg": "O1.5",
+      "combo_prob": 0.7386,
+      "combo_score": 0.2557,
+      "combo_certain": true,
+      "confidence": 0.2193,
+      "raw_confidence": 0.2193,
+      "best_out": "X",
+      "best_val": 0.34616
+    },
+    "pp": {
+      "pp_i_casa": 4.35,
+      "pp_i_ospite": 2.44,
+      "pp_D": 1.91,
+      "pp_result": "X",
+      "pp_label": "\u2696\ufe0f FISSA X",
+      "pp_pct": 57.0
+    },
+    "generated_at": "2026-04-22T15:39:23.650525"
+  },
+  {
+    "league": "Primeira Liga",
+    "comp_code": "PPL",
+    "season": "2025/2026",
+    "fixture_id": 545971,
+    "home": "CD Tondela",
+    "away": "CD Nacional",
+    "date": "25/04/2026",
+    "time": "15:30",
+    "stage": "REGULAR_SEASON",
+    "matchday": 31,
+    "first_leg": null,
+    "prediction": {
+      "home": 0.27351639337657213,
+      "draw": 0.34294,
+      "away": 0.3835436066234279,
+      "quantum_used": false,
+      "goals_factor": 0.95,
+      "dc_1x": 0.6164563933765721,
+      "dc_x2": 0.7264836066234279,
+      "dc_12": 0.65706,
+      "over_25": 0.31297170899400883,
+      "under_25": 0.6870282910059912,
+      "over_15": 0.5835,
+      "under_35": 0.864,
+      "over_35": 0.136,
+      "btts_y": 0.3906443285659428,
+      "btts_n": 0.6093556714340572,
+      "xg_home": 0.98,
+      "xg_away": 0.98,
+      "combo_label": "X+U3.5",
+      "combo_leg": "U3.5",
+      "combo_prob": 0.864,
+      "combo_score": 0.2963,
+      "combo_certain": true,
+      "confidence": 0.1395,
+      "raw_confidence": 0.1395,
+      "best_out": "2",
+      "best_val": 0.3835436066234279
+    },
+    "pp": {
+      "pp_i_casa": 3.0,
+      "pp_i_ospite": 0.42,
+      "pp_D": 2.58,
+      "pp_result": "1X",
+      "pp_label": "\ud83d\udee1\ufe0f 1X",
+      "pp_pct": 59.4
+    },
+    "generated_at": "2026-04-22T15:39:23.650643"
+  },
+  {
+    "league": "Primeira Liga",
+    "comp_code": "PPL",
+    "season": "2025/2026",
+    "fixture_id": 545977,
+    "home": "Sport Lisboa e Benfica",
+    "away": "Moreirense FC",
+    "date": "25/04/2026",
+    "time": "18:00",
+    "stage": "REGULAR_SEASON",
+    "matchday": 31,
+    "first_leg": null,
+    "prediction": {
+      "home": 0.6555313857096509,
+      "draw": 0.2966390371881069,
+      "away": 0.047829577102242324,
+      "quantum_used": false,
+      "goals_factor": 0.95,
+      "dc_1x": 0.9521704228977578,
+      "dc_x2": 0.34446861429034925,
+      "dc_12": 0.7033609628118932,
+      "over_25": 0.48944927677015926,
+      "under_25": 0.5105507232298407,
+      "over_15": 0.7386,
+      "under_35": 0.7291,
+      "over_35": 0.2709,
+      "btts_y": 0.4699178362717906,
+      "btts_n": 0.5300821637282094,
+      "xg_home": 1.8,
+      "xg_away": 0.83,
+      "combo_label": "1+O1.5",
+      "combo_leg": "O1.5",
+      "combo_prob": 0.7386,
+      "combo_score": 0.4842,
+      "combo_certain": true,
+      "confidence": 0.2784,
+      "raw_confidence": 0.2784,
+      "best_out": "1",
+      "best_val": 0.6555313857096509
+    },
+    "pp": {
+      "pp_i_casa": 10.95,
+      "pp_i_ospite": 3.74,
+      "pp_D": 7.21,
+      "pp_result": "12",
+      "pp_label": "\ud83d\udd00 1-2",
+      "pp_pct": 76.3
+    },
+    "generated_at": "2026-04-22T15:39:23.650755"
+  },
+  {
+    "league": "Primeira Liga",
+    "comp_code": "PPL",
+    "season": "2025/2026",
+    "fixture_id": 545978,
+    "home": "Vit\u00f3ria SC",
+    "away": "Rio Ave FC",
+    "date": "25/04/2026",
+    "time": "20:30",
+    "stage": "REGULAR_SEASON",
+    "matchday": 31,
+    "first_leg": null,
+    "prediction": {
+      "home": 0.25541672203581656,
+      "draw": 0.34080000000000005,
+      "away": 0.4037832779641834,
+      "quantum_used": false,
+      "goals_factor": 0.95,
+      "dc_1x": 0.5962167220358165,
+      "dc_x2": 0.7445832779641834,
+      "dc_12": 0.6592,
+      "over_25": 0.4965266895263196,
+      "under_25": 0.5034733104736804,
+      "over_15": 0.744,
+      "under_35": 0.7229,
+      "over_35": 0.2771,
+      "btts_y": 0.5277571640425941,
+      "btts_n": 0.4722428359574059,
+      "xg_home": 1.55,
+      "xg_away": 1.11,
+      "combo_label": "X+O1.5",
+      "combo_leg": "O1.5",
+      "combo_prob": 0.744,
+      "combo_score": 0.2536,
+      "combo_certain": true,
+      "confidence": 0.2436,
+      "raw_confidence": 0.2436,
+      "best_out": "2",
+      "best_val": 0.4037832779641834
+    },
+    "pp": {
+      "pp_i_casa": 8.4,
+      "pp_i_ospite": 6.7,
+      "pp_D": 1.7,
+      "pp_result": "X",
+      "pp_label": "\u2696\ufe0f FISSA X",
+      "pp_pct": 56.2
+    },
+    "generated_at": "2026-04-22T15:39:23.650865"
+  },
+  {
+    "league": "Primeira Liga",
+    "comp_code": "PPL",
+    "season": "2025/2026",
+    "fixture_id": 545974,
+    "home": "GD Estoril Praia",
+    "away": "FC Famalic\u00e3o",
+    "date": "26/04/2026",
+    "time": "15:30",
+    "stage": "REGULAR_SEASON",
+    "matchday": 31,
+    "first_leg": null,
+    "prediction": {
+      "home": 0.21892373697119383,
+      "draw": 0.33558,
+      "away": 0.4454962630288062,
+      "quantum_used": false,
+      "goals_factor": 0.95,
+      "dc_1x": 0.5545037369711938,
+      "dc_x2": 0.7810762630288062,
+      "dc_12": 0.66442,
+      "over_25": 0.4727488173990332,
+      "under_25": 0.5272511826009668,
+      "over_15": 0.7258,
+      "under_35": 0.7436,
+      "over_35": 0.2564,
+      "btts_y": 0.5165916964171884,
+      "btts_n": 0.4834083035828116,
+      "xg_home": 1.42,
+      "xg_away": 1.14,
+      "combo_label": "X+U3.5",
+      "combo_leg": "U3.5",
+      "combo_prob": 0.7436,
+      "combo_score": 0.2495,
+      "combo_certain": true,
+      "confidence": 0.2303,
+      "raw_confidence": 0.2303,
+      "best_out": "2",
+      "best_val": 0.4454962630288062
+    },
+    "pp": {
+      "pp_i_casa": 3.9,
+      "pp_i_ospite": 5.16,
+      "pp_D": -1.26,
+      "pp_result": "X",
+      "pp_label": "\u2696\ufe0f FISSA X",
+      "pp_pct": 45.4
+    },
+    "generated_at": "2026-04-22T15:39:23.650999"
+  },
+  {
+    "league": "Primeira Liga",
+    "comp_code": "PPL",
+    "season": "2025/2026",
+    "fixture_id": 545972,
+    "home": "CD Santa Clara",
+    "away": "Sporting Clube de Braga",
+    "date": "26/04/2026",
+    "time": "18:00",
+    "stage": "REGULAR_SEASON",
+    "matchday": 31,
+    "first_leg": null,
+    "prediction": {
+      "home": 0.3156789709363461,
+      "draw": 0.3475600000000001,
+      "away": 0.3367610290636538,
+      "quantum_used": false,
+      "goals_factor": 0.95,
+      "dc_1x": 0.6632389709363462,
+      "dc_x2": 0.6843210290636539,
+      "dc_12": 0.6524399999999999,
+      "over_25": 0.39865069187801216,
+      "under_25": 0.6013493081219878,
+      "over_15": 0.6645,
+      "under_35": 0.8034,
+      "over_35": 0.1966,
+      "btts_y": 0.44226937318954485,
+      "btts_n": 0.5577306268104552,
+      "xg_home": 0.89,
+      "xg_away": 1.39,
+      "combo_label": "X+U3.5",
+      "combo_leg": "U3.5",
+      "combo_prob": 0.8034,
+      "combo_score": 0.2792,
+      "combo_certain": true,
+      "confidence": 0.2028,
+      "raw_confidence": 0.2028,
+      "best_out": "X",
+      "best_val": 0.3475600000000001
+    },
+    "pp": {
+      "pp_i_casa": 4.2,
+      "pp_i_ospite": 10.14,
+      "pp_D": -5.94,
+      "pp_result": "12",
+      "pp_label": "\ud83d\udd00 1-2",
+      "pp_pct": 28.3
+    },
+    "generated_at": "2026-04-22T15:39:23.651107"
+  },
+  {
+    "league": "Primeira Liga",
+    "comp_code": "PPL",
+    "season": "2025/2026",
+    "fixture_id": 545975,
+    "home": "CF Estrela da Amadora",
+    "away": "FC Porto",
+    "date": "26/04/2026",
+    "time": "18:00",
+    "stage": "REGULAR_SEASON",
+    "matchday": 31,
+    "first_leg": null,
+    "prediction": {
+      "home": 0.05,
+      "draw": 0.3061600000000001,
+      "away": 0.6438399999999999,
+      "quantum_used": false,
+      "goals_factor": 0.95,
+      "dc_1x": 0.3561600000000001,
+      "dc_x2": 0.95,
+      "dc_12": 0.6938399999999999,
+      "over_25": 0.46430501832067383,
+      "under_25": 0.5356949816793262,
+      "over_15": 0.7192,
+      "under_35": 0.7508,
+      "over_35": 0.2492,
+      "btts_y": 0.47379973962361516,
+      "btts_n": 0.5262002603763849,
+      "xg_home": 0.88,
+      "xg_away": 1.65,
+      "combo_label": "2+U3.5",
+      "combo_leg": "U3.5",
+      "combo_prob": 0.7508,
+      "combo_score": 0.4834,
+      "combo_certain": true,
+      "confidence": 0.2776,
+      "raw_confidence": 0.2776,
+      "best_out": "2",
+      "best_val": 0.6438399999999999
+    },
+    "pp": {
+      "pp_i_casa": 5.55,
+      "pp_i_ospite": 8.64,
+      "pp_D": -3.09,
+      "pp_result": "X2",
+      "pp_label": "\ud83d\udee1\ufe0f X2",
+      "pp_pct": 38.7
+    },
+    "generated_at": "2026-04-22T15:39:23.651214"
+  },
+  {
+    "league": "Primeira Liga",
+    "comp_code": "PPL",
+    "season": "2025/2026",
+    "fixture_id": 545973,
+    "home": "AVS",
+    "away": "Sporting Clube de Portugal",
+    "date": "26/04/2026",
+    "time": "20:30",
+    "stage": "REGULAR_SEASON",
+    "matchday": 31,
+    "first_leg": null,
+    "prediction": {
+      "home": 0.21063768455656243,
+      "draw": 0.33722,
+      "away": 0.4521423154434376,
+      "quantum_used": false,
+      "goals_factor": 0.95,
+      "dc_1x": 0.5478576845565625,
+      "dc_x2": 0.7893623154434376,
+      "dc_12": 0.66278,
+      "over_25": 0.46430501832067383,
+      "under_25": 0.5356949816793262,
+      "over_15": 0.7192,
+      "under_35": 0.7508,
+      "over_35": 0.2492,
+      "btts_y": 0.42060051757673356,
+      "btts_n": 0.5793994824232664,
+      "xg_home": 0.69,
+      "xg_away": 1.84,
+      "combo_label": "X+U3.5",
+      "combo_leg": "U3.5",
+      "combo_prob": 0.7508,
+      "combo_score": 0.2532,
+      "combo_certain": true,
+      "confidence": 0.2296,
+      "raw_confidence": 0.2296,
+      "best_out": "2",
+      "best_val": 0.4521423154434376
+    },
+    "pp": {
+      "pp_i_casa": 3.3,
+      "pp_i_ospite": 10.16,
+      "pp_D": -6.86,
+      "pp_result": "12",
+      "pp_label": "\ud83d\udd00 1-2",
+      "pp_pct": 25.0
+    },
+    "generated_at": "2026-04-22T15:39:23.651322"
+  },
+  {
+    "league": "Primeira Liga",
+    "comp_code": "PPL",
+    "season": "2025/2026",
+    "fixture_id": 545970,
+    "home": "Gil Vicente FC",
+    "away": "Casa Pia AC",
+    "date": "27/04/2026",
+    "time": "20:15",
+    "stage": "REGULAR_SEASON",
+    "matchday": 31,
+    "first_leg": null,
+    "prediction": {
+      "home": 0.40651099415332326,
+      "draw": 0.34890000000000004,
+      "away": 0.2445890058466767,
+      "quantum_used": false,
+      "goals_factor": 0.95,
+      "dc_1x": 0.7554109941533234,
+      "dc_x2": 0.5934890058466767,
+      "dc_12": 0.6511,
+      "over_25": 0.4484686561232474,
+      "under_25": 0.5515313438767526,
+      "over_15": 0.7065,
+      "under_35": 0.764,
+      "over_35": 0.236,
+      "btts_y": 0.43605263937453337,
+      "btts_n": 0.5639473606254666,
+      "xg_home": 1.71,
+      "xg_away": 0.76,
+      "combo_label": "X+U3.5",
+      "combo_leg": "U3.5",
+      "combo_prob": 0.764,
+      "combo_score": 0.2665,
+      "combo_certain": true,
+      "confidence": 0.2333,
+      "raw_confidence": 0.2333,
+      "best_out": "1",
+      "best_val": 0.40651099415332326
+    },
+    "pp": {
+      "pp_i_casa": 5.7,
+      "pp_i_ospite": 0.66,
+      "pp_D": 5.04,
+      "pp_result": "12",
+      "pp_label": "\ud83d\udd00 1-2",
+      "pp_pct": 68.4
+    },
+    "generated_at": "2026-04-22T15:39:23.651423"
   },
   {
     "league": "Championship",
@@ -2697,7 +3197,7 @@
       "pp_label": "\u2696\ufe0f FISSA X",
       "pp_pct": 52.8
     },
-    "generated_at": "2026-04-22T15:28:27.006653"
+    "generated_at": "2026-04-22T15:39:44.328387"
   },
   {
     "league": "Championship",
@@ -2747,7 +3247,7 @@
       "pp_label": "\u2696\ufe0f FISSA X",
       "pp_pct": 53.8
     },
-    "generated_at": "2026-04-22T15:28:27.006889"
+    "generated_at": "2026-04-22T15:39:44.328550"
   },
   {
     "league": "Championship",
@@ -2797,7 +3297,7 @@
       "pp_label": "\ud83d\udd00 1-2",
       "pp_pct": 24.7
     },
-    "generated_at": "2026-04-22T15:28:27.007058"
+    "generated_at": "2026-04-22T15:39:44.328705"
   },
   {
     "league": "Championship",
@@ -2847,7 +3347,7 @@
       "pp_label": "\u2696\ufe0f FISSA X",
       "pp_pct": 46.4
     },
-    "generated_at": "2026-04-22T15:28:27.007217"
+    "generated_at": "2026-04-22T15:39:44.328855"
   },
   {
     "league": "Championship",
@@ -2897,7 +3397,7 @@
       "pp_label": "\ud83d\udd00 1-2",
       "pp_pct": 29.8
     },
-    "generated_at": "2026-04-22T15:28:27.007372"
+    "generated_at": "2026-04-22T15:39:44.329024"
   },
   {
     "league": "Championship",
@@ -2947,7 +3447,7 @@
       "pp_label": "\ud83d\udee1\ufe0f X2",
       "pp_pct": 41.0
     },
-    "generated_at": "2026-04-22T15:28:27.007514"
+    "generated_at": "2026-04-22T15:39:44.329165"
   },
   {
     "league": "Championship",
@@ -2997,7 +3497,7 @@
       "pp_label": "\u2696\ufe0f FISSA X",
       "pp_pct": 52.3
     },
-    "generated_at": "2026-04-22T15:28:27.007658"
+    "generated_at": "2026-04-22T15:39:44.329307"
   },
   {
     "league": "Championship",
@@ -3047,7 +3547,7 @@
       "pp_label": "\u2696\ufe0f FISSA X",
       "pp_pct": 46.0
     },
-    "generated_at": "2026-04-22T15:28:27.007818"
+    "generated_at": "2026-04-22T15:39:44.329445"
   },
   {
     "league": "Championship",
@@ -3097,7 +3597,7 @@
       "pp_label": "\u2696\ufe0f FISSA X",
       "pp_pct": 50.5
     },
-    "generated_at": "2026-04-22T15:28:27.007982"
+    "generated_at": "2026-04-22T15:39:44.329588"
   },
   {
     "league": "Championship",
@@ -3147,6 +3647,6 @@
       "pp_label": "\u2696\ufe0f FISSA X",
       "pp_pct": 47.0
     },
-    "generated_at": "2026-04-22T15:28:27.008133"
+    "generated_at": "2026-04-22T15:39:44.329733"
   }
 ]
