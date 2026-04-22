@@ -473,16 +473,16 @@ export default function App(){
                 </div>
                 {ranked.map((f,i)=>!f.pred?null:(
                   <React.Fragment key={i}><div onClick={()=>setRnkExpanded(rnkExpanded===i?null:i)} style={{display:"grid",gridTemplateColumns:"36px 80px 1fr 1fr 62px 62px 62px 62px 62px 72px 62px",gap:6,padding:"8px 10px",marginBottom:3,cursor:"pointer",borderRadius:9,background:i<3?`${C.cyan}04`:C.card,border:`1px solid ${i<3?C.cyan+"22":C.border}`,alignItems:"center"}}>
-                    <div style={{fontSize:11,color:C.amber}}>{i===0?"🥇":i===1?"🥈":i===2?"🥉":i+1}</div>
-                    <div style={{fontSize:9,color:"#aaa",lineHeight:1.4}}><div style={{fontWeight:600}}>{f.date||"—"}</div><div style={{color:"#555",fontSize:8}}>{f.time||""}</div></div>
-                    <div style={{fontSize:11,fontWeight:700,color:C.cyan,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{f.home}</div>
-                    <div style={{fontSize:11,fontWeight:700,color:C.pink,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{f.away}</div>
-                    <div style={{textAlign:"center",fontSize:11,color:rnkSort==="home"?C.cyan:"#bbb"}}>{pct(f.pred.home)}</div>
-                    <div style={{textAlign:"center",fontSize:11,color:rnkSort==="draw"?C.amber:"#bbb"}}>{pct(f.pred.draw)}</div>
-                    <div style={{textAlign:"center",fontSize:11,color:rnkSort==="away"?C.pink:"#bbb"}}>{pct(f.pred.away)}</div>
-                    <div style={{textAlign:"center",fontSize:11,color:rnkSort==="over"?"#f97316":"#bbb"}}>{pct(f.pred.over25)}</div>
-                    <div style={{textAlign:"center",fontSize:11,color:rnkSort==="btts"?C.green:"#bbb"}}>{pct(f.pred.bttsY)}</div>
-                    <div style={{textAlign:"center",fontSize:10,fontWeight:700,color:confColor(f.pred.conf)}}>{pct(f.pred.conf)}</div>
+                    <div style={{fontSize:14,color:C.amber,fontWeight:700}}>{i===0?"🥇":i===1?"🥈":i===2?"🥉":i+1}</div>
+                    <div style={{fontSize:11,color:"#aaa",lineHeight:1.4}}><div style={{fontWeight:700}}>{f.date||"—"}</div><div style={{color:"#777",fontSize:10}}>{f.time||""}</div></div>
+                    <div style={{fontSize:13,fontWeight:700,color:C.cyan,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{f.home}</div>
+                    <div style={{fontSize:13,fontWeight:700,color:C.pink,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{f.away}</div>
+                    <div style={{textAlign:"center",fontSize:12,color:rnkSort==="home"?C.cyan:"#bbb"}}>{pct(f.pred.home)}</div>
+                    <div style={{textAlign:"center",fontSize:12,color:rnkSort==="draw"?C.amber:"#bbb"}}>{pct(f.pred.draw)}</div>
+                    <div style={{textAlign:"center",fontSize:12,color:rnkSort==="away"?C.pink:"#bbb"}}>{pct(f.pred.away)}</div>
+                    <div style={{textAlign:"center",fontSize:12,color:rnkSort==="over"?"#f97316":"#bbb"}}>{pct(f.pred.over25)}</div>
+                    <div style={{textAlign:"center",fontSize:12,color:rnkSort==="btts"?C.green:"#bbb"}}>{pct(f.pred.bttsY)}</div>
+                    <div style={{textAlign:"center",fontSize:12,fontWeight:700,color:confColor(f.pred.conf)}}>{pct(f.pred.conf)}</div>
                     <div style={{textAlign:"center",fontSize:10,fontWeight:rnkSort==="pp"?900:400,color:rnkSort==="pp"?"#a78bfa":"#555"}}>
                       {f.pred?(()=>{
                         const lbl=ppLabel(f);
@@ -538,21 +538,21 @@ export default function App(){
                 <div key={i} style={{background:C.card,border:`1px solid ${f.signCol}44`,borderRadius:12,padding:14}}>
                   <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",marginBottom:8}}>
                     <div>
-                      <div style={{fontSize:9,color:"#555"}}>{f.league}</div>
-                      <div style={{fontSize:11,color:"#aaa",fontWeight:600}}>{f.date} <span style={{color:"#666",fontSize:10}}>{f.time}</span></div>
+                      <div style={{fontSize:11,color:"#888"}}>{f.league}</div>
+                      <div style={{fontSize:13,color:"#aaa",fontWeight:700}}>{f.date} <span style={{color:"#777",fontSize:11}}>{f.time}</span></div>
                     </div>
                     <div style={{textAlign:"center"}}>
                       <div style={{fontSize:9,color:"#555"}}>SEGNO</div>
-                      <div style={{fontSize:28,fontWeight:900,color:f.signCol,lineHeight:1}}>{f.sign}</div>
-                      <div style={{fontSize:12,fontWeight:700,color:f.signCol}}>{(f.signVal*100).toFixed(1)}%</div>
+                      <div style={{fontSize:32,fontWeight:900,color:f.signCol,lineHeight:1}}>{f.sign}</div>
+                      <div style={{fontSize:14,fontWeight:700,color:f.signCol}}>{(f.signVal*100).toFixed(1)}%</div>
                     </div>
                   </div>
                   <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:10}}>
-                    <span style={{fontSize:13,fontWeight:700,color:C.cyan}}>{f.home}</span>
+                    <span style={{fontSize:14,fontWeight:700,color:C.cyan}}>{f.home}</span>
                     <span style={{fontSize:10,color:"#333"}}>vs</span>
-                    <span style={{fontSize:13,fontWeight:700,color:C.pink}}>{f.away}</span>
+                    <span style={{fontSize:14,fontWeight:700,color:C.pink}}>{f.away}</span>
                   </div>
-                  <div style={{display:"flex",gap:10,flexWrap:"wrap",fontSize:9,marginBottom:8}}>
+                  <div style={{display:"flex",gap:10,flexWrap:"wrap",fontSize:11,marginBottom:8}}>
                     <span>1: <b style={{color:C.cyan}}>{(p.home*100).toFixed(1)}%</b></span>
                     <span>X: <b style={{color:C.amber}}>{(p.draw*100).toFixed(1)}%</b></span>
                     <span>2: <b style={{color:C.pink}}>{(p.away*100).toFixed(1)}%</b></span>
