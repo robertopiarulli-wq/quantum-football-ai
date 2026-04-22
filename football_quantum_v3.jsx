@@ -489,7 +489,7 @@ export default function App(){
                         const sc=ppScore(f);
                         const r=(f.pp&&f.pp.pp_result)||"";
                         const col=r==="1"?C.cyan:r==="2"?C.pink:r==="X"?C.amber:r==="1X"?"#34d399":r==="X2"?"#f97316":r==="12"?"#a78bfa":"#888";
-                        return<span style={{color:col}}><b>{lbl}</b><br/><span style={{fontSize:8,color:"#a78bfa"}}>{(sc*100).toFixed(0)}%</span></span>;
+                        return<span style={{color:col}}><b style={{fontSize:12}}>{lbl}</b><br/><span style={{fontSize:11,color:"#a78bfa",fontWeight:700}}>{(sc*100).toFixed(0)}%</span></span>;
                       })():"—"}
                     </div>
                   </div>
@@ -565,7 +565,7 @@ export default function App(){
                   </div>
                   <div style={{display:"flex",gap:6,flexWrap:"wrap"}}>
                     {p.combo&&<div style={{fontSize:9,color:"#4caf50",background:"#0a2a1a",padding:"2px 8px",borderRadius:4}}>🎯 {p.combo} ({(p.comboP*100).toFixed(0)}%)</div>}
-                    {f.pp&&<div style={{fontSize:9,color:ppCol,background:"rgba(167,139,250,0.06)",padding:"2px 8px",borderRadius:4}}>⚡ {ppLabel(f)} <span style={{color:"#666"}}>({(ppScore(f)*100).toFixed(0)}%)</span></div>}
+                    {f.pp&&<div style={{fontSize:9,color:ppCol,background:"rgba(167,139,250,0.06)",padding:"2px 8px",borderRadius:4}}>⚡ {ppLabel(f)} <span style={{color:"#a78bfa",fontWeight:700,fontSize:11}}>({(ppScore(f)*100).toFixed(0)}%)</span></div>}
                   </div>
                 </div>
               )})}
