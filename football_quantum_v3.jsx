@@ -466,13 +466,13 @@ export default function App(){
             {ranked.length===0&&<div style={{textAlign:"center",padding:60,color:"#333",fontSize:10}}>Nessuna partita — esegui il workflow da GitHub Actions</div>}
             {ranked.length>0&&(
               <div>
-                <div style={{display:"grid",gridTemplateColumns:"36px 80px 1fr 1fr 62px 62px 62px 62px 62px 72px 62px",gap:6,padding:"7px 10px",fontSize:8,color:"#555",letterSpacing:1,borderBottom:"1px solid "+C.border,marginBottom:4}}>
+                <div style={{display:"grid",gridTemplateColumns:"36px 80px 1fr 1fr 62px 62px 62px 62px 62px 72px 62px 70px",gap:6,padding:"7px 10px",fontSize:8,color:"#555",letterSpacing:1,borderBottom:"1px solid "+C.border,marginBottom:4}}>
                   <div>#</div><div style={{fontSize:8,color:"#555"}}>DATA</div><div>CASA</div><div>TRASFERTA</div>
                   <div style={{textAlign:"center"}}>1</div><div style={{textAlign:"center"}}>X</div><div style={{textAlign:"center"}}>2</div>
-                  <div style={{textAlign:"center"}}>O2.5</div><div style={{textAlign:"center"}}>BTTS</div><div style={{textAlign:"center"}}>CONF</div><div style={{textAlign:"center",color:rnkSort==="pp"?"#a78bfa":"#555"}}>PP%</div>
+                  <div style={{textAlign:"center"}}>O2.5</div><div style={{textAlign:"center"}}>BTTS</div><div style={{textAlign:"center"}}>CONF</div><div style={{textAlign:"center",color:rnkSort==="pp"?"#a78bfa":"#555"}}>PP Rank</div><div style={{textAlign:"center",color:"#a78bfa"}}>PP</div>
                 </div>
                 {ranked.map((f,i)=>!f.pred?null:(
-                  <React.Fragment key={i}><div onClick={()=>setRnkExpanded(rnkExpanded===i?null:i)} style={{display:"grid",gridTemplateColumns:"36px 80px 1fr 1fr 62px 62px 62px 62px 62px 72px 62px",gap:6,padding:"8px 10px",marginBottom:3,cursor:"pointer",borderRadius:9,background:i<3?`${C.cyan}04`:C.card,border:`1px solid ${i<3?C.cyan+"22":C.border}`,alignItems:"center"}}>
+                  <React.Fragment key={i}><div onClick={()=>setRnkExpanded(rnkExpanded===i?null:i)} style={{display:"grid",gridTemplateColumns:"36px 80px 1fr 1fr 62px 62px 62px 62px 62px 72px 62px 70px",gap:6,padding:"8px 10px",marginBottom:3,cursor:"pointer",borderRadius:9,background:i<3?`${C.cyan}04`:C.card,border:`1px solid ${i<3?C.cyan+"22":C.border}`,alignItems:"center"}}>
                     <div style={{fontSize:14,color:C.amber,fontWeight:700}}>{i===0?"🥇":i===1?"🥈":i===2?"🥉":i+1}</div>
                     <div style={{fontSize:11,color:"#aaa",lineHeight:1.4}}><div style={{fontWeight:700}}>{f.date||"—"}</div><div style={{color:"#777",fontSize:10}}>{f.time||""}</div></div>
                     <div style={{fontSize:13,fontWeight:700,color:C.cyan,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{f.home}</div>
@@ -490,6 +490,13 @@ export default function App(){
                         const r=(f.pp&&f.pp.pp_result)||"";
                         const col=r==="1"?C.cyan:r==="2"?C.pink:r==="X"?C.amber:r==="1X"?"#34d399":r==="X2"?"#f97316":r==="12"?"#a78bfa":"#888";
                         return<span style={{color:col}}><b style={{fontSize:12}}>{lbl}</b><br/><span style={{fontSize:11,color:"#a78bfa",fontWeight:700}}>{(sc*100).toFixed(0)}%</span></span>;
+                      })():"—"}
+                    </div>
+                    <div style={{textAlign:"center",fontSize:11}}>
+                      {f.pp?(()=>{
+                        const r=f.pp.pp_result||"";
+                        const col=r==="1"?C.cyan:r==="2"?C.pink:r==="X"?C.amber:r==="1X"?"#34d399":r==="X2"?"#f97316":r==="12"?"#a78bfa":"#888";
+                        return<span style={{color:col,fontWeight:700}}>{f.pp.pp_label?.replace(/[🎯🛡️⚖️🔀]/g,"").trim()}<br/><span style={{fontSize:9,color:"#555"}}>{f.pp.pp_D>0?"+":""}{f.pp.pp_D?.toFixed(1)}</span></span>;
                       })():"—"}
                     </div>
                   </div>
