@@ -26,6 +26,7 @@ except Exception:
 #  CONFIG
 # ═══════════════════════════════════════
 FOOTBALL_DATA_KEY = os.getenv("FOOTBALL_DATA_KEY", "")
+ODDS_API_KEY      = os.getenv("ODDS_API_KEY", "")
 TELEGRAM_TOKEN    = os.getenv("TELEGRAM_TOKEN", "")
 TELEGRAM_CHAT     = os.getenv("TELEGRAM_CHAT", "")
 SMTP_HOST         = os.getenv("SMTP_HOST", "smtp.gmail.com")
@@ -305,6 +306,185 @@ class FootballDataFetcher:
             } for row in standings}
         except Exception as e:
             return {}
+
+# ═══════════════════════════════════════
+#  ODDS API — The Odds API (the-odds-api.com)
+#  Scarica quote Pinnacle + Bet365 per calcolo OV Score
+# ═══════════════════════════════════════
+
+# Mappa campionati football-data.org → sport_key The Odds API
+ODDS_SPORT_MAP = {
+    "SA":  "soccer_italy_serie_a",
+    "PL":  "soccer_epl",
+    "PD":  "soccer_spain_la_liga",
+    "BL1": "soccer_germany_bundesliga",
+    "FL1": "soccer_france_ligue_one",
+    "CL":  "soccer_uefa_champs_league",
+    "DED": "soccer_netherlands_eredivisie",
+    "PPL": "soccer_portugal_primeira_liga",
+    "ELC": "soccer_england_efl_champ",
+}
+
+def fetch_odds(comp_code, api_key):
+    """Scarica quote h2h (1X2) da Pinnacle e Bet365 per un campionato."""
+    if not api_key:
+        return {}
+    sport = ODDS_SPORT_MAP.get(comp_code)
+    if not sport:
+        return {}
+    try:
+        time.sleep(2)
+        r = requests.get(
+            f"https://api.the-odds-api.com/v4/sports/{sport}/odds",
+            params={
+                "apiKey":   api_key,
+                "regions":  "eu",
+                "markets":  "h2h",
+                "oddsFormat": "decimal",
+                "bookmakers": "pinnacle,bet365",
+            },
+            timeout=15
+        )
+        remaining = r.headers.get("x-requests-remaining", "?")
+        if r.status_code == 200:
+            print(f"   💰 Odds API: {len(r.json())} partite · {remaining} req rimanenti")
+            return parse_odds(r.json())
+        elif r.status_code == 422:
+            return {}  # Sport non disponibile
+        else:
+            print(f"   ⚠️  Odds API {comp_code}: {r.status_code}")
+            return {}
+    except Exception as e:
+        print(f"   ⚠️  Odds API error: {e}")
+        return {}
+
+def parse_odds(odds_data):
+    """
+    Converte risposta Odds API in mappa:
+    {(home_team, away_team): {pinnacle: {1,X,2}, bet365: {1,X,2}}}
+    """
+    result = {}
+    for game in odds_data:
+        home = game.get("home_team", "")
+        away = game.get("away_team", "")
+        key = (home, away)
+        result[key] = {"pinnacle": {}, "bet365": {}, "commence_time": game.get("commence_time","")}
+        for book in game.get("bookmakers", []):
+            bk = book["key"]
+            if bk not in ("pinnacle", "bet365"):
+                continue
+            for market in book.get("markets", []):
+                if market["key"] != "h2h":
+                    continue
+                for outcome in market.get("outcomes", []):
+                    name = outcome["name"]
+                    price = outcome["price"]
+                    if name == home:
+                        result[key][bk]["1"] = price
+                    elif name == away:
+                        result[key][bk]["2"] = price
+                    else:
+                        result[key][bk]["X"] = price
+    return result
+
+def match_odds_key(hname, aname, odds_map):
+    """Trova la partita nella mappa odds con fuzzy match sui nomi squadra."""
+    # Exact match
+    if (hname, aname) in odds_map:
+        return odds_map[(hname, aname)]
+    # Fuzzy: cerca substring nei nomi
+    hn = hname.lower().split()[:2]
+    an = aname.lower().split()[:2]
+    for (oh, oa), data in odds_map.items():
+        oh_l = oh.lower()
+        oa_l = oa.lower()
+        if any(w in oh_l for w in hn) and any(w in oa_l for w in an):
+            return data
+    return None
+
+def calc_ov_score(pred, odds_data, best_out):
+    """
+    Calcola OV Score (0-100) basato su 4 segnali:
+
+    1. Disallineamento Pinnacle-Bet365 (30%)
+       Bet365 più alta di Pinnacle → value potenziale
+
+    2. Coerenza modello-mercato (25%)
+       Il nostro best_out concorda con la quota più bassa?
+
+    3. Value implicito (25%)
+       La nostra probabilità è > 1/quota Bet365?
+
+    4. Sharp indicator (20%)
+       Pinnacle disponibile = mercato sharp attivo
+    """
+    if not odds_data:
+        return None, {}
+
+    pin = odds_data.get("pinnacle", {})
+    b365 = odds_data.get("bet365", {})
+
+    if not pin and not b365:
+        return None, {}
+
+    details = {
+        "pinnacle_1": pin.get("1"), "pinnacle_X": pin.get("X"), "pinnacle_2": pin.get("2"),
+        "bet365_1":  b365.get("1"), "bet365_X":  b365.get("X"), "bet365_2":  b365.get("2"),
+    }
+
+    # 1. Disallineamento per il nostro best_out
+    score_misalign = 0
+    if pin and b365:
+        p_odd = pin.get(best_out)
+        b_odd = b365.get(best_out)
+        if p_odd and b_odd and p_odd > 0:
+            diff_pct = (b_odd - p_odd) / p_odd
+            # Bet365 > Pinnacle → value (più diff = più value)
+            score_misalign = min(1.0, max(0.0, diff_pct / 0.10))  # 10% diff = max score
+            details["misalign_pct"] = round(diff_pct * 100, 1)
+
+    # 2. Coerenza modello-mercato
+    score_coherence = 0
+    ref_odd = b365 if b365 else pin
+    if ref_odd:
+        # Quota più bassa = favorito del mercato
+        best_market = min(ref_odd.items(), key=lambda x: x[1], default=(None,None))
+        if best_market[0] == best_out:
+            score_coherence = 1.0  # concordano
+        elif best_market[0] in ("1X","X2") or best_out in ("1X","X2"):
+            score_coherence = 0.5  # parzialmente concordano
+        details["market_favorite"] = best_market[0]
+
+    # 3. Value implicito (nostra prob vs quota Bet365)
+    score_value = 0
+    b_odd_best = b365.get(best_out) if b365 else None
+    our_prob = pred.get("home" if best_out=="1" else "away" if best_out=="2" else "draw", 0)
+    if b_odd_best and b_odd_best > 0:
+        implied_prob = 1 / b_odd_best
+        value = our_prob - implied_prob
+        score_value = min(1.0, max(0.0, value / 0.10))  # 10% edge = max
+        details["our_prob"] = round(our_prob * 100, 1)
+        details["implied_prob"] = round(implied_prob * 100, 1)
+        details["value_edge"] = round(value * 100, 1)
+
+    # 4. Sharp indicator (Pinnacle disponibile)
+    score_sharp = 1.0 if pin.get(best_out) else 0.0
+
+    # Composizione finale
+    ov_raw = (score_misalign * 0.30 +
+              score_coherence * 0.25 +
+              score_value    * 0.25 +
+              score_sharp    * 0.20)
+
+    ov_score = round(ov_raw * 100, 1)
+    details["ov_score"] = ov_score
+    details["components"] = {
+        "misalign": round(score_misalign * 30, 1),
+        "coherence": round(score_coherence * 25, 1),
+        "value": round(score_value * 25, 1),
+        "sharp": round(score_sharp * 20, 1),
+    }
+    return ov_score, details
 
 # ═══════════════════════════════════════
 #  ELO DINAMICO
@@ -1076,6 +1256,10 @@ def record_predictions(all_preds, history):
                 "pred_over15":  round(pred.get("over_15", 0), 4),
                 "pred_under35": round(pred.get("under_35", 0), 4),
                 "correct_combo": None,  # da verificare dopo
+                # OV Score — Odds Value
+                "ov_score":    p.get("ov_score"),
+                "ov_edge":     p.get("ov_details", {}).get("value_edge"),
+                "ov_misalign": p.get("ov_details", {}).get("misalign_pct"),
                 # PP Index — modello KPZ/Parisi
                 "pp_result":   p.get("pp", {}).get("pp_result", ""),
                 "pp_label":    p.get("pp", {}).get("pp_label", ""),
@@ -1393,6 +1577,11 @@ def main():
         except Exception as e:
             print(f"   ⚠️  Classifica non disponibile: {e}")
 
+        # ── QUOTE BOOKMAKER (Odds API) ───────────────────────
+        odds_map = {}
+        if ODDS_API_KEY and comp_code in ODDS_SPORT_MAP:
+            odds_map = fetch_odds(comp_code, ODDS_API_KEY)
+
         # ── RISULTATI ANDATA per coppe (knockout) ───────────
         first_leg_map = {}
         knockout_comps = {"CL", "EL", "ECL"}  # coppe europee con doppia sfida
@@ -1435,6 +1624,14 @@ def main():
                                        first_leg=first_leg)
                 pred = full_prediction(feat)
                 pp   = pp_prediction(hname, aname, form_map)
+
+                # OV Score — Odds Value
+                ov_score, ov_details = None, {}
+                odds_data = match_odds_key(hname, aname, odds_map)
+                if odds_data:
+                    ov_score, ov_details = calc_ov_score(
+                        pred, odds_data, pred.get("best_out", "1")
+                    )
                 src_h = feat.get("src_home", "ELO")
                 src_a = feat.get("src_away", "ELO")
                 h_fat = feat.get("h_fatigue_days", 99)
@@ -1453,6 +1650,9 @@ def main():
                 print(f"      1:{pred['home']:.1%} X:{pred['draw']:.1%} 2:{pred['away']:.1%} "
                       f"O2.5:{pred['over_25']:.1%} Conf:{pred['confidence']:.1%}")
                 print(f"      PP: {pp['pp_label']} (I={pp['pp_i_casa']:+.1f}/{pp['pp_i_ospite']:+.1f} D={pp['pp_D']:+.1f} {pp['pp_pct']:.0f}%)")
+                if ov_score is not None:
+                    edge = ov_details.get('value_edge', 0)
+                    print(f"      OV Score: {ov_score:.0f}/100 · Edge: {edge:+.1f}%")
 
                 all_preds.append({
                     "league":       league_name,
@@ -1468,6 +1668,8 @@ def main():
                     "first_leg":    fl if fl else None,
                     "prediction":   pred,
                     "pp":           pp,
+                    "ov_score":     ov_score,
+                    "ov_details":   ov_details,
                     "generated_at": datetime.now().isoformat()
                 })
 
@@ -1660,7 +1862,20 @@ def main():
                 "combo":  pred.get("combo_label", ""),
                 "comboP": round(pred.get("combo_prob", 0), 4),
             },
-            "pp": p.get("pp", {})
+            "pp": p.get("pp", {}),
+            "ov": {
+                "score":    p.get("ov_score"),
+                "pin1":     p.get("ov_details", {}).get("pinnacle_1"),
+                "pinX":     p.get("ov_details", {}).get("pinnacle_X"),
+                "pin2":     p.get("ov_details", {}).get("pinnacle_2"),
+                "b365_1":   p.get("ov_details", {}).get("bet365_1"),
+                "b365_X":   p.get("ov_details", {}).get("bet365_X"),
+                "b365_2":   p.get("ov_details", {}).get("bet365_2"),
+                "edge":     p.get("ov_details", {}).get("value_edge"),
+                "misalign": p.get("ov_details", {}).get("misalign_pct"),
+                "market_fav": p.get("ov_details", {}).get("market_favorite"),
+                "components": p.get("ov_details", {}).get("components", {}),
+            }
         })
 
     with open("fixtures_today.json", "w") as f:
