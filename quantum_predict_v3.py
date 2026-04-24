@@ -340,7 +340,7 @@ def fetch_odds(comp_code, api_key):
             f"https://api.the-odds-api.com/v4/sports/{sport}/odds",
             params={
                 "apiKey":   api_key,
-                "regions":  "eu",
+                "regions":  "eu,uk",
                 "markets":  "h2h",
                 "oddsFormat": "decimal",
                 "bookmakers": "pinnacle,bet365",
@@ -366,6 +366,10 @@ def parse_odds(odds_data):
     {(home_team, away_team): {pinnacle: {1,X,2}, bet365: {1,X,2}}}
     """
     result = {}
+    # Debug: mostra bookmakers disponibili nel primo game
+    if odds_data:
+        books_found = [b["key"] for b in odds_data[0].get("bookmakers", [])]
+        print(f"   📊 Bookmakers disponibili: {books_found}")
     for game in odds_data:
         home = game.get("home_team", "")
         away = game.get("away_team", "")
@@ -568,7 +572,10 @@ def get_odds_history(fixture_id, bookmaker="pinnacle"):
         "order":     "created_at.asc",
         "select":    "odd_home,odd_draw,odd_away,created_at",
     })
-    return result or []
+    rows = result or []
+    if rows:
+        print(f"      📊 Supabase {bookmaker}: {len(rows)} snapshot per fixture {fixture_id}")
+    return rows
 
 def calc_odds_movement(history):
     """
