@@ -677,10 +677,20 @@ export default function App(){
             const bestEv = top[0]==="1"?ev1:top[0]==="2"?ev2:evX;
             const ev_norm = bestEv!=null ? Math.max(0,Math.min(1,(bestEv+0.2)/0.4)) : 0.5;
 
+            // Forza concordanza Poisson-Pinnacle sul segno dominante
+            const topSign = sorted[0][0];
+            const ourBest = topSign==="1"?h:topSign==="2"?a:x;
+            const mktBest = topSign==="1"?nv1:topSign==="2"?nv2:nvX;
+            // Concordanza alta = i due modelli sono vicini sul segno dominante
+            const concordStrength = mktBest!=null
+              ? Math.max(0, 1 - Math.abs(ourBest - mktBest) / Math.max(ourBest, 0.01))
+              : 0.5;
+
             // Score globale combinato
+            // CONF 50% + OV 25% + Concordanza Pinnacle 25%
             const trendBonus = f.ov?.movement_pct!=null
               ? (f.ov.movement_pct<-2?0.05:f.ov.movement_pct>3?-0.03:0) : 0;
-            const score = conf*0.50 + ovScore*0.25 + ev_norm*0.25 + trendBonus;
+            const score = conf*0.50 + ovScore*0.25 + concordStrength*0.25 + trendBonus;
 
             // Label qualità
             const label    = score>=0.75?"TOP":score>=0.65?"GOOD":score>=0.495?"MEDIUM":"AVOID";
