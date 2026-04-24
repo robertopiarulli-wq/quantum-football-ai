@@ -674,7 +674,7 @@ export default function App(){
             const score = conf*0.50 + ovScore*0.25 + ev_norm*0.25 + trendBonus;
 
             // Label qualità
-            const label    = score>=0.75?"TOP":score>=0.65?"GOOD":score>=0.50?"MEDIUM":"AVOID";
+            const label    = score>=0.75?"TOP":score>=0.65?"GOOD":score>=0.495?"MEDIUM":"AVOID";
             const labelCol = label==="TOP"?"#4caf50":label==="GOOD"?"#22d3ee":label==="MEDIUM"?"#f59e0b":"#f87171";
 
             // Flag anomalie
