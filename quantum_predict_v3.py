@@ -1779,10 +1779,12 @@ def main():
                 pp   = pp_prediction(hname, aname, form_map)
 
                 # OV Score — Odds Value
+                # Usa fixture_id per leggere da Supabase (più affidabile del fuzzy match)
                 ov_score, ov_details = None, {}
                 odds_data = match_odds_key(hname, aname, odds_map)
+
+                # Salva in Supabase se fuzzy match ha trovato le quote
                 if odds_data:
-                    # Salva snapshot in Supabase
                     pin = odds_data.get("pinnacle", {})
                     b365 = odds_data.get("bet365", {})
                     if pin and pin.get("1"):
@@ -1797,14 +1799,29 @@ def main():
                             date_str, "bet365",
                             b365.get("1"), b365.get("X"), b365.get("2")
                         )
-                    # Recupera storico Pinnacle per movimento
-                    pin_history = get_odds_history(fid, "pinnacle")
-                    movement = calc_odds_movement(pin_history)
-                    # Calcola OV Score con movimento incluso
+
+                # Leggi sempre da Supabase usando fixture_id — più affidabile
+                pin_rows = get_odds_history(fid, "pinnacle")
+                b365_rows = get_odds_history(fid, "bet365")
+
+                if pin_rows or b365_rows:
+                    # Ricostruisci odds_data da Supabase
+                    def row_to_odds(rows):
+                        if not rows: return {}
+                        last = rows[-1]
+                        return {"1": last.get("odd_home"), "X": last.get("odd_draw"), "2": last.get("odd_away")}
+
+                    odds_data_sb = {
+                        "pinnacle": row_to_odds(pin_rows),
+                        "bet365":   row_to_odds(b365_rows),
+                    }
+                    movement = calc_odds_movement(pin_rows)
                     ov_score, ov_details = calc_ov_score(
-                        pred, odds_data, pred.get("best_out", "1"),
+                        pred, odds_data_sb, pred.get("best_out", "1"),
                         movement=movement
                     )
+                    if ov_score is not None:
+                        print(f"      💰 OV:{ov_score:.0f}/100 · Edge:{ov_details.get('value_edge',0):+.1f}% · Snap:{len(pin_rows)}")
                 src_h = feat.get("src_home", "ELO")
                 src_a = feat.get("src_away", "ELO")
                 h_fat = feat.get("h_fatigue_days", 99)
