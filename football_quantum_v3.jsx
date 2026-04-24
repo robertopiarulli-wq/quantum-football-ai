@@ -673,16 +673,16 @@ export default function App(){
             {/* ── LEGENDA ── */}
             <div style={{background:"rgba(255,255,255,0.02)",border:"1px solid rgba(255,255,255,0.07)",borderRadius:12,padding:"14px 16px",marginBottom:16}}>
               <div style={{fontSize:10,color:"#a78bfa",letterSpacing:2,marginBottom:10,fontWeight:700}}>🧠 COME LEGGERE IL RANKING MULTIPLA</div>
-              <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(220px,1fr))",gap:10,fontSize:9,color:"#888"}}>
-                <div><b style={{color:"#fff"}}>SCORE</b> — Indice combinato (0-1):<br/>CONF×50% + OV×25% + EV×25% + Trend</div>
-                <div><b style={{color:"#fff"}}>EV</b> — Expected Value:<br/>(nostra prob × quota Pinnacle) − 1<br/><span style={{color:"#4caf50"}}>+0.10 = +10% value</span> · <span style={{color:"#f87171"}}>negativo = no bet</span></div>
-                <div><b style={{color:"#fff"}}>CONF</b> — Confidenza modello:<br/>Segnali ELO+form+trend concordi</div>
-                <div><b style={{color:"#fff"}}>OV</b> — Odds Value:<br/>Nostra prob vs Pinnacle no-vig<br/>Alto = vediamo value che il mercato non vede</div>
-                <div><b style={{color:"#fff"}}>PP Rank</b> — Score Poisson × PP:<br/>Somma % segni indicati dal PP Index</div>
-                <div><b style={{color:"#fff"}}>PP D</b> — Distanza KPZ/Parisi:<br/>|D|&gt;8=FISSA · 4-8=1-2 · 2-4=1X/X2 · &lt;2=X</div>
-                <div><b style={{color:"#f87171"}}>⚠️ TRAP</b> — CONF alta + OV basso:<br/>Modello sicuro ma mercato non conferma</div>
-                <div><b style={{color:"#f59e0b"}}>⚡ RISKY</b> — OV alto + CONF bassa:<br/>Value potenziale ma segnale incerto</div>
-                <div><b style={{color:"#4caf50"}}>🔥 SHARP</b> — Quota Pinnacle in calo:<br/>Denaro smart in entrata — segnale forte</div>
+              <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(240px,1fr))",gap:12,fontSize:11,color:"#888"}}>
+                <div><b style={{color:"#fff",fontSize:12}}>SCORE</b><br/>Indice combinato (0-100):<br/>CONF×50% + OV×25% + EV×25% + Trend</div>
+                <div><b style={{color:"#fff",fontSize:12}}>EV</b><br/>Expected Value:<br/>(nostra prob × quota Pinnacle) − 1<br/><span style={{color:"#4caf50"}}>positivo = value bet</span> · <span style={{color:"#f87171"}}>negativo = no bet</span></div>
+                <div><b style={{color:"#fff",fontSize:12}}>CONF</b><br/>Confidenza modello:<br/>Segnali ELO + form + trend concordi</div>
+                <div><b style={{color:"#fff",fontSize:12}}>OV</b><br/>Odds Value vs Pinnacle no-vig:<br/>Alto = vediamo value che il mercato non vede</div>
+                <div><b style={{color:"#fff",fontSize:12}}>PP Rank</b><br/>Score Poisson × PP Index:<br/>Somma % segni indicati dal PP</div>
+                <div><b style={{color:"#fff",fontSize:12}}>PP D</b><br/>Risultato + Distanza KPZ/Parisi:<br/>|D|&gt;8=FISSA · 4-8=1-2 · 2-4=1X/X2 · &lt;2=X</div>
+                <div><b style={{color:"#f87171",fontSize:12}}>⚠️ TRAP</b><br/>CONF alta + OV basso:<br/>Modello sicuro ma mercato non conferma</div>
+                <div><b style={{color:"#f59e0b",fontSize:12}}>⚡ RISKY</b><br/>OV alto + CONF bassa:<br/>Value potenziale ma segnale incerto<br/><span style={{color:"#555",fontSize:10}}>Spesso in campionati difficili (PL, BL1)</span></div>
+                <div><b style={{color:"#4caf50",fontSize:12}}>🔥 SHARP</b><br/>Quota Pinnacle in calo:<br/>Denaro smart in entrata — segnale forte</div>
               </div>
             </div>
 
@@ -699,7 +699,7 @@ export default function App(){
             </div>
 
             {/* ── HEADER TABELLA ── */}
-            <div style={{display:"grid",gridTemplateColumns:"36px 80px 1fr 1fr 60px 70px 60px 60px 70px 70px 80px",gap:6,padding:"6px 10px",fontSize:8,color:"#555",letterSpacing:1,borderBottom:"1px solid rgba(255,255,255,0.07)",marginBottom:4}}>
+            <div style={{display:"grid",gridTemplateColumns:"36px 80px 1fr 1fr 60px 70px 60px 60px 70px 90px 80px",gap:6,padding:"6px 10px",fontSize:9,color:"#555",letterSpacing:1,borderBottom:"1px solid rgba(255,255,255,0.07)",marginBottom:4}}>
               <div>#</div><div>DATA</div><div>CASA</div><div>TRASFERTA</div>
               <div style={{textAlign:"center"}}>SCORE</div>
               <div style={{textAlign:"center"}}>LABEL</div>
@@ -719,12 +719,12 @@ export default function App(){
                 const ppD=pp?.pp_D;
                 const ppDCol=pp?.pp_result==="1"?C.cyan:pp?.pp_result==="2"?C.pink:pp?.pp_result==="X"?C.amber:pp?.pp_result==="1X"?"#34d399":pp?.pp_result==="X2"?"#f97316":"#888";
                 return(
-                <div key={i} style={{display:"grid",gridTemplateColumns:"36px 80px 1fr 1fr 60px 70px 60px 60px 70px 70px 80px",gap:6,padding:"8px 10px",borderRadius:9,background:i<3?`${calc.labelCol}08`:C.card,border:`1px solid ${i<3?calc.labelCol+"33":C.border}`,alignItems:"center",cursor:"pointer"}}
+                <div key={i} style={{display:"grid",gridTemplateColumns:"36px 80px 1fr 1fr 60px 70px 60px 60px 70px 90px 80px",gap:6,padding:"10px 10px",borderRadius:9,background:i<3?`${calc.labelCol}08`:C.card,border:`1px solid ${i<3?calc.labelCol+"33":C.border}`,alignItems:"center",cursor:"pointer"}}
                   onClick={()=>setRnkExpanded(rnkExpanded===i?null:("m"+i))}>
                   <div style={{fontSize:12,color:C.amber,fontWeight:700}}>{i===0?"🥇":i===1?"🥈":i===2?"🥉":i+1}</div>
                   <div style={{fontSize:10,color:"#aaa",lineHeight:1.4,fontWeight:600}}>{f.date||"—"}<br/><span style={{fontSize:9,color:"#555"}}>{f.time||""}</span></div>
-                  <div style={{fontSize:12,fontWeight:700,color:C.cyan,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{f.home}</div>
-                  <div style={{fontSize:12,fontWeight:700,color:C.pink,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{f.away}</div>
+                  <div style={{fontSize:13,fontWeight:700,color:C.cyan,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{f.home}</div>
+                  <div style={{fontSize:13,fontWeight:700,color:C.pink,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{f.away}</div>
                   <div style={{textAlign:"center"}}>
                     <div style={{fontSize:13,fontWeight:900,color:calc.labelCol}}>{(calc.score*100).toFixed(0)}</div>
                     <div style={{fontSize:8,color:"#555"}}>/100</div>
@@ -749,9 +749,14 @@ export default function App(){
                     <div style={{fontSize:9,color:"#a78bfa"}}>{(calc.ppSc*100).toFixed(0)}%</div>
                   </div>
                   <div style={{textAlign:"center"}}>
-                    {pp?.pp_D!=null?(
-                      <span style={{fontSize:11,fontWeight:700,color:ppDCol}}>{ppD>0?"+":""}{ppD?.toFixed(1)}</span>
-                    ):<span style={{color:"#333"}}>—</span>}
+                    {pp?(()=>{
+                      const lbl=pp.pp_label?.replace(/[🎯🛡️⚖️🔀]/g,"").trim()||"—";
+                      const d=pp.pp_D||0;
+                      return<span style={{color:ppDCol}}>
+                        <div style={{fontSize:12,fontWeight:900}}>{lbl}</div>
+                        <div style={{fontSize:10,color:"#a78bfa"}}>{d>0?"+":""}{d.toFixed(1)}</div>
+                      </span>;
+                    })():<span style={{color:"#333"}}>—</span>}
                   </div>
                   <div style={{textAlign:"center",fontSize:10,color:calc.flagCol,fontWeight:700}}>{calc.flag}</div>
                 </div>
