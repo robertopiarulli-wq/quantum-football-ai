@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-04-24T15:01:22.348738",
+  "generated_at": "2026-04-24T15:17:29.972552",
   "date": "24/04/2026",
-  "total": 68,
+  "total": 66,
   "fixtures": [
     {
       "home": "SSC Napoli",
@@ -2409,112 +2409,6 @@
         "misalign": null,
         "market_fav": null,
         "components": {}
-      }
-    },
-    {
-      "home": "Paris Saint-Germain FC",
-      "away": "FC Bayern M\u00fcnchen",
-      "league": "Champions League",
-      "fixture_id": 552092,
-      "date": "28/04/2026",
-      "time": "20:00",
-      "pred": {
-        "home": 0.736,
-        "draw": 0.2163,
-        "away": 0.0478,
-        "dc1x": 0.9522,
-        "dcx2": 0.264,
-        "dc12": 0.7837,
-        "over25": 0.8293,
-        "under25": 0.1707,
-        "bttsY": 0.8023,
-        "bttsN": 0.1977,
-        "xg_h": "2.2",
-        "xg_a": "2.33",
-        "conf": 0.7402,
-        "best": "1",
-        "bestP": 0.736,
-        "combo": "1+O1.5",
-        "comboP": 0.9402
-      },
-      "pp": {
-        "pp_i_casa": 9.9,
-        "pp_i_ospite": 11.18,
-        "pp_D": -1.28,
-        "pp_result": "X",
-        "pp_label": "\u2696\ufe0f FISSA X",
-        "pp_pct": 45.3
-      },
-      "ov": {
-        "score": 35.0,
-        "pin1": 2.27,
-        "pinX": 3.89,
-        "pin2": 2.83,
-        "b365_1": null,
-        "b365_X": null,
-        "b365_2": null,
-        "edge": null,
-        "misalign": null,
-        "market_fav": "1",
-        "components": {
-          "misalign": 0,
-          "coherence": 25.0,
-          "value": 0,
-          "sharp": 20.0
-        }
-      }
-    },
-    {
-      "home": "Club Atl\u00e9tico de Madrid",
-      "away": "Arsenal FC",
-      "league": "Champions League",
-      "fixture_id": 552093,
-      "date": "29/04/2026",
-      "time": "20:00",
-      "pred": {
-        "home": 0.0866,
-        "draw": 0.2169,
-        "away": 0.6965,
-        "dc1x": 0.3035,
-        "dcx2": 0.9134,
-        "dc12": 0.7831,
-        "over25": 0.704,
-        "under25": 0.296,
-        "bttsY": 0.7011,
-        "bttsN": 0.2989,
-        "xg_h": "1.75",
-        "xg_a": "1.89",
-        "conf": 0.7916,
-        "best": "2",
-        "bestP": 0.6965,
-        "combo": "2+O1.5",
-        "comboP": 0.878
-      },
-      "pp": {
-        "pp_i_casa": 8.1,
-        "pp_i_ospite": 11.56,
-        "pp_D": -3.46,
-        "pp_result": "X2",
-        "pp_label": "\ud83d\udee1\ufe0f X2",
-        "pp_pct": 37.4
-      },
-      "ov": {
-        "score": 35.0,
-        "pin1": 2.84,
-        "pinX": 3.31,
-        "pin2": 2.53,
-        "b365_1": null,
-        "b365_X": null,
-        "b365_2": null,
-        "edge": null,
-        "misalign": null,
-        "market_fav": "2",
-        "components": {
-          "misalign": 0,
-          "coherence": 25.0,
-          "value": 0,
-          "sharp": 20.0
-        }
       }
     },
     {
