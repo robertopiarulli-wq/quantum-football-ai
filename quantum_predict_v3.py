@@ -27,6 +27,8 @@ except Exception:
 # ═══════════════════════════════════════
 FOOTBALL_DATA_KEY = os.getenv("FOOTBALL_DATA_KEY", "")
 ODDS_API_KEY      = os.getenv("ODDS_API_KEY", "")
+SUPABASE_URL      = os.getenv("SUPABASE_URL", "")
+SUPABASE_KEY      = os.getenv("SUPABASE_KEY", "")
 TELEGRAM_TOKEN    = os.getenv("TELEGRAM_TOKEN", "")
 TELEGRAM_CHAT     = os.getenv("TELEGRAM_CHAT", "")
 SMTP_HOST         = os.getenv("SMTP_HOST", "smtp.gmail.com")
@@ -402,21 +404,15 @@ def match_odds_key(hname, aname, odds_map):
             return data
     return None
 
-def calc_ov_score(pred, odds_data, best_out):
+def calc_ov_score(pred, odds_data, best_out, movement=None):
     """
-    Calcola OV Score (0-100) basato su 4 segnali:
+    Calcola OV Score (0-100) basato su 5 segnali:
 
-    1. Disallineamento Pinnacle-Bet365 (30%)
-       Bet365 più alta di Pinnacle → value potenziale
-
-    2. Coerenza modello-mercato (25%)
-       Il nostro best_out concorda con la quota più bassa?
-
-    3. Value implicito (25%)
-       La nostra probabilità è > 1/quota Bet365?
-
-    4. Sharp indicator (20%)
-       Pinnacle disponibile = mercato sharp attivo
+    1. Disallineamento Pinnacle-Bet365 (25%)
+    2. Coerenza modello-mercato (20%)
+    3. Value implicito (20%)
+    4. Sharp indicator (15%)
+    5. Sharp movement da Supabase (20%) — quota scende = denaro smart
     """
     if not odds_data:
         return None, {}
@@ -470,11 +466,33 @@ def calc_ov_score(pred, odds_data, best_out):
     # 4. Sharp indicator (Pinnacle disponibile)
     score_sharp = 1.0 if pin.get(best_out) else 0.0
 
-    # Composizione finale
-    ov_raw = (score_misalign * 0.30 +
-              score_coherence * 0.25 +
-              score_value    * 0.25 +
-              score_sharp    * 0.20)
+    # 5. Sharp movement (da Supabase storico)
+    score_movement = 0.0
+    if movement:
+        mv = movement.get("movement_pct", 0)
+        is_sharp = movement.get("is_sharp", False)
+        snapshots = movement.get("snapshots", 0)
+        if snapshots >= 2:
+            if is_sharp:
+                score_movement = 1.0   # forte calo rapido
+            elif mv < -5:
+                score_movement = 0.8   # calo significativo
+            elif mv < -2:
+                score_movement = 0.5   # calo moderato
+            elif mv > 5:
+                score_movement = 0.1   # quota sale = segnale negativo
+            details["movement_pct"] = mv
+            details["is_sharp"] = is_sharp
+            details["snapshots"] = snapshots
+            details["open_home"] = movement.get("open_home")
+            details["close_home"] = movement.get("close_home")
+
+    # Composizione finale con 5 segnali
+    ov_raw = (score_misalign  * 0.25 +
+              score_coherence * 0.20 +
+              score_value     * 0.20 +
+              score_sharp     * 0.15 +
+              score_movement  * 0.20)
 
     ov_score = round(ov_raw * 100, 1)
     details["ov_score"] = ov_score
@@ -485,6 +503,125 @@ def calc_ov_score(pred, odds_data, best_out):
         "sharp": round(score_sharp * 20, 1),
     }
     return ov_score, details
+
+# ═══════════════════════════════════════
+#  SUPABASE — Storico quote per CLV e variazioni
+# ═══════════════════════════════════════
+
+def supabase_request(method, endpoint, data=None, params=None):
+    """Chiamata HTTP diretta a Supabase REST API."""
+    if not SUPABASE_URL or not SUPABASE_KEY:
+        return None
+    headers = {
+        "apikey": SUPABASE_KEY,
+        "Authorization": f"Bearer {SUPABASE_KEY}",
+        "Content-Type": "application/json",
+        "Prefer": "return=representation",
+    }
+    url = f"{SUPABASE_URL}/rest/v1/{endpoint}"
+    try:
+        if method == "GET":
+            r = requests.get(url, headers=headers, params=params, timeout=10)
+        elif method == "POST":
+            r = requests.post(url, headers=headers, json=data, timeout=10)
+        elif method == "PATCH":
+            r = requests.patch(url, headers=headers, json=data, params=params, timeout=10)
+        r.raise_for_status()
+        return r.json() if r.text else []
+    except Exception as e:
+        print(f"   ⚠️  Supabase error: {e}")
+        return None
+
+def save_odds_to_supabase(fixture_id, home, away, league, match_date,
+                           bookmaker, odd_home, odd_draw, odd_away):
+    """Salva snapshot quote in Supabase — una riga per bookmaker per partita."""
+    if not SUPABASE_URL or not SUPABASE_KEY:
+        return
+    # Controlla se esiste già un record per oggi
+    today = datetime.now().strftime("%Y-%m-%d")
+    existing = supabase_request("GET", "odds", params={
+        "match_id": f"eq.{fixture_id}",
+        "bookmaker": f"eq.{bookmaker}",
+        "created_at": f"gte.{today}",
+        "select": "id",
+        "limit": "1",
+    })
+    if existing:
+        return  # già salvato oggi
+
+    supabase_request("POST", "odds", data={
+        "match_id":  fixture_id,
+        "bookmaker": bookmaker,
+        "odd_home":  odd_home,
+        "odd_draw":  odd_draw,
+        "odd_away":  odd_away,
+        "created_at": datetime.now().isoformat(),
+    })
+
+def get_odds_history(fixture_id, bookmaker="pinnacle"):
+    """Recupera storico quote per una partita da Supabase."""
+    if not SUPABASE_URL or not SUPABASE_KEY:
+        return []
+    result = supabase_request("GET", "odds", params={
+        "match_id":  f"eq.{fixture_id}",
+        "bookmaker": f"eq.{bookmaker}",
+        "order":     "created_at.asc",
+        "select":    "odd_home,odd_draw,odd_away,created_at",
+    })
+    return result or []
+
+def calc_odds_movement(history):
+    """
+    Calcola variazione quote nel tempo.
+    Ritorna: {movement_pct, direction, velocity, is_sharp}
+    """
+    if len(history) < 2:
+        return {}
+    first = history[0]
+    last  = history[-1]
+    # Variazione % sulla quota home
+    if first["odd_home"] and first["odd_home"] > 0:
+        move_pct = (last["odd_home"] - first["odd_home"]) / first["odd_home"] * 100
+    else:
+        move_pct = 0
+
+    # Velocità: ore tra prima e ultima rilevazione
+    try:
+        t1 = datetime.fromisoformat(first["created_at"])
+        t2 = datetime.fromisoformat(last["created_at"])
+        hours = max(0.1, (t2 - t1).total_seconds() / 3600)
+        velocity = abs(move_pct) / hours  # % per ora
+    except Exception:
+        velocity = 0
+
+    # Sharp signal: quota scende > 5% in < 24h
+    is_sharp = (move_pct < -5 and hours < 24)
+
+    return {
+        "open_home": first["odd_home"],
+        "open_draw": first["odd_draw"],
+        "open_away": first["odd_away"],
+        "close_home": last["odd_home"],
+        "close_draw": last["odd_draw"],
+        "close_away": last["odd_away"],
+        "movement_pct": round(move_pct, 2),
+        "velocity": round(velocity, 3),
+        "hours_tracked": round(hours, 1),
+        "snapshots": len(history),
+        "is_sharp": is_sharp,
+        "direction": "down" if move_pct < -2 else "up" if move_pct > 2 else "stable",
+    }
+
+def calc_clv(our_prob, closing_odds):
+    """
+    Closing Line Value: nostra prob vs quota di chiusura.
+    Positivo = abbiamo anticipato il mercato.
+    """
+    if not closing_odds or closing_odds <= 0:
+        return None
+    implied = 1 / closing_odds
+    clv = our_prob - implied
+    return round(clv * 100, 2)  # in %
 
 # ═══════════════════════════════════════
 #  ELO DINAMICO
@@ -1260,6 +1397,9 @@ def record_predictions(all_preds, history):
                 "ov_score":    p.get("ov_score"),
                 "ov_edge":     p.get("ov_details", {}).get("value_edge"),
                 "ov_misalign": p.get("ov_details", {}).get("misalign_pct"),
+                "ov_movement": p.get("ov_details", {}).get("movement_pct"),
+                "ov_is_sharp": p.get("ov_details", {}).get("is_sharp"),
+                "clv":         None,  # compilato dopo verifica risultato
                 # PP Index — modello KPZ/Parisi
                 "pp_result":   p.get("pp", {}).get("pp_result", ""),
                 "pp_label":    p.get("pp", {}).get("pp_label", ""),
@@ -1361,6 +1501,19 @@ def verify_results(history, fetcher, competitions):
                         else:
                             p["correct_pp"] = None
                     p["verified_at"] = datetime.now().isoformat()
+                    # CLV — Closing Line Value
+                    if SUPABASE_URL and SUPABASE_KEY:
+                        try:
+                            pin_hist = get_odds_history(fid, "pinnacle")
+                            if pin_hist:
+                                mv = calc_odds_movement(pin_hist)
+                                closing = mv.get("close_home") if outcome=="1" else (mv.get("close_draw") if outcome=="X" else mv.get("close_away"))
+                                our_prob = p.get("pred_home" if outcome=="1" else "pred_draw" if outcome=="X" else "pred_away", 0)
+                                p["clv"] = calc_clv(our_prob, closing)
+                                p["odds_movement_pct"] = mv.get("movement_pct")
+                                p["odds_is_sharp"] = mv.get("is_sharp")
+                        except Exception:
+                            pass
                     verified += 1
                     status = "✅" if p["correct_1x2"] else "❌"
                     print(f"   {status} {p['home']} vs {p['away']}: "
@@ -1629,8 +1782,28 @@ def main():
                 ov_score, ov_details = None, {}
                 odds_data = match_odds_key(hname, aname, odds_map)
                 if odds_data:
+                    # Salva snapshot in Supabase
+                    pin = odds_data.get("pinnacle", {})
+                    b365 = odds_data.get("bet365", {})
+                    if pin and pin.get("1"):
+                        save_odds_to_supabase(
+                            fid, hname, aname, league_name,
+                            date_str, "pinnacle",
+                            pin.get("1"), pin.get("X"), pin.get("2")
+                        )
+                    if b365 and b365.get("1"):
+                        save_odds_to_supabase(
+                            fid, hname, aname, league_name,
+                            date_str, "bet365",
+                            b365.get("1"), b365.get("X"), b365.get("2")
+                        )
+                    # Recupera storico Pinnacle per movimento
+                    pin_history = get_odds_history(fid, "pinnacle")
+                    movement = calc_odds_movement(pin_history)
+                    # Calcola OV Score con movimento incluso
                     ov_score, ov_details = calc_ov_score(
-                        pred, odds_data, pred.get("best_out", "1")
+                        pred, odds_data, pred.get("best_out", "1"),
+                        movement=movement
                     )
                 src_h = feat.get("src_home", "ELO")
                 src_a = feat.get("src_away", "ELO")
