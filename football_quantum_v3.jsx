@@ -620,7 +620,7 @@ export default function App(){
             if(!f.pred) return null;
             const h=f.pred.home||0, x=f.pred.draw||0, a=f.pred.away||0;
             const conf  = f.pred.conf||0;
-            const ovNorm = (f.ov?.score||0)/100;
+            const ovNorm = (f.ov?.score||0)/76;  // normalizzato su max osservato 76
 
             // Quote Pinnacle no-vig
             const nv1 = f.ov?.novig_1!=null ? f.ov.novig_1/100 : null;
@@ -665,10 +665,10 @@ export default function App(){
             // ── SCORE: CONF×0.55 + OV×0.25 + Concordanza×0.10 + EV×0.10 ──
             const trendBonus = f.ov?.movement_pct!=null
               ? (f.ov.movement_pct<-2?0.05:f.ov.movement_pct>3?-0.03:0) : 0;
-            const score = conf*0.55 + ovNorm*0.25 + concordStrength*0.10 + ev_norm*0.10 + trendBonus;
+            const score = conf*0.60 + ovNorm*0.30 + concordStrength*0.10 + trendBonus;
 
             // ── LABEL ───────────────────────────────────────────────
-            const label    = score>=0.75?"TOP":score>=0.65?"GOOD":score>=0.55?"MEDIUM":"AVOID";
+            const label    = score>=0.75?"TOP":score>=0.65?"GOOD":score>=0.50?"MEDIUM":"AVOID";
             const labelCol = label==="TOP"?"#4caf50":label==="GOOD"?"#22d3ee":label==="MEDIUM"?"#f59e0b":"#f87171";
 
             // ── FLAG anomalie ───────────────────────────────────────
@@ -699,7 +699,7 @@ export default function App(){
             <div style={{background:"rgba(255,255,255,0.02)",border:"1px solid rgba(255,255,255,0.07)",borderRadius:12,padding:"14px 16px",marginBottom:16}}>
               <div style={{fontSize:10,color:"#a78bfa",letterSpacing:2,marginBottom:10,fontWeight:700}}>🧠 COME LEGGERE IL RANKING MULTIPLA</div>
               <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(240px,1fr))",gap:12,fontSize:11,color:"#888"}}>
-                <div><b style={{color:"#fff",fontSize:12}}>SCORE</b><br/>Indice combinato (0-100):<br/>CONF×50% + OV×25% + EV×25% + Trend</div>
+                <div><b style={{color:"#fff",fontSize:12}}>SCORE</b><br/>Indice combinato (0-100):<br/>CONF×60% + OV×30% + Concordanza×10%</div>
                 <div><b style={{color:"#fff",fontSize:12}}>EV</b><br/>Expected Value:<br/>(nostra prob × quota Pinnacle) − 1<br/><span style={{color:"#4caf50"}}>positivo = value bet</span> · <span style={{color:"#f87171"}}>negativo = no bet</span></div>
                 <div><b style={{color:"#fff",fontSize:12}}>CONF</b><br/>Confidenza modello:<br/>Segnali ELO + form + trend concordi</div>
                 <div><b style={{color:"#fff",fontSize:12}}>OV</b><br/>Odds Value vs Pinnacle no-vig:<br/>Alto = vediamo value che il mercato non vede</div>
