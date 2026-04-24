@@ -184,6 +184,25 @@ function FixCard({fix,expanded,onToggle}){
               </div>
             </div>
           )}
+          {/* OV Score */}
+          {expanded&&fix.ov&&fix.ov.score!=null&&(
+            <div style={{gridColumn:"1/-1",marginTop:8,padding:"10px 12px",background:"rgba(245,158,11,0.06)",border:"1px solid rgba(245,158,11,0.2)",borderRadius:10}}>
+              <div style={{fontSize:8,color:"#f59e0b",letterSpacing:2,marginBottom:8}}>💰 OV SCORE — ODDS VALUE</div>
+              <div style={{display:"flex",gap:12,alignItems:"center",flexWrap:"wrap"}}>
+                <div style={{textAlign:"center"}}>
+                  <div style={{fontSize:22,fontWeight:900,color:fix.ov.score>=70?"#4caf50":fix.ov.score>=50?"#f59e0b":"#f87171"}}>{fix.ov.score?.toFixed(0)}<span style={{fontSize:10,color:"#555"}}>/100</span></div>
+                </div>
+                <div style={{display:"flex",flexDirection:"column",gap:4,flex:1,fontSize:9}}>
+                  {fix.ov.pin1&&<div><span style={{color:"#555"}}>Pinnacle: </span><b style={{color:"#22d3ee"}}>{fix.ov.pin1} / {fix.ov.pinX} / {fix.ov.pin2}</b></div>}
+                  {fix.ov.b365_1&&<div><span style={{color:"#555"}}>Bet365:   </span><b style={{color:"#f472b6"}}>{fix.ov.b365_1} / {fix.ov.b365_X} / {fix.ov.b365_2}</b></div>}
+                  <div style={{display:"flex",gap:10}}>
+                    {fix.ov.edge!=null&&<span><span style={{color:"#555"}}>Edge: </span><b style={{color:fix.ov.edge>0?"#4caf50":"#f87171"}}>{fix.ov.edge>0?"+":""}{fix.ov.edge?.toFixed(1)}%</b></span>}
+                    {fix.ov.misalign!=null&&<span><span style={{color:"#555"}}>Misalign: </span><b style={{color:"#f59e0b"}}>{fix.ov.misalign?.toFixed(1)}%</b></span>}
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       )}
     </div>
@@ -328,7 +347,7 @@ export default function App(){
   };
   const ranked=useMemo(()=>{
     return[...fixtures].sort((a,b)=>{
-    const v=f=>f.pred?rnkSort==="conf"?f.pred.conf:rnkSort==="home"?f.pred.home:rnkSort==="away"?f.pred.away:rnkSort==="draw"?f.pred.draw:rnkSort==="over"?f.pred.over25:rnkSort==="pp"?ppScore(f):rnkSort==="ppd"?Math.abs(f.pp?.pp_D||0):f.pred.bttsY:0;
+    const v=f=>f.pred?rnkSort==="conf"?f.pred.conf:rnkSort==="home"?f.pred.home:rnkSort==="away"?f.pred.away:rnkSort==="draw"?f.pred.draw:rnkSort==="over"?f.pred.over25:rnkSort==="pp"?ppScore(f):rnkSort==="ppd"?Math.abs(f.pp?.pp_D||0):rnkSort==="ov"?(f.ov?.score||0):f.pred.bttsY:0;
       return v(b)-v(a);
     });
   },[fixtures,rnkSort]);
@@ -459,20 +478,20 @@ export default function App(){
           <div>
             <div style={{display:"flex",gap:8,alignItems:"center",marginBottom:14,flexWrap:"wrap"}}>
               <div style={{fontSize:9,color:"#555",letterSpacing:2}}>ORDINA PER:</div>
-              {[["conf","🎲 Conf"],["home","1️⃣ Casa"],["draw","➖ Pari"],["away","2️⃣ Trasf"],["over","⚽ Over"],["btts","🔁 BTTS"],["pp","⚡ PP Rank"],["ppd","⚡ PP D"]].map(([v,l])=>(
+              {[["conf","🎲 Conf"],["home","1️⃣ Casa"],["draw","➖ Pari"],["away","2️⃣ Trasf"],["over","⚽ Over"],["btts","🔁 BTTS"],["pp","⚡ PP Rank"],["ppd","⚡ PP D"],["ov","💰 OV"]].map(([v,l])=>(
                 <button key={v} onClick={()=>setRnkSort(v)} style={{padding:"5px 11px",borderRadius:99,fontSize:9,cursor:"pointer",border:`1px solid ${rnkSort===v?C.cyan:C.border}`,background:rnkSort===v?`${C.cyan}15`:"transparent",color:rnkSort===v?C.cyan:"#666",fontFamily:"inherit"}}>{l}</button>
               ))}
             </div>
             {ranked.length===0&&<div style={{textAlign:"center",padding:60,color:"#333",fontSize:10}}>Nessuna partita — esegui il workflow da GitHub Actions</div>}
             {ranked.length>0&&(
               <div>
-                <div style={{display:"grid",gridTemplateColumns:"36px 80px 1fr 1fr 62px 62px 62px 62px 62px 72px 62px 70px",gap:6,padding:"7px 10px",fontSize:8,color:"#555",letterSpacing:1,borderBottom:"1px solid "+C.border,marginBottom:4}}>
+                <div style={{display:"grid",gridTemplateColumns:"36px 80px 1fr 1fr 62px 62px 62px 62px 62px 72px 62px 70px 62px",gap:6,padding:"7px 10px",fontSize:8,color:"#555",letterSpacing:1,borderBottom:"1px solid "+C.border,marginBottom:4}}>
                   <div>#</div><div style={{fontSize:8,color:"#555"}}>DATA</div><div>CASA</div><div>TRASFERTA</div>
                   <div style={{textAlign:"center"}}>1</div><div style={{textAlign:"center"}}>X</div><div style={{textAlign:"center"}}>2</div>
-                  <div style={{textAlign:"center"}}>O2.5</div><div style={{textAlign:"center"}}>BTTS</div><div style={{textAlign:"center"}}>CONF</div><div style={{textAlign:"center",color:rnkSort==="pp"?"#a78bfa":"#555"}}>PP Rank</div><div style={{textAlign:"center",color:rnkSort==="ppd"?"#a78bfa":"#555"}}>PP D</div>
+                  <div style={{textAlign:"center"}}>O2.5</div><div style={{textAlign:"center"}}>BTTS</div><div style={{textAlign:"center"}}>CONF</div><div style={{textAlign:"center",color:rnkSort==="pp"?"#a78bfa":"#555"}}>PP Rank</div><div style={{textAlign:"center",color:rnkSort==="ppd"?"#a78bfa":"#555"}}>PP D</div><div style={{textAlign:"center",color:rnkSort==="ov"?"#f59e0b":"#555"}}>OV</div>
                 </div>
                 {ranked.map((f,i)=>!f.pred?null:(
-                  <React.Fragment key={i}><div onClick={()=>setRnkExpanded(rnkExpanded===i?null:i)} style={{display:"grid",gridTemplateColumns:"36px 80px 1fr 1fr 62px 62px 62px 62px 62px 72px 62px 70px",gap:6,padding:"8px 10px",marginBottom:3,cursor:"pointer",borderRadius:9,background:i<3?`${C.cyan}04`:C.card,border:`1px solid ${i<3?C.cyan+"22":C.border}`,alignItems:"center"}}>
+                  <React.Fragment key={i}><div onClick={()=>setRnkExpanded(rnkExpanded===i?null:i)} style={{display:"grid",gridTemplateColumns:"36px 80px 1fr 1fr 62px 62px 62px 62px 62px 72px 62px 70px 62px",gap:6,padding:"8px 10px",marginBottom:3,cursor:"pointer",borderRadius:9,background:i<3?`${C.cyan}04`:C.card,border:`1px solid ${i<3?C.cyan+"22":C.border}`,alignItems:"center"}}>
                     <div style={{fontSize:14,color:C.amber,fontWeight:700}}>{i===0?"🥇":i===1?"🥈":i===2?"🥉":i+1}</div>
                     <div style={{fontSize:11,color:"#aaa",lineHeight:1.4}}><div style={{fontWeight:700}}>{f.date||"—"}</div><div style={{color:"#777",fontSize:10}}>{f.time||""}</div></div>
                     <div style={{fontSize:13,fontWeight:700,color:C.cyan,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{f.home}</div>
@@ -498,6 +517,13 @@ export default function App(){
                         const col=r==="1"?C.cyan:r==="2"?C.pink:r==="X"?C.amber:r==="1X"?"#34d399":r==="X2"?"#f97316":r==="12"?"#a78bfa":"#888";
                         return<span style={{color:col,fontWeight:700}}>{f.pp.pp_label?.replace(/[🎯🛡️⚖️🔀]/g,"").trim()}<br/><span style={{fontSize:9,color:"#555"}}>{f.pp.pp_D>0?"+":""}{f.pp.pp_D?.toFixed(1)}</span></span>;
                       })():"—"}
+                    </div>
+                    <div style={{textAlign:"center",fontSize:11}}>
+                      {f.ov&&f.ov.score!=null?(()=>{
+                        const sc=f.ov.score;
+                        const col=sc>=70?"#4caf50":sc>=50?"#f59e0b":"#f87171";
+                        return<span style={{color:col,fontWeight:700}}>{sc.toFixed(0)}<br/><span style={{fontSize:8,color:"#555"}}>{f.ov.edge!=null?(f.ov.edge>0?"+":"")+f.ov.edge.toFixed(1)+"%":""}</span></span>;
+                      })():<span style={{color:"#333",fontSize:9}}>—</span>}
                     </div>
                   </div>
                   {rnkExpanded===i&&(<div style={{marginBottom:4}}><FixCard fix={f} expanded={true} onToggle={()=>setRnkExpanded(null)}/></div>)}
@@ -572,6 +598,7 @@ export default function App(){
                   </div>
                   <div style={{display:"flex",gap:6,flexWrap:"wrap"}}>
                     {p.combo&&<div style={{fontSize:9,color:"#4caf50",background:"#0a2a1a",padding:"2px 8px",borderRadius:4}}>🎯 {p.combo} ({(p.comboP*100).toFixed(0)}%)</div>}
+                    {f.ov&&f.ov.score!=null&&<div style={{fontSize:9,fontWeight:700,color:f.ov.score>=70?"#4caf50":f.ov.score>=50?"#f59e0b":"#f87171",background:"rgba(245,158,11,0.08)",padding:"2px 8px",borderRadius:4}}>💰 OV {f.ov.score?.toFixed(0)} {f.ov.edge!=null?"("+(f.ov.edge>0?"+":"")+f.ov.edge.toFixed(1)+"%)" : ""}</div>}
                     {f.pp&&<div style={{fontSize:9,color:ppCol,background:"rgba(167,139,250,0.06)",padding:"2px 8px",borderRadius:4}}>⚡ {ppLabel(f)} <span style={{color:"#a78bfa",fontWeight:700,fontSize:11}}>({(ppScore(f)*100).toFixed(0)}%)</span></div>}
                   </div>
                 </div>
