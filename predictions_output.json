@@ -68,7 +68,7 @@
         "liquidity": 5.7
       }
     },
-    "generated_at": "2026-04-24T22:37:28.528217"
+    "generated_at": "2026-04-24T23:00:43.757538"
   },
   {
     "league": "Serie A",
@@ -139,7 +139,7 @@
         "liquidity": 5.8
       }
     },
-    "generated_at": "2026-04-24T22:37:29.672224"
+    "generated_at": "2026-04-24T23:00:44.988196"
   },
   {
     "league": "Serie A",
@@ -210,7 +210,7 @@
         "liquidity": 5.5
       }
     },
-    "generated_at": "2026-04-24T22:37:30.770467"
+    "generated_at": "2026-04-24T23:00:46.059078"
   },
   {
     "league": "Serie A",
@@ -281,7 +281,7 @@
         "liquidity": 4.8
       }
     },
-    "generated_at": "2026-04-24T22:37:31.880211"
+    "generated_at": "2026-04-24T23:00:46.916369"
   },
   {
     "league": "Serie A",
@@ -352,7 +352,7 @@
         "liquidity": 4.8
       }
     },
-    "generated_at": "2026-04-24T22:37:32.934333"
+    "generated_at": "2026-04-24T23:00:47.997232"
   },
   {
     "league": "Serie A",
@@ -404,7 +404,7 @@
     },
     "ov_score": null,
     "ov_details": {},
-    "generated_at": "2026-04-24T22:37:33.471595"
+    "generated_at": "2026-04-24T23:00:48.731744"
   },
   {
     "league": "Serie A",
@@ -475,7 +475,7 @@
         "liquidity": 5.7
       }
     },
-    "generated_at": "2026-04-24T22:37:34.318966"
+    "generated_at": "2026-04-24T23:00:49.806911"
   },
   {
     "league": "Serie A",
@@ -546,7 +546,7 @@
         "liquidity": 5.0
       }
     },
-    "generated_at": "2026-04-24T22:37:34.997748"
+    "generated_at": "2026-04-24T23:00:50.854947"
   },
   {
     "league": "Serie A",
@@ -617,78 +617,7 @@
         "liquidity": 4.9
       }
     },
-    "generated_at": "2026-04-24T22:37:35.461958"
-  },
-  {
-    "league": "Serie A",
-    "comp_code": "SA",
-    "season": "2025/2026",
-    "fixture_id": 537161,
-    "home": "AC Pisa 1909",
-    "away": "US Lecce",
-    "date": "01/05/2026",
-    "time": "19:45",
-    "stage": "REGULAR_SEASON",
-    "matchday": 35,
-    "first_leg": null,
-    "prediction": {
-      "home": 0.3096555248477575,
-      "draw": 0.2359,
-      "away": 0.4544444751522425,
-      "quantum_used": false,
-      "goals_factor": 0.95,
-      "dc_1x": 0.5455555248477575,
-      "dc_x2": 0.6903444751522425,
-      "dc_12": 0.7641,
-      "over_25": 0.2669032045329274,
-      "under_25": 0.7330967954670726,
-      "over_15": 0.5344,
-      "under_35": 0.8928,
-      "over_35": 0.1072,
-      "btts_y": 0.34986859832033085,
-      "btts_n": 0.6501314016796691,
-      "xg_home": 0.91,
-      "xg_away": 0.88,
-      "combo_label": "2+U3.5",
-      "combo_leg": "U3.5",
-      "combo_prob": 0.8928,
-      "combo_score": 0.4057,
-      "combo_certain": true,
-      "confidence": 0.3135,
-      "raw_confidence": 0.3135,
-      "best_out": "2",
-      "best_val": 0.4544444751522425
-    },
-    "pp": {
-      "pp_i_casa": 2.25,
-      "pp_i_ospite": 2.44,
-      "pp_D": -0.19,
-      "pp_result": "X",
-      "pp_label": "\u2696\ufe0f FISSA X",
-      "pp_pct": 49.3
-    },
-    "ov_score": 73.9,
-    "ov_details": {
-      "pinnacle_1": 3.08,
-      "pinnacle_X": 3.15,
-      "pinnacle_2": 2.56,
-      "novig_1": 31.4,
-      "novig_X": 30.7,
-      "novig_2": 37.8,
-      "vig_pct": 3.28,
-      "our_prob": 45.4,
-      "mkt_prob": 37.8,
-      "value_edge": 7.6,
-      "market_favorite": "2",
-      "ov_score": 73.9,
-      "components": {
-        "value": 38.1,
-        "coherence": 30.0,
-        "movement": 0.0,
-        "liquidity": 5.7
-      }
-    },
-    "generated_at": "2026-04-24T22:37:36.517040"
+    "generated_at": "2026-04-24T23:00:51.495219"
   },
   {
     "league": "Premier League",
@@ -759,7 +688,7 @@
         "liquidity": 5.4
       }
     },
-    "generated_at": "2026-04-24T22:37:58.899124"
+    "generated_at": "2026-04-24T23:01:15.140079"
   },
   {
     "league": "Premier League",
@@ -830,7 +759,7 @@
         "liquidity": 3.8
       }
     },
-    "generated_at": "2026-04-24T22:37:59.520183"
+    "generated_at": "2026-04-24T23:01:16.030825"
   },
   {
     "league": "Premier League",
@@ -901,7 +830,7 @@
         "liquidity": 5.4
       }
     },
-    "generated_at": "2026-04-24T22:38:00.184815"
+    "generated_at": "2026-04-24T23:01:16.480122"
   },
   {
     "league": "Premier League",
@@ -972,7 +901,7 @@
         "liquidity": 4.6
       }
     },
-    "generated_at": "2026-04-24T22:38:00.840954"
+    "generated_at": "2026-04-24T23:01:17.338432"
   },
   {
     "league": "Premier League",
@@ -1043,7 +972,7 @@
         "liquidity": 4.7
       }
     },
-    "generated_at": "2026-04-24T22:38:01.341797"
+    "generated_at": "2026-04-24T23:01:17.968390"
   },
   {
     "league": "Premier League",
@@ -1114,7 +1043,7 @@
         "liquidity": 4.9
       }
     },
-    "generated_at": "2026-04-24T22:38:02.235176"
+    "generated_at": "2026-04-24T23:01:18.818147"
   },
   {
     "league": "Premier League",
@@ -1185,7 +1114,7 @@
         "liquidity": 0.0
       }
     },
-    "generated_at": "2026-04-24T22:38:02.712054"
+    "generated_at": "2026-04-24T23:01:19.676618"
   },
   {
     "league": "La Liga",
@@ -1256,7 +1185,7 @@
         "liquidity": 5.5
       }
     },
-    "generated_at": "2026-04-24T22:38:25.052337"
+    "generated_at": "2026-04-24T23:01:42.415043"
   },
   {
     "league": "La Liga",
@@ -1327,7 +1256,7 @@
         "liquidity": 4.8
       }
     },
-    "generated_at": "2026-04-24T22:38:25.707892"
+    "generated_at": "2026-04-24T23:01:42.898297"
   },
   {
     "league": "La Liga",
@@ -1398,7 +1327,7 @@
         "liquidity": 5.3
       }
     },
-    "generated_at": "2026-04-24T22:38:26.218451"
+    "generated_at": "2026-04-24T23:01:43.375252"
   },
   {
     "league": "La Liga",
@@ -1469,7 +1398,7 @@
         "liquidity": 5.3
       }
     },
-    "generated_at": "2026-04-24T22:38:27.077751"
+    "generated_at": "2026-04-24T23:01:44.187643"
   },
   {
     "league": "La Liga",
@@ -1540,7 +1469,7 @@
         "liquidity": 5.9
       }
     },
-    "generated_at": "2026-04-24T22:38:27.569151"
+    "generated_at": "2026-04-24T23:01:44.853283"
   },
   {
     "league": "La Liga",
@@ -1611,7 +1540,7 @@
         "liquidity": 5.1
       }
     },
-    "generated_at": "2026-04-24T22:38:28.043978"
+    "generated_at": "2026-04-24T23:01:45.745026"
   },
   {
     "league": "La Liga",
@@ -1682,7 +1611,7 @@
         "liquidity": 5.3
       }
     },
-    "generated_at": "2026-04-24T22:38:28.876617"
+    "generated_at": "2026-04-24T23:01:46.223568"
   },
   {
     "league": "La Liga",
@@ -1753,7 +1682,7 @@
         "liquidity": 4.7
       }
     },
-    "generated_at": "2026-04-24T22:38:29.369631"
+    "generated_at": "2026-04-24T23:01:46.875974"
   },
   {
     "league": "La Liga",
@@ -1824,78 +1753,7 @@
         "liquidity": 5.6
       }
     },
-    "generated_at": "2026-04-24T22:38:29.866357"
-  },
-  {
-    "league": "La Liga",
-    "comp_code": "PD",
-    "season": "2025/2026",
-    "fixture_id": 544546,
-    "home": "Girona FC",
-    "away": "RCD Mallorca",
-    "date": "01/05/2026",
-    "time": "20:00",
-    "stage": "REGULAR_SEASON",
-    "matchday": 34,
-    "first_leg": null,
-    "prediction": {
-      "home": 0.3722506200522451,
-      "draw": 0.3045400000000001,
-      "away": 0.32320937994775484,
-      "quantum_used": false,
-      "goals_factor": 1.0,
-      "dc_1x": 0.6767906200522451,
-      "dc_x2": 0.6277493799477549,
-      "dc_12": 0.69546,
-      "over_25": 0.5173338360506587,
-      "under_25": 0.48266616394934125,
-      "over_15": 0.7594,
-      "under_35": 0.7041,
-      "over_35": 0.2959,
-      "btts_y": 0.5483660502450266,
-      "btts_n": 0.4516339497549734,
-      "xg_home": 1.56,
-      "xg_away": 1.19,
-      "combo_label": "X+O1.5",
-      "combo_leg": "O1.5",
-      "combo_prob": 0.7594,
-      "combo_score": 0.2313,
-      "combo_certain": true,
-      "confidence": 0.4077,
-      "raw_confidence": 0.4077,
-      "best_out": "X",
-      "best_val": 0.3045400000000001
-    },
-    "pp": {
-      "pp_i_casa": 7.2,
-      "pp_i_ospite": 0.48,
-      "pp_D": 6.72,
-      "pp_result": "12",
-      "pp_label": "\ud83d\udd00 1-2",
-      "pp_pct": 74.5
-    },
-    "ov_score": 41.7,
-    "ov_details": {
-      "pinnacle_1": 1.84,
-      "pinnacle_X": 3.78,
-      "pinnacle_2": 4.08,
-      "novig_1": 51.6,
-      "novig_X": 25.1,
-      "novig_2": 23.3,
-      "vig_pct": 5.31,
-      "our_prob": 30.5,
-      "mkt_prob": 25.1,
-      "value_edge": 5.3,
-      "market_favorite": "1",
-      "ov_score": 41.7,
-      "components": {
-        "value": 26.7,
-        "coherence": 15.0,
-        "movement": 0.0,
-        "liquidity": 0.0
-      }
-    },
-    "generated_at": "2026-04-24T22:38:30.866163"
+    "generated_at": "2026-04-24T23:01:47.746557"
   },
   {
     "league": "Bundesliga",
@@ -1966,7 +1824,7 @@
         "liquidity": 5.6
       }
     },
-    "generated_at": "2026-04-24T22:38:53.155378"
+    "generated_at": "2026-04-24T23:02:10.531755"
   },
   {
     "league": "Bundesliga",
@@ -2037,7 +1895,7 @@
         "liquidity": 5.5
       }
     },
-    "generated_at": "2026-04-24T22:38:53.618125"
+    "generated_at": "2026-04-24T23:02:11.004515"
   },
   {
     "league": "Bundesliga",
@@ -2108,7 +1966,7 @@
         "liquidity": 5.6
       }
     },
-    "generated_at": "2026-04-24T22:38:54.068951"
+    "generated_at": "2026-04-24T23:02:11.502339"
   },
   {
     "league": "Bundesliga",
@@ -2179,7 +2037,7 @@
         "liquidity": 5.3
       }
     },
-    "generated_at": "2026-04-24T22:38:54.722274"
+    "generated_at": "2026-04-24T23:02:12.360268"
   },
   {
     "league": "Bundesliga",
@@ -2250,7 +2108,7 @@
         "liquidity": 5.6
       }
     },
-    "generated_at": "2026-04-24T22:38:55.235820"
+    "generated_at": "2026-04-24T23:02:13.006622"
   },
   {
     "league": "Bundesliga",
@@ -2321,7 +2179,7 @@
         "liquidity": 4.8
       }
     },
-    "generated_at": "2026-04-24T22:38:56.064523"
+    "generated_at": "2026-04-24T23:02:13.490023"
   },
   {
     "league": "Bundesliga",
@@ -2392,7 +2250,7 @@
         "liquidity": 4.0
       }
     },
-    "generated_at": "2026-04-24T22:38:56.577746"
+    "generated_at": "2026-04-24T23:02:13.958055"
   },
   {
     "league": "Bundesliga",
@@ -2463,7 +2321,7 @@
         "liquidity": 4.6
       }
     },
-    "generated_at": "2026-04-24T22:38:57.051907"
+    "generated_at": "2026-04-24T23:02:14.605408"
   },
   {
     "league": "Ligue 1",
@@ -2515,7 +2373,7 @@
     },
     "ov_score": null,
     "ov_details": {},
-    "generated_at": "2026-04-24T22:39:19.310876"
+    "generated_at": "2026-04-24T23:02:36.931741"
   },
   {
     "league": "Ligue 1",
@@ -2586,7 +2444,7 @@
         "liquidity": 2.3
       }
     },
-    "generated_at": "2026-04-24T22:39:19.768671"
+    "generated_at": "2026-04-24T23:02:37.463768"
   },
   {
     "league": "Ligue 1",
@@ -2657,7 +2515,7 @@
         "liquidity": 5.5
       }
     },
-    "generated_at": "2026-04-24T22:39:20.238558"
+    "generated_at": "2026-04-24T23:02:37.986109"
   },
   {
     "league": "Ligue 1",
@@ -2728,7 +2586,7 @@
         "liquidity": 5.7
       }
     },
-    "generated_at": "2026-04-24T22:39:20.713755"
+    "generated_at": "2026-04-24T23:02:38.492436"
   },
   {
     "league": "Ligue 1",
@@ -2799,7 +2657,7 @@
         "liquidity": 0.0
       }
     },
-    "generated_at": "2026-04-24T22:39:21.186636"
+    "generated_at": "2026-04-24T23:02:38.942263"
   },
   {
     "league": "Ligue 1",
@@ -2870,7 +2728,7 @@
         "liquidity": 4.8
       }
     },
-    "generated_at": "2026-04-24T22:39:21.639621"
+    "generated_at": "2026-04-24T23:02:39.408846"
   },
   {
     "league": "Ligue 1",
@@ -2922,7 +2780,7 @@
     },
     "ov_score": null,
     "ov_details": {},
-    "generated_at": "2026-04-24T22:39:21.955398"
+    "generated_at": "2026-04-24T23:02:39.723056"
   },
   {
     "league": "Ligue 1",
@@ -2974,69 +2832,211 @@
     },
     "ov_score": null,
     "ov_details": {},
-    "generated_at": "2026-04-24T22:39:22.248300"
+    "generated_at": "2026-04-24T23:02:40.040549"
   },
   {
-    "league": "Champions League",
-    "comp_code": "CL",
+    "league": "Eredivisie",
+    "comp_code": "DED",
     "season": "2025/2026",
-    "fixture_id": 552092,
-    "home": "Paris Saint-Germain FC",
-    "away": "FC Bayern M\u00fcnchen",
-    "date": "28/04/2026",
-    "time": "20:00",
-    "stage": "SEMI_FINALS",
-    "matchday": 1,
+    "fixture_id": 537712,
+    "home": "Feyenoord Rotterdam",
+    "away": "FC Groningen",
+    "date": "25/04/2026",
+    "time": "15:30",
+    "stage": "REGULAR_SEASON",
+    "matchday": 31,
     "first_leg": null,
     "prediction": {
-      "home": 0.7359541105588767,
-      "draw": 0.21625304817245772,
-      "away": 0.047792841268665516,
+      "home": 0.3532632037894008,
+      "draw": 0.29392,
+      "away": 0.3528167962105992,
       "quantum_used": false,
-      "goals_factor": 1.05,
-      "dc_1x": 0.9522071587313344,
-      "dc_x2": 0.2640458894411232,
-      "dc_12": 0.7837469518275423,
-      "over_25": 0.8292698819982666,
-      "under_25": 0.17073011800173343,
-      "over_15": 0.9402,
-      "under_35": 0.338,
-      "over_35": 0.662,
-      "btts_y": 0.8022883018554887,
-      "btts_n": 0.19771169814451128,
-      "xg_home": 2.2,
-      "xg_away": 2.33,
-      "combo_label": "1+O1.5",
+      "goals_factor": 1.1,
+      "dc_1x": 0.6471832037894008,
+      "dc_x2": 0.6467367962105992,
+      "dc_12": 0.70608,
+      "over_25": 0.6957453211163073,
+      "under_25": 0.30425467888369273,
+      "over_15": 0.8735,
+      "under_35": 0.517,
+      "over_35": 0.483,
+      "btts_y": 0.6776142585216485,
+      "btts_n": 0.32238574147835153,
+      "xg_home": 2.12,
+      "xg_away": 1.47,
+      "combo_label": "X+O1.5",
       "combo_leg": "O1.5",
-      "combo_prob": 0.9402,
-      "combo_score": 0.6919,
+      "combo_prob": 0.8735,
+      "combo_score": 0.2567,
       "combo_certain": true,
-      "confidence": 0.7402,
-      "raw_confidence": 0.7402,
-      "best_out": "1",
-      "best_val": 0.7359541105588767
+      "confidence": 0.3117,
+      "raw_confidence": 0.3117,
+      "best_out": "X",
+      "best_val": 0.29392
     },
     "pp": {
-      "pp_i_casa": 9.9,
-      "pp_i_ospite": 11.18,
-      "pp_D": -1.28,
+      "pp_i_casa": 10.05,
+      "pp_i_ospite": 3.76,
+      "pp_D": 6.29,
+      "pp_result": "12",
+      "pp_label": "\ud83d\udd00 1-2",
+      "pp_pct": 73.0
+    },
+    "ov_score": 56.6,
+    "ov_details": {
+      "pinnacle_1": 1.65,
+      "pinnacle_X": 4.51,
+      "pinnacle_2": 4.6,
+      "novig_1": 58.0,
+      "novig_X": 21.2,
+      "novig_2": 20.8,
+      "vig_pct": 4.52,
+      "our_prob": 29.4,
+      "mkt_prob": 21.2,
+      "value_edge": 8.2,
+      "market_favorite": "1",
+      "ov_score": 56.6,
+      "components": {
+        "value": 40.0,
+        "coherence": 15.0,
+        "movement": 0.0,
+        "liquidity": 1.6
+      }
+    },
+    "generated_at": "2026-04-24T23:03:15.909605"
+  },
+  {
+    "league": "Eredivisie",
+    "comp_code": "DED",
+    "season": "2025/2026",
+    "fixture_id": 537717,
+    "home": "SC Heerenveen",
+    "away": "Fortuna Sittard",
+    "date": "25/04/2026",
+    "time": "17:45",
+    "stage": "REGULAR_SEASON",
+    "matchday": 31,
+    "first_leg": null,
+    "prediction": {
+      "home": 0.504431553616965,
+      "draw": 0.2881,
+      "away": 0.20746844638303497,
+      "quantum_used": false,
+      "goals_factor": 1.1,
+      "dc_1x": 0.792531553616965,
+      "dc_x2": 0.495568446383035,
+      "dc_12": 0.7119,
+      "over_25": 0.7329557119168671,
+      "under_25": 0.26704428808313285,
+      "over_15": 0.8936,
+      "under_35": 0.4711,
+      "over_35": 0.5289,
+      "btts_y": 0.7080746875535366,
+      "btts_n": 0.29192531244646336,
+      "xg_home": 2.24,
+      "xg_away": 1.57,
+      "combo_label": "1+BTTS",
+      "combo_leg": "BTTS",
+      "combo_prob": 0.7081,
+      "combo_score": 0.3572,
+      "combo_certain": true,
+      "confidence": 0.3641,
+      "raw_confidence": 0.3641,
+      "best_out": "1",
+      "best_val": 0.504431553616965
+    },
+    "pp": {
+      "pp_i_casa": 11.25,
+      "pp_i_ospite": 5.02,
+      "pp_D": 6.23,
+      "pp_result": "12",
+      "pp_label": "\ud83d\udd00 1-2",
+      "pp_pct": 72.7
+    },
+    "ov_score": 30.0,
+    "ov_details": {
+      "pinnacle_1": 1.53,
+      "pinnacle_X": 4.72,
+      "pinnacle_2": 5.2,
+      "novig_1": 61.8,
+      "novig_X": 20.0,
+      "novig_2": 18.2,
+      "vig_pct": 5.78,
+      "our_prob": 50.4,
+      "mkt_prob": 61.8,
+      "value_edge": -11.3,
+      "market_favorite": "1",
+      "ov_score": 30.0,
+      "components": {
+        "value": 0.0,
+        "coherence": 30.0,
+        "movement": 0.0,
+        "liquidity": 0.0
+      }
+    },
+    "generated_at": "2026-04-24T23:03:16.398473"
+  },
+  {
+    "league": "Eredivisie",
+    "comp_code": "DED",
+    "season": "2025/2026",
+    "fixture_id": 537715,
+    "home": "NAC Breda",
+    "away": "AFC Ajax",
+    "date": "25/04/2026",
+    "time": "19:00",
+    "stage": "REGULAR_SEASON",
+    "matchday": 31,
+    "first_leg": null,
+    "prediction": {
+      "home": 0.14111012878187415,
+      "draw": 0.27296000000000004,
+      "away": 0.5859298712181258,
+      "quantum_used": false,
+      "goals_factor": 1.1,
+      "dc_1x": 0.4140701287818742,
+      "dc_x2": 0.8588898712181259,
+      "dc_12": 0.7270399999999999,
+      "over_25": 0.6482467611031808,
+      "under_25": 0.3517532388968192,
+      "over_15": 0.846,
+      "under_35": 0.5718,
+      "over_35": 0.4282,
+      "btts_y": 0.6555620290095376,
+      "btts_n": 0.34443797099046236,
+      "xg_home": 1.54,
+      "xg_away": 1.8,
+      "combo_label": "2+BTTS",
+      "combo_leg": "BTTS",
+      "combo_prob": 0.6556,
+      "combo_score": 0.3841,
+      "combo_certain": true,
+      "confidence": 0.385,
+      "raw_confidence": 0.385,
+      "best_out": "2",
+      "best_val": 0.5859298712181258
+    },
+    "pp": {
+      "pp_i_casa": 4.35,
+      "pp_i_ospite": 5.26,
+      "pp_D": -0.91,
       "pp_result": "X",
       "pp_label": "\u2696\ufe0f FISSA X",
-      "pp_pct": 45.3
+      "pp_pct": 46.7
     },
     "ov_score": 70.0,
     "ov_details": {
-      "pinnacle_1": 2.27,
-      "pinnacle_X": 3.89,
-      "pinnacle_2": 2.83,
-      "novig_1": 41.9,
-      "novig_X": 24.5,
-      "novig_2": 33.6,
+      "pinnacle_1": 3.33,
+      "pinnacle_X": 3.77,
+      "pinnacle_2": 2.06,
+      "novig_1": 28.6,
+      "novig_X": 25.2,
+      "novig_2": 46.2,
       "vig_pct": 5.1,
-      "our_prob": 73.6,
-      "mkt_prob": 41.9,
-      "value_edge": 31.7,
-      "market_favorite": "1",
+      "our_prob": 58.6,
+      "mkt_prob": 46.2,
+      "value_edge": 12.4,
+      "market_favorite": "2",
       "ov_score": 70.0,
       "components": {
         "value": 40.0,
@@ -3045,262 +3045,68 @@
         "liquidity": 0.0
       }
     },
-    "generated_at": "2026-04-24T22:39:50.864008"
+    "generated_at": "2026-04-24T23:03:16.880327"
   },
   {
-    "league": "Champions League",
-    "comp_code": "CL",
+    "league": "Eredivisie",
+    "comp_code": "DED",
     "season": "2025/2026",
-    "fixture_id": 552093,
-    "home": "Club Atl\u00e9tico de Madrid",
-    "away": "Arsenal FC",
-    "date": "29/04/2026",
+    "fixture_id": 537719,
+    "home": "FC Twente '65",
+    "away": "NEC",
+    "date": "25/04/2026",
     "time": "20:00",
-    "stage": "SEMI_FINALS",
-    "matchday": 1,
-    "first_leg": null,
-    "prediction": {
-      "home": 0.08656381331950709,
-      "draw": 0.21691999999999997,
-      "away": 0.6965161866804929,
-      "quantum_used": false,
-      "goals_factor": 1.05,
-      "dc_1x": 0.3034838133195071,
-      "dc_x2": 0.9134361866804929,
-      "dc_12": 0.78308,
-      "over_25": 0.7039681217770326,
-      "under_25": 0.2960318782229674,
-      "over_15": 0.878,
-      "under_35": 0.5071,
-      "over_35": 0.4929,
-      "btts_y": 0.7011482028554963,
-      "btts_n": 0.2988517971445037,
-      "xg_home": 1.75,
-      "xg_away": 1.89,
-      "combo_label": "2+O1.5",
-      "combo_leg": "O1.5",
-      "combo_prob": 0.878,
-      "combo_score": 0.6116,
-      "combo_certain": true,
-      "confidence": 0.7916,
-      "raw_confidence": 0.7916,
-      "best_out": "2",
-      "best_val": 0.6965161866804929
-    },
-    "pp": {
-      "pp_i_casa": 8.1,
-      "pp_i_ospite": 11.56,
-      "pp_D": -3.46,
-      "pp_result": "X2",
-      "pp_label": "\ud83d\udee1\ufe0f X2",
-      "pp_pct": 37.4
-    },
-    "ov_score": 70.2,
-    "ov_details": {
-      "pinnacle_1": 2.84,
-      "pinnacle_X": 3.31,
-      "pinnacle_2": 2.53,
-      "novig_1": 33.6,
-      "novig_X": 28.8,
-      "novig_2": 37.7,
-      "vig_pct": 4.95,
-      "our_prob": 69.7,
-      "mkt_prob": 37.7,
-      "value_edge": 32.0,
-      "market_favorite": "2",
-      "ov_score": 70.2,
-      "components": {
-        "value": 40.0,
-        "coherence": 30.0,
-        "movement": 0.0,
-        "liquidity": 0.2
-      }
-    },
-    "generated_at": "2026-04-24T22:39:51.322588"
-  },
-  {
-    "league": "Primeira Liga",
-    "comp_code": "PPL",
-    "season": "2025/2026",
-    "fixture_id": 545971,
-    "home": "CD Tondela",
-    "away": "CD Nacional",
-    "date": "25/04/2026",
-    "time": "15:30",
     "stage": "REGULAR_SEASON",
     "matchday": 31,
     "first_leg": null,
     "prediction": {
-      "home": 0.3235163933765722,
-      "draw": 0.34294,
-      "away": 0.33354360662342786,
+      "home": 0.30724021042275984,
+      "draw": 0.29912000000000005,
+      "away": 0.3936397895772401,
       "quantum_used": false,
-      "goals_factor": 0.95,
-      "dc_1x": 0.6664563933765721,
-      "dc_x2": 0.6764836066234279,
-      "dc_12": 0.65706,
-      "over_25": 0.31297170899400883,
-      "under_25": 0.6870282910059912,
-      "over_15": 0.5835,
-      "under_35": 0.864,
-      "over_35": 0.136,
-      "btts_y": 0.3906443285659428,
-      "btts_n": 0.6093556714340572,
-      "xg_home": 0.98,
-      "xg_away": 0.98,
-      "combo_label": "X+U3.5",
-      "combo_leg": "U3.5",
-      "combo_prob": 0.864,
-      "combo_score": 0.2963,
-      "combo_certain": true,
-      "confidence": 0.165,
-      "raw_confidence": 0.165,
-      "best_out": "X",
-      "best_val": 0.34294
-    },
-    "pp": {
-      "pp_i_casa": 3.0,
-      "pp_i_ospite": 0.42,
-      "pp_D": 2.58,
-      "pp_result": "1X",
-      "pp_label": "\ud83d\udee1\ufe0f 1X",
-      "pp_pct": 59.4
-    },
-    "ov_score": 49.8,
-    "ov_details": {
-      "pinnacle_1": 2.93,
-      "pinnacle_X": 3.43,
-      "pinnacle_2": 2.46,
-      "novig_1": 32.8,
-      "novig_X": 28.1,
-      "novig_2": 39.1,
-      "vig_pct": 3.93,
-      "our_prob": 34.3,
-      "mkt_prob": 28.1,
-      "value_edge": 6.2,
-      "market_favorite": "2",
-      "ov_score": 49.8,
-      "components": {
-        "value": 31.2,
-        "coherence": 15.0,
-        "movement": 0.0,
-        "liquidity": 3.6
-      }
-    },
-    "generated_at": "2026-04-24T22:40:27.553249"
-  },
-  {
-    "league": "Primeira Liga",
-    "comp_code": "PPL",
-    "season": "2025/2026",
-    "fixture_id": 545977,
-    "home": "Sport Lisboa e Benfica",
-    "away": "Moreirense FC",
-    "date": "25/04/2026",
-    "time": "18:00",
-    "stage": "REGULAR_SEASON",
-    "matchday": 31,
-    "first_leg": null,
-    "prediction": {
-      "home": 0.6555313857096509,
-      "draw": 0.2966390371881069,
-      "away": 0.047829577102242324,
-      "quantum_used": false,
-      "goals_factor": 0.95,
-      "dc_1x": 0.9521704228977578,
-      "dc_x2": 0.34446861429034925,
-      "dc_12": 0.7033609628118932,
-      "over_25": 0.48944927677015926,
-      "under_25": 0.5105507232298407,
-      "over_15": 0.7386,
-      "under_35": 0.7291,
-      "over_35": 0.2709,
-      "btts_y": 0.4699178362717906,
-      "btts_n": 0.5300821637282094,
+      "goals_factor": 1.1,
+      "dc_1x": 0.6063602104227599,
+      "dc_x2": 0.6927597895772402,
+      "dc_12": 0.70088,
+      "over_25": 0.6967216279698741,
+      "under_25": 0.30327837203012586,
+      "over_15": 0.874,
+      "under_35": 0.5159,
+      "over_35": 0.4841,
+      "btts_y": 0.6963117714780671,
+      "btts_n": 0.3036882285219329,
       "xg_home": 1.8,
-      "xg_away": 0.83,
-      "combo_label": "1+O1.5",
-      "combo_leg": "O1.5",
-      "combo_prob": 0.7386,
-      "combo_score": 0.4842,
+      "xg_away": 1.8,
+      "combo_label": "X+BTTS",
+      "combo_leg": "BTTS",
+      "combo_prob": 0.6963,
+      "combo_score": 0.2083,
       "combo_certain": true,
-      "confidence": 0.3156,
-      "raw_confidence": 0.3156,
-      "best_out": "1",
-      "best_val": 0.6555313857096509
-    },
-    "pp": {
-      "pp_i_casa": 10.95,
-      "pp_i_ospite": 3.74,
-      "pp_D": 7.21,
-      "pp_result": "12",
-      "pp_label": "\ud83d\udd00 1-2",
-      "pp_pct": 76.3
-    },
-    "ov_score": null,
-    "ov_details": {},
-    "generated_at": "2026-04-24T22:40:27.873005"
-  },
-  {
-    "league": "Primeira Liga",
-    "comp_code": "PPL",
-    "season": "2025/2026",
-    "fixture_id": 545978,
-    "home": "Vit\u00f3ria SC",
-    "away": "Rio Ave FC",
-    "date": "25/04/2026",
-    "time": "20:30",
-    "stage": "REGULAR_SEASON",
-    "matchday": 31,
-    "first_leg": null,
-    "prediction": {
-      "home": 0.25541672203581656,
-      "draw": 0.34080000000000005,
-      "away": 0.4037832779641834,
-      "quantum_used": false,
-      "goals_factor": 0.95,
-      "dc_1x": 0.5962167220358165,
-      "dc_x2": 0.7445832779641834,
-      "dc_12": 0.6592,
-      "over_25": 0.4965266895263196,
-      "under_25": 0.5034733104736804,
-      "over_15": 0.744,
-      "under_35": 0.7229,
-      "over_35": 0.2771,
-      "btts_y": 0.5277571640425941,
-      "btts_n": 0.4722428359574059,
-      "xg_home": 1.55,
-      "xg_away": 1.11,
-      "combo_label": "X+O1.5",
-      "combo_leg": "O1.5",
-      "combo_prob": 0.744,
-      "combo_score": 0.2536,
-      "combo_certain": true,
-      "confidence": 0.2634,
-      "raw_confidence": 0.2634,
+      "confidence": 0.3261,
+      "raw_confidence": 0.3261,
       "best_out": "2",
-      "best_val": 0.4037832779641834
+      "best_val": 0.3936397895772401
     },
     "pp": {
-      "pp_i_casa": 8.4,
-      "pp_i_ospite": 6.7,
-      "pp_D": 1.7,
+      "pp_i_casa": 9.9,
+      "pp_i_ospite": 9.7,
+      "pp_D": 0.2,
       "pp_result": "X",
       "pp_label": "\u2696\ufe0f FISSA X",
-      "pp_pct": 56.2
+      "pp_pct": 50.7
     },
     "ov_score": 55.0,
     "ov_details": {
-      "pinnacle_1": 1.83,
-      "pinnacle_X": 3.34,
-      "pinnacle_2": 4.81,
-      "novig_1": 51.9,
-      "novig_X": 28.4,
-      "novig_2": 19.7,
-      "vig_pct": 5.37,
-      "our_prob": 40.4,
-      "mkt_prob": 19.7,
-      "value_edge": 20.6,
+      "pinnacle_1": 1.93,
+      "pinnacle_X": 4.05,
+      "pinnacle_2": 3.46,
+      "novig_1": 49.2,
+      "novig_X": 23.4,
+      "novig_2": 27.4,
+      "vig_pct": 5.41,
+      "our_prob": 39.4,
+      "mkt_prob": 27.4,
+      "value_edge": 11.9,
       "market_favorite": "1",
       "ov_score": 55.0,
       "components": {
@@ -3310,333 +3116,139 @@
         "liquidity": 0.0
       }
     },
-    "generated_at": "2026-04-24T22:40:28.371259"
+    "generated_at": "2026-04-24T23:03:17.336797"
   },
   {
-    "league": "Primeira Liga",
-    "comp_code": "PPL",
+    "league": "Eredivisie",
+    "comp_code": "DED",
     "season": "2025/2026",
-    "fixture_id": 545974,
-    "home": "GD Estoril Praia",
-    "away": "FC Famalic\u00e3o",
+    "fixture_id": 537711,
+    "home": "SBV Excelsior",
+    "away": "FC Utrecht",
     "date": "26/04/2026",
-    "time": "15:30",
+    "time": "11:15",
     "stage": "REGULAR_SEASON",
     "matchday": 31,
     "first_leg": null,
     "prediction": {
-      "home": 0.21892373697119383,
-      "draw": 0.33558,
-      "away": 0.4454962630288062,
+      "home": 0.17895041270243772,
+      "draw": 0.28580000000000005,
+      "away": 0.5352495872975622,
       "quantum_used": false,
-      "goals_factor": 0.95,
-      "dc_1x": 0.5545037369711938,
-      "dc_x2": 0.7810762630288062,
-      "dc_12": 0.66442,
-      "over_25": 0.4727488173990332,
-      "under_25": 0.5272511826009668,
-      "over_15": 0.7258,
-      "under_35": 0.7436,
-      "over_35": 0.2564,
-      "btts_y": 0.5165916964171884,
-      "btts_n": 0.4834083035828116,
-      "xg_home": 1.42,
-      "xg_away": 1.14,
-      "combo_label": "X+U3.5",
-      "combo_leg": "U3.5",
-      "combo_prob": 0.7436,
-      "combo_score": 0.2495,
+      "goals_factor": 1.1,
+      "dc_1x": 0.4647504127024378,
+      "dc_x2": 0.8210495872975623,
+      "dc_12": 0.7142,
+      "over_25": 0.5612892480159298,
+      "under_25": 0.43871075198407017,
+      "over_15": 0.7904,
+      "under_35": 0.6626,
+      "over_35": 0.3374,
+      "btts_y": 0.588569004660122,
+      "btts_n": 0.41143099533987804,
+      "xg_home": 1.35,
+      "xg_away": 1.58,
+      "combo_label": "2+O1.5",
+      "combo_leg": "O1.5",
+      "combo_prob": 0.7904,
+      "combo_score": 0.4231,
       "combo_certain": true,
-      "confidence": 0.2675,
-      "raw_confidence": 0.2675,
+      "confidence": 0.364,
+      "raw_confidence": 0.364,
       "best_out": "2",
-      "best_val": 0.4454962630288062
+      "best_val": 0.5352495872975622
     },
     "pp": {
-      "pp_i_casa": 3.9,
-      "pp_i_ospite": 5.16,
-      "pp_D": -1.26,
+      "pp_i_casa": 0.45,
+      "pp_i_ospite": 9.0,
+      "pp_D": -8.55,
+      "pp_result": "2",
+      "pp_label": "\ud83c\udfaf FISSA 2",
+      "pp_pct": 18.8
+    },
+    "ov_score": 70.0,
+    "ov_details": {
+      "pinnacle_1": 3.15,
+      "pinnacle_X": 3.56,
+      "pinnacle_2": 2.21,
+      "novig_1": 30.2,
+      "novig_X": 26.7,
+      "novig_2": 43.1,
+      "vig_pct": 5.08,
+      "our_prob": 53.5,
+      "mkt_prob": 43.1,
+      "value_edge": 10.5,
+      "market_favorite": "2",
+      "ov_score": 70.0,
+      "components": {
+        "value": 40.0,
+        "coherence": 30.0,
+        "movement": 0.0,
+        "liquidity": 0.0
+      }
+    },
+    "generated_at": "2026-04-24T23:03:18.048376"
+  },
+  {
+    "league": "Eredivisie",
+    "comp_code": "DED",
+    "season": "2025/2026",
+    "fixture_id": 537714,
+    "home": "Heracles Almelo",
+    "away": "FC Volendam",
+    "date": "26/04/2026",
+    "time": "13:30",
+    "stage": "REGULAR_SEASON",
+    "matchday": 31,
+    "first_leg": null,
+    "prediction": {
+      "home": 0.41006031641588425,
+      "draw": 0.29704,
+      "away": 0.2928996835841157,
+      "quantum_used": false,
+      "goals_factor": 1.1,
+      "dc_1x": 0.7071003164158842,
+      "dc_x2": 0.5899396835841157,
+      "dc_12": 0.70296,
+      "over_25": 0.6621851152969133,
+      "under_25": 0.33781488470308674,
+      "over_15": 0.8543,
+      "under_35": 0.5562,
+      "over_35": 0.4438,
+      "btts_y": 0.658799055776052,
+      "btts_n": 0.341200944223948,
+      "xg_home": 1.95,
+      "xg_away": 1.46,
+      "combo_label": "X+O1.5",
+      "combo_leg": "O1.5",
+      "combo_prob": 0.8543,
+      "combo_score": 0.2538,
+      "combo_certain": true,
+      "confidence": 0.3299,
+      "raw_confidence": 0.3299,
+      "best_out": "1",
+      "best_val": 0.41006031641588425
+    },
+    "pp": {
+      "pp_i_casa": 0.6,
+      "pp_i_ospite": 1.98,
+      "pp_D": -1.38,
       "pp_result": "X",
       "pp_label": "\u2696\ufe0f FISSA X",
-      "pp_pct": 45.4
-    },
-    "ov_score": 39.3,
-    "ov_details": {
-      "pinnacle_1": 3.2,
-      "pinnacle_X": 3.47,
-      "pinnacle_2": 2.23,
-      "novig_1": 29.8,
-      "novig_X": 27.5,
-      "novig_2": 42.7,
-      "vig_pct": 4.91,
-      "our_prob": 44.5,
-      "mkt_prob": 42.7,
-      "value_edge": 1.8,
-      "market_favorite": "2",
-      "ov_score": 39.3,
-      "components": {
-        "value": 9.0,
-        "coherence": 30.0,
-        "movement": 0.0,
-        "liquidity": 0.3
-      }
-    },
-    "generated_at": "2026-04-24T22:40:29.063297"
-  },
-  {
-    "league": "Primeira Liga",
-    "comp_code": "PPL",
-    "season": "2025/2026",
-    "fixture_id": 545972,
-    "home": "CD Santa Clara",
-    "away": "Sporting Clube de Braga",
-    "date": "26/04/2026",
-    "time": "18:00",
-    "stage": "REGULAR_SEASON",
-    "matchday": 31,
-    "first_leg": null,
-    "prediction": {
-      "home": 0.28272178971868156,
-      "draw": 0.34478000000000003,
-      "away": 0.3724982102813184,
-      "quantum_used": false,
-      "goals_factor": 0.95,
-      "dc_1x": 0.6275017897186816,
-      "dc_x2": 0.7172782102813184,
-      "dc_12": 0.6552199999999999,
-      "over_25": 0.3821757026091086,
-      "under_25": 0.6178242973908914,
-      "over_15": 0.6499,
-      "under_35": 0.8158,
-      "over_35": 0.1842,
-      "btts_y": 0.4276881666369505,
-      "btts_n": 0.5723118333630495,
-      "xg_home": 0.85,
-      "xg_away": 1.36,
-      "combo_label": "X+U3.5",
-      "combo_leg": "U3.5",
-      "combo_prob": 0.8158,
-      "combo_score": 0.2813,
-      "combo_certain": true,
-      "confidence": 0.214,
-      "raw_confidence": 0.214,
-      "best_out": "2",
-      "best_val": 0.3724982102813184
-    },
-    "pp": {
-      "pp_i_casa": 4.2,
-      "pp_i_ospite": 10.14,
-      "pp_D": -5.94,
-      "pp_result": "12",
-      "pp_label": "\ud83d\udd00 1-2",
-      "pp_pct": 28.3
-    },
-    "ov_score": null,
-    "ov_details": {},
-    "generated_at": "2026-04-24T22:40:29.391083"
-  },
-  {
-    "league": "Primeira Liga",
-    "comp_code": "PPL",
-    "season": "2025/2026",
-    "fixture_id": 545975,
-    "home": "CF Estrela da Amadora",
-    "away": "FC Porto",
-    "date": "26/04/2026",
-    "time": "18:00",
-    "stage": "REGULAR_SEASON",
-    "matchday": 31,
-    "first_leg": null,
-    "prediction": {
-      "home": 0.05,
-      "draw": 0.3061600000000001,
-      "away": 0.6438399999999999,
-      "quantum_used": false,
-      "goals_factor": 0.95,
-      "dc_1x": 0.3561600000000001,
-      "dc_x2": 0.95,
-      "dc_12": 0.6938399999999999,
-      "over_25": 0.46430501832067383,
-      "under_25": 0.5356949816793262,
-      "over_15": 0.7192,
-      "under_35": 0.7508,
-      "over_35": 0.2492,
-      "btts_y": 0.47379973962361516,
-      "btts_n": 0.5262002603763849,
-      "xg_home": 0.88,
-      "xg_away": 1.65,
-      "combo_label": "2+U3.5",
-      "combo_leg": "U3.5",
-      "combo_prob": 0.7508,
-      "combo_score": 0.4834,
-      "combo_certain": true,
-      "confidence": 0.3148,
-      "raw_confidence": 0.3148,
-      "best_out": "2",
-      "best_val": 0.6438399999999999
-    },
-    "pp": {
-      "pp_i_casa": 5.55,
-      "pp_i_ospite": 8.64,
-      "pp_D": -3.09,
-      "pp_result": "X2",
-      "pp_label": "\ud83d\udee1\ufe0f X2",
-      "pp_pct": 38.7
+      "pp_pct": 45.0
     },
     "ov_score": 30.0,
     "ov_details": {
-      "pinnacle_1": 8.74,
-      "pinnacle_X": 5.2,
-      "pinnacle_2": 1.33,
-      "novig_1": 10.8,
-      "novig_X": 18.2,
-      "novig_2": 71.0,
-      "vig_pct": 5.86,
-      "our_prob": 64.4,
-      "mkt_prob": 71.0,
-      "value_edge": -6.6,
-      "market_favorite": "2",
-      "ov_score": 30.0,
-      "components": {
-        "value": 0.0,
-        "coherence": 30.0,
-        "movement": 0.0,
-        "liquidity": 0.0
-      }
-    },
-    "generated_at": "2026-04-24T22:40:30.049262"
-  },
-  {
-    "league": "Primeira Liga",
-    "comp_code": "PPL",
-    "season": "2025/2026",
-    "fixture_id": 545973,
-    "home": "AVS",
-    "away": "Sporting Clube de Portugal",
-    "date": "26/04/2026",
-    "time": "20:30",
-    "stage": "REGULAR_SEASON",
-    "matchday": 31,
-    "first_leg": null,
-    "prediction": {
-      "home": 0.16063768455656238,
-      "draw": 0.33722,
-      "away": 0.5021423154434377,
-      "quantum_used": false,
-      "goals_factor": 0.95,
-      "dc_1x": 0.49785768455656243,
-      "dc_x2": 0.8393623154434378,
-      "dc_12": 0.66278,
-      "over_25": 0.46430501832067383,
-      "under_25": 0.5356949816793262,
-      "over_15": 0.7192,
-      "under_35": 0.7508,
-      "over_35": 0.2492,
-      "btts_y": 0.42060051757673356,
-      "btts_n": 0.5793994824232664,
-      "xg_home": 0.69,
-      "xg_away": 1.84,
-      "combo_label": "2+U3.5",
-      "combo_leg": "U3.5",
-      "combo_prob": 0.7508,
-      "combo_score": 0.377,
-      "combo_certain": true,
-      "confidence": 0.2792,
-      "raw_confidence": 0.2792,
-      "best_out": "2",
-      "best_val": 0.5021423154434377
-    },
-    "pp": {
-      "pp_i_casa": 3.3,
-      "pp_i_ospite": 10.16,
-      "pp_D": -6.86,
-      "pp_result": "12",
-      "pp_label": "\ud83d\udd00 1-2",
-      "pp_pct": 25.0
-    },
-    "ov_score": 30.0,
-    "ov_details": {
-      "pinnacle_1": 17.98,
-      "pinnacle_X": 11.11,
-      "pinnacle_2": 1.1,
-      "novig_1": 5.3,
-      "novig_X": 8.5,
-      "novig_2": 86.2,
-      "vig_pct": 5.47,
-      "our_prob": 50.2,
-      "mkt_prob": 86.2,
-      "value_edge": -36.0,
-      "market_favorite": "2",
-      "ov_score": 30.0,
-      "components": {
-        "value": 0.0,
-        "coherence": 30.0,
-        "movement": 0.0,
-        "liquidity": 0.0
-      }
-    },
-    "generated_at": "2026-04-24T22:40:30.524301"
-  },
-  {
-    "league": "Primeira Liga",
-    "comp_code": "PPL",
-    "season": "2025/2026",
-    "fixture_id": 545970,
-    "home": "Gil Vicente FC",
-    "away": "Casa Pia AC",
-    "date": "27/04/2026",
-    "time": "20:15",
-    "stage": "REGULAR_SEASON",
-    "matchday": 31,
-    "first_leg": null,
-    "prediction": {
-      "home": 0.47705724072537015,
-      "draw": 0.34612000000000004,
-      "away": 0.17682275927462981,
-      "quantum_used": false,
-      "goals_factor": 0.95,
-      "dc_1x": 0.8231772407253701,
-      "dc_x2": 0.5229427592746299,
-      "dc_12": 0.65388,
-      "over_25": 0.4484686561232474,
-      "under_25": 0.5515313438767526,
-      "over_15": 0.7065,
-      "under_35": 0.764,
-      "over_35": 0.236,
-      "btts_y": 0.43605263937453337,
-      "btts_n": 0.5639473606254666,
-      "xg_home": 1.71,
-      "xg_away": 0.76,
-      "combo_label": "X+U3.5",
-      "combo_leg": "U3.5",
-      "combo_prob": 0.764,
-      "combo_score": 0.2644,
-      "combo_certain": true,
-      "confidence": 0.2335,
-      "raw_confidence": 0.2335,
-      "best_out": "1",
-      "best_val": 0.47705724072537015
-    },
-    "pp": {
-      "pp_i_casa": 5.7,
-      "pp_i_ospite": 0.66,
-      "pp_D": 5.04,
-      "pp_result": "12",
-      "pp_label": "\ud83d\udd00 1-2",
-      "pp_pct": 68.4
-    },
-    "ov_score": 30.0,
-    "ov_details": {
-      "pinnacle_1": 1.58,
-      "pinnacle_X": 3.94,
-      "pinnacle_2": 5.93,
-      "novig_1": 60.0,
-      "novig_X": 24.1,
-      "novig_2": 16.0,
-      "vig_pct": 5.54,
-      "our_prob": 47.7,
-      "mkt_prob": 60.0,
-      "value_edge": -12.3,
+      "pinnacle_1": 2.13,
+      "pinnacle_X": 3.88,
+      "pinnacle_2": 3.09,
+      "novig_1": 44.7,
+      "novig_X": 24.5,
+      "novig_2": 30.8,
+      "vig_pct": 5.08,
+      "our_prob": 41.0,
+      "mkt_prob": 44.7,
+      "value_edge": -3.7,
       "market_favorite": "1",
       "ov_score": 30.0,
       "components": {
@@ -3646,59 +3258,7 @@
         "liquidity": 0.0
       }
     },
-    "generated_at": "2026-04-24T22:40:30.994373"
-  },
-  {
-    "league": "Primeira Liga",
-    "comp_code": "PPL",
-    "season": "2025/2026",
-    "fixture_id": 545933,
-    "home": "Sporting Clube de Portugal",
-    "away": "CD Tondela",
-    "date": "29/04/2026",
-    "time": "20:15",
-    "stage": "REGULAR_SEASON",
-    "matchday": 26,
-    "first_leg": null,
-    "prediction": {
-      "home": 0.5455043165148952,
-      "draw": 0.33488,
-      "away": 0.11961568348510482,
-      "quantum_used": false,
-      "goals_factor": 0.95,
-      "dc_1x": 0.8803843165148952,
-      "dc_x2": 0.45449568348510483,
-      "dc_12": 0.6651199999999999,
-      "over_25": 0.5729904374403777,
-      "under_25": 0.4270095625596223,
-      "over_15": 0.7983,
-      "under_35": 0.651,
-      "over_35": 0.349,
-      "btts_y": 0.4131875362527791,
-      "btts_n": 0.586812463747221,
-      "xg_home": 2.38,
-      "xg_away": 0.61,
-      "combo_label": "1+O1.5",
-      "combo_leg": "O1.5",
-      "combo_prob": 0.7983,
-      "combo_score": 0.4355,
-      "combo_certain": true,
-      "confidence": 0.2841,
-      "raw_confidence": 0.2841,
-      "best_out": "1",
-      "best_val": 0.5455043165148952
-    },
-    "pp": {
-      "pp_i_casa": 9.75,
-      "pp_i_ospite": 2.64,
-      "pp_D": 7.11,
-      "pp_result": "12",
-      "pp_label": "\ud83d\udd00 1-2",
-      "pp_pct": 75.9
-    },
-    "ov_score": null,
-    "ov_details": {},
-    "generated_at": "2026-04-24T22:40:31.662101"
+    "generated_at": "2026-04-24T23:03:18.526259"
   },
   {
     "league": "Championship",
@@ -3750,7 +3310,7 @@
     },
     "ov_score": null,
     "ov_details": {},
-    "generated_at": "2026-04-24T22:40:54.048690"
+    "generated_at": "2026-04-24T23:03:47.839033"
   },
   {
     "league": "Championship",
@@ -3802,7 +3362,7 @@
     },
     "ov_score": null,
     "ov_details": {},
-    "generated_at": "2026-04-24T22:40:54.553024"
+    "generated_at": "2026-04-24T23:03:48.145835"
   },
   {
     "league": "Championship",
@@ -3854,7 +3414,7 @@
     },
     "ov_score": null,
     "ov_details": {},
-    "generated_at": "2026-04-24T22:40:54.861708"
+    "generated_at": "2026-04-24T23:03:48.528227"
   },
   {
     "league": "Championship",
@@ -3906,7 +3466,7 @@
     },
     "ov_score": null,
     "ov_details": {},
-    "generated_at": "2026-04-24T22:40:55.168291"
+    "generated_at": "2026-04-24T23:03:48.825852"
   },
   {
     "league": "Championship",
@@ -3958,7 +3518,7 @@
     },
     "ov_score": null,
     "ov_details": {},
-    "generated_at": "2026-04-24T22:40:55.489622"
+    "generated_at": "2026-04-24T23:03:49.140472"
   },
   {
     "league": "Championship",
@@ -4010,7 +3570,7 @@
     },
     "ov_score": null,
     "ov_details": {},
-    "generated_at": "2026-04-24T22:40:55.987848"
+    "generated_at": "2026-04-24T23:03:49.465908"
   },
   {
     "league": "Championship",
@@ -4062,7 +3622,7 @@
     },
     "ov_score": null,
     "ov_details": {},
-    "generated_at": "2026-04-24T22:40:56.307184"
+    "generated_at": "2026-04-24T23:03:49.809806"
   },
   {
     "league": "Championship",
@@ -4114,7 +3674,7 @@
     },
     "ov_score": null,
     "ov_details": {},
-    "generated_at": "2026-04-24T22:40:56.608973"
+    "generated_at": "2026-04-24T23:03:50.314446"
   },
   {
     "league": "Championship",
@@ -4166,7 +3726,7 @@
     },
     "ov_score": null,
     "ov_details": {},
-    "generated_at": "2026-04-24T22:40:56.938565"
+    "generated_at": "2026-04-24T23:03:51.010463"
   },
   {
     "league": "Championship",
@@ -4218,6 +3778,6 @@
     },
     "ov_score": null,
     "ov_details": {},
-    "generated_at": "2026-04-24T22:40:57.310774"
+    "generated_at": "2026-04-24T23:03:51.324662"
   }
 ]

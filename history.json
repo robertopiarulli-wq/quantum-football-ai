@@ -15177,7 +15177,8 @@
       "correct_1x2": true,
       "correct_over": true,
       "correct_btts": true,
-      "verified_at": "2026-04-24T22:42:18.530248"
+      "verified_at": "2026-04-24T22:42:18.530248",
+      "elo_updated": true
     },
     {
       "fixture_id": "537154",
@@ -15215,7 +15216,8 @@
       "verified_at": "2026-04-24T22:42:26.058869",
       "clv": null,
       "odds_movement_pct": null,
-      "odds_is_sharp": null
+      "odds_is_sharp": null,
+      "elo_updated": true
     },
     {
       "fixture_id": "537153",
@@ -15320,7 +15322,8 @@
       "correct_1x2": true,
       "correct_over": true,
       "correct_btts": true,
-      "verified_at": "2026-04-24T22:42:32.983943"
+      "verified_at": "2026-04-24T22:42:32.983943",
+      "elo_updated": true
     },
     {
       "fixture_id": "545970",
@@ -15677,7 +15680,8 @@
       "verified_at": "2026-04-24T22:42:47.282005",
       "clv": null,
       "odds_movement_pct": null,
-      "odds_is_sharp": null
+      "odds_is_sharp": null,
+      "elo_updated": true
     },
     {
       "fixture_id": "538120",
@@ -17175,7 +17179,8 @@
       "verified_at": "2026-04-24T22:42:40.101907",
       "clv": null,
       "odds_movement_pct": null,
-      "odds_is_sharp": null
+      "odds_is_sharp": null,
+      "elo_updated": true
     },
     {
       "fixture_id": "545977",
@@ -17472,7 +17477,8 @@
       "verified_at": "2026-04-24T22:43:01.105600",
       "clv": null,
       "odds_movement_pct": null,
-      "odds_is_sharp": null
+      "odds_is_sharp": null,
+      "elo_updated": true
     },
     {
       "fixture_id": "544521",
@@ -17768,7 +17774,8 @@
       "correct_1x2": false,
       "correct_over": true,
       "correct_btts": true,
-      "verified_at": "2026-04-24T22:43:08.348469"
+      "verified_at": "2026-04-24T22:43:08.348469",
+      "elo_updated": true
     },
     {
       "fixture_id": "541241",
@@ -18884,5 +18891,5 @@
       "verified_at": null
     }
   ],
-  "last_updated": "2026-04-24T22:43:15.300893"
+  "last_updated": "2026-04-24T23:06:08.338533"
 }
