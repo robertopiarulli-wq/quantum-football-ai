@@ -656,11 +656,16 @@ export default function App(){
             const pinBest = topP[0]==="1"?pin1:topP[0]==="2"?pin2:pinX;
             const bestEv  = pinBest&&pinBest>0 ? (ourBest*pinBest)-1 : null;
 
-            // ── SCORE dal vademecum ─────────────────────────────────
-            // CONF×0.60 + OV×0.30 + Concordanza×0.10
+            // ── EV normalizzato ─────────────────────────────────────
+            // ev>0 → boost (max a EV=25%) | ev<0 → leggera penalità
+            const ev_norm = bestEv!=null
+              ? (bestEv>=0 ? Math.min(1,bestEv/0.25) : Math.max(-0.3,bestEv/0.20))
+              : 0;
+
+            // ── SCORE: CONF×0.55 + OV×0.25 + Concordanza×0.10 + EV×0.10 ──
             const trendBonus = f.ov?.movement_pct!=null
               ? (f.ov.movement_pct<-2?0.05:f.ov.movement_pct>3?-0.03:0) : 0;
-            const score = conf*0.60 + ovNorm*0.30 + concordStrength*0.10 + trendBonus;
+            const score = conf*0.55 + ovNorm*0.25 + concordStrength*0.10 + ev_norm*0.10 + trendBonus;
 
             // ── LABEL ───────────────────────────────────────────────
             const label    = score>=0.75?"TOP":score>=0.65?"GOOD":score>=0.55?"MEDIUM":"AVOID";
