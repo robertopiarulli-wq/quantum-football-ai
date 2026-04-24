@@ -638,10 +638,24 @@ export default function App(){
             const edgeX = nvX!=null ? x-nvX : 0;
             const edge2 = nv2!=null ? a-nv2 : 0;
 
-            // Score per segno = prob*0.5 + edge*0.3 + (ev>0?0.2:0)
-            const s1 = h*0.5 + edge1*0.3 + (ev1!=null&&ev1>0?0.2:0);
-            const sX = x*0.5 + edgeX*0.3 + (evX!=null&&evX>0?0.2:0);
-            const s2 = a*0.5 + edge2*0.3 + (ev2!=null&&ev2>0?0.2:0);
+            // Segno dominante Pinnacle no-vig
+            const mktFav = nv1!=null&&nvX!=null&&nv2!=null
+              ? (nv1>=nvX&&nv1>=nv2?"1":nv2>=nvX&&nv2>=nv1?"2":"X")
+              : null;
+
+            // Score per segno:
+            // prob*0.5 = base Poisson
+            // concordance*0.3 = se Pinnacle concorda sul nostro segno → bonus
+            //   edge<0 ma stesso segno dominante → Pinnacle più convinto di noi → bonus
+            //   edge<0 e segno diverso → Pinnacle vede altro → malus
+            // ev>0*0.2 = value positivo sulla quota
+            const concordance1 = nv1!=null ? (mktFav==="1" ? Math.abs(edge1) : -Math.abs(edge1)*0.5) : 0;
+            const concordanceX = nvX!=null ? (mktFav==="X" ? Math.abs(edgeX) : -Math.abs(edgeX)*0.5) : 0;
+            const concordance2 = nv2!=null ? (mktFav==="2" ? Math.abs(edge2) : -Math.abs(edge2)*0.5) : 0;
+
+            const s1 = h*0.5 + concordance1*0.3 + (ev1!=null&&ev1>0?0.2:0);
+            const sX = x*0.5 + concordanceX*0.3 + (evX!=null&&evX>0?0.2:0);
+            const s2 = a*0.5 + concordance2*0.3 + (ev2!=null&&ev2>0?0.2:0);
 
             // Previsione indipendente basata su score per segno
             const sorted = [["1",s1,ev1],["X",sX,evX],["2",s2,ev2]].sort((a,b)=>b[1]-a[1]);
