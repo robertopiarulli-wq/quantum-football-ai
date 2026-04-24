@@ -35,6 +35,7 @@ jobs:
           SMTP_USER: ${{ secrets.SMTP_USER }}
           SMTP_PASS: ${{ secrets.SMTP_PASS }}
           SMTP_TO: ${{ secrets.SMTP_TO }}
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
         run: python quantum_predict_v3.py
 
       - name: Commit risultati nel repo
