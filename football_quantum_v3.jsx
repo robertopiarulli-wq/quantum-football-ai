@@ -619,93 +619,63 @@ export default function App(){
           const calcMultipla = f => {
             if(!f.pred) return null;
             const h=f.pred.home||0, x=f.pred.draw||0, a=f.pred.away||0;
-            const conf = (f.pred.conf||0);
-            const ovScore = (f.ov?.score||0)/100;
+            const conf  = f.pred.conf||0;
+            const ovNorm = (f.ov?.score||0)/100;
 
-            // Quote Pinnacle no-vig per ogni segno
+            // Quote Pinnacle no-vig
+            const nv1 = f.ov?.novig_1!=null ? f.ov.novig_1/100 : null;
+            const nvX = f.ov?.novig_X!=null ? f.ov.novig_X/100 : null;
+            const nv2 = f.ov?.novig_2!=null ? f.ov.novig_2/100 : null;
             const pin1=f.ov?.pin1, pinX=f.ov?.pinX, pin2=f.ov?.pin2;
-            const nv1=f.ov?.novig_1!=null?f.ov.novig_1/100:null;
-            const nvX=f.ov?.novig_X!=null?f.ov.novig_X/100:null;
-            const nv2=f.ov?.novig_2!=null?f.ov.novig_2/100:null;
 
-            // EV per segno = (nostra prob * quota Pinnacle) - 1
-            const ev1 = pin1&&pin1>0 ? (h*pin1)-1 : null;
-            const evX = pinX&&pinX>0 ? (x*pinX)-1 : null;
-            const ev2 = pin2&&pin2>0 ? (a*pin2)-1 : null;
-
-            // Value edge per segno = nostra prob - no-vig Pinnacle
-            const edge1 = nv1!=null ? h-nv1 : 0;
-            const edgeX = nvX!=null ? x-nvX : 0;
-            const edge2 = nv2!=null ? a-nv2 : 0;
-
-            // Segno dominante Pinnacle no-vig
-            const mktFav = nv1!=null&&nvX!=null&&nv2!=null
-              ? (nv1>=nvX&&nv1>=nv2?"1":nv2>=nvX&&nv2>=nv1?"2":"X")
-              : null;
-
-            // Score per segno — logica concordanza:
-            // Poisson 65% + Pinnacle 35% se concordano sullo stesso segno
-            // Solo Poisson 65% se discordano (nessun malus — Pinnacle è info, non penalità)
-            // Quando concordano: Pinnacle RINFORZA il segno (anche se edge<0)
-            const W_P=0.65, W_M=0.35;
-            const s1 = mktFav==="1"&&nv1!=null ? h*W_P+nv1*W_M : h*W_P;
-            const sX = mktFav==="X"&&nvX!=null ? x*W_P+nvX*W_M : x*W_P;
-            const s2 = mktFav==="2"&&nv2!=null ? a*W_P+nv2*W_M : a*W_P;
-
-            // Previsione indipendente basata su score per segno
-            const sorted = [["1",s1,ev1],["X",sX,evX],["2",s2,ev2]].sort((a,b)=>b[1]-a[1]);
-            const top=sorted[0], sec=sorted[1];
-            const gap = top[1]-sec[1];
-
+            // ── PREVISIONE: solo Poisson puro ──────────────────────
+            const sortedP = [["1",h],["X",x],["2",a]].sort((a,b)=>b[1]-a[1]);
+            const topP=sortedP[0], secP=sortedP[1];
+            const gapP = topP[1]-secP[1];
             let pred_sign, pred_col;
-            if(gap > 0.08){
-              // Segno nettamente dominante → FISSA
-              pred_sign = top[0]==="1"?"FISSA 1":top[0]==="2"?"FISSA 2":"FISSA X";
-              pred_col  = top[0]==="1"?"#22d3ee":top[0]==="2"?"#f472b6":"#f59e0b";
-            } else if(gap > 0.03){
-              // Due segni vicini → DOPPIA
-              const pair = [top[0],sec[0]].sort().join("");
-              pred_sign = pair==="12"?"1-2":pair==="1X"?"1X":pair==="X2"?"X2":"1-2";
-              pred_col  = pair==="12"?"#a78bfa":pair==="1X"?"#34d399":"#f97316";
+            if(gapP > 0.20){
+              pred_sign = "FISSA "+topP[0];
+              pred_col  = topP[0]==="1"?C.cyan:topP[0]==="2"?C.pink:C.amber;
             } else {
-              // Quasi pareggio tra tutti → doppia più probabile
-              pred_sign = top[0]==="X"?(s1>s2?"1X":"X2"):"1-2";
-              pred_col  = "#888";
+              const pair=[topP[0],secP[0]].sort().join("");
+              pred_sign = pair==="12"?"1-2":pair==="1X"?"1X":"X2";
+              pred_col  = pair==="12"?"#a78bfa":pair==="1X"?"#34d399":"#f97316";
             }
 
-            // EV del segno con prob più alta (non distorce la previsione)
-            const bestEv = top[0]==="1"?ev1:top[0]==="2"?ev2:evX;
-            const ev_norm = bestEv!=null ? Math.max(0,Math.min(1,(bestEv+0.2)/0.4)) : 0.5;
+            // ── CONCORDANZA Poisson-Pinnacle ────────────────────────
+            // Pinnacle rinforza il segno dominante se concorda
+            const mktFav = nv1!=null&&nvX!=null&&nv2!=null
+              ? (nv1>=nvX&&nv1>=nv2?"1":nv2>=nvX?"2":"X") : null;
+            const ourBest = topP[0]==="1"?h:topP[0]==="2"?a:x;
+            const mktBest = topP[0]==="1"?nv1:topP[0]==="2"?nv2:nvX;
+            const concordStrength = mktFav===topP[0]&&mktBest!=null
+              ? Math.max(0,1-Math.abs(ourBest-mktBest)/Math.max(ourBest,0.01))
+              : 0.3;
 
-            // Forza concordanza Poisson-Pinnacle sul segno dominante
-            const topSign = sorted[0][0];
-            const ourBest = topSign==="1"?h:topSign==="2"?a:x;
-            const mktBest = topSign==="1"?nv1:topSign==="2"?nv2:nvX;
-            // Concordanza alta = i due modelli sono vicini sul segno dominante
-            const concordStrength = mktBest!=null
-              ? Math.max(0, 1 - Math.abs(ourBest - mktBest) / Math.max(ourBest, 0.01))
-              : 0.5;
+            // ── EV sul segno dominante ──────────────────────────────
+            const pinBest = topP[0]==="1"?pin1:topP[0]==="2"?pin2:pinX;
+            const bestEv  = pinBest&&pinBest>0 ? (ourBest*pinBest)-1 : null;
 
-            // Score globale combinato
-            // CONF 50% + OV 25% + Concordanza Pinnacle 25%
+            // ── SCORE dal vademecum ─────────────────────────────────
+            // CONF×0.60 + OV×0.30 + Concordanza×0.10
             const trendBonus = f.ov?.movement_pct!=null
               ? (f.ov.movement_pct<-2?0.05:f.ov.movement_pct>3?-0.03:0) : 0;
-            const score = conf*0.50 + ovScore*0.25 + concordStrength*0.25 + trendBonus;
+            const score = conf*0.60 + ovNorm*0.30 + concordStrength*0.10 + trendBonus;
 
-            // Label qualità
-            const label    = score>=0.75?"TOP":score>=0.65?"GOOD":score>=0.495?"MEDIUM":"AVOID";
+            // ── LABEL ───────────────────────────────────────────────
+            const label    = score>=0.75?"TOP":score>=0.65?"GOOD":score>=0.55?"MEDIUM":"AVOID";
             const labelCol = label==="TOP"?"#4caf50":label==="GOOD"?"#22d3ee":label==="MEDIUM"?"#f59e0b":"#f87171";
 
-            // Flag anomalie
+            // ── FLAG anomalie ───────────────────────────────────────
             let flag="—", flagCol="#555";
-            if(conf>0.60 && (f.ov?.score||0)<40){flag="⚠️ TRAP";flagCol="#f87171";}
+            if(conf>0.60&&(f.ov?.score||0)<40){flag="⚠️ TRAP";flagCol="#f87171";}
             else if((f.ov?.score||0)>65&&conf<0.40){flag="⚡ RISKY";flagCol="#f59e0b";}
             else if(f.ov?.movement_pct!=null&&f.ov.movement_pct<-5){flag="🔥 SHARP";flagCol="#4caf50";}
+            else if(mktFav&&mktFav!==topP[0]){flag="⚡ DISCORDA";flagCol="#f59e0b";}
 
-            return {score, label, labelCol, flag, flagCol,
-                    pred_sign, pred_col, bestEv,
-                    ev1, evX, ev2, edge1, edgeX, edge2,
-                    ppSc:ppScore(f), conf};
+            return {score,label,labelCol,flag,flagCol,
+                    pred_sign,pred_col,bestEv,concordStrength,mktFav,
+                    ppSc:ppScore(f),conf};
           };
 
           // Calcola e ordina
@@ -786,7 +756,7 @@ export default function App(){
                     <span style={{fontSize:10,fontWeight:700,color:calc.labelCol,background:`${calc.labelCol}15`,padding:"2px 8px",borderRadius:4}}>{calc.label}</span>
                   </div>
                   <div style={{textAlign:"center"}}>
-                    {calc.bestEv!==null?(
+                    {calc.bestEv!=null?(
                       <span style={{fontSize:11,fontWeight:700,color:calc.bestEv>0?"#4caf50":"#f87171"}}>
                         {calc.bestEv>0?"+":""}{(calc.bestEv*100).toFixed(1)}%
                       </span>
