@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-04-24T13:58:03.665163",
+  "generated_at": "2026-04-24T14:15:31.777613",
   "date": "24/04/2026",
-  "total": 74,
+  "total": 64,
   "fixtures": [
     {
       "home": "SSC Napoli",
@@ -38,10 +38,10 @@
         "pp_pct": 67.4
       },
       "ov": {
-        "score": 45.0,
-        "pin1": 1.4,
-        "pinX": 4.8,
-        "pin2": 8.9,
+        "score": 35.0,
+        "pin1": 1.39,
+        "pinX": 4.84,
+        "pin2": 9.02,
         "b365_1": null,
         "b365_X": null,
         "b365_2": null,
@@ -91,7 +91,7 @@
         "pp_pct": 64.1
       },
       "ov": {
-        "score": 45.0,
+        "score": 35.0,
         "pin1": 2.13,
         "pinX": 3.28,
         "pin2": 3.87,
@@ -144,7 +144,7 @@
         "pp_pct": 59.1
       },
       "ov": {
-        "score": 45.0,
+        "score": 35.0,
         "pin1": 3.32,
         "pinX": 3.23,
         "pin2": 2.37,
@@ -197,10 +197,10 @@
         "pp_pct": 41.1
       },
       "ov": {
-        "score": 20.0,
-        "pin1": 2.71,
+        "score": 15.0,
+        "pin1": 2.74,
         "pinX": 3.09,
-        "pin2": 2.94,
+        "pin2": 2.9,
         "b365_1": null,
         "b365_X": null,
         "b365_2": null,
@@ -250,7 +250,7 @@
         "pp_pct": 50.3
       },
       "ov": {
-        "score": 45.0,
+        "score": 35.0,
         "pin1": 1.96,
         "pinX": 3.34,
         "pin2": 4.42,
@@ -303,7 +303,7 @@
         "pp_pct": 51.8
       },
       "ov": {
-        "score": 20.0,
+        "score": 15.0,
         "pin1": 4.45,
         "pinX": 3.7,
         "pin2": 1.85,
@@ -404,7 +404,7 @@
         "pp_pct": 33.2
       },
       "ov": {
-        "score": 20.0,
+        "score": 15.0,
         "pin1": 3.08,
         "pinX": 3.15,
         "pin2": 2.56,
@@ -457,7 +457,7 @@
         "pp_pct": 31.6
       },
       "ov": {
-        "score": 45.0,
+        "score": 35.0,
         "pin1": 4.49,
         "pinX": 3.85,
         "pin2": 1.81,
@@ -510,7 +510,7 @@
         "pp_pct": 52.3
       },
       "ov": {
-        "score": 45.0,
+        "score": 35.0,
         "pin1": 2.04,
         "pinX": 3.32,
         "pin2": 4.1,
@@ -563,10 +563,10 @@
         "pp_pct": 41.3
       },
       "ov": {
-        "score": 45.0,
-        "pin1": 2.81,
+        "score": 35.0,
+        "pin1": 2.82,
         "pinX": 3.24,
-        "pin2": 2.75,
+        "pin2": 2.74,
         "b365_1": null,
         "b365_X": null,
         "b365_2": null,
@@ -616,10 +616,10 @@
         "pp_pct": 60.2
       },
       "ov": {
-        "score": 45.0,
-        "pin1": 2.79,
-        "pinX": 3.58,
-        "pin2": 2.53,
+        "score": 35.0,
+        "pin1": 2.78,
+        "pinX": 3.59,
+        "pin2": 2.54,
         "b365_1": null,
         "b365_X": null,
         "b365_2": null,
@@ -669,10 +669,10 @@
         "pp_pct": 60.5
       },
       "ov": {
-        "score": 45.0,
+        "score": 35.0,
         "pin1": 1.47,
-        "pinX": 4.96,
-        "pin2": 6.5,
+        "pinX": 4.92,
+        "pin2": 6.45,
         "b365_1": null,
         "b365_X": null,
         "b365_2": null,
@@ -722,7 +722,7 @@
         "pp_pct": 52.8
       },
       "ov": {
-        "score": 45.0,
+        "score": 35.0,
         "pin1": 2.4,
         "pinX": 3.4,
         "pin2": 3.11,
@@ -775,10 +775,10 @@
         "pp_pct": 61.9
       },
       "ov": {
-        "score": 45.0,
-        "pin1": 4.5,
-        "pinX": 4.35,
-        "pin2": 1.71,
+        "score": 35.0,
+        "pin1": 4.54,
+        "pinX": 4.39,
+        "pin2": 1.7,
         "b365_1": null,
         "b365_X": null,
         "b365_2": null,
@@ -828,7 +828,7 @@
         "pp_pct": 59.6
       },
       "ov": {
-        "score": 45.0,
+        "score": 35.0,
         "pin1": 1.49,
         "pinX": 4.83,
         "pin2": 6.34,
@@ -881,7 +881,7 @@
         "pp_pct": 52.3
       },
       "ov": {
-        "score": 45.0,
+        "score": 35.0,
         "pin1": 1.88,
         "pinX": 3.91,
         "pin2": 4.04,
@@ -934,7 +934,7 @@
         "pp_pct": 58.0
       },
       "ov": {
-        "score": 45.0,
+        "score": 35.0,
         "pin1": 1.46,
         "pinX": 4.6,
         "pin2": 6.48,
@@ -987,9 +987,9 @@
         "pp_pct": 40.8
       },
       "ov": {
-        "score": 45.0,
-        "pin1": 3.79,
-        "pinX": 4.1,
+        "score": 35.0,
+        "pin1": 3.8,
+        "pinX": 4.11,
         "pin2": 1.92,
         "b365_1": null,
         "b365_X": null,
@@ -1040,7 +1040,7 @@
         "pp_pct": 64.7
       },
       "ov": {
-        "score": 20.0,
+        "score": 15.0,
         "pin1": 2.18,
         "pinX": 3.15,
         "pin2": 3.87,
@@ -1093,7 +1093,7 @@
         "pp_pct": 49.3
       },
       "ov": {
-        "score": 45.0,
+        "score": 35.0,
         "pin1": 5.31,
         "pinX": 3.97,
         "pin2": 1.68,
@@ -1146,7 +1146,7 @@
         "pp_pct": 61.5
       },
       "ov": {
-        "score": 20.0,
+        "score": 15.0,
         "pin1": 2.14,
         "pinX": 3.45,
         "pin2": 3.61,
@@ -1199,7 +1199,7 @@
         "pp_pct": 65.0
       },
       "ov": {
-        "score": 45.0,
+        "score": 35.0,
         "pin1": 2.1,
         "pinX": 3.78,
         "pin2": 3.41,
@@ -1225,21 +1225,21 @@
       "date": "26/04/2026",
       "time": "13:00",
       "pred": {
-        "home": 0.4471,
-        "draw": 0.3085,
-        "away": 0.2445,
-        "dc1x": 0.7555,
-        "dcx2": 0.5529,
-        "dc12": 0.6915,
+        "home": 0.4683,
+        "draw": 0.3056,
+        "away": 0.2261,
+        "dc1x": 0.7739,
+        "dcx2": 0.5317,
+        "dc12": 0.6944,
         "over25": 0.396,
         "under25": 0.604,
         "bttsY": 0.4441,
         "bttsN": 0.5559,
         "xg_h": "1.36",
         "xg_a": "0.91",
-        "conf": 0.4116,
+        "conf": 0.4204,
         "best": "1",
-        "bestP": 0.4471,
+        "bestP": 0.4683,
         "combo": "X+U3.5",
         "comboP": 0.8054
       },
@@ -1252,7 +1252,7 @@
         "pp_pct": 68.0
       },
       "ov": {
-        "score": 45.0,
+        "score": 35.0,
         "pin1": 2.71,
         "pinX": 3.38,
         "pin2": 2.72,
@@ -1278,21 +1278,21 @@
       "date": "26/04/2026",
       "time": "15:15",
       "pred": {
-        "home": 0.4476,
-        "draw": 0.3066,
-        "away": 0.2458,
-        "dc1x": 0.7542,
-        "dcx2": 0.5524,
-        "dc12": 0.6934,
+        "home": 0.4509,
+        "draw": 0.3062,
+        "away": 0.2429,
+        "dc1x": 0.7571,
+        "dcx2": 0.5491,
+        "dc12": 0.6938,
         "over25": 0.3826,
         "under25": 0.6174,
         "bttsY": 0.4394,
         "bttsN": 0.5606,
         "xg_h": "1.28",
         "xg_a": "0.94",
-        "conf": 0.4175,
+        "conf": 0.4189,
         "best": "1",
-        "bestP": 0.4476,
+        "bestP": 0.4509,
         "combo": "X+U3.5",
         "comboP": 0.8154
       },
@@ -1305,7 +1305,7 @@
         "pp_pct": 66.6
       },
       "ov": {
-        "score": 45.0,
+        "score": 35.0,
         "pin1": 2.33,
         "pinX": 3.63,
         "pin2": 3.03,
@@ -1331,21 +1331,21 @@
       "date": "26/04/2026",
       "time": "17:30",
       "pred": {
-        "home": 0.3507,
-        "draw": 0.2961,
-        "away": 0.3532,
-        "dc1x": 0.6468,
-        "dcx2": 0.6493,
-        "dc12": 0.7039,
+        "home": 0.3744,
+        "draw": 0.2996,
+        "away": 0.326,
+        "dc1x": 0.674,
+        "dcx2": 0.6256,
+        "dc12": 0.7004,
         "over25": 0.5609,
         "under25": 0.4391,
         "bttsY": 0.5643,
         "bttsN": 0.4357,
         "xg_h": "1.8",
         "xg_a": "1.12",
-        "conf": 0.2363,
+        "conf": 0.3761,
         "best": "X",
-        "bestP": 0.2961,
+        "bestP": 0.2996,
         "combo": "X+O1.5",
         "comboP": 0.7901
       },
@@ -1358,7 +1358,7 @@
         "pp_pct": 63.5
       },
       "ov": {
-        "score": 20.0,
+        "score": 15.0,
         "pin1": 2.07,
         "pinX": 3.49,
         "pin2": 3.78,
@@ -1384,21 +1384,21 @@
       "date": "26/04/2026",
       "time": "20:00",
       "pred": {
-        "home": 0.5941,
-        "draw": 0.2888,
-        "away": 0.1171,
-        "dc1x": 0.8829,
-        "dcx2": 0.4059,
-        "dc12": 0.7112,
+        "home": 0.5912,
+        "draw": 0.2893,
+        "away": 0.1195,
+        "dc1x": 0.8805,
+        "dcx2": 0.4088,
+        "dc12": 0.7107,
         "over25": 0.5198,
         "under25": 0.4802,
         "bttsY": 0.5382,
         "bttsN": 0.4618,
         "xg_h": "1.67",
         "xg_a": "1.09",
-        "conf": 0.476,
+        "conf": 0.4748,
         "best": "1",
-        "bestP": 0.5941,
+        "bestP": 0.5912,
         "combo": "1+O1.5",
         "comboP": 0.7611
       },
@@ -1411,7 +1411,7 @@
         "pp_pct": 59.6
       },
       "ov": {
-        "score": 45.0,
+        "score": 35.0,
         "pin1": 2.05,
         "pinX": 3.37,
         "pin2": 3.98,
@@ -1437,21 +1437,21 @@
       "date": "27/04/2026",
       "time": "20:00",
       "pred": {
-        "home": 0.3034,
-        "draw": 0.2991,
-        "away": 0.3975,
-        "dc1x": 0.6025,
-        "dcx2": 0.6966,
-        "dc12": 0.7009,
+        "home": 0.2605,
+        "draw": 0.2927,
+        "away": 0.4469,
+        "dc1x": 0.5531,
+        "dcx2": 0.7395,
+        "dc12": 0.7073,
         "over25": 0.4903,
         "under25": 0.5097,
         "bttsY": 0.5343,
         "bttsN": 0.4657,
         "xg_h": "1.4",
         "xg_a": "1.23",
-        "conf": 0.2631,
+        "conf": 0.2837,
         "best": "2",
-        "bestP": 0.3975,
+        "bestP": 0.4469,
         "combo": "X+O1.5",
         "comboP": 0.7393
       },
@@ -1464,7 +1464,7 @@
         "pp_pct": 53.2
       },
       "ov": {
-        "score": 20.0,
+        "score": 15.0,
         "pin1": 2.07,
         "pinX": 3.32,
         "pin2": 4.02,
@@ -1565,7 +1565,7 @@
         "pp_pct": 26.1
       },
       "ov": {
-        "score": 20.0,
+        "score": 15.0,
         "pin1": 2.39,
         "pinX": 3.46,
         "pin2": 3.07,
@@ -1618,10 +1618,10 @@
         "pp_pct": 40.9
       },
       "ov": {
-        "score": 45.0,
+        "score": 35.0,
         "pin1": 3.78,
-        "pinX": 4.04,
-        "pin2": 1.91,
+        "pinX": 4.03,
+        "pin2": 1.92,
         "b365_1": null,
         "b365_X": null,
         "b365_2": null,
@@ -1671,7 +1671,7 @@
         "pp_pct": 61.1
       },
       "ov": {
-        "score": 20.0,
+        "score": 15.0,
         "pin1": 2.58,
         "pinX": 3.83,
         "pin2": 2.6,
@@ -1724,7 +1724,7 @@
         "pp_pct": 46.0
       },
       "ov": {
-        "score": 20.0,
+        "score": 15.0,
         "pin1": 2.28,
         "pinX": 3.68,
         "pin2": 3.09,
@@ -1777,7 +1777,7 @@
         "pp_pct": 56.5
       },
       "ov": {
-        "score": 45.0,
+        "score": 35.0,
         "pin1": 2.39,
         "pinX": 3.46,
         "pin2": 3.07,
@@ -1830,7 +1830,7 @@
         "pp_pct": 46.8
       },
       "ov": {
-        "score": 45.0,
+        "score": 35.0,
         "pin1": 4.01,
         "pinX": 4.28,
         "pin2": 1.81,
@@ -1883,7 +1883,7 @@
         "pp_pct": 68.0
       },
       "ov": {
-        "score": 45.0,
+        "score": 35.0,
         "pin1": 1.54,
         "pinX": 4.21,
         "pin2": 6.62,
@@ -1936,7 +1936,7 @@
         "pp_pct": 63.9
       },
       "ov": {
-        "score": 45.0,
+        "score": 35.0,
         "pin1": 1.39,
         "pinX": 5.28,
         "pin2": 7.85,
@@ -2085,7 +2085,7 @@
         "pp_pct": 24.3
       },
       "ov": {
-        "score": 45.0,
+        "score": 35.0,
         "pin1": 10.38,
         "pinX": 6.27,
         "pin2": 1.27,
@@ -2117,28 +2117,28 @@
         "dc1x": 0.4336,
         "dcx2": 0.8498,
         "dc12": 0.7166,
-        "over25": 0.5949,
-        "under25": 0.4051,
-        "bttsY": 0.6168,
-        "bttsN": 0.3832,
+        "over25": 0.5868,
+        "under25": 0.4132,
+        "bttsY": 0.6101,
+        "bttsN": 0.3899,
         "xg_h": "1.6",
-        "xg_a": "1.49",
+        "xg_a": "1.45",
         "conf": 0.335,
         "best": "2",
         "bestP": 0.5664,
         "combo": "2+O1.5",
-        "comboP": 0.8127
+        "comboP": 0.8075
       },
       "pp": {
-        "pp_i_casa": 2.55,
+        "pp_i_casa": 2.7,
         "pp_i_ospite": 8.44,
-        "pp_D": -5.89,
+        "pp_D": -5.74,
         "pp_result": "12",
         "pp_label": "\ud83d\udd00 1-2",
-        "pp_pct": 28.5
+        "pp_pct": 29.1
       },
       "ov": {
-        "score": 45.0,
+        "score": 35.0,
         "pin1": 3.66,
         "pinX": 3.84,
         "pin2": 2.0,
@@ -2191,7 +2191,7 @@
         "pp_pct": 53.6
       },
       "ov": {
-        "score": 20.0,
+        "score": 15.0,
         "pin1": 2.19,
         "pinX": 3.6,
         "pin2": 3.35,
@@ -2244,7 +2244,7 @@
         "pp_pct": 70.9
       },
       "ov": {
-        "score": 45.0,
+        "score": 35.0,
         "pin1": 1.65,
         "pinX": 3.9,
         "pin2": 5.23,
@@ -2270,34 +2270,34 @@
       "date": "26/04/2026",
       "time": "16:15",
       "pred": {
-        "home": 0.2524,
+        "home": 0.2545,
         "draw": 0.2966,
-        "away": 0.451,
-        "dc1x": 0.549,
-        "dcx2": 0.7476,
+        "away": 0.4489,
+        "dc1x": 0.5511,
+        "dcx2": 0.7455,
         "dc12": 0.7034,
-        "over25": 0.6617,
-        "under25": 0.3383,
-        "bttsY": 0.6631,
-        "bttsN": 0.3369,
+        "over25": 0.6545,
+        "under25": 0.3455,
+        "bttsY": 0.6587,
+        "bttsN": 0.3413,
         "xg_h": "1.52",
-        "xg_a": "1.88",
-        "conf": 0.3083,
+        "xg_a": "1.85",
+        "conf": 0.3077,
         "best": "2",
-        "bestP": 0.451,
+        "bestP": 0.4489,
         "combo": "X+O1.5",
-        "comboP": 0.854
+        "comboP": 0.8498
       },
       "pp": {
         "pp_i_casa": 7.5,
-        "pp_i_ospite": 11.2,
-        "pp_D": -3.7,
+        "pp_i_ospite": 10.84,
+        "pp_D": -3.34,
         "pp_result": "X2",
         "pp_label": "\ud83d\udee1\ufe0f X2",
-        "pp_pct": 36.5
+        "pp_pct": 37.8
       },
       "ov": {
-        "score": 45.0,
+        "score": 35.0,
         "pin1": 4.0,
         "pinX": 3.69,
         "pin2": 1.95,
@@ -2446,7 +2446,7 @@
         "pp_pct": 45.3
       },
       "ov": {
-        "score": 45.0,
+        "score": 35.0,
         "pin1": 2.27,
         "pinX": 3.89,
         "pin2": 2.83,
@@ -2499,7 +2499,7 @@
         "pp_pct": 37.4
       },
       "ov": {
-        "score": 45.0,
+        "score": 35.0,
         "pin1": 2.84,
         "pinX": 3.31,
         "pin2": 2.53,
@@ -2552,7 +2552,7 @@
         "pp_pct": 73.0
       },
       "ov": {
-        "score": 20.0,
+        "score": 15.0,
         "pin1": 1.64,
         "pinX": 4.44,
         "pin2": 4.53,
@@ -2605,7 +2605,7 @@
         "pp_pct": 72.7
       },
       "ov": {
-        "score": 45.0,
+        "score": 35.0,
         "pin1": 1.53,
         "pinX": 4.72,
         "pin2": 5.2,
@@ -2658,7 +2658,7 @@
         "pp_pct": 46.7
       },
       "ov": {
-        "score": 45.0,
+        "score": 35.0,
         "pin1": 3.33,
         "pinX": 3.77,
         "pin2": 2.06,
@@ -2711,7 +2711,7 @@
         "pp_pct": 50.7
       },
       "ov": {
-        "score": 20.0,
+        "score": 15.0,
         "pin1": 1.9,
         "pinX": 4.09,
         "pin2": 3.55,
@@ -2764,7 +2764,7 @@
         "pp_pct": 18.8
       },
       "ov": {
-        "score": 45.0,
+        "score": 35.0,
         "pin1": 3.15,
         "pinX": 3.56,
         "pin2": 2.21,
@@ -2817,7 +2817,7 @@
         "pp_pct": 45.0
       },
       "ov": {
-        "score": 45.0,
+        "score": 35.0,
         "pin1": 2.13,
         "pinX": 3.88,
         "pin2": 3.09,
@@ -2833,521 +2833,6 @@
           "value": 0,
           "sharp": 20.0
         }
-      }
-    },
-    {
-      "home": "FC Alverca",
-      "away": "FC Arouca",
-      "league": "Primeira Liga",
-      "fixture_id": 545976,
-      "date": "24/04/2026",
-      "time": "20:15",
-      "pred": {
-        "home": 0.3434,
-        "draw": 0.3462,
-        "away": 0.3105,
-        "dc1x": 0.6895,
-        "dcx2": 0.6566,
-        "dc12": 0.6538,
-        "over25": 0.4894,
-        "under25": 0.5106,
-        "bttsY": 0.53,
-        "bttsN": 0.47,
-        "xg_h": "1.46",
-        "xg_a": "1.17",
-        "conf": 0.2392,
-        "best": "X",
-        "bestP": 0.3462,
-        "combo": "X+O1.5",
-        "comboP": 0.7386
-      },
-      "pp": {
-        "pp_i_casa": 4.35,
-        "pp_i_ospite": 2.44,
-        "pp_D": 1.91,
-        "pp_result": "X",
-        "pp_label": "\u2696\ufe0f FISSA X",
-        "pp_pct": 57.0
-      },
-      "ov": {
-        "score": 20.0,
-        "pin1": 2.24,
-        "pinX": 3.4,
-        "pin2": 3.4,
-        "b365_1": null,
-        "b365_X": null,
-        "b365_2": null,
-        "edge": null,
-        "misalign": null,
-        "market_fav": "1",
-        "components": {
-          "misalign": 0,
-          "coherence": 0,
-          "value": 0,
-          "sharp": 20.0
-        }
-      }
-    },
-    {
-      "home": "CD Tondela",
-      "away": "CD Nacional",
-      "league": "Primeira Liga",
-      "fixture_id": 545971,
-      "date": "25/04/2026",
-      "time": "15:30",
-      "pred": {
-        "home": 0.3235,
-        "draw": 0.3429,
-        "away": 0.3335,
-        "dc1x": 0.6665,
-        "dcx2": 0.6765,
-        "dc12": 0.6571,
-        "over25": 0.313,
-        "under25": 0.687,
-        "bttsY": 0.3906,
-        "bttsN": 0.6094,
-        "xg_h": "0.98",
-        "xg_a": "0.98",
-        "conf": 0.165,
-        "best": "X",
-        "bestP": 0.3429,
-        "combo": "X+U3.5",
-        "comboP": 0.864
-      },
-      "pp": {
-        "pp_i_casa": 3.0,
-        "pp_i_ospite": 0.42,
-        "pp_D": 2.58,
-        "pp_result": "1X",
-        "pp_label": "\ud83d\udee1\ufe0f 1X",
-        "pp_pct": 59.4
-      },
-      "ov": {
-        "score": 20.0,
-        "pin1": 2.9,
-        "pinX": 3.39,
-        "pin2": 2.44,
-        "b365_1": null,
-        "b365_X": null,
-        "b365_2": null,
-        "edge": null,
-        "misalign": null,
-        "market_fav": "2",
-        "components": {
-          "misalign": 0,
-          "coherence": 0,
-          "value": 0,
-          "sharp": 20.0
-        }
-      }
-    },
-    {
-      "home": "Sport Lisboa e Benfica",
-      "away": "Moreirense FC",
-      "league": "Primeira Liga",
-      "fixture_id": 545977,
-      "date": "25/04/2026",
-      "time": "18:00",
-      "pred": {
-        "home": 0.6555,
-        "draw": 0.2966,
-        "away": 0.0478,
-        "dc1x": 0.9522,
-        "dcx2": 0.3445,
-        "dc12": 0.7034,
-        "over25": 0.4894,
-        "under25": 0.5106,
-        "bttsY": 0.4699,
-        "bttsN": 0.5301,
-        "xg_h": "1.8",
-        "xg_a": "0.83",
-        "conf": 0.2958,
-        "best": "1",
-        "bestP": 0.6555,
-        "combo": "1+O1.5",
-        "comboP": 0.7386
-      },
-      "pp": {
-        "pp_i_casa": 10.95,
-        "pp_i_ospite": 3.74,
-        "pp_D": 7.21,
-        "pp_result": "12",
-        "pp_label": "\ud83d\udd00 1-2",
-        "pp_pct": 76.3
-      },
-      "ov": {
-        "score": null,
-        "pin1": null,
-        "pinX": null,
-        "pin2": null,
-        "b365_1": null,
-        "b365_X": null,
-        "b365_2": null,
-        "edge": null,
-        "misalign": null,
-        "market_fav": null,
-        "components": {}
-      }
-    },
-    {
-      "home": "Vit\u00f3ria SC",
-      "away": "Rio Ave FC",
-      "league": "Primeira Liga",
-      "fixture_id": 545978,
-      "date": "25/04/2026",
-      "time": "20:30",
-      "pred": {
-        "home": 0.2554,
-        "draw": 0.3408,
-        "away": 0.4038,
-        "dc1x": 0.5962,
-        "dcx2": 0.7446,
-        "dc12": 0.6592,
-        "over25": 0.4965,
-        "under25": 0.5035,
-        "bttsY": 0.5278,
-        "bttsN": 0.4722,
-        "xg_h": "1.55",
-        "xg_a": "1.11",
-        "conf": 0.2634,
-        "best": "2",
-        "bestP": 0.4038,
-        "combo": "X+O1.5",
-        "comboP": 0.744
-      },
-      "pp": {
-        "pp_i_casa": 8.4,
-        "pp_i_ospite": 6.7,
-        "pp_D": 1.7,
-        "pp_result": "X",
-        "pp_label": "\u2696\ufe0f FISSA X",
-        "pp_pct": 56.2
-      },
-      "ov": {
-        "score": 20.0,
-        "pin1": 1.83,
-        "pinX": 3.34,
-        "pin2": 4.81,
-        "b365_1": null,
-        "b365_X": null,
-        "b365_2": null,
-        "edge": null,
-        "misalign": null,
-        "market_fav": "1",
-        "components": {
-          "misalign": 0,
-          "coherence": 0,
-          "value": 0,
-          "sharp": 20.0
-        }
-      }
-    },
-    {
-      "home": "GD Estoril Praia",
-      "away": "FC Famalic\u00e3o",
-      "league": "Primeira Liga",
-      "fixture_id": 545974,
-      "date": "26/04/2026",
-      "time": "15:30",
-      "pred": {
-        "home": 0.2189,
-        "draw": 0.3356,
-        "away": 0.4455,
-        "dc1x": 0.5545,
-        "dcx2": 0.7811,
-        "dc12": 0.6644,
-        "over25": 0.4727,
-        "under25": 0.5273,
-        "bttsY": 0.5166,
-        "bttsN": 0.4834,
-        "xg_h": "1.42",
-        "xg_a": "1.14",
-        "conf": 0.2476,
-        "best": "2",
-        "bestP": 0.4455,
-        "combo": "X+U3.5",
-        "comboP": 0.7436
-      },
-      "pp": {
-        "pp_i_casa": 3.9,
-        "pp_i_ospite": 5.16,
-        "pp_D": -1.26,
-        "pp_result": "X",
-        "pp_label": "\u2696\ufe0f FISSA X",
-        "pp_pct": 45.4
-      },
-      "ov": {
-        "score": 45.0,
-        "pin1": 3.2,
-        "pinX": 3.47,
-        "pin2": 2.23,
-        "b365_1": null,
-        "b365_X": null,
-        "b365_2": null,
-        "edge": null,
-        "misalign": null,
-        "market_fav": "2",
-        "components": {
-          "misalign": 0,
-          "coherence": 25.0,
-          "value": 0,
-          "sharp": 20.0
-        }
-      }
-    },
-    {
-      "home": "CD Santa Clara",
-      "away": "Sporting Clube de Braga",
-      "league": "Primeira Liga",
-      "fixture_id": 545972,
-      "date": "26/04/2026",
-      "time": "18:00",
-      "pred": {
-        "home": 0.3011,
-        "draw": 0.3476,
-        "away": 0.3514,
-        "dc1x": 0.6486,
-        "dcx2": 0.6989,
-        "dc12": 0.6524,
-        "over25": 0.3822,
-        "under25": 0.6178,
-        "bttsY": 0.4277,
-        "bttsN": 0.5723,
-        "xg_h": "0.85",
-        "xg_a": "1.36",
-        "conf": 0.2087,
-        "best": "X",
-        "bestP": 0.3476,
-        "combo": "X+U3.5",
-        "comboP": 0.8158
-      },
-      "pp": {
-        "pp_i_casa": 4.2,
-        "pp_i_ospite": 10.14,
-        "pp_D": -5.94,
-        "pp_result": "12",
-        "pp_label": "\ud83d\udd00 1-2",
-        "pp_pct": 28.3
-      },
-      "ov": {
-        "score": null,
-        "pin1": null,
-        "pinX": null,
-        "pin2": null,
-        "b365_1": null,
-        "b365_X": null,
-        "b365_2": null,
-        "edge": null,
-        "misalign": null,
-        "market_fav": null,
-        "components": {}
-      }
-    },
-    {
-      "home": "CF Estrela da Amadora",
-      "away": "FC Porto",
-      "league": "Primeira Liga",
-      "fixture_id": 545975,
-      "date": "26/04/2026",
-      "time": "18:00",
-      "pred": {
-        "home": 0.05,
-        "draw": 0.3062,
-        "away": 0.6438,
-        "dc1x": 0.3562,
-        "dcx2": 0.95,
-        "dc12": 0.6938,
-        "over25": 0.4643,
-        "under25": 0.5357,
-        "bttsY": 0.4738,
-        "bttsN": 0.5262,
-        "xg_h": "0.88",
-        "xg_a": "1.65",
-        "conf": 0.3148,
-        "best": "2",
-        "bestP": 0.6438,
-        "combo": "2+U3.5",
-        "comboP": 0.7508
-      },
-      "pp": {
-        "pp_i_casa": 5.55,
-        "pp_i_ospite": 8.64,
-        "pp_D": -3.09,
-        "pp_result": "X2",
-        "pp_label": "\ud83d\udee1\ufe0f X2",
-        "pp_pct": 38.7
-      },
-      "ov": {
-        "score": 45.0,
-        "pin1": 8.74,
-        "pinX": 5.2,
-        "pin2": 1.33,
-        "b365_1": null,
-        "b365_X": null,
-        "b365_2": null,
-        "edge": null,
-        "misalign": null,
-        "market_fav": "2",
-        "components": {
-          "misalign": 0,
-          "coherence": 25.0,
-          "value": 0,
-          "sharp": 20.0
-        }
-      }
-    },
-    {
-      "home": "AVS",
-      "away": "Sporting Clube de Portugal",
-      "league": "Primeira Liga",
-      "fixture_id": 545973,
-      "date": "26/04/2026",
-      "time": "20:30",
-      "pred": {
-        "home": 0.1606,
-        "draw": 0.3372,
-        "away": 0.5021,
-        "dc1x": 0.4979,
-        "dcx2": 0.8394,
-        "dc12": 0.6628,
-        "over25": 0.4643,
-        "under25": 0.5357,
-        "bttsY": 0.4206,
-        "bttsN": 0.5794,
-        "xg_h": "0.69",
-        "xg_a": "1.84",
-        "conf": 0.2792,
-        "best": "2",
-        "bestP": 0.5021,
-        "combo": "2+U3.5",
-        "comboP": 0.7508
-      },
-      "pp": {
-        "pp_i_casa": 3.3,
-        "pp_i_ospite": 10.16,
-        "pp_D": -6.86,
-        "pp_result": "12",
-        "pp_label": "\ud83d\udd00 1-2",
-        "pp_pct": 25.0
-      },
-      "ov": {
-        "score": 45.0,
-        "pin1": 17.98,
-        "pinX": 11.11,
-        "pin2": 1.1,
-        "b365_1": null,
-        "b365_X": null,
-        "b365_2": null,
-        "edge": null,
-        "misalign": null,
-        "market_fav": "2",
-        "components": {
-          "misalign": 0,
-          "coherence": 25.0,
-          "value": 0,
-          "sharp": 20.0
-        }
-      }
-    },
-    {
-      "home": "Gil Vicente FC",
-      "away": "Casa Pia AC",
-      "league": "Primeira Liga",
-      "fixture_id": 545970,
-      "date": "27/04/2026",
-      "time": "20:15",
-      "pred": {
-        "home": 0.4565,
-        "draw": 0.3489,
-        "away": 0.1946,
-        "dc1x": 0.8054,
-        "dcx2": 0.5435,
-        "dc12": 0.6511,
-        "over25": 0.4485,
-        "under25": 0.5515,
-        "bttsY": 0.4361,
-        "bttsN": 0.5639,
-        "xg_h": "1.71",
-        "xg_a": "0.76",
-        "conf": 0.2284,
-        "best": "1",
-        "bestP": 0.4565,
-        "combo": "X+U3.5",
-        "comboP": 0.764
-      },
-      "pp": {
-        "pp_i_casa": 5.7,
-        "pp_i_ospite": 0.66,
-        "pp_D": 5.04,
-        "pp_result": "12",
-        "pp_label": "\ud83d\udd00 1-2",
-        "pp_pct": 68.4
-      },
-      "ov": {
-        "score": 45.0,
-        "pin1": 1.58,
-        "pinX": 3.94,
-        "pin2": 5.93,
-        "b365_1": null,
-        "b365_X": null,
-        "b365_2": null,
-        "edge": null,
-        "misalign": null,
-        "market_fav": "1",
-        "components": {
-          "misalign": 0,
-          "coherence": 25.0,
-          "value": 0,
-          "sharp": 20.0
-        }
-      }
-    },
-    {
-      "home": "Sporting Clube de Portugal",
-      "away": "CD Tondela",
-      "league": "Primeira Liga",
-      "fixture_id": 545933,
-      "date": "29/04/2026",
-      "time": "20:15",
-      "pred": {
-        "home": 0.5455,
-        "draw": 0.3349,
-        "away": 0.1196,
-        "dc1x": 0.8804,
-        "dcx2": 0.4545,
-        "dc12": 0.6651,
-        "over25": 0.573,
-        "under25": 0.427,
-        "bttsY": 0.4132,
-        "bttsN": 0.5868,
-        "xg_h": "2.38",
-        "xg_a": "0.61",
-        "conf": 0.2841,
-        "best": "1",
-        "bestP": 0.5455,
-        "combo": "1+O1.5",
-        "comboP": 0.7983
-      },
-      "pp": {
-        "pp_i_casa": 9.75,
-        "pp_i_ospite": 2.64,
-        "pp_D": 7.11,
-        "pp_result": "12",
-        "pp_label": "\ud83d\udd00 1-2",
-        "pp_pct": 75.9
-      },
-      "ov": {
-        "score": null,
-        "pin1": null,
-        "pinX": null,
-        "pin2": null,
-        "b365_1": null,
-        "b365_X": null,
-        "b365_2": null,
-        "edge": null,
-        "misalign": null,
-        "market_fav": null,
-        "components": {}
       }
     },
     {
