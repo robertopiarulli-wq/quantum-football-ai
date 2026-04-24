@@ -433,7 +433,7 @@ export default function App(){
 
       {/* TABS */}
       <div style={{display:"flex",padding:"0 20px",borderBottom:"1px solid "+C.border,overflowX:"auto"}}>
-        {[["oggi","📅 OGGI"],["ranking","📊 RANKING"],["top","🏆 TOP"],["cerca","🔍 CERCA"],["perf","📈 PERFORMANCE"],["risultati","🏁 RISULTATI"],["log","📋 LOG"]].map(([t,l])=>(
+        {[["oggi","📅 OGGI"],["ranking","📊 RANKING"],["top","🏆 TOP"],["multipla","🎯 MULTIPLA"],["cerca","🔍 CERCA"],["perf","📈 PERFORMANCE"],["risultati","🏁 RISULTATI"],["log","📋 LOG"]].map(([t,l])=>(
           <button key={t} onClick={()=>setTab(t)} style={{background:"none",border:"none",color:tab===t?C.cyan:"#555",padding:"11px 16px",cursor:"pointer",fontSize:10,letterSpacing:2,whiteSpace:"nowrap",borderBottom:tab===t?`2px solid ${C.cyan}`:"2px solid transparent",fontFamily:"inherit"}}>{l}</button>
         ))}
       </div>
@@ -603,6 +603,161 @@ export default function App(){
                   </div>
                 </div>
               )})}
+            </div>
+          </div>
+        );})()}
+
+        {tab==="multipla"&&(()=>{
+          if(!fixtures||fixtures.length===0)return(
+            <div style={{textAlign:"center",padding:60,color:"#333"}}>
+              <div style={{fontSize:40,marginBottom:12}}>🎯</div>
+              <div style={{fontSize:11,letterSpacing:3}}>Nessuna partita disponibile</div>
+            </div>
+          );
+
+          // ── CALCOLO SCORE COMBINATO ──────────────────────────────
+          const calcMultipla = f => {
+            if(!f.pred) return null;
+            const h=f.pred.home||0, x=f.pred.draw||0, a=f.pred.away||0;
+            const conf = (f.pred.conf||0);
+            const ov   = (f.ov?.score||0)/100;
+            const r    = (f.pp&&f.pp.pp_result)||"";
+
+            // Segno migliore (best_out)
+            const bestOut = f.pred.best||"1";
+            const bestProb = bestOut==="1"?h:bestOut==="2"?a:x;
+
+            // Quote Pinnacle
+            const pinOdd = bestOut==="1"?f.ov?.pin1:bestOut==="2"?f.ov?.pin2:f.ov?.pinX;
+
+            // EV = (nostra prob * quota Pinnacle) - 1
+            const ev = pinOdd&&pinOdd>0 ? (bestProb * pinOdd) - 1 : null;
+            const ev_norm = ev!==null ? Math.max(0, Math.min(1, (ev+0.2)/0.4)) : 0.5;
+
+            // PP Score
+            const ppSc = ppScore(f);
+
+            // Trend movimento (se disponibile)
+            const trendBonus = f.ov?.movement_pct!=null
+              ? (f.ov.movement_pct < -2 ? 0.05 : f.ov.movement_pct > 3 ? -0.03 : 0)
+              : 0;
+
+            // Score combinato
+            const score = conf*0.50 + ov*0.25 + ev_norm*0.25 + trendBonus;
+
+            // Label
+            const label = score>=0.75?"TOP":score>=0.65?"GOOD":score>=0.50?"MEDIUM":"AVOID";
+            const labelCol = label==="TOP"?"#4caf50":label==="GOOD"?"#22d3ee":label==="MEDIUM"?"#f59e0b":"#f87171";
+
+            // Flag anomalie
+            let flag="—", flagCol="#555";
+            if(conf>0.60 && (f.ov?.score||0)<40){flag="⚠️ TRAP";flagCol="#f87171";}
+            else if((f.ov?.score||0)>65 && conf<0.40){flag="⚡ RISKY";flagCol="#f59e0b";}
+            else if(f.ov?.movement_pct!=null && f.ov.movement_pct<-5){flag="🔥 SHARP";flagCol="#4caf50";}
+
+            return {score, label, labelCol, flag, flagCol, ev, ev_norm, bestOut, bestProb, pinOdd, ppSc, conf};
+          };
+
+          // Calcola e ordina
+          const multiplaData = fixtures
+            .map(f=>({f, calc:calcMultipla(f)}))
+            .filter(({calc})=>calc!==null)
+            .sort((a,b)=>b.calc.score-a.calc.score);
+
+          // Conteggi label
+          const counts = {TOP:0,GOOD:0,MEDIUM:0,AVOID:0};
+          multiplaData.forEach(({calc})=>counts[calc.label]=(counts[calc.label]||0)+1);
+
+          return(
+          <div>
+            {/* ── LEGENDA ── */}
+            <div style={{background:"rgba(255,255,255,0.02)",border:"1px solid rgba(255,255,255,0.07)",borderRadius:12,padding:"14px 16px",marginBottom:16}}>
+              <div style={{fontSize:10,color:"#a78bfa",letterSpacing:2,marginBottom:10,fontWeight:700}}>🧠 COME LEGGERE IL RANKING MULTIPLA</div>
+              <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(220px,1fr))",gap:10,fontSize:9,color:"#888"}}>
+                <div><b style={{color:"#fff"}}>SCORE</b> — Indice combinato (0-1):<br/>CONF×50% + OV×25% + EV×25% + Trend</div>
+                <div><b style={{color:"#fff"}}>EV</b> — Expected Value:<br/>(nostra prob × quota Pinnacle) − 1<br/><span style={{color:"#4caf50"}}>+0.10 = +10% value</span> · <span style={{color:"#f87171"}}>negativo = no bet</span></div>
+                <div><b style={{color:"#fff"}}>CONF</b> — Confidenza modello:<br/>Segnali ELO+form+trend concordi</div>
+                <div><b style={{color:"#fff"}}>OV</b> — Odds Value:<br/>Nostra prob vs Pinnacle no-vig<br/>Alto = vediamo value che il mercato non vede</div>
+                <div><b style={{color:"#fff"}}>PP Rank</b> — Score Poisson × PP:<br/>Somma % segni indicati dal PP Index</div>
+                <div><b style={{color:"#fff"}}>PP D</b> — Distanza KPZ/Parisi:<br/>|D|&gt;8=FISSA · 4-8=1-2 · 2-4=1X/X2 · &lt;2=X</div>
+                <div><b style={{color:"#f87171"}}>⚠️ TRAP</b> — CONF alta + OV basso:<br/>Modello sicuro ma mercato non conferma</div>
+                <div><b style={{color:"#f59e0b"}}>⚡ RISKY</b> — OV alto + CONF bassa:<br/>Value potenziale ma segnale incerto</div>
+                <div><b style={{color:"#4caf50"}}>🔥 SHARP</b> — Quota Pinnacle in calo:<br/>Denaro smart in entrata — segnale forte</div>
+              </div>
+            </div>
+
+            {/* ── CONTATORI ── */}
+            <div style={{display:"flex",gap:8,marginBottom:12,flexWrap:"wrap"}}>
+              {[["TOP","#4caf50"],["GOOD","#22d3ee"],["MEDIUM","#f59e0b"],["AVOID","#f87171"]].map(([lbl,col])=>(
+                <div key={lbl} style={{background:`${col}15`,border:`1px solid ${col}44`,borderRadius:8,padding:"4px 12px",fontSize:10,color:col,fontWeight:700}}>
+                  {lbl}: {counts[lbl]||0}
+                </div>
+              ))}
+              <div style={{fontSize:9,color:"#555",marginLeft:"auto",alignSelf:"center"}}>
+                {multiplaData.length} partite · ordinato per Score decrescente
+              </div>
+            </div>
+
+            {/* ── HEADER TABELLA ── */}
+            <div style={{display:"grid",gridTemplateColumns:"36px 80px 1fr 1fr 60px 70px 60px 60px 70px 70px 80px",gap:6,padding:"6px 10px",fontSize:8,color:"#555",letterSpacing:1,borderBottom:"1px solid rgba(255,255,255,0.07)",marginBottom:4}}>
+              <div>#</div><div>DATA</div><div>CASA</div><div>TRASFERTA</div>
+              <div style={{textAlign:"center"}}>SCORE</div>
+              <div style={{textAlign:"center"}}>LABEL</div>
+              <div style={{textAlign:"center"}}>EV</div>
+              <div style={{textAlign:"center"}}>OV</div>
+              <div style={{textAlign:"center"}}>PP Rank</div>
+              <div style={{textAlign:"center"}}>PP D</div>
+              <div style={{textAlign:"center"}}>FLAG</div>
+            </div>
+
+            {/* ── RIGHE ── */}
+            <div style={{display:"flex",flexDirection:"column",gap:3}}>
+              {multiplaData.map(({f,calc},i)=>{
+                const p=f.pred;
+                const pp=f.pp;
+                const ppLbl=ppLabel(f);
+                const ppD=pp?.pp_D;
+                const ppDCol=pp?.pp_result==="1"?C.cyan:pp?.pp_result==="2"?C.pink:pp?.pp_result==="X"?C.amber:pp?.pp_result==="1X"?"#34d399":pp?.pp_result==="X2"?"#f97316":"#888";
+                return(
+                <div key={i} style={{display:"grid",gridTemplateColumns:"36px 80px 1fr 1fr 60px 70px 60px 60px 70px 70px 80px",gap:6,padding:"8px 10px",borderRadius:9,background:i<3?`${calc.labelCol}08`:C.card,border:`1px solid ${i<3?calc.labelCol+"33":C.border}`,alignItems:"center",cursor:"pointer"}}
+                  onClick={()=>setRnkExpanded(rnkExpanded===i?null:("m"+i))}>
+                  <div style={{fontSize:12,color:C.amber,fontWeight:700}}>{i===0?"🥇":i===1?"🥈":i===2?"🥉":i+1}</div>
+                  <div style={{fontSize:10,color:"#aaa",lineHeight:1.4,fontWeight:600}}>{f.date||"—"}<br/><span style={{fontSize:9,color:"#555"}}>{f.time||""}</span></div>
+                  <div style={{fontSize:12,fontWeight:700,color:C.cyan,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{f.home}</div>
+                  <div style={{fontSize:12,fontWeight:700,color:C.pink,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{f.away}</div>
+                  <div style={{textAlign:"center"}}>
+                    <div style={{fontSize:13,fontWeight:900,color:calc.labelCol}}>{(calc.score*100).toFixed(0)}</div>
+                    <div style={{fontSize:8,color:"#555"}}>/100</div>
+                  </div>
+                  <div style={{textAlign:"center"}}>
+                    <span style={{fontSize:10,fontWeight:700,color:calc.labelCol,background:`${calc.labelCol}15`,padding:"2px 8px",borderRadius:4}}>{calc.label}</span>
+                  </div>
+                  <div style={{textAlign:"center"}}>
+                    {calc.ev!==null?(
+                      <span style={{fontSize:11,fontWeight:700,color:calc.ev>0?"#4caf50":"#f87171"}}>
+                        {calc.ev>0?"+":""}{(calc.ev*100).toFixed(1)}%
+                      </span>
+                    ):<span style={{color:"#333",fontSize:9}}>—</span>}
+                  </div>
+                  <div style={{textAlign:"center"}}>
+                    {f.ov?.score!=null?(
+                      <span style={{fontSize:11,fontWeight:700,color:f.ov.score>=60?"#4caf50":f.ov.score>=40?"#f59e0b":"#f87171"}}>{f.ov.score?.toFixed(0)}</span>
+                    ):<span style={{color:"#333",fontSize:9}}>—</span>}
+                  </div>
+                  <div style={{textAlign:"center",color:ppDCol}}>
+                    <div style={{fontSize:11,fontWeight:700}}>{ppLbl}</div>
+                    <div style={{fontSize:9,color:"#a78bfa"}}>{(calc.ppSc*100).toFixed(0)}%</div>
+                  </div>
+                  <div style={{textAlign:"center"}}>
+                    {pp?.pp_D!=null?(
+                      <span style={{fontSize:11,fontWeight:700,color:ppDCol}}>{ppD>0?"+":""}{ppD?.toFixed(1)}</span>
+                    ):<span style={{color:"#333"}}>—</span>}
+                  </div>
+                  <div style={{textAlign:"center",fontSize:10,color:calc.flagCol,fontWeight:700}}>{calc.flag}</div>
+                </div>
+                )}
+              )}
+              {multiplaData.length===0&&<div style={{textAlign:"center",padding:40,color:"#333",fontSize:11}}>Nessuna partita disponibile</div>}
             </div>
           </div>
         );})()}
