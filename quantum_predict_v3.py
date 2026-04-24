@@ -408,103 +408,121 @@ def match_odds_key(hname, aname, odds_map):
             return data
     return None
 
+def calc_no_vig(pin):
+    """
+    Rimuove il vig da Pinnacle e calcola le probabilità vere di mercato.
+    Pinnacle ha margine ~2% — le prob no-vig sono le più accurate disponibili.
+    """
+    o1 = pin.get("1")
+    oX = pin.get("X")
+    o2 = pin.get("2")
+    if not (o1 and oX and o2 and o1>0 and oX>0 and o2>0):
+        return {}
+    overround = 1/o1 + 1/oX + 1/o2
+    return {
+        "1": round((1/o1) / overround, 4),
+        "X": round((1/oX) / overround, 4),
+        "2": round((1/o2) / overround, 4),
+        "overround": round(overround, 4),
+        "vig_pct": round((overround - 1) * 100, 2),
+    }
+
 def calc_ov_score(pred, odds_data, best_out, movement=None):
     """
-    Calcola OV Score (0-100) basato su 5 segnali:
+    OV Score (0-100) basato su Pinnacle no-vig + movimento storico.
 
-    1. Disallineamento Pinnacle-Bet365 (25%)
-    2. Coerenza modello-mercato (20%)
-    3. Value implicito (20%)
-    4. Sharp indicator (15%)
-    5. Sharp movement da Supabase (20%) — quota scende = denaro smart
+    1. Value vs Pinnacle no-vig (40%)
+       Nostra prob > prob vera di mercato → value reale
+
+    2. Coerenza modello-Pinnacle (30%)
+       Il nostro best_out concorda con il favorito Pinnacle no-vig?
+
+    3. Sharp movement da Supabase (20%)
+       Quota Pinnacle scende = denaro smart in entrata
+
+    4. Liquidità mercato (10%)
+       Vig basso = mercato liquido e affidabile
     """
     if not odds_data:
         return None, {}
 
     pin = odds_data.get("pinnacle", {})
-    b365 = odds_data.get("bet365", {})
+    if not pin or not pin.get("1"):
+        return None, {}
 
-    if not pin and not b365:
+    # Calcola no-vig Pinnacle
+    no_vig = calc_no_vig(pin)
+    if not no_vig:
         return None, {}
 
     details = {
-        "pinnacle_1": pin.get("1"), "pinnacle_X": pin.get("X"), "pinnacle_2": pin.get("2"),
-        "bet365_1":  b365.get("1"), "bet365_X":  b365.get("X"), "bet365_2":  b365.get("2"),
+        "pinnacle_1": pin.get("1"),
+        "pinnacle_X": pin.get("X"),
+        "pinnacle_2": pin.get("2"),
+        "novig_1": round(no_vig["1"]*100, 1),
+        "novig_X": round(no_vig["X"]*100, 1),
+        "novig_2": round(no_vig["2"]*100, 1),
+        "vig_pct": no_vig.get("vig_pct"),
     }
 
-    # 1. Disallineamento per il nostro best_out
-    score_misalign = 0
-    if pin and b365:
-        p_odd = pin.get(best_out)
-        b_odd = b365.get(best_out)
-        if p_odd and b_odd and p_odd > 0:
-            diff_pct = (b_odd - p_odd) / p_odd
-            # Bet365 > Pinnacle → value (più diff = più value)
-            score_misalign = min(1.0, max(0.0, diff_pct / 0.10))  # 10% diff = max score
-            details["misalign_pct"] = round(diff_pct * 100, 1)
+    # Mappa best_out → probabilità
+    key_map = {"1": "home", "X": "draw", "2": "away"}
+    our_prob = pred.get(key_map.get(best_out, "home"), 0)
+    mkt_prob = no_vig.get(best_out, 0)
 
-    # 2. Coerenza modello-mercato
-    score_coherence = 0
-    ref_odd = b365 if b365 else pin
-    if ref_odd:
-        # Quota più bassa = favorito del mercato
-        best_market = min(ref_odd.items(), key=lambda x: x[1], default=(None,None))
-        if best_market[0] == best_out:
-            score_coherence = 1.0  # concordano
-        elif best_market[0] in ("1X","X2") or best_out in ("1X","X2"):
-            score_coherence = 0.5  # parzialmente concordano
-        details["market_favorite"] = best_market[0]
+    # 1. Value vs Pinnacle no-vig
+    value_edge = our_prob - mkt_prob
+    score_value = min(1.0, max(0.0, value_edge / 0.08))  # 8% edge = score massimo
+    details["our_prob"]   = round(our_prob * 100, 1)
+    details["mkt_prob"]   = round(mkt_prob * 100, 1)
+    details["value_edge"] = round(value_edge * 100, 1)
 
-    # 3. Value implicito (nostra prob vs quota Bet365)
-    score_value = 0
-    b_odd_best = b365.get(best_out) if b365 else None
-    our_prob = pred.get("home" if best_out=="1" else "away" if best_out=="2" else "draw", 0)
-    if b_odd_best and b_odd_best > 0:
-        implied_prob = 1 / b_odd_best
-        value = our_prob - implied_prob
-        score_value = min(1.0, max(0.0, value / 0.10))  # 10% edge = max
-        details["our_prob"] = round(our_prob * 100, 1)
-        details["implied_prob"] = round(implied_prob * 100, 1)
-        details["value_edge"] = round(value * 100, 1)
+    # 2. Coerenza modello-Pinnacle
+    # Favorito Pinnacle = segno con prob no-vig più alta
+    mkt_fav = max(no_vig, key=lambda k: no_vig[k] if k in ("1","X","2") else -1)
+    if mkt_fav == best_out:
+        score_coherence = 1.0
+    elif value_edge > 0:
+        score_coherence = 0.5  # non favorito ma value positivo
+    else:
+        score_coherence = 0.0
+    details["market_favorite"] = mkt_fav
 
-    # 4. Sharp indicator (Pinnacle disponibile)
-    score_sharp = 1.0 if pin.get(best_out) else 0.0
-
-    # 5. Sharp movement (da Supabase storico)
+    # 3. Sharp movement (da Supabase storico)
     score_movement = 0.0
-    if movement:
+    if movement and movement.get("snapshots", 0) >= 2:
         mv = movement.get("movement_pct", 0)
         is_sharp = movement.get("is_sharp", False)
-        snapshots = movement.get("snapshots", 0)
-        if snapshots >= 2:
-            if is_sharp:
-                score_movement = 1.0   # forte calo rapido
-            elif mv < -5:
-                score_movement = 0.8   # calo significativo
-            elif mv < -2:
-                score_movement = 0.5   # calo moderato
-            elif mv > 5:
-                score_movement = 0.1   # quota sale = segnale negativo
-            details["movement_pct"] = mv
-            details["is_sharp"] = is_sharp
-            details["snapshots"] = snapshots
-            details["open_home"] = movement.get("open_home")
-            details["close_home"] = movement.get("close_home")
+        if is_sharp:
+            score_movement = 1.0
+        elif mv < -5:
+            score_movement = 0.8
+        elif mv < -2:
+            score_movement = 0.5
+        elif mv > 3:
+            score_movement = 0.1  # quota sale = segnale negativo
+        details["movement_pct"] = mv
+        details["is_sharp"] = is_sharp
+        details["snapshots"] = movement.get("snapshots")
+        details["open_home"] = movement.get("open_home")
 
-    # Composizione finale con 5 segnali
-    ov_raw = (score_misalign  * 0.25 +
-              score_coherence * 0.20 +
-              score_value     * 0.20 +
-              score_sharp     * 0.15 +
-              score_movement  * 0.20)
+    # 4. Liquidità (vig basso = mercato liquido)
+    vig = no_vig.get("vig_pct", 5)
+    score_liquidity = max(0.0, min(1.0, (5 - vig) / 3))  # vig 2% = max, 5% = 0
+
+    # Composizione finale
+    ov_raw = (score_value     * 0.40 +
+              score_coherence * 0.30 +
+              score_movement  * 0.20 +
+              score_liquidity * 0.10)
 
     ov_score = round(ov_raw * 100, 1)
     details["ov_score"] = ov_score
     details["components"] = {
-        "misalign": round(score_misalign * 30, 1),
-        "coherence": round(score_coherence * 25, 1),
-        "value": round(score_value * 25, 1),
-        "sharp": round(score_sharp * 20, 1),
+        "value":     round(score_value * 40, 1),
+        "coherence": round(score_coherence * 30, 1),
+        "movement":  round(score_movement * 20, 1),
+        "liquidity": round(score_liquidity * 10, 1),
     }
     return ov_score, details
 
@@ -1849,7 +1867,7 @@ def main():
                 print(f"      PP: {pp['pp_label']} (I={pp['pp_i_casa']:+.1f}/{pp['pp_i_ospite']:+.1f} D={pp['pp_D']:+.1f} {pp['pp_pct']:.0f}%)")
                 if ov_score is not None:
                     edge = ov_details.get('value_edge', 0)
-                    print(f"      OV Score: {ov_score:.0f}/100 · Edge: {edge:+.1f}%")
+                    print(f"      OV: {ov_score:.0f}/100 · Edge:{edge:+.1f}% · Mkt:{ov_details.get('mkt_prob',0):.1f}% · Vig:{ov_details.get('vig_pct',0):.1f}%")
 
                 all_preds.append({
                     "league":       league_name,
@@ -2065,9 +2083,11 @@ def main():
                 "pin1":     p.get("ov_details", {}).get("pinnacle_1"),
                 "pinX":     p.get("ov_details", {}).get("pinnacle_X"),
                 "pin2":     p.get("ov_details", {}).get("pinnacle_2"),
-                "b365_1":   p.get("ov_details", {}).get("bet365_1"),
-                "b365_X":   p.get("ov_details", {}).get("bet365_X"),
-                "b365_2":   p.get("ov_details", {}).get("bet365_2"),
+                "novig_1":  p.get("ov_details", {}).get("novig_1"),
+                "novig_X":  p.get("ov_details", {}).get("novig_X"),
+                "novig_2":  p.get("ov_details", {}).get("novig_2"),
+                "mkt_prob": p.get("ov_details", {}).get("mkt_prob"),
+                "vig_pct":  p.get("ov_details", {}).get("vig_pct"),
                 "edge":     p.get("ov_details", {}).get("value_edge"),
                 "misalign": p.get("ov_details", {}).get("misalign_pct"),
                 "market_fav": p.get("ov_details", {}).get("market_favorite"),
