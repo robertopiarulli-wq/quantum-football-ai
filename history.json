@@ -14961,7 +14961,8 @@
       "correct_1x2": false,
       "correct_over": false,
       "correct_btts": false,
-      "verified_at": "2026-04-24T09:03:15.464829"
+      "verified_at": "2026-04-24T09:03:15.464829",
+      "elo_updated": true
     },
     {
       "fixture_id": "544539",
@@ -14996,7 +14997,8 @@
       "correct_1x2": false,
       "correct_over": true,
       "correct_btts": true,
-      "verified_at": "2026-04-24T09:03:15.464845"
+      "verified_at": "2026-04-24T09:03:15.464845",
+      "elo_updated": true
     },
     {
       "fixture_id": "544535",
@@ -15031,7 +15033,8 @@
       "correct_1x2": true,
       "correct_over": true,
       "correct_btts": false,
-      "verified_at": "2026-04-24T09:03:15.464852"
+      "verified_at": "2026-04-24T09:03:15.464852",
+      "elo_updated": true
     },
     {
       "fixture_id": "537713",
@@ -15066,7 +15069,8 @@
       "correct_1x2": true,
       "correct_over": false,
       "correct_btts": false,
-      "verified_at": "2026-04-24T09:03:22.566059"
+      "verified_at": "2026-04-24T09:03:22.566059",
+      "elo_updated": true
     },
     {
       "fixture_id": "537716",
@@ -15101,7 +15105,8 @@
       "correct_1x2": false,
       "correct_over": true,
       "correct_btts": true,
-      "verified_at": "2026-04-24T09:03:22.566076"
+      "verified_at": "2026-04-24T09:03:22.566076",
+      "elo_updated": true
     },
     {
       "fixture_id": "545930",
@@ -15136,7 +15141,8 @@
       "correct_1x2": false,
       "correct_over": false,
       "correct_btts": false,
-      "verified_at": "2026-04-24T09:03:29.582553"
+      "verified_at": "2026-04-24T09:03:29.582553",
+      "elo_updated": true
     },
     {
       "fixture_id": "540682",
@@ -18675,7 +18681,52 @@
       "correct_over": null,
       "correct_btts": null,
       "verified_at": null
+    },
+    {
+      "fixture_id": "545933",
+      "home": "Sporting Clube de Portugal",
+      "away": "CD Tondela",
+      "league": "Primeira Liga",
+      "comp_code": "PPL",
+      "season": "2025/2026",
+      "stage": "REGULAR_SEASON",
+      "matchday": 26,
+      "first_leg": null,
+      "date": "29/04/2026",
+      "time": "20:15",
+      "predicted_at": "2026-04-24T13:56:24.729075",
+      "pred_home": 0.5455,
+      "pred_draw": 0.3349,
+      "pred_away": 0.1196,
+      "pred_over25": 0.573,
+      "pred_btts": 0.4132,
+      "pred_best": "1",
+      "pred_conf": 0.2841,
+      "pred_raw_conf": 0.2841,
+      "pred_combo_label": "1+O1.5",
+      "pred_combo_leg": "O1.5",
+      "pred_combo_prob": 0.7983,
+      "pred_over15": 0.7983,
+      "pred_under35": 0.651,
+      "correct_combo": null,
+      "ov_score": null,
+      "ov_edge": null,
+      "ov_misalign": null,
+      "pp_result": "12",
+      "pp_label": "\ud83d\udd00 1-2",
+      "pp_i_casa": 9.75,
+      "pp_i_ospite": 2.64,
+      "pp_D": 7.11,
+      "pp_pct": 75.9,
+      "correct_pp": null,
+      "result": null,
+      "goals_home": null,
+      "goals_away": null,
+      "correct_1x2": null,
+      "correct_over": null,
+      "correct_btts": null,
+      "verified_at": null
     }
   ],
-  "last_updated": "2026-04-24T09:04:12.887086"
+  "last_updated": "2026-04-24T13:59:06.670228"
 }

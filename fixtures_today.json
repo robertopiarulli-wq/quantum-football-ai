@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-04-24T09:03:08.197078",
+  "generated_at": "2026-04-24T13:58:03.665163",
   "date": "24/04/2026",
-  "total": 64,
+  "total": 74,
   "fixtures": [
     {
       "home": "SSC Napoli",
@@ -36,6 +36,24 @@
         "pp_result": "12",
         "pp_label": "\ud83d\udd00 1-2",
         "pp_pct": 67.4
+      },
+      "ov": {
+        "score": 45.0,
+        "pin1": 1.4,
+        "pinX": 4.8,
+        "pin2": 8.9,
+        "b365_1": null,
+        "b365_X": null,
+        "b365_2": null,
+        "edge": null,
+        "misalign": null,
+        "market_fav": "1",
+        "components": {
+          "misalign": 0,
+          "coherence": 25.0,
+          "value": 0,
+          "sharp": 20.0
+        }
       }
     },
     {
@@ -71,6 +89,24 @@
         "pp_result": "1X",
         "pp_label": "\ud83d\udee1\ufe0f 1X",
         "pp_pct": 64.1
+      },
+      "ov": {
+        "score": 45.0,
+        "pin1": 2.13,
+        "pinX": 3.28,
+        "pin2": 3.87,
+        "b365_1": null,
+        "b365_X": null,
+        "b365_2": null,
+        "edge": null,
+        "misalign": null,
+        "market_fav": "1",
+        "components": {
+          "misalign": 0,
+          "coherence": 25.0,
+          "value": 0,
+          "sharp": 20.0
+        }
       }
     },
     {
@@ -106,6 +142,24 @@
         "pp_result": "1X",
         "pp_label": "\ud83d\udee1\ufe0f 1X",
         "pp_pct": 59.1
+      },
+      "ov": {
+        "score": 45.0,
+        "pin1": 3.32,
+        "pinX": 3.23,
+        "pin2": 2.37,
+        "b365_1": null,
+        "b365_X": null,
+        "b365_2": null,
+        "edge": null,
+        "misalign": null,
+        "market_fav": "2",
+        "components": {
+          "misalign": 0,
+          "coherence": 25.0,
+          "value": 0,
+          "sharp": 20.0
+        }
       }
     },
     {
@@ -141,6 +195,24 @@
         "pp_result": "X2",
         "pp_label": "\ud83d\udee1\ufe0f X2",
         "pp_pct": 41.1
+      },
+      "ov": {
+        "score": 20.0,
+        "pin1": 2.71,
+        "pinX": 3.09,
+        "pin2": 2.94,
+        "b365_1": null,
+        "b365_X": null,
+        "b365_2": null,
+        "edge": null,
+        "misalign": null,
+        "market_fav": "1",
+        "components": {
+          "misalign": 0,
+          "coherence": 0,
+          "value": 0,
+          "sharp": 20.0
+        }
       }
     },
     {
@@ -176,6 +248,24 @@
         "pp_result": "X",
         "pp_label": "\u2696\ufe0f FISSA X",
         "pp_pct": 50.3
+      },
+      "ov": {
+        "score": 45.0,
+        "pin1": 1.96,
+        "pinX": 3.34,
+        "pin2": 4.42,
+        "b365_1": null,
+        "b365_X": null,
+        "b365_2": null,
+        "edge": null,
+        "misalign": null,
+        "market_fav": "1",
+        "components": {
+          "misalign": 0,
+          "coherence": 25.0,
+          "value": 0,
+          "sharp": 20.0
+        }
       }
     },
     {
@@ -211,6 +301,24 @@
         "pp_result": "X",
         "pp_label": "\u2696\ufe0f FISSA X",
         "pp_pct": 51.8
+      },
+      "ov": {
+        "score": 20.0,
+        "pin1": 4.45,
+        "pinX": 3.7,
+        "pin2": 1.85,
+        "b365_1": null,
+        "b365_X": null,
+        "b365_2": null,
+        "edge": null,
+        "misalign": null,
+        "market_fav": "2",
+        "components": {
+          "misalign": 0,
+          "coherence": 0,
+          "value": 0,
+          "sharp": 20.0
+        }
       }
     },
     {
@@ -246,6 +354,19 @@
         "pp_result": "X",
         "pp_label": "\u2696\ufe0f FISSA X",
         "pp_pct": 49.2
+      },
+      "ov": {
+        "score": null,
+        "pin1": null,
+        "pinX": null,
+        "pin2": null,
+        "b365_1": null,
+        "b365_X": null,
+        "b365_2": null,
+        "edge": null,
+        "misalign": null,
+        "market_fav": null,
+        "components": {}
       }
     },
     {
@@ -281,6 +402,24 @@
         "pp_result": "12",
         "pp_label": "\ud83d\udd00 1-2",
         "pp_pct": 33.2
+      },
+      "ov": {
+        "score": 20.0,
+        "pin1": 3.08,
+        "pinX": 3.15,
+        "pin2": 2.56,
+        "b365_1": null,
+        "b365_X": null,
+        "b365_2": null,
+        "edge": null,
+        "misalign": null,
+        "market_fav": "2",
+        "components": {
+          "misalign": 0,
+          "coherence": 0,
+          "value": 0,
+          "sharp": 20.0
+        }
       }
     },
     {
@@ -316,6 +455,24 @@
         "pp_result": "12",
         "pp_label": "\ud83d\udd00 1-2",
         "pp_pct": 31.6
+      },
+      "ov": {
+        "score": 45.0,
+        "pin1": 4.49,
+        "pinX": 3.85,
+        "pin2": 1.81,
+        "b365_1": null,
+        "b365_X": null,
+        "b365_2": null,
+        "edge": null,
+        "misalign": null,
+        "market_fav": "2",
+        "components": {
+          "misalign": 0,
+          "coherence": 25.0,
+          "value": 0,
+          "sharp": 20.0
+        }
       }
     },
     {
@@ -351,6 +508,24 @@
         "pp_result": "X",
         "pp_label": "\u2696\ufe0f FISSA X",
         "pp_pct": 52.3
+      },
+      "ov": {
+        "score": 45.0,
+        "pin1": 2.04,
+        "pinX": 3.32,
+        "pin2": 4.1,
+        "b365_1": null,
+        "b365_X": null,
+        "b365_2": null,
+        "edge": null,
+        "misalign": null,
+        "market_fav": "1",
+        "components": {
+          "misalign": 0,
+          "coherence": 25.0,
+          "value": 0,
+          "sharp": 20.0
+        }
       }
     },
     {
@@ -386,6 +561,24 @@
         "pp_result": "X2",
         "pp_label": "\ud83d\udee1\ufe0f X2",
         "pp_pct": 41.3
+      },
+      "ov": {
+        "score": 45.0,
+        "pin1": 2.81,
+        "pinX": 3.24,
+        "pin2": 2.75,
+        "b365_1": null,
+        "b365_X": null,
+        "b365_2": null,
+        "edge": null,
+        "misalign": null,
+        "market_fav": "2",
+        "components": {
+          "misalign": 0,
+          "coherence": 25.0,
+          "value": 0,
+          "sharp": 20.0
+        }
       }
     },
     {
@@ -421,6 +614,24 @@
         "pp_result": "1X",
         "pp_label": "\ud83d\udee1\ufe0f 1X",
         "pp_pct": 60.2
+      },
+      "ov": {
+        "score": 45.0,
+        "pin1": 2.79,
+        "pinX": 3.58,
+        "pin2": 2.53,
+        "b365_1": null,
+        "b365_X": null,
+        "b365_2": null,
+        "edge": null,
+        "misalign": null,
+        "market_fav": "2",
+        "components": {
+          "misalign": 0,
+          "coherence": 25.0,
+          "value": 0,
+          "sharp": 20.0
+        }
       }
     },
     {
@@ -456,6 +667,24 @@
         "pp_result": "1X",
         "pp_label": "\ud83d\udee1\ufe0f 1X",
         "pp_pct": 60.5
+      },
+      "ov": {
+        "score": 45.0,
+        "pin1": 1.47,
+        "pinX": 4.96,
+        "pin2": 6.5,
+        "b365_1": null,
+        "b365_X": null,
+        "b365_2": null,
+        "edge": null,
+        "misalign": null,
+        "market_fav": "1",
+        "components": {
+          "misalign": 0,
+          "coherence": 25.0,
+          "value": 0,
+          "sharp": 20.0
+        }
       }
     },
     {
@@ -491,6 +720,24 @@
         "pp_result": "X",
         "pp_label": "\u2696\ufe0f FISSA X",
         "pp_pct": 52.8
+      },
+      "ov": {
+        "score": 45.0,
+        "pin1": 2.4,
+        "pinX": 3.4,
+        "pin2": 3.11,
+        "b365_1": null,
+        "b365_X": null,
+        "b365_2": null,
+        "edge": null,
+        "misalign": null,
+        "market_fav": "1",
+        "components": {
+          "misalign": 0,
+          "coherence": 25.0,
+          "value": 0,
+          "sharp": 20.0
+        }
       }
     },
     {
@@ -526,6 +773,24 @@
         "pp_result": "1X",
         "pp_label": "\ud83d\udee1\ufe0f 1X",
         "pp_pct": 61.9
+      },
+      "ov": {
+        "score": 45.0,
+        "pin1": 4.5,
+        "pinX": 4.35,
+        "pin2": 1.71,
+        "b365_1": null,
+        "b365_X": null,
+        "b365_2": null,
+        "edge": null,
+        "misalign": null,
+        "market_fav": "2",
+        "components": {
+          "misalign": 0,
+          "coherence": 25.0,
+          "value": 0,
+          "sharp": 20.0
+        }
       }
     },
     {
@@ -561,6 +826,24 @@
         "pp_result": "1X",
         "pp_label": "\ud83d\udee1\ufe0f 1X",
         "pp_pct": 59.6
+      },
+      "ov": {
+        "score": 45.0,
+        "pin1": 1.49,
+        "pinX": 4.83,
+        "pin2": 6.34,
+        "b365_1": null,
+        "b365_X": null,
+        "b365_2": null,
+        "edge": null,
+        "misalign": null,
+        "market_fav": "1",
+        "components": {
+          "misalign": 0,
+          "coherence": 25.0,
+          "value": 0,
+          "sharp": 20.0
+        }
       }
     },
     {
@@ -596,6 +879,24 @@
         "pp_result": "X",
         "pp_label": "\u2696\ufe0f FISSA X",
         "pp_pct": 52.3
+      },
+      "ov": {
+        "score": 45.0,
+        "pin1": 1.88,
+        "pinX": 3.91,
+        "pin2": 4.04,
+        "b365_1": null,
+        "b365_X": null,
+        "b365_2": null,
+        "edge": null,
+        "misalign": null,
+        "market_fav": "1",
+        "components": {
+          "misalign": 0,
+          "coherence": 25.0,
+          "value": 0,
+          "sharp": 20.0
+        }
       }
     },
     {
@@ -606,21 +907,21 @@
       "date": "01/05/2026",
       "time": "20:00",
       "pred": {
-        "home": 0.481,
-        "draw": 0.3447,
-        "away": 0.1743,
-        "dc1x": 0.8257,
-        "dcx2": 0.519,
-        "dc12": 0.6553,
+        "home": 0.4893,
+        "draw": 0.3434,
+        "away": 0.1672,
+        "dc1x": 0.8328,
+        "dcx2": 0.5107,
+        "dc12": 0.6566,
         "over25": 0.6664,
         "under25": 0.3336,
         "bttsY": 0.6356,
         "bttsN": 0.3644,
         "xg_h": "2.17",
         "xg_a": "1.26",
-        "conf": 0.1969,
+        "conf": 0.1987,
         "best": "1",
-        "bestP": 0.481,
+        "bestP": 0.4893,
         "combo": "X+O1.5",
         "comboP": 0.8567
       },
@@ -631,6 +932,24 @@
         "pp_result": "1X",
         "pp_label": "\ud83d\udee1\ufe0f 1X",
         "pp_pct": 58.0
+      },
+      "ov": {
+        "score": 45.0,
+        "pin1": 1.46,
+        "pinX": 4.6,
+        "pin2": 6.48,
+        "b365_1": null,
+        "b365_X": null,
+        "b365_2": null,
+        "edge": null,
+        "misalign": null,
+        "market_fav": "1",
+        "components": {
+          "misalign": 0,
+          "coherence": 25.0,
+          "value": 0,
+          "sharp": 20.0
+        }
       }
     },
     {
@@ -666,6 +985,24 @@
         "pp_result": "X2",
         "pp_label": "\ud83d\udee1\ufe0f X2",
         "pp_pct": 40.8
+      },
+      "ov": {
+        "score": 45.0,
+        "pin1": 3.79,
+        "pinX": 4.1,
+        "pin2": 1.92,
+        "b365_1": null,
+        "b365_X": null,
+        "b365_2": null,
+        "edge": null,
+        "misalign": null,
+        "market_fav": "2",
+        "components": {
+          "misalign": 0,
+          "coherence": 25.0,
+          "value": 0,
+          "sharp": 20.0
+        }
       }
     },
     {
@@ -701,6 +1038,24 @@
         "pp_result": "12",
         "pp_label": "\ud83d\udd00 1-2",
         "pp_pct": 64.7
+      },
+      "ov": {
+        "score": 20.0,
+        "pin1": 2.18,
+        "pinX": 3.15,
+        "pin2": 3.87,
+        "b365_1": null,
+        "b365_X": null,
+        "b365_2": null,
+        "edge": null,
+        "misalign": null,
+        "market_fav": "1",
+        "components": {
+          "misalign": 0,
+          "coherence": 0,
+          "value": 0,
+          "sharp": 20.0
+        }
       }
     },
     {
@@ -711,21 +1066,21 @@
       "date": "25/04/2026",
       "time": "15:15",
       "pred": {
-        "home": 0.0547,
-        "draw": 0.2663,
-        "away": 0.679,
-        "dc1x": 0.321,
-        "dcx2": 0.9453,
-        "dc12": 0.7337,
+        "home": 0.0649,
+        "draw": 0.2681,
+        "away": 0.667,
+        "dc1x": 0.333,
+        "dcx2": 0.9351,
+        "dc12": 0.7319,
         "over25": 0.4891,
         "under25": 0.5109,
         "bttsY": 0.5291,
         "bttsN": 0.4709,
         "xg_h": "1.17",
         "xg_a": "1.47",
-        "conf": 0.4439,
+        "conf": 0.4389,
         "best": "2",
-        "bestP": 0.679,
+        "bestP": 0.667,
         "combo": "2+O1.5",
         "comboP": 0.7384
       },
@@ -736,6 +1091,24 @@
         "pp_result": "X",
         "pp_label": "\u2696\ufe0f FISSA X",
         "pp_pct": 49.3
+      },
+      "ov": {
+        "score": 45.0,
+        "pin1": 5.31,
+        "pinX": 3.97,
+        "pin2": 1.68,
+        "b365_1": null,
+        "b365_X": null,
+        "b365_2": null,
+        "edge": null,
+        "misalign": null,
+        "market_fav": "2",
+        "components": {
+          "misalign": 0,
+          "coherence": 25.0,
+          "value": 0,
+          "sharp": 20.0
+        }
       }
     },
     {
@@ -771,6 +1144,24 @@
         "pp_result": "1X",
         "pp_label": "\ud83d\udee1\ufe0f 1X",
         "pp_pct": 61.5
+      },
+      "ov": {
+        "score": 20.0,
+        "pin1": 2.14,
+        "pinX": 3.45,
+        "pin2": 3.61,
+        "b365_1": null,
+        "b365_X": null,
+        "b365_2": null,
+        "edge": null,
+        "misalign": null,
+        "market_fav": "1",
+        "components": {
+          "misalign": 0,
+          "coherence": 0,
+          "value": 0,
+          "sharp": 20.0
+        }
       }
     },
     {
@@ -781,21 +1172,21 @@
       "date": "25/04/2026",
       "time": "20:00",
       "pred": {
-        "home": 0.4314,
-        "draw": 0.309,
-        "away": 0.2596,
-        "dc1x": 0.7404,
-        "dcx2": 0.5686,
-        "dc12": 0.691,
+        "home": 0.4088,
+        "draw": 0.3056,
+        "away": 0.2856,
+        "dc1x": 0.7144,
+        "dcx2": 0.5912,
+        "dc12": 0.6944,
         "over25": 0.5388,
         "under25": 0.4612,
         "bttsY": 0.501,
         "bttsN": 0.499,
         "xg_h": "1.96",
         "xg_a": "0.88",
-        "conf": 0.3981,
+        "conf": 0.3887,
         "best": "1",
-        "bestP": 0.4314,
+        "bestP": 0.4088,
         "combo": "X+O1.5",
         "comboP": 0.7748
       },
@@ -806,6 +1197,24 @@
         "pp_result": "12",
         "pp_label": "\ud83d\udd00 1-2",
         "pp_pct": 65.0
+      },
+      "ov": {
+        "score": 45.0,
+        "pin1": 2.1,
+        "pinX": 3.78,
+        "pin2": 3.41,
+        "b365_1": null,
+        "b365_X": null,
+        "b365_2": null,
+        "edge": null,
+        "misalign": null,
+        "market_fav": "1",
+        "components": {
+          "misalign": 0,
+          "coherence": 25.0,
+          "value": 0,
+          "sharp": 20.0
+        }
       }
     },
     {
@@ -816,21 +1225,21 @@
       "date": "26/04/2026",
       "time": "13:00",
       "pred": {
-        "home": 0.4254,
-        "draw": 0.3084,
-        "away": 0.2661,
-        "dc1x": 0.7339,
-        "dcx2": 0.5746,
-        "dc12": 0.6916,
+        "home": 0.4471,
+        "draw": 0.3085,
+        "away": 0.2445,
+        "dc1x": 0.7555,
+        "dcx2": 0.5529,
+        "dc12": 0.6915,
         "over25": 0.396,
         "under25": 0.604,
         "bttsY": 0.4441,
         "bttsN": 0.5559,
         "xg_h": "1.36",
         "xg_a": "0.91",
-        "conf": 0.4025,
+        "conf": 0.4116,
         "best": "1",
-        "bestP": 0.4254,
+        "bestP": 0.4471,
         "combo": "X+U3.5",
         "comboP": 0.8054
       },
@@ -841,6 +1250,24 @@
         "pp_result": "12",
         "pp_label": "\ud83d\udd00 1-2",
         "pp_pct": 68.0
+      },
+      "ov": {
+        "score": 45.0,
+        "pin1": 2.71,
+        "pinX": 3.38,
+        "pin2": 2.72,
+        "b365_1": null,
+        "b365_X": null,
+        "b365_2": null,
+        "edge": null,
+        "misalign": null,
+        "market_fav": "1",
+        "components": {
+          "misalign": 0,
+          "coherence": 25.0,
+          "value": 0,
+          "sharp": 20.0
+        }
       }
     },
     {
@@ -851,21 +1278,21 @@
       "date": "26/04/2026",
       "time": "15:15",
       "pred": {
-        "home": 0.4726,
-        "draw": 0.3032,
-        "away": 0.2242,
-        "dc1x": 0.7758,
-        "dcx2": 0.5274,
-        "dc12": 0.6968,
+        "home": 0.4476,
+        "draw": 0.3066,
+        "away": 0.2458,
+        "dc1x": 0.7542,
+        "dcx2": 0.5524,
+        "dc12": 0.6934,
         "over25": 0.3826,
         "under25": 0.6174,
         "bttsY": 0.4394,
         "bttsN": 0.5606,
         "xg_h": "1.28",
         "xg_a": "0.94",
-        "conf": 0.4279,
+        "conf": 0.4175,
         "best": "1",
-        "bestP": 0.4726,
+        "bestP": 0.4476,
         "combo": "X+U3.5",
         "comboP": 0.8154
       },
@@ -876,6 +1303,24 @@
         "pp_result": "12",
         "pp_label": "\ud83d\udd00 1-2",
         "pp_pct": 66.6
+      },
+      "ov": {
+        "score": 45.0,
+        "pin1": 2.33,
+        "pinX": 3.63,
+        "pin2": 3.03,
+        "b365_1": null,
+        "b365_X": null,
+        "b365_2": null,
+        "edge": null,
+        "misalign": null,
+        "market_fav": "1",
+        "components": {
+          "misalign": 0,
+          "coherence": 25.0,
+          "value": 0,
+          "sharp": 20.0
+        }
       }
     },
     {
@@ -911,6 +1356,24 @@
         "pp_result": "1X",
         "pp_label": "\ud83d\udee1\ufe0f 1X",
         "pp_pct": 63.5
+      },
+      "ov": {
+        "score": 20.0,
+        "pin1": 2.07,
+        "pinX": 3.49,
+        "pin2": 3.78,
+        "b365_1": null,
+        "b365_X": null,
+        "b365_2": null,
+        "edge": null,
+        "misalign": null,
+        "market_fav": "1",
+        "components": {
+          "misalign": 0,
+          "coherence": 0,
+          "value": 0,
+          "sharp": 20.0
+        }
       }
     },
     {
@@ -921,21 +1384,21 @@
       "date": "26/04/2026",
       "time": "20:00",
       "pred": {
-        "home": 0.5863,
-        "draw": 0.2901,
-        "away": 0.1236,
-        "dc1x": 0.8764,
-        "dcx2": 0.4137,
-        "dc12": 0.7099,
+        "home": 0.5941,
+        "draw": 0.2888,
+        "away": 0.1171,
+        "dc1x": 0.8829,
+        "dcx2": 0.4059,
+        "dc12": 0.7112,
         "over25": 0.5198,
         "under25": 0.4802,
         "bttsY": 0.5382,
         "bttsN": 0.4618,
         "xg_h": "1.67",
         "xg_a": "1.09",
-        "conf": 0.4728,
+        "conf": 0.476,
         "best": "1",
-        "bestP": 0.5863,
+        "bestP": 0.5941,
         "combo": "1+O1.5",
         "comboP": 0.7611
       },
@@ -946,6 +1409,24 @@
         "pp_result": "1X",
         "pp_label": "\ud83d\udee1\ufe0f 1X",
         "pp_pct": 59.6
+      },
+      "ov": {
+        "score": 45.0,
+        "pin1": 2.05,
+        "pinX": 3.37,
+        "pin2": 3.98,
+        "b365_1": null,
+        "b365_X": null,
+        "b365_2": null,
+        "edge": null,
+        "misalign": null,
+        "market_fav": "1",
+        "components": {
+          "misalign": 0,
+          "coherence": 25.0,
+          "value": 0,
+          "sharp": 20.0
+        }
       }
     },
     {
@@ -981,6 +1462,24 @@
         "pp_result": "X",
         "pp_label": "\u2696\ufe0f FISSA X",
         "pp_pct": 53.2
+      },
+      "ov": {
+        "score": 20.0,
+        "pin1": 2.07,
+        "pinX": 3.32,
+        "pin2": 4.02,
+        "b365_1": null,
+        "b365_X": null,
+        "b365_2": null,
+        "edge": null,
+        "misalign": null,
+        "market_fav": "1",
+        "components": {
+          "misalign": 0,
+          "coherence": 0,
+          "value": 0,
+          "sharp": 20.0
+        }
       }
     },
     {
@@ -1016,6 +1515,19 @@
         "pp_result": "12",
         "pp_label": "\ud83d\udd00 1-2",
         "pp_pct": 76.7
+      },
+      "ov": {
+        "score": null,
+        "pin1": null,
+        "pinX": null,
+        "pin2": null,
+        "b365_1": null,
+        "b365_X": null,
+        "b365_2": null,
+        "edge": null,
+        "misalign": null,
+        "market_fav": null,
+        "components": {}
       }
     },
     {
@@ -1051,6 +1563,24 @@
         "pp_result": "12",
         "pp_label": "\ud83d\udd00 1-2",
         "pp_pct": 26.1
+      },
+      "ov": {
+        "score": 20.0,
+        "pin1": 2.39,
+        "pinX": 3.46,
+        "pin2": 3.07,
+        "b365_1": null,
+        "b365_X": null,
+        "b365_2": null,
+        "edge": null,
+        "misalign": null,
+        "market_fav": "1",
+        "components": {
+          "misalign": 0,
+          "coherence": 0,
+          "value": 0,
+          "sharp": 20.0
+        }
       }
     },
     {
@@ -1086,6 +1616,24 @@
         "pp_result": "X2",
         "pp_label": "\ud83d\udee1\ufe0f X2",
         "pp_pct": 40.9
+      },
+      "ov": {
+        "score": 45.0,
+        "pin1": 3.78,
+        "pinX": 4.04,
+        "pin2": 1.91,
+        "b365_1": null,
+        "b365_X": null,
+        "b365_2": null,
+        "edge": null,
+        "misalign": null,
+        "market_fav": "2",
+        "components": {
+          "misalign": 0,
+          "coherence": 25.0,
+          "value": 0,
+          "sharp": 20.0
+        }
       }
     },
     {
@@ -1121,6 +1669,24 @@
         "pp_result": "1X",
         "pp_label": "\ud83d\udee1\ufe0f 1X",
         "pp_pct": 61.1
+      },
+      "ov": {
+        "score": 20.0,
+        "pin1": 2.58,
+        "pinX": 3.83,
+        "pin2": 2.6,
+        "b365_1": null,
+        "b365_X": null,
+        "b365_2": null,
+        "edge": null,
+        "misalign": null,
+        "market_fav": "1",
+        "components": {
+          "misalign": 0,
+          "coherence": 0,
+          "value": 0,
+          "sharp": 20.0
+        }
       }
     },
     {
@@ -1156,6 +1722,24 @@
         "pp_result": "X",
         "pp_label": "\u2696\ufe0f FISSA X",
         "pp_pct": 46.0
+      },
+      "ov": {
+        "score": 20.0,
+        "pin1": 2.28,
+        "pinX": 3.68,
+        "pin2": 3.09,
+        "b365_1": null,
+        "b365_X": null,
+        "b365_2": null,
+        "edge": null,
+        "misalign": null,
+        "market_fav": "1",
+        "components": {
+          "misalign": 0,
+          "coherence": 0,
+          "value": 0,
+          "sharp": 20.0
+        }
       }
     },
     {
@@ -1191,6 +1775,24 @@
         "pp_result": "X",
         "pp_label": "\u2696\ufe0f FISSA X",
         "pp_pct": 56.5
+      },
+      "ov": {
+        "score": 45.0,
+        "pin1": 2.39,
+        "pinX": 3.46,
+        "pin2": 3.07,
+        "b365_1": null,
+        "b365_X": null,
+        "b365_2": null,
+        "edge": null,
+        "misalign": null,
+        "market_fav": "1",
+        "components": {
+          "misalign": 0,
+          "coherence": 25.0,
+          "value": 0,
+          "sharp": 20.0
+        }
       }
     },
     {
@@ -1226,6 +1828,24 @@
         "pp_result": "X",
         "pp_label": "\u2696\ufe0f FISSA X",
         "pp_pct": 46.8
+      },
+      "ov": {
+        "score": 45.0,
+        "pin1": 4.01,
+        "pinX": 4.28,
+        "pin2": 1.81,
+        "b365_1": null,
+        "b365_X": null,
+        "b365_2": null,
+        "edge": null,
+        "misalign": null,
+        "market_fav": "2",
+        "components": {
+          "misalign": 0,
+          "coherence": 25.0,
+          "value": 0,
+          "sharp": 20.0
+        }
       }
     },
     {
@@ -1261,6 +1881,24 @@
         "pp_result": "12",
         "pp_label": "\ud83d\udd00 1-2",
         "pp_pct": 68.0
+      },
+      "ov": {
+        "score": 45.0,
+        "pin1": 1.54,
+        "pinX": 4.21,
+        "pin2": 6.62,
+        "b365_1": null,
+        "b365_X": null,
+        "b365_2": null,
+        "edge": null,
+        "misalign": null,
+        "market_fav": "1",
+        "components": {
+          "misalign": 0,
+          "coherence": 25.0,
+          "value": 0,
+          "sharp": 20.0
+        }
       }
     },
     {
@@ -1296,6 +1934,24 @@
         "pp_result": "1X",
         "pp_label": "\ud83d\udee1\ufe0f 1X",
         "pp_pct": 63.9
+      },
+      "ov": {
+        "score": 45.0,
+        "pin1": 1.39,
+        "pinX": 5.28,
+        "pin2": 7.85,
+        "b365_1": null,
+        "b365_X": null,
+        "b365_2": null,
+        "edge": null,
+        "misalign": null,
+        "market_fav": "1",
+        "components": {
+          "misalign": 0,
+          "coherence": 25.0,
+          "value": 0,
+          "sharp": 20.0
+        }
       }
     },
     {
@@ -1331,6 +1987,19 @@
         "pp_result": "1X",
         "pp_label": "\ud83d\udee1\ufe0f 1X",
         "pp_pct": 60.3
+      },
+      "ov": {
+        "score": null,
+        "pin1": null,
+        "pinX": null,
+        "pin2": null,
+        "b365_1": null,
+        "b365_X": null,
+        "b365_2": null,
+        "edge": null,
+        "misalign": null,
+        "market_fav": null,
+        "components": {}
       }
     },
     {
@@ -1366,6 +2035,19 @@
         "pp_result": "X",
         "pp_label": "\u2696\ufe0f FISSA X",
         "pp_pct": 56.8
+      },
+      "ov": {
+        "score": null,
+        "pin1": null,
+        "pinX": null,
+        "pin2": null,
+        "b365_1": null,
+        "b365_X": null,
+        "b365_2": null,
+        "edge": null,
+        "misalign": null,
+        "market_fav": null,
+        "components": {}
       }
     },
     {
@@ -1377,20 +2059,20 @@
       "time": "18:00",
       "pred": {
         "home": 0.05,
-        "draw": 0.2526,
-        "away": 0.6974,
-        "dc1x": 0.3026,
+        "draw": 0.2516,
+        "away": 0.6984,
+        "dc1x": 0.3016,
         "dcx2": 0.95,
-        "dc12": 0.7474,
+        "dc12": 0.7484,
         "over25": 0.5137,
         "under25": 0.4863,
         "bttsY": 0.5432,
         "bttsN": 0.4568,
         "xg_h": "1.16",
         "xg_a": "1.58",
-        "conf": 0.3294,
+        "conf": 0.3297,
         "best": "2",
-        "bestP": 0.6974,
+        "bestP": 0.6984,
         "combo": "2+O1.5",
         "comboP": 0.7567
       },
@@ -1401,6 +2083,24 @@
         "pp_result": "12",
         "pp_label": "\ud83d\udd00 1-2",
         "pp_pct": 24.3
+      },
+      "ov": {
+        "score": 45.0,
+        "pin1": 10.38,
+        "pinX": 6.27,
+        "pin2": 1.27,
+        "b365_1": null,
+        "b365_X": null,
+        "b365_2": null,
+        "edge": null,
+        "misalign": null,
+        "market_fav": "2",
+        "components": {
+          "misalign": 0,
+          "coherence": 25.0,
+          "value": 0,
+          "sharp": 20.0
+        }
       }
     },
     {
@@ -1417,25 +2117,43 @@
         "dc1x": 0.4336,
         "dcx2": 0.8498,
         "dc12": 0.7166,
-        "over25": 0.5868,
-        "under25": 0.4132,
-        "bttsY": 0.6101,
-        "bttsN": 0.3899,
+        "over25": 0.5949,
+        "under25": 0.4051,
+        "bttsY": 0.6168,
+        "bttsN": 0.3832,
         "xg_h": "1.6",
-        "xg_a": "1.45",
+        "xg_a": "1.49",
         "conf": 0.335,
         "best": "2",
         "bestP": 0.5664,
         "combo": "2+O1.5",
-        "comboP": 0.8075
+        "comboP": 0.8127
       },
       "pp": {
-        "pp_i_casa": 2.7,
+        "pp_i_casa": 2.55,
         "pp_i_ospite": 8.44,
-        "pp_D": -5.74,
+        "pp_D": -5.89,
         "pp_result": "12",
         "pp_label": "\ud83d\udd00 1-2",
-        "pp_pct": 29.1
+        "pp_pct": 28.5
+      },
+      "ov": {
+        "score": 45.0,
+        "pin1": 3.66,
+        "pinX": 3.84,
+        "pin2": 2.0,
+        "b365_1": null,
+        "b365_X": null,
+        "b365_2": null,
+        "edge": null,
+        "misalign": null,
+        "market_fav": "2",
+        "components": {
+          "misalign": 0,
+          "coherence": 25.0,
+          "value": 0,
+          "sharp": 20.0
+        }
       }
     },
     {
@@ -1471,6 +2189,24 @@
         "pp_result": "X",
         "pp_label": "\u2696\ufe0f FISSA X",
         "pp_pct": 53.6
+      },
+      "ov": {
+        "score": 20.0,
+        "pin1": 2.19,
+        "pinX": 3.6,
+        "pin2": 3.35,
+        "b365_1": null,
+        "b365_X": null,
+        "b365_2": null,
+        "edge": null,
+        "misalign": null,
+        "market_fav": "1",
+        "components": {
+          "misalign": 0,
+          "coherence": 0,
+          "value": 0,
+          "sharp": 20.0
+        }
       }
     },
     {
@@ -1506,6 +2242,24 @@
         "pp_result": "12",
         "pp_label": "\ud83d\udd00 1-2",
         "pp_pct": 70.9
+      },
+      "ov": {
+        "score": 45.0,
+        "pin1": 1.65,
+        "pinX": 3.9,
+        "pin2": 5.23,
+        "b365_1": null,
+        "b365_X": null,
+        "b365_2": null,
+        "edge": null,
+        "misalign": null,
+        "market_fav": "1",
+        "components": {
+          "misalign": 0,
+          "coherence": 25.0,
+          "value": 0,
+          "sharp": 20.0
+        }
       }
     },
     {
@@ -1516,31 +2270,49 @@
       "date": "26/04/2026",
       "time": "16:15",
       "pred": {
-        "home": 0.2545,
+        "home": 0.2524,
         "draw": 0.2966,
-        "away": 0.4489,
-        "dc1x": 0.5511,
-        "dcx2": 0.7455,
+        "away": 0.451,
+        "dc1x": 0.549,
+        "dcx2": 0.7476,
         "dc12": 0.7034,
-        "over25": 0.6545,
-        "under25": 0.3455,
-        "bttsY": 0.6587,
-        "bttsN": 0.3413,
+        "over25": 0.6617,
+        "under25": 0.3383,
+        "bttsY": 0.6631,
+        "bttsN": 0.3369,
         "xg_h": "1.52",
-        "xg_a": "1.85",
-        "conf": 0.3077,
+        "xg_a": "1.88",
+        "conf": 0.3083,
         "best": "2",
-        "bestP": 0.4489,
+        "bestP": 0.451,
         "combo": "X+O1.5",
-        "comboP": 0.8498
+        "comboP": 0.854
       },
       "pp": {
         "pp_i_casa": 7.5,
-        "pp_i_ospite": 10.84,
-        "pp_D": -3.34,
+        "pp_i_ospite": 11.2,
+        "pp_D": -3.7,
         "pp_result": "X2",
         "pp_label": "\ud83d\udee1\ufe0f X2",
-        "pp_pct": 37.8
+        "pp_pct": 36.5
+      },
+      "ov": {
+        "score": 45.0,
+        "pin1": 4.0,
+        "pinX": 3.69,
+        "pin2": 1.95,
+        "b365_1": null,
+        "b365_X": null,
+        "b365_2": null,
+        "edge": null,
+        "misalign": null,
+        "market_fav": "2",
+        "components": {
+          "misalign": 0,
+          "coherence": 25.0,
+          "value": 0,
+          "sharp": 20.0
+        }
       }
     },
     {
@@ -1551,21 +2323,21 @@
       "date": "26/04/2026",
       "time": "16:15",
       "pred": {
-        "home": 0.5838,
-        "draw": 0.2948,
-        "away": 0.1215,
-        "dc1x": 0.8785,
-        "dcx2": 0.4162,
-        "dc12": 0.7052,
+        "home": 0.5907,
+        "draw": 0.2937,
+        "away": 0.1156,
+        "dc1x": 0.8844,
+        "dcx2": 0.4093,
+        "dc12": 0.7063,
         "over25": 0.4707,
         "under25": 0.5293,
         "bttsY": 0.475,
         "bttsN": 0.525,
         "xg_h": "1.68",
         "xg_a": "0.88",
-        "conf": 0.2967,
+        "conf": 0.2986,
         "best": "1",
-        "bestP": 0.5838,
+        "bestP": 0.5907,
         "combo": "1+U3.5",
         "comboP": 0.7454
       },
@@ -1576,6 +2348,19 @@
         "pp_result": "12",
         "pp_label": "\ud83d\udd00 1-2",
         "pp_pct": 74.2
+      },
+      "ov": {
+        "score": null,
+        "pin1": null,
+        "pinX": null,
+        "pin2": null,
+        "b365_1": null,
+        "b365_X": null,
+        "b365_2": null,
+        "edge": null,
+        "misalign": null,
+        "market_fav": null,
+        "components": {}
       }
     },
     {
@@ -1611,6 +2396,19 @@
         "pp_result": "12",
         "pp_label": "\ud83d\udd00 1-2",
         "pp_pct": 68.5
+      },
+      "ov": {
+        "score": null,
+        "pin1": null,
+        "pinX": null,
+        "pin2": null,
+        "b365_1": null,
+        "b365_X": null,
+        "b365_2": null,
+        "edge": null,
+        "misalign": null,
+        "market_fav": null,
+        "components": {}
       }
     },
     {
@@ -1621,12 +2419,12 @@
       "date": "28/04/2026",
       "time": "20:00",
       "pred": {
-        "home": 0.7335,
-        "draw": 0.2185,
-        "away": 0.0481,
-        "dc1x": 0.9519,
-        "dcx2": 0.2665,
-        "dc12": 0.7815,
+        "home": 0.736,
+        "draw": 0.2163,
+        "away": 0.0478,
+        "dc1x": 0.9522,
+        "dcx2": 0.264,
+        "dc12": 0.7837,
         "over25": 0.8293,
         "under25": 0.1707,
         "bttsY": 0.8023,
@@ -1635,7 +2433,7 @@
         "xg_a": "2.33",
         "conf": 0.7402,
         "best": "1",
-        "bestP": 0.7335,
+        "bestP": 0.736,
         "combo": "1+O1.5",
         "comboP": 0.9402
       },
@@ -1646,6 +2444,24 @@
         "pp_result": "X",
         "pp_label": "\u2696\ufe0f FISSA X",
         "pp_pct": 45.3
+      },
+      "ov": {
+        "score": 45.0,
+        "pin1": 2.27,
+        "pinX": 3.89,
+        "pin2": 2.83,
+        "b365_1": null,
+        "b365_X": null,
+        "b365_2": null,
+        "edge": null,
+        "misalign": null,
+        "market_fav": "1",
+        "components": {
+          "misalign": 0,
+          "coherence": 25.0,
+          "value": 0,
+          "sharp": 20.0
+        }
       }
     },
     {
@@ -1656,21 +2472,21 @@
       "date": "29/04/2026",
       "time": "20:00",
       "pred": {
-        "home": 0.1066,
-        "draw": 0.2204,
-        "away": 0.6731,
-        "dc1x": 0.3269,
-        "dcx2": 0.8934,
-        "dc12": 0.7796,
+        "home": 0.0866,
+        "draw": 0.2169,
+        "away": 0.6965,
+        "dc1x": 0.3035,
+        "dcx2": 0.9134,
+        "dc12": 0.7831,
         "over25": 0.704,
         "under25": 0.296,
         "bttsY": 0.7011,
         "bttsN": 0.2989,
         "xg_h": "1.75",
         "xg_a": "1.89",
-        "conf": 0.7796,
+        "conf": 0.7916,
         "best": "2",
-        "bestP": 0.6731,
+        "bestP": 0.6965,
         "combo": "2+O1.5",
         "comboP": 0.878
       },
@@ -1681,6 +2497,24 @@
         "pp_result": "X2",
         "pp_label": "\ud83d\udee1\ufe0f X2",
         "pp_pct": 37.4
+      },
+      "ov": {
+        "score": 45.0,
+        "pin1": 2.84,
+        "pinX": 3.31,
+        "pin2": 2.53,
+        "b365_1": null,
+        "b365_X": null,
+        "b365_2": null,
+        "edge": null,
+        "misalign": null,
+        "market_fav": "2",
+        "components": {
+          "misalign": 0,
+          "coherence": 25.0,
+          "value": 0,
+          "sharp": 20.0
+        }
       }
     },
     {
@@ -1716,6 +2550,24 @@
         "pp_result": "12",
         "pp_label": "\ud83d\udd00 1-2",
         "pp_pct": 73.0
+      },
+      "ov": {
+        "score": 20.0,
+        "pin1": 1.64,
+        "pinX": 4.44,
+        "pin2": 4.53,
+        "b365_1": null,
+        "b365_X": null,
+        "b365_2": null,
+        "edge": null,
+        "misalign": null,
+        "market_fav": "1",
+        "components": {
+          "misalign": 0,
+          "coherence": 0,
+          "value": 0,
+          "sharp": 20.0
+        }
       }
     },
     {
@@ -1751,6 +2603,24 @@
         "pp_result": "12",
         "pp_label": "\ud83d\udd00 1-2",
         "pp_pct": 72.7
+      },
+      "ov": {
+        "score": 45.0,
+        "pin1": 1.53,
+        "pinX": 4.72,
+        "pin2": 5.2,
+        "b365_1": null,
+        "b365_X": null,
+        "b365_2": null,
+        "edge": null,
+        "misalign": null,
+        "market_fav": "1",
+        "components": {
+          "misalign": 0,
+          "coherence": 25.0,
+          "value": 0,
+          "sharp": 20.0
+        }
       }
     },
     {
@@ -1786,6 +2656,24 @@
         "pp_result": "X",
         "pp_label": "\u2696\ufe0f FISSA X",
         "pp_pct": 46.7
+      },
+      "ov": {
+        "score": 45.0,
+        "pin1": 3.33,
+        "pinX": 3.77,
+        "pin2": 2.06,
+        "b365_1": null,
+        "b365_X": null,
+        "b365_2": null,
+        "edge": null,
+        "misalign": null,
+        "market_fav": "2",
+        "components": {
+          "misalign": 0,
+          "coherence": 25.0,
+          "value": 0,
+          "sharp": 20.0
+        }
       }
     },
     {
@@ -1821,6 +2709,24 @@
         "pp_result": "X",
         "pp_label": "\u2696\ufe0f FISSA X",
         "pp_pct": 50.7
+      },
+      "ov": {
+        "score": 20.0,
+        "pin1": 1.9,
+        "pinX": 4.09,
+        "pin2": 3.55,
+        "b365_1": null,
+        "b365_X": null,
+        "b365_2": null,
+        "edge": null,
+        "misalign": null,
+        "market_fav": "1",
+        "components": {
+          "misalign": 0,
+          "coherence": 0,
+          "value": 0,
+          "sharp": 20.0
+        }
       }
     },
     {
@@ -1856,6 +2762,24 @@
         "pp_result": "2",
         "pp_label": "\ud83c\udfaf FISSA 2",
         "pp_pct": 18.8
+      },
+      "ov": {
+        "score": 45.0,
+        "pin1": 3.15,
+        "pinX": 3.56,
+        "pin2": 2.21,
+        "b365_1": null,
+        "b365_X": null,
+        "b365_2": null,
+        "edge": null,
+        "misalign": null,
+        "market_fav": "2",
+        "components": {
+          "misalign": 0,
+          "coherence": 25.0,
+          "value": 0,
+          "sharp": 20.0
+        }
       }
     },
     {
@@ -1891,6 +2815,539 @@
         "pp_result": "X",
         "pp_label": "\u2696\ufe0f FISSA X",
         "pp_pct": 45.0
+      },
+      "ov": {
+        "score": 45.0,
+        "pin1": 2.13,
+        "pinX": 3.88,
+        "pin2": 3.09,
+        "b365_1": null,
+        "b365_X": null,
+        "b365_2": null,
+        "edge": null,
+        "misalign": null,
+        "market_fav": "1",
+        "components": {
+          "misalign": 0,
+          "coherence": 25.0,
+          "value": 0,
+          "sharp": 20.0
+        }
+      }
+    },
+    {
+      "home": "FC Alverca",
+      "away": "FC Arouca",
+      "league": "Primeira Liga",
+      "fixture_id": 545976,
+      "date": "24/04/2026",
+      "time": "20:15",
+      "pred": {
+        "home": 0.3434,
+        "draw": 0.3462,
+        "away": 0.3105,
+        "dc1x": 0.6895,
+        "dcx2": 0.6566,
+        "dc12": 0.6538,
+        "over25": 0.4894,
+        "under25": 0.5106,
+        "bttsY": 0.53,
+        "bttsN": 0.47,
+        "xg_h": "1.46",
+        "xg_a": "1.17",
+        "conf": 0.2392,
+        "best": "X",
+        "bestP": 0.3462,
+        "combo": "X+O1.5",
+        "comboP": 0.7386
+      },
+      "pp": {
+        "pp_i_casa": 4.35,
+        "pp_i_ospite": 2.44,
+        "pp_D": 1.91,
+        "pp_result": "X",
+        "pp_label": "\u2696\ufe0f FISSA X",
+        "pp_pct": 57.0
+      },
+      "ov": {
+        "score": 20.0,
+        "pin1": 2.24,
+        "pinX": 3.4,
+        "pin2": 3.4,
+        "b365_1": null,
+        "b365_X": null,
+        "b365_2": null,
+        "edge": null,
+        "misalign": null,
+        "market_fav": "1",
+        "components": {
+          "misalign": 0,
+          "coherence": 0,
+          "value": 0,
+          "sharp": 20.0
+        }
+      }
+    },
+    {
+      "home": "CD Tondela",
+      "away": "CD Nacional",
+      "league": "Primeira Liga",
+      "fixture_id": 545971,
+      "date": "25/04/2026",
+      "time": "15:30",
+      "pred": {
+        "home": 0.3235,
+        "draw": 0.3429,
+        "away": 0.3335,
+        "dc1x": 0.6665,
+        "dcx2": 0.6765,
+        "dc12": 0.6571,
+        "over25": 0.313,
+        "under25": 0.687,
+        "bttsY": 0.3906,
+        "bttsN": 0.6094,
+        "xg_h": "0.98",
+        "xg_a": "0.98",
+        "conf": 0.165,
+        "best": "X",
+        "bestP": 0.3429,
+        "combo": "X+U3.5",
+        "comboP": 0.864
+      },
+      "pp": {
+        "pp_i_casa": 3.0,
+        "pp_i_ospite": 0.42,
+        "pp_D": 2.58,
+        "pp_result": "1X",
+        "pp_label": "\ud83d\udee1\ufe0f 1X",
+        "pp_pct": 59.4
+      },
+      "ov": {
+        "score": 20.0,
+        "pin1": 2.9,
+        "pinX": 3.39,
+        "pin2": 2.44,
+        "b365_1": null,
+        "b365_X": null,
+        "b365_2": null,
+        "edge": null,
+        "misalign": null,
+        "market_fav": "2",
+        "components": {
+          "misalign": 0,
+          "coherence": 0,
+          "value": 0,
+          "sharp": 20.0
+        }
+      }
+    },
+    {
+      "home": "Sport Lisboa e Benfica",
+      "away": "Moreirense FC",
+      "league": "Primeira Liga",
+      "fixture_id": 545977,
+      "date": "25/04/2026",
+      "time": "18:00",
+      "pred": {
+        "home": 0.6555,
+        "draw": 0.2966,
+        "away": 0.0478,
+        "dc1x": 0.9522,
+        "dcx2": 0.3445,
+        "dc12": 0.7034,
+        "over25": 0.4894,
+        "under25": 0.5106,
+        "bttsY": 0.4699,
+        "bttsN": 0.5301,
+        "xg_h": "1.8",
+        "xg_a": "0.83",
+        "conf": 0.2958,
+        "best": "1",
+        "bestP": 0.6555,
+        "combo": "1+O1.5",
+        "comboP": 0.7386
+      },
+      "pp": {
+        "pp_i_casa": 10.95,
+        "pp_i_ospite": 3.74,
+        "pp_D": 7.21,
+        "pp_result": "12",
+        "pp_label": "\ud83d\udd00 1-2",
+        "pp_pct": 76.3
+      },
+      "ov": {
+        "score": null,
+        "pin1": null,
+        "pinX": null,
+        "pin2": null,
+        "b365_1": null,
+        "b365_X": null,
+        "b365_2": null,
+        "edge": null,
+        "misalign": null,
+        "market_fav": null,
+        "components": {}
+      }
+    },
+    {
+      "home": "Vit\u00f3ria SC",
+      "away": "Rio Ave FC",
+      "league": "Primeira Liga",
+      "fixture_id": 545978,
+      "date": "25/04/2026",
+      "time": "20:30",
+      "pred": {
+        "home": 0.2554,
+        "draw": 0.3408,
+        "away": 0.4038,
+        "dc1x": 0.5962,
+        "dcx2": 0.7446,
+        "dc12": 0.6592,
+        "over25": 0.4965,
+        "under25": 0.5035,
+        "bttsY": 0.5278,
+        "bttsN": 0.4722,
+        "xg_h": "1.55",
+        "xg_a": "1.11",
+        "conf": 0.2634,
+        "best": "2",
+        "bestP": 0.4038,
+        "combo": "X+O1.5",
+        "comboP": 0.744
+      },
+      "pp": {
+        "pp_i_casa": 8.4,
+        "pp_i_ospite": 6.7,
+        "pp_D": 1.7,
+        "pp_result": "X",
+        "pp_label": "\u2696\ufe0f FISSA X",
+        "pp_pct": 56.2
+      },
+      "ov": {
+        "score": 20.0,
+        "pin1": 1.83,
+        "pinX": 3.34,
+        "pin2": 4.81,
+        "b365_1": null,
+        "b365_X": null,
+        "b365_2": null,
+        "edge": null,
+        "misalign": null,
+        "market_fav": "1",
+        "components": {
+          "misalign": 0,
+          "coherence": 0,
+          "value": 0,
+          "sharp": 20.0
+        }
+      }
+    },
+    {
+      "home": "GD Estoril Praia",
+      "away": "FC Famalic\u00e3o",
+      "league": "Primeira Liga",
+      "fixture_id": 545974,
+      "date": "26/04/2026",
+      "time": "15:30",
+      "pred": {
+        "home": 0.2189,
+        "draw": 0.3356,
+        "away": 0.4455,
+        "dc1x": 0.5545,
+        "dcx2": 0.7811,
+        "dc12": 0.6644,
+        "over25": 0.4727,
+        "under25": 0.5273,
+        "bttsY": 0.5166,
+        "bttsN": 0.4834,
+        "xg_h": "1.42",
+        "xg_a": "1.14",
+        "conf": 0.2476,
+        "best": "2",
+        "bestP": 0.4455,
+        "combo": "X+U3.5",
+        "comboP": 0.7436
+      },
+      "pp": {
+        "pp_i_casa": 3.9,
+        "pp_i_ospite": 5.16,
+        "pp_D": -1.26,
+        "pp_result": "X",
+        "pp_label": "\u2696\ufe0f FISSA X",
+        "pp_pct": 45.4
+      },
+      "ov": {
+        "score": 45.0,
+        "pin1": 3.2,
+        "pinX": 3.47,
+        "pin2": 2.23,
+        "b365_1": null,
+        "b365_X": null,
+        "b365_2": null,
+        "edge": null,
+        "misalign": null,
+        "market_fav": "2",
+        "components": {
+          "misalign": 0,
+          "coherence": 25.0,
+          "value": 0,
+          "sharp": 20.0
+        }
+      }
+    },
+    {
+      "home": "CD Santa Clara",
+      "away": "Sporting Clube de Braga",
+      "league": "Primeira Liga",
+      "fixture_id": 545972,
+      "date": "26/04/2026",
+      "time": "18:00",
+      "pred": {
+        "home": 0.3011,
+        "draw": 0.3476,
+        "away": 0.3514,
+        "dc1x": 0.6486,
+        "dcx2": 0.6989,
+        "dc12": 0.6524,
+        "over25": 0.3822,
+        "under25": 0.6178,
+        "bttsY": 0.4277,
+        "bttsN": 0.5723,
+        "xg_h": "0.85",
+        "xg_a": "1.36",
+        "conf": 0.2087,
+        "best": "X",
+        "bestP": 0.3476,
+        "combo": "X+U3.5",
+        "comboP": 0.8158
+      },
+      "pp": {
+        "pp_i_casa": 4.2,
+        "pp_i_ospite": 10.14,
+        "pp_D": -5.94,
+        "pp_result": "12",
+        "pp_label": "\ud83d\udd00 1-2",
+        "pp_pct": 28.3
+      },
+      "ov": {
+        "score": null,
+        "pin1": null,
+        "pinX": null,
+        "pin2": null,
+        "b365_1": null,
+        "b365_X": null,
+        "b365_2": null,
+        "edge": null,
+        "misalign": null,
+        "market_fav": null,
+        "components": {}
+      }
+    },
+    {
+      "home": "CF Estrela da Amadora",
+      "away": "FC Porto",
+      "league": "Primeira Liga",
+      "fixture_id": 545975,
+      "date": "26/04/2026",
+      "time": "18:00",
+      "pred": {
+        "home": 0.05,
+        "draw": 0.3062,
+        "away": 0.6438,
+        "dc1x": 0.3562,
+        "dcx2": 0.95,
+        "dc12": 0.6938,
+        "over25": 0.4643,
+        "under25": 0.5357,
+        "bttsY": 0.4738,
+        "bttsN": 0.5262,
+        "xg_h": "0.88",
+        "xg_a": "1.65",
+        "conf": 0.3148,
+        "best": "2",
+        "bestP": 0.6438,
+        "combo": "2+U3.5",
+        "comboP": 0.7508
+      },
+      "pp": {
+        "pp_i_casa": 5.55,
+        "pp_i_ospite": 8.64,
+        "pp_D": -3.09,
+        "pp_result": "X2",
+        "pp_label": "\ud83d\udee1\ufe0f X2",
+        "pp_pct": 38.7
+      },
+      "ov": {
+        "score": 45.0,
+        "pin1": 8.74,
+        "pinX": 5.2,
+        "pin2": 1.33,
+        "b365_1": null,
+        "b365_X": null,
+        "b365_2": null,
+        "edge": null,
+        "misalign": null,
+        "market_fav": "2",
+        "components": {
+          "misalign": 0,
+          "coherence": 25.0,
+          "value": 0,
+          "sharp": 20.0
+        }
+      }
+    },
+    {
+      "home": "AVS",
+      "away": "Sporting Clube de Portugal",
+      "league": "Primeira Liga",
+      "fixture_id": 545973,
+      "date": "26/04/2026",
+      "time": "20:30",
+      "pred": {
+        "home": 0.1606,
+        "draw": 0.3372,
+        "away": 0.5021,
+        "dc1x": 0.4979,
+        "dcx2": 0.8394,
+        "dc12": 0.6628,
+        "over25": 0.4643,
+        "under25": 0.5357,
+        "bttsY": 0.4206,
+        "bttsN": 0.5794,
+        "xg_h": "0.69",
+        "xg_a": "1.84",
+        "conf": 0.2792,
+        "best": "2",
+        "bestP": 0.5021,
+        "combo": "2+U3.5",
+        "comboP": 0.7508
+      },
+      "pp": {
+        "pp_i_casa": 3.3,
+        "pp_i_ospite": 10.16,
+        "pp_D": -6.86,
+        "pp_result": "12",
+        "pp_label": "\ud83d\udd00 1-2",
+        "pp_pct": 25.0
+      },
+      "ov": {
+        "score": 45.0,
+        "pin1": 17.98,
+        "pinX": 11.11,
+        "pin2": 1.1,
+        "b365_1": null,
+        "b365_X": null,
+        "b365_2": null,
+        "edge": null,
+        "misalign": null,
+        "market_fav": "2",
+        "components": {
+          "misalign": 0,
+          "coherence": 25.0,
+          "value": 0,
+          "sharp": 20.0
+        }
+      }
+    },
+    {
+      "home": "Gil Vicente FC",
+      "away": "Casa Pia AC",
+      "league": "Primeira Liga",
+      "fixture_id": 545970,
+      "date": "27/04/2026",
+      "time": "20:15",
+      "pred": {
+        "home": 0.4565,
+        "draw": 0.3489,
+        "away": 0.1946,
+        "dc1x": 0.8054,
+        "dcx2": 0.5435,
+        "dc12": 0.6511,
+        "over25": 0.4485,
+        "under25": 0.5515,
+        "bttsY": 0.4361,
+        "bttsN": 0.5639,
+        "xg_h": "1.71",
+        "xg_a": "0.76",
+        "conf": 0.2284,
+        "best": "1",
+        "bestP": 0.4565,
+        "combo": "X+U3.5",
+        "comboP": 0.764
+      },
+      "pp": {
+        "pp_i_casa": 5.7,
+        "pp_i_ospite": 0.66,
+        "pp_D": 5.04,
+        "pp_result": "12",
+        "pp_label": "\ud83d\udd00 1-2",
+        "pp_pct": 68.4
+      },
+      "ov": {
+        "score": 45.0,
+        "pin1": 1.58,
+        "pinX": 3.94,
+        "pin2": 5.93,
+        "b365_1": null,
+        "b365_X": null,
+        "b365_2": null,
+        "edge": null,
+        "misalign": null,
+        "market_fav": "1",
+        "components": {
+          "misalign": 0,
+          "coherence": 25.0,
+          "value": 0,
+          "sharp": 20.0
+        }
+      }
+    },
+    {
+      "home": "Sporting Clube de Portugal",
+      "away": "CD Tondela",
+      "league": "Primeira Liga",
+      "fixture_id": 545933,
+      "date": "29/04/2026",
+      "time": "20:15",
+      "pred": {
+        "home": 0.5455,
+        "draw": 0.3349,
+        "away": 0.1196,
+        "dc1x": 0.8804,
+        "dcx2": 0.4545,
+        "dc12": 0.6651,
+        "over25": 0.573,
+        "under25": 0.427,
+        "bttsY": 0.4132,
+        "bttsN": 0.5868,
+        "xg_h": "2.38",
+        "xg_a": "0.61",
+        "conf": 0.2841,
+        "best": "1",
+        "bestP": 0.5455,
+        "combo": "1+O1.5",
+        "comboP": 0.7983
+      },
+      "pp": {
+        "pp_i_casa": 9.75,
+        "pp_i_ospite": 2.64,
+        "pp_D": 7.11,
+        "pp_result": "12",
+        "pp_label": "\ud83d\udd00 1-2",
+        "pp_pct": 75.9
+      },
+      "ov": {
+        "score": null,
+        "pin1": null,
+        "pinX": null,
+        "pin2": null,
+        "b365_1": null,
+        "b365_X": null,
+        "b365_2": null,
+        "edge": null,
+        "misalign": null,
+        "market_fav": null,
+        "components": {}
       }
     },
     {
@@ -1926,6 +3383,19 @@
         "pp_result": "12",
         "pp_label": "\ud83d\udd00 1-2",
         "pp_pct": 29.8
+      },
+      "ov": {
+        "score": null,
+        "pin1": null,
+        "pinX": null,
+        "pin2": null,
+        "b365_1": null,
+        "b365_X": null,
+        "b365_2": null,
+        "edge": null,
+        "misalign": null,
+        "market_fav": null,
+        "components": {}
       }
     },
     {
@@ -1936,21 +3406,21 @@
       "date": "25/04/2026",
       "time": "12:30",
       "pred": {
-        "home": 0.2883,
-        "draw": 0.2994,
-        "away": 0.4123,
-        "dc1x": 0.5877,
-        "dcx2": 0.7117,
-        "dc12": 0.7006,
+        "home": 0.2684,
+        "draw": 0.2964,
+        "away": 0.4353,
+        "dc1x": 0.5647,
+        "dcx2": 0.7316,
+        "dc12": 0.7036,
         "over25": 0.4446,
         "under25": 0.5554,
         "bttsY": 0.4983,
         "bttsN": 0.5017,
         "xg_h": "1.16",
         "xg_a": "1.3",
-        "conf": 0.2729,
+        "conf": 0.2799,
         "best": "2",
-        "bestP": 0.4123,
+        "bestP": 0.4353,
         "combo": "X+U3.5",
         "comboP": 0.7672
       },
@@ -1961,6 +3431,19 @@
         "pp_result": "X2",
         "pp_label": "\ud83d\udee1\ufe0f X2",
         "pp_pct": 41.6
+      },
+      "ov": {
+        "score": null,
+        "pin1": null,
+        "pinX": null,
+        "pin2": null,
+        "b365_1": null,
+        "b365_X": null,
+        "b365_2": null,
+        "edge": null,
+        "misalign": null,
+        "market_fav": null,
+        "components": {}
       }
     },
     {
@@ -1971,21 +3454,21 @@
       "date": "25/04/2026",
       "time": "12:30",
       "pred": {
-        "home": 0.4433,
-        "draw": 0.2945,
-        "away": 0.2623,
-        "dc1x": 0.7377,
-        "dcx2": 0.5567,
-        "dc12": 0.7055,
+        "home": 0.4649,
+        "draw": 0.2915,
+        "away": 0.2437,
+        "dc1x": 0.7563,
+        "dcx2": 0.5351,
+        "dc12": 0.7085,
         "over25": 0.4026,
         "under25": 0.5974,
         "bttsY": 0.4439,
         "bttsN": 0.5561,
         "xg_h": "1.41",
         "xg_a": "0.89",
-        "conf": 0.2845,
+        "conf": 0.2911,
         "best": "1",
-        "bestP": 0.4433,
+        "bestP": 0.4649,
         "combo": "X+U3.5",
         "comboP": 0.8004
       },
@@ -1996,6 +3479,19 @@
         "pp_result": "X",
         "pp_label": "\u2696\ufe0f FISSA X",
         "pp_pct": 57.2
+      },
+      "ov": {
+        "score": null,
+        "pin1": null,
+        "pinX": null,
+        "pin2": null,
+        "b365_1": null,
+        "b365_X": null,
+        "b365_2": null,
+        "edge": null,
+        "misalign": null,
+        "market_fav": null,
+        "components": {}
       }
     },
     {
@@ -2006,21 +3502,21 @@
       "date": "25/04/2026",
       "time": "12:30",
       "pred": {
-        "home": 0.423,
-        "draw": 0.2886,
-        "away": 0.2883,
-        "dc1x": 0.7117,
-        "dcx2": 0.577,
-        "dc12": 0.7114,
+        "home": 0.4016,
+        "draw": 0.2917,
+        "away": 0.3067,
+        "dc1x": 0.6933,
+        "dcx2": 0.5984,
+        "dc12": 0.7083,
         "over25": 0.5076,
         "under25": 0.4924,
         "bttsY": 0.549,
         "bttsN": 0.451,
         "xg_h": "1.3",
         "xg_a": "1.4",
-        "conf": 0.2345,
+        "conf": 0.228,
         "best": "1",
-        "bestP": 0.423,
+        "bestP": 0.4016,
         "combo": "X+O1.5",
         "comboP": 0.7522
       },
@@ -2031,6 +3527,19 @@
         "pp_result": "X",
         "pp_label": "\u2696\ufe0f FISSA X",
         "pp_pct": 46.4
+      },
+      "ov": {
+        "score": null,
+        "pin1": null,
+        "pinX": null,
+        "pin2": null,
+        "b365_1": null,
+        "b365_X": null,
+        "b365_2": null,
+        "edge": null,
+        "misalign": null,
+        "market_fav": null,
+        "components": {}
       }
     },
     {
@@ -2041,21 +3550,21 @@
       "date": "25/04/2026",
       "time": "15:00",
       "pred": {
-        "home": 0.3699,
-        "draw": 0.298,
-        "away": 0.3321,
-        "dc1x": 0.6679,
-        "dcx2": 0.6301,
-        "dc12": 0.702,
+        "home": 0.3933,
+        "draw": 0.2986,
+        "away": 0.3081,
+        "dc1x": 0.6919,
+        "dcx2": 0.6067,
+        "dc12": 0.7014,
         "over25": 0.4498,
         "under25": 0.5502,
         "bttsY": 0.4932,
         "bttsN": 0.5068,
         "xg_h": "1.43",
         "xg_a": "1.04",
-        "conf": 0.2646,
-        "best": "X",
-        "bestP": 0.298,
+        "conf": 0.2717,
+        "best": "1",
+        "bestP": 0.3933,
         "combo": "X+U3.5",
         "comboP": 0.7629
       },
@@ -2066,6 +3575,19 @@
         "pp_result": "1X",
         "pp_label": "\ud83d\udee1\ufe0f 1X",
         "pp_pct": 59.3
+      },
+      "ov": {
+        "score": null,
+        "pin1": null,
+        "pinX": null,
+        "pin2": null,
+        "b365_1": null,
+        "b365_X": null,
+        "b365_2": null,
+        "edge": null,
+        "misalign": null,
+        "market_fav": null,
+        "components": {}
       }
     },
     {
@@ -2101,6 +3623,19 @@
         "pp_result": "X",
         "pp_label": "\u2696\ufe0f FISSA X",
         "pp_pct": 47.0
+      },
+      "ov": {
+        "score": null,
+        "pin1": null,
+        "pinX": null,
+        "pin2": null,
+        "b365_1": null,
+        "b365_X": null,
+        "b365_2": null,
+        "edge": null,
+        "misalign": null,
+        "market_fav": null,
+        "components": {}
       }
     },
     {
@@ -2111,21 +3646,21 @@
       "date": "25/04/2026",
       "time": "15:00",
       "pred": {
-        "home": 0.4305,
-        "draw": 0.2929,
-        "away": 0.2765,
-        "dc1x": 0.7235,
-        "dcx2": 0.5695,
-        "dc12": 0.7071,
+        "home": 0.4519,
+        "draw": 0.2899,
+        "away": 0.2582,
+        "dc1x": 0.7418,
+        "dcx2": 0.5481,
+        "dc12": 0.7101,
         "over25": 0.4026,
         "under25": 0.5974,
         "bttsY": 0.4479,
         "bttsN": 0.5521,
         "xg_h": "1.39",
         "xg_a": "0.91",
-        "conf": 0.278,
+        "conf": 0.2845,
         "best": "1",
-        "bestP": 0.4305,
+        "bestP": 0.4519,
         "combo": "X+U3.5",
         "comboP": 0.8004
       },
@@ -2136,6 +3671,19 @@
         "pp_result": "12",
         "pp_label": "\ud83d\udd00 1-2",
         "pp_pct": 69.5
+      },
+      "ov": {
+        "score": null,
+        "pin1": null,
+        "pinX": null,
+        "pin2": null,
+        "b365_1": null,
+        "b365_X": null,
+        "b365_2": null,
+        "edge": null,
+        "misalign": null,
+        "market_fav": null,
+        "components": {}
       }
     },
     {
@@ -2171,6 +3719,19 @@
         "pp_result": "1X",
         "pp_label": "\ud83d\udee1\ufe0f 1X",
         "pp_pct": 60.6
+      },
+      "ov": {
+        "score": null,
+        "pin1": null,
+        "pinX": null,
+        "pin2": null,
+        "b365_1": null,
+        "b365_X": null,
+        "b365_2": null,
+        "edge": null,
+        "misalign": null,
+        "market_fav": null,
+        "components": {}
       }
     },
     {
@@ -2181,21 +3742,21 @@
       "date": "25/04/2026",
       "time": "15:00",
       "pred": {
-        "home": 0.3577,
-        "draw": 0.2996,
-        "away": 0.3427,
-        "dc1x": 0.6573,
-        "dcx2": 0.6423,
-        "dc12": 0.7004,
+        "home": 0.3597,
+        "draw": 0.2999,
+        "away": 0.3404,
+        "dc1x": 0.6596,
+        "dcx2": 0.6403,
+        "dc12": 0.7001,
         "over25": 0.5125,
         "under25": 0.4875,
         "bttsY": 0.5487,
         "bttsN": 0.4513,
         "xg_h": "1.5",
         "xg_a": "1.23",
-        "conf": 0.2142,
+        "conf": 0.2148,
         "best": "X",
-        "bestP": 0.2996,
+        "bestP": 0.2999,
         "combo": "X+O1.5",
         "comboP": 0.7558
       },
@@ -2206,6 +3767,19 @@
         "pp_result": "X",
         "pp_label": "\u2696\ufe0f FISSA X",
         "pp_pct": 52.6
+      },
+      "ov": {
+        "score": null,
+        "pin1": null,
+        "pinX": null,
+        "pin2": null,
+        "b365_1": null,
+        "b365_X": null,
+        "b365_2": null,
+        "edge": null,
+        "misalign": null,
+        "market_fav": null,
+        "components": {}
       }
     },
     {
@@ -2241,6 +3815,19 @@
         "pp_result": "1X",
         "pp_label": "\ud83d\udee1\ufe0f 1X",
         "pp_pct": 61.3
+      },
+      "ov": {
+        "score": null,
+        "pin1": null,
+        "pinX": null,
+        "pin2": null,
+        "b365_1": null,
+        "b365_X": null,
+        "b365_2": null,
+        "edge": null,
+        "misalign": null,
+        "market_fav": null,
+        "components": {}
       }
     }
   ]
