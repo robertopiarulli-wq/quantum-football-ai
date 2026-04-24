@@ -643,19 +643,14 @@ export default function App(){
               ? (nv1>=nvX&&nv1>=nv2?"1":nv2>=nvX&&nv2>=nv1?"2":"X")
               : null;
 
-            // Score per segno:
-            // prob*0.5 = base Poisson
-            // concordance*0.3 = se Pinnacle concorda sul nostro segno → bonus
-            //   edge<0 ma stesso segno dominante → Pinnacle più convinto di noi → bonus
-            //   edge<0 e segno diverso → Pinnacle vede altro → malus
-            // ev>0*0.2 = value positivo sulla quota
-            const concordance1 = nv1!=null ? (mktFav==="1" ? Math.abs(edge1) : -Math.abs(edge1)*0.5) : 0;
-            const concordanceX = nvX!=null ? (mktFav==="X" ? Math.abs(edgeX) : -Math.abs(edgeX)*0.5) : 0;
-            const concordance2 = nv2!=null ? (mktFav==="2" ? Math.abs(edge2) : -Math.abs(edge2)*0.5) : 0;
-
-            const s1 = h*0.5 + concordance1*0.3 + (ev1!=null&&ev1>0?0.2:0);
-            const sX = x*0.5 + concordanceX*0.3 + (evX!=null&&evX>0?0.2:0);
-            const s2 = a*0.5 + concordance2*0.3 + (ev2!=null&&ev2>0?0.2:0);
+            // Score per segno — logica concordanza:
+            // Poisson 65% + Pinnacle 35% se concordano sullo stesso segno
+            // Solo Poisson 65% se discordano (nessun malus — Pinnacle è info, non penalità)
+            // Quando concordano: Pinnacle RINFORZA il segno (anche se edge<0)
+            const W_P=0.65, W_M=0.35;
+            const s1 = mktFav==="1"&&nv1!=null ? h*W_P+nv1*W_M : h*W_P;
+            const sX = mktFav==="X"&&nvX!=null ? x*W_P+nvX*W_M : x*W_P;
+            const s2 = mktFav==="2"&&nv2!=null ? a*W_P+nv2*W_M : a*W_P;
 
             // Previsione indipendente basata su score per segno
             const sorted = [["1",s1,ev1],["X",sX,evX],["2",s2,ev2]].sort((a,b)=>b[1]-a[1]);
@@ -678,8 +673,8 @@ export default function App(){
               pred_col  = "#888";
             }
 
-            // EV del segno migliore per score globale
-            const bestEv = top[1]>0 ? top[2] : null;
+            // EV del segno con prob più alta (non distorce la previsione)
+            const bestEv = top[0]==="1"?ev1:top[0]==="2"?ev2:evX;
             const ev_norm = bestEv!=null ? Math.max(0,Math.min(1,(bestEv+0.2)/0.4)) : 0.5;
 
             // Score globale combinato
