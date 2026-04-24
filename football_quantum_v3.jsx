@@ -620,42 +620,73 @@ export default function App(){
             if(!f.pred) return null;
             const h=f.pred.home||0, x=f.pred.draw||0, a=f.pred.away||0;
             const conf = (f.pred.conf||0);
-            const ov   = (f.ov?.score||0)/100;
-            const r    = (f.pp&&f.pp.pp_result)||"";
+            const ovScore = (f.ov?.score||0)/100;
 
-            // Segno migliore (best_out)
-            const bestOut = f.pred.best||"1";
-            const bestProb = bestOut==="1"?h:bestOut==="2"?a:x;
+            // Quote Pinnacle no-vig per ogni segno
+            const pin1=f.ov?.pin1, pinX=f.ov?.pinX, pin2=f.ov?.pin2;
+            const nv1=f.ov?.novig_1!=null?f.ov.novig_1/100:null;
+            const nvX=f.ov?.novig_X!=null?f.ov.novig_X/100:null;
+            const nv2=f.ov?.novig_2!=null?f.ov.novig_2/100:null;
 
-            // Quote Pinnacle
-            const pinOdd = bestOut==="1"?f.ov?.pin1:bestOut==="2"?f.ov?.pin2:f.ov?.pinX;
+            // EV per segno = (nostra prob * quota Pinnacle) - 1
+            const ev1 = pin1&&pin1>0 ? (h*pin1)-1 : null;
+            const evX = pinX&&pinX>0 ? (x*pinX)-1 : null;
+            const ev2 = pin2&&pin2>0 ? (a*pin2)-1 : null;
 
-            // EV = (nostra prob * quota Pinnacle) - 1
-            const ev = pinOdd&&pinOdd>0 ? (bestProb * pinOdd) - 1 : null;
-            const ev_norm = ev!==null ? Math.max(0, Math.min(1, (ev+0.2)/0.4)) : 0.5;
+            // Value edge per segno = nostra prob - no-vig Pinnacle
+            const edge1 = nv1!=null ? h-nv1 : 0;
+            const edgeX = nvX!=null ? x-nvX : 0;
+            const edge2 = nv2!=null ? a-nv2 : 0;
 
-            // PP Score
-            const ppSc = ppScore(f);
+            // Score per segno = prob*0.5 + edge*0.3 + (ev>0?0.2:0)
+            const s1 = h*0.5 + edge1*0.3 + (ev1!=null&&ev1>0?0.2:0);
+            const sX = x*0.5 + edgeX*0.3 + (evX!=null&&evX>0?0.2:0);
+            const s2 = a*0.5 + edge2*0.3 + (ev2!=null&&ev2>0?0.2:0);
 
-            // Trend movimento (se disponibile)
+            // Previsione indipendente basata su score per segno
+            const sorted = [["1",s1,ev1],["X",sX,evX],["2",s2,ev2]].sort((a,b)=>b[1]-a[1]);
+            const top=sorted[0], sec=sorted[1];
+            const gap = top[1]-sec[1];
+
+            let pred_sign, pred_col;
+            if(gap > 0.08){
+              // Segno nettamente dominante → FISSA
+              pred_sign = top[0]==="1"?"FISSA 1":top[0]==="2"?"FISSA 2":"FISSA X";
+              pred_col  = top[0]==="1"?"#22d3ee":top[0]==="2"?"#f472b6":"#f59e0b";
+            } else if(gap > 0.03){
+              // Due segni vicini → DOPPIA
+              const pair = [top[0],sec[0]].sort().join("");
+              pred_sign = pair==="12"?"1-2":pair==="1X"?"1X":pair==="X2"?"X2":"1-2";
+              pred_col  = pair==="12"?"#a78bfa":pair==="1X"?"#34d399":"#f97316";
+            } else {
+              // Quasi pareggio tra tutti → doppia più probabile
+              pred_sign = top[0]==="X"?(s1>s2?"1X":"X2"):"1-2";
+              pred_col  = "#888";
+            }
+
+            // EV del segno migliore per score globale
+            const bestEv = top[1]>0 ? top[2] : null;
+            const ev_norm = bestEv!=null ? Math.max(0,Math.min(1,(bestEv+0.2)/0.4)) : 0.5;
+
+            // Score globale combinato
             const trendBonus = f.ov?.movement_pct!=null
-              ? (f.ov.movement_pct < -2 ? 0.05 : f.ov.movement_pct > 3 ? -0.03 : 0)
-              : 0;
+              ? (f.ov.movement_pct<-2?0.05:f.ov.movement_pct>3?-0.03:0) : 0;
+            const score = conf*0.50 + ovScore*0.25 + ev_norm*0.25 + trendBonus;
 
-            // Score combinato
-            const score = conf*0.50 + ov*0.25 + ev_norm*0.25 + trendBonus;
-
-            // Label
-            const label = score>=0.75?"TOP":score>=0.65?"GOOD":score>=0.50?"MEDIUM":"AVOID";
+            // Label qualità
+            const label    = score>=0.75?"TOP":score>=0.65?"GOOD":score>=0.50?"MEDIUM":"AVOID";
             const labelCol = label==="TOP"?"#4caf50":label==="GOOD"?"#22d3ee":label==="MEDIUM"?"#f59e0b":"#f87171";
 
             // Flag anomalie
             let flag="—", flagCol="#555";
             if(conf>0.60 && (f.ov?.score||0)<40){flag="⚠️ TRAP";flagCol="#f87171";}
-            else if((f.ov?.score||0)>65 && conf<0.40){flag="⚡ RISKY";flagCol="#f59e0b";}
-            else if(f.ov?.movement_pct!=null && f.ov.movement_pct<-5){flag="🔥 SHARP";flagCol="#4caf50";}
+            else if((f.ov?.score||0)>65&&conf<0.40){flag="⚡ RISKY";flagCol="#f59e0b";}
+            else if(f.ov?.movement_pct!=null&&f.ov.movement_pct<-5){flag="🔥 SHARP";flagCol="#4caf50";}
 
-            return {score, label, labelCol, flag, flagCol, ev, ev_norm, bestOut, bestProb, pinOdd, ppSc, conf};
+            return {score, label, labelCol, flag, flagCol,
+                    pred_sign, pred_col, bestEv,
+                    ev1, evX, ev2, edge1, edgeX, edge2,
+                    ppSc:ppScore(f), conf};
           };
 
           // Calcola e ordina
@@ -727,15 +758,18 @@ export default function App(){
                   <div style={{fontSize:13,fontWeight:700,color:C.pink,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{f.away}</div>
                   <div style={{textAlign:"center"}}>
                     <div style={{fontSize:13,fontWeight:900,color:calc.labelCol}}>{(calc.score*100).toFixed(0)}</div>
-                    <div style={{fontSize:8,color:"#555"}}>/100</div>
+                    <div style={{fontSize:8,color:"#555",marginBottom:3}}>/100</div>
+                    <div style={{fontSize:12,fontWeight:900,color:calc.pred_col,background:`${calc.pred_col}15`,padding:"2px 8px",borderRadius:4,display:"inline-block"}}>
+                      {calc.pred_sign}
+                    </div>
                   </div>
                   <div style={{textAlign:"center"}}>
                     <span style={{fontSize:10,fontWeight:700,color:calc.labelCol,background:`${calc.labelCol}15`,padding:"2px 8px",borderRadius:4}}>{calc.label}</span>
                   </div>
                   <div style={{textAlign:"center"}}>
-                    {calc.ev!==null?(
-                      <span style={{fontSize:11,fontWeight:700,color:calc.ev>0?"#4caf50":"#f87171"}}>
-                        {calc.ev>0?"+":""}{(calc.ev*100).toFixed(1)}%
+                    {calc.bestEv!==null?(
+                      <span style={{fontSize:11,fontWeight:700,color:calc.bestEv>0?"#4caf50":"#f87171"}}>
+                        {calc.bestEv>0?"+":""}{(calc.bestEv*100).toFixed(1)}%
                       </span>
                     ):<span style={{color:"#333",fontSize:9}}>—</span>}
                   </div>
@@ -750,10 +784,12 @@ export default function App(){
                   </div>
                   <div style={{textAlign:"center"}}>
                     {pp?(()=>{
-                      const lbl=pp.pp_label?.replace(/[🎯🛡️⚖️🔀]/g,"").trim()||"—";
+                      const res=pp.pp_result||"";
+                      const lbl=pp.pp_label?.replace(/[🎯🛡️⚖️🔀⚖]/g,"").trim()||"—";
                       const d=pp.pp_D||0;
-                      return<span style={{color:ppDCol}}>
-                        <div style={{fontSize:12,fontWeight:900}}>{lbl}</div>
+                      const col=res==="1"?C.cyan:res==="2"?C.pink:res==="X"?C.amber:res==="1X"?"#34d399":res==="X2"?"#f97316":res==="12"?"#a78bfa":"#888";
+                      return<span>
+                        <div style={{fontSize:12,fontWeight:900,color:col}}>{lbl}</div>
                         <div style={{fontSize:10,color:"#a78bfa"}}>{d>0?"+":""}{d.toFixed(1)}</div>
                       </span>;
                     })():<span style={{color:"#333"}}>—</span>}
