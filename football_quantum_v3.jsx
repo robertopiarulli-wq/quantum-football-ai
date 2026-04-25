@@ -226,6 +226,7 @@ export default function App(){
   const[rnkSort,setRnkSort]=useState("conf");
   const[rnkExpanded,setRnkExpanded]=useState(null);
   const[multiSort,setMultiSort]=useState("score");
+  const[parixSort,setParixSort]=useState("score");
   const[homeInput,setHomeInput]=useState("");
   const[awayInput,setAwayInput]=useState("");
   const[manualPred,setManualPred]=useState(null);
@@ -434,7 +435,7 @@ export default function App(){
 
       {/* TABS */}
       <div style={{display:"flex",padding:"0 20px",borderBottom:"1px solid "+C.border,overflowX:"auto"}}>
-        {[["oggi","📅 OGGI"],["ranking","📊 RANKING"],["top","🏆 TOP"],["multipla","🎯 MULTIPLA"],["cerca","🔍 CERCA"],["perf","📈 PERFORMANCE"],["risultati","🏁 RISULTATI"],["log","📋 LOG"]].map(([t,l])=>(
+        {[["oggi","📅 OGGI"],["ranking","📊 RANKING"],["top","🏆 TOP"],["multipla","🎯 MULTIPLA"],["parisix","⚖️ PARISI X"],["cerca","🔍 CERCA"],["perf","📈 PERFORMANCE"],["risultati","🏁 RISULTATI"],["log","📋 LOG"]].map(([t,l])=>(
           <button key={t} onClick={()=>setTab(t)} style={{background:"none",border:"none",color:tab===t?C.cyan:"#555",padding:"11px 16px",cursor:"pointer",fontSize:10,letterSpacing:2,whiteSpace:"nowrap",borderBottom:tab===t?`2px solid ${C.cyan}`:"2px solid transparent",fontFamily:"inherit"}}>{l}</button>
         ))}
       </div>
@@ -914,6 +915,145 @@ export default function App(){
                 )}
               )}
               {multiplaData.length===0&&<div style={{textAlign:"center",padding:40,color:"#333",fontSize:11}}>Nessuna partita disponibile</div>}
+            </div>
+          </div>
+        );})()}
+
+        {tab==="parisix"&&(()=>{
+          if(!fixtures||fixtures.length===0)return(
+            <div style={{textAlign:"center",padding:60,color:"#333"}}>
+              <div style={{fontSize:40,marginBottom:12}}>⚖️</div>
+              <div style={{fontSize:11,letterSpacing:3}}>Nessuna partita disponibile</div>
+            </div>
+          );
+
+          // Filtra FISSA X (|D| ≤ 2)
+          const parixData = fixtures
+            .filter(f=>f.pp && f.pp.pp_result==="X")
+            .map(f=>({f, calc:calcMultipla(f)}))
+            .filter(({calc})=>calc!==null)
+            .sort((a,b)=>{
+              if(parixSort==="ov") return (b.f.ov?.score||0)-(a.f.ov?.score||0);
+              if(parixSort==="confpin"){
+                const decRank=d=>{
+                  if(!d)return 0;
+                  if(d.startsWith("🔥"))return 6;
+                  if(d.startsWith("✅"))return 5;
+                  if(d.startsWith("⚖️")&&!d.endsWith("*"))return 4;
+                  if(d.startsWith("⚖️")&&d.endsWith("*"))return 3;
+                  if(d.startsWith("❌"))return 2;
+                  if(d.startsWith("⚪"))return 1;
+                  return 0;
+                };
+                const ra=decRank(a.calc.decisione),rb=decRank(b.calc.decisione);
+                if(ra!==rb)return rb-ra;
+                return(b.calc.confPin||0)-(a.calc.confPin||0);
+              }
+              return b.calc.score-a.calc.score;
+            });
+
+          const pxCounts={"🔥":0,"✅":0,"⚖️":0,"⚖️*":0,"❌":0,"⚪":0};
+          parixData.forEach(({calc})=>{
+            const d=calc.decisione||"";
+            if(d.startsWith("🔥"))pxCounts["🔥"]++;
+            else if(d.startsWith("✅"))pxCounts["✅"]++;
+            else if(d.startsWith("⚖️")&&d.endsWith("*"))pxCounts["⚖️*"]++;
+            else if(d.startsWith("⚖️"))pxCounts["⚖️"]++;
+            else if(d.startsWith("❌"))pxCounts["❌"]++;
+            else if(d.startsWith("⚪"))pxCounts["⚪"]++;
+          });
+
+          return(
+          <div>
+            {/* Header */}
+            <div style={{background:"rgba(245,158,11,0.06)",border:"1px solid rgba(245,158,11,0.2)",borderRadius:10,padding:"10px 14px",marginBottom:14}}>
+              <div style={{fontSize:10,color:"#f59e0b",fontWeight:700,letterSpacing:2,marginBottom:4}}>⚖️ PARISI X — FISSA X · |D| ≤ 2</div>
+              <div style={{fontSize:9,color:"#888"}}>Partite dove il PP Index (KPZ/Parisi) indica equilibrio assoluto tra le due squadre. D compreso tra -2 e +2 → pareggio è il segnale più probabile.</div>
+            </div>
+
+            {/* Sort buttons */}
+            <div style={{display:"flex",gap:8,marginBottom:10,alignItems:"center"}}>
+              <div style={{fontSize:9,color:"#555",letterSpacing:1}}>ORDINA PER:</div>
+              {[["score","📊 Score"],["ov","💰 OV"],["confpin","🎯 CONF-PIN"]].map(([v,l])=>(
+                <button key={v} onClick={()=>setParixSort(v)}
+                  style={{padding:"5px 12px",borderRadius:99,fontSize:10,cursor:"pointer",fontFamily:"inherit",
+                    border:`1px solid ${parixSort===v?C.amber:C.border}`,
+                    background:parixSort===v?`${C.amber}15`:"transparent",
+                    color:parixSort===v?C.amber:"#666"}}>
+                  {l}
+                </button>
+              ))}
+            </div>
+
+            {/* Contatori */}
+            <div style={{display:"flex",gap:6,marginBottom:8,flexWrap:"wrap"}}>
+              {[["🔥","🔥 SECCO","#4caf50"],["✅","✅ 1X/X2","#22d3ee"],["⚖️","⚖️ DOPPIA","#f59e0b"],["⚖️*","⚖️ DOPPIA*","#d97706"],["❌","❌ NO BET","#f87171"],["⚪","⚪ NO DATA","#555"]].map(([key,lbl,col])=>(
+                pxCounts[key]>0&&<div key={key} style={{background:`${col}15`,border:`1px solid ${col}44`,borderRadius:8,padding:"3px 10px",fontSize:10,color:col,fontWeight:700}}>
+                  {lbl}: {pxCounts[key]}
+                </div>
+              ))}
+              <div style={{fontSize:9,color:"#555",marginLeft:"auto",alignSelf:"center"}}>
+                {parixData.length} FISSA X · |D|≤2
+              </div>
+            </div>
+
+            {/* Header tabella */}
+            <div style={{display:"grid",gridTemplateColumns:"36px 80px 1fr 1fr 60px 60px 70px 60px 60px 70px 90px 80px",gap:6,padding:"6px 10px",fontSize:9,color:"#555",letterSpacing:1,borderBottom:"1px solid rgba(255,255,255,0.07)",marginBottom:4}}>
+              <div>#</div><div>DATA</div><div>CASA</div><div>TRASFERTA</div>
+              <div style={{textAlign:"center"}}>SCORE</div>
+              <div style={{textAlign:"center"}}>LABEL</div>
+              <div style={{textAlign:"center"}}>DECISIONE</div>
+              <div style={{textAlign:"center",color:parixSort==="ov"?"#f59e0b":"#555"}}>OV</div>
+              <div style={{textAlign:"center"}}>EV</div>
+              <div style={{textAlign:"center",color:parixSort==="confpin"?"#f59e0b":"#555"}}>CONF-PIN</div>
+              <div style={{textAlign:"center"}}>PP Rank</div>
+              <div style={{textAlign:"center"}}>D</div>
+            </div>
+
+            {/* Righe */}
+            <div style={{display:"flex",flexDirection:"column",gap:3}}>
+              {parixData.length===0&&<div style={{textAlign:"center",padding:40,color:"#333",fontSize:11}}>Nessuna partita FISSA X oggi</div>}
+              {parixData.map(({f,calc},i)=>{
+                const pp=f.pp;
+                const ppSc=ppScore(f);
+                const ppLbl=ppLabel(f);
+                return(
+                <div key={i} style={{display:"grid",gridTemplateColumns:"36px 80px 1fr 1fr 60px 60px 70px 60px 60px 70px 90px 80px",gap:6,padding:"9px 10px",borderRadius:9,
+                  background:i<3?`${C.amber}08`:C.card,
+                  border:`1px solid ${i<3?C.amber+"33":C.border}`,
+                  alignItems:"center"}}>
+                  <div style={{fontSize:13,color:C.amber,fontWeight:700}}>{i===0?"🥇":i===1?"🥈":i===2?"🥉":i+1}</div>
+                  <div style={{fontSize:10,color:"#aaa",fontWeight:600,lineHeight:1.4}}>{f.date||"—"}<br/><span style={{fontSize:9,color:"#555"}}>{f.time||""}</span></div>
+                  <div style={{fontSize:12,fontWeight:700,color:C.cyan,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{f.home}</div>
+                  <div style={{fontSize:12,fontWeight:700,color:C.pink,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{f.away}</div>
+                  <div style={{textAlign:"center"}}>
+                    <div style={{fontSize:13,fontWeight:900,color:calc.labelCol}}>{(calc.score*100).toFixed(0)}</div>
+                    <div style={{fontSize:8,color:"#555"}}>/100</div>
+                  </div>
+                  <div style={{textAlign:"center"}}>
+                    <span style={{fontSize:10,fontWeight:700,color:calc.labelCol,background:`${calc.labelCol}15`,padding:"2px 6px",borderRadius:4}}>{calc.label}</span>
+                  </div>
+                  <div style={{textAlign:"center"}}>
+                    <span style={{fontSize:10,fontWeight:700,color:calc.decCol}}>{calc.decisione}</span>
+                  </div>
+                  <div style={{textAlign:"center"}}>
+                    {f.ov?.score!=null?<span style={{fontSize:11,fontWeight:700,color:f.ov.score>=60?"#4caf50":f.ov.score>=40?"#f59e0b":"#f87171"}}>{f.ov.score?.toFixed(0)}</span>:<span style={{color:"#333",fontSize:9}}>—</span>}
+                  </div>
+                  <div style={{textAlign:"center"}}>
+                    {calc.bestEv!=null?<span style={{fontSize:11,fontWeight:700,color:calc.bestEv>0?"#4caf50":"#f87171"}}>{calc.bestEv>0?"+":""}{(calc.bestEv*100).toFixed(1)}%</span>:<span style={{color:"#333",fontSize:9}}>—</span>}
+                  </div>
+                  <div style={{textAlign:"center",fontWeight:parixSort==="confpin"?900:400}}>
+                    {calc.confPin!=null?<span style={{fontSize:11,color:calc.confPin>=60?"#4caf50":calc.confPin>=40?"#f59e0b":"#f87171",fontWeight:700}}>{calc.confPin}</span>:<span style={{color:"#333",fontSize:9}}>—</span>}
+                  </div>
+                  <div style={{textAlign:"center",color:"#a78bfa"}}>
+                    <div style={{fontSize:11,fontWeight:700}}>{ppLbl}</div>
+                    <div style={{fontSize:9}}>{(ppSc*100).toFixed(0)}%</div>
+                  </div>
+                  <div style={{textAlign:"center"}}>
+                    <span style={{fontSize:11,fontWeight:700,color:C.amber}}>{pp?.pp_D>0?"+":""}{pp?.pp_D?.toFixed(2)}</span>
+                  </div>
+                </div>
+              )})}
             </div>
           </div>
         );})()}
