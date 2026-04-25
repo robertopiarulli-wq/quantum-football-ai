@@ -360,8 +360,11 @@ export default function App(){
       : 0.3;
 
     // ── EV sul segno dominante ──────────────────────────────
-    const pinBest = topP[0]==="1"?pin1:topP[0]==="2"?pin2:pinX;
-    const bestEv  = pinBest&&pinBest>0 ? (ourBest*pinBest)-1 : null;
+    // Per FISSA X (pp_result="X"): EV calcolato sul pareggio, non sul topP Poisson
+    const ppRes = (f.pp&&f.pp.pp_result)||"";
+    const pinBest = ppRes==="X" ? pinX : (topP[0]==="1"?pin1:topP[0]==="2"?pin2:pinX);
+    const evBest  = ppRes==="X" ? x : ourBest;
+    const bestEv  = pinBest&&pinBest>0 ? (evBest*pinBest)-1 : null;
 
     // ── EV normalizzato ─────────────────────────────────────
     // ev>0 → boost (max a EV=25%) | ev<0 → leggera penalità
@@ -838,7 +841,7 @@ export default function App(){
             </div>
 
             {/* ── HEADER TABELLA ── */}
-            <div style={{display:"grid",gridTemplateColumns:"36px 80px 1fr 1fr 60px 60px 70px 60px 60px 70px 90px 80px",gap:6,padding:"6px 10px",fontSize:9,color:"#555",letterSpacing:1,borderBottom:"1px solid rgba(255,255,255,0.07)",marginBottom:4}}>
+            <div style={{display:"grid",gridTemplateColumns:"36px 80px 1fr 1fr 55px 55px 70px 55px 55px 65px 85px 75px",gap:6,padding:"6px 10px",fontSize:9,color:"#555",letterSpacing:1,borderBottom:"1px solid rgba(255,255,255,0.07)",marginBottom:4}}>
               <div>#</div><div>DATA</div><div>CASA</div><div>TRASFERTA</div>
               <div style={{textAlign:"center"}}>SCORE</div>
               <div style={{textAlign:"center"}}>LABEL</div>
@@ -860,7 +863,7 @@ export default function App(){
                 const ppD=pp?.pp_D;
                 const ppDCol=pp?.pp_result==="1"?C.cyan:pp?.pp_result==="2"?C.pink:pp?.pp_result==="X"?C.amber:pp?.pp_result==="1X"?"#34d399":pp?.pp_result==="X2"?"#f97316":"#888";
                 return(
-                <div key={i} style={{display:"grid",gridTemplateColumns:"36px 80px 1fr 1fr 60px 60px 70px 60px 60px 70px 90px 80px",gap:6,padding:"10px 10px",borderRadius:9,background:i<3?`${calc.labelCol}08`:C.card,border:`1px solid ${i<3?calc.labelCol+"33":C.border}`,alignItems:"center",cursor:"pointer"}}
+                <div key={i} style={{display:"grid",gridTemplateColumns:"36px 80px 1fr 1fr 55px 55px 70px 55px 55px 65px 85px 75px",gap:6,padding:"10px 10px",borderRadius:9,background:i<3?`${calc.labelCol}08`:C.card,border:`1px solid ${i<3?calc.labelCol+"33":C.border}`,alignItems:"center",cursor:"pointer"}}
                   onClick={()=>setRnkExpanded(rnkExpanded===i?null:("m"+i))}>
                   <div style={{fontSize:12,color:C.amber,fontWeight:700}}>{i===0?"🥇":i===1?"🥈":i===2?"🥉":i+1}</div>
                   <div style={{fontSize:10,color:"#aaa",lineHeight:1.4,fontWeight:600}}>{f.date||"—"}<br/><span style={{fontSize:9,color:"#555"}}>{f.time||""}</span></div>
@@ -1000,7 +1003,7 @@ export default function App(){
             </div>
 
             {/* Header tabella */}
-            <div style={{display:"grid",gridTemplateColumns:"36px 80px 1fr 1fr 60px 60px 70px 60px 60px 70px 90px 80px",gap:6,padding:"6px 10px",fontSize:9,color:"#555",letterSpacing:1,borderBottom:"1px solid rgba(255,255,255,0.07)",marginBottom:4}}>
+            <div style={{display:"grid",gridTemplateColumns:"36px 80px 1fr 1fr 55px 55px 70px 55px 55px 65px 85px 75px",gap:6,padding:"6px 10px",fontSize:9,color:"#555",letterSpacing:1,borderBottom:"1px solid rgba(255,255,255,0.07)",marginBottom:4}}>
               <div>#</div><div>DATA</div><div>CASA</div><div>TRASFERTA</div>
               <div style={{textAlign:"center"}}>SCORE</div>
               <div style={{textAlign:"center"}}>LABEL</div>
@@ -1020,7 +1023,7 @@ export default function App(){
                 const ppSc=ppScore(f);
                 const ppLbl=ppLabel(f);
                 return(
-                <div key={i} style={{display:"grid",gridTemplateColumns:"36px 80px 1fr 1fr 60px 60px 70px 60px 60px 70px 90px 80px",gap:6,padding:"9px 10px",borderRadius:9,
+                <div key={i} style={{display:"grid",gridTemplateColumns:"36px 80px 1fr 1fr 55px 55px 70px 55px 55px 65px 85px 75px",gap:6,padding:"9px 10px",borderRadius:9,
                   background:i<3?`${C.amber}08`:C.card,
                   border:`1px solid ${i<3?C.amber+"33":C.border}`,
                   alignItems:"center"}}>
@@ -1028,6 +1031,10 @@ export default function App(){
                   <div style={{fontSize:10,color:"#aaa",fontWeight:600,lineHeight:1.4}}>{f.date||"—"}<br/><span style={{fontSize:9,color:"#555"}}>{f.time||""}</span></div>
                   <div style={{fontSize:12,fontWeight:700,color:C.cyan,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{f.home}</div>
                   <div style={{fontSize:12,fontWeight:700,color:C.pink,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{f.away}</div>
+                  <div style={{textAlign:"center"}}>
+                    <div style={{fontSize:13,fontWeight:900,color:calc.labelCol}}>{(calc.score*100).toFixed(0)}</div>
+                    <div style={{fontSize:8,color:"#555"}}>/100</div>
+                  </div>
                   <div style={{textAlign:"center"}}>
                     <div style={{fontSize:13,fontWeight:900,color:calc.labelCol}}>{(calc.score*100).toFixed(0)}</div>
                     <div style={{fontSize:8,color:"#555"}}>/100</div>
