@@ -694,15 +694,25 @@ export default function App(){
             const confPinN = confPin!=null?confPin/100:conf;
             const ovN = (f.ov?.score||0)/100;
             let decisione, decCol;
-            // Soglie calibrate su dati reali (OV max=76, CONF media=35-50%)
-            if(score>=0.75 && confPinN>=0.50 && ovN>=0.65){
+            // ── CERVELLO DECISIONALE ─────────────────────────────────
+            // NO BET solo se ALMENO 2 segnali esplicitamente negativi:
+            //   EV < -10% | CP < 10 | OV < 30 | score < 0.40
+            const negEV  = bestEv!=null && bestEv < -0.10;
+            const negCP  = confPin!=null && confPin < 10;
+            const negOV  = (f.ov?.score||0) < 30;
+            const negSc  = score < 0.40;
+            const negCount = (negEV?1:0)+(negCP?1:0)+(negOV?1:0)+(negSc?1:0);
+
+            if(negCount >= 2){
+              decisione="❌ NO BET"; decCol="#f87171";
+            } else if(score>=0.75 && confPinN>=0.50 && (f.ov?.score||0)>=65){
               decisione="🔥 SECCO"; decCol="#4caf50";
-            } else if(score>=0.65 && confPinN>=0.30 && ovN>=0.55){
+            } else if(score>=0.65 && (f.ov?.score||0)>=55){
               decisione="✅ 1X/X2"; decCol="#22d3ee";
-            } else if(score>=0.50 && confPinN>=0.20 && ovN>=0.40){
+            } else if(score>=0.50 && (f.ov?.score||0)>=35){
               decisione="⚖️ DOPPIA"; decCol="#f59e0b";
             } else {
-              decisione="❌ NO BET"; decCol="#f87171";
+              decisione="⚖️ DOPPIA*"; decCol="#d97706";
             }
 
             return {score,label,labelCol,flag,flagCol,
@@ -730,7 +740,7 @@ export default function App(){
             <div style={{background:"rgba(255,255,255,0.02)",border:"1px solid rgba(255,255,255,0.07)",borderRadius:12,padding:"14px 16px",marginBottom:16}}>
               <div style={{fontSize:10,color:"#a78bfa",letterSpacing:2,marginBottom:10,fontWeight:700}}>🧠 COME LEGGERE IL RANKING MULTIPLA</div>
               <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(240px,1fr))",gap:12,fontSize:11,color:"#888"}}>
-                <div><b style={{color:"#fff",fontSize:12}}>SCORE</b><br/>Indice combinato (0-100):<br/>CONF×60% + OV×30% + Concordanza×10%</div>
+                <div><b style={{color:"#fff",fontSize:12}}>SCORE</b><br/>Indice combinato (0-100):<br/>CONF×60% + OV×30% + Concordanza×10%<br/><span style={{color:"#f87171",fontSize:10}}>❌ NO BET solo con 2+ segnali negativi</span></div>
                 <div><b style={{color:"#fff",fontSize:12}}>EV</b><br/>Expected Value:<br/>(nostra prob × quota Pinnacle) − 1<br/><span style={{color:"#4caf50"}}>positivo = value bet</span> · <span style={{color:"#f87171"}}>negativo = no bet</span></div>
                 <div><b style={{color:"#fff",fontSize:12}}>CONF</b><br/>Confidenza modello:<br/>Segnali ELO + form + trend concordi</div>
                 <div><b style={{color:"#fff",fontSize:12}}>OV</b><br/>Odds Value vs Pinnacle no-vig:<br/>Alto = vediamo value che il mercato non vede</div>
