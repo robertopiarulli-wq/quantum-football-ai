@@ -708,16 +708,35 @@ export default function App(){
               const negSc  = score < 0.40;
               const negCount = (negEV?1:0)+(negCP?1:0)+(negOV?1:0)+(negSc?1:0);
 
+              // Determina quale doppia giocare basandosi sul pred_sign
+              const doppiaSign = ()=>{
+                if(pred_sign==="FISSA 1") return "1X";
+                if(pred_sign==="FISSA 2") return "X2";
+                if(pred_sign==="FISSA X") return pred_sign.includes("casa")||sortedP[0][0]==="1"?"1X":"X2";
+                if(pred_sign==="1-2") return "1-2";
+                if(pred_sign==="1X") return "1X";
+                if(pred_sign==="X2") return "X2";
+                return "1-2";
+              };
+
               if(negCount >= 2){
                 decisione="❌ NO BET"; decCol="#f87171";
               } else if(score>=0.75 && confPinN>=0.50 && (f.ov?.score||0)>=65){
-                decisione="🔥 SECCO"; decCol="#4caf50";
+                // SECCO — mostra segno esatto
+                const seccSign = pred_sign.replace("FISSA ","");
+                decisione=`🔥 ${seccSign}`; decCol="#4caf50";
               } else if(score>=0.65 && (f.ov?.score||0)>=55){
-                decisione="✅ 1X/X2"; decCol="#22d3ee";
+                // 1X/X2 esplicito
+                const d1x2 = doppiaSign();
+                decisione=`✅ ${d1x2}`; decCol="#22d3ee";
               } else if(score>=0.50 && (f.ov?.score||0)>=35){
-                decisione="⚖️ DOPPIA"; decCol="#f59e0b";
+                // DOPPIA esplicita
+                const ddop = doppiaSign();
+                decisione=`⚖️ ${ddop}`; decCol="#f59e0b";
               } else {
-                decisione="⚖️ DOPPIA*"; decCol="#d97706";
+                // DOPPIA conservativa esplicita
+                const dcons = doppiaSign();
+                decisione=`⚖️ ${dcons}*`; decCol="#d97706";
               }
             }
 
@@ -734,12 +753,14 @@ export default function App(){
             .sort((a,b)=>{
             if(multiSort==="confpin"){
               const decRank=d=>{
-                if(d==="🔥 SECCO")return 6;
-                if(d==="✅ 1X/X2")return 5;
-                if(d==="⚖️ DOPPIA")return 4;
-                if(d==="⚖️ DOPPIA*")return 3;
-                if(d==="❌ NO BET")return 2;
-                return 1;
+                if(!d) return 0;
+                if(d.startsWith("🔥")) return 6;
+                if(d.startsWith("✅")) return 5;
+                if(d.startsWith("⚖️")&&!d.endsWith("*")) return 4;
+                if(d.startsWith("⚖️")&&d.endsWith("*")) return 3;
+                if(d.startsWith("❌")) return 2;
+                if(d.startsWith("⚪")) return 1;
+                return 0;
               };
               const ra=decRank(a.calc.decisione),rb=decRank(b.calc.decisione);
               if(ra!==rb)return rb-ra;
@@ -750,10 +771,16 @@ export default function App(){
 
           // Conteggi label
           const counts = {TOP:0,GOOD:0,MEDIUM:0,AVOID:0};
-          const decCounts = {"🔥 SECCO":0,"✅ 1X/X2":0,"⚖️ DOPPIA":0,"⚖️ DOPPIA*":0,"❌ NO BET":0,"⚪ NO DATA":0};
+          const decCounts = {"🔥":0,"✅":0,"⚖️":0,"⚖️*":0,"❌":0,"⚪":0};
           multiplaData.forEach(({calc})=>{
             counts[calc.label]=(counts[calc.label]||0)+1;
-            decCounts[calc.decisione]=(decCounts[calc.decisione]||0)+1;
+            const d=calc.decisione||"";
+            if(d.startsWith("🔥")) decCounts["🔥"]++;
+            else if(d.startsWith("✅")) decCounts["✅"]++;
+            else if(d.startsWith("⚖️")&&d.endsWith("*")) decCounts["⚖️*"]++;
+            else if(d.startsWith("⚖️")) decCounts["⚖️"]++;
+            else if(d.startsWith("❌")) decCounts["❌"]++;
+            else if(d.startsWith("⚪")) decCounts["⚪"]++;
           });
 
           return(
@@ -790,9 +817,9 @@ export default function App(){
 
             {/* ── CONTATORI ── */}
             <div style={{display:"flex",gap:6,marginBottom:8,flexWrap:"wrap"}}>
-              {[["🔥 SECCO","#4caf50"],["✅ 1X/X2","#22d3ee"],["⚖️ DOPPIA","#f59e0b"],["⚖️ DOPPIA*","#d97706"],["❌ NO BET","#f87171"],["⚪ NO DATA","#555"]].map(([lbl,col])=>(
-                decCounts[lbl]>0&&<div key={lbl} style={{background:`${col}15`,border:`1px solid ${col}44`,borderRadius:8,padding:"3px 10px",fontSize:10,color:col,fontWeight:700}}>
-                  {lbl}: {decCounts[lbl]}
+              {[["🔥","🔥 SECCO","#4caf50"],["✅","✅ 1X/X2","#22d3ee"],["⚖️","⚖️ DOPPIA","#f59e0b"],["⚖️*","⚖️ DOPPIA*","#d97706"],["❌","❌ NO BET","#f87171"],["⚪","⚪ NO DATA","#555"]].map(([key,lbl,col])=>(
+                decCounts[key]>0&&<div key={key} style={{background:`${col}15`,border:`1px solid ${col}44`,borderRadius:8,padding:"3px 10px",fontSize:10,color:col,fontWeight:700}}>
+                  {lbl}: {decCounts[key]}
                 </div>
               ))}
             </div>
