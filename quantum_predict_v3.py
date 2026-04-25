@@ -1866,7 +1866,7 @@ def main():
                     "time":         time_str,
                     "stage":        match.get("stage", ""),
                     "matchday":     match.get("matchday", None),
-                    "first_leg":    fl if fl else None,
+                    "first_leg":    first_leg if first_leg else None,
                     "prediction":   pred,
                     "pp":           pp,
                     "ov_score":     ov_score,
