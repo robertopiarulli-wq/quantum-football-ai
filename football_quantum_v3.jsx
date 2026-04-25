@@ -694,11 +694,12 @@ export default function App(){
             const confPinN = confPin!=null?confPin/100:conf;
             const ovN = (f.ov?.score||0)/100;
             let decisione, decCol;
-            if(score>=0.75 && confPinN>=0.60 && ovN>=0.65){
+            // Soglie calibrate su dati reali (OV max=76, CONF media=35-50%)
+            if(score>=0.75 && confPinN>=0.50 && ovN>=0.65){
               decisione="🔥 SECCO"; decCol="#4caf50";
-            } else if(score>=0.65 && confPinN>=0.50 && ovN>=0.55){
+            } else if(score>=0.65 && confPinN>=0.30 && ovN>=0.55){
               decisione="✅ 1X/X2"; decCol="#22d3ee";
-            } else if(score>=0.55 && confPinN>=0.40 && ovN>=0.45){
+            } else if(score>=0.50 && confPinN>=0.20 && ovN>=0.40){
               decisione="⚖️ DOPPIA"; decCol="#f59e0b";
             } else {
               decisione="❌ NO BET"; decCol="#f87171";
