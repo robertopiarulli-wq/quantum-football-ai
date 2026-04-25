@@ -1035,10 +1035,7 @@ export default function App(){
                     <div style={{fontSize:13,fontWeight:900,color:calc.labelCol}}>{(calc.score*100).toFixed(0)}</div>
                     <div style={{fontSize:8,color:"#555"}}>/100</div>
                   </div>
-                  <div style={{textAlign:"center"}}>
-                    <div style={{fontSize:13,fontWeight:900,color:calc.labelCol}}>{(calc.score*100).toFixed(0)}</div>
-                    <div style={{fontSize:8,color:"#555"}}>/100</div>
-                  </div>
+
                   <div style={{textAlign:"center"}}>
                     <span style={{fontSize:10,fontWeight:700,color:calc.labelCol,background:`${calc.labelCol}15`,padding:"2px 6px",borderRadius:4}}>{calc.label}</span>
                   </div>
