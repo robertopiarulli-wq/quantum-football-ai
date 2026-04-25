@@ -696,9 +696,9 @@ export default function App(){
             let decisione, decCol;
             if(score>=0.75 && confPinN>=0.60 && ovN>=0.65){
               decisione="🔥 SECCO"; decCol="#4caf50";
-            } else if(score>=0.65 && confPinN>=0.50 && ovN>=0.65){
+            } else if(score>=0.65 && confPinN>=0.50 && ovN>=0.55){
               decisione="✅ 1X/X2"; decCol="#22d3ee";
-            } else if(score>=0.55 && confPinN>=0.45 && ovN>=0.60){
+            } else if(score>=0.55 && confPinN>=0.40 && ovN>=0.45){
               decisione="⚖️ DOPPIA"; decCol="#f59e0b";
             } else {
               decisione="❌ NO BET"; decCol="#f87171";
