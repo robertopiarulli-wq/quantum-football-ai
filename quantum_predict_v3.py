@@ -1825,49 +1825,35 @@ def main():
                             b365.get("1"), b365.get("X"), b365.get("2")
                         )
 
-                # Leggi sempre da Supabase usando fixture_id — più affidabile
+                # Quote LIVE dall'Odds API (priorità massima — più aggiornate)
+                # Storico Supabase usato solo per calcolo movimento
                 pin_rows = get_odds_history(fid, "pinnacle")
-                b365_rows = get_odds_history(fid, "bet365")
 
-                if pin_rows or b365_rows:
-                    # Ricostruisci odds_data da Supabase
+                # Determina fonte quote: live > Supabase
+                if odds_data and odds_data.get("pinnacle") and odds_data["pinnacle"].get("1"):
+                    # Quote live dall'Odds API — sempre aggiornate
+                    odds_data_final = odds_data
+                elif pin_rows:
+                    # Fallback: ultima quota da Supabase
                     def row_to_odds(rows):
                         if not rows: return {}
                         last = rows[-1]
                         return {"1": last.get("odd_home"), "X": last.get("odd_draw"), "2": last.get("odd_away")}
+                    odds_data_final = {"pinnacle": row_to_odds(pin_rows), "bet365": {}}
+                else:
+                    odds_data_final = {}
 
-                    odds_data_sb = {
-                        "pinnacle": row_to_odds(pin_rows),
-                        "bet365":   row_to_odds(b365_rows),
-                    }
-                    movement = calc_odds_movement(pin_rows)
+                if odds_data_final.get("pinnacle", {}).get("1"):
+                    movement = calc_odds_movement(pin_rows) if pin_rows else {}
                     ov_score, ov_details = calc_ov_score(
-                        pred, odds_data_sb, pred.get("best_out", "1"),
+                        pred, odds_data_final, pred.get("best_out", "1"),
                         movement=movement
                     )
                     if ov_score is not None:
-                        print(f"      💰 OV:{ov_score:.0f}/100 · Edge:{ov_details.get('value_edge',0):+.1f}% · Snap:{len(pin_rows)}")
-                src_h = feat.get("src_home", "ELO")
-                src_a = feat.get("src_away", "ELO")
-                h_fat = feat.get("h_fatigue_days", 99)
-                a_fat = feat.get("a_fatigue_days", 99)
-                fl    = feat.get("first_leg", {})
-                flags = []
-                if src_h == "API" or src_a == "API": flags.append("📡API")
-                if h2h and h2h.get("matches", 0) > 0: flags.append(f"H2H:{h2h['matches']}")
-                if h_fat < 4: flags.append(f"⚡H:{h_fat}gg")
-                if a_fat < 4: flags.append(f"⚡A:{a_fat}gg")
-                if fl: flags.append(f"🔄Andata:{fl.get('gh1',0)}-{fl.get('ga1',0)}")
-                if feat.get("big_match_penalty", 0) > 0: flags.append("🔥BigMatch")
-                if flags:
-                    print(f"      {' '.join(flags)}")
-
-                print(f"      1:{pred['home']:.1%} X:{pred['draw']:.1%} 2:{pred['away']:.1%} "
-                      f"O2.5:{pred['over_25']:.1%} Conf:{pred['confidence']:.1%}")
-                print(f"      PP: {pp['pp_label']} (I={pp['pp_i_casa']:+.1f}/{pp['pp_i_ospite']:+.1f} D={pp['pp_D']:+.1f} {pp['pp_pct']:.0f}%)")
-                if ov_score is not None:
-                    edge = ov_details.get('value_edge', 0)
-                    print(f"      OV: {ov_score:.0f}/100 · Edge:{edge:+.1f}% · Mkt:{ov_details.get('mkt_prob',0):.1f}% · Vig:{ov_details.get('vig_pct',0):.1f}%")
+                        edge = ov_details.get('value_edge', 0)
+                        mkt = ov_details.get('mkt_prob', 0)
+                        vig = ov_details.get('vig_pct', 0)
+                        print(f"      OV: {ov_score:.0f}/100 · Edge:{edge:+.1f}% · Mkt:{mkt:.1f}% · Vig:{vig:.1f}%")
 
                 all_preds.append({
                     "league":       league_name,
