@@ -695,24 +695,30 @@ export default function App(){
             const ovN = (f.ov?.score||0)/100;
             let decisione, decCol;
             // ── CERVELLO DECISIONALE ─────────────────────────────────
-            // NO BET solo se ALMENO 2 segnali esplicitamente negativi:
-            //   EV < -10% | CP < 10 | OV < 30 | score < 0.40
-            const negEV  = bestEv!=null && bestEv < -0.10;
-            const negCP  = confPin!=null && confPin < 10;
-            const negOV  = (f.ov?.score||0) < 30;
-            const negSc  = score < 0.40;
-            const negCount = (negEV?1:0)+(negCP?1:0)+(negOV?1:0)+(negSc?1:0);
-
-            if(negCount >= 2){
-              decisione="❌ NO BET"; decCol="#f87171";
-            } else if(score>=0.75 && confPinN>=0.50 && (f.ov?.score||0)>=65){
-              decisione="🔥 SECCO"; decCol="#4caf50";
-            } else if(score>=0.65 && (f.ov?.score||0)>=55){
-              decisione="✅ 1X/X2"; decCol="#22d3ee";
-            } else if(score>=0.50 && (f.ov?.score||0)>=35){
-              decisione="⚖️ DOPPIA"; decCol="#f59e0b";
+            // Partite senza dati Pinnacle → NO DATA
+            const hasOV = f.ov && f.ov.score!=null && f.ov.pin1!=null;
+            if(!hasOV){
+              decisione="⚪ NO DATA"; decCol="#555";
             } else {
-              decisione="⚖️ DOPPIA*"; decCol="#d97706";
+              // NO BET solo se ALMENO 2 segnali esplicitamente negativi:
+              // EV < -10% | CP < 10 | OV < 30 | score < 0.40
+              const negEV  = bestEv!=null && bestEv < -0.10;
+              const negCP  = confPin!=null && confPin < 10;
+              const negOV  = (f.ov?.score||0) < 30;
+              const negSc  = score < 0.40;
+              const negCount = (negEV?1:0)+(negCP?1:0)+(negOV?1:0)+(negSc?1:0);
+
+              if(negCount >= 2){
+                decisione="❌ NO BET"; decCol="#f87171";
+              } else if(score>=0.75 && confPinN>=0.50 && (f.ov?.score||0)>=65){
+                decisione="🔥 SECCO"; decCol="#4caf50";
+              } else if(score>=0.65 && (f.ov?.score||0)>=55){
+                decisione="✅ 1X/X2"; decCol="#22d3ee";
+              } else if(score>=0.50 && (f.ov?.score||0)>=35){
+                decisione="⚖️ DOPPIA"; decCol="#f59e0b";
+              } else {
+                decisione="⚖️ DOPPIA*"; decCol="#d97706";
+              }
             }
 
             return {score,label,labelCol,flag,flagCol,
@@ -726,13 +732,29 @@ export default function App(){
             .map(f=>({f, calc:calcMultipla(f)}))
             .filter(({calc})=>calc!==null)
             .sort((a,b)=>{
-            if(multiSort==="confpin") return (b.calc.confPin||0)-(a.calc.confPin||0);
+            if(multiSort==="confpin"){
+              const decRank=d=>{
+                if(d==="🔥 SECCO")return 6;
+                if(d==="✅ 1X/X2")return 5;
+                if(d==="⚖️ DOPPIA")return 4;
+                if(d==="⚖️ DOPPIA*")return 3;
+                if(d==="❌ NO BET")return 2;
+                return 1;
+              };
+              const ra=decRank(a.calc.decisione),rb=decRank(b.calc.decisione);
+              if(ra!==rb)return rb-ra;
+              return(b.calc.confPin||0)-(a.calc.confPin||0);
+            }
             return b.calc.score-a.calc.score;
           });
 
           // Conteggi label
           const counts = {TOP:0,GOOD:0,MEDIUM:0,AVOID:0};
-          multiplaData.forEach(({calc})=>counts[calc.label]=(counts[calc.label]||0)+1);
+          const decCounts = {"🔥 SECCO":0,"✅ 1X/X2":0,"⚖️ DOPPIA":0,"⚖️ DOPPIA*":0,"❌ NO BET":0,"⚪ NO DATA":0};
+          multiplaData.forEach(({calc})=>{
+            counts[calc.label]=(counts[calc.label]||0)+1;
+            decCounts[calc.decisione]=(decCounts[calc.decisione]||0)+1;
+          });
 
           return(
           <div>
@@ -767,14 +789,21 @@ export default function App(){
             </div>
 
             {/* ── CONTATORI ── */}
-            <div style={{display:"flex",gap:8,marginBottom:12,flexWrap:"wrap"}}>
+            <div style={{display:"flex",gap:6,marginBottom:8,flexWrap:"wrap"}}>
+              {[["🔥 SECCO","#4caf50"],["✅ 1X/X2","#22d3ee"],["⚖️ DOPPIA","#f59e0b"],["⚖️ DOPPIA*","#d97706"],["❌ NO BET","#f87171"],["⚪ NO DATA","#555"]].map(([lbl,col])=>(
+                decCounts[lbl]>0&&<div key={lbl} style={{background:`${col}15`,border:`1px solid ${col}44`,borderRadius:8,padding:"3px 10px",fontSize:10,color:col,fontWeight:700}}>
+                  {lbl}: {decCounts[lbl]}
+                </div>
+              ))}
+            </div>
+            <div style={{display:"flex",gap:8,marginBottom:10,flexWrap:"wrap"}}>
               {[["TOP","#4caf50"],["GOOD","#22d3ee"],["MEDIUM","#f59e0b"],["AVOID","#f87171"]].map(([lbl,col])=>(
-                <div key={lbl} style={{background:`${col}15`,border:`1px solid ${col}44`,borderRadius:8,padding:"4px 12px",fontSize:10,color:col,fontWeight:700}}>
+                <div key={lbl} style={{background:`${col}10`,border:`1px solid ${col}33`,borderRadius:6,padding:"2px 8px",fontSize:9,color:col}}>
                   {lbl}: {counts[lbl]||0}
                 </div>
               ))}
               <div style={{fontSize:9,color:"#555",marginLeft:"auto",alignSelf:"center"}}>
-                {multiplaData.length} partite · ordinato per Score decrescente
+                {multiplaData.length} partite · ordinato per {multiSort==="confpin"?"Decisione+CP":"Score"} decrescente
               </div>
             </div>
 
