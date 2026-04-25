@@ -680,10 +680,14 @@ export default function App(){
             else if(mktFav&&mktFav!==topP[0]){flag="⚡ DISCORDA";flagCol="#f59e0b";}
 
             // ── CONF-PIN (dominanza Pinnacle no-vig) ───────────────
-            // Formula: pmax - media(altri due)
-            const confPin = nv1!=null&&nvX!=null&&nv2!=null ? (()=>{
-              const sorted=[nv1,nvX,nv2].sort((a,b)=>b-a);
-              return Math.round(Math.max(0,(sorted[0]-(sorted[1]+sorted[2])/2)*100));
+            // Calcolato direttamente da quote Pinnacle — no-vig reale
+            // Formula: pmax - media(altri due) su scale 0-100
+            const confPin = f.ov?.pin1&&f.ov?.pinX&&f.ov?.pin2 ? (()=>{
+              const o1=1/f.ov.pin1, oX=1/f.ov.pinX, o2=1/f.ov.pin2;
+              const tot=o1+oX+o2;
+              const p1=o1/tot, pX=oX/tot, p2=o2/tot;
+              const sv=[p1,pX,p2].sort((a,b)=>b-a);
+              return Math.round(Math.max(0,(sv[0]-(sv[1]+sv[2])/2)*100));
             })() : null;
 
             // ── DECISIONE automatica ────────────────────────────────
