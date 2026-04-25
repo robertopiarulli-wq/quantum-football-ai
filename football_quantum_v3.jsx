@@ -323,6 +323,135 @@ export default function App(){
     return[...base].sort((a,b)=>((a.date||"")+(a.time||"")).localeCompare((b.date||"")+(b.time||"")));
   },[fixtures,filterLeague]);
 
+  const calcMultipla = f => {
+    if(!f.pred) return null;
+    const h=f.pred.home||0, x=f.pred.draw||0, a=f.pred.away||0;
+    const conf  = f.pred.conf||0;
+    const ovNorm = (f.ov?.score||0)/76;  // normalizzato su max osservato 76
+
+    // Quote Pinnacle no-vig
+    const nv1 = f.ov?.novig_1!=null ? f.ov.novig_1/100 : null;
+    const nvX = f.ov?.novig_X!=null ? f.ov.novig_X/100 : null;
+    const nv2 = f.ov?.novig_2!=null ? f.ov.novig_2/100 : null;
+    const pin1=f.ov?.pin1, pinX=f.ov?.pinX, pin2=f.ov?.pin2;
+
+    // ── PREVISIONE: solo Poisson puro ──────────────────────
+    const sortedP = [["1",h],["X",x],["2",a]].sort((a,b)=>b[1]-a[1]);
+    const topP=sortedP[0], secP=sortedP[1];
+    const gapP = topP[1]-secP[1];
+    let pred_sign, pred_col;
+    if(gapP > 0.20){
+      pred_sign = "FISSA "+topP[0];
+      pred_col  = topP[0]==="1"?C.cyan:topP[0]==="2"?C.pink:C.amber;
+    } else {
+      const pair=[topP[0],secP[0]].sort().join("");
+      pred_sign = pair==="12"?"1-2":pair==="1X"?"1X":"X2";
+      pred_col  = pair==="12"?"#a78bfa":pair==="1X"?"#34d399":"#f97316";
+    }
+
+    // ── CONCORDANZA Poisson-Pinnacle ────────────────────────
+    // Pinnacle rinforza il segno dominante se concorda
+    const mktFav = nv1!=null&&nvX!=null&&nv2!=null
+      ? (nv1>=nvX&&nv1>=nv2?"1":nv2>=nvX?"2":"X") : null;
+    const ourBest = topP[0]==="1"?h:topP[0]==="2"?a:x;
+    const mktBest = topP[0]==="1"?nv1:topP[0]==="2"?nv2:nvX;
+    const concordStrength = mktFav===topP[0]&&mktBest!=null
+      ? Math.max(0,1-Math.abs(ourBest-mktBest)/Math.max(ourBest,0.01))
+      : 0.3;
+
+    // ── EV sul segno dominante ──────────────────────────────
+    const pinBest = topP[0]==="1"?pin1:topP[0]==="2"?pin2:pinX;
+    const bestEv  = pinBest&&pinBest>0 ? (ourBest*pinBest)-1 : null;
+
+    // ── EV normalizzato ─────────────────────────────────────
+    // ev>0 → boost (max a EV=25%) | ev<0 → leggera penalità
+    const ev_norm = bestEv!=null
+      ? (bestEv>=0 ? Math.min(1,bestEv/0.25) : Math.max(-0.3,bestEv/0.20))
+      : 0;
+
+    // ── SCORE: CONF×0.55 + OV×0.25 + Concordanza×0.10 + EV×0.10 ──
+    const trendBonus = f.ov?.movement_pct!=null
+      ? (f.ov.movement_pct<-2?0.05:f.ov.movement_pct>3?-0.03:0) : 0;
+    const score = conf*0.60 + ovNorm*0.30 + concordStrength*0.10 + trendBonus;
+
+    // ── LABEL ───────────────────────────────────────────────
+    const label    = score>=0.75?"TOP":score>=0.65?"GOOD":score>=0.50?"MEDIUM":"AVOID";
+    const labelCol = label==="TOP"?"#4caf50":label==="GOOD"?"#22d3ee":label==="MEDIUM"?"#f59e0b":"#f87171";
+
+    // ── FLAG anomalie ───────────────────────────────────────
+    let flag="—", flagCol="#555";
+    if(conf>0.60&&(f.ov?.score||0)<40){flag="⚠️ TRAP";flagCol="#f87171";}
+    else if((f.ov?.score||0)>65&&conf<0.40){flag="⚡ RISKY";flagCol="#f59e0b";}
+    else if(f.ov?.movement_pct!=null&&f.ov.movement_pct<-5){flag="🔥 SHARP";flagCol="#4caf50";}
+    else if(mktFav&&mktFav!==topP[0]){flag="⚡ DISCORDA";flagCol="#f59e0b";}
+
+    // ── CONF-PIN (dominanza Pinnacle no-vig) ───────────────
+    // Calcolato direttamente da quote Pinnacle — no-vig reale
+    // Formula: pmax - media(altri due) su scale 0-100
+    const confPin = f.ov?.pin1&&f.ov?.pinX&&f.ov?.pin2 ? (()=>{
+      const o1=1/f.ov.pin1, oX=1/f.ov.pinX, o2=1/f.ov.pin2;
+      const tot=o1+oX+o2;
+      const p1=o1/tot, pX=oX/tot, p2=o2/tot;
+      const sv=[p1,pX,p2].sort((a,b)=>b-a);
+      return Math.round(Math.max(0,(sv[0]-(sv[1]+sv[2])/2)*100));
+    })() : null;
+
+    // ── DECISIONE automatica ────────────────────────────────
+    const confPinN = confPin!=null?confPin/100:conf;
+    const ovN = (f.ov?.score||0)/100;
+    let decisione, decCol;
+    // ── CERVELLO DECISIONALE ─────────────────────────────────
+    // Partite senza dati Pinnacle → NO DATA
+    const hasOV = f.ov && f.ov.score!=null && f.ov.pin1!=null;
+    if(!hasOV){
+      decisione="⚪ NO DATA"; decCol="#555";
+    } else {
+      // NO BET solo se ALMENO 2 segnali esplicitamente negativi:
+      // EV < -10% | CP < 10 | OV < 30 | score < 0.40
+      const negEV  = bestEv!=null && bestEv < -0.10;
+      const negCP  = confPin!=null && confPin < 10;
+      const negOV  = (f.ov?.score||0) < 30;
+      const negSc  = score < 0.40;
+      const negCount = (negEV?1:0)+(negCP?1:0)+(negOV?1:0)+(negSc?1:0);
+
+      // Determina quale doppia giocare basandosi sul pred_sign
+      const doppiaSign = ()=>{
+        if(pred_sign==="FISSA 1") return "1X";
+        if(pred_sign==="FISSA 2") return "X2";
+        if(pred_sign==="FISSA X") return pred_sign.includes("casa")||sortedP[0][0]==="1"?"1X":"X2";
+        if(pred_sign==="1-2") return "1-2";
+        if(pred_sign==="1X") return "1X";
+        if(pred_sign==="X2") return "X2";
+        return "1-2";
+      };
+
+      if(negCount >= 2){
+        decisione="❌ NO BET"; decCol="#f87171";
+      } else if(score>=0.75 && confPinN>=0.50 && (f.ov?.score||0)>=65){
+        // SECCO — mostra segno esatto
+        const seccSign = pred_sign.replace("FISSA ","");
+        decisione=`🔥 ${seccSign}`; decCol="#4caf50";
+      } else if(score>=0.65 && (f.ov?.score||0)>=55){
+        // 1X/X2 esplicito
+        const d1x2 = doppiaSign();
+        decisione=`✅ ${d1x2}`; decCol="#22d3ee";
+      } else if(score>=0.50 && (f.ov?.score||0)>=35){
+        // DOPPIA esplicita
+        const ddop = doppiaSign();
+        decisione=`⚖️ ${ddop}`; decCol="#f59e0b";
+      } else {
+        // DOPPIA conservativa esplicita
+        const dcons = doppiaSign();
+        decisione=`⚖️ ${dcons}*`; decCol="#d97706";
+      }
+    }
+
+    return {score,label,labelCol,flag,flagCol,
+            pred_sign,pred_col,bestEv,concordStrength,mktFav,
+            confPin,decisione,decCol,
+            ppSc:ppScore(f),conf};
+  };
+
   const ppScore=f=>{
     if(!f.pred)return 0;
     const h=f.pred.home||0,x=f.pred.draw||0,a=f.pred.away||0;
@@ -618,134 +747,7 @@ export default function App(){
           );
 
           // ── CALCOLO SCORE COMBINATO ──────────────────────────────
-          const calcMultipla = f => {
-            if(!f.pred) return null;
-            const h=f.pred.home||0, x=f.pred.draw||0, a=f.pred.away||0;
-            const conf  = f.pred.conf||0;
-            const ovNorm = (f.ov?.score||0)/76;  // normalizzato su max osservato 76
 
-            // Quote Pinnacle no-vig
-            const nv1 = f.ov?.novig_1!=null ? f.ov.novig_1/100 : null;
-            const nvX = f.ov?.novig_X!=null ? f.ov.novig_X/100 : null;
-            const nv2 = f.ov?.novig_2!=null ? f.ov.novig_2/100 : null;
-            const pin1=f.ov?.pin1, pinX=f.ov?.pinX, pin2=f.ov?.pin2;
-
-            // ── PREVISIONE: solo Poisson puro ──────────────────────
-            const sortedP = [["1",h],["X",x],["2",a]].sort((a,b)=>b[1]-a[1]);
-            const topP=sortedP[0], secP=sortedP[1];
-            const gapP = topP[1]-secP[1];
-            let pred_sign, pred_col;
-            if(gapP > 0.20){
-              pred_sign = "FISSA "+topP[0];
-              pred_col  = topP[0]==="1"?C.cyan:topP[0]==="2"?C.pink:C.amber;
-            } else {
-              const pair=[topP[0],secP[0]].sort().join("");
-              pred_sign = pair==="12"?"1-2":pair==="1X"?"1X":"X2";
-              pred_col  = pair==="12"?"#a78bfa":pair==="1X"?"#34d399":"#f97316";
-            }
-
-            // ── CONCORDANZA Poisson-Pinnacle ────────────────────────
-            // Pinnacle rinforza il segno dominante se concorda
-            const mktFav = nv1!=null&&nvX!=null&&nv2!=null
-              ? (nv1>=nvX&&nv1>=nv2?"1":nv2>=nvX?"2":"X") : null;
-            const ourBest = topP[0]==="1"?h:topP[0]==="2"?a:x;
-            const mktBest = topP[0]==="1"?nv1:topP[0]==="2"?nv2:nvX;
-            const concordStrength = mktFav===topP[0]&&mktBest!=null
-              ? Math.max(0,1-Math.abs(ourBest-mktBest)/Math.max(ourBest,0.01))
-              : 0.3;
-
-            // ── EV sul segno dominante ──────────────────────────────
-            const pinBest = topP[0]==="1"?pin1:topP[0]==="2"?pin2:pinX;
-            const bestEv  = pinBest&&pinBest>0 ? (ourBest*pinBest)-1 : null;
-
-            // ── EV normalizzato ─────────────────────────────────────
-            // ev>0 → boost (max a EV=25%) | ev<0 → leggera penalità
-            const ev_norm = bestEv!=null
-              ? (bestEv>=0 ? Math.min(1,bestEv/0.25) : Math.max(-0.3,bestEv/0.20))
-              : 0;
-
-            // ── SCORE: CONF×0.55 + OV×0.25 + Concordanza×0.10 + EV×0.10 ──
-            const trendBonus = f.ov?.movement_pct!=null
-              ? (f.ov.movement_pct<-2?0.05:f.ov.movement_pct>3?-0.03:0) : 0;
-            const score = conf*0.60 + ovNorm*0.30 + concordStrength*0.10 + trendBonus;
-
-            // ── LABEL ───────────────────────────────────────────────
-            const label    = score>=0.75?"TOP":score>=0.65?"GOOD":score>=0.50?"MEDIUM":"AVOID";
-            const labelCol = label==="TOP"?"#4caf50":label==="GOOD"?"#22d3ee":label==="MEDIUM"?"#f59e0b":"#f87171";
-
-            // ── FLAG anomalie ───────────────────────────────────────
-            let flag="—", flagCol="#555";
-            if(conf>0.60&&(f.ov?.score||0)<40){flag="⚠️ TRAP";flagCol="#f87171";}
-            else if((f.ov?.score||0)>65&&conf<0.40){flag="⚡ RISKY";flagCol="#f59e0b";}
-            else if(f.ov?.movement_pct!=null&&f.ov.movement_pct<-5){flag="🔥 SHARP";flagCol="#4caf50";}
-            else if(mktFav&&mktFav!==topP[0]){flag="⚡ DISCORDA";flagCol="#f59e0b";}
-
-            // ── CONF-PIN (dominanza Pinnacle no-vig) ───────────────
-            // Calcolato direttamente da quote Pinnacle — no-vig reale
-            // Formula: pmax - media(altri due) su scale 0-100
-            const confPin = f.ov?.pin1&&f.ov?.pinX&&f.ov?.pin2 ? (()=>{
-              const o1=1/f.ov.pin1, oX=1/f.ov.pinX, o2=1/f.ov.pin2;
-              const tot=o1+oX+o2;
-              const p1=o1/tot, pX=oX/tot, p2=o2/tot;
-              const sv=[p1,pX,p2].sort((a,b)=>b-a);
-              return Math.round(Math.max(0,(sv[0]-(sv[1]+sv[2])/2)*100));
-            })() : null;
-
-            // ── DECISIONE automatica ────────────────────────────────
-            const confPinN = confPin!=null?confPin/100:conf;
-            const ovN = (f.ov?.score||0)/100;
-            let decisione, decCol;
-            // ── CERVELLO DECISIONALE ─────────────────────────────────
-            // Partite senza dati Pinnacle → NO DATA
-            const hasOV = f.ov && f.ov.score!=null && f.ov.pin1!=null;
-            if(!hasOV){
-              decisione="⚪ NO DATA"; decCol="#555";
-            } else {
-              // NO BET solo se ALMENO 2 segnali esplicitamente negativi:
-              // EV < -10% | CP < 10 | OV < 30 | score < 0.40
-              const negEV  = bestEv!=null && bestEv < -0.10;
-              const negCP  = confPin!=null && confPin < 10;
-              const negOV  = (f.ov?.score||0) < 30;
-              const negSc  = score < 0.40;
-              const negCount = (negEV?1:0)+(negCP?1:0)+(negOV?1:0)+(negSc?1:0);
-
-              // Determina quale doppia giocare basandosi sul pred_sign
-              const doppiaSign = ()=>{
-                if(pred_sign==="FISSA 1") return "1X";
-                if(pred_sign==="FISSA 2") return "X2";
-                if(pred_sign==="FISSA X") return pred_sign.includes("casa")||sortedP[0][0]==="1"?"1X":"X2";
-                if(pred_sign==="1-2") return "1-2";
-                if(pred_sign==="1X") return "1X";
-                if(pred_sign==="X2") return "X2";
-                return "1-2";
-              };
-
-              if(negCount >= 2){
-                decisione="❌ NO BET"; decCol="#f87171";
-              } else if(score>=0.75 && confPinN>=0.50 && (f.ov?.score||0)>=65){
-                // SECCO — mostra segno esatto
-                const seccSign = pred_sign.replace("FISSA ","");
-                decisione=`🔥 ${seccSign}`; decCol="#4caf50";
-              } else if(score>=0.65 && (f.ov?.score||0)>=55){
-                // 1X/X2 esplicito
-                const d1x2 = doppiaSign();
-                decisione=`✅ ${d1x2}`; decCol="#22d3ee";
-              } else if(score>=0.50 && (f.ov?.score||0)>=35){
-                // DOPPIA esplicita
-                const ddop = doppiaSign();
-                decisione=`⚖️ ${ddop}`; decCol="#f59e0b";
-              } else {
-                // DOPPIA conservativa esplicita
-                const dcons = doppiaSign();
-                decisione=`⚖️ ${dcons}*`; decCol="#d97706";
-              }
-            }
-
-            return {score,label,labelCol,flag,flagCol,
-                    pred_sign,pred_col,bestEv,concordStrength,mktFav,
-                    confPin,decisione,decCol,
-                    ppSc:ppScore(f),conf};
-          };
 
           // Calcola e ordina
           const multiplaData = fixtures
