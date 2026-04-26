@@ -15479,7 +15479,8 @@
       "verified_at": "2026-04-26T06:42:48.192522",
       "clv": -12.38,
       "odds_movement_pct": 3.01,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "537151",
@@ -15517,7 +15518,8 @@
       "verified_at": "2026-04-26T06:42:48.363113",
       "clv": 0.67,
       "odds_movement_pct": -4.01,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "537145",
@@ -15932,7 +15934,8 @@
       "verified_at": "2026-04-26T06:42:55.430292",
       "clv": -20.44,
       "odds_movement_pct": 7.48,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "542680",
@@ -16006,7 +16009,8 @@
       "verified_at": "2026-04-26T06:43:02.561937",
       "clv": -10.38,
       "odds_movement_pct": 15.99,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "542679",
@@ -16044,7 +16048,8 @@
       "verified_at": "2026-04-26T06:43:02.722501",
       "clv": 3.29,
       "odds_movement_pct": 11.72,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "545972",
@@ -16903,7 +16908,8 @@
       "verified_at": "2026-04-26T06:43:09.858654",
       "clv": -15.17,
       "odds_movement_pct": -4.03,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "540680",
@@ -17285,7 +17291,8 @@
       "correct_1x2": true,
       "correct_over": false,
       "correct_btts": false,
-      "verified_at": "2026-04-26T06:42:40.637614"
+      "verified_at": "2026-04-26T06:42:40.637614",
+      "elo_updated": true
     },
     {
       "fixture_id": "545978",
@@ -17330,7 +17337,8 @@
       "verified_at": "2026-04-26T06:42:41.036109",
       "clv": -29.1,
       "odds_movement_pct": 0.0,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "545975",
@@ -17681,7 +17689,8 @@
       "verified_at": "2026-04-26T06:43:23.709538",
       "clv": -13.02,
       "odds_movement_pct": 0.93,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "552093",
@@ -18112,7 +18121,8 @@
       "verified_at": "2026-04-26T06:43:23.877006",
       "clv": -5.88,
       "odds_movement_pct": -2.86,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "544525",
@@ -18287,7 +18297,8 @@
       "verified_at": "2026-04-26T06:43:31.215403",
       "clv": -15.79,
       "odds_movement_pct": -1.31,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "537715",
@@ -18332,7 +18343,8 @@
       "verified_at": "2026-04-26T06:43:31.368723",
       "clv": 10.97,
       "odds_movement_pct": 1.8,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "537719",
@@ -18377,7 +18389,8 @@
       "verified_at": "2026-04-26T06:43:31.520270",
       "clv": 7.54,
       "odds_movement_pct": -12.95,
-      "odds_is_sharp": true
+      "odds_is_sharp": true,
+      "elo_updated": true
     },
     {
       "fixture_id": "537711",
@@ -21199,7 +21212,151 @@
       "correct_over": null,
       "correct_btts": null,
       "verified_at": null
+    },
+    {
+      "fixture_id": "537163",
+      "home": "Udinese Calcio",
+      "away": "Torino FC",
+      "league": "Serie A",
+      "comp_code": "SA",
+      "season": "2025/2026",
+      "stage": "REGULAR_SEASON",
+      "matchday": 35,
+      "first_leg": null,
+      "date": "02/05/2026",
+      "time": "14:00",
+      "predicted_at": "2026-04-26T07:01:20.062333",
+      "pred_home": 0.3119,
+      "pred_draw": 0.2444,
+      "pred_away": 0.4437,
+      "pred_over25": 0.4012,
+      "pred_btts": 0.4587,
+      "pred_best": "2",
+      "pred_conf": 0.4353,
+      "pred_raw_conf": 0.4353,
+      "pred_combo_label": "2+U3.5",
+      "pred_combo_leg": "U3.5",
+      "pred_combo_prob": 0.8015,
+      "pred_over15": 0.6667,
+      "pred_under35": 0.8015,
+      "correct_combo": null,
+      "ov_score": 55.1,
+      "ov_edge": 16.7,
+      "ov_misalign": null,
+      "ov_movement": null,
+      "ov_is_sharp": null,
+      "clv": null,
+      "pp_result": "X",
+      "pp_label": "\u2696\ufe0f FISSA X",
+      "pp_i_casa": 3.0,
+      "pp_i_ospite": 3.04,
+      "pp_D": -0.04,
+      "pp_pct": 49.9,
+      "correct_pp": null,
+      "result": null,
+      "goals_home": null,
+      "goals_away": null,
+      "correct_1x2": null,
+      "correct_over": null,
+      "correct_btts": null,
+      "verified_at": null
+    },
+    {
+      "fixture_id": "537157",
+      "home": "Como 1907",
+      "away": "SSC Napoli",
+      "league": "Serie A",
+      "comp_code": "SA",
+      "season": "2025/2026",
+      "stage": "REGULAR_SEASON",
+      "matchday": 35,
+      "first_leg": null,
+      "date": "02/05/2026",
+      "time": "17:00",
+      "predicted_at": "2026-04-26T07:01:20.545210",
+      "pred_home": 0.3515,
+      "pred_draw": 0.2374,
+      "pred_away": 0.411,
+      "pred_over25": 0.4521,
+      "pred_btts": 0.4929,
+      "pred_best": "2",
+      "pred_conf": 0.3646,
+      "pred_raw_conf": 0.3646,
+      "pred_combo_label": "2+U3.5",
+      "pred_combo_leg": "U3.5",
+      "pred_combo_prob": 0.7609,
+      "pred_over15": 0.7095,
+      "pred_under35": 0.7609,
+      "correct_combo": null,
+      "ov_score": 55.0,
+      "ov_edge": 10.1,
+      "ov_misalign": null,
+      "ov_movement": null,
+      "ov_is_sharp": null,
+      "clv": null,
+      "pp_result": "X",
+      "pp_label": "\u2696\ufe0f FISSA X",
+      "pp_i_casa": 8.4,
+      "pp_i_ospite": 8.28,
+      "pp_D": 0.12,
+      "pp_pct": 50.4,
+      "correct_pp": null,
+      "result": null,
+      "goals_home": null,
+      "goals_away": null,
+      "correct_1x2": null,
+      "correct_over": null,
+      "correct_btts": null,
+      "verified_at": null
+    },
+    {
+      "fixture_id": "537156",
+      "home": "Atalanta BC",
+      "away": "Genoa CFC",
+      "league": "Serie A",
+      "comp_code": "SA",
+      "season": "2025/2026",
+      "stage": "REGULAR_SEASON",
+      "matchday": 35,
+      "first_leg": null,
+      "date": "02/05/2026",
+      "time": "19:45",
+      "predicted_at": "2026-04-26T07:01:21.230976",
+      "pred_home": 0.4712,
+      "pred_draw": 0.2355,
+      "pred_away": 0.2933,
+      "pred_over25": 0.4213,
+      "pred_btts": 0.465,
+      "pred_best": "1",
+      "pred_conf": 0.3155,
+      "pred_raw_conf": 0.3155,
+      "pred_combo_label": "1+U3.5",
+      "pred_combo_leg": "U3.5",
+      "pred_combo_prob": 0.7859,
+      "pred_over15": 0.684,
+      "pred_under35": 0.7859,
+      "correct_combo": null,
+      "ov_score": 30.0,
+      "ov_edge": -11.0,
+      "ov_misalign": null,
+      "ov_movement": null,
+      "ov_is_sharp": null,
+      "clv": null,
+      "pp_result": "1X",
+      "pp_label": "\ud83d\udee1\ufe0f 1X",
+      "pp_i_casa": 7.35,
+      "pp_i_ospite": 5.14,
+      "pp_D": 2.21,
+      "pp_pct": 58.1,
+      "correct_pp": null,
+      "result": null,
+      "goals_home": null,
+      "goals_away": null,
+      "correct_1x2": null,
+      "correct_over": null,
+      "correct_btts": null,
+      "verified_at": null
     }
   ],
-  "last_updated": "2026-04-26T06:43:38.709263"
+  "last_updated": "2026-04-26T07:07:10.614761"
 }
