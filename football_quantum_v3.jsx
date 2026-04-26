@@ -738,17 +738,14 @@ export default function App(){
             // Solo doppie per tutti — la migliore per PCT
             {const r=bestDouble(); giocata=r.giocata;pct=r.pct;pctLabel=r.pctLabel;evVal=r.evVal;}
 
-            // TopIndex senza bonus PCT (distorce sort)
-            const bonusConc=conc===3?8:conc===2?4:0;
+            // TopIndex: concordanza come bonus pesato (non separatore rigido)
+            // 🟢+15, 🟡+8, 🔴+0 — vale ma non crea muri invalicabili
+            const bonusConc=conc===3?15:conc===2?8:0;
             const topIdx=sc*0.40+ov*0.30+ppR*0.20+cp*0.10+bonusConc;
 
             return {f,calc,topIdx,conc,concFlag,giocata,pct,pctLabel,evVal,
                     ppR,cp,ov,sc,pTop,ppRes,mktFav,h,x,a};
-          }).filter(Boolean).sort((a,b)=>{
-            // Prima concordanza DESC, poi topIdx DESC
-            if(b.conc!==a.conc) return b.conc-a.conc;
-            return b.topIdx-a.topIdx;
-          });
+          }).filter(Boolean).sort((a,b)=>b.topIdx-a.topIdx);
 
           const concCounts={3:0,2:0,1:0,0:0};
           topData.forEach(d=>concCounts[d.conc]=(concCounts[d.conc]||0)+1);
