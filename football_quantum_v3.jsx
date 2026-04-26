@@ -227,6 +227,7 @@ export default function App(){
   const[rnkExpanded,setRnkExpanded]=useState(null);
   const[multiSort,setMultiSort]=useState("score");
   const[parixSort,setParixSort]=useState("score");
+  const[topExpanded,setTopExpanded]=useState(null);
   const[homeInput,setHomeInput]=useState("");
   const[awayInput,setAwayInput]=useState("");
   const[manualPred,setManualPred]=useState(null);
@@ -687,7 +688,7 @@ export default function App(){
         {tab==="top"&&(()=>{
           if(!fixtures||fixtures.length===0) return null;
 
-          // ── CALCOLO TopIndex per ogni partita ──────────────────────
+          // ── TOPINDEX CALCULATION ───────────────────────────────────
           const topData = fixtures.map(f=>{
             const calc = calcMultipla(f);
             if(!calc||!f.pred) return null;
@@ -697,54 +698,75 @@ export default function App(){
             const cp   = calc.confPin||0;
             const ov   = f.ov?.score||0;
             const sc   = calc.score*100;
-
-            // TopIndex = Score×40% + OV×30% + PPRank×20% + ConfPin×10%
-            const topIdx = sc*0.40 + ov*0.30 + ppR*0.20 + cp*0.10;
+            const ppD  = Math.abs(f.pp?.pp_D||0);
 
             // Segno dominante per ciascun modello
-            const pTop  = h>=x&&h>=a?"1":a>=x&&a>=h?"2":"X";
-            const ppRes = f.pp?.pp_result||null;
-            const mktFav= calc.mktFav||null;
+            const sorted3=[[h,"1"],[x,"X"],[a,"2"]].sort((a,b)=>b[0]-a[0]);
+            const pTop=sorted3[0][1];
+            const pGap=sorted3[0][0]-sorted3[1][0]; // gap Poisson
+            const ppRes=f.pp?.pp_result||null;
+            const mktFav=calc.mktFav||null;
 
             // Concordanza (0-3)
-            const conc = (pTop===ppRes?1:0)+(pTop===mktFav?1:0)+(ppRes&&mktFav&&ppRes===mktFav?1:0);
-            const concFlag = conc===3?"🟢":conc===2?"🟡":"🔴";
+            const c1=pTop===ppRes?1:0;
+            const c2=pTop===mktFav?1:0;
+            const c3=ppRes&&mktFav&&ppRes===mktFav?1:0;
+            const conc=c1+c2+c3;
+            const concFlag=conc===3?"🟢":conc===2?"🟡":"🔴";
 
-            // Determina giocata e percentuale
-            const pred = calc.pred_sign||"";
+            // Fattore dominante per discordanti
+            // Poisson: forza = gap normalizzato (max ~0.5)
+            // PP: forza = |D|/13.7 normalizzato
+            // Pinnacle: forza = cp/100
+            const wPoisson = pGap/0.5;
+            const wPP      = Math.min(1, ppD/8);
+            const wPin     = cp/100;
+            let dominantSrc="Poisson", dominantSign=pTop, dominantW=wPoisson;
+            if(wPP>dominantW&&ppRes){dominantSrc="PP Index";dominantSign=ppRes;dominantW=wPP;}
+            if(wPin>dominantW&&mktFav){dominantSrc="Pinnacle";dominantSign=mktFav;dominantW=wPin;}
+
+            // Giocata basata su concordanza
             let giocata, pct, pctLabel, evVal;
+            const pred = conc>=2 ? (calc.pred_sign||"") : (() => {
+              // Per discordanti: usa fattore dominante
+              if(dominantSign==="1") return "FISSA 1";
+              if(dominantSign==="2") return "FISSA 2";
+              return "FISSA X";
+            })();
 
             if(pred.startsWith("FISSA ")){
               const s=pred.replace("FISSA ","");
               giocata=`FISSA ${s}`;
-              pct = s==="1"?h:s==="2"?a:x;
-              const pin = s==="1"?f.ov?.pin1:s==="2"?f.ov?.pin2:f.ov?.pinX;
-              evVal = pin&&pin>0?(pct*pin-1):null;
+              pct=s==="1"?h:s==="2"?a:x;
+              const pin=s==="1"?f.ov?.pin1:s==="2"?f.ov?.pin2:f.ov?.pinX;
+              evVal=pin&&pin>0?(pct*pin-1):null;
               pctLabel=`${(pct*100).toFixed(1)}%`;
             } else {
-              // DOPPIA: somma prob dei due segni
               const signs=pred==="1X"?["1","X"]:pred==="X2"?["X","2"]:["1","2"];
               const p1=signs[0]==="1"?h:signs[0]==="X"?x:a;
               const p2=signs[1]==="X"?x:a;
               pct=p1+p2;
               giocata=pred;
-              // EV medio ponderato sui due segni
               const pin1s=signs[0]==="1"?f.ov?.pin1:signs[0]==="X"?f.ov?.pinX:f.ov?.pin2;
               const pin2s=signs[1]==="X"?f.ov?.pinX:f.ov?.pin2;
               const ev1=pin1s&&pin1s>0?(p1*pin1s-1):null;
               const ev2=pin2s&&pin2s>0?(p2*pin2s-1):null;
-              evVal = ev1!=null&&ev2!=null?(ev1+ev2)/2:ev1??ev2;
+              evVal=ev1!=null&&ev2!=null?(ev1+ev2)/2:ev1??ev2;
               pctLabel=`${(p1*100).toFixed(1)}%+${(p2*100).toFixed(1)}%=${(pct*100).toFixed(1)}%`;
             }
 
-            return {f, calc, topIdx, conc, concFlag, giocata, pct, pctLabel, evVal, ppR, cp, ov, sc};
-          }).filter(Boolean).sort((a,b)=>{
-            // Prima per concordanza desc, poi topIdx desc
-            if(b.conc!==a.conc) return b.conc-a.conc;
-            return b.topIdx-a.topIdx;
-          });
+            // TopIndex con bonus concordanza e PCT
+            const baseIdx = sc*0.40 + ov*0.30 + ppR*0.20 + cp*0.10;
+            const bonusConc = conc===3?8:conc===2?4:0;
+            const bonusPct  = pct*15;
+            const topIdx    = baseIdx + bonusConc + bonusPct;
 
-          const concCounts=[0,0,0];
+            return {f,calc,topIdx,conc,concFlag,giocata,pct,pctLabel,evVal,
+                    ppR,cp,ov,sc,dominantSrc,dominantSign,dominantW,
+                    pTop,ppRes,mktFav,pGap,ppD,h,x,a};
+          }).filter(Boolean).sort((a,b)=>b.topIdx-a.topIdx);
+
+          const concCounts={3:0,2:0,1:0,0:0};
           topData.forEach(d=>concCounts[d.conc]=(concCounts[d.conc]||0)+1);
 
           return(
@@ -752,21 +774,21 @@ export default function App(){
             {/* Header */}
             <div style={{background:"rgba(34,211,238,0.06)",border:"1px solid rgba(34,211,238,0.2)",borderRadius:10,padding:"10px 14px",marginBottom:14}}>
               <div style={{fontSize:10,color:C.cyan,fontWeight:700,letterSpacing:2,marginBottom:4}}>🏆 TOP — CLASSIFICA UNIFICATA</div>
-              <div style={{fontSize:9,color:"#888"}}>TopIndex = Score×40% + OV×30% + PPRank×20% + ConfPin×10% · Ordinato per concordanza modelli poi TopIndex decrescente</div>
+              <div style={{fontSize:9,color:"#888"}}>TopIndex = (Score×40%+OV×30%+PPRank×20%+CP×10%) + BonusConc(🟢+8/🟡+4) + PCT×15 · Click sulla riga per dettagli</div>
             </div>
 
             {/* Concordanza badges */}
             <div style={{display:"flex",gap:8,marginBottom:12,flexWrap:"wrap"}}>
-              {[["🟢","Concordanza totale (3/3)","#4caf50"],["🟡","Parziale (2/3)","#f59e0b"],["🔴","Discordanza (1/3)","#f87171"]].map(([flag,lbl,col])=>(
-                <div key={flag} style={{background:`${col}15`,border:`1px solid ${col}44`,borderRadius:8,padding:"3px 10px",fontSize:10,color:col,fontWeight:700}}>
-                  {flag} {lbl}: {concCounts[flag==="🟢"?3:flag==="🟡"?2:flag==="🔴"?1:0]||0}
+              {[["🟢","Totale (3/3)","#4caf50",3],["🟡","Parziale (2/3)","#f59e0b",2],["🔴","Discordanza","#f87171",1]].map(([flag,lbl,col,k])=>(
+                concCounts[k]>0&&<div key={flag} style={{background:`${col}15`,border:`1px solid ${col}44`,borderRadius:8,padding:"3px 10px",fontSize:10,color:col,fontWeight:700}}>
+                  {flag} {lbl}: {concCounts[k]}
                 </div>
               ))}
-              <div style={{fontSize:9,color:"#555",marginLeft:"auto",alignSelf:"center"}}>{topData.length} partite</div>
+              <div style={{fontSize:9,color:"#555",marginLeft:"auto",alignSelf:"center"}}>{topData.length} partite · ordinato per TopIndex</div>
             </div>
 
             {/* Header tabella */}
-            <div style={{display:"grid",gridTemplateColumns:"36px 80px 1fr 1fr 44px 80px 90px 60px 60px 55px 55px",gap:6,padding:"6px 10px",fontSize:9,color:"#555",letterSpacing:1,borderBottom:"1px solid rgba(255,255,255,0.07)",marginBottom:4}}>
+            <div style={{display:"grid",gridTemplateColumns:"36px 80px 1fr 1fr 40px 100px 100px 60px 55px 55px 55px",gap:6,padding:"6px 10px",fontSize:9,color:"#555",letterSpacing:1,borderBottom:"1px solid rgba(255,255,255,0.07)",marginBottom:4}}>
               <div>#</div><div>DATA</div><div>CASA</div><div>TRASFERTA</div>
               <div style={{textAlign:"center"}}>CONC</div>
               <div style={{textAlign:"center"}}>GIOCATA</div>
@@ -779,40 +801,82 @@ export default function App(){
 
             {/* Righe */}
             <div style={{display:"flex",flexDirection:"column",gap:3}}>
-              {topData.map(({f,calc,topIdx,conc,concFlag,giocata,pct,pctLabel,evVal,ov,sc},i)=>{
+              {topData.map(({f,calc,topIdx,conc,concFlag,giocata,pct,pctLabel,evVal,ov,sc,dominantSrc,dominantSign,ppR,cp,h,x,a,pTop,ppRes,mktFav,pGap,ppD},i)=>{
                 const concCol=conc===3?"#4caf50":conc===2?"#f59e0b":"#f87171";
                 const isFissa=giocata.startsWith("FISSA");
+                const isExpanded=topExpanded===i;
                 return(
-                <div key={i} style={{display:"grid",gridTemplateColumns:"36px 80px 1fr 1fr 44px 80px 90px 60px 60px 55px 55px",gap:6,padding:"9px 10px",borderRadius:9,
-                  background:conc===3?`${C.cyan}08`:conc===2?`${C.amber}05`:C.card,
-                  border:`1px solid ${conc===3?C.cyan+"33":conc===2?C.amber+"22":C.border}`,
-                  alignItems:"center"}}>
-                  <div style={{fontSize:12,color:concCol,fontWeight:700}}>{i===0?"🥇":i===1?"🥈":i===2?"🥉":i+1}</div>
-                  <div style={{fontSize:10,color:"#aaa",fontWeight:600,lineHeight:1.4}}>{f.date||"—"}<br/><span style={{fontSize:9,color:"#555"}}>{f.time||""}</span></div>
-                  <div style={{fontSize:12,fontWeight:700,color:C.cyan,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{f.home}</div>
-                  <div style={{fontSize:12,fontWeight:700,color:C.pink,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{f.away}</div>
-                  <div style={{textAlign:"center",fontSize:16}}>{concFlag}</div>
-                  <div style={{textAlign:"center"}}>
-                    <span style={{fontSize:11,fontWeight:800,color:isFissa?C.cyan:"#a78bfa",background:isFissa?`${C.cyan}15`:"rgba(167,139,250,0.1)",padding:"3px 8px",borderRadius:6}}>
-                      {giocata}
-                    </span>
+                <div key={i}>
+                  {/* Riga principale — cliccabile */}
+                  <div onClick={()=>setTopExpanded(isExpanded?null:i)}
+                    style={{display:"grid",gridTemplateColumns:"36px 80px 1fr 1fr 40px 100px 100px 60px 55px 55px 55px",gap:6,padding:"9px 10px",borderRadius:isExpanded?"9px 9px 0 0":9,
+                    background:conc===3?`${C.cyan}08`:conc===2?`${C.amber}05`:C.card,
+                    border:`1px solid ${conc===3?C.cyan+"33":conc===2?C.amber+"22":C.border}`,
+                    alignItems:"center",cursor:"pointer"}}>
+                    <div style={{fontSize:12,color:concCol,fontWeight:700}}>{i===0?"🥇":i===1?"🥈":i===2?"🥉":i+1}</div>
+                    <div style={{fontSize:10,color:"#aaa",fontWeight:600,lineHeight:1.4}}>{f.date||"—"}<br/><span style={{fontSize:9,color:"#555"}}>{f.time||""}</span></div>
+                    <div style={{fontSize:12,fontWeight:700,color:C.cyan,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{f.home}</div>
+                    <div style={{fontSize:12,fontWeight:700,color:C.pink,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{f.away}</div>
+                    <div style={{textAlign:"center",fontSize:16}}>{concFlag}</div>
+                    <div style={{textAlign:"center"}}>
+                      <span style={{fontSize:11,fontWeight:800,color:isFissa?C.cyan:"#a78bfa",background:isFissa?`${C.cyan}15`:"rgba(167,139,250,0.1)",padding:"3px 8px",borderRadius:6}}>
+                        {giocata}
+                      </span>
+                      {conc<=1&&<div style={{fontSize:8,color:concCol,marginTop:2}}>▶ {dominantSrc}</div>}
+                    </div>
+                    <div style={{textAlign:"center"}}>
+                      <span style={{fontSize:10,fontWeight:700,color:pct>=0.70?"#4caf50":pct>=0.55?"#f59e0b":"#f87171"}}>{pctLabel}</span>
+                    </div>
+                    <div style={{textAlign:"center"}}>
+                      {evVal!=null?<span style={{fontSize:11,fontWeight:700,color:evVal>0?"#4caf50":"#f87171"}}>{evVal>0?"+":""}{(evVal*100).toFixed(1)}%</span>:<span style={{color:"#333",fontSize:9}}>—</span>}
+                    </div>
+                    <div style={{textAlign:"center"}}>
+                      <span style={{fontSize:11,fontWeight:700,color:ov>=60?"#4caf50":ov>=40?"#f59e0b":"#f87171"}}>{ov||"—"}</span>
+                    </div>
+                    <div style={{textAlign:"center"}}>
+                      <div style={{fontSize:13,fontWeight:900,color:calc.labelCol}}>{topIdx.toFixed(0)}</div>
+                      <div style={{fontSize:8,color:"#555"}}>/100</div>
+                    </div>
+                    <div style={{textAlign:"center"}}>
+                      <span style={{fontSize:9,fontWeight:700,color:calc.labelCol,background:`${calc.labelCol}15`,padding:"2px 6px",borderRadius:4}}>{calc.label}</span>
+                    </div>
                   </div>
-                  <div style={{textAlign:"center"}}>
-                    <span style={{fontSize:10,fontWeight:700,color:pct>=0.70?"#4caf50":pct>=0.55?"#f59e0b":"#f87171"}}>{pctLabel}</span>
+
+                  {/* Dettaglio espandibile */}
+                  {isExpanded&&(
+                  <div style={{background:"rgba(255,255,255,0.02)",border:`1px solid ${concCol}44`,borderTop:"none",borderRadius:"0 0 9px 9px",padding:"12px 14px",display:"grid",gridTemplateColumns:"1fr 1fr 1fr",gap:12}}>
+                    {/* Probabilità Poisson */}
+                    <div>
+                      <div style={{fontSize:9,color:"#555",letterSpacing:1,marginBottom:6}}>⚡ POISSON</div>
+                      {[["1 (Casa)",h,C.cyan],["X (Pari)",x,C.amber],["2 (Osp)",a,C.pink]].map(([lbl,p,col])=>(
+                        <div key={lbl} style={{display:"flex",justifyContent:"space-between",marginBottom:3}}>
+                          <span style={{fontSize:10,color:"#888"}}>{lbl}</span>
+                          <span style={{fontSize:10,fontWeight:700,color:pTop===(lbl[0]==="X"?"X":lbl[0])?col:"#aaa"}}>{(p*100).toFixed(1)}%</span>
+                        </div>
+                      ))}
+                      <div style={{fontSize:9,color:"#555",marginTop:4}}>Gap: {(Math.max(h,x,a)-[h,x,a].sort((a,b)=>b-a)[1])*100..toFixed(1)}%</div>
+                    </div>
+                    {/* PP Index */}
+                    <div>
+                      <div style={{fontSize:9,color:"#555",letterSpacing:1,marginBottom:6}}>⚖️ PP INDEX (PARISI)</div>
+                      <div style={{fontSize:10,color:"#888",marginBottom:3}}>Risultato: <span style={{color:C.amber,fontWeight:700}}>{ppRes||"—"}</span></div>
+                      <div style={{fontSize:10,color:"#888",marginBottom:3}}>D: <span style={{color:C.amber,fontWeight:700}}>{f.pp?.pp_D!=null?(f.pp.pp_D>0?"+":"")+f.pp.pp_D.toFixed(2):"—"}</span></div>
+                      <div style={{fontSize:10,color:"#888"}}>PP Rank: <span style={{color:"#a78bfa",fontWeight:700}}>{ppLabel(f)} {(ppR).toFixed(0)}%</span></div>
+                    </div>
+                    {/* Pinnacle + Concordanza */}
+                    <div>
+                      <div style={{fontSize:9,color:"#555",letterSpacing:1,marginBottom:6}}>💰 PINNACLE</div>
+                      <div style={{fontSize:10,color:"#888",marginBottom:3}}>Fav: <span style={{color:"#4caf50",fontWeight:700}}>{mktFav||"—"}</span></div>
+                      <div style={{fontSize:10,color:"#888",marginBottom:3}}>CONF-PIN: <span style={{color:"#4caf50",fontWeight:700}}>{cp}</span></div>
+                      <div style={{fontSize:10,color:"#888",marginBottom:6}}>OV: <span style={{color:ov>=60?"#4caf50":ov>=40?"#f59e0b":"#f87171",fontWeight:700}}>{ov||"—"}</span></div>
+                      <div style={{fontSize:9,color:"#555",letterSpacing:1,marginBottom:4}}>CONCORDANZA</div>
+                      {[["Poisson vs PP",pTop===ppRes],["Poisson vs PIN",pTop===mktFav],["PP vs PIN",ppRes&&mktFav&&ppRes===mktFav]].map(([lbl,ok])=>(
+                        <div key={lbl} style={{fontSize:9,color:ok?"#4caf50":"#f87171",marginBottom:2}}>{ok?"✅":"❌"} {lbl}</div>
+                      ))}
+                      {conc<=1&&<div style={{marginTop:6,fontSize:9,color:concCol,fontWeight:700}}>▶ Fattore dominante: {dominantSrc}</div>}
+                    </div>
                   </div>
-                  <div style={{textAlign:"center"}}>
-                    {evVal!=null?<span style={{fontSize:11,fontWeight:700,color:evVal>0?"#4caf50":"#f87171"}}>{evVal>0?"+":""}{(evVal*100).toFixed(1)}%</span>:<span style={{color:"#333",fontSize:9}}>—</span>}
-                  </div>
-                  <div style={{textAlign:"center"}}>
-                    <span style={{fontSize:11,fontWeight:700,color:ov>=60?"#4caf50":ov>=40?"#f59e0b":"#f87171"}}>{ov||"—"}</span>
-                  </div>
-                  <div style={{textAlign:"center"}}>
-                    <div style={{fontSize:13,fontWeight:900,color:calc.labelCol}}>{topIdx.toFixed(0)}</div>
-                    <div style={{fontSize:8,color:"#555"}}>/100</div>
-                  </div>
-                  <div style={{textAlign:"center"}}>
-                    <span style={{fontSize:9,fontWeight:700,color:calc.labelCol,background:`${calc.labelCol}15`,padding:"2px 6px",borderRadius:4}}>{calc.label}</span>
-                  </div>
+                  )}
                 </div>
               )})}
             </div>
