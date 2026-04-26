@@ -685,70 +685,133 @@ export default function App(){
 
         {/* ══ CERCA ══ */}
         {tab==="top"&&(()=>{
-          if(!fixtures||fixtures.length===0)return(
-            <div style={{textAlign:"center",padding:60,color:"#333"}}>
-              <div style={{fontSize:40,marginBottom:12}}>🏆</div>
-              <div style={{fontSize:11,letterSpacing:3}}>Nessuna partita disponibile</div>
-            </div>
-          );
+          if(!fixtures||fixtures.length===0) return null;
 
-          // Tutte le partite che rispettano almeno un criterio
-          const topAll=fixtures.filter(f=>f.pred&&(
-            f.pred.home>=0.60||f.pred.away>=0.60||f.pred.draw>=0.35
-          )).map(f=>{
-            // Determina il segno dominante e il suo valore
-            const p=f.pred;
-            let sign,signVal,signCol;
-            if(p.home>=0.60){sign="1";signVal=p.home;signCol=C.cyan;}
-            else if(p.away>=0.60){sign="2";signVal=p.away;signCol=C.pink;}
-            else{sign="X";signVal=p.draw;signCol=C.amber;}
-            return{...f,sign,signVal,signCol};
-          }).sort((a,b)=>b.signVal-a.signVal);
+          // ── CALCOLO TopIndex per ogni partita ──────────────────────
+          const topData = fixtures.map(f=>{
+            const calc = calcMultipla(f);
+            if(!calc||!f.pred) return null;
+
+            const h=f.pred.home||0, x=f.pred.draw||0, a=f.pred.away||0;
+            const ppR  = ppScore(f)*100;
+            const cp   = calc.confPin||0;
+            const ov   = f.ov?.score||0;
+            const sc   = calc.score*100;
+
+            // TopIndex = Score×40% + OV×30% + PPRank×20% + ConfPin×10%
+            const topIdx = sc*0.40 + ov*0.30 + ppR*0.20 + cp*0.10;
+
+            // Segno dominante per ciascun modello
+            const pTop  = h>=x&&h>=a?"1":a>=x&&a>=h?"2":"X";
+            const ppRes = f.pp?.pp_result||null;
+            const mktFav= calc.mktFav||null;
+
+            // Concordanza (0-3)
+            const conc = (pTop===ppRes?1:0)+(pTop===mktFav?1:0)+(ppRes&&mktFav&&ppRes===mktFav?1:0);
+            const concFlag = conc===3?"🟢":conc===2?"🟡":"🔴";
+
+            // Determina giocata e percentuale
+            const pred = calc.pred_sign||"";
+            let giocata, pct, pctLabel, evVal;
+
+            if(pred.startsWith("FISSA ")){
+              const s=pred.replace("FISSA ","");
+              giocata=`FISSA ${s}`;
+              pct = s==="1"?h:s==="2"?a:x;
+              const pin = s==="1"?f.ov?.pin1:s==="2"?f.ov?.pin2:f.ov?.pinX;
+              evVal = pin&&pin>0?(pct*pin-1):null;
+              pctLabel=`${(pct*100).toFixed(1)}%`;
+            } else {
+              // DOPPIA: somma prob dei due segni
+              const signs=pred==="1X"?["1","X"]:pred==="X2"?["X","2"]:["1","2"];
+              const p1=signs[0]==="1"?h:signs[0]==="X"?x:a;
+              const p2=signs[1]==="X"?x:a;
+              pct=p1+p2;
+              giocata=pred;
+              // EV medio ponderato sui due segni
+              const pin1s=signs[0]==="1"?f.ov?.pin1:signs[0]==="X"?f.ov?.pinX:f.ov?.pin2;
+              const pin2s=signs[1]==="X"?f.ov?.pinX:f.ov?.pin2;
+              const ev1=pin1s&&pin1s>0?(p1*pin1s-1):null;
+              const ev2=pin2s&&pin2s>0?(p2*pin2s-1):null;
+              evVal = ev1!=null&&ev2!=null?(ev1+ev2)/2:ev1??ev2;
+              pctLabel=`${(p1*100).toFixed(1)}%+${(p2*100).toFixed(1)}%=${(pct*100).toFixed(1)}%`;
+            }
+
+            return {f, calc, topIdx, conc, concFlag, giocata, pct, pctLabel, evVal, ppR, cp, ov, sc};
+          }).filter(Boolean).sort((a,b)=>{
+            // Prima per concordanza desc, poi topIdx desc
+            if(b.conc!==a.conc) return b.conc-a.conc;
+            return b.topIdx-a.topIdx;
+          });
+
+          const concCounts=[0,0,0];
+          topData.forEach(d=>concCounts[d.conc]=(concCounts[d.conc]||0)+1);
 
           return(
           <div>
-            <div style={{fontSize:9,color:"#555",marginBottom:16,letterSpacing:1}}>
-              {topAll.length} PARTITE · 🔵 1&gt;60% · 🟡 X&gt;35% · 🔴 2&gt;60%
+            {/* Header */}
+            <div style={{background:"rgba(34,211,238,0.06)",border:"1px solid rgba(34,211,238,0.2)",borderRadius:10,padding:"10px 14px",marginBottom:14}}>
+              <div style={{fontSize:10,color:C.cyan,fontWeight:700,letterSpacing:2,marginBottom:4}}>🏆 TOP — CLASSIFICA UNIFICATA</div>
+              <div style={{fontSize:9,color:"#888"}}>TopIndex = Score×40% + OV×30% + PPRank×20% + ConfPin×10% · Ordinato per concordanza modelli poi TopIndex decrescente</div>
             </div>
-            <div style={{display:"flex",flexDirection:"column",gap:10}}>
-              {topAll.length===0&&<div style={{textAlign:"center",padding:40,color:"#333",fontSize:11}}>Nessuna partita supera le soglie oggi</div>}
-              {topAll.map((f,i)=>{
-                const p=f.pred;
-                const pp=f.pp;
-                const ppCol=pp?.pp_result==="1"?C.cyan:pp?.pp_result==="2"?C.pink:pp?.pp_result==="X"?C.amber:pp?.pp_result==="1X"?"#34d399":pp?.pp_result==="X2"?"#f97316":"#888";
+
+            {/* Concordanza badges */}
+            <div style={{display:"flex",gap:8,marginBottom:12,flexWrap:"wrap"}}>
+              {[["🟢","Concordanza totale (3/3)","#4caf50"],["🟡","Parziale (2/3)","#f59e0b"],["🔴","Discordanza (1/3)","#f87171"]].map(([flag,lbl,col])=>(
+                <div key={flag} style={{background:`${col}15`,border:`1px solid ${col}44`,borderRadius:8,padding:"3px 10px",fontSize:10,color:col,fontWeight:700}}>
+                  {flag} {lbl}: {concCounts[flag==="🟢"?3:flag==="🟡"?2:flag==="🔴"?1:0]||0}
+                </div>
+              ))}
+              <div style={{fontSize:9,color:"#555",marginLeft:"auto",alignSelf:"center"}}>{topData.length} partite</div>
+            </div>
+
+            {/* Header tabella */}
+            <div style={{display:"grid",gridTemplateColumns:"36px 80px 1fr 1fr 44px 80px 90px 60px 60px 55px 55px",gap:6,padding:"6px 10px",fontSize:9,color:"#555",letterSpacing:1,borderBottom:"1px solid rgba(255,255,255,0.07)",marginBottom:4}}>
+              <div>#</div><div>DATA</div><div>CASA</div><div>TRASFERTA</div>
+              <div style={{textAlign:"center"}}>CONC</div>
+              <div style={{textAlign:"center"}}>GIOCATA</div>
+              <div style={{textAlign:"center"}}>PCT</div>
+              <div style={{textAlign:"center"}}>EV</div>
+              <div style={{textAlign:"center"}}>OV</div>
+              <div style={{textAlign:"center"}}>TOP IDX</div>
+              <div style={{textAlign:"center"}}>LABEL</div>
+            </div>
+
+            {/* Righe */}
+            <div style={{display:"flex",flexDirection:"column",gap:3}}>
+              {topData.map(({f,calc,topIdx,conc,concFlag,giocata,pct,pctLabel,evVal,ov,sc},i)=>{
+                const concCol=conc===3?"#4caf50":conc===2?"#f59e0b":"#f87171";
+                const isFissa=giocata.startsWith("FISSA");
                 return(
-                <div key={i} style={{background:C.card,border:`1px solid ${f.signCol}44`,borderRadius:12,padding:14}}>
-                  <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",marginBottom:8}}>
-                    <div>
-                      <div style={{fontSize:11,color:"#888"}}>{f.league}</div>
-                      <div style={{fontSize:13,color:"#aaa",fontWeight:700}}>{f.date} <span style={{color:"#777",fontSize:11}}>{f.time}</span></div>
-                    </div>
-                    <div style={{textAlign:"center"}}>
-                      <div style={{fontSize:9,color:"#555"}}>SEGNO</div>
-                      <div style={{fontSize:32,fontWeight:900,color:f.signCol,lineHeight:1}}>{f.sign}</div>
-                      <div style={{fontSize:14,fontWeight:700,color:f.signCol}}>{(f.signVal*100).toFixed(1)}%</div>
-                    </div>
+                <div key={i} style={{display:"grid",gridTemplateColumns:"36px 80px 1fr 1fr 44px 80px 90px 60px 60px 55px 55px",gap:6,padding:"9px 10px",borderRadius:9,
+                  background:conc===3?`${C.cyan}08`:conc===2?`${C.amber}05`:C.card,
+                  border:`1px solid ${conc===3?C.cyan+"33":conc===2?C.amber+"22":C.border}`,
+                  alignItems:"center"}}>
+                  <div style={{fontSize:12,color:concCol,fontWeight:700}}>{i===0?"🥇":i===1?"🥈":i===2?"🥉":i+1}</div>
+                  <div style={{fontSize:10,color:"#aaa",fontWeight:600,lineHeight:1.4}}>{f.date||"—"}<br/><span style={{fontSize:9,color:"#555"}}>{f.time||""}</span></div>
+                  <div style={{fontSize:12,fontWeight:700,color:C.cyan,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{f.home}</div>
+                  <div style={{fontSize:12,fontWeight:700,color:C.pink,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{f.away}</div>
+                  <div style={{textAlign:"center",fontSize:16}}>{concFlag}</div>
+                  <div style={{textAlign:"center"}}>
+                    <span style={{fontSize:11,fontWeight:800,color:isFissa?C.cyan:"#a78bfa",background:isFissa?`${C.cyan}15`:"rgba(167,139,250,0.1)",padding:"3px 8px",borderRadius:6}}>
+                      {giocata}
+                    </span>
                   </div>
-                  <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:10}}>
-                    <span style={{fontSize:14,fontWeight:700,color:C.cyan}}>{f.home}</span>
-                    <span style={{fontSize:10,color:"#333"}}>vs</span>
-                    <span style={{fontSize:14,fontWeight:700,color:C.pink}}>{f.away}</span>
+                  <div style={{textAlign:"center"}}>
+                    <span style={{fontSize:10,fontWeight:700,color:pct>=0.70?"#4caf50":pct>=0.55?"#f59e0b":"#f87171"}}>{pctLabel}</span>
                   </div>
-                  <div style={{display:"flex",gap:10,flexWrap:"wrap",fontSize:11,marginBottom:8}}>
-                    <span>1: <b style={{color:C.cyan}}>{(p.home*100).toFixed(1)}%</b></span>
-                    <span>X: <b style={{color:C.amber}}>{(p.draw*100).toFixed(1)}%</b></span>
-                    <span>2: <b style={{color:C.pink}}>{(p.away*100).toFixed(1)}%</b></span>
-                    <span style={{color:"#444"}}>·</span>
-                    <span>O2.5: <b>{(p.over25*100).toFixed(1)}%</b></span>
-                    <span>BTTS: <b>{(p.bttsY*100).toFixed(1)}%</b></span>
-                    <span style={{color:"#444"}}>·</span>
-                    <span style={{color:"#555"}}>xG <b style={{color:"#aaa"}}>{p.xg_h}—{p.xg_a}</b></span>
-                    <span style={{color:"#a78bfa"}}>Conf <b>{(p.conf*100).toFixed(1)}%</b></span>
+                  <div style={{textAlign:"center"}}>
+                    {evVal!=null?<span style={{fontSize:11,fontWeight:700,color:evVal>0?"#4caf50":"#f87171"}}>{evVal>0?"+":""}{(evVal*100).toFixed(1)}%</span>:<span style={{color:"#333",fontSize:9}}>—</span>}
                   </div>
-                  <div style={{display:"flex",gap:6,flexWrap:"wrap"}}>
-                    {p.combo&&<div style={{fontSize:9,color:"#4caf50",background:"#0a2a1a",padding:"2px 8px",borderRadius:4}}>🎯 {p.combo} ({(p.comboP*100).toFixed(0)}%)</div>}
-                    {f.ov&&f.ov.score!=null&&<div style={{fontSize:9,fontWeight:700,color:f.ov.score>=70?"#4caf50":f.ov.score>=50?"#f59e0b":"#f87171",background:"rgba(245,158,11,0.08)",padding:"2px 8px",borderRadius:4}}>💰 OV {f.ov.score?.toFixed(0)} {f.ov.edge!=null?"("+(f.ov.edge>0?"+":"")+f.ov.edge.toFixed(1)+"%)" : ""}</div>}
-                    {f.pp&&<div style={{fontSize:9,color:ppCol,background:"rgba(167,139,250,0.06)",padding:"2px 8px",borderRadius:4}}>⚡ {ppLabel(f)} <span style={{color:"#a78bfa",fontWeight:700,fontSize:11}}>({(ppScore(f)*100).toFixed(0)}%)</span></div>}
+                  <div style={{textAlign:"center"}}>
+                    <span style={{fontSize:11,fontWeight:700,color:ov>=60?"#4caf50":ov>=40?"#f59e0b":"#f87171"}}>{ov||"—"}</span>
+                  </div>
+                  <div style={{textAlign:"center"}}>
+                    <div style={{fontSize:13,fontWeight:900,color:calc.labelCol}}>{topIdx.toFixed(0)}</div>
+                    <div style={{fontSize:8,color:"#555"}}>/100</div>
+                  </div>
+                  <div style={{textAlign:"center"}}>
+                    <span style={{fontSize:9,fontWeight:700,color:calc.labelCol,background:`${calc.labelCol}15`,padding:"2px 6px",borderRadius:4}}>{calc.label}</span>
                   </div>
                 </div>
               )})}
