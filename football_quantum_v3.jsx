@@ -726,11 +726,16 @@ export default function App(){
               const lbl=s1+s2==="1X"?"1X":s1+s2==="X2"||s1+s2==="2X"?"X2":"1-2";
               const pin1=s1==="1"?f.ov?.pin1:s1==="X"?f.ov?.pinX:f.ov?.pin2;
               const pin2=s2==="X"?f.ov?.pinX:s2==="2"?f.ov?.pin2:f.ov?.pin1;
+              // EV ponderato: media pesata per prob (non semplice media)
+              // evita che una quota alta su segno improbabile distorca tutto
               const e1=pin1&&pin1>0?(p1*pin1-1):null;
               const e2=pin2&&pin2>0?(p2*pin2-1):null;
+              let evVal=null;
+              if(e1!=null&&e2!=null) evVal=(e1*p1+e2*p2)/(p1+p2); // media pesata per prob
+              else evVal=e1??e2;
               return {giocata:lbl,pct:p1+p2,
                 pctLabel:`${(p1*100).toFixed(1)}%+${(p2*100).toFixed(1)}%=${((p1+p2)*100).toFixed(1)}%`,
-                evVal:e1!=null&&e2!=null?(e1+e2)/2:e1??e2};
+                evVal};
             };
             const bestDouble=()=>{
               const opts=[makeDouble("1","X"),makeDouble("X","2"),makeDouble("1","2")];
