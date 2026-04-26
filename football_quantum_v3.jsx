@@ -703,9 +703,11 @@ export default function App(){
             const pGap  = Math.max(h,x,a)-[h,x,a].sort((p,q)=>q-p)[1];
             const ppRes = f.pp?.pp_result||null;
             const mktFav= calc.mktFav||null;
-            const c1=pTop===ppRes?1:0;
+            // pp_result usa notazione doppia (es "1X","X2","12","X")
+            // Usa includes() per verificare se il segno è contenuto nel risultato PP
+            const c1=ppRes&&ppRes.includes(pTop)?1:0;
             const c2=pTop===mktFav?1:0;
-            const c3=ppRes&&mktFav&&ppRes===mktFav?1:0;
+            const c3=ppRes&&mktFav&&ppRes.includes(mktFav)?1:0;
             const conc=c1+c2+c3;
             const concFlag=conc===3?"🟢":conc===2?"🟡":"🔴";
 
@@ -738,14 +740,17 @@ export default function App(){
             // Solo doppie per tutti — la migliore per PCT
             {const r=bestDouble(); giocata=r.giocata;pct=r.pct;pctLabel=r.pctLabel;evVal=r.evVal;}
 
-            // TopIndex: concordanza come bonus pesato (non separatore rigido)
-            // 🟢+15, 🟡+8, 🔴+0 — vale ma non crea muri invalicabili
-            const bonusConc=conc===3?15:conc===2?8:0;
+            // TopIndex: concordanza come bonus forte + tiebreaker
+            // 🟢+25, 🟡+12, 🔴+0
+            const bonusConc=conc===3?25:conc===2?12:0;
             const topIdx=sc*0.40+ov*0.30+ppR*0.20+cp*0.10+bonusConc;
 
             return {f,calc,topIdx,conc,concFlag,giocata,pct,pctLabel,evVal,
                     ppR,cp,ov,sc,pTop,ppRes,mktFav,h,x,a};
-          }).filter(Boolean).sort((a,b)=>b.topIdx-a.topIdx);
+          }).filter(Boolean).sort((a,b)=>{
+            if(Math.abs(b.topIdx-a.topIdx)<2) return b.conc-a.conc;
+            return b.topIdx-a.topIdx;
+          });
 
           const concCounts={3:0,2:0,1:0,0:0};
           topData.forEach(d=>concCounts[d.conc]=(concCounts[d.conc]||0)+1);
@@ -861,7 +866,7 @@ export default function App(){
                         <span style={{fontSize:13,fontWeight:700,color:ov>=60?"#4caf50":ov>=40?"#f59e0b":"#f87171"}}>{ov||"—"}</span>
                       </div>
                       <div style={{fontSize:11,color:"#555",marginBottom:4}}>CONCORDANZA</div>
-                      {[["Poisson vs PP",pTop===ppRes],["Poisson vs PIN",pTop===mktFav],["PP vs PIN",!!(ppRes&&mktFav&&ppRes===mktFav)]].map(([lbl,ok])=>(
+                      {[["Poisson vs PP",!!(ppRes&&ppRes.includes(pTop))],["Poisson vs PIN",pTop===mktFav],["PP vs PIN",!!(ppRes&&mktFav&&ppRes.includes(mktFav))]].map(([lbl,ok])=>(
                         <div key={lbl} style={{fontSize:12,color:ok?"#4caf50":"#f87171",marginBottom:3}}>{ok?"✅":"❌"} {lbl}</div>
                       ))}
                     </div>
