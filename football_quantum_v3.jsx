@@ -725,16 +725,25 @@ export default function App(){
             if(wPP>dominantW&&ppRes){dominantSrc="PP Index";dominantSign=ppRes;dominantW=wPP;}
             if(wPin>dominantW&&mktFav){dominantSrc="Pinnacle";dominantSign=mktFav;dominantW=wPin;}
 
-            // Giocata basata su concordanza
+            // Giocata: FISSA solo se concordanza>=2 E gap Poisson>20%
+            // Altrimenti sempre la doppia con PCT più alta
             let giocata, pct, pctLabel, evVal;
-            const pred = conc>=2 ? (calc.pred_sign||"") : (() => {
-              // Per discordanti: usa fattore dominante
-              if(dominantSign==="1") return "FISSA 1";
-              if(dominantSign==="2") return "FISSA 2";
-              return "FISSA X";
-            })();
 
-            if(pred.startsWith("FISSA ")){
+            const calcDouble=(s1,s2)=>{
+              const p1=s1==="1"?h:s1==="X"?x:a;
+              const p2=s2==="X"?x:s2==="2"?a:h;
+              const pin1=s1==="1"?f.ov?.pin1:s1==="X"?f.ov?.pinX:f.ov?.pin2;
+              const pin2=s2==="X"?f.ov?.pinX:s2==="2"?f.ov?.pin2:f.ov?.pin1;
+              const e1=pin1&&pin1>0?(p1*pin1-1):null;
+              const e2=pin2&&pin2>0?(p2*pin2-1):null;
+              return {pct:p1+p2, pctLabel:`${(p1*100).toFixed(1)}%+${(p2*100).toFixed(1)}%=${((p1+p2)*100).toFixed(1)}%`,
+                      evVal:e1!=null&&e2!=null?(e1+e2)/2:e1??e2, label:s1+s2==="1X"?"1X":s1+s2==="X2"||s1+s2==="2X"?"X2":"1-2"};
+            };
+
+            const useFissa = conc>=2 && pGap>=0.18;
+            const pred = useFissa ? (calc.pred_sign||"") : null;
+
+            if(useFissa && pred && pred.startsWith("FISSA ")){
               const s=pred.replace("FISSA ","");
               giocata=`FISSA ${s}`;
               pct=s==="1"?h:s==="2"?a:x;
@@ -742,17 +751,15 @@ export default function App(){
               evVal=pin&&pin>0?(pct*pin-1):null;
               pctLabel=`${(pct*100).toFixed(1)}%`;
             } else {
-              const signs=pred==="1X"?["1","X"]:pred==="X2"?["X","2"]:["1","2"];
-              const p1=signs[0]==="1"?h:signs[0]==="X"?x:a;
-              const p2=signs[1]==="X"?x:a;
-              pct=p1+p2;
-              giocata=pred;
-              const pin1s=signs[0]==="1"?f.ov?.pin1:signs[0]==="X"?f.ov?.pinX:f.ov?.pin2;
-              const pin2s=signs[1]==="X"?f.ov?.pinX:f.ov?.pin2;
-              const ev1=pin1s&&pin1s>0?(p1*pin1s-1):null;
-              const ev2=pin2s&&pin2s>0?(p2*pin2s-1):null;
-              evVal=ev1!=null&&ev2!=null?(ev1+ev2)/2:ev1??ev2;
-              pctLabel=`${(p1*100).toFixed(1)}%+${(p2*100).toFixed(1)}%=${(pct*100).toFixed(1)}%`;
+              // Doppia con PCT più alta tra 1X, X2, 1-2
+              const d1X=calcDouble("1","X");
+              const dX2=calcDouble("X","2");
+              const d12=calcDouble("1","2");
+              const best=[d1X,dX2,d12].sort((a,b)=>b.pct-a.pct)[0];
+              giocata=best.label;
+              pct=best.pct;
+              pctLabel=best.pctLabel;
+              evVal=best.evVal;
             }
 
             // TopIndex con bonus concordanza e PCT
