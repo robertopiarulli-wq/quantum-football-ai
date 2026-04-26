@@ -745,10 +745,10 @@ export default function App(){
             // Solo doppie per tutti — la migliore per PCT
             {const r=bestDouble(); giocata=r.giocata;pct=r.pct;pctLabel=r.pctLabel;evVal=r.evVal;}
 
-            // TopIndex: concordanza come bonus forte + tiebreaker
-            // 🟢+25, 🟡+12, 🔴+0
-            const bonusConc=conc===3?25:conc===2?12:0;
-            const topIdx=sc*0.40+ov*0.30+ppR*0.20+cp*0.10+bonusConc;
+            // TopIndex: Pinnacle CP pesa 50% — mercato sharp come riferimento primario
+            // Poisson×15% + OV×20% + PPRank×15% + ConfPin×50% + BonusConc
+            const bonusConc=conc===3?20:conc===2?10:0;
+            const topIdx=sc*0.15+ov*0.20+ppR*0.15+cp*0.50+bonusConc;
 
             return {f,calc,topIdx,conc,concFlag,giocata,pct,pctLabel,evVal,
                     ppR,cp,ov,sc,pTop,ppRes,mktFav,h,x,a};
@@ -776,13 +776,14 @@ export default function App(){
               <div style={{fontSize:9,color:"#555",marginLeft:"auto",alignSelf:"center"}}>{topData.length} partite</div>
             </div>
 
-            <div style={{display:"grid",gridTemplateColumns:"36px 80px 1fr 1fr 40px 90px 110px 60px 55px 55px 55px",gap:6,padding:"6px 10px",fontSize:9,color:"#555",letterSpacing:1,borderBottom:"1px solid rgba(255,255,255,0.07)",marginBottom:4}}>
+            <div style={{display:"grid",gridTemplateColumns:"36px 80px 1fr 1fr 40px 90px 110px 60px 55px 55px 55px 55px",gap:6,padding:"6px 10px",fontSize:9,color:"#555",letterSpacing:1,borderBottom:"1px solid rgba(255,255,255,0.07)",marginBottom:4}}>
               <div>#</div><div>DATA</div><div>CASA</div><div>TRASFERTA</div>
               <div style={{textAlign:"center"}}>CONC</div>
               <div style={{textAlign:"center"}}>GIOCATA</div>
               <div style={{textAlign:"center"}}>PCT</div>
               <div style={{textAlign:"center"}}>EV</div>
               <div style={{textAlign:"center"}}>OV</div>
+              <div style={{textAlign:"center"}}>CP</div>
               <div style={{textAlign:"center"}}>TOP IDX</div>
               <div style={{textAlign:"center"}}>LABEL</div>
             </div>
@@ -795,7 +796,7 @@ export default function App(){
                 return(
                 <div key={i}>
                   <div onClick={()=>setTopExpanded(isExp?null:i)} style={{display:"grid",
-                    gridTemplateColumns:"36px 80px 1fr 1fr 40px 90px 110px 60px 55px 55px 55px",
+                    gridTemplateColumns:"36px 80px 1fr 1fr 40px 90px 110px 60px 55px 55px 55px 55px",
                     gap:6,padding:"9px 10px",borderRadius:isExp?"9px 9px 0 0":9,cursor:"pointer",
                     background:conc===3?`${C.cyan}08`:conc===2?`${C.amber}05`:C.card,
                     border:`1px solid ${conc===3?C.cyan+"33":conc===2?C.amber+"22":C.border}`,
@@ -818,6 +819,10 @@ export default function App(){
                     </div>
                     <div style={{textAlign:"center"}}>
                       <span style={{fontSize:11,fontWeight:700,color:ov>=60?"#4caf50":ov>=40?"#f59e0b":"#f87171"}}>{ov||"—"}</span>
+                    </div>
+                    <div style={{textAlign:"center"}}>
+                      <div style={{fontSize:11,fontWeight:700,color:cp>=50?"#4caf50":cp>=25?"#f59e0b":"#f87171"}}>{cp}</div>
+                      <div style={{fontSize:8,color:cp>=50?"#4caf50":cp>=25?"#f59e0b":"#f87171"}}>{cp>=50?"ALTO":cp>=25?"MEDIO":"BASSO"}</div>
                     </div>
                     <div style={{textAlign:"center"}}>
                       <div style={{fontSize:13,fontWeight:900,color:calc.labelCol}}>{topIdx.toFixed(0)}</div>
@@ -862,9 +867,16 @@ export default function App(){
                         <span style={{fontSize:12,color:"#888"}}>Favorito</span>
                         <span style={{fontSize:13,fontWeight:700,color:"#4caf50"}}>{mktFav||"—"}</span>
                       </div>
-                      <div style={{display:"flex",justifyContent:"space-between",marginBottom:6}}>
+                      <div style={{display:"flex",justifyContent:"space-between",marginBottom:6,alignItems:"center"}}>
                         <span style={{fontSize:12,color:"#888"}}>CONF-PIN</span>
-                        <span style={{fontSize:13,fontWeight:700,color:"#4caf50"}}>{cp}</span>
+                        <span style={{display:"flex",alignItems:"center",gap:6}}>
+                          <span style={{fontSize:13,fontWeight:700,color:cp>=50?"#4caf50":cp>=25?"#f59e0b":"#f87171"}}>{cp}</span>
+                          <span style={{fontSize:9,fontWeight:700,padding:"1px 6px",borderRadius:4,
+                            background:cp>=50?"#4caf5022":cp>=25?"#f59e0b22":"#f8717122",
+                            color:cp>=50?"#4caf50":cp>=25?"#f59e0b":"#f87171"}}>
+                            {cp>=50?"🔴 ALTO":cp>=25?"🟡 MEDIO":"⚪ BASSO"}
+                          </span>
+                        </span>
                       </div>
                       <div style={{display:"flex",justifyContent:"space-between",marginBottom:10}}>
                         <span style={{fontSize:12,color:"#888"}}>OV Score</span>
