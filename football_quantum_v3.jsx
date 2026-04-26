@@ -254,7 +254,16 @@ export default function App(){
       .then(r=>r.ok?r.json():null)
       .then(d=>{
         if(d&&d.fixtures&&d.fixtures.length>0){
-          setFixtures(d.fixtures);
+          // Filtra partite passate (data < oggi) a monte — vale per tutti i tab
+          const now=new Date();
+          const todayStr=`${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,"0")}-${String(now.getDate()).padStart(2,"0")}`;
+          const futureFixtures=d.fixtures.filter(f=>{
+            if(!f.date) return true;
+            const p=f.date.split("/");
+            if(p.length!==3) return true;
+            return `${p[2]}-${p[1]}-${p[0]}`>=todayStr;
+          });
+          setFixtures(futureFixtures);
           setFixDate(d.date||"");
           setCycles(d.fixtures.length);
         } else {
@@ -320,7 +329,13 @@ export default function App(){
 
   const filtered=useMemo(()=>{
     const base=filterLeague==="Tutti"?fixtures:fixtures.filter(f=>f.league===filterLeague);
-    return[...base].sort((a,b)=>((a.date||"")+(a.time||"")).localeCompare((b.date||"")+(b.time||"")));
+    const upcoming=base;
+    const toSortKey=f=>{
+      if(!f.date) return "9999-99-99"+(f.time||"");
+      const p=f.date.split("/");
+      return p.length===3?`${p[2]}-${p[1]}-${p[0]}`+(f.time||""):(f.date||"")+(f.time||"");
+    };
+    return[...upcoming].sort((a,b)=>toSortKey(a).localeCompare(toSortKey(b)));
   },[fixtures,filterLeague]);
 
   const calcMultipla = f => {
