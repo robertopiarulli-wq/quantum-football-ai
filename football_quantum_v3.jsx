@@ -1394,19 +1394,24 @@ export default function App(){
           const doppieAll = comboData.filter(d=>!d.pick.startsWith("FISSA"));
           const doppie    = (doppiePos.length>=2?doppiePos:doppieAll);
 
-          // Quota reale Pinnacle — null se dati non disponibili
+          // Quota reale Pinnacle — usa novig come fallback se pin mancante
           const getPin=(d)=>{
             const p1=d.f.ov?.pin1, pX=d.f.ov?.pinX, p2=d.f.ov?.pin2;
-            if(!p1||!pX||!p2) return null; // nessun dato reale → escludi
+            // Fallback: stima da novig (più affidabile di pinEst)
+            const nv1=d.f.ov?.novig_1, nvX=d.f.ov?.novig_X, nv2=d.f.ov?.novig_2;
+            const r1=p1||(nv1?100/nv1:null);
+            const rX=pX||(nvX?100/nvX:null);
+            const r2=p2||(nv2?100/nv2:null);
+            if(!r1||!rX||!r2) return null;
+            const p1f=r1,pXf=rX,p2f=r2;
             const isFissa=d.pick.startsWith("FISSA");
             const s=isFissa?d.pick.replace("FISSA ",""):null;
-            if(s==="1") return p1;
-            if(s==="2") return p2;
-            if(s==="X") return pX;
-            // DC: Q = p1*p2/(p1+p2)
-            if(d.pick==="1X") return Math.round(p1*pX/(p1+pX)*100)/100;
-            if(d.pick==="X2") return Math.round(pX*p2/(pX+p2)*100)/100;
-            if(d.pick==="1-2") return Math.round(p1*p2/(p1+p2)*100)/100;
+            if(s==="1") return p1f;
+            if(s==="2") return p2f;
+            if(s==="X") return pXf;
+            if(d.pick==="1X") return Math.round(p1f*pXf/(p1f+pXf)*100)/100;
+            if(d.pick==="X2") return Math.round(pXf*p2f/(pXf+p2f)*100)/100;
+            if(d.pick==="1-2") return Math.round(p1f*p2f/(p1f+p2f)*100)/100;
             return null;
           };
 
@@ -1655,10 +1660,10 @@ export default function App(){
                       <div style={{fontSize:10,fontWeight:700,color:ok?"#a78bfa":"#555"}}>{s.label}</div>
                       <div style={{display:"flex",gap:4,flexWrap:"wrap"}}>
                         {s.sel.map((d,j)=>(
-                          <span key={j} style={{fontSize:8,padding:"1px 5px",borderRadius:3,
+                          <span key={j} style={{fontSize:8,padding:"2px 6px",borderRadius:3,display:"inline-flex",gap:4,
                             background:d.pick.startsWith("FISSA")?"rgba(34,211,238,0.1)":"rgba(167,139,250,0.1)",
                             color:d.pick.startsWith("FISSA")?C.cyan:"#a78bfa"}}>
-                            {d.pick.startsWith("FISSA")?`🔒${d.pick.replace("FISSA ","")}`:d.pick}
+                            {d.pick.startsWith("FISSA")?"🔒":"🎯"} {d.f.home} vs {d.f.away} · {d.pick}
                           </span>
                         ))}
                       </div>
