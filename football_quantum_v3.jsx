@@ -229,6 +229,7 @@ export default function App(){
   const[parixSort,setParixSort]=useState("score");
   const[parixExpanded,setParixExpanded]=useState(null);
   const[comboExpanded,setComboExpanded]=useState(null);
+  const[comboSort,setComboSort]=useState("cassa");
   const[topExpanded,setTopExpanded]=useState(null);
   const[homeInput,setHomeInput]=useState("");
   const[awayInput,setAwayInput]=useState("");
@@ -1339,8 +1340,9 @@ export default function App(){
             // Align: quanto siamo vicini a Pinnacle
             const align = nv1!=null ? Math.max(0,1-Math.abs(bh-(nv1??bh))-Math.abs(ba-(nv2??ba))) : 0.70;
 
-            // Score Cassaforte = PCT_eff × (1-S) × Coeff × Align
-            const peff = ppick * (1 - S);
+            // Score Cassaforte = PCT_eff × (1-S×0.65) × Coeff × Align
+            // S pesato 0.65 per non penalizzare troppo le partite stabili
+            const peff = ppick * (1 - S * 0.65);
             const scoreCassa = peff * coeff * Math.max(0.5, align);
 
             // S label
@@ -1348,7 +1350,8 @@ export default function App(){
             const sCol   = S<0.35?"#4caf50":S<0.65?"#f59e0b":"#f87171";
 
             return {f,calc,S,sLabel,sCol,pick,ppick,pickLabel,coeff,align,scoreCassa,ppR,cp,ov,bh,bx,ba,domSign,nv1,nvX,nv2};
-          }).filter(Boolean).sort((a,b)=>b.scoreCassa-a.scoreCassa);
+          }).filter(Boolean).sort((a,b)=>
+            comboSort==="pct"?b.ppick-a.ppick:b.scoreCassa-a.scoreCassa);
 
           // Top combinazioni (4, 5, 6 eventi)
           const topN = comboData.slice(0,10);
@@ -1407,6 +1410,20 @@ export default function App(){
               </div>
             </div>
             )}
+
+            {/* Sort buttons */}
+            <div style={{display:"flex",gap:8,marginBottom:10,alignItems:"center"}}>
+              <div style={{fontSize:9,color:"#555",letterSpacing:1}}>ORDINA PER:</div>
+              {[["cassa","🏦 Cassaforte"],["pct","📈 PCT pura"]].map(([v,l])=>(
+                <button key={v} onClick={()=>setComboSort(v)}
+                  style={{padding:"5px 12px",borderRadius:99,fontSize:10,cursor:"pointer",fontFamily:"inherit",
+                    border:`1px solid ${comboSort===v?"#a78bfa":C.border}`,
+                    background:comboSort===v?"rgba(167,139,250,0.15)":"transparent",
+                    color:comboSort===v?"#a78bfa":"#666"}}>
+                  {l}
+                </button>
+              ))}
+            </div>
 
             {/* Header tabella */}
             <div style={{display:"grid",gridTemplateColumns:"36px 80px 1fr 1fr 80px 90px 70px 55px 55px 55px",gap:6,padding:"6px 10px",fontSize:9,color:"#555",letterSpacing:1,borderBottom:"1px solid rgba(255,255,255,0.07)",marginBottom:4}}>
