@@ -240,6 +240,7 @@ export default function App(){
   const[maskOvMin,setMaskOvMin]=useState(30);
   const[maskFisseStep1,setMaskFisseStep1]=useState(3);
   const[maskDoppiePerStep,setMaskDoppiePerStep]=useState(1);
+  const[maskDoppieStep1,setMaskDoppieStep1]=useState(0);
   const[maskSelectedCombo,setMaskSelectedCombo]=useState(0);
   const[selectedMulti,setSelectedMulti]=useState(0);
   const[topExpanded,setTopExpanded]=useState(null);
@@ -1503,8 +1504,9 @@ export default function App(){
                 {[
                   ["💰 Importo totale (€)", maskStake, setMaskStake, 10, 1000, 10, "€"],
                   ["🔒 Fisse step 1", maskFisseStep1, setMaskFisseStep1, 1, 4, 1, ""],
-                  ["➕ Doppie per step", maskDoppiePerStep, setMaskDoppiePerStep, 1, 3, 1, ""],
-                  ["🎯 N° step", maskStep, setMaskStep, 1, 5, 1, ""],
+                  ["🎯 Doppie step 1", maskDoppieStep1, setMaskDoppieStep1, 0, 3, 1, ""],
+                  ["➕ Doppie per step succ.", maskDoppiePerStep, setMaskDoppiePerStep, 1, 3, 1, ""],
+                  ["🔢 N° step", maskStep, setMaskStep, 1, 5, 1, ""],
                   ["📉 Riduzione % per step", maskRiduzione, setMaskRiduzione, 10, 80, 5, "%"],
                 ].map(([label,val,setter,min,max,step,unit])=>(
                   <div key={label}>
@@ -1612,9 +1614,8 @@ export default function App(){
 
                 // Costruisce ogni step della multipla
                 const steps = Array.from({length:maskStep+1},(_,i)=>{
-                  const nDoppie=i*maskDoppiePerStep;
+                  const nDoppie=maskDoppieStep1+i*maskDoppiePerStep;
                   if(nDoppie>doppiePool.length) return null;
-                  // Step i: fisse step1 + i*doppiePerStep doppie
                   const sel=[...fissePool.slice(0,maskFisseStep1),...doppiePool.slice(0,nDoppie)];
                   if(sel.length===0) return null;
                   const pmulti=sel.reduce((acc,d)=>acc*d.ppick,1);
@@ -1633,7 +1634,7 @@ export default function App(){
                   const rendAtteso=stake*ev;
                   const vincita=stake*(qmulti-1);
                   return {i,sel,pmulti,qmulti,ev,stake,rendAtteso,vincita,
-                    label:`M${i+1}: ${maskFisseStep1}F${nDoppie>0?`+${nDoppie}D`:""}`};
+                    label:`M${i+1}: ${maskFisseStep1}F+${nDoppie}D`};
                 }).filter(Boolean);
 
                 const stepsFiltered = steps.filter(s=>s.ev*100>=maskEvMin);
