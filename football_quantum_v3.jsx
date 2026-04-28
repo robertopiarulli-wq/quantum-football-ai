@@ -235,6 +235,9 @@ export default function App(){
   const[maskStep,setMaskStep]=useState(3);
   const[maskRiduzione,setMaskRiduzione]=useState(50);
   const[maskEvMin,setMaskEvMin]=useState(10);
+  const[maskQuotaMin,setMaskQuotaMin]=useState(1.20);
+  const[maskScoreMin,setMaskScoreMin]=useState(30);
+  const[maskOvMin,setMaskOvMin]=useState(30);
   const[maskSelectedCombo,setMaskSelectedCombo]=useState(0);
   const[selectedMulti,setSelectedMulti]=useState(0);
   const[topExpanded,setTopExpanded]=useState(null);
@@ -1361,13 +1364,32 @@ export default function App(){
             const sLabel = S<0.35?"🟢 STABILE":S<0.65?"🟡 MEDIO":"🔴 ALTO";
             const sCol   = S<0.35?"#4caf50":S<0.65?"#f59e0b":"#f87171";
 
-            return {f,calc,S,sLabel,sCol,pick,ppick,pickLabel,coeff,align,scoreCassa,ppR,cp,ov,bh,bx,ba,domSign,nv1,nvX,nv2};
+            // EV individuale sulla quota Pinnacle
+            const pinPickFn=()=>{
+              const s=pick.startsWith("FISSA")?pick.replace("FISSA ",""):null;
+              const p1=f.ov?.pin1,pX=f.ov?.pinX,p2=f.ov?.pin2;
+              if(s==="1") return p1;
+              if(s==="2") return p2;
+              if(s==="X") return pX;
+              if(pick==="1X"&&p1&&pX) return p1*pX/(p1+pX);
+              if(pick==="X2"&&pX&&p2) return pX*p2/(pX+p2);
+              if(pick==="1-2"&&p1&&p2) return p1*p2/(p1+p2);
+              return null;
+            };
+            const pinPick=pinPickFn();
+            const evInd=pinPick&&pinPick>0?ppick*pinPick-1:null;
+
+            return {f,calc,S,sLabel,sCol,pick,ppick,pickLabel,coeff,align,scoreCassa,ppR,cp,ov,bh,bx,ba,domSign,nv1,nvX,nv2,pinPick,evInd};
           }).filter(Boolean).sort((a,b)=>
             comboSort==="pct"?b.ppick-a.ppick:b.scoreCassa-a.scoreCassa);
 
           // ── GENERATORE MULTIPLA: 3 FISSE + 4 DOPPIE ─────────────
-          const fisse  = comboData.filter(d=>d.pick.startsWith("FISSA")).slice(0,5);
-          const doppie = comboData.filter(d=>!d.pick.startsWith("FISSA")).slice(0,7);
+          const fissePos  = comboData.filter(d=>d.pick.startsWith("FISSA")&&d.evInd!=null&&d.evInd>0);
+          const fisseAll  = comboData.filter(d=>d.pick.startsWith("FISSA"));
+          const fisse     = (fissePos.length>=2?fissePos:fisseAll).slice(0,6);
+          const doppiePos = comboData.filter(d=>!d.pick.startsWith("FISSA")&&d.evInd!=null&&d.evInd>0);
+          const doppieAll = comboData.filter(d=>!d.pick.startsWith("FISSA"));
+          const doppie    = (doppiePos.length>=2?doppiePos:doppieAll);
 
           // Quota DC dalla formula: Q_DC = p1*p2/(p1+p2) dove p1,p2 sono le quote singole
           const getPin=(d)=>{
@@ -1458,23 +1480,87 @@ export default function App(){
               <div style={{fontSize:10,color:"#a78bfa",fontWeight:700,letterSpacing:2,marginBottom:12}}>⚙️ MASCHERA MULTIPLA SCALARE</div>
 
               {/* Input grid */}
-              <div style={{display:"grid",gridTemplateColumns:"1fr 1fr 1fr",gap:12,marginBottom:12}}>
+              <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:10,marginBottom:12}}>
                 {[
-                  ["💰 Importo totale (€)", maskStake, setMaskStake, 10, 1000, 10],
-                  ["🔒 Fisse base", maskFisse, setMaskFisse, 1, 4, 1],
-                  ["🎯 Step doppie", maskStep, setMaskStep, 1, 5, 1],
-                  ["📉 Riduzione % per step", maskRiduzione, setMaskRiduzione, 10, 80, 5],
-                  ["📊 EV minimo (%)", maskEvMin, setMaskEvMin, -20, 50, 5],
-                ].map(([label,val,setter,min,max,step])=>(
+                  ["💰 Importo totale (€)", maskStake, setMaskStake, 10, 1000, 10, "€"],
+                  ["🔒 Fisse base", maskFisse, setMaskFisse, 1, 4, 1, ""],
+                  ["🎯 Step doppie", maskStep, setMaskStep, 1, 5, 1, ""],
+                  ["📉 Riduzione % per step", maskRiduzione, setMaskRiduzione, 10, 80, 5, "%"],
+                ].map(([label,val,setter,min,max,step,unit])=>(
                   <div key={label}>
                     <div style={{fontSize:9,color:"#888",marginBottom:4}}>{label}</div>
                     <div style={{display:"flex",alignItems:"center",gap:6}}>
                       <input type="range" min={min} max={max} step={step} value={val}
                         onChange={e=>setter(Number(e.target.value))}
                         style={{flex:1,accentColor:"#a78bfa"}}/>
-                      <span style={{fontSize:12,fontWeight:700,color:"#a78bfa",minWidth:35,textAlign:"right"}}>{val}{label.includes("€")?"€":label.includes("%")?"%":""}</span>
+                      <span style={{fontSize:12,fontWeight:700,color:"#a78bfa",minWidth:40,textAlign:"right"}}>{val}{unit}</span>
                     </div>
                   </div>
+                ))}
+              </div>
+
+              {/* Filtri qualità eventi */}
+              <div style={{fontSize:9,color:"#a78bfa",fontWeight:700,letterSpacing:1,marginBottom:8}}>🎯 FILTRI QUALITÀ EVENTI</div>
+              <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:10,marginBottom:12}}>
+                <div>
+                  <div style={{display:"flex",justifyContent:"space-between",marginBottom:4}}>
+                    <span style={{fontSize:9,color:"#888"}}>📊 EV minimo</span>
+                    <span style={{fontSize:11,fontWeight:700,color:maskEvMin>=10?"#4caf50":maskEvMin>=3?"#f59e0b":"#f87171"}}>{maskEvMin}%</span>
+                  </div>
+                  <input type="range" min={0} max={30} step={1} value={maskEvMin}
+                    onChange={e=>setMaskEvMin(Number(e.target.value))}
+                    style={{width:"100%",accentColor:"#4caf50"}}/>
+                  <div style={{fontSize:8,color:maskEvMin>=10?"#4caf50":maskEvMin>=3?"#f59e0b":"#f87171",marginTop:2}}>
+                    {maskEvMin>=10?"🟢 Buono":maskEvMin>=3?"🟠 Accettabile":"⚪ Neutro"}
+                  </div>
+                </div>
+                <div>
+                  <div style={{display:"flex",justifyContent:"space-between",marginBottom:4}}>
+                    <span style={{fontSize:9,color:"#888"}}>💰 Quota minima</span>
+                    <span style={{fontSize:11,fontWeight:700,color:maskQuotaMin>=2.0?"#4caf50":maskQuotaMin>=1.5?"#f59e0b":"#f87171"}}>{maskQuotaMin.toFixed(2)}x</span>
+                  </div>
+                  <input type="range" min={1.0} max={3.0} step={0.05} value={maskQuotaMin}
+                    onChange={e=>setMaskQuotaMin(Number(e.target.value))}
+                    style={{width:"100%",accentColor:"#f59e0b"}}/>
+                  <div style={{fontSize:8,color:maskQuotaMin>=2.0?"#4caf50":maskQuotaMin>=1.5?"#f59e0b":"#f87171",marginTop:2}}>
+                    {maskQuotaMin>=2.0?"🟢 Alta":maskQuotaMin>=1.5?"🟡 Media":"🟠 Bassa"}
+                  </div>
+                </div>
+                <div>
+                  <div style={{display:"flex",justifyContent:"space-between",marginBottom:4}}>
+                    <span style={{fontSize:9,color:"#888"}}>🏦 Score minimo</span>
+                    <span style={{fontSize:11,fontWeight:700,color:maskScoreMin>=50?"#4caf50":maskScoreMin>=35?"#f59e0b":"#f87171"}}>{maskScoreMin}</span>
+                  </div>
+                  <input type="range" min={20} max={70} step={5} value={maskScoreMin}
+                    onChange={e=>setMaskScoreMin(Number(e.target.value))}
+                    style={{width:"100%",accentColor:"#22d3ee"}}/>
+                  <div style={{fontSize:8,color:maskScoreMin>=50?"#4caf50":maskScoreMin>=35?"#f59e0b":"#f87171",marginTop:2}}>
+                    {maskScoreMin>=50?"🟢 Alto":maskScoreMin>=35?"🟡 Medio":"⚪ Minimo"}
+                  </div>
+                </div>
+                <div>
+                  <div style={{display:"flex",justifyContent:"space-between",marginBottom:4}}>
+                    <span style={{fontSize:9,color:"#888"}}>📈 OV minimo</span>
+                    <span style={{fontSize:11,fontWeight:700,color:maskOvMin>=50?"#4caf50":maskOvMin>=35?"#f59e0b":"#f87171"}}>{maskOvMin}</span>
+                  </div>
+                  <input type="range" min={20} max={70} step={5} value={maskOvMin}
+                    onChange={e=>setMaskOvMin(Number(e.target.value))}
+                    style={{width:"100%",accentColor:"#f87171"}}/>
+                  <div style={{fontSize:8,color:maskOvMin>=50?"#4caf50":maskOvMin>=35?"#f59e0b":"#f87171",marginTop:2}}>
+                    {maskOvMin>=50?"🟢 Alto":maskOvMin>=35?"🟡 Medio":"⚪ Minimo"}
+                  </div>
+                </div>
+              </div>
+
+              {/* Legenda */}
+              <div style={{display:"flex",gap:6,flexWrap:"wrap",marginBottom:10,padding:"6px 10px",borderRadius:6,background:"rgba(0,0,0,0.2)"}}>
+                <div style={{fontSize:8,color:"#888",width:"100%",marginBottom:2,fontWeight:700}}>LEGENDA EV:</div>
+                {[["EV>+20%","#4caf50","🟢 Eccellente"],["EV+10→+20%","#f59e0b","🟡 Buono"],["EV+3→+10%","#f97316","🟠 Accettabile"],["EV 0→+3%","#888","⚪ Neutro"],["EV<0%","#f87171","🔴 Escludi"]].map(([lbl,col,desc])=>(
+                  <div key={lbl} style={{fontSize:8,color:col,background:`${col}11`,border:`1px solid ${col}33`,borderRadius:3,padding:"2px 6px"}}>{desc} ({lbl})</div>
+                ))}
+                <div style={{fontSize:8,color:"#888",width:"100%",marginTop:2,fontWeight:700}}>LEGENDA QUOTA:</div>
+                {[["≥2.00","#4caf50","🟢 Alta"],["1.50→1.99","#f59e0b","🟡 Media"],["1.20→1.49","#f97316","🟠 Bassa"],["<1.20","#f87171","🔴 Escludi"]].map(([lbl,col,desc])=>(
+                  <div key={lbl} style={{fontSize:8,color:col,background:`${col}11`,border:`1px solid ${col}33`,borderRadius:3,padding:"2px 6px"}}>{desc} ({lbl})</div>
                 ))}
               </div>
 
@@ -1482,8 +1568,18 @@ export default function App(){
               {(()=>{
                 // Solo partite con quote Pinnacle reali
                 const hasPin=d=>d.f.ov?.pin1&&d.f.ov?.pinX&&d.f.ov?.pin2;
-                const fissePool = comboData.filter(d=>d.pick.startsWith("FISSA")&&hasPin(d)).slice(0,maskFisse);
-                const doppiePool = comboData.filter(d=>!d.pick.startsWith("FISSA")&&hasPin(d));
+                // Maschera: priorità EV positivo, fallback a tutti con pin
+                // Applica filtri qualità utente
+                const passFilter=d=>{
+                  if(!hasPin(d)) return false;
+                  if(d.evInd==null||d.evInd*100<maskEvMin) return false;
+                  if(d.pinPick==null||d.pinPick<maskQuotaMin) return false;
+                  if((d.calc?.score||0)*100<maskScoreMin) return false;
+                  if((d.f?.ov?.score||0)<maskOvMin) return false;
+                  return true;
+                };
+                const fissePool=comboData.filter(d=>d.pick.startsWith("FISSA")&&passFilter(d)).slice(0,maskFisse);
+                const doppiePool=comboData.filter(d=>!d.pick.startsWith("FISSA")&&passFilter(d));
 
                 // Distribuzione stake scalare
                 const rawStakes = Array.from({length:maskStep+1},(_,i)=>Math.pow(1-maskRiduzione/100,i));
@@ -1526,7 +1622,12 @@ export default function App(){
                 <div>
                   {fissePool.length===0&&(
                     <div style={{padding:"12px",borderRadius:8,background:"rgba(248,113,113,0.08)",border:"1px solid rgba(248,113,113,0.2)",marginBottom:8,fontSize:11,color:"#f87171"}}>
-                      ⚠️ Nessuna fissa con quote Pinnacle disponibili oggi. Esegui il workflow o controlla i dati OV.
+                      ⚠️ Nessuna fissa supera i filtri impostati. Abbassa EV minimo, quota minima o score minimo.
+                    </div>
+                  )}
+                  {fissePool.length>0&&doppiePool.length===0&&maskStep>0&&(
+                    <div style={{padding:"12px",borderRadius:8,background:"rgba(245,158,11,0.08)",border:"1px solid rgba(245,158,11,0.2)",marginBottom:8,fontSize:11,color:"#f59e0b"}}>
+                      ⚠️ Nessuna doppia supera i filtri. Solo multipla con fisse disponibile.
                     </div>
                   )}
                   {/* Steps table */}
@@ -1633,6 +1734,7 @@ export default function App(){
                     </div>
                     <div style={{textAlign:"center"}}>
                       <span style={{fontSize:11,fontWeight:700,color:ppick>=0.75?"#4caf50":ppick>=0.60?"#f59e0b":"#f87171"}}>{(ppick*100).toFixed(1)}%</span>
+                      {evInd!=null&&<div style={{fontSize:9,color:evInd>0?"#4caf50":"#f87171"}}>{evInd>0?"+":""}{(evInd*100).toFixed(0)}%EV</div>}
                     </div>
                     <div style={{textAlign:"center"}}>
                       <span style={{fontSize:11,fontWeight:700,color:ov>=60?"#4caf50":ov>=40?"#f59e0b":"#f87171"}}>{ov||"—"}</span>
