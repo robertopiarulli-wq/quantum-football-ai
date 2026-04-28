@@ -1480,8 +1480,10 @@ export default function App(){
 
               {/* Calcolo multipla scalare */}
               {(()=>{
-                const fissePool = comboData.filter(d=>d.pick.startsWith("FISSA")).slice(0,maskFisse);
-                const doppiePool = comboData.filter(d=>!d.pick.startsWith("FISSA"));
+                // Solo partite con quote Pinnacle reali
+                const hasPin=d=>d.f.ov?.pin1&&d.f.ov?.pinX&&d.f.ov?.pin2;
+                const fissePool = comboData.filter(d=>d.pick.startsWith("FISSA")&&hasPin(d)).slice(0,maskFisse);
+                const doppiePool = comboData.filter(d=>!d.pick.startsWith("FISSA")&&hasPin(d));
 
                 // Distribuzione stake scalare
                 const rawStakes = Array.from({length:maskStep+1},(_,i)=>Math.pow(1-maskRiduzione/100,i));
@@ -1496,10 +1498,15 @@ export default function App(){
                   const qmulti=sel.reduce((acc,d)=>{
                     const s=d.pick.startsWith("FISSA")?d.pick.replace("FISSA ",""):null;
                     const p1m=d.f.ov?.pin1,pXm=d.f.ov?.pinX,p2m=d.f.ov?.pin2;
-                    const pin=s==="1"?p1m:s==="2"?p2m:s==="X"?pXm:
-                               d.pick==="1X"&&p1m&&pXm?p1m*pXm/(p1m+pXm):
-                               d.pick==="X2"&&pXm&&p2m?pXm*p2m/(pXm+p2m):
-                               d.pick==="1-2"&&p1m&&p2m?p1m*p2m/(p1m+p2m):1.50;
+                    // Quote DC: formula p1*p2/(p1+p2) oppure stima da probabilità
+                    const pinEst=(prob)=>prob>0?Math.round(1/prob*100)/100:2.00;
+                    const pin=s==="1"?(p1m||pinEst(d.bh)):
+                              s==="2"?(p2m||pinEst(d.ba)):
+                              s==="X"?(pXm||pinEst(d.bx)):
+                              d.pick==="1X"&&p1m&&pXm?p1m*pXm/(p1m+pXm):
+                              d.pick==="X2"&&pXm&&p2m?pXm*p2m/(pXm+p2m):
+                              d.pick==="1-2"&&p1m&&p2m?p1m*p2m/(p1m+p2m):
+                              pinEst(d.ppick*0.85);
                     return acc*(pin||1.80);
                   },1);
                   const ev=pmulti*qmulti-1;
@@ -1517,6 +1524,11 @@ export default function App(){
 
                 return(
                 <div>
+                  {fissePool.length===0&&(
+                    <div style={{padding:"12px",borderRadius:8,background:"rgba(248,113,113,0.08)",border:"1px solid rgba(248,113,113,0.2)",marginBottom:8,fontSize:11,color:"#f87171"}}>
+                      ⚠️ Nessuna fissa con quote Pinnacle disponibili oggi. Esegui il workflow o controlla i dati OV.
+                    </div>
+                  )}
                   {/* Steps table */}
                   <div style={{display:"grid",gridTemplateColumns:"80px 1fr 70px 60px 60px 70px 70px",gap:4,fontSize:9,color:"#555",letterSpacing:1,padding:"4px 8px",borderBottom:"1px solid #222",marginBottom:4}}>
                     <div>MULTIPLA</div><div>EVENTI</div><div style={{textAlign:"center"}}>STAKE</div>
