@@ -1709,7 +1709,7 @@ export default function App(){
             </div>
 
             <div style={{display:"flex",flexDirection:"column",gap:3}}>
-              {comboData.map(({f,calc,S,sLabel,sCol,pick,ppick,pickLabel,scoreCassa,align,ov,bh,bx,ba,domSign,nv1,nvX,nv2},i)=>{
+              {comboData.map(({f,calc,S,sLabel,sCol,pick,ppick,pickLabel,scoreCassa,align,ov,bh,bx,ba,domSign,nv1,nvX,nv2,pinPick,evInd},i)=>{
                 const isTop=i<(bestCombo?.n||5);
                 const isExp=comboExpanded===i;
                 return(
