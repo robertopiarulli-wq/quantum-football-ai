@@ -236,6 +236,7 @@ export default function App(){
   const[maskRiduzione,setMaskRiduzione]=useState(50);
   const[maskEvMin,setMaskEvMin]=useState(10);
   const[maskSelectedCombo,setMaskSelectedCombo]=useState(0);
+  const[selectedMulti,setSelectedMulti]=useState(0);
   const[topExpanded,setTopExpanded]=useState(null);
   const[homeInput,setHomeInput]=useState("");
   const[awayInput,setAwayInput]=useState("");
@@ -1368,15 +1369,21 @@ export default function App(){
           const fisse  = comboData.filter(d=>d.pick.startsWith("FISSA")).slice(0,5);
           const doppie = comboData.filter(d=>!d.pick.startsWith("FISSA")).slice(0,7);
 
+          // Quota DC dalla formula: Q_DC = p1*p2/(p1+p2) dove p1,p2 sono le quote singole
           const getPin=(d)=>{
+            const p1=d.f.ov?.pin1, pX=d.f.ov?.pinX, p2=d.f.ov?.pin2;
             const isFissa=d.pick.startsWith("FISSA");
             const s=isFissa?d.pick.replace("FISSA ",""):null;
-            if(s==="1") return d.f.ov?.pin1||1.80;
-            if(s==="2") return d.f.ov?.pin2||2.00;
-            if(s==="X") return d.f.ov?.pinX||3.20;
-            if(d.pick==="1X") return d.f.ov?.pin1?Math.min(d.f.ov.pin1*0.85,2.5):1.50;
-            if(d.pick==="X2") return d.f.ov?.pin2?Math.min(d.f.ov.pin2*0.85,2.5):1.50;
-            return 1.40; // 1-2
+            if(s==="1") return p1||1.80;
+            if(s==="2") return p2||2.00;
+            if(s==="X") return pX||3.20;
+            // DC: quota = p1*p2/(p1+p2) — formula matematica corretta
+            if(d.pick==="1X"&&p1&&pX) return Math.round(p1*pX/(p1+pX)*100)/100;
+            if(d.pick==="X2"&&pX&&p2) return Math.round(pX*p2/(pX+p2)*100)/100;
+            if(d.pick==="1-2"&&p1&&p2) return Math.round(p1*p2/(p1+p2)*100)/100;
+            if(d.pick==="1X") return 1.45;
+            if(d.pick==="X2") return 1.55;
+            return 1.40;
           };
 
           const buildMultipla=(selF,selD)=>{
@@ -1419,7 +1426,7 @@ export default function App(){
                 <div style={{fontSize:11,color:"#888"}}>Cassa medio: <span style={{color:"#a78bfa",fontWeight:700}}>{(bestCombo.avgCassa*100).toFixed(0)}</span></div>
               </div>
               <div style={{display:"flex",flexDirection:"column",gap:4,marginBottom:8}}>
-                {bestCombo.sel.map((d,i)=>(
+                {(allMulti[selectedMulti]||bestCombo).sel.map((d,i)=>(
                   <div key={i} style={{display:"flex",gap:8,alignItems:"center",fontSize:10,
                     padding:"4px 8px",borderRadius:6,
                     background:d.pick.startsWith("FISSA")?"rgba(34,211,238,0.05)":"rgba(167,139,250,0.05)"}}>
@@ -1433,10 +1440,14 @@ export default function App(){
               </div>
               <div style={{display:"flex",gap:8,flexWrap:"wrap"}}>
                 {allMulti.map((c,i)=>(
-                  <div key={i} style={{fontSize:9,background:c===bestCombo?"rgba(167,139,250,0.2)":"rgba(255,255,255,0.03)",
-                    border:`1px solid ${c===bestCombo?"#a78bfa44":"#333"}`,borderRadius:6,padding:"4px 10px",color:c===bestCombo?"#a78bfa":"#555"}}>
+                  <button key={i} onClick={()=>setSelectedMulti(i)}
+                    style={{fontSize:9,cursor:"pointer",fontFamily:"inherit",
+                      background:selectedMulti===i?"rgba(167,139,250,0.25)":"rgba(255,255,255,0.03)",
+                      border:`1px solid ${selectedMulti===i?"#a78bfa":"#333"}`,
+                      borderRadius:6,padding:"5px 12px",
+                      color:selectedMulti===i?"#a78bfa":"#555"}}>
                     {c.nFisse}F+{c.nDoppie}D · P:{(c.pmulti*100).toFixed(0)}% · Q:{c.qmulti.toFixed(1)}x · EV:{c.ev>0?"+":""}{(c.ev*100).toFixed(0)}%
-                  </div>
+                  </button>
                 ))}
               </div>
             </div>
@@ -1484,9 +1495,11 @@ export default function App(){
                   const pmulti=sel.reduce((acc,d)=>acc*d.ppick,1);
                   const qmulti=sel.reduce((acc,d)=>{
                     const s=d.pick.startsWith("FISSA")?d.pick.replace("FISSA ",""):null;
-                    const pin=s==="1"?d.f.ov?.pin1:s==="2"?d.f.ov?.pin2:s==="X"?d.f.ov?.pinX:
-                               d.pick==="1X"?d.f.ov?.pin1?Math.min(d.f.ov.pin1*0.85,2.5):1.50:
-                               d.pick==="X2"?d.f.ov?.pin2?Math.min(d.f.ov.pin2*0.85,2.5):1.50:1.40;
+                    const p1m=d.f.ov?.pin1,pXm=d.f.ov?.pinX,p2m=d.f.ov?.pin2;
+                    const pin=s==="1"?p1m:s==="2"?p2m:s==="X"?pXm:
+                               d.pick==="1X"&&p1m&&pXm?p1m*pXm/(p1m+pXm):
+                               d.pick==="X2"&&pXm&&p2m?pXm*p2m/(pXm+p2m):
+                               d.pick==="1-2"&&p1m&&p2m?p1m*p2m/(p1m+p2m):1.50;
                     return acc*(pin||1.80);
                   },1);
                   const ev=pmulti*qmulti-1;
