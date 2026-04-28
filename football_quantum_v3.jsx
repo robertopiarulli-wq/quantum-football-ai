@@ -1340,9 +1340,14 @@ export default function App(){
             // Align: quanto siamo vicini a Pinnacle
             const align = nv1!=null ? Math.max(0,1-Math.abs(bh-(nv1??bh))-Math.abs(ba-(nv2??ba))) : 0.70;
 
-            // Score Cassaforte = PCT_eff × (1-S×0.65) × Coeff × Align
-            // S pesato 0.65 per non penalizzare troppo le partite stabili
-            const peff = ppick * (1 - S * 0.65);
+            // Score Cassaforte differenziato per tipo:
+            // FISSA: S penalizza poco (0.30) + bonus PCT ×1.30 (solida per definizione)
+            // DOPPIA: S penalizza normalmente (0.65) + nessun bonus
+            // 1-2: S penalizza normalmente + penalità tipo
+            const isFissaCombo = pick.startsWith("FISSA");
+            const sPenalty = isFissaCombo ? 0.30 : 0.65;
+            const pctBonus  = isFissaCombo ? 1.30 : 1.00;
+            const peff = ppick * (1 - S * sPenalty) * pctBonus;
             const scoreCassa = peff * coeff * Math.max(0.5, align);
 
             // S label
@@ -1353,25 +1358,39 @@ export default function App(){
           }).filter(Boolean).sort((a,b)=>
             comboSort==="pct"?b.ppick-a.ppick:b.scoreCassa-a.scoreCassa);
 
-          // Top combinazioni (4, 5, 6 eventi)
-          const topN = comboData.slice(0,10);
-          const buildCombo = (n)=>{
-            const sel = topN.slice(0,n);
-            const pmulti = sel.reduce((acc,d)=>acc*d.ppick,1);
-            const qmulti = sel.reduce((acc,d)=>{
-              const isFissa=d.pick.startsWith("FISSA");
-              const s=isFissa?d.pick.replace("FISSA ",""):null;
-              const pin = s==="1"?d.f.ov?.pin1:s==="2"?d.f.ov?.pin2:s==="X"?d.f.ov?.pinX:
-                         d.pick==="1X"?((d.f.ov?.pin1||2.0)+(d.f.ov?.pinX||3.0))/2:
-                         d.pick==="X2"?((d.f.ov?.pinX||3.0)+(d.f.ov?.pin2||2.5))/2:
-                         ((d.f.ov?.pin1||2.0)+(d.f.ov?.pin2||2.5))/2;
-              return acc*(pin||2.0);
-            },1);
-            const ev = pmulti*qmulti-1;
-            return {n,pmulti,qmulti,ev,sel};
+          // ── GENERATORE MULTIPLA: 3 FISSE + 4 DOPPIE ─────────────
+          const fisse  = comboData.filter(d=>d.pick.startsWith("FISSA")).slice(0,5);
+          const doppie = comboData.filter(d=>!d.pick.startsWith("FISSA")).slice(0,7);
+
+          const getPin=(d)=>{
+            const isFissa=d.pick.startsWith("FISSA");
+            const s=isFissa?d.pick.replace("FISSA ",""):null;
+            if(s==="1") return d.f.ov?.pin1||1.80;
+            if(s==="2") return d.f.ov?.pin2||2.00;
+            if(s==="X") return d.f.ov?.pinX||3.20;
+            if(d.pick==="1X") return d.f.ov?.pin1?Math.min(d.f.ov.pin1*0.85,2.5):1.50;
+            if(d.pick==="X2") return d.f.ov?.pin2?Math.min(d.f.ov.pin2*0.85,2.5):1.50;
+            return 1.40; // 1-2
           };
-          const combos=[4,5,6].map(buildCombo);
-          const bestCombo=combos.filter(c=>c.ev>0).sort((a,b)=>b.ev-a.ev)[0]||combos[1];
+
+          const buildMultipla=(selF,selD)=>{
+            const sel=[...selF,...selD];
+            if(sel.length===0) return null;
+            const pmulti=sel.reduce((acc,d)=>acc*d.ppick,1);
+            const qmulti=sel.reduce((acc,d)=>acc*getPin(d),1);
+            const ev=pmulti*qmulti-1;
+            const avgCassa=sel.reduce((acc,d)=>acc+d.scoreCassa,0)/sel.length;
+            return {sel,pmulti,qmulti,ev,avgCassa,nFisse:selF.length,nDoppie:selD.length};
+          };
+
+          // Combinazione principale: top 3 fisse + top 4 doppie
+          const multiMain = buildMultipla(fisse.slice(0,3), doppie.slice(0,4));
+          // Varianti
+          const multi2F4D = buildMultipla(fisse.slice(0,2), doppie.slice(0,4));
+          const multi3F3D = buildMultipla(fisse.slice(0,3), doppie.slice(0,3));
+          const multi2F3D = buildMultipla(fisse.slice(0,2), doppie.slice(0,3));
+          const allMulti  = [multiMain,multi2F4D,multi3F3D,multi2F3D].filter(Boolean);
+          const bestCombo = allMulti.filter(c=>c.ev>0).sort((a,b)=>b.ev-a.ev)[0]||multiMain;
 
           return(
           <div>
@@ -1384,27 +1403,33 @@ export default function App(){
             {/* Combinazione consigliata */}
             {bestCombo&&(
             <div style={{background:"rgba(167,139,250,0.08)",border:"1px solid rgba(167,139,250,0.3)",borderRadius:10,padding:"12px 14px",marginBottom:14}}>
-              <div style={{fontSize:10,color:"#a78bfa",fontWeight:700,marginBottom:8}}>🏆 COMBINAZIONE CONSIGLIATA ({bestCombo.n} EVENTI)</div>
-              <div style={{display:"flex",gap:16,flexWrap:"wrap"}}>
-                <div style={{fontSize:11,color:"#888"}}>P multipla: <span style={{color:bestCombo.pmulti>=0.25?"#4caf50":"#f59e0b",fontWeight:700}}>{(bestCombo.pmulti*100).toFixed(1)}%</span></div>
-                <div style={{fontSize:11,color:"#888"}}>Quota tot: <span style={{color:"#a78bfa",fontWeight:700}}>{bestCombo.qmulti.toFixed(2)}x</span></div>
-                <div style={{fontSize:11,color:"#888"}}>EV: <span style={{color:bestCombo.ev>0?"#4caf50":"#f87171",fontWeight:700}}>{bestCombo.ev>0?"+":""}{(bestCombo.ev*100).toFixed(1)}%</span></div>
+              <div style={{fontSize:10,color:"#a78bfa",fontWeight:700,marginBottom:8}}>
+                🏆 MULTIPLA CONSIGLIATA — {bestCombo.nFisse} FISSE + {bestCombo.nDoppie} DOPPIE ({bestCombo.sel.length} EVENTI)
               </div>
-              <div style={{marginTop:8,display:"flex",flexDirection:"column",gap:4}}>
+              <div style={{display:"flex",gap:16,flexWrap:"wrap",marginBottom:8}}>
+                <div style={{fontSize:11,color:"#888"}}>P multipla: <span style={{color:bestCombo.pmulti>=0.20?"#4caf50":bestCombo.pmulti>=0.10?"#f59e0b":"#f87171",fontWeight:700}}>{(bestCombo.pmulti*100).toFixed(1)}%</span></div>
+                <div style={{fontSize:11,color:"#888"}}>Quota: <span style={{color:"#a78bfa",fontWeight:700}}>{bestCombo.qmulti.toFixed(2)}x</span></div>
+                <div style={{fontSize:11,color:"#888"}}>EV: <span style={{color:bestCombo.ev>0?"#4caf50":"#f87171",fontWeight:700}}>{bestCombo.ev>0?"+":""}{(bestCombo.ev*100).toFixed(1)}%</span></div>
+                <div style={{fontSize:11,color:"#888"}}>Cassa medio: <span style={{color:"#a78bfa",fontWeight:700}}>{(bestCombo.avgCassa*100).toFixed(0)}</span></div>
+              </div>
+              <div style={{display:"flex",flexDirection:"column",gap:4,marginBottom:8}}>
                 {bestCombo.sel.map((d,i)=>(
-                  <div key={i} style={{display:"flex",gap:8,alignItems:"center",fontSize:10}}>
-                    <span style={{color:d.sCol,fontWeight:700}}>{d.sLabel.split(" ")[0]}</span>
-                    <span style={{color:"#aaa"}}>{d.f.home} vs {d.f.away}</span>
-                    <span style={{color:"#a78bfa",fontWeight:700}}>{d.pick}</span>
-                    <span style={{color:"#4caf50"}}>{(d.ppick*100).toFixed(1)}%</span>
+                  <div key={i} style={{display:"flex",gap:8,alignItems:"center",fontSize:10,
+                    padding:"4px 8px",borderRadius:6,
+                    background:d.pick.startsWith("FISSA")?"rgba(34,211,238,0.05)":"rgba(167,139,250,0.05)"}}>
+                    <span style={{color:d.pick.startsWith("FISSA")?C.cyan:"#a78bfa",fontWeight:700,minWidth:50}}>{d.pick.startsWith("FISSA")?"🔒 FISSA":"🎯 DOPPIA"}</span>
+                    <span style={{color:"#aaa",flex:1}}>{d.f.home} vs {d.f.away}</span>
+                    <span style={{color:d.pick.startsWith("FISSA")?C.cyan:"#a78bfa",fontWeight:700,minWidth:40}}>{d.pick}</span>
+                    <span style={{color:"#4caf50",minWidth:45}}>{(d.ppick*100).toFixed(1)}%</span>
+                    <span style={{color:d.sCol,fontSize:9}}>{d.sLabel.split(" ")[0]} S:{(d.S*100).toFixed(0)}</span>
                   </div>
                 ))}
               </div>
-              <div style={{marginTop:8,display:"flex",gap:8}}>
-                {combos.map(c=>(
-                  <div key={c.n} style={{fontSize:9,background:c===bestCombo?"rgba(167,139,250,0.2)":"rgba(255,255,255,0.03)",
+              <div style={{display:"flex",gap:8,flexWrap:"wrap"}}>
+                {allMulti.map((c,i)=>(
+                  <div key={i} style={{fontSize:9,background:c===bestCombo?"rgba(167,139,250,0.2)":"rgba(255,255,255,0.03)",
                     border:`1px solid ${c===bestCombo?"#a78bfa44":"#333"}`,borderRadius:6,padding:"4px 10px",color:c===bestCombo?"#a78bfa":"#555"}}>
-                    {c.n} eventi · P:{(c.pmulti*100).toFixed(0)}% · EV:{c.ev>0?"+":""}{(c.ev*100).toFixed(0)}%
+                    {c.nFisse}F+{c.nDoppie}D · P:{(c.pmulti*100).toFixed(0)}% · Q:{c.qmulti.toFixed(1)}x · EV:{c.ev>0?"+":""}{(c.ev*100).toFixed(0)}%
                   </div>
                 ))}
               </div>
