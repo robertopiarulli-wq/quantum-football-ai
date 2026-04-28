@@ -1457,14 +1457,15 @@ export default function App(){
               <div style={{fontSize:10,color:"#a78bfa",fontWeight:700,marginBottom:8}}>
                 🏆 MULTIPLA CONSIGLIATA — {bestCombo.nFisse} FISSE + {bestCombo.nDoppie} DOPPIE ({bestCombo.sel.length} EVENTI)
               </div>
+              {(()=>{const dc=allMulti[selectedMulti]||bestCombo;return(
               <div style={{display:"flex",gap:16,flexWrap:"wrap",marginBottom:8}}>
-                <div style={{fontSize:11,color:"#888"}}>P multipla: <span style={{color:bestCombo.pmulti>=0.20?"#4caf50":bestCombo.pmulti>=0.10?"#f59e0b":"#f87171",fontWeight:700}}>{(bestCombo.pmulti*100).toFixed(1)}%</span></div>
-                <div style={{fontSize:11,color:"#888"}}>Quota: <span style={{color:"#a78bfa",fontWeight:700}}>{bestCombo.qmulti.toFixed(2)}x</span></div>
-                <div style={{fontSize:11,color:"#888"}}>EV: <span style={{color:bestCombo.ev>0?"#4caf50":"#f87171",fontWeight:700}}>{bestCombo.ev>0?"+":""}{(bestCombo.ev*100).toFixed(1)}%</span></div>
-                <div style={{fontSize:11,color:"#888"}}>Cassa medio: <span style={{color:"#a78bfa",fontWeight:700}}>{(bestCombo.avgCassa*100).toFixed(0)}</span></div>
-              </div>
+                <div style={{fontSize:11,color:"#888"}}>P multipla: <span style={{color:dc.pmulti>=0.20?"#4caf50":dc.pmulti>=0.10?"#f59e0b":"#f87171",fontWeight:700}}>{(dc.pmulti*100).toFixed(1)}%</span></div>
+                <div style={{fontSize:11,color:"#888"}}>Quota: <span style={{color:"#a78bfa",fontWeight:700}}>{dc.qmulti.toFixed(2)}x</span></div>
+                <div style={{fontSize:11,color:"#888"}}>EV: <span style={{color:dc.ev>0?"#4caf50":"#f87171",fontWeight:700}}>{dc.ev>0?"+":""}{(dc.ev*100).toFixed(1)}%</span></div>
+                <div style={{fontSize:11,color:"#888"}}>Cassa medio: <span style={{color:"#a78bfa",fontWeight:700}}>{(dc.avgCassa*100).toFixed(0)}</span></div>
+              </div>);})()}
               <div style={{display:"flex",flexDirection:"column",gap:4,marginBottom:8}}>
-                {(allMulti[selectedMulti]||bestCombo).sel.map((d,i)=>(
+                {(allMulti[selectedMulti]||bestCombo)?.sel?.map((d,i)=>(
                   <div key={i} style={{display:"flex",gap:8,alignItems:"center",fontSize:10,
                     padding:"4px 8px",borderRadius:6,
                     background:d.pick.startsWith("FISSA")?"rgba(34,211,238,0.05)":"rgba(167,139,250,0.05)"}}>
@@ -1588,8 +1589,10 @@ export default function App(){
                 // Applica filtri qualità utente
                 const passFilter=d=>{
                   if(!hasPin(d)) return false;
-                  if(d.evInd==null||d.evInd*100<maskEvMin) return false;
-                  if(d.pinPick==null||d.pinPick<maskQuotaMin) return false;
+                  // EV: usa evInd se disponibile, altrimenti non filtrare per EV
+                  if(d.evInd!=null && d.evInd*100<maskEvMin) return false;
+                  // Quota: usa pinPick se disponibile
+                  if(d.pinPick!=null && d.pinPick<maskQuotaMin) return false;
                   if((d.calc?.score||0)*100<maskScoreMin) return false;
                   if((d.f?.ov?.score||0)<maskOvMin) return false;
                   return true;
@@ -1644,15 +1647,15 @@ export default function App(){
                     </div>
                   )}
                   {/* Steps table */}
-                  <div style={{display:"grid",gridTemplateColumns:"80px 1fr 70px 60px 60px 70px 70px",gap:4,fontSize:9,color:"#555",letterSpacing:1,padding:"4px 8px",borderBottom:"1px solid #222",marginBottom:4}}>
+                  <div style={{display:"grid",gridTemplateColumns:"80px 1fr 65px 55px 55px 60px 65px",gap:4,fontSize:9,color:"#555",letterSpacing:1,padding:"4px 8px",borderBottom:"1px solid #222",marginBottom:4}}>
                     <div>MULTIPLA</div><div>EVENTI</div><div style={{textAlign:"center"}}>STAKE</div>
                     <div style={{textAlign:"center"}}>P WIN</div><div style={{textAlign:"center"}}>QUOTA</div>
                     <div style={{textAlign:"center"}}>EV</div><div style={{textAlign:"center"}}>REND ATT</div>
                   </div>
-                  {steps.map(s=>{
-                    const ok=s.ev*100>=maskEvMin;
+                  {steps.filter(Boolean).map(s=>{
+                    const ok=s&&s.ev*100>=maskEvMin;
                     return(
-                    <div key={s.i} style={{display:"grid",gridTemplateColumns:"80px 1fr 70px 60px 60px 70px 70px",
+                    <div key={s.i} style={{display:"grid",gridTemplateColumns:"80px 1fr 65px 55px 55px 60px 65px",
                       gap:4,padding:"6px 8px",borderRadius:6,marginBottom:3,
                       background:ok?"rgba(167,139,250,0.05)":"rgba(255,255,255,0.01)",
                       border:`1px solid ${ok?"rgba(167,139,250,0.2)":"#1a1a1a"}`,
@@ -1660,11 +1663,14 @@ export default function App(){
                       <div style={{fontSize:10,fontWeight:700,color:ok?"#a78bfa":"#555"}}>{s.label}</div>
                       <div style={{display:"flex",gap:4,flexWrap:"wrap"}}>
                         {s.sel.map((d,j)=>(
-                          <span key={j} style={{fontSize:8,padding:"2px 6px",borderRadius:3,display:"inline-flex",gap:4,
-                            background:d.pick.startsWith("FISSA")?"rgba(34,211,238,0.1)":"rgba(167,139,250,0.1)",
-                            color:d.pick.startsWith("FISSA")?C.cyan:"#a78bfa"}}>
-                            {d.pick.startsWith("FISSA")?"🔒":"🎯"} {d.f.home} vs {d.f.away} · {d.pick}
-                          </span>
+                          <div key={j} style={{fontSize:10,padding:"3px 8px",borderRadius:4,marginBottom:2,
+                            background:d.pick.startsWith("FISSA")?"rgba(34,211,238,0.08)":"rgba(167,139,250,0.08)",
+                            border:`1px solid ${d.pick.startsWith("FISSA")?"rgba(34,211,238,0.2)":"rgba(167,139,250,0.2)"}`,
+                            color:d.pick.startsWith("FISSA")?C.cyan:"#a78bfa",
+                            display:"flex",justifyContent:"space-between",alignItems:"center"}}>
+                            <span>{d.pick.startsWith("FISSA")?"🔒":"🎯"} {d.f.home} vs {d.f.away}</span>
+                            <span style={{fontWeight:700,marginLeft:8}}>{d.pick} · {(d.ppick*100).toFixed(0)}%</span>
+                          </div>
                         ))}
                       </div>
                       <div style={{textAlign:"center",fontSize:11,fontWeight:700,color:"#4caf50"}}>€{s.stake.toFixed(0)}</div>
