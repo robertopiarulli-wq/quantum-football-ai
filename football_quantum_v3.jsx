@@ -228,6 +228,7 @@ export default function App(){
   const[multiSort,setMultiSort]=useState("score");
   const[parixSort,setParixSort]=useState("score");
   const[parixExpanded,setParixExpanded]=useState(null);
+  const[comboExpanded,setComboExpanded]=useState(null);
   const[topExpanded,setTopExpanded]=useState(null);
   const[homeInput,setHomeInput]=useState("");
   const[awayInput,setAwayInput]=useState("");
@@ -584,7 +585,7 @@ export default function App(){
 
       {/* TABS */}
       <div style={{display:"flex",padding:"0 20px",borderBottom:"1px solid "+C.border,overflowX:"auto"}}>
-        {[["oggi","📅 OGGI"],["ranking","📊 RANKING"],["top","🏆 TOP"],["multipla","🎯 MULTIPLA"],["parisix","⚖️ PARISI X"],["cerca","🔍 CERCA"],["perf","📈 PERFORMANCE"],["risultati","🏁 RISULTATI"],["log","📋 LOG"]].map(([t,l])=>(
+        {[["oggi","📅 OGGI"],["ranking","📊 RANKING"],["top","🏆 TOP"],["multipla","🎯 MULTIPLA"],["parisix","⚖️ PARISI X"],["combo","🎲 COMBO"],["cerca","🔍 CERCA"],["perf","📈 PERFORMANCE"],["risultati","🏁 RISULTATI"],["log","📋 LOG"]].map(([t,l])=>(
           <button key={t} onClick={()=>setTab(t)} style={{background:"none",border:"none",color:tab===t?C.cyan:"#555",padding:"11px 16px",cursor:"pointer",fontSize:10,letterSpacing:2,whiteSpace:"nowrap",borderBottom:tab===t?`2px solid ${C.cyan}`:"2px solid transparent",fontFamily:"inherit"}}>{l}</button>
         ))}
       </div>
@@ -1280,6 +1281,236 @@ export default function App(){
                       {[["Poisson vs PP",!!(ppRes&&ppRes.includes(pTop))],["Poisson vs PIN",pTop===mktFav],["PP vs PIN",!!(ppRes&&mktFav&&ppRes.includes(mktFav))]].map(([lbl,ok])=>(
                         <div key={lbl} style={{fontSize:12,color:ok?"#4caf50":"#f87171",marginBottom:3}}>{ok?"✅":"❌"} {lbl}</div>
                       ))}
+                    </div>
+                  </div>
+                  )}
+                </div>
+              )})}
+            </div>
+          </div>
+        );})()}
+
+        {tab==="combo"&&(()=>{
+          if(!fixtures||fixtures.length===0) return null;
+
+          // ── LOGICA SURPRISE INDEX + COMBO ─────────────────────────
+          const comboData = fixtures.map(f=>{
+            const calc = calcMultipla(f);
+            if(!calc||!f.pred) return null;
+
+            const h=f.pred.home||0, x=f.pred.draw||0, a=f.pred.away||0;
+            const S = f.ov?.surprise_idx ?? 0.40;  // da Python
+            const ppR = ppScore(f)*100;
+            const cp = calc.confPin||0;
+            const ov = f.ov?.score||0;
+
+            // Pinnacle no-vig probs
+            const nv1 = f.ov?.novig_1!=null?f.ov.novig_1/100:null;
+            const nvX = f.ov?.novig_X!=null?f.ov.novig_X/100:null;
+            const nv2 = f.ov?.novig_2!=null?f.ov.novig_2/100:null;
+
+            // Blended probability: Poisson 60% + Pinnacle 40%
+            const bh = nv1!=null?h*0.60+nv1*0.40:h;
+            const bx = nvX!=null?x*0.60+nvX*0.40:x;
+            const ba = nv2!=null?a*0.60+nv2*0.40:a;
+
+            // Logica decisionale basata su S
+            let pick, ppick, pickLabel, coeff;
+            const domSign = bh>=bx&&bh>=ba?"1":ba>=bx?"2":"X";
+
+            if(S < 0.35){
+              // Sorpresa bassa → FISSA sul dominante
+              pick = `FISSA ${domSign}`;
+              ppick = domSign==="1"?bh:domSign==="2"?ba:bx;
+              coeff = 1.00;
+              pickLabel = "fisso";
+            } else if(S < 0.65){
+              // Sorpresa media → doppia con X
+              if(domSign==="1"){pick="1X";ppick=bh+bx;coeff=0.93;}
+              else if(domSign==="2"){pick="X2";ppick=bx+ba;coeff=0.93;}
+              else {pick=bh>=ba?"1X":"X2";ppick=pick==="1X"?bh+bx:bx+ba;coeff=0.93;}
+              pickLabel = "doppia";
+            } else {
+              // Sorpresa alta → 1-2
+              pick="1-2"; ppick=bh+ba; coeff=0.88;
+              pickLabel = "doppia larga";
+            }
+
+            // Align: quanto siamo vicini a Pinnacle
+            const align = nv1!=null ? Math.max(0,1-Math.abs(bh-(nv1??bh))-Math.abs(ba-(nv2??ba))) : 0.70;
+
+            // Score Cassaforte = PCT_eff × (1-S) × Coeff × Align
+            const peff = ppick * (1 - S);
+            const scoreCassa = peff * coeff * Math.max(0.5, align);
+
+            // S label
+            const sLabel = S<0.35?"🟢 STABILE":S<0.65?"🟡 MEDIO":"🔴 ALTO";
+            const sCol   = S<0.35?"#4caf50":S<0.65?"#f59e0b":"#f87171";
+
+            return {f,calc,S,sLabel,sCol,pick,ppick,pickLabel,coeff,align,scoreCassa,ppR,cp,ov,bh,bx,ba,domSign,nv1,nvX,nv2};
+          }).filter(Boolean).sort((a,b)=>b.scoreCassa-a.scoreCassa);
+
+          // Top combinazioni (4, 5, 6 eventi)
+          const topN = comboData.slice(0,10);
+          const buildCombo = (n)=>{
+            const sel = topN.slice(0,n);
+            const pmulti = sel.reduce((acc,d)=>acc*d.ppick,1);
+            const qmulti = sel.reduce((acc,d)=>{
+              const isFissa=d.pick.startsWith("FISSA");
+              const s=isFissa?d.pick.replace("FISSA ",""):null;
+              const pin = s==="1"?d.f.ov?.pin1:s==="2"?d.f.ov?.pin2:s==="X"?d.f.ov?.pinX:
+                         d.pick==="1X"?((d.f.ov?.pin1||2.0)+(d.f.ov?.pinX||3.0))/2:
+                         d.pick==="X2"?((d.f.ov?.pinX||3.0)+(d.f.ov?.pin2||2.5))/2:
+                         ((d.f.ov?.pin1||2.0)+(d.f.ov?.pin2||2.5))/2;
+              return acc*(pin||2.0);
+            },1);
+            const ev = pmulti*qmulti-1;
+            return {n,pmulti,qmulti,ev,sel};
+          };
+          const combos=[4,5,6].map(buildCombo);
+          const bestCombo=combos.filter(c=>c.ev>0).sort((a,b)=>b.ev-a.ev)[0]||combos[1];
+
+          return(
+          <div>
+            {/* Header */}
+            <div style={{background:"rgba(167,139,250,0.06)",border:"1px solid rgba(167,139,250,0.2)",borderRadius:10,padding:"10px 14px",marginBottom:14}}>
+              <div style={{fontSize:10,color:"#a78bfa",fontWeight:700,letterSpacing:2,marginBottom:4}}>🎲 COMBO — GENERATORE INTELLIGENTE</div>
+              <div style={{fontSize:9,color:"#888"}}>Score Cassaforte = PCT×(1-S)×Coeff×Align · S=Indice Sorpresa · Blended: Poisson 60% + Pinnacle 40% · Click per dettagli</div>
+            </div>
+
+            {/* Combinazione consigliata */}
+            {bestCombo&&(
+            <div style={{background:"rgba(167,139,250,0.08)",border:"1px solid rgba(167,139,250,0.3)",borderRadius:10,padding:"12px 14px",marginBottom:14}}>
+              <div style={{fontSize:10,color:"#a78bfa",fontWeight:700,marginBottom:8}}>🏆 COMBINAZIONE CONSIGLIATA ({bestCombo.n} EVENTI)</div>
+              <div style={{display:"flex",gap:16,flexWrap:"wrap"}}>
+                <div style={{fontSize:11,color:"#888"}}>P multipla: <span style={{color:bestCombo.pmulti>=0.25?"#4caf50":"#f59e0b",fontWeight:700}}>{(bestCombo.pmulti*100).toFixed(1)}%</span></div>
+                <div style={{fontSize:11,color:"#888"}}>Quota tot: <span style={{color:"#a78bfa",fontWeight:700}}>{bestCombo.qmulti.toFixed(2)}x</span></div>
+                <div style={{fontSize:11,color:"#888"}}>EV: <span style={{color:bestCombo.ev>0?"#4caf50":"#f87171",fontWeight:700}}>{bestCombo.ev>0?"+":""}{(bestCombo.ev*100).toFixed(1)}%</span></div>
+              </div>
+              <div style={{marginTop:8,display:"flex",flexDirection:"column",gap:4}}>
+                {bestCombo.sel.map((d,i)=>(
+                  <div key={i} style={{display:"flex",gap:8,alignItems:"center",fontSize:10}}>
+                    <span style={{color:d.sCol,fontWeight:700}}>{d.sLabel.split(" ")[0]}</span>
+                    <span style={{color:"#aaa"}}>{d.f.home} vs {d.f.away}</span>
+                    <span style={{color:"#a78bfa",fontWeight:700}}>{d.pick}</span>
+                    <span style={{color:"#4caf50"}}>{(d.ppick*100).toFixed(1)}%</span>
+                  </div>
+                ))}
+              </div>
+              <div style={{marginTop:8,display:"flex",gap:8}}>
+                {combos.map(c=>(
+                  <div key={c.n} style={{fontSize:9,background:c===bestCombo?"rgba(167,139,250,0.2)":"rgba(255,255,255,0.03)",
+                    border:`1px solid ${c===bestCombo?"#a78bfa44":"#333"}`,borderRadius:6,padding:"4px 10px",color:c===bestCombo?"#a78bfa":"#555"}}>
+                    {c.n} eventi · P:{(c.pmulti*100).toFixed(0)}% · EV:{c.ev>0?"+":""}{(c.ev*100).toFixed(0)}%
+                  </div>
+                ))}
+              </div>
+            </div>
+            )}
+
+            {/* Header tabella */}
+            <div style={{display:"grid",gridTemplateColumns:"36px 80px 1fr 1fr 80px 90px 70px 55px 55px 55px",gap:6,padding:"6px 10px",fontSize:9,color:"#555",letterSpacing:1,borderBottom:"1px solid rgba(255,255,255,0.07)",marginBottom:4}}>
+              <div>#</div><div>DATA</div><div>CASA</div><div>TRASFERTA</div>
+              <div style={{textAlign:"center"}}>SORPRESA</div>
+              <div style={{textAlign:"center"}}>PICK</div>
+              <div style={{textAlign:"center"}}>PCT EFF</div>
+              <div style={{textAlign:"center"}}>OV</div>
+              <div style={{textAlign:"center"}}>ALIGN</div>
+              <div style={{textAlign:"center"}}>🏦 CASSA</div>
+            </div>
+
+            <div style={{display:"flex",flexDirection:"column",gap:3}}>
+              {comboData.map(({f,calc,S,sLabel,sCol,pick,ppick,pickLabel,scoreCassa,align,ov,bh,bx,ba,domSign,nv1,nvX,nv2},i)=>{
+                const isTop=i<(bestCombo?.n||5);
+                const isExp=comboExpanded===i;
+                return(
+                <div key={i}>
+                  <div onClick={()=>setComboExpanded(isExp?null:i)} style={{display:"grid",
+                    gridTemplateColumns:"36px 80px 1fr 1fr 80px 90px 70px 55px 55px 55px",
+                    gap:6,padding:"9px 10px",borderRadius:isExp?"9px 9px 0 0":9,cursor:"pointer",
+                    background:isTop?"rgba(167,139,250,0.05)":C.card,
+                    border:`1px solid ${isTop?"rgba(167,139,250,0.2)":C.border}`,
+                    alignItems:"center"}}>
+                    <div style={{fontSize:12,color:isTop?"#a78bfa":"#555",fontWeight:700}}>{i===0?"🥇":i===1?"🥈":i===2?"🥉":i+1}</div>
+                    <div style={{fontSize:10,color:"#aaa",lineHeight:1.4}}>{f.date||"—"}<br/><span style={{fontSize:9,color:"#555"}}>{f.time||""}</span></div>
+                    <div style={{fontSize:12,fontWeight:700,color:C.cyan,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{f.home}</div>
+                    <div style={{fontSize:12,fontWeight:700,color:C.pink,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{f.away}</div>
+                    <div style={{textAlign:"center"}}>
+                      <div style={{fontSize:10,fontWeight:700,color:sCol}}>{sLabel}</div>
+                      <div style={{fontSize:9,color:sCol}}>{(S*100).toFixed(0)}/100</div>
+                    </div>
+                    <div style={{textAlign:"center"}}>
+                      <span style={{fontSize:12,fontWeight:800,color:"#a78bfa",background:"rgba(167,139,250,0.1)",padding:"3px 8px",borderRadius:6}}>{pick}</span>
+                      <div style={{fontSize:8,color:"#555",marginTop:2}}>{pickLabel}</div>
+                    </div>
+                    <div style={{textAlign:"center"}}>
+                      <span style={{fontSize:11,fontWeight:700,color:ppick>=0.75?"#4caf50":ppick>=0.60?"#f59e0b":"#f87171"}}>{(ppick*100).toFixed(1)}%</span>
+                    </div>
+                    <div style={{textAlign:"center"}}>
+                      <span style={{fontSize:11,fontWeight:700,color:ov>=60?"#4caf50":ov>=40?"#f59e0b":"#f87171"}}>{ov||"—"}</span>
+                    </div>
+                    <div style={{textAlign:"center"}}>
+                      <span style={{fontSize:11,fontWeight:700,color:align>=0.85?"#4caf50":align>=0.70?"#f59e0b":"#f87171"}}>{(align*100).toFixed(0)}%</span>
+                    </div>
+                    <div style={{textAlign:"center"}}>
+                      <div style={{fontSize:13,fontWeight:900,color:scoreCassa>=0.50?"#4caf50":scoreCassa>=0.35?"#f59e0b":"#f87171"}}>{(scoreCassa*100).toFixed(0)}</div>
+                      <div style={{fontSize:8,color:"#555"}}>/100</div>
+                    </div>
+                  </div>
+
+                  {isExp&&(
+                  <div style={{background:"rgba(255,255,255,0.03)",border:"1px solid rgba(167,139,250,0.2)",
+                    borderTop:"none",borderRadius:"0 0 9px 9px",padding:"14px 16px",
+                    display:"grid",gridTemplateColumns:"1fr 1fr 1fr",gap:16}}>
+                    <div>
+                      <div style={{fontSize:12,color:C.cyan,fontWeight:700,marginBottom:8}}>⚡ BLENDED (Poisson+PIN)</div>
+                      {[["1 Casa",bh,nv1,"1"],["X Pari",bx,nvX,"X"],["2 Ospite",ba,nv2,"2"]].map(([lbl,bp,pn,s])=>(
+                        <div key={lbl} style={{marginBottom:6}}>
+                          <div style={{display:"flex",justifyContent:"space-between"}}>
+                            <span style={{fontSize:11,color:"#888"}}>{lbl}</span>
+                            <span style={{fontSize:13,fontWeight:700,color:domSign===s?"#4caf50":"#aaa"}}>{(bp*100).toFixed(1)}%</span>
+                          </div>
+                          {pn&&<div style={{fontSize:9,color:"#555",textAlign:"right"}}>PIN: {(pn*100).toFixed(1)}%</div>}
+                        </div>
+                      ))}
+                    </div>
+                    <div>
+                      <div style={{fontSize:12,color:"#f59e0b",fontWeight:700,marginBottom:8}}>🎲 SURPRISE INDEX</div>
+                      <div style={{display:"flex",justifyContent:"space-between",marginBottom:6}}>
+                        <span style={{fontSize:11,color:"#888"}}>S (sorpresa)</span>
+                        <span style={{fontSize:13,fontWeight:700,color:sCol}}>{(S*100).toFixed(0)}/100</span>
+                      </div>
+                      <div style={{display:"flex",justifyContent:"space-between",marginBottom:6}}>
+                        <span style={{fontSize:11,color:"#888"}}>Livello</span>
+                        <span style={{fontSize:12,fontWeight:700,color:sCol}}>{sLabel}</span>
+                      </div>
+                      <div style={{display:"flex",justifyContent:"space-between",marginBottom:6}}>
+                        <span style={{fontSize:11,color:"#888"}}>Pick</span>
+                        <span style={{fontSize:12,fontWeight:700,color:"#a78bfa"}}>{pick}</span>
+                      </div>
+                      <div style={{display:"flex",justifyContent:"space-between"}}>
+                        <span style={{fontSize:11,color:"#888"}}>Tipo</span>
+                        <span style={{fontSize:12,color:"#aaa"}}>{pickLabel}</span>
+                      </div>
+                    </div>
+                    <div>
+                      <div style={{fontSize:12,color:"#4caf50",fontWeight:700,marginBottom:8}}>💰 SCORE CASSAFORTE</div>
+                      <div style={{display:"flex",justifyContent:"space-between",marginBottom:6}}>
+                        <span style={{fontSize:11,color:"#888"}}>PCT efficace</span>
+                        <span style={{fontSize:13,fontWeight:700,color:"#4caf50"}}>{(ppick*(1-S)*100).toFixed(1)}%</span>
+                      </div>
+                      <div style={{display:"flex",justifyContent:"space-between",marginBottom:6}}>
+                        <span style={{fontSize:11,color:"#888"}}>Align Pinnacle</span>
+                        <span style={{fontSize:13,fontWeight:700,color:"#4caf50"}}>{(align*100).toFixed(0)}%</span>
+                      </div>
+                      <div style={{display:"flex",justifyContent:"space-between",marginBottom:6}}>
+                        <span style={{fontSize:11,color:"#888"}}>OV Score</span>
+                        <span style={{fontSize:13,fontWeight:700,color:ov>=60?"#4caf50":ov>=40?"#f59e0b":"#f87171"}}>{ov||"—"}</span>
+                      </div>
+                      <div style={{display:"flex",justifyContent:"space-between"}}>
+                        <span style={{fontSize:11,color:"#888"}}>🏦 Cassaforte</span>
+                        <span style={{fontSize:14,fontWeight:900,color:scoreCassa>=0.50?"#4caf50":scoreCassa>=0.35?"#f59e0b":"#f87171"}}>{(scoreCassa*100).toFixed(0)}/100</span>
+                      </div>
                     </div>
                   </div>
                   )}
