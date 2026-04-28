@@ -1587,18 +1587,20 @@ export default function App(){
                 const hasPin=d=>d.f.ov?.pin1&&d.f.ov?.pinX&&d.f.ov?.pin2;
                 // Maschera: priorità EV positivo, fallback a tutti con pin
                 // Applica filtri qualità utente
-                const passFilter=d=>{
-                  if(!hasPin(d)) return false;
-                  // EV: usa evInd se disponibile, altrimenti non filtrare per EV
-                  if(d.evInd!=null && d.evInd*100<maskEvMin) return false;
-                  // Quota: usa pinPick se disponibile
-                  if(d.pinPick!=null && d.pinPick<maskQuotaMin) return false;
-                  if((d.calc?.score||0)*100<maskScoreMin) return false;
-                  if((d.f?.ov?.score||0)<maskOvMin) return false;
-                  return true;
-                };
-                const fissePool=comboData.filter(d=>d.pick.startsWith("FISSA")&&passFilter(d)).slice(0,maskFisse);
-                const doppiePool=comboData.filter(d=>!d.pick.startsWith("FISSA")&&passFilter(d));
+                // Stessa logica standard: EV positivo prioritario, fallback a tutti con filtri base
+                const baseFilter=d=>hasPin(d)&&
+                  (d.calc?.score||0)*100>=maskScoreMin&&
+                  (d.f?.ov?.score||0)>=maskOvMin&&
+                  (d.pinPick==null||d.pinPick>=maskQuotaMin);
+                const evFilter=d=>baseFilter(d)&&d.evInd!=null&&d.evInd*100>=maskEvMin;
+
+                const fPos=comboData.filter(d=>d.pick.startsWith("FISSA")&&evFilter(d));
+                const fAll=comboData.filter(d=>d.pick.startsWith("FISSA")&&baseFilter(d));
+                const fissePool=(fPos.length>=maskFisse?fPos:fAll).slice(0,maskFisse);
+
+                const dPos=comboData.filter(d=>!d.pick.startsWith("FISSA")&&evFilter(d));
+                const dAll=comboData.filter(d=>!d.pick.startsWith("FISSA")&&baseFilter(d));
+                const doppiePool=(dPos.length>=maskStep?dPos:dAll);
 
                 // Distribuzione stake scalare
                 const rawStakes = Array.from({length:maskStep+1},(_,i)=>Math.pow(1-maskRiduzione/100,i));
