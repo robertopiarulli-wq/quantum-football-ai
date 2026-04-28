@@ -230,6 +230,12 @@ export default function App(){
   const[parixExpanded,setParixExpanded]=useState(null);
   const[comboExpanded,setComboExpanded]=useState(null);
   const[comboSort,setComboSort]=useState("cassa");
+  const[maskStake,setMaskStake]=useState(100);
+  const[maskFisse,setMaskFisse]=useState(3);
+  const[maskStep,setMaskStep]=useState(3);
+  const[maskRiduzione,setMaskRiduzione]=useState(50);
+  const[maskEvMin,setMaskEvMin]=useState(10);
+  const[maskSelectedCombo,setMaskSelectedCombo]=useState(0);
   const[topExpanded,setTopExpanded]=useState(null);
   const[homeInput,setHomeInput]=useState("");
   const[awayInput,setAwayInput]=useState("");
@@ -1435,6 +1441,121 @@ export default function App(){
               </div>
             </div>
             )}
+
+            {/* ── MASCHERA MULTIPLA SCALARE ───────────────────── */}
+            <div style={{background:"rgba(167,139,250,0.06)",border:"1px solid rgba(167,139,250,0.25)",borderRadius:12,padding:"14px 16px",marginBottom:16}}>
+              <div style={{fontSize:10,color:"#a78bfa",fontWeight:700,letterSpacing:2,marginBottom:12}}>⚙️ MASCHERA MULTIPLA SCALARE</div>
+
+              {/* Input grid */}
+              <div style={{display:"grid",gridTemplateColumns:"1fr 1fr 1fr",gap:12,marginBottom:12}}>
+                {[
+                  ["💰 Importo totale (€)", maskStake, setMaskStake, 10, 1000, 10],
+                  ["🔒 Fisse base", maskFisse, setMaskFisse, 1, 4, 1],
+                  ["🎯 Step doppie", maskStep, setMaskStep, 1, 5, 1],
+                  ["📉 Riduzione % per step", maskRiduzione, setMaskRiduzione, 10, 80, 5],
+                  ["📊 EV minimo (%)", maskEvMin, setMaskEvMin, -20, 50, 5],
+                ].map(([label,val,setter,min,max,step])=>(
+                  <div key={label}>
+                    <div style={{fontSize:9,color:"#888",marginBottom:4}}>{label}</div>
+                    <div style={{display:"flex",alignItems:"center",gap:6}}>
+                      <input type="range" min={min} max={max} step={step} value={val}
+                        onChange={e=>setter(Number(e.target.value))}
+                        style={{flex:1,accentColor:"#a78bfa"}}/>
+                      <span style={{fontSize:12,fontWeight:700,color:"#a78bfa",minWidth:35,textAlign:"right"}}>{val}{label.includes("€")?"€":label.includes("%")?"%":""}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Calcolo multipla scalare */}
+              {(()=>{
+                const fissePool = comboData.filter(d=>d.pick.startsWith("FISSA")).slice(0,maskFisse);
+                const doppiePool = comboData.filter(d=>!d.pick.startsWith("FISSA"));
+
+                // Distribuzione stake scalare
+                const rawStakes = Array.from({length:maskStep+1},(_,i)=>Math.pow(1-maskRiduzione/100,i));
+                const totRaw = rawStakes.reduce((a,b)=>a+b,0);
+                const stakes = rawStakes.map(s=>Math.round(maskStake*s/totRaw*100)/100);
+
+                // Costruisce ogni step della multipla
+                const steps = Array.from({length:maskStep+1},(_,i)=>{
+                  const sel=[...fissePool,...doppiePool.slice(0,i)];
+                  if(sel.length===0) return null;
+                  const pmulti=sel.reduce((acc,d)=>acc*d.ppick,1);
+                  const qmulti=sel.reduce((acc,d)=>{
+                    const s=d.pick.startsWith("FISSA")?d.pick.replace("FISSA ",""):null;
+                    const pin=s==="1"?d.f.ov?.pin1:s==="2"?d.f.ov?.pin2:s==="X"?d.f.ov?.pinX:
+                               d.pick==="1X"?d.f.ov?.pin1?Math.min(d.f.ov.pin1*0.85,2.5):1.50:
+                               d.pick==="X2"?d.f.ov?.pin2?Math.min(d.f.ov.pin2*0.85,2.5):1.50:1.40;
+                    return acc*(pin||1.80);
+                  },1);
+                  const ev=pmulti*qmulti-1;
+                  const stake=stakes[i]||0;
+                  const rendAtteso=stake*ev;
+                  const vincita=stake*(qmulti-1);
+                  return {i,sel,pmulti,qmulti,ev,stake,rendAtteso,vincita,
+                    label:`M${i+1}: ${fissePool.length}F${i>0?`+${i}D`:""}`};
+                }).filter(Boolean);
+
+                const stepsFiltered = steps.filter(s=>s.ev*100>=maskEvMin);
+                const totalStake = stepsFiltered.reduce((a,s)=>a+s.stake,0);
+                const evTot = stepsFiltered.length>0?
+                  stepsFiltered.reduce((a,s)=>a+s.rendAtteso,0)/totalStake:0;
+
+                return(
+                <div>
+                  {/* Steps table */}
+                  <div style={{display:"grid",gridTemplateColumns:"80px 1fr 70px 60px 60px 70px 70px",gap:4,fontSize:9,color:"#555",letterSpacing:1,padding:"4px 8px",borderBottom:"1px solid #222",marginBottom:4}}>
+                    <div>MULTIPLA</div><div>EVENTI</div><div style={{textAlign:"center"}}>STAKE</div>
+                    <div style={{textAlign:"center"}}>P WIN</div><div style={{textAlign:"center"}}>QUOTA</div>
+                    <div style={{textAlign:"center"}}>EV</div><div style={{textAlign:"center"}}>REND ATT</div>
+                  </div>
+                  {steps.map(s=>{
+                    const ok=s.ev*100>=maskEvMin;
+                    return(
+                    <div key={s.i} style={{display:"grid",gridTemplateColumns:"80px 1fr 70px 60px 60px 70px 70px",
+                      gap:4,padding:"6px 8px",borderRadius:6,marginBottom:3,
+                      background:ok?"rgba(167,139,250,0.05)":"rgba(255,255,255,0.01)",
+                      border:`1px solid ${ok?"rgba(167,139,250,0.2)":"#1a1a1a"}`,
+                      opacity:ok?1:0.4}}>
+                      <div style={{fontSize:10,fontWeight:700,color:ok?"#a78bfa":"#555"}}>{s.label}</div>
+                      <div style={{display:"flex",gap:4,flexWrap:"wrap"}}>
+                        {s.sel.map((d,j)=>(
+                          <span key={j} style={{fontSize:8,padding:"1px 5px",borderRadius:3,
+                            background:d.pick.startsWith("FISSA")?"rgba(34,211,238,0.1)":"rgba(167,139,250,0.1)",
+                            color:d.pick.startsWith("FISSA")?C.cyan:"#a78bfa"}}>
+                            {d.pick.startsWith("FISSA")?`🔒${d.pick.replace("FISSA ","")}`:d.pick}
+                          </span>
+                        ))}
+                      </div>
+                      <div style={{textAlign:"center",fontSize:11,fontWeight:700,color:"#4caf50"}}>€{s.stake.toFixed(0)}</div>
+                      <div style={{textAlign:"center",fontSize:11,color:s.pmulti>=0.25?"#4caf50":"#f59e0b"}}>{(s.pmulti*100).toFixed(0)}%</div>
+                      <div style={{textAlign:"center",fontSize:11,color:"#a78bfa"}}>{s.qmulti.toFixed(1)}x</div>
+                      <div style={{textAlign:"center",fontSize:11,fontWeight:700,color:s.ev>0?"#4caf50":"#f87171"}}>{s.ev>0?"+":""}{(s.ev*100).toFixed(0)}%</div>
+                      <div style={{textAlign:"center",fontSize:11,fontWeight:700,color:s.rendAtteso>0?"#4caf50":"#f87171"}}>€{s.rendAtteso>0?"+":""}{s.rendAtteso.toFixed(1)}</div>
+                    </div>
+                  )})}
+
+                  {/* Riepilogo */}
+                  <div style={{marginTop:10,padding:"8px 12px",borderRadius:8,background:"rgba(167,139,250,0.08)",border:"1px solid rgba(167,139,250,0.2)",display:"flex",gap:16,flexWrap:"wrap"}}>
+                    <div style={{fontSize:11,color:"#888"}}>Step validi: <span style={{color:"#a78bfa",fontWeight:700}}>{stepsFiltered.length}/{steps.length}</span></div>
+                    <div style={{fontSize:11,color:"#888"}}>Stake effettivo: <span style={{color:"#4caf50",fontWeight:700}}>€{totalStake.toFixed(0)}</span></div>
+                    <div style={{fontSize:11,color:"#888"}}>EV sistema: <span style={{color:evTot>0?"#4caf50":"#f87171",fontWeight:700}}>{evTot>0?"+":""}{(evTot*100).toFixed(1)}%</span></div>
+                    <div style={{fontSize:11,color:"#888"}}>Rend. atteso: <span style={{color:evTot>0?"#4caf50":"#f87171",fontWeight:700}}>€{(totalStake*evTot).toFixed(1)}</span></div>
+                  </div>
+
+                  {/* Legenda EV */}
+                  <div style={{marginTop:8,display:"flex",gap:8,flexWrap:"wrap"}}>
+                    {[["EV>+30%","#4caf50","Eccellente"],["EV+15%→+30%","#22d3ee","Buono"],["EV+5%→+15%","#f59e0b","Accettabile"],["EV<+5%","#f87171","Marginale"]].map(([lbl,col,desc])=>(
+                      <div key={lbl} style={{fontSize:9,color:col,background:`${col}11`,border:`1px solid ${col}33`,borderRadius:4,padding:"2px 8px"}}>
+                        {lbl} → {desc}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                );
+              })()}
+            </div>
 
             {/* Sort buttons */}
             <div style={{display:"flex",gap:8,marginBottom:10,alignItems:"center"}}>
