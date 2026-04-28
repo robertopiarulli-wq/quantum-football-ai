@@ -1697,6 +1697,92 @@ def send_weekly_report(history):
 # ═══════════════════════════════════════
 #  MAIN
 # ═══════════════════════════════════════
+def save_combo_history(all_preds, sb_url, sb_key):
+    """Salva le previsioni COMBO in Supabase combo_history."""
+    if not sb_url or not sb_key:
+        return 0
+    import requests
+    saved = 0
+    try:
+        headers = {"apikey": sb_key, "Authorization": f"Bearer {sb_key}",
+                   "Content-Type": "application/json", "Prefer": "return=minimal"}
+        for p in all_preds:
+            pred = p.get("prediction", {})
+            ov   = p.get("ov_details", {}) or {}
+            fid  = p.get("fixture_id")
+            if not fid: continue
+            h = pred.get("home_win", 0.33); x = pred.get("draw", 0.33); a = pred.get("away_win", 0.33)
+            nv1=(ov.get("novig_1") or 33)/100; nvX=(ov.get("novig_X") or 33)/100; nv2=(ov.get("novig_2") or 33)/100
+            bh=h*0.60+nv1*0.40; bx=x*0.60+nvX*0.40; ba=a*0.60+nv2*0.40
+            S = p.get("surprise_idx", 0.40)
+            dom = "1" if bh>=bx and bh>=ba else "2" if ba>=bx else "X"
+            if S<0.35: pick=f"FISSA {dom}"; ppick=bh if dom=="1" else ba if dom=="2" else bx; pick_label="fisso"
+            elif S<0.65:
+                if dom=="1": pick,ppick="1X",bh+bx
+                elif dom=="2": pick,ppick="X2",bx+ba
+                else: pick,ppick=("1X" if bh>=ba else "X2"),(bh+bx if bh>=ba else bx+ba)
+                pick_label="doppia"
+            else: pick,ppick,pick_label="1-2",bh+ba,"doppia larga"
+            pin1=ov.get("pinnacle_1"); pinX=ov.get("pinnacle_X"); pin2=ov.get("pinnacle_2")
+            s=pick.replace("FISSA ","") if pick.startswith("FISSA") else None
+            if s=="1": pin_pick=pin1
+            elif s=="2": pin_pick=pin2
+            elif s=="X": pin_pick=pinX
+            elif pick=="1X" and pin1 and pinX: pin_pick=pin1*pinX/(pin1+pinX)
+            elif pick=="X2" and pinX and pin2: pin_pick=pinX*pin2/(pinX+pin2)
+            elif pick=="1-2" and pin1 and pin2: pin_pick=pin1*pin2/(pin1+pin2)
+            else: pin_pick=None
+            ev_ind=round(ppick*pin_pick-1,3) if pin_pick and pin_pick>0 else None
+            check=requests.get(f"{sb_url}/rest/v1/combo_history?fixture_id=eq.{fid}&result=is.null&select=id",headers=headers,timeout=5)
+            if check.ok and check.json(): continue
+            row={"fixture_id":fid,"home":p.get("home",""),"away":p.get("away",""),
+                 "league":p.get("league",""),"match_date":p.get("date",""),
+                 "pick":pick,"ppick":round(ppick,4),"surprise_idx":round(S,3),
+                 "pick_label":pick_label,"bh":round(bh,4),"bx":round(bx,4),"ba":round(ba,4),
+                 "pin1":pin1,"pin_x":pinX,"pin2":pin2,
+                 "pin_pick":round(pin_pick,3) if pin_pick else None,"ev_ind":ev_ind}
+            ins=requests.post(f"{sb_url}/rest/v1/combo_history",json=row,headers=headers,timeout=5)
+            if ins.status_code in(200,201): saved+=1
+    except Exception as e:
+        print(f"   ⚠️  combo_history: {e}")
+    return saved
+
+
+def verify_combo_results(sb_url, sb_key, fetcher, competitions):
+    """Verifica risultati combo del giorno precedente."""
+    if not sb_url or not sb_key: return 0
+    import requests
+    from datetime import datetime, timedelta
+    yesterday=(datetime.now()-timedelta(days=1)).strftime("%Y-%m-%d")
+    headers={"apikey":sb_key,"Authorization":f"Bearer {sb_key}","Content-Type":"application/json"}
+    r=requests.get(f"{sb_url}/rest/v1/combo_history?result=is.null&match_date=gte.{yesterday}&select=*",headers=headers,timeout=10)
+    if not r.ok: return 0
+    pending=r.json()
+    if not pending: return 0
+    verified=0
+    comp_map={v:k for k,v in competitions.items()}
+    for row in pending:
+        try:
+            fid=row.get("fixture_id"); comp_code=comp_map.get(row.get("league",""))
+            if not comp_code or not fid: continue
+            matches=fetcher.get_fixtures(comp_code,limit=50,status="FINISHED")
+            match=next((m for m in matches if m.get("id")==fid),None)
+            if not match: continue
+            score=match.get("score",{}).get("fullTime",{})
+            gh=score.get("home"); ga=score.get("away")
+            if gh is None or ga is None: continue
+            result="1" if gh>ga else "2" if ga>gh else "X"
+            pick=row.get("pick","")
+            s=pick.replace("FISSA ","") if pick.startswith("FISSA") else None
+            correct=(s==result) if s else (result in pick)
+            requests.patch(f"{sb_url}/rest/v1/combo_history?id=eq.{row['id']}",
+                json={"result":result,"correct":correct,"verified_at":datetime.now().isoformat()},
+                headers={**headers,"Prefer":"return=minimal"},timeout=5)
+            verified+=1
+        except Exception: continue
+    return verified
+
+
 def main():
     print("=" * 60)
     print("⚛️  QUANTUM FOOTBALL AI — Cloud Pipeline")
@@ -2159,6 +2245,12 @@ def main():
     # 3. Salva database
     save_history(history)
     total_db = len(history["predictions"])
+
+    # ── COMBO HISTORY ─────────────────────────────────────────
+    combo_saved = save_combo_history(all_preds, SUPABASE_URL, SUPABASE_KEY)
+    combo_verified = verify_combo_results(SUPABASE_URL, SUPABASE_KEY, fetcher, COMPETITIONS)
+    if combo_saved: print(f"   ✅ {combo_saved} combo salvate in Supabase")
+    if combo_verified: print(f"   ✅ {combo_verified} combo verificate")
     total_ver = sum(1 for p in history["predictions"] if p.get("result"))
     print(f"   💾 Database: {total_ver} verificate / {total_db} totali")
 
