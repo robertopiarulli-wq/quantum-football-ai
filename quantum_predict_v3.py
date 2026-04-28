@@ -1855,6 +1855,48 @@ def main():
                         vig = ov_details.get('vig_pct', 0)
                         print(f"      OV: {ov_score:.0f}/100 · Edge:{edge:+.1f}% · Mkt:{mkt:.1f}% · Vig:{vig:.1f}%")
 
+                # ── SURPRISE INDEX ─────────────────────────────────────
+                # S = Gap×0.40 + Instabilità×0.35 + OV_divergenza×0.25
+                def calc_surprise(pred_local, ov_det, fm, hn, an):
+                    try:
+                        # 1. GAP: |prob_poisson - prob_pinnacle| sul segno dominante
+                        h_p = pred_local.get("home_win", 0.33)
+                        x_p = pred_local.get("draw", 0.33)
+                        a_p = pred_local.get("away_win", 0.33)
+                        dom_prob = max(h_p, x_p, a_p)
+                        if ov_det:
+                            nv = {"1": (ov_det.get("novig_1") or 33)/100,
+                                  "X": (ov_det.get("novig_X") or 33)/100,
+                                  "2": (ov_det.get("novig_2") or 33)/100}
+                            dom_sign = "1" if h_p>=x_p and h_p>=a_p else "2" if a_p>=x_p else "X"
+                            pin_prob = nv.get(dom_sign, 0.33)
+                            gap = min(1.0, abs(dom_prob - pin_prob) / max(dom_prob, 0.01))
+                        else:
+                            gap = 0.3  # default senza Pinnacle
+                        # 2. INSTABILITÀ: varianza risultati ultime 5 (W=1, D=0.5, L=0)
+                        def result_variance(team):
+                            td = fm.get(team, {})
+                            results = td.get("results", [])[-5:]
+                            if len(results) < 2:
+                                return 0.25
+                            vals = [1.0 if r=="W" else 0.5 if r=="D" else 0.0 for r in results]
+                            mean = sum(vals)/len(vals)
+                            var = sum((v-mean)**2 for v in vals)/len(vals)
+                            return min(1.0, var * 4)  # normalizza (max var = 0.25 → *4 = 1.0)
+                        inst_h = result_variance(hn)
+                        inst_a = result_variance(an)
+                        instability = (inst_h + inst_a) / 2
+                        # 3. OV DIVERGENZA: quanto il mercato si discosta dal nostro modello
+                        misalign = abs(ov_det.get("misalign_pct", 0)) / 100 if ov_det else 0.2
+                        ov_div = min(1.0, misalign * 3)
+                        # Formula finale
+                        s = round(gap*0.40 + instability*0.35 + ov_div*0.25, 3)
+                        return s
+                    except Exception:
+                        return 0.40  # default neutro
+
+                surprise_idx = calc_surprise(pred, ov_details, form_map, hname, aname)
+
                 all_preds.append({
                     "league":       league_name,
                     "comp_code":    comp_code,
@@ -1871,6 +1913,7 @@ def main():
                     "pp":           pp,
                     "ov_score":     ov_score,
                     "ov_details":   ov_details,
+                    "surprise_idx": surprise_idx,
                     "generated_at": datetime.now().isoformat()
                 })
 
@@ -2078,6 +2121,7 @@ def main():
                 "misalign": p.get("ov_details", {}).get("misalign_pct"),
                 "market_fav": p.get("ov_details", {}).get("market_favorite"),
                 "components": p.get("ov_details", {}).get("components", {}),
+                "surprise_idx": p.get("surprise_idx", 0.40),
             }
         })
 
