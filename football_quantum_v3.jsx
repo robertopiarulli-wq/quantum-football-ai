@@ -1365,15 +1365,18 @@ export default function App(){
             const sCol   = S<0.35?"#4caf50":S<0.65?"#f59e0b":"#f87171";
 
             // EV individuale sulla quota Pinnacle
+            // evInd: solo con dati Pinnacle reali
+            const p1r=f.ov?.pin1,pXr=f.ov?.pinX,p2r=f.ov?.pin2;
+            const hasPinReal=p1r&&pXr&&p2r;
             const pinPickFn=()=>{
+              if(!hasPinReal) return null;
               const s=pick.startsWith("FISSA")?pick.replace("FISSA ",""):null;
-              const p1=f.ov?.pin1,pX=f.ov?.pinX,p2=f.ov?.pin2;
-              if(s==="1") return p1;
-              if(s==="2") return p2;
-              if(s==="X") return pX;
-              if(pick==="1X"&&p1&&pX) return p1*pX/(p1+pX);
-              if(pick==="X2"&&pX&&p2) return pX*p2/(pX+p2);
-              if(pick==="1-2"&&p1&&p2) return p1*p2/(p1+p2);
+              if(s==="1") return p1r;
+              if(s==="2") return p2r;
+              if(s==="X") return pXr;
+              if(pick==="1X") return p1r*pXr/(p1r+pXr);
+              if(pick==="X2") return pXr*p2r/(pXr+p2r);
+              if(pick==="1-2") return p1r*p2r/(p1r+p2r);
               return null;
             };
             const pinPick=pinPickFn();
@@ -1391,28 +1394,29 @@ export default function App(){
           const doppieAll = comboData.filter(d=>!d.pick.startsWith("FISSA"));
           const doppie    = (doppiePos.length>=2?doppiePos:doppieAll);
 
-          // Quota DC dalla formula: Q_DC = p1*p2/(p1+p2) dove p1,p2 sono le quote singole
+          // Quota reale Pinnacle — null se dati non disponibili
           const getPin=(d)=>{
             const p1=d.f.ov?.pin1, pX=d.f.ov?.pinX, p2=d.f.ov?.pin2;
+            if(!p1||!pX||!p2) return null; // nessun dato reale → escludi
             const isFissa=d.pick.startsWith("FISSA");
             const s=isFissa?d.pick.replace("FISSA ",""):null;
-            if(s==="1") return p1||1.80;
-            if(s==="2") return p2||2.00;
-            if(s==="X") return pX||3.20;
-            // DC: quota = p1*p2/(p1+p2) — formula matematica corretta
-            if(d.pick==="1X"&&p1&&pX) return Math.round(p1*pX/(p1+pX)*100)/100;
-            if(d.pick==="X2"&&pX&&p2) return Math.round(pX*p2/(pX+p2)*100)/100;
-            if(d.pick==="1-2"&&p1&&p2) return Math.round(p1*p2/(p1+p2)*100)/100;
-            if(d.pick==="1X") return 1.45;
-            if(d.pick==="X2") return 1.55;
-            return 1.40;
+            if(s==="1") return p1;
+            if(s==="2") return p2;
+            if(s==="X") return pX;
+            // DC: Q = p1*p2/(p1+p2)
+            if(d.pick==="1X") return Math.round(p1*pX/(p1+pX)*100)/100;
+            if(d.pick==="X2") return Math.round(pX*p2/(pX+p2)*100)/100;
+            if(d.pick==="1-2") return Math.round(p1*p2/(p1+p2)*100)/100;
+            return null;
           };
 
           const buildMultipla=(selF,selD)=>{
             const sel=[...selF,...selD];
             if(sel.length===0) return null;
+            // Escludi se qualche evento non ha dati Pinnacle reali
+            if(sel.some(d=>getPin(d)===null)) return null;
             const pmulti=sel.reduce((acc,d)=>acc*d.ppick,1);
-            const qmulti=sel.reduce((acc,d)=>acc*getPin(d),1);
+            const qmulti=sel.reduce((acc,d)=>acc*(getPin(d)||1),1);
             const ev=pmulti*qmulti-1;
             const avgCassa=sel.reduce((acc,d)=>acc+d.scoreCassa,0)/sel.length;
             return {sel,pmulti,qmulti,ev,avgCassa,nFisse:selF.length,nDoppie:selD.length};
@@ -1424,7 +1428,14 @@ export default function App(){
           const multi2F4D = buildMultipla(fisse.slice(0,2), doppie.slice(0,4));
           const multi3F3D = buildMultipla(fisse.slice(0,3), doppie.slice(0,3));
           const multi2F3D = buildMultipla(fisse.slice(0,2), doppie.slice(0,3));
-          const allMulti  = [multiMain,multi2F4D,multi3F3D,multi2F3D].filter(Boolean);
+          // Deduplica varianti identiche
+          const allMultiRaw=[multiMain,multi2F4D,multi3F3D,multi2F3D].filter(Boolean);
+          const seen=new Set();
+          const allMulti=allMultiRaw.filter(c=>{
+            const k=`${c.nFisse}F${c.nDoppie}D`;
+            if(seen.has(k))return false;
+            seen.add(k);return true;
+          });
           const bestCombo = allMulti.filter(c=>c.ev>0).sort((a,b)=>b.ev-a.ev)[0]||multiMain;
 
           return(
@@ -1588,21 +1599,18 @@ export default function App(){
 
                 // Costruisce ogni step della multipla
                 const steps = Array.from({length:maskStep+1},(_,i)=>{
+                  if(i>doppiePool.length&&i>0) return null; // non abbastanza doppie
                   const sel=[...fissePool,...doppiePool.slice(0,i)];
                   if(sel.length===0) return null;
                   const pmulti=sel.reduce((acc,d)=>acc*d.ppick,1);
                   const qmulti=sel.reduce((acc,d)=>{
                     const s=d.pick.startsWith("FISSA")?d.pick.replace("FISSA ",""):null;
                     const p1m=d.f.ov?.pin1,pXm=d.f.ov?.pinX,p2m=d.f.ov?.pin2;
-                    // Quote DC: formula p1*p2/(p1+p2) oppure stima da probabilità
-                    const pinEst=(prob)=>prob>0?Math.round(1/prob*100)/100:2.00;
-                    const pin=s==="1"?(p1m||pinEst(d.bh)):
-                              s==="2"?(p2m||pinEst(d.ba)):
-                              s==="X"?(pXm||pinEst(d.bx)):
-                              d.pick==="1X"&&p1m&&pXm?p1m*pXm/(p1m+pXm):
-                              d.pick==="X2"&&pXm&&p2m?pXm*p2m/(pXm+p2m):
-                              d.pick==="1-2"&&p1m&&p2m?p1m*p2m/(p1m+p2m):
-                              pinEst(d.ppick*0.85);
+                    if(!p1m||!pXm||!p2m) return acc*1; // nessun dato reale → quota 1 (neutro)
+                    const pin=s==="1"?p1m:s==="2"?p2m:s==="X"?pXm:
+                              d.pick==="1X"?p1m*pXm/(p1m+pXm):
+                              d.pick==="X2"?pXm*p2m/(pXm+p2m):
+                              d.pick==="1-2"?p1m*p2m/(p1m+p2m):1.50;
                     return acc*(pin||1.80);
                   },1);
                   const ev=pmulti*qmulti-1;
