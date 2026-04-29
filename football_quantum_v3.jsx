@@ -1386,7 +1386,22 @@ export default function App(){
             const evInd=pinPick&&pinPick>0?ppick*pinPick-1:null;
 
             return {f,calc,S,sLabel,sCol,pick,ppick,pickLabel,coeff,align,scoreCassa,ppR,cp,ov,bh,bx,ba,domSign,nv1,nvX,nv2,pinPick,evInd};
-          }).filter(Boolean).sort((a,b)=>
+          }).filter(d=>{
+            // Filtro 1: dati Pinnacle obbligatori
+            if(!d.f.ov?.pin1||!d.f.ov?.pinX||!d.f.ov?.pin2) return false;
+            // Filtro 2: Score Cassaforte minimo 40
+            if(d.scoreCassa*100<40) return false;
+            // Filtro 3: concordanza mktFav con pick
+            const mf=d.calc?.mktFav;
+            if(!mf) return false;
+            const pk=d.pick;
+            if(pk==="FISSA 1"||pk==="1X") { if(mf!=="1") return false; }
+            else if(pk==="FISSA 2"||pk==="X2") { if(mf!=="2") return false; }
+            else if(pk==="FISSA X") { if(mf==="1"||mf==="2") return false; }
+            // 1-2: escludi se mktFav è X (mercato vede pareggio, noi no)
+            else if(pk==="1-2") { if(mf==="X") return false; }
+            return true;
+          }).sort((a,b)=>
             comboSort==="pct"?b.ppick-a.ppick:b.scoreCassa-a.scoreCassa);
 
           // ── GENERATORE MULTIPLA: 3 FISSE + 4 DOPPIE ─────────────
