@@ -17803,7 +17803,8 @@
       "verified_at": "2026-04-30T06:26:28.291697",
       "clv": -7.72,
       "odds_movement_pct": 14.08,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "541237",
@@ -18961,7 +18962,8 @@
       "verified_at": "2026-04-30T06:26:42.761367",
       "clv": 23.24,
       "odds_movement_pct": -0.88,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "537161",
@@ -22761,5 +22763,5 @@
       "verified_at": null
     }
   ],
-  "last_updated": "2026-04-30T06:27:25.294817"
+  "last_updated": "2026-04-30T07:37:39.984337"
 }
