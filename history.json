@@ -17573,7 +17573,8 @@
       "verified_at": "2026-04-29T07:33:14.718871",
       "clv": 35.03,
       "odds_movement_pct": 9.69,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "544522",
@@ -17785,21 +17786,24 @@
       "pred_combo_prob": 0.878,
       "pred_over15": 0.878,
       "pred_under35": 0.5071,
-      "correct_combo": null,
+      "correct_combo": false,
       "pp_result": "X2",
       "pp_label": "\ud83d\udee1\ufe0f X2",
       "pp_i_casa": 8.1,
       "pp_i_ospite": 11.56,
       "pp_D": -3.46,
       "pp_pct": 37.4,
-      "correct_pp": null,
-      "result": null,
-      "goals_home": null,
-      "goals_away": null,
-      "correct_1x2": null,
-      "correct_over": null,
-      "correct_btts": null,
-      "verified_at": null
+      "correct_pp": true,
+      "result": "X",
+      "goals_home": 1,
+      "goals_away": 1,
+      "correct_1x2": false,
+      "correct_over": false,
+      "correct_btts": true,
+      "verified_at": "2026-04-30T06:26:28.291697",
+      "clv": -7.72,
+      "odds_movement_pct": 14.08,
+      "odds_is_sharp": false
     },
     {
       "fixture_id": "541237",
@@ -18937,7 +18941,7 @@
       "pred_combo_prob": 0.7983,
       "pred_over15": 0.7983,
       "pred_under35": 0.651,
-      "correct_combo": null,
+      "correct_combo": false,
       "ov_score": null,
       "ov_edge": null,
       "ov_misalign": null,
@@ -18947,14 +18951,17 @@
       "pp_i_ospite": 2.64,
       "pp_D": 7.11,
       "pp_pct": 75.9,
-      "correct_pp": null,
-      "result": null,
-      "goals_home": null,
-      "goals_away": null,
-      "correct_1x2": null,
-      "correct_over": null,
-      "correct_btts": null,
-      "verified_at": null
+      "correct_pp": false,
+      "result": "X",
+      "goals_home": 2,
+      "goals_away": 2,
+      "correct_1x2": false,
+      "correct_over": true,
+      "correct_btts": false,
+      "verified_at": "2026-04-30T06:26:42.761367",
+      "clv": 23.24,
+      "odds_movement_pct": -0.88,
+      "odds_is_sharp": false
     },
     {
       "fixture_id": "537161",
@@ -22754,5 +22761,5 @@
       "verified_at": null
     }
   ],
-  "last_updated": "2026-04-29T07:34:12.002576"
+  "last_updated": "2026-04-30T06:27:25.294817"
 }
