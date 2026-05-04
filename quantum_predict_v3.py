@@ -2207,6 +2207,7 @@ def main():
                 "misalign": p.get("ov_details", {}).get("misalign_pct"),
                 "market_fav": p.get("ov_details", {}).get("market_favorite"),
                 "components": p.get("ov_details", {}).get("components", {}),
+                "movement_pct": p.get("ov_details", {}).get("movement_pct"),
                 "surprise_idx": p.get("surprise_idx", 0.40),
             }
         })
