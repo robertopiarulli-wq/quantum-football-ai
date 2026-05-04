@@ -193,7 +193,7 @@ function FixCard({fix,expanded,onToggle}){
                   <div style={{fontSize:22,fontWeight:900,color:fix.ov.score>=70?"#4caf50":fix.ov.score>=50?"#f59e0b":"#f87171"}}>{fix.ov.score?.toFixed(0)}<span style={{fontSize:10,color:"#555"}}>/100</span></div>
                 </div>
                 <div style={{display:"flex",flexDirection:"column",gap:4,flex:1,fontSize:9}}>
-                  {fix.ov.pin1&&<div><span style={{color:"#555"}}>Pinnacle: </span><b style={{color:"#22d3ee"}}>{fix.ov.pin1} / {fix.ov.pinX} / {fix.ov.pin2}</b></div>}
+                  {fix.ov.pin1&&<div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:4}}><span style={{color:"#555",fontSize:11}}>Pinnacle:</span><b style={{color:"#22d3ee",fontSize:11}}>{fix.ov.pin1} / {fix.ov.pinX} / {fix.ov.pin2}{(()=>{const mb=movBadge(fix.ov?.movement_pct);return mb&&Math.abs(mb.val)>=1?<span style={{marginLeft:6,fontSize:10,fontWeight:700,color:mb.col}}>{mb.icon}{Math.abs(mb.val).toFixed(1)}%</span>:null;})()}</b></div>}
                   {fix.ov.b365_1&&<div><span style={{color:"#555"}}>Bet365:   </span><b style={{color:"#f472b6"}}>{fix.ov.b365_1} / {fix.ov.b365_X} / {fix.ov.b365_2}</b></div>}
                   <div style={{display:"flex",gap:10}}>
                     {fix.ov.edge!=null&&<span><span style={{color:"#555"}}>Edge: </span><b style={{color:fix.ov.edge>0?"#4caf50":"#f87171"}}>{fix.ov.edge>0?"+":""}{fix.ov.edge?.toFixed(1)}%</b></span>}
@@ -908,9 +908,16 @@ export default function App(){
                           </span>
                         </span>
                       </div>
-                      <div style={{display:"flex",justifyContent:"space-between",marginBottom:10}}>
+                      <div style={{display:"flex",justifyContent:"space-between",marginBottom:6}}>
                         <span style={{fontSize:12,color:"#888"}}>OV Score</span>
                         <span style={{fontSize:13,fontWeight:700,color:ov>=60?"#4caf50":ov>=40?"#f59e0b":"#f87171"}}>{ov||"—"}</span>
+                      </div>
+                      <div style={{display:"flex",justifyContent:"space-between",marginBottom:10,alignItems:"center"}}>
+                        <span style={{fontSize:12,color:"#888"}}>Quote PIN</span>
+                        <span style={{fontSize:11,color:"#22d3ee",fontWeight:700}}>
+                          {f.ov?.pin1||"—"} / {f.ov?.pinX||"—"} / {f.ov?.pin2||"—"}
+                          {(()=>{const mb=movBadge(f.ov?.movement_pct);return mb&&Math.abs(mb.val)>=1?<span style={{marginLeft:6,fontSize:10,fontWeight:700,color:mb.col}}>{mb.icon}{Math.abs(mb.val).toFixed(1)}%</span>:null;})()}
+                        </span>
                       </div>
                       <div style={{fontSize:11,color:"#555",marginBottom:4}}>CONCORDANZA</div>
                       {[["Poisson vs PP",!!(ppRes&&ppRes.includes(pTop))],["Poisson vs PIN",pTop===mktFav],["PP vs PIN",!!(ppRes&&mktFav&&ppRes.includes(mktFav))]].map(([lbl,ok])=>(
@@ -1365,9 +1372,16 @@ export default function App(){
                           </span>
                         </span>
                       </div>
-                      <div style={{display:"flex",justifyContent:"space-between",marginBottom:10}}>
+                      <div style={{display:"flex",justifyContent:"space-between",marginBottom:6}}>
                         <span style={{fontSize:12,color:"#888"}}>OV Score</span>
                         <span style={{fontSize:13,fontWeight:700,color:ov>=60?"#4caf50":ov>=40?"#f59e0b":"#f87171"}}>{ov||"—"}</span>
+                      </div>
+                      <div style={{display:"flex",justifyContent:"space-between",marginBottom:10,alignItems:"center"}}>
+                        <span style={{fontSize:12,color:"#888"}}>Quote PIN</span>
+                        <span style={{fontSize:11,color:"#22d3ee",fontWeight:700}}>
+                          {f.ov?.pin1||"—"} / {f.ov?.pinX||"—"} / {f.ov?.pin2||"—"}
+                          {(()=>{const mb=movBadge(f.ov?.movement_pct);return mb&&Math.abs(mb.val)>=1?<span style={{marginLeft:6,fontSize:10,fontWeight:700,color:mb.col}}>{mb.icon}{Math.abs(mb.val).toFixed(1)}%</span>:null;})()}
+                        </span>
                       </div>
                       <div style={{fontSize:11,color:"#555",marginBottom:4}}>CONCORDANZA</div>
                       {[["Poisson vs PP",!!(ppRes&&ppRes.includes(pTop))],["Poisson vs PIN",pTop===mktFav],["PP vs PIN",!!(ppRes&&mktFav&&ppRes.includes(mktFav))]].map(([lbl,ok])=>(
@@ -1917,6 +1931,13 @@ export default function App(){
                       <div style={{display:"flex",justifyContent:"space-between",marginBottom:6}}>
                         <span style={{fontSize:11,color:"#888"}}>OV Score</span>
                         <span style={{fontSize:13,fontWeight:700,color:ov>=60?"#4caf50":ov>=40?"#f59e0b":"#f87171"}}>{ov||"—"}</span>
+                      </div>
+                      <div style={{display:"flex",justifyContent:"space-between",marginBottom:6,alignItems:"center"}}>
+                        <span style={{fontSize:11,color:"#888"}}>Quote PIN</span>
+                        <span style={{fontSize:11,color:"#22d3ee",fontWeight:700}}>
+                          {f.ov?.pin1||"—"} / {f.ov?.pinX||"—"} / {f.ov?.pin2||"—"}
+                          {(()=>{const mb=movBadge(f.ov?.movement_pct);return mb&&Math.abs(mb.val)>=1?<span style={{marginLeft:6,fontSize:10,fontWeight:700,color:mb.col}}>{mb.icon}{Math.abs(mb.val).toFixed(1)}%</span>:null;})()}
+                        </span>
                       </div>
                       <div style={{display:"flex",justifyContent:"space-between"}}>
                         <span style={{fontSize:11,color:"#888"}}>🏦 Cassaforte</span>
