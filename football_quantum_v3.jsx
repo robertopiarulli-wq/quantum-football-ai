@@ -228,6 +228,7 @@ export default function App(){
   const[multiSort,setMultiSort]=useState("score");
   const[parixSort,setParixSort]=useState("score");
   const[parixExpanded,setParixExpanded]=useState(null);
+  const[multiExpanded,setMultiExpanded]=useState(null);
   const[comboExpanded,setComboExpanded]=useState(null);
   const[comboSort,setComboSort]=useState("cassa");
   const[maskStake,setMaskStake]=useState(100);
