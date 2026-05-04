@@ -1,120 +1,8 @@
 {
-  "generated_at": "2026-05-04T16:12:55.612806",
+  "generated_at": "2026-05-04T19:44:46.786181",
   "date": "04/05/2026",
   "total": 68,
   "fixtures": [
-    {
-      "home": "US Cremonese",
-      "away": "SS Lazio",
-      "league": "Serie A",
-      "fixture_id": 537164,
-      "date": "04/05/2026",
-      "time": "17:30",
-      "pred": {
-        "home": 0.0931,
-        "draw": 0.2104,
-        "away": 0.6965,
-        "dc1x": 0.3035,
-        "dcx2": 0.9069,
-        "dc12": 0.7896,
-        "over25": 0.2542,
-        "under25": 0.7458,
-        "bttsY": 0.329,
-        "bttsN": 0.671,
-        "xg_h": "0.72",
-        "xg_a": "1.02",
-        "conf": 0.531,
-        "best": "2",
-        "bestP": 0.6965,
-        "combo": "2+U3.5",
-        "comboP": 0.9002
-      },
-      "pp": {
-        "pp_i_casa": 0.6,
-        "pp_i_ospite": 5.34,
-        "pp_D": -4.74,
-        "pp_result": "12",
-        "pp_label": "\ud83d\udd00 1-2",
-        "pp_pct": 32.7
-      },
-      "ov": {
-        "score": 93.2,
-        "pin1": 3.23,
-        "pinX": 3.35,
-        "pin2": 2.38,
-        "novig_1": 30.1,
-        "novig_X": 29.0,
-        "novig_2": 40.9,
-        "mkt_prob": 40.9,
-        "vig_pct": 2.83,
-        "edge": 28.8,
-        "misalign": null,
-        "market_fav": "2",
-        "components": {
-          "value": 40.0,
-          "coherence": 30.0,
-          "movement": 16.0,
-          "liquidity": 7.2
-        },
-        "surprise_idx": 0.123
-      }
-    },
-    {
-      "home": "AS Roma",
-      "away": "ACF Fiorentina",
-      "league": "Serie A",
-      "fixture_id": 537155,
-      "date": "04/05/2026",
-      "time": "19:45",
-      "pred": {
-        "home": 0.3807,
-        "draw": 0.2469,
-        "away": 0.3725,
-        "dc1x": 0.6275,
-        "dcx2": 0.6193,
-        "dc12": 0.7531,
-        "over25": 0.3873,
-        "under25": 0.6127,
-        "bttsY": 0.4163,
-        "bttsN": 0.5837,
-        "xg_h": "1.45",
-        "xg_a": "0.78",
-        "conf": 0.4045,
-        "best": "1",
-        "bestP": 0.3807,
-        "combo": "1+U3.5",
-        "comboP": 0.812
-      },
-      "pp": {
-        "pp_i_casa": 9.3,
-        "pp_i_ospite": 8.28,
-        "pp_D": 1.02,
-        "pp_result": "X",
-        "pp_label": "\u2696\ufe0f FISSA X",
-        "pp_pct": 53.7
-      },
-      "ov": {
-        "score": 45.6,
-        "pin1": 1.56,
-        "pinX": 4.25,
-        "pin2": 6.37,
-        "novig_1": 62.0,
-        "novig_X": 22.8,
-        "novig_2": 15.2,
-        "mkt_prob": 62.0,
-        "vig_pct": 3.33,
-        "edge": -24.0,
-        "misalign": null,
-        "market_fav": "1",
-        "components": {
-          "value": 0.0,
-          "coherence": 30.0,
-          "movement": 10.0,
-          "liquidity": 5.6
-        },
-        "surprise_idx": 0.439
-      }
-    },
     {
       "home": "Torino FC",
       "away": "US Sassuolo Calcio",
@@ -150,25 +38,26 @@
         "pp_pct": 65.3
       },
       "ov": {
-        "score": 64.7,
-        "pin1": 2.46,
-        "pinX": 3.16,
-        "pin2": 3.22,
-        "novig_1": 39.3,
-        "novig_X": 30.6,
-        "novig_2": 30.0,
-        "mkt_prob": 39.3,
-        "vig_pct": 3.35,
-        "edge": 5.4,
+        "score": 68.6,
+        "pin1": 2.51,
+        "pinX": 3.19,
+        "pin2": 3.11,
+        "novig_1": 38.6,
+        "novig_X": 30.3,
+        "novig_2": 31.1,
+        "mkt_prob": 38.6,
+        "vig_pct": 3.34,
+        "edge": 6.2,
         "misalign": null,
         "market_fav": "1",
         "components": {
-          "value": 27.2,
+          "value": 31.1,
           "coherence": 30.0,
           "movement": 2.0,
           "liquidity": 5.5
         },
-        "surprise_idx": 0.164
+        "movement_pct": 4.68,
+        "surprise_idx": 0.155
       }
     },
     {
@@ -224,6 +113,7 @@
           "movement": 0.0,
           "liquidity": 5.6
         },
+        "movement_pct": null,
         "surprise_idx": 0.16
       }
     },
@@ -235,11 +125,11 @@
       "date": "09/05/2026",
       "time": "17:00",
       "pred": {
-        "home": 0.4754,
+        "home": 0.4254,
         "draw": 0.243,
-        "away": 0.2816,
-        "dc1x": 0.7184,
-        "dcx2": 0.5246,
+        "away": 0.3316,
+        "dc1x": 0.6684,
+        "dcx2": 0.5746,
         "dc12": 0.757,
         "over25": 0.4954,
         "under25": 0.5046,
@@ -247,9 +137,9 @@
         "bttsN": 0.4688,
         "xg_h": "1.14",
         "xg_a": "1.51",
-        "conf": 0.3265,
+        "conf": 0.3073,
         "best": "1",
-        "bestP": 0.4754,
+        "bestP": 0.4254,
         "combo": "1+O1.5",
         "comboP": 0.7431
       },
@@ -275,6 +165,7 @@
         "misalign": null,
         "market_fav": null,
         "components": {},
+        "movement_pct": null,
         "surprise_idx": 0.358
       }
     },
@@ -286,11 +177,11 @@
       "date": "09/05/2026",
       "time": "19:45",
       "pred": {
-        "home": 0.1607,
+        "home": 0.2107,
         "draw": 0.2226,
-        "away": 0.6167,
-        "dc1x": 0.3833,
-        "dcx2": 0.8393,
+        "away": 0.5667,
+        "dc1x": 0.4333,
+        "dcx2": 0.7893,
         "dc12": 0.7774,
         "over25": 0.3412,
         "under25": 0.6588,
@@ -298,9 +189,9 @@
         "bttsN": 0.6074,
         "xg_h": "0.78",
         "xg_a": "1.28",
-        "conf": 0.4423,
+        "conf": 0.4231,
         "best": "2",
-        "bestP": 0.6167,
+        "bestP": 0.5667,
         "combo": "2+U3.5",
         "comboP": 0.845
       },
@@ -322,7 +213,7 @@
         "novig_2": 62.6,
         "mkt_prob": 62.6,
         "vig_pct": 3.77,
-        "edge": -0.9,
+        "edge": -5.9,
         "misalign": null,
         "market_fav": "2",
         "components": {
@@ -331,6 +222,7 @@
           "movement": 0.0,
           "liquidity": 4.1
         },
+        "movement_pct": null,
         "surprise_idx": 0.312
       }
     },
@@ -369,25 +261,26 @@
         "pp_pct": 25.5
       },
       "ov": {
-        "score": 34.1,
-        "pin1": 6.94,
-        "pinX": 4.9,
-        "pin2": 1.45,
-        "novig_1": 13.9,
-        "novig_X": 19.7,
-        "novig_2": 66.5,
-        "mkt_prob": 66.5,
-        "vig_pct": 3.78,
-        "edge": -17.7,
+        "score": 33.4,
+        "pin1": 7.0,
+        "pinX": 4.94,
+        "pin2": 1.44,
+        "novig_1": 13.7,
+        "novig_X": 19.5,
+        "novig_2": 66.8,
+        "mkt_prob": 66.8,
+        "vig_pct": 3.97,
+        "edge": -18.0,
         "misalign": null,
         "market_fav": "2",
         "components": {
           "value": 0.0,
           "coherence": 30.0,
           "movement": 0.0,
-          "liquidity": 4.1
+          "liquidity": 3.4
         },
-        "surprise_idx": 0.319
+        "movement_pct": null,
+        "surprise_idx": 0.321
       }
     },
     {
@@ -443,6 +336,7 @@
           "movement": 0.0,
           "liquidity": 5.4
         },
+        "movement_pct": null,
         "surprise_idx": 0.257
       }
     },
@@ -454,52 +348,53 @@
       "date": "10/05/2026",
       "time": "14:00",
       "pred": {
-        "home": 0.5399,
+        "home": 0.4305,
         "draw": 0.239,
-        "away": 0.2211,
-        "dc1x": 0.7789,
-        "dcx2": 0.4601,
+        "away": 0.3305,
+        "dc1x": 0.6695,
+        "dcx2": 0.5695,
         "dc12": 0.761,
-        "over25": 0.4894,
-        "under25": 0.5106,
-        "bttsY": 0.5262,
-        "bttsN": 0.4738,
-        "xg_h": "1.5",
-        "xg_a": "1.13",
-        "conf": 0.4082,
+        "over25": 0.4942,
+        "under25": 0.5058,
+        "bttsY": 0.5305,
+        "bttsN": 0.4695,
+        "xg_h": "1.51",
+        "xg_a": "1.14",
+        "conf": 0.3665,
         "best": "1",
-        "bestP": 0.5399,
+        "bestP": 0.4305,
         "combo": "1+O1.5",
-        "comboP": 0.7386
+        "comboP": 0.7422
       },
       "pp": {
-        "pp_i_casa": 0.6,
+        "pp_i_casa": 0.0,
         "pp_i_ospite": -1.4,
-        "pp_D": 2.0,
+        "pp_D": 1.4,
         "pp_result": "X",
         "pp_label": "\u2696\ufe0f FISSA X",
-        "pp_pct": 57.3
+        "pp_pct": 55.1
       },
       "ov": {
-        "score": 34.5,
-        "pin1": 1.7,
-        "pinX": 4.09,
-        "pin2": 4.91,
-        "novig_1": 56.8,
-        "novig_X": 23.6,
-        "novig_2": 19.7,
-        "mkt_prob": 56.8,
-        "vig_pct": 3.64,
-        "edge": -2.8,
+        "score": 34.2,
+        "pin1": 1.68,
+        "pinX": 4.15,
+        "pin2": 4.97,
+        "novig_1": 57.4,
+        "novig_X": 23.2,
+        "novig_2": 19.4,
+        "mkt_prob": 57.4,
+        "vig_pct": 3.74,
+        "edge": -14.3,
         "misalign": null,
         "market_fav": "1",
         "components": {
           "value": 0.0,
           "coherence": 30.0,
           "movement": 0.0,
-          "liquidity": 4.5
+          "liquidity": 4.2
         },
-        "surprise_idx": 0.376
+        "movement_pct": null,
+        "surprise_idx": 0.383
       }
     },
     {
@@ -537,81 +432,140 @@
         "pp_pct": 55.0
       },
       "ov": {
-        "score": 35.2,
-        "pin1": 5.17,
-        "pinX": 4.07,
-        "pin2": 1.68,
-        "novig_1": 18.7,
-        "novig_X": 23.8,
-        "novig_2": 57.6,
-        "mkt_prob": 57.6,
-        "vig_pct": 3.44,
-        "edge": -1.8,
+        "score": 34.0,
+        "pin1": 5.71,
+        "pinX": 4.35,
+        "pin2": 1.58,
+        "novig_1": 16.9,
+        "novig_X": 22.1,
+        "novig_2": 61.0,
+        "mkt_prob": 61.0,
+        "vig_pct": 3.79,
+        "edge": -5.2,
         "misalign": null,
         "market_fav": "2",
         "components": {
           "value": 0.0,
           "coherence": 30.0,
           "movement": 0.0,
-          "liquidity": 5.2
+          "liquidity": 4.0
         },
-        "surprise_idx": 0.261
+        "movement_pct": null,
+        "surprise_idx": 0.283
       }
     },
     {
-      "home": "Everton FC",
-      "away": "Manchester City FC",
-      "league": "Premier League",
-      "fixture_id": 538130,
-      "date": "04/05/2026",
-      "time": "20:00",
+      "home": "AC Milan",
+      "away": "Atalanta BC",
+      "league": "Serie A",
+      "fixture_id": 537166,
+      "date": "10/05/2026",
+      "time": "19:45",
       "pred": {
-        "home": 0.05,
-        "draw": 0.3143,
-        "away": 0.6357,
-        "dc1x": 0.3643,
-        "dcx2": 0.95,
-        "dc12": 0.6857,
-        "over25": 0.5421,
-        "under25": 0.4579,
-        "bttsY": 0.5701,
-        "bttsN": 0.4299,
-        "xg_h": "1.26",
-        "xg_a": "1.59",
-        "conf": 0.2596,
-        "best": "2",
-        "bestP": 0.6357,
-        "combo": "2+O1.5",
-        "comboP": 0.7771
+        "home": 0.4633,
+        "draw": 0.2412,
+        "away": 0.2955,
+        "dc1x": 0.7045,
+        "dcx2": 0.5367,
+        "dc12": 0.7588,
+        "over25": 0.3707,
+        "under25": 0.6293,
+        "bttsY": 0.4393,
+        "bttsN": 0.5607,
+        "xg_h": "1.12",
+        "xg_a": "1.06",
+        "conf": 0.3757,
+        "best": "1",
+        "bestP": 0.4633,
+        "combo": "1+U3.5",
+        "comboP": 0.8241
       },
       "pp": {
-        "pp_i_casa": 4.95,
-        "pp_i_ospite": 10.48,
-        "pp_D": -5.53,
-        "pp_result": "12",
-        "pp_label": "\ud83d\udd00 1-2",
-        "pp_pct": 29.8
+        "pp_i_casa": 4.5,
+        "pp_i_ospite": 5.18,
+        "pp_D": -0.68,
+        "pp_result": "X",
+        "pp_label": "\u2696\ufe0f FISSA X",
+        "pp_pct": 47.5
       },
       "ov": {
-        "score": 45.6,
-        "pin1": 6.82,
-        "pinX": 4.74,
-        "pin2": 1.48,
-        "novig_1": 14.2,
-        "novig_X": 20.4,
-        "novig_2": 65.4,
-        "mkt_prob": 65.4,
+        "score": 35.7,
+        "pin1": 2.09,
+        "pinX": 3.42,
+        "pin2": 3.81,
+        "novig_1": 46.3,
+        "novig_X": 28.3,
+        "novig_2": 25.4,
+        "mkt_prob": 46.3,
         "vig_pct": 3.33,
-        "edge": -1.8,
+        "edge": 0.0,
         "misalign": null,
-        "market_fav": "2",
+        "market_fav": "1",
+        "components": {
+          "value": 0.1,
+          "coherence": 30.0,
+          "movement": 0.0,
+          "liquidity": 5.6
+        },
+        "movement_pct": null,
+        "surprise_idx": 0.249
+      }
+    },
+    {
+      "home": "SSC Napoli",
+      "away": "Bologna FC 1909",
+      "league": "Serie A",
+      "fixture_id": 537172,
+      "date": "11/05/2026",
+      "time": "19:45",
+      "pred": {
+        "home": 0.4995,
+        "draw": 0.2373,
+        "away": 0.2632,
+        "dc1x": 0.7368,
+        "dcx2": 0.5005,
+        "dc12": 0.7627,
+        "over25": 0.474,
+        "under25": 0.526,
+        "bttsY": 0.5177,
+        "bttsN": 0.4823,
+        "xg_h": "1.42",
+        "xg_a": "1.14",
+        "conf": 0.3894,
+        "best": "1",
+        "bestP": 0.4995,
+        "combo": "1+U3.5",
+        "comboP": 0.7426
+      },
+      "pp": {
+        "pp_i_casa": 9.3,
+        "pp_i_ospite": 8.96,
+        "pp_D": 0.34,
+        "pp_result": "X",
+        "pp_label": "\u2696\ufe0f FISSA X",
+        "pp_pct": 51.2
+      },
+      "ov": {
+        "score": 32.0,
+        "pin1": 1.56,
+        "pinX": 4.24,
+        "pin2": 5.98,
+        "novig_1": 61.4,
+        "novig_X": 22.6,
+        "novig_2": 16.0,
+        "mkt_prob": 61.4,
+        "vig_pct": 4.41,
+        "edge": -11.5,
+        "misalign": null,
+        "market_fav": "1",
         "components": {
           "value": 0.0,
           "coherence": 30.0,
-          "movement": 10.0,
-          "liquidity": 5.6
+          "movement": 0.0,
+          "liquidity": 2.0
         },
-        "surprise_idx": 0.315
+        "movement_pct": null,
+        "surprise_idx": 0.432
       }
     },
     {
@@ -622,11 +576,11 @@
       "date": "09/05/2026",
       "time": "12:30",
       "pred": {
-        "home": 0.467,
+        "home": 0.517,
         "draw": 0.3395,
-        "away": 0.1935,
-        "dc1x": 0.8065,
-        "dcx2": 0.533,
+        "away": 0.1435,
+        "dc1x": 0.8565,
+        "dcx2": 0.483,
         "dc12": 0.6605,
         "over25": 0.6526,
         "under25": 0.3474,
@@ -634,10 +588,10 @@
         "bttsN": 0.3411,
         "xg_h": "1.81",
         "xg_a": "1.55",
-        "conf": 0.1942,
+        "conf": 0.2046,
         "best": "1",
-        "bestP": 0.467,
-        "combo": "X+O1.5",
+        "bestP": 0.517,
+        "combo": "1+O1.5",
         "comboP": 0.8486
       },
       "pp": {
@@ -649,25 +603,26 @@
         "pp_pct": 61.8
       },
       "ov": {
-        "score": 35.4,
-        "pin1": 1.91,
-        "pinX": 3.95,
-        "pin2": 3.89,
-        "novig_1": 50.6,
-        "novig_X": 24.5,
-        "novig_2": 24.9,
-        "mkt_prob": 50.6,
-        "vig_pct": 3.38,
-        "edge": -3.9,
+        "score": 37.8,
+        "pin1": 1.89,
+        "pinX": 3.98,
+        "pin2": 3.92,
+        "novig_1": 51.1,
+        "novig_X": 24.3,
+        "novig_2": 24.6,
+        "mkt_prob": 51.1,
+        "vig_pct": 3.55,
+        "edge": 0.6,
         "misalign": null,
         "market_fav": "1",
         "components": {
-          "value": 0.0,
+          "value": 3.0,
           "coherence": 30.0,
           "movement": 0.0,
-          "liquidity": 5.4
+          "liquidity": 4.8
         },
-        "surprise_idx": 0.199
+        "movement_pct": 1.6,
+        "surprise_idx": 0.201
       }
     },
     {
@@ -705,25 +660,26 @@
         "pp_pct": 29.7
       },
       "ov": {
-        "score": 75.0,
-        "pin1": 4.04,
-        "pinX": 3.87,
-        "pin2": 1.89,
-        "novig_1": 23.9,
-        "novig_X": 25.0,
-        "novig_2": 51.1,
-        "mkt_prob": 51.1,
-        "vig_pct": 3.5,
-        "edge": 9.2,
+        "score": 74.9,
+        "pin1": 3.93,
+        "pinX": 3.77,
+        "pin2": 1.94,
+        "novig_1": 24.6,
+        "novig_X": 25.6,
+        "novig_2": 49.8,
+        "mkt_prob": 49.8,
+        "vig_pct": 3.52,
+        "edge": 10.6,
         "misalign": null,
         "market_fav": "2",
         "components": {
           "value": 40.0,
           "coherence": 30.0,
           "movement": 0.0,
-          "liquidity": 5.0
+          "liquidity": 4.9
         },
-        "surprise_idx": 0.186
+        "movement_pct": 1.76,
+        "surprise_idx": 0.178
       }
     },
     {
@@ -763,13 +719,13 @@
       "ov": {
         "score": 31.3,
         "pin1": 1.29,
-        "pinX": 6.22,
+        "pinX": 6.23,
         "pin2": 9.07,
         "novig_1": 74.1,
-        "novig_X": 15.4,
+        "novig_X": 15.3,
         "novig_2": 10.5,
         "mkt_prob": 74.1,
-        "vig_pct": 4.62,
+        "vig_pct": 4.6,
         "edge": -16.2,
         "misalign": null,
         "market_fav": "1",
@@ -779,7 +735,8 @@
           "movement": 0.0,
           "liquidity": 1.3
         },
-        "surprise_idx": 0.303
+        "movement_pct": -1.5,
+        "surprise_idx": 0.305
       }
     },
     {
@@ -817,24 +774,25 @@
         "pp_pct": 43.8
       },
       "ov": {
-        "score": 37.8,
-        "pin1": 2.8,
-        "pinX": 3.72,
-        "pin2": 2.46,
-        "novig_1": 34.6,
+        "score": 38.0,
+        "pin1": 2.81,
+        "pinX": 3.73,
+        "pin2": 2.45,
+        "novig_1": 34.5,
         "novig_X": 26.0,
-        "novig_2": 39.4,
-        "mkt_prob": 39.4,
-        "vig_pct": 3.25,
-        "edge": -2.0,
+        "novig_2": 39.6,
+        "mkt_prob": 39.6,
+        "vig_pct": 3.21,
+        "edge": -2.2,
         "misalign": null,
         "market_fav": "2",
         "components": {
           "value": 0.0,
           "coherence": 30.0,
           "movement": 2.0,
-          "liquidity": 5.8
+          "liquidity": 6.0
         },
+        "movement_pct": 6.9,
         "surprise_idx": 0.196
       }
     },
@@ -873,24 +831,25 @@
         "pp_pct": 62.8
       },
       "ov": {
-        "score": 33.2,
-        "pin1": 1.32,
-        "pinX": 6.19,
-        "pin2": 8.25,
-        "novig_1": 72.8,
-        "novig_X": 15.5,
+        "score": 34.5,
+        "pin1": 1.33,
+        "pinX": 6.13,
+        "pin2": 8.23,
+        "novig_1": 72.5,
+        "novig_X": 15.7,
         "novig_2": 11.7,
-        "mkt_prob": 72.8,
-        "vig_pct": 4.03,
-        "edge": -7.8,
+        "mkt_prob": 72.5,
+        "vig_pct": 3.65,
+        "edge": -7.6,
         "misalign": null,
         "market_fav": "1",
         "components": {
           "value": 0.0,
           "coherence": 30.0,
           "movement": 0.0,
-          "liquidity": 3.2
+          "liquidity": 4.5
         },
+        "movement_pct": 0.76,
         "surprise_idx": 0.488
       }
     },
@@ -947,6 +906,7 @@
           "movement": 0.0,
           "liquidity": 5.6
         },
+        "movement_pct": null,
         "surprise_idx": 0.162
       }
     },
@@ -958,11 +918,11 @@
       "date": "10/05/2026",
       "time": "14:00",
       "pred": {
-        "home": 0.1233,
+        "home": 0.1733,
         "draw": 0.3353,
-        "away": 0.5414,
-        "dc1x": 0.4586,
-        "dcx2": 0.8767,
+        "away": 0.4914,
+        "dc1x": 0.5086,
+        "dcx2": 0.8267,
         "dc12": 0.6647,
         "over25": 0.5185,
         "under25": 0.4815,
@@ -970,10 +930,10 @@
         "bttsN": 0.4451,
         "xg_h": "1.26",
         "xg_a": "1.49",
-        "conf": 0.2056,
+        "conf": 0.1952,
         "best": "2",
-        "bestP": 0.5414,
-        "combo": "2+O1.5",
+        "bestP": 0.4914,
+        "combo": "X+O1.5",
         "comboP": 0.7603
       },
       "pp": {
@@ -985,25 +945,26 @@
         "pp_pct": 45.1
       },
       "ov": {
-        "score": 34.0,
-        "pin1": 5.44,
-        "pinX": 4.52,
-        "pin2": 1.58,
-        "novig_1": 17.7,
-        "novig_X": 21.3,
-        "novig_2": 61.0,
-        "mkt_prob": 61.0,
-        "vig_pct": 3.8,
-        "edge": -6.8,
+        "score": 34.7,
+        "pin1": 5.36,
+        "pinX": 4.46,
+        "pin2": 1.6,
+        "novig_1": 18.0,
+        "novig_X": 21.6,
+        "novig_2": 60.3,
+        "mkt_prob": 60.3,
+        "vig_pct": 3.58,
+        "edge": -11.2,
         "misalign": null,
         "market_fav": "2",
         "components": {
           "value": 0.0,
           "coherence": 30.0,
           "movement": 0.0,
-          "liquidity": 4.0
+          "liquidity": 4.7
         },
-        "surprise_idx": 0.233
+        "movement_pct": null,
+        "surprise_idx": 0.23
       }
     },
     {
@@ -1014,11 +975,11 @@
       "date": "10/05/2026",
       "time": "14:00",
       "pred": {
-        "home": 0.4143,
+        "home": 0.3643,
         "draw": 0.3589,
-        "away": 0.2268,
-        "dc1x": 0.7732,
-        "dcx2": 0.5857,
+        "away": 0.2768,
+        "dc1x": 0.7232,
+        "dcx2": 0.6357,
         "dc12": 0.6411,
         "over25": 0.454,
         "under25": 0.546,
@@ -1026,9 +987,9 @@
         "bttsN": 0.4933,
         "xg_h": "1.29",
         "xg_a": "1.2",
-        "conf": 0.1854,
+        "conf": 0.175,
         "best": "1",
-        "bestP": 0.4143,
+        "bestP": 0.3643,
         "combo": "X+U3.5",
         "comboP": 0.7594
       },
@@ -1041,25 +1002,26 @@
         "pp_pct": 49.5
       },
       "ov": {
-        "score": 57.5,
-        "pin1": 2.61,
-        "pinX": 3.44,
-        "pin2": 2.79,
-        "novig_1": 37.1,
-        "novig_X": 28.2,
-        "novig_2": 34.7,
-        "mkt_prob": 37.1,
-        "vig_pct": 3.23,
-        "edge": 4.3,
+        "score": 23.0,
+        "pin1": 2.69,
+        "pinX": 3.61,
+        "pin2": 2.61,
+        "novig_1": 36.0,
+        "novig_X": 26.8,
+        "novig_2": 37.1,
+        "mkt_prob": 36.0,
+        "vig_pct": 3.19,
+        "edge": 0.4,
         "misalign": null,
-        "market_fav": "1",
+        "market_fav": "2",
         "components": {
-          "value": 21.6,
-          "coherence": 30.0,
+          "value": 2.0,
+          "coherence": 15.0,
           "movement": 0.0,
-          "liquidity": 5.9
+          "liquidity": 6.0
         },
-        "surprise_idx": 0.173
+        "movement_pct": null,
+        "surprise_idx": 0.189
       }
     },
     {
@@ -1097,81 +1059,83 @@
         "pp_pct": 49.7
       },
       "ov": {
-        "score": 34.1,
-        "pin1": 5.25,
-        "pinX": 4.21,
-        "pin2": 1.64,
-        "novig_1": 18.4,
-        "novig_X": 22.9,
-        "novig_2": 58.8,
-        "mkt_prob": 58.8,
-        "vig_pct": 3.78,
-        "edge": -6.3,
+        "score": 33.9,
+        "pin1": 5.28,
+        "pinX": 4.25,
+        "pin2": 1.63,
+        "novig_1": 18.2,
+        "novig_X": 22.7,
+        "novig_2": 59.1,
+        "mkt_prob": 59.1,
+        "vig_pct": 3.82,
+        "edge": -6.6,
         "misalign": null,
         "market_fav": "2",
         "components": {
           "value": 0.0,
           "coherence": 30.0,
           "movement": 0.0,
-          "liquidity": 4.1
+          "liquidity": 3.9
         },
-        "surprise_idx": 0.211
+        "movement_pct": null,
+        "surprise_idx": 0.213
       }
     },
     {
-      "home": "Sevilla FC",
-      "away": "Real Sociedad de F\u00fatbol",
-      "league": "La Liga",
-      "fixture_id": 544550,
-      "date": "04/05/2026",
+      "home": "Tottenham Hotspur FC",
+      "away": "Leeds United FC",
+      "league": "Premier League",
+      "fixture_id": 538143,
+      "date": "11/05/2026",
       "time": "20:00",
       "pred": {
-        "home": 0.4388,
-        "draw": 0.3046,
-        "away": 0.2565,
-        "dc1x": 0.7435,
-        "dcx2": 0.5612,
-        "dc12": 0.6954,
-        "over25": 0.5412,
-        "under25": 0.4588,
-        "bttsY": 0.5745,
-        "bttsN": 0.4255,
-        "xg_h": "1.5",
-        "xg_a": "1.34",
-        "conf": 0.4692,
-        "best": "1",
-        "bestP": 0.4388,
+        "home": 0.2893,
+        "draw": 0.3484,
+        "away": 0.3623,
+        "dc1x": 0.6377,
+        "dcx2": 0.7107,
+        "dc12": 0.6516,
+        "over25": 0.6271,
+        "under25": 0.3729,
+        "bttsY": 0.6422,
+        "bttsN": 0.3578,
+        "xg_h": "1.65",
+        "xg_a": "1.58",
+        "conf": 0.1724,
+        "best": "2",
+        "bestP": 0.3623,
         "combo": "X+O1.5",
-        "comboP": 0.7765
+        "comboP": 0.8332
       },
       "pp": {
-        "pp_i_casa": 4.2,
-        "pp_i_ospite": 3.98,
-        "pp_D": 0.22,
-        "pp_result": "X",
-        "pp_label": "\u2696\ufe0f FISSA X",
-        "pp_pct": 50.8
+        "pp_i_casa": 0.0,
+        "pp_i_ospite": 6.12,
+        "pp_D": -6.12,
+        "pp_result": "12",
+        "pp_label": "\ud83d\udd00 1-2",
+        "pp_pct": 27.7
       },
       "ov": {
-        "score": 63.4,
-        "pin1": 2.49,
-        "pinX": 3.41,
-        "pin2": 3.0,
-        "novig_1": 39.1,
-        "novig_X": 28.5,
-        "novig_2": 32.4,
-        "mkt_prob": 39.1,
-        "vig_pct": 2.82,
-        "edge": 4.8,
+        "score": 58.0,
+        "pin1": 1.77,
+        "pinX": 4.33,
+        "pin2": 4.08,
+        "novig_1": 54.3,
+        "novig_X": 22.2,
+        "novig_2": 23.5,
+        "mkt_prob": 23.5,
+        "vig_pct": 4.1,
+        "edge": 12.7,
         "misalign": null,
         "market_fav": "1",
         "components": {
-          "value": 24.1,
-          "coherence": 30.0,
-          "movement": 2.0,
-          "liquidity": 7.3
+          "value": 40.0,
+          "coherence": 15.0,
+          "movement": 0.0,
+          "liquidity": 3.0
         },
-        "surprise_idx": 0.161
+        "movement_pct": null,
+        "surprise_idx": 0.233
       }
     },
     {
@@ -1209,25 +1173,26 @@
         "pp_pct": 82.0
       },
       "ov": {
-        "score": 75.8,
-        "pin1": 2.68,
-        "pinX": 3.19,
-        "pin2": 2.89,
-        "novig_1": 36.1,
-        "novig_X": 30.4,
-        "novig_2": 33.5,
-        "mkt_prob": 36.1,
-        "vig_pct": 3.26,
-        "edge": 14.4,
+        "score": 75.4,
+        "pin1": 2.66,
+        "pinX": 3.17,
+        "pin2": 2.92,
+        "novig_1": 36.4,
+        "novig_X": 30.5,
+        "novig_2": 33.1,
+        "mkt_prob": 36.4,
+        "vig_pct": 3.39,
+        "edge": 14.2,
         "misalign": null,
         "market_fav": "1",
         "components": {
           "value": 40.0,
           "coherence": 30.0,
           "movement": 0.0,
-          "liquidity": 5.8
+          "liquidity": 5.4
         },
-        "surprise_idx": 0.125
+        "movement_pct": -0.37,
+        "surprise_idx": 0.129
       }
     },
     {
@@ -1283,6 +1248,7 @@
           "movement": 0.0,
           "liquidity": 5.7
         },
+        "movement_pct": 0.0,
         "surprise_idx": 0.2
       }
     },
@@ -1321,25 +1287,26 @@
         "pp_pct": 59.0
       },
       "ov": {
-        "score": 75.3,
-        "pin1": 2.11,
-        "pinX": 3.44,
-        "pin2": 3.71,
-        "novig_1": 45.8,
-        "novig_X": 28.1,
-        "novig_2": 26.1,
-        "mkt_prob": 45.8,
-        "vig_pct": 3.42,
-        "edge": 10.9,
+        "score": 75.0,
+        "pin1": 2.09,
+        "pinX": 3.45,
+        "pin2": 3.75,
+        "novig_1": 46.2,
+        "novig_X": 28.0,
+        "novig_2": 25.8,
+        "mkt_prob": 46.2,
+        "vig_pct": 3.5,
+        "edge": 10.5,
         "misalign": null,
         "market_fav": "1",
         "components": {
           "value": 40.0,
           "coherence": 30.0,
           "movement": 0.0,
-          "liquidity": 5.3
+          "liquidity": 5.0
         },
-        "surprise_idx": 0.243
+        "movement_pct": 0.96,
+        "surprise_idx": 0.248
       }
     },
     {
@@ -1395,6 +1362,7 @@
           "movement": 2.0,
           "liquidity": 5.6
         },
+        "movement_pct": 17.84,
         "surprise_idx": 0.231
       }
     },
@@ -1451,6 +1419,7 @@
           "movement": 0.0,
           "liquidity": 5.3
         },
+        "movement_pct": 1.36,
         "surprise_idx": 0.216
       }
     },
@@ -1462,11 +1431,11 @@
       "date": "10/05/2026",
       "time": "13:00",
       "pred": {
-        "home": 0.2965,
+        "home": 0.3465,
         "draw": 0.2955,
-        "away": 0.408,
-        "dc1x": 0.592,
-        "dcx2": 0.7035,
+        "away": 0.358,
+        "dc1x": 0.642,
+        "dcx2": 0.6535,
         "dc12": 0.7045,
         "over25": 0.5222,
         "under25": 0.4778,
@@ -1474,9 +1443,9 @@
         "bttsN": 0.4424,
         "xg_h": "1.5",
         "xg_a": "1.27",
-        "conf": 0.2704,
-        "best": "2",
-        "bestP": 0.408,
+        "conf": 0.2496,
+        "best": "X",
+        "bestP": 0.2955,
         "combo": "X+O1.5",
         "comboP": 0.7629
       },
@@ -1489,24 +1458,25 @@
         "pp_pct": 63.9
       },
       "ov": {
-        "score": 57.4,
+        "score": 31.8,
         "pin1": 2.45,
         "pinX": 3.55,
         "pin2": 2.9,
         "novig_1": 39.5,
         "novig_X": 27.2,
         "novig_2": 33.3,
-        "mkt_prob": 33.3,
+        "mkt_prob": 27.2,
         "vig_pct": 3.47,
-        "edge": 7.5,
+        "edge": 2.3,
         "misalign": null,
         "market_fav": "1",
         "components": {
-          "value": 37.3,
+          "value": 11.7,
           "coherence": 15.0,
           "movement": 0.0,
           "liquidity": 5.1
         },
+        "movement_pct": null,
         "surprise_idx": 0.166
       }
     },
@@ -1563,6 +1533,7 @@
           "movement": 0.0,
           "liquidity": 4.6
         },
+        "movement_pct": null,
         "surprise_idx": 0.355
       }
     },
@@ -1601,25 +1572,26 @@
         "pp_pct": 43.6
       },
       "ov": {
-        "score": 3.7,
-        "pin1": 3.01,
-        "pinX": 3.05,
-        "pin2": 2.64,
-        "novig_1": 32.0,
-        "novig_X": 31.6,
+        "score": 5.6,
+        "pin1": 3.03,
+        "pinX": 3.07,
+        "pin2": 2.65,
+        "novig_1": 31.9,
+        "novig_X": 31.5,
         "novig_2": 36.5,
-        "mkt_prob": 31.6,
-        "vig_pct": 3.89,
-        "edge": -0.7,
+        "mkt_prob": 31.5,
+        "vig_pct": 3.31,
+        "edge": -0.6,
         "misalign": null,
         "market_fav": "2",
         "components": {
           "value": 0.0,
           "coherence": 0.0,
           "movement": 0.0,
-          "liquidity": 3.7
+          "liquidity": 5.6
         },
-        "surprise_idx": 0.1
+        "movement_pct": null,
+        "surprise_idx": 0.101
       }
     },
     {
@@ -1657,15 +1629,15 @@
         "pp_pct": 74.7
       },
       "ov": {
-        "score": 33.0,
-        "pin1": 1.82,
-        "pinX": 4.17,
-        "pin2": 3.97,
+        "score": 35.2,
+        "pin1": 1.83,
+        "pinX": 4.2,
+        "pin2": 4.0,
         "novig_1": 52.8,
         "novig_X": 23.0,
         "novig_2": 24.2,
         "mkt_prob": 52.8,
-        "vig_pct": 4.11,
+        "vig_pct": 3.45,
         "edge": -0.8,
         "misalign": null,
         "market_fav": "1",
@@ -1673,9 +1645,67 @@
           "value": 0.0,
           "coherence": 30.0,
           "movement": 0.0,
-          "liquidity": 3.0
+          "liquidity": 5.2
         },
+        "movement_pct": null,
         "surprise_idx": 0.328
+      }
+    },
+    {
+      "home": "Rayo Vallecano de Madrid",
+      "away": "Girona FC",
+      "league": "La Liga",
+      "fixture_id": 544560,
+      "date": "11/05/2026",
+      "time": "20:00",
+      "pred": {
+        "home": 0.4536,
+        "draw": 0.3002,
+        "away": 0.2462,
+        "dc1x": 0.7538,
+        "dcx2": 0.5464,
+        "dc12": 0.6998,
+        "over25": 0.4026,
+        "under25": 0.5974,
+        "bttsY": 0.4479,
+        "bttsN": 0.5521,
+        "xg_h": "1.39",
+        "xg_a": "0.91",
+        "conf": 0.4134,
+        "best": "1",
+        "bestP": 0.4536,
+        "combo": "X+U3.5",
+        "comboP": 0.8004
+      },
+      "pp": {
+        "pp_i_casa": 8.7,
+        "pp_i_ospite": 2.9,
+        "pp_D": 5.8,
+        "pp_result": "12",
+        "pp_label": "\ud83d\udd00 1-2",
+        "pp_pct": 71.2
+      },
+      "ov": {
+        "score": 61.7,
+        "pin1": 2.42,
+        "pinX": 3.48,
+        "pin2": 2.96,
+        "novig_1": 39.8,
+        "novig_X": 27.7,
+        "novig_2": 32.5,
+        "mkt_prob": 39.8,
+        "vig_pct": 3.84,
+        "edge": 5.6,
+        "misalign": null,
+        "market_fav": "1",
+        "components": {
+          "value": 27.8,
+          "coherence": 30.0,
+          "movement": 0.0,
+          "liquidity": 3.9
+        },
+        "movement_pct": null,
+        "surprise_idx": 0.17
       }
     },
     {
@@ -1713,25 +1743,26 @@
         "pp_pct": 62.2
       },
       "ov": {
-        "score": 33.3,
-        "pin1": 1.52,
-        "pinX": 5.0,
-        "pin2": 5.49,
-        "novig_1": 63.3,
-        "novig_X": 19.2,
+        "score": 34.2,
+        "pin1": 1.53,
+        "pinX": 4.95,
+        "pin2": 5.5,
+        "novig_1": 63.0,
+        "novig_X": 19.5,
         "novig_2": 17.5,
-        "mkt_prob": 63.3,
-        "vig_pct": 4.0,
-        "edge": -14.6,
+        "mkt_prob": 63.0,
+        "vig_pct": 3.74,
+        "edge": -14.3,
         "misalign": null,
         "market_fav": "1",
         "components": {
           "value": 0.0,
           "coherence": 30.0,
           "movement": 0.0,
-          "liquidity": 3.3
+          "liquidity": 4.2
         },
-        "surprise_idx": 0.455
+        "movement_pct": 2.01,
+        "surprise_idx": 0.451
       }
     },
     {
@@ -1787,6 +1818,7 @@
           "movement": 0.0,
           "liquidity": 5.7
         },
+        "movement_pct": 1.4,
         "surprise_idx": 0.226
       }
     },
@@ -1843,6 +1875,7 @@
           "movement": 20.0,
           "liquidity": 4.6
         },
+        "movement_pct": -5.23,
         "surprise_idx": 0.473
       }
     },
@@ -1899,6 +1932,7 @@
           "movement": 0.0,
           "liquidity": 5.7
         },
+        "movement_pct": 0.0,
         "surprise_idx": 0.231
       }
     },
@@ -1937,24 +1971,25 @@
         "pp_pct": 82.4
       },
       "ov": {
-        "score": 43.7,
+        "score": 44.7,
         "pin1": 1.34,
-        "pinX": 5.62,
-        "pin2": 8.71,
-        "novig_1": 71.8,
-        "novig_X": 17.1,
-        "novig_2": 11.1,
-        "mkt_prob": 71.8,
-        "vig_pct": 3.9,
-        "edge": -2.1,
+        "pinX": 5.67,
+        "pin2": 8.83,
+        "novig_1": 72.0,
+        "novig_X": 17.0,
+        "novig_2": 10.9,
+        "mkt_prob": 72.0,
+        "vig_pct": 3.59,
+        "edge": -2.3,
         "misalign": null,
         "market_fav": "1",
         "components": {
           "value": 0.0,
           "coherence": 30.0,
           "movement": 10.0,
-          "liquidity": 3.7
+          "liquidity": 4.7
         },
+        "movement_pct": -2.13,
         "surprise_idx": 0.488
       }
     },
@@ -2011,6 +2046,7 @@
           "movement": 10.0,
           "liquidity": 0.0
         },
+        "movement_pct": -2.92,
         "surprise_idx": 0.212
       }
     },
@@ -2067,6 +2103,7 @@
           "movement": 0.0,
           "liquidity": 5.2
         },
+        "movement_pct": 2.61,
         "surprise_idx": 0.109
       }
     },
@@ -2123,6 +2160,7 @@
           "movement": 0.0,
           "liquidity": 5.3
         },
+        "movement_pct": null,
         "surprise_idx": 0.321
       }
     },
@@ -2179,6 +2217,7 @@
           "movement": 0.0,
           "liquidity": 5.3
         },
+        "movement_pct": null,
         "surprise_idx": 0.321
       }
     },
@@ -2230,6 +2269,7 @@
         "misalign": null,
         "market_fav": null,
         "components": {},
+        "movement_pct": null,
         "surprise_idx": 0.358
       }
     },
@@ -2281,6 +2321,7 @@
         "misalign": null,
         "market_fav": null,
         "components": {},
+        "movement_pct": null,
         "surprise_idx": 0.358
       }
     },
@@ -2337,6 +2378,7 @@
           "movement": 0.0,
           "liquidity": 0.1
         },
+        "movement_pct": 0.0,
         "surprise_idx": 0.161
       }
     },
@@ -2348,31 +2390,31 @@
       "date": "10/05/2026",
       "time": "20:00",
       "pred": {
-        "home": 0.3359,
+        "home": 0.3377,
         "draw": 0.3099,
-        "away": 0.3542,
-        "dc1x": 0.6458,
-        "dcx2": 0.6641,
+        "away": 0.3524,
+        "dc1x": 0.6476,
+        "dcx2": 0.6623,
         "dc12": 0.6901,
-        "over25": 0.6566,
-        "under25": 0.3434,
-        "bttsY": 0.6647,
-        "bttsN": 0.3353,
+        "over25": 0.6504,
+        "under25": 0.3496,
+        "bttsY": 0.6596,
+        "bttsN": 0.3404,
         "xg_h": "1.74",
-        "xg_a": "1.64",
-        "conf": 0.2373,
+        "xg_a": "1.61",
+        "conf": 0.2368,
         "best": "X",
         "bestP": 0.3099,
         "combo": "X+O1.5",
-        "comboP": 0.851
+        "comboP": 0.8473
       },
       "pp": {
         "pp_i_casa": 10.5,
-        "pp_i_ospite": 12.76,
-        "pp_D": -2.26,
-        "pp_result": "X2",
-        "pp_label": "\ud83d\udee1\ufe0f X2",
-        "pp_pct": 41.8
+        "pp_i_ospite": 12.4,
+        "pp_D": -1.9,
+        "pp_result": "X",
+        "pp_label": "\u2696\ufe0f FISSA X",
+        "pp_pct": 43.1
       },
       "ov": {
         "score": 44.7,
@@ -2393,6 +2435,7 @@
           "movement": 0.0,
           "liquidity": 0.0
         },
+        "movement_pct": 1.76,
         "surprise_idx": 0.175
       }
     },
@@ -2449,6 +2492,7 @@
           "movement": 0.0,
           "liquidity": 0.0
         },
+        "movement_pct": 0.63,
         "surprise_idx": 0.13
       }
     },
@@ -2466,25 +2510,25 @@
         "dc1x": 0.5559,
         "dcx2": 0.7435,
         "dc12": 0.7007,
-        "over25": 0.5596,
-        "under25": 0.4404,
-        "bttsY": 0.5896,
-        "bttsN": 0.4104,
+        "over25": 0.5524,
+        "under25": 0.4476,
+        "bttsY": 0.5843,
+        "bttsN": 0.4157,
         "xg_h": "1.41",
-        "xg_a": "1.51",
+        "xg_a": "1.48",
         "conf": 0.2641,
         "best": "2",
         "bestP": 0.4441,
         "combo": "X+O1.5",
-        "comboP": 0.7892
+        "comboP": 0.7842
       },
       "pp": {
-        "pp_i_casa": 2.85,
+        "pp_i_casa": 3.0,
         "pp_i_ospite": 4.1,
-        "pp_D": -1.25,
+        "pp_D": -1.1,
         "pp_result": "X",
         "pp_label": "\u2696\ufe0f FISSA X",
-        "pp_pct": 45.4
+        "pp_pct": 46.0
       },
       "ov": {
         "score": null,
@@ -2500,6 +2544,7 @@
         "misalign": null,
         "market_fav": null,
         "components": {},
+        "movement_pct": null,
         "surprise_idx": 0.358
       }
     },
@@ -2551,6 +2596,7 @@
         "misalign": null,
         "market_fav": null,
         "components": {},
+        "movement_pct": null,
         "surprise_idx": 0.358
       }
     },
@@ -2607,6 +2653,7 @@
           "movement": 0.0,
           "liquidity": 0.0
         },
+        "movement_pct": null,
         "surprise_idx": 0.147
       }
     },
@@ -2658,6 +2705,7 @@
         "misalign": null,
         "market_fav": null,
         "components": {},
+        "movement_pct": null,
         "surprise_idx": 0.358
       }
     },
@@ -2669,21 +2717,21 @@
       "date": "05/05/2026",
       "time": "20:00",
       "pred": {
-        "home": 0.7548,
-        "draw": 0.2001,
-        "away": 0.0451,
-        "dc1x": 0.9549,
-        "dcx2": 0.2452,
-        "dc12": 0.7999,
+        "home": 0.6865,
+        "draw": 0.2218,
+        "away": 0.0917,
+        "dc1x": 0.9083,
+        "dcx2": 0.3135,
+        "dc12": 0.7782,
         "over25": 0.7085,
         "under25": 0.2915,
         "bttsY": 0.6475,
         "bttsN": 0.3525,
         "xg_h": "2.43",
         "xg_a": "1.24",
-        "conf": 0.8074,
+        "conf": 0.7851,
         "best": "1",
-        "bestP": 0.7548,
+        "bestP": 0.6865,
         "combo": "1+O1.5",
         "comboP": 0.8805
       },
@@ -2696,25 +2744,26 @@
         "pp_pct": 61.3
       },
       "ov": {
-        "score": 74.4,
-        "pin1": 1.64,
-        "pinX": 4.03,
-        "pin2": 5.59,
-        "novig_1": 58.8,
-        "novig_X": 23.9,
-        "novig_2": 17.2,
-        "mkt_prob": 58.8,
-        "vig_pct": 3.68,
-        "edge": 16.7,
+        "score": 74.1,
+        "pin1": 1.62,
+        "pinX": 4.1,
+        "pin2": 5.67,
+        "novig_1": 59.5,
+        "novig_X": 23.5,
+        "novig_2": 17.0,
+        "mkt_prob": 59.5,
+        "vig_pct": 3.76,
+        "edge": 9.2,
         "misalign": null,
         "market_fav": "1",
         "components": {
           "value": 40.0,
           "coherence": 30.0,
           "movement": 0.0,
-          "liquidity": 4.4
+          "liquidity": 4.1
         },
-        "surprise_idx": 0.4
+        "movement_pct": 2.47,
+        "surprise_idx": 0.409
       }
     },
     {
@@ -2752,25 +2801,26 @@
         "pp_pct": 66.5
       },
       "ov": {
-        "score": 59.7,
-        "pin1": 1.7,
-        "pinX": 5.28,
+        "score": 58.6,
+        "pin1": 1.69,
+        "pinX": 5.29,
         "pin2": 3.87,
-        "novig_1": 56.8,
-        "novig_X": 18.3,
+        "novig_1": 56.9,
+        "novig_X": 18.2,
         "novig_2": 24.9,
         "mkt_prob": 24.9,
-        "vig_pct": 3.6,
-        "edge": 40.1,
+        "vig_pct": 3.91,
+        "edge": 40.2,
         "misalign": null,
         "market_fav": "1",
         "components": {
           "value": 40.0,
           "coherence": 15.0,
           "movement": 0.0,
-          "liquidity": 4.7
+          "liquidity": 3.6
         },
-        "surprise_idx": 0.376
+        "movement_pct": -1.75,
+        "surprise_idx": 0.377
       }
     },
     {
@@ -2809,15 +2859,15 @@
       },
       "ov": {
         "score": 30.0,
-        "pin1": 1.68,
-        "pinX": 4.41,
-        "pin2": 4.33,
-        "novig_1": 56.5,
-        "novig_X": 21.5,
-        "novig_2": 21.9,
-        "mkt_prob": 56.5,
-        "vig_pct": 5.29,
-        "edge": -6.2,
+        "pin1": 1.65,
+        "pinX": 4.47,
+        "pin2": 4.49,
+        "novig_1": 57.6,
+        "novig_X": 21.3,
+        "novig_2": 21.2,
+        "mkt_prob": 57.6,
+        "vig_pct": 5.25,
+        "edge": -7.2,
         "misalign": null,
         "market_fav": "1",
         "components": {
@@ -2826,7 +2876,8 @@
           "movement": 0.0,
           "liquidity": 0.0
         },
-        "surprise_idx": 0.372
+        "movement_pct": null,
+        "surprise_idx": 0.386
       }
     },
     {
@@ -2882,6 +2933,7 @@
           "movement": 0.0,
           "liquidity": 0.0
         },
+        "movement_pct": null,
         "surprise_idx": 0.341
       }
     },
@@ -2920,25 +2972,26 @@
         "pp_pct": 43.5
       },
       "ov": {
-        "score": 51.0,
-        "pin1": 2.79,
-        "pinX": 3.93,
-        "pin2": 2.29,
-        "novig_1": 34.2,
-        "novig_X": 24.2,
-        "novig_2": 41.6,
-        "mkt_prob": 41.6,
-        "vig_pct": 4.96,
-        "edge": 4.2,
+        "score": 47.5,
+        "pin1": 2.83,
+        "pinX": 3.95,
+        "pin2": 2.25,
+        "novig_1": 33.6,
+        "novig_X": 24.1,
+        "novig_2": 42.3,
+        "mkt_prob": 42.3,
+        "vig_pct": 5.1,
+        "edge": 3.5,
         "misalign": null,
         "market_fav": "2",
         "components": {
-          "value": 20.9,
+          "value": 17.5,
           "coherence": 30.0,
           "movement": 0.0,
-          "liquidity": 0.1
+          "liquidity": 0.0
         },
-        "surprise_idx": 0.102
+        "movement_pct": null,
+        "surprise_idx": 0.095
       }
     },
     {
@@ -2994,6 +3047,7 @@
           "movement": 0.0,
           "liquidity": 0.0
         },
+        "movement_pct": null,
         "surprise_idx": 0.323
       }
     },
@@ -3033,15 +3087,15 @@
       },
       "ov": {
         "score": 55.0,
-        "pin1": 2.05,
-        "pinX": 3.94,
-        "pin2": 3.24,
-        "novig_1": 46.5,
-        "novig_X": 24.2,
-        "novig_2": 29.4,
-        "mkt_prob": 29.4,
-        "vig_pct": 5.03,
-        "edge": 13.7,
+        "pin1": 2.06,
+        "pinX": 3.92,
+        "pin2": 3.22,
+        "novig_1": 46.2,
+        "novig_X": 24.3,
+        "novig_2": 29.5,
+        "mkt_prob": 29.5,
+        "vig_pct": 5.11,
+        "edge": 13.5,
         "misalign": null,
         "market_fav": "1",
         "components": {
@@ -3050,7 +3104,8 @@
           "movement": 0.0,
           "liquidity": 0.0
         },
-        "surprise_idx": 0.251
+        "movement_pct": null,
+        "surprise_idx": 0.248
       }
     },
     {
@@ -3061,31 +3116,31 @@
       "date": "10/05/2026",
       "time": "15:45",
       "pred": {
-        "home": 0.3231,
+        "home": 0.3119,
         "draw": 0.2934,
-        "away": 0.3835,
-        "dc1x": 0.6165,
-        "dcx2": 0.6769,
+        "away": 0.3947,
+        "dc1x": 0.6053,
+        "dcx2": 0.6881,
         "dc12": 0.7066,
-        "over25": 0.7373,
-        "under25": 0.2627,
-        "bttsY": 0.7258,
-        "bttsN": 0.2742,
-        "xg_h": "1.79",
-        "xg_a": "2.05",
-        "conf": 0.1779,
+        "over25": 0.7276,
+        "under25": 0.2724,
+        "bttsY": 0.7175,
+        "bttsN": 0.2825,
+        "xg_h": "1.75",
+        "xg_a": "2.03",
+        "conf": 0.1812,
         "best": "2",
-        "bestP": 0.3835,
+        "bestP": 0.3947,
         "combo": "X+BTTS",
-        "comboP": 0.7258
+        "comboP": 0.7175
       },
       "pp": {
         "pp_i_casa": 10.2,
-        "pp_i_ospite": 6.54,
-        "pp_D": 3.66,
+        "pp_i_ospite": 6.64,
+        "pp_D": 3.56,
         "pp_result": "1X",
         "pp_label": "\ud83d\udee1\ufe0f 1X",
-        "pp_pct": 63.4
+        "pp_pct": 63.0
       },
       "ov": {
         "score": 30.0,
@@ -3097,7 +3152,7 @@
         "novig_2": 57.5,
         "mkt_prob": 57.5,
         "vig_pct": 5.46,
-        "edge": -19.1,
+        "edge": -18.0,
         "misalign": null,
         "market_fav": "2",
         "components": {
@@ -3106,6 +3161,7 @@
           "movement": 0.0,
           "liquidity": 0.0
         },
+        "movement_pct": null,
         "surprise_idx": 0.226
       }
     },
@@ -3162,6 +3218,7 @@
           "movement": 0.0,
           "liquidity": 0.0
         },
+        "movement_pct": null,
         "surprise_idx": 0.155
       }
     },
@@ -3179,37 +3236,37 @@
         "dc1x": 0.8388,
         "dcx2": 0.446,
         "dc12": 0.7152,
-        "over25": 0.7552,
-        "under25": 0.2448,
-        "bttsY": 0.6905,
-        "bttsN": 0.3095,
-        "xg_h": "2.58",
+        "over25": 0.7502,
+        "under25": 0.2498,
+        "bttsY": 0.6886,
+        "bttsN": 0.3114,
+        "xg_h": "2.55",
         "xg_a": "1.38",
         "conf": 0.3294,
         "best": "1",
         "bestP": 0.554,
         "combo": "1+O1.5",
-        "comboP": 0.905
+        "comboP": 0.9025
       },
       "pp": {
         "pp_i_casa": 8.55,
-        "pp_i_ospite": -1.08,
-        "pp_D": 9.63,
+        "pp_i_ospite": -0.98,
+        "pp_D": 9.53,
         "pp_result": "1",
         "pp_label": "\ud83c\udfaf FISSA 1",
-        "pp_pct": 85.1
+        "pp_pct": 84.8
       },
       "ov": {
         "score": 30.0,
-        "pin1": 1.34,
-        "pinX": 5.64,
-        "pin2": 7.41,
-        "novig_1": 70.5,
-        "novig_X": 16.8,
-        "novig_2": 12.8,
-        "mkt_prob": 70.5,
-        "vig_pct": 5.85,
-        "edge": -15.1,
+        "pin1": 1.33,
+        "pinX": 5.71,
+        "pin2": 7.51,
+        "novig_1": 70.9,
+        "novig_X": 16.5,
+        "novig_2": 12.6,
+        "mkt_prob": 70.9,
+        "vig_pct": 6.02,
+        "edge": -15.5,
         "misalign": null,
         "market_fav": "1",
         "components": {
@@ -3218,6 +3275,7 @@
           "movement": 0.0,
           "liquidity": 0.0
         },
+        "movement_pct": null,
         "surprise_idx": 0.488
       }
     },
@@ -3274,6 +3332,7 @@
           "movement": 0.0,
           "liquidity": 0.0
         },
+        "movement_pct": null,
         "surprise_idx": 0.488
       }
     },
@@ -3325,6 +3384,7 @@
         "misalign": null,
         "market_fav": null,
         "components": {},
+        "movement_pct": null,
         "surprise_idx": 0.358
       }
     },
@@ -3381,6 +3441,7 @@
           "movement": 0.0,
           "liquidity": 0.0
         },
+        "movement_pct": null,
         "surprise_idx": 0.211
       }
     },
@@ -3437,6 +3498,7 @@
           "movement": 0.0,
           "liquidity": 0.0
         },
+        "movement_pct": null,
         "surprise_idx": 0.175
       }
     },
@@ -3476,15 +3538,15 @@
       },
       "ov": {
         "score": 30.0,
-        "pin1": 12.16,
-        "pinX": 7.35,
-        "pin2": 1.19,
-        "novig_1": 7.8,
-        "novig_X": 12.8,
-        "novig_2": 79.4,
-        "mkt_prob": 79.4,
-        "vig_pct": 5.86,
-        "edge": -15.4,
+        "pin1": 11.05,
+        "pinX": 6.89,
+        "pin2": 1.21,
+        "novig_1": 8.5,
+        "novig_X": 13.7,
+        "novig_2": 77.8,
+        "mkt_prob": 77.8,
+        "vig_pct": 6.21,
+        "edge": -13.9,
         "misalign": null,
         "market_fav": "2",
         "components": {
@@ -3493,7 +3555,8 @@
           "movement": 0.0,
           "liquidity": 0.0
         },
-        "surprise_idx": 0.393
+        "movement_pct": null,
+        "surprise_idx": 0.384
       }
     },
     {
@@ -3549,6 +3612,7 @@
           "movement": 0.0,
           "liquidity": 0.0
         },
+        "movement_pct": null,
         "surprise_idx": 0.174
       }
     },
@@ -3605,6 +3669,7 @@
           "movement": 0.0,
           "liquidity": 0.0
         },
+        "movement_pct": null,
         "surprise_idx": 0.161
       }
     },
@@ -3656,6 +3721,7 @@
         "misalign": null,
         "market_fav": null,
         "components": {},
+        "movement_pct": null,
         "surprise_idx": 0.358
       }
     },
@@ -3712,6 +3778,7 @@
           "movement": 0.0,
           "liquidity": 0.0
         },
+        "movement_pct": null,
         "surprise_idx": 0.169
       }
     },
@@ -3763,6 +3830,7 @@
         "misalign": null,
         "market_fav": null,
         "components": {},
+        "movement_pct": null,
         "surprise_idx": 0.358
       }
     }
