@@ -651,13 +651,13 @@ export default function App(){
             {ranked.length===0&&<div style={{textAlign:"center",padding:60,color:"#333",fontSize:10}}>Nessuna partita — esegui il workflow da GitHub Actions</div>}
             {ranked.length>0&&(
               <div>
-                <div style={{display:"grid",gridTemplateColumns:"36px 80px 1fr 1fr 62px 62px 62px 62px 62px 72px 62px 70px 62px",gap:6,padding:"7px 10px",fontSize:8,color:"#555",letterSpacing:1,borderBottom:"1px solid "+C.border,marginBottom:4}}>
+                <div style={{display:"grid",gridTemplateColumns:"36px 80px 1fr 1fr 62px 62px 62px 62px 62px 72px 62px 70px 62px 55px",gap:6,padding:"7px 10px",fontSize:8,color:"#555",letterSpacing:1,borderBottom:"1px solid "+C.border,marginBottom:4}}>
                   <div>#</div><div style={{fontSize:8,color:"#555"}}>DATA</div><div>CASA</div><div>TRASFERTA</div>
                   <div style={{textAlign:"center"}}>1</div><div style={{textAlign:"center"}}>X</div><div style={{textAlign:"center"}}>2</div>
                   <div style={{textAlign:"center"}}>O2.5</div><div style={{textAlign:"center"}}>BTTS</div><div style={{textAlign:"center"}}>CONF</div><div style={{textAlign:"center",color:rnkSort==="pp"?"#a78bfa":"#555"}}>PP Rank</div><div style={{textAlign:"center",color:rnkSort==="ppd"?"#a78bfa":"#555"}}>PP D</div><div style={{textAlign:"center",color:rnkSort==="ov"?"#f59e0b":"#555"}}>OV</div>
                 </div>
                 {ranked.map((f,i)=>!f.pred?null:(
-                  <React.Fragment key={i}><div onClick={()=>setRnkExpanded(rnkExpanded===i?null:i)} style={{display:"grid",gridTemplateColumns:"36px 80px 1fr 1fr 62px 62px 62px 62px 62px 72px 62px 70px 62px",gap:6,padding:"8px 10px",marginBottom:3,cursor:"pointer",borderRadius:9,background:i<3?`${C.cyan}04`:C.card,border:`1px solid ${i<3?C.cyan+"22":C.border}`,alignItems:"center"}}>
+                  <React.Fragment key={i}><div onClick={()=>setRnkExpanded(rnkExpanded===i?null:i)} style={{display:"grid",gridTemplateColumns:"36px 80px 1fr 1fr 62px 62px 62px 62px 62px 72px 62px 70px 62px 55px",gap:6,padding:"8px 10px",marginBottom:3,cursor:"pointer",borderRadius:9,background:i<3?`${C.cyan}04`:C.card,border:`1px solid ${i<3?C.cyan+"22":C.border}`,alignItems:"center"}}>
                     <div style={{fontSize:14,color:C.amber,fontWeight:700}}>{i===0?"🥇":i===1?"🥈":i===2?"🥉":i+1}</div>
                     <div style={{fontSize:11,color:"#aaa",lineHeight:1.4}}><div style={{fontWeight:700}}>{f.date||"—"}</div><div style={{color:"#777",fontSize:10}}>{f.time||""}</div></div>
                     <div style={{fontSize:13,fontWeight:700,color:C.cyan,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{f.home}</div>
@@ -692,6 +692,7 @@ export default function App(){
                       })():<span style={{color:"#333",fontSize:9}}>—</span>}
                     </div>
                   </div>
+                  {(()=>{const mb=movBadge(f.ov?.movement_pct);return mb&&Math.abs(mb.val)>=1?(<div style={{textAlign:"center"}}><span style={{fontSize:10,fontWeight:700,color:mb.col}}>{mb.icon}{Math.abs(mb.val).toFixed(1)}%</span></div>):(<div style={{textAlign:"center",color:"#333",fontSize:9}}>—</div>);})()}
                   {rnkExpanded===i&&(<div style={{marginBottom:4}}><FixCard fix={f} expanded={true} onToggle={()=>setRnkExpanded(null)}/></div>)}
                   </React.Fragment>
                 ))}
@@ -799,6 +800,7 @@ export default function App(){
               <div style={{textAlign:"center"}}>PCT</div>
               <div style={{textAlign:"center"}}>EV</div>
               <div style={{textAlign:"center"}}>OV</div>
+              <div style={{textAlign:"center",fontSize:9,color:"#555"}}>MOV</div>
               <div style={{textAlign:"center"}}>CP</div>
               <div style={{textAlign:"center"}}>TOP IDX</div>
               <div style={{textAlign:"center"}}>LABEL</div>
@@ -836,6 +838,7 @@ export default function App(){
                     <div style={{textAlign:"center"}}>
                       <span style={{fontSize:11,fontWeight:700,color:ov>=60?"#4caf50":ov>=40?"#f59e0b":"#f87171"}}>{ov||"—"}</span>
                     </div>
+                    {(()=>{const mb=movBadge(f.ov?.movement_pct);return mb&&Math.abs(mb.val)>=1?(<div style={{textAlign:"center"}}><span style={{fontSize:10,fontWeight:700,color:mb.col}}>{mb.icon}{Math.abs(mb.val).toFixed(1)}%</span></div>):(<div style={{textAlign:"center",color:"#333",fontSize:9}}>—</div>);})()}
                     <div style={{textAlign:"center"}}>
                       <div style={{fontSize:11,fontWeight:700,color:cp>=50?"#4caf50":cp>=25?"#f59e0b":"#f87171"}}>{cp}</div>
                       <div style={{fontSize:8,color:cp>=50?"#4caf50":cp>=25?"#f59e0b":"#f87171"}}>{cp>=50?"ALTO":cp>=25?"MEDIO":"BASSO"}</div>
@@ -1018,6 +1021,7 @@ export default function App(){
               <div style={{textAlign:"center",color:multiSort==="confpin"?"#f59e0b":"#555"}}>DECISIONE</div>
               <div style={{textAlign:"center"}}>EV</div>
               <div style={{textAlign:"center"}}>OV</div>
+              <div style={{textAlign:"center",fontSize:9,color:"#555"}}>MOV</div>
               <div style={{textAlign:"center",color:multiSort==="confpin"?"#f59e0b":"#555"}}>CONF-PIN</div>
               <div style={{textAlign:"center"}}>PP Rank</div>
               <div style={{textAlign:"center"}}>PP D</div>
@@ -1064,6 +1068,7 @@ export default function App(){
                       <span style={{fontSize:11,fontWeight:700,color:f.ov.score>=60?"#4caf50":f.ov.score>=40?"#f59e0b":"#f87171"}}>{f.ov.score?.toFixed(0)}</span>
                     ):<span style={{color:"#333",fontSize:9}}>—</span>}
                   </div>
+                  {(()=>{const mb=movBadge(f.ov?.movement_pct);return mb&&Math.abs(mb.val)>=1?(<div style={{textAlign:"center"}}><span style={{fontSize:10,fontWeight:700,color:mb.col}}>{mb.icon}{Math.abs(mb.val).toFixed(1)}%</span></div>):(<div style={{textAlign:"center",color:"#333",fontSize:9}}>—</div>);})()}
                   <div style={{textAlign:"center",fontWeight:multiSort==="confpin"?900:400}}>
                     {calc.confPin!=null?(
                       <span style={{fontSize:11,color:calc.confPin>=60?"#4caf50":calc.confPin>=40?"#f59e0b":"#f87171",fontWeight:700}}>{calc.confPin}</span>
@@ -1225,6 +1230,7 @@ export default function App(){
                     <div style={{textAlign:"center"}}>
                       <span style={{fontSize:11,fontWeight:700,color:ov>=60?"#4caf50":ov>=40?"#f59e0b":"#f87171"}}>{ov||"—"}</span>
                     </div>
+                    {(()=>{const mb=movBadge(f.ov?.movement_pct);return mb&&Math.abs(mb.val)>=1?(<div style={{textAlign:"center"}}><span style={{fontSize:10,fontWeight:700,color:mb.col}}>{mb.icon}{Math.abs(mb.val).toFixed(1)}%</span></div>):(<div style={{textAlign:"center",color:"#333",fontSize:9}}>—</div>);})()}
                     <div style={{textAlign:"center"}}>
                       <div style={{fontSize:11,fontWeight:700,color:cp>=50?"#4caf50":cp>=25?"#f59e0b":"#f87171"}}>{cp}</div>
                       <div style={{fontSize:8,color:cp>=50?"#4caf50":cp>=25?"#f59e0b":"#f87171"}}>{cp>=50?"ALTO":cp>=25?"MEDIO":"BASSO"}</div>
@@ -1781,6 +1787,7 @@ export default function App(){
                     <div style={{textAlign:"center"}}>
                       <span style={{fontSize:11,fontWeight:700,color:ov>=60?"#4caf50":ov>=40?"#f59e0b":"#f87171"}}>{ov||"—"}</span>
                     </div>
+                    {(()=>{const mb=movBadge(f.ov?.movement_pct);return mb&&Math.abs(mb.val)>=1?(<div style={{textAlign:"center"}}><span style={{fontSize:10,fontWeight:700,color:mb.col}}>{mb.icon}{Math.abs(mb.val).toFixed(1)}%</span></div>):(<div style={{textAlign:"center",color:"#333",fontSize:9}}>—</div>);})()}
                     <div style={{textAlign:"center"}}>
                       <span style={{fontSize:11,fontWeight:700,color:align>=0.85?"#4caf50":align>=0.70?"#f59e0b":"#f87171"}}>{(align*100).toFixed(0)}%</span>
                     </div>
