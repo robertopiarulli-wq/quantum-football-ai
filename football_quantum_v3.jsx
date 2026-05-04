@@ -701,7 +701,7 @@ export default function App(){
                       })():<span style={{color:"#333",fontSize:9}}>—</span>}
                     </div>
                   </div>
-                  {(()=>{const mb=movBadge(f.ov?.movement_pct);return mb&&Math.abs(mb.val)>=1?(<div style={{textAlign:"center"}}><span style={{fontSize:10,fontWeight:700,color:mb.col}}>{mb.icon}{Math.abs(mb.val).toFixed(1)}%</span></div>):(<div style={{textAlign:"center",color:"#333",fontSize:9}}>—</div>);})()}
+                  {(()=>{const mb=movBadge(f.ov?.movement_pct);if(!mb||Math.abs(mb.val)<1)return <div style={{textAlign:"center",color:"#333",fontSize:9}}>—</div>;return <div style={{textAlign:"center"}}><span style={{fontSize:10,fontWeight:700,color:mb.col}}>{mb.icon}{Math.abs(mb.val).toFixed(1)}%</span></div>;})()}
                   {rnkExpanded===i&&(<div style={{marginBottom:4}}><FixCard fix={f} expanded={true} onToggle={()=>setRnkExpanded(null)}/></div>)}
                   </React.Fragment>
                 ))}
@@ -847,7 +847,7 @@ export default function App(){
                     <div style={{textAlign:"center"}}>
                       <span style={{fontSize:11,fontWeight:700,color:ov>=60?"#4caf50":ov>=40?"#f59e0b":"#f87171"}}>{ov||"—"}</span>
                     </div>
-                    {(()=>{const mb=movBadge(f.ov?.movement_pct);return mb&&Math.abs(mb.val)>=1?(<div style={{textAlign:"center"}}><span style={{fontSize:10,fontWeight:700,color:mb.col}}>{mb.icon}{Math.abs(mb.val).toFixed(1)}%</span></div>):(<div style={{textAlign:"center",color:"#333",fontSize:9}}>—</div>);})()}
+                    {(()=>{const mb=movBadge(f.ov?.movement_pct);if(!mb||Math.abs(mb.val)<1)return <div style={{textAlign:"center",color:"#333",fontSize:9}}>—</div>;return <div style={{textAlign:"center"}}><span style={{fontSize:10,fontWeight:700,color:mb.col}}>{mb.icon}{Math.abs(mb.val).toFixed(1)}%</span></div>;})()}
                     <div style={{textAlign:"center"}}>
                       <div style={{fontSize:11,fontWeight:700,color:cp>=50?"#4caf50":cp>=25?"#f59e0b":"#f87171"}}>{cp}</div>
                       <div style={{fontSize:8,color:cp>=50?"#4caf50":cp>=25?"#f59e0b":"#f87171"}}>{cp>=50?"ALTO":cp>=25?"MEDIO":"BASSO"}</div>
@@ -1077,7 +1077,7 @@ export default function App(){
                       <span style={{fontSize:11,fontWeight:700,color:f.ov.score>=60?"#4caf50":f.ov.score>=40?"#f59e0b":"#f87171"}}>{f.ov.score?.toFixed(0)}</span>
                     ):<span style={{color:"#333",fontSize:9}}>—</span>}
                   </div>
-                  {(()=>{const mb=movBadge(f.ov?.movement_pct);return mb&&Math.abs(mb.val)>=1?(<div style={{textAlign:"center"}}><span style={{fontSize:10,fontWeight:700,color:mb.col}}>{mb.icon}{Math.abs(mb.val).toFixed(1)}%</span></div>):(<div style={{textAlign:"center",color:"#333",fontSize:9}}>—</div>);})()}
+                  {(()=>{const mb=movBadge(f.ov?.movement_pct);if(!mb||Math.abs(mb.val)<1)return <div style={{textAlign:"center",color:"#333",fontSize:9}}>—</div>;return <div style={{textAlign:"center"}}><span style={{fontSize:10,fontWeight:700,color:mb.col}}>{mb.icon}{Math.abs(mb.val).toFixed(1)}%</span></div>;})()}
                   <div style={{textAlign:"center",fontWeight:multiSort==="confpin"?900:400}}>
                     {calc.confPin!=null?(
                       <span style={{fontSize:11,color:calc.confPin>=60?"#4caf50":calc.confPin>=40?"#f59e0b":"#f87171",fontWeight:700}}>{calc.confPin}</span>
@@ -1239,7 +1239,7 @@ export default function App(){
                     <div style={{textAlign:"center"}}>
                       <span style={{fontSize:11,fontWeight:700,color:ov>=60?"#4caf50":ov>=40?"#f59e0b":"#f87171"}}>{ov||"—"}</span>
                     </div>
-                    {(()=>{const mb=movBadge(f.ov?.movement_pct);return mb&&Math.abs(mb.val)>=1?(<div style={{textAlign:"center"}}><span style={{fontSize:10,fontWeight:700,color:mb.col}}>{mb.icon}{Math.abs(mb.val).toFixed(1)}%</span></div>):(<div style={{textAlign:"center",color:"#333",fontSize:9}}>—</div>);})()}
+                    {(()=>{const mb=movBadge(f.ov?.movement_pct);if(!mb||Math.abs(mb.val)<1)return <div style={{textAlign:"center",color:"#333",fontSize:9}}>—</div>;return <div style={{textAlign:"center"}}><span style={{fontSize:10,fontWeight:700,color:mb.col}}>{mb.icon}{Math.abs(mb.val).toFixed(1)}%</span></div>;})()}
                     <div style={{textAlign:"center"}}>
                       <div style={{fontSize:11,fontWeight:700,color:cp>=50?"#4caf50":cp>=25?"#f59e0b":"#f87171"}}>{cp}</div>
                       <div style={{fontSize:8,color:cp>=50?"#4caf50":cp>=25?"#f59e0b":"#f87171"}}>{cp>=50?"ALTO":cp>=25?"MEDIO":"BASSO"}</div>
@@ -1796,7 +1796,7 @@ export default function App(){
                     <div style={{textAlign:"center"}}>
                       <span style={{fontSize:11,fontWeight:700,color:ov>=60?"#4caf50":ov>=40?"#f59e0b":"#f87171"}}>{ov||"—"}</span>
                     </div>
-                    {(()=>{const mb=movBadge(f.ov?.movement_pct);return mb&&Math.abs(mb.val)>=1?(<div style={{textAlign:"center"}}><span style={{fontSize:10,fontWeight:700,color:mb.col}}>{mb.icon}{Math.abs(mb.val).toFixed(1)}%</span></div>):(<div style={{textAlign:"center",color:"#333",fontSize:9}}>—</div>);})()}
+                    {(()=>{const mb=movBadge(f.ov?.movement_pct);if(!mb||Math.abs(mb.val)<1)return <div style={{textAlign:"center",color:"#333",fontSize:9}}>—</div>;return <div style={{textAlign:"center"}}><span style={{fontSize:10,fontWeight:700,color:mb.col}}>{mb.icon}{Math.abs(mb.val).toFixed(1)}%</span></div>;})()}
                     <div style={{textAlign:"center"}}>
                       <span style={{fontSize:11,fontWeight:700,color:align>=0.85?"#4caf50":align>=0.70?"#f59e0b":"#f87171"}}>{(align*100).toFixed(0)}%</span>
                     </div>
