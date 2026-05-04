@@ -1046,8 +1046,9 @@ export default function App(){
                 const ppD=pp?.pp_D;
                 const ppDCol=pp?.pp_result==="1"?C.cyan:pp?.pp_result==="2"?C.pink:pp?.pp_result==="X"?C.amber:pp?.pp_result==="1X"?"#34d399":pp?.pp_result==="X2"?"#f97316":"#888";
                 return(
-                <div key={i} style={{display:"grid",gridTemplateColumns:"36px 80px 1fr 1fr 55px 55px 70px 55px 55px 65px 85px 75px",gap:6,padding:"10px 10px",borderRadius:9,background:i<3?`${calc.labelCol}08`:C.card,border:`1px solid ${i<3?calc.labelCol+"33":C.border}`,alignItems:"center",cursor:"pointer"}}
-                  onClick={()=>setRnkExpanded(rnkExpanded===i?null:("m"+i))}>
+                <React.Fragment key={i}>
+                <div style={{display:"grid",gridTemplateColumns:"36px 80px 1fr 1fr 55px 55px 70px 55px 55px 65px 85px 75px",gap:6,padding:"10px 10px",borderRadius:multiExpanded===i?"9px 9px 0 0":9,background:i<3?`${calc.labelCol}08`:C.card,border:`1px solid ${i<3?calc.labelCol+"33":C.border}`,alignItems:"center",cursor:"pointer"}}
+                  onClick={()=>setMultiExpanded(multiExpanded===i?null:i)}>
                   <div style={{fontSize:12,color:C.amber,fontWeight:700}}>{i===0?"🥇":i===1?"🥈":i===2?"🥉":i+1}</div>
                   <div style={{fontSize:10,color:"#aaa",lineHeight:1.4,fontWeight:600}}>{f.date||"—"}<br/><span style={{fontSize:9,color:"#555"}}>{f.time||""}</span></div>
                   <div style={{fontSize:13,fontWeight:700,color:C.cyan,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{f.home}</div>
@@ -1101,6 +1102,66 @@ export default function App(){
                   </div>
                   <div style={{textAlign:"center",fontSize:10,color:calc.flagCol,fontWeight:700}}>{calc.flag}</div>
                 </div>
+                {multiExpanded===i&&(
+                <div style={{background:"rgba(255,255,255,0.03)",border:`1px solid ${calc.labelCol}33`,
+                  borderTop:"none",borderRadius:"0 0 9px 9px",padding:"14px 16px",
+                  display:"grid",gridTemplateColumns:"1fr 1fr 1fr",gap:16,marginBottom:0}}>
+                  <div>
+                    <div style={{fontSize:12,color:C.cyan,fontWeight:700,marginBottom:8}}>⚡ POISSON</div>
+                    {[["1 Casa",f.pred?.home,"1"],["X Pari",f.pred?.draw,"X"],["2 Ospite",f.pred?.away,"2"]].map(([lbl,p,s])=>{
+                      const pTop=f.pred?.home>=f.pred?.draw&&f.pred?.home>=f.pred?.away?"1":f.pred?.away>=f.pred?.draw?"2":"X";
+                      return(<div key={lbl} style={{display:"flex",justifyContent:"space-between",marginBottom:6}}>
+                        <span style={{fontSize:12,color:"#888"}}>{lbl}</span>
+                        <span style={{fontSize:13,fontWeight:700,color:pTop===s?"#4caf50":"#aaa"}}>{p!=null?(p*100).toFixed(1)+"%":"—"}</span>
+                      </div>);
+                    })}
+                  </div>
+                  <div>
+                    <div style={{fontSize:12,color:C.amber,fontWeight:700,marginBottom:8}}>⚖️ PP INDEX</div>
+                    <div style={{display:"flex",justifyContent:"space-between",marginBottom:6}}>
+                      <span style={{fontSize:12,color:"#888"}}>Risultato</span>
+                      <span style={{fontSize:13,fontWeight:700,color:C.amber}}>{f.pp?.pp_result||"—"}</span>
+                    </div>
+                    <div style={{display:"flex",justifyContent:"space-between",marginBottom:6}}>
+                      <span style={{fontSize:12,color:"#888"}}>Distanza D</span>
+                      <span style={{fontSize:13,fontWeight:700,color:C.amber}}>{f.pp?.pp_D!=null?(f.pp.pp_D>0?"+":"")+f.pp.pp_D.toFixed(2):"—"}</span>
+                    </div>
+                    <div style={{display:"flex",justifyContent:"space-between"}}>
+                      <span style={{fontSize:12,color:"#888"}}>PP Rank</span>
+                      <span style={{fontSize:13,fontWeight:700,color:"#a78bfa"}}>{ppLabel(f)} {(calc.ppSc*100).toFixed(0)}%</span>
+                    </div>
+                  </div>
+                  <div>
+                    <div style={{fontSize:12,color:"#4caf50",fontWeight:700,marginBottom:8}}>💰 PINNACLE</div>
+                    <div style={{display:"flex",justifyContent:"space-between",marginBottom:6}}>
+                      <span style={{fontSize:12,color:"#888"}}>Favorito</span>
+                      <span style={{fontSize:13,fontWeight:700,color:"#4caf50"}}>{calc.mktFav||"—"}</span>
+                    </div>
+                    <div style={{display:"flex",justifyContent:"space-between",marginBottom:6,alignItems:"center"}}>
+                      <span style={{fontSize:12,color:"#888"}}>CONF-PIN</span>
+                      <span style={{display:"flex",alignItems:"center",gap:6}}>
+                        <span style={{fontSize:13,fontWeight:700,color:calc.confPin>=50?"#4caf50":calc.confPin>=25?"#f59e0b":"#f87171"}}>{calc.confPin}</span>
+                        <span style={{fontSize:9,padding:"1px 6px",borderRadius:4,fontWeight:700,
+                          background:calc.confPin>=50?"#4caf5022":calc.confPin>=25?"#f59e0b22":"#f8717122",
+                          color:calc.confPin>=50?"#4caf50":calc.confPin>=25?"#f59e0b":"#f87171"}}>
+                          {calc.confPin>=50?"🔴 ALTO":calc.confPin>=25?"🟡 MEDIO":"⚪ BASSO"}
+                        </span>
+                      </span>
+                    </div>
+                    <div style={{display:"flex",justifyContent:"space-between",marginBottom:6}}>
+                      <span style={{fontSize:12,color:"#888"}}>OV Score</span>
+                      <span style={{fontSize:13,fontWeight:700,color:f.ov?.score>=60?"#4caf50":f.ov?.score>=40?"#f59e0b":"#f87171"}}>{f.ov?.score||"—"}</span>
+                    </div>
+                    <div style={{display:"flex",justifyContent:"space-between"}}>
+                      <span style={{fontSize:12,color:"#888"}}>MOV</span>
+                      {(()=>{const mb=movBadge(f.ov?.movement_pct);return mb&&Math.abs(mb.val)>=1?
+                        <span style={{fontSize:12,fontWeight:700,color:mb.col}}>{mb.icon}{Math.abs(mb.val).toFixed(1)}%</span>:
+                        <span style={{color:"#555"}}>—</span>;})()}
+                    </div>
+                  </div>
+                </div>
+                )}
+                </React.Fragment>
                 )}
               )}
               {multiplaData.length===0&&<div style={{textAlign:"center",padding:40,color:"#333",fontSize:11}}>Nessuna partita disponibile</div>}
