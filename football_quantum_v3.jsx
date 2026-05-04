@@ -487,6 +487,15 @@ export default function App(){
             ppSc:ppScore(f),conf};
   };
 
+  const movBadge=(mov)=>{
+    if(mov==null) return null;
+    const abs=Math.abs(mov);
+    const dir=mov<0?"🔺":"🔻";
+    const col=mov<0?(abs>=5?"#4caf50":abs>=2?"#81c784":"#aaa"):(abs>=5?"#f87171":abs>=2?"#e57373":"#aaa");
+    if(abs<1) return {icon:"➡️",col:"#555",text:"stabile",val:mov};
+    return {icon:dir,col,text:`${dir}${abs.toFixed(1)}%`,val:mov};
+  };
+
   const ppScore=f=>{
     if(!f.pred)return 0;
     const h=f.pred.home||0,x=f.pred.draw||0,a=f.pred.away||0;
