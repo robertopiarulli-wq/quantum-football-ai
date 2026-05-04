@@ -701,8 +701,8 @@ export default function App(){
                         return<span style={{color:col,fontWeight:700}}>{sc.toFixed(0)}<br/><span style={{fontSize:8,color:"#555"}}>{f.ov.edge!=null?(f.ov.edge>0?"+":"")+f.ov.edge.toFixed(1)+"%":""}</span></span>;
                       })():<span style={{color:"#333",fontSize:9}}>—</span>}
                     </div>
-                  </div>
                   {(()=>{const mb=movBadge(f.ov?.movement_pct);if(!mb||Math.abs(mb.val)<1)return <div style={{textAlign:"center",color:"#333",fontSize:9}}>—</div>;return <div style={{textAlign:"center"}}><span style={{fontSize:10,fontWeight:700,color:mb.col}}>{mb.icon}{Math.abs(mb.val).toFixed(1)}%</span></div>;})()}
+                </div>
                   {rnkExpanded===i&&(<div style={{marginBottom:4}}><FixCard fix={f} expanded={true} onToggle={()=>setRnkExpanded(null)}/></div>)}
                   </React.Fragment>
                 ))}
