@@ -393,18 +393,166 @@ def parse_odds(odds_data):
                         result[key][bk]["X"] = price
     return result
 
+# Mappa alias: nome football-data.org → nome The Odds API
+# Aggiornare quando si trovano nuovi mismatch nel log
+TEAM_ALIAS = {
+    # Serie A
+    "SS Lazio": "Lazio",
+    "ACF Fiorentina": "Fiorentina",
+    "SSC Napoli": "Napoli",
+    "AC Milan": "AC Milan",
+    "FC Internazionale Milano": "Inter Milan",
+    "US Sassuolo Calcio": "Sassuolo",
+    "AS Roma": "Roma",
+    "Hellas Verona FC": "Verona",
+    "US Lecce": "Lecce",
+    "AC Pisa 1909": "Pisa",
+    "US Cremonese": "Cremonese",
+    "Parma Calcio 1913": "Parma",
+    "Cagliari Calcio": "Cagliari",
+    "Udinese Calcio": "Udinese",
+    "Torino FC": "Torino",
+    # Ligue 1
+    "Stade Rennais FC 1901": "Rennes",
+    "Le Havre AC": "Le Havre",
+    "Paris Saint-Germain FC": "Paris Saint-Germain",
+    "Olympique de Marseille": "Marseille",
+    "Olympique Lyonnais": "Lyon",
+    "OGC Nice": "Nice",
+    "Lille OSC": "Lille",
+    "RC Strasbourg Alsace": "Strasbourg",
+    "Racing Club de Lens": "Lens",
+    "FC Lorient": "Lorient",
+    "Stade Brestois 29": "Brest",
+    "AJ Auxerre": "Auxerre",
+    "AS Monaco FC": "Monaco",
+    "Angers SCO": "Angers",
+    "Toulouse FC": "Toulouse",
+    "Paris FC": "Paris FC",
+    "FC Nantes": "Nantes",
+    "FC Metz": "Metz",
+    # La Liga
+    "Club Atlético de Madrid": "Atletico Madrid",
+    "Real Sociedad de Fútbol": "Real Sociedad",
+    "Real Betis Balompié": "Real Betis",
+    "RC Celta de Vigo": "Celta de Vigo",
+    "RCD Espanyol de Barcelona": "Espanyol",
+    "RCD Mallorca": "Mallorca",
+    "Deportivo Alavés": "Alaves",
+    "CA Osasuna": "Osasuna",
+    "Rayo Vallecano de Madrid": "Rayo Vallecano",
+    "Girona FC": "Girona",
+    "Villarreal CF": "Villarreal",
+    "Real Oviedo": "Oviedo",
+    "Levante UD": "Levante",
+    "Elche CF": "Elche",
+    "Getafe CF": "Getafe",
+    "Athletic Club": "Athletic Club Bilbao",
+    "Valencia CF": "Valencia",
+    "Sevilla FC": "Sevilla",
+    # Bundesliga
+    "FC Bayern München": "Bayern Munich",
+    "Borussia Mönchengladbach": "Borussia Monchengladbach",
+    "TSG 1899 Hoffenheim": "Hoffenheim",
+    "Bayer 04 Leverkusen": "Bayer Leverkusen",
+    "VfB Stuttgart": "Stuttgart",
+    "VfL Wolfsburg": "Wolfsburg",
+    "VfB Stuttgart": "Stuttgart",
+    "FC Augsburg": "Augsburg",
+    "1. FC Köln": "FC Koln",
+    "1. FC Heidenheim 1846": "Heidenheim",
+    "1. FSV Mainz 05": "Mainz 05",
+    "1. FC Union Berlin": "Union Berlin",
+    "SC Freiburg": "Freiburg",
+    "Hamburger SV": "Hamburg",
+    "RB Leipzig": "RB Leipzig",
+    "Borussia Dortmund": "Borussia Dortmund",
+    "FC St. Pauli 1910": "St. Pauli",
+    "SV Werder Bremen": "Werder Bremen",
+    # Premier League
+    "AFC Bournemouth": "Bournemouth",
+    "Tottenham Hotspur FC": "Tottenham Hotspur",
+    "Manchester City FC": "Manchester City",
+    "Manchester United FC": "Manchester United",
+    "Newcastle United FC": "Newcastle United",
+    "West Ham United FC": "West Ham United",
+    "Brighton & Hove Albion FC": "Brighton and Hove Albion",
+    "Wolverhampton Wanderers FC": "Wolverhampton Wanderers",
+    "Nottingham Forest FC": "Nottingham Forest",
+    "Crystal Palace FC": "Crystal Palace",
+    "Aston Villa FC": "Aston Villa",
+    "Brentford FC": "Brentford",
+    "Sunderland AFC": "Sunderland",
+    "Leeds United FC": "Leeds United",
+    "Burnley FC": "Burnley",
+    # Eredivisie
+    "AFC Ajax": "Ajax",
+    "FC Utrecht": "Utrecht",
+    "SBV Excelsior": "Excelsior",
+    "FC Volendam": "Volendam",
+    "FC Groningen": "Groningen",
+    "Feyenoord Rotterdam": "Feyenoord",
+    "Fortuna Sittard": "Fortuna Sittard",
+    "Go Ahead Eagles": "Go Ahead Eagles",
+    "NAC Breda": "NAC Breda",
+    "Telstar 1963": "Telstar",
+    "FC Twente '65": "Twente",
+    "Sparta Rotterdam": "Sparta Rotterdam",
+    "PSV": "PSV Eindhoven",
+    "AZ": "AZ Alkmaar",
+    "SC Heerenveen": "Heerenveen",
+    "NEC": "NEC Nijmegen",
+    "PEC Zwolle": "Zwolle",
+    "Heracles Almelo": "Heracles",
+    # Primeira Liga
+    "Sport Lisboa e Benfica": "Benfica",
+    "Sporting Clube de Portugal": "Sporting CP",
+    "Sporting Clube de Braga": "Braga",
+    "FC Porto": "Porto",
+    "SC Braga": "Braga",
+    "Vitória SC": "Vitoria de Guimaraes",
+    "Rio Ave FC": "Rio Ave",
+    "Gil Vicente FC": "Gil Vicente",
+    "FC Arouca": "Arouca",
+    "CD Tondela": "Tondela",
+    "Moreirense FC": "Moreirense",
+    "AVS": "AVS",
+    "CF Estrela da Amadora": "Estrela da Amadora",
+    "FC Famalicão": "Famalicao",
+    "FC Alverca": "Alverca",
+    "GD Estoril Praia": "Estoril",
+    "CD Santa Clara": "Santa Clara",
+    "CD Nacional": "Nacional",
+    "Casa Pia AC": "Casa Pia",
+}
+
+def normalize_team(name):
+    """Normalizza nome squadra usando alias map."""
+    return TEAM_ALIAS.get(name, name)
+
 def match_odds_key(hname, aname, odds_map):
-    """Trova la partita nella mappa odds con fuzzy match sui nomi squadra."""
-    # Exact match
+    """Trova la partita nella mappa odds con alias + fuzzy match."""
+    # 1. Exact match con nomi originali
     if (hname, aname) in odds_map:
         return odds_map[(hname, aname)]
-    # Fuzzy: cerca substring nei nomi
-    hn = hname.lower().split()[:2]
-    an = aname.lower().split()[:2]
+    # 2. Match con alias normalizzati
+    hn_norm = normalize_team(hname)
+    an_norm = normalize_team(aname)
+    if (hn_norm, an_norm) in odds_map:
+        return odds_map[(hn_norm, an_norm)]
+    # 3. Fuzzy match su alias normalizzati
+    hn_words = hn_norm.lower().split()[:2]
+    an_words = an_norm.lower().split()[:2]
     for (oh, oa), data in odds_map.items():
-        oh_l = oh.lower()
-        oa_l = oa.lower()
-        if any(w in oh_l for w in hn) and any(w in oa_l for w in an):
+        oh_l = oh.lower(); oa_l = oa.lower()
+        if any(w in oh_l for w in hn_words if len(w)>2) and            any(w in oa_l for w in an_words if len(w)>2):
+            return data
+    # 4. Fuzzy match su nomi originali (fallback)
+    hn_orig = hname.lower().split()[:2]
+    an_orig = aname.lower().split()[:2]
+    for (oh, oa), data in odds_map.items():
+        oh_l = oh.lower(); oa_l = oa.lower()
+        if any(w in oh_l for w in hn_orig if len(w)>3) and            any(w in oa_l for w in an_orig if len(w)>3):
             return data
     return None
 
