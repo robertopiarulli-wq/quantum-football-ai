@@ -204,8 +204,14 @@ function FixCard({fix,expanded,onToggle}){
                 <div style={{display:"flex",flexDirection:"column",gap:4,flex:1,fontSize:9}}>
                   {fix.ov.pin1&&<div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:4}}><span style={{color:"#555",fontSize:11}}>Pinnacle:</span><b style={{color:"#22d3ee",fontSize:11}}>{fix.ov.pin1} / {fix.ov.pinX} / {fix.ov.pin2}</b></div>}
                   <div style={{display:"flex",justifyContent:"space-between",marginBottom:4,alignItems:"center"}}>
-                    <span style={{color:"#555",fontSize:11}}>MOV favorito</span>
-                    {(()=>{const mb=movBadge(fix.ov?.movement_pct);return mb&&Math.abs(mb.val)>=1?<b style={{fontSize:11,fontWeight:700,color:mb.col}}>{mb.icon} {Math.abs(mb.val).toFixed(1)}% quota favorito</b>:<span style={{color:"#555",fontSize:11}}>—</span>;})()}
+                    <span style={{color:"#555",fontSize:11}}>MOV quota</span>
+                    {(()=>{
+                      const mb=movBadge(fix.ov?.movement_pct);
+                      if(!mb||Math.abs(mb.val)<1) return <span style={{color:"#555",fontSize:11}}>—</span>;
+                      const mf=fix.ov?.market_fav||"?";
+                      const signLabel=mf==="1"?"casa":mf==="2"?"ospite":"pareggio";
+                      return <b style={{fontSize:11,fontWeight:700,color:mb.col}}>{mb.icon} {Math.abs(mb.val).toFixed(1)}% · quota {mf} ({signLabel})</b>;
+                    })()}
                   </div>
                   {fix.ov.b365_1&&<div><span style={{color:"#555"}}>Bet365:   </span><b style={{color:"#f472b6"}}>{fix.ov.b365_1} / {fix.ov.b365_X} / {fix.ov.b365_2}</b></div>}
                   <div style={{display:"flex",gap:10}}>
@@ -930,8 +936,14 @@ export default function App(){
                         <span style={{fontSize:11,color:"#22d3ee",fontWeight:700}}>{f.ov?.pin1||"—"} / {f.ov?.pinX||"—"} / {f.ov?.pin2||"—"}</span>
                       </div>
                       <div style={{display:"flex",justifyContent:"space-between",marginBottom:6,alignItems:"center"}}>
-                        <span style={{fontSize:12,color:"#888"}}>MOV favorito</span>
-                        {(()=>{const mb=movBadge(f.ov?.movement_pct);return mb&&Math.abs(mb.val)>=1?<span style={{fontSize:12,fontWeight:700,color:mb.col}}>{mb.icon} {Math.abs(mb.val).toFixed(1)}% quota favorito</span>:<span style={{color:"#555"}}>—</span>;})()}
+                        <span style={{fontSize:12,color:"#888"}}>MOV quota</span>
+                        {(()=>{
+                          const mb=movBadge(f.ov?.movement_pct);
+                          if(!mb||Math.abs(mb.val)<1) return <span style={{color:"#555"}}>—</span>;
+                          const mf=f.ov?.market_fav||f.ov?.mkt_prob&&Object.keys(f.ov.mkt_prob||{}).sort((a,b)=>(f.ov.mkt_prob[b]||0)-(f.ov.mkt_prob[a]||0))[0]||"?";
+                          const signLabel=mf==="1"?"casa":mf==="2"?"ospite":"pareggio";
+                          return <span style={{fontSize:12,fontWeight:700,color:mb.col}}>{mb.icon} {Math.abs(mb.val).toFixed(1)}% · quota {mf} ({signLabel})</span>;
+                        })()}
                       </div>
                       <div style={{fontSize:11,color:"#555",marginBottom:4}}>CONCORDANZA</div>
                       {[["Poisson vs PP",!!(ppRes&&ppRes.includes(pTop))],["Poisson vs PIN",pTop===mktFav],["PP vs PIN",!!(ppRes&&mktFav&&ppRes.includes(mktFav))]].map(([lbl,ok])=>(
@@ -1395,8 +1407,14 @@ export default function App(){
                         <span style={{fontSize:11,color:"#22d3ee",fontWeight:700}}>{f.ov?.pin1||"—"} / {f.ov?.pinX||"—"} / {f.ov?.pin2||"—"}</span>
                       </div>
                       <div style={{display:"flex",justifyContent:"space-between",marginBottom:6,alignItems:"center"}}>
-                        <span style={{fontSize:12,color:"#888"}}>MOV favorito</span>
-                        {(()=>{const mb=movBadge(f.ov?.movement_pct);return mb&&Math.abs(mb.val)>=1?<span style={{fontSize:12,fontWeight:700,color:mb.col}}>{mb.icon} {Math.abs(mb.val).toFixed(1)}% quota favorito</span>:<span style={{color:"#555"}}>—</span>;})()}
+                        <span style={{fontSize:12,color:"#888"}}>MOV quota</span>
+                        {(()=>{
+                          const mb=movBadge(f.ov?.movement_pct);
+                          if(!mb||Math.abs(mb.val)<1) return <span style={{color:"#555"}}>—</span>;
+                          const mf=f.ov?.market_fav||f.ov?.mkt_prob&&Object.keys(f.ov.mkt_prob||{}).sort((a,b)=>(f.ov.mkt_prob[b]||0)-(f.ov.mkt_prob[a]||0))[0]||"?";
+                          const signLabel=mf==="1"?"casa":mf==="2"?"ospite":"pareggio";
+                          return <span style={{fontSize:12,fontWeight:700,color:mb.col}}>{mb.icon} {Math.abs(mb.val).toFixed(1)}% · quota {mf} ({signLabel})</span>;
+                        })()}
                       </div>
                       <div style={{fontSize:11,color:"#555",marginBottom:4}}>CONCORDANZA</div>
                       {[["Poisson vs PP",!!(ppRes&&ppRes.includes(pTop))],["Poisson vs PIN",pTop===mktFav],["PP vs PIN",!!(ppRes&&mktFav&&ppRes.includes(mktFav))]].map(([lbl,ok])=>(
