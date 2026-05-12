@@ -23244,27 +23244,29 @@
       "pred_combo_prob": 0.7405,
       "pred_over15": 0.7286,
       "pred_under35": 0.7405,
-      "correct_combo": null,
+      "correct_combo": false,
       "ov_score": null,
       "ov_edge": null,
       "ov_misalign": null,
       "ov_movement": null,
       "ov_is_sharp": null,
-      "clv": null,
+      "clv": -9.33,
       "pp_result": "1",
       "pp_label": "\ud83c\udfaf FISSA 1",
       "pp_i_casa": 8.7,
       "pp_i_ospite": 0.22,
       "pp_D": 8.48,
       "pp_pct": 80.9,
-      "correct_pp": null,
-      "result": null,
-      "goals_home": null,
-      "goals_away": null,
-      "correct_1x2": null,
-      "correct_over": null,
-      "correct_btts": null,
-      "verified_at": null
+      "correct_pp": false,
+      "result": "2",
+      "goals_home": 0,
+      "goals_away": 1,
+      "correct_1x2": false,
+      "correct_over": true,
+      "correct_btts": true,
+      "verified_at": "2026-05-12T07:52:34.041661",
+      "odds_movement_pct": -4.95,
+      "odds_is_sharp": false
     },
     {
       "fixture_id": "538135",
@@ -23977,7 +23979,8 @@
       "correct_btts": true,
       "verified_at": "2026-05-11T08:33:56.465612",
       "odds_movement_pct": 4.48,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "542694",
@@ -24027,7 +24030,8 @@
       "correct_btts": false,
       "verified_at": "2026-05-11T08:34:04.186594",
       "odds_movement_pct": -1.98,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "542695",
@@ -24077,7 +24081,8 @@
       "correct_btts": true,
       "verified_at": "2026-05-11T08:34:04.341897",
       "odds_movement_pct": -0.41,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "542696",
@@ -24127,7 +24132,8 @@
       "correct_btts": false,
       "verified_at": "2026-05-11T08:34:04.486060",
       "odds_movement_pct": 9.69,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "542697",
@@ -24177,7 +24183,8 @@
       "correct_btts": false,
       "verified_at": "2026-05-11T08:34:04.652759",
       "odds_movement_pct": 2.53,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "537729",
@@ -24227,7 +24234,8 @@
       "correct_btts": true,
       "verified_at": "2026-05-11T08:34:12.757537",
       "odds_movement_pct": -3.59,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "537730",
@@ -24277,7 +24285,8 @@
       "correct_btts": true,
       "verified_at": "2026-05-11T08:34:12.909647",
       "odds_movement_pct": 3.41,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "537731",
@@ -24327,7 +24336,8 @@
       "correct_btts": true,
       "verified_at": "2026-05-11T08:34:13.069454",
       "odds_movement_pct": 2.15,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "537732",
@@ -24377,7 +24387,8 @@
       "correct_btts": true,
       "verified_at": "2026-05-11T08:34:13.222886",
       "odds_movement_pct": 6.63,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "537733",
@@ -24427,7 +24438,8 @@
       "correct_btts": true,
       "verified_at": "2026-05-11T08:34:13.395743",
       "odds_movement_pct": 12.37,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "545989",
@@ -24455,27 +24467,29 @@
       "pred_combo_prob": 0.7518,
       "pred_over15": 0.7518,
       "pred_under35": 0.7135,
-      "correct_combo": null,
+      "correct_combo": false,
       "ov_score": null,
       "ov_edge": null,
       "ov_misalign": null,
       "ov_movement": null,
       "ov_is_sharp": null,
-      "clv": null,
+      "clv": -0.61,
       "pp_result": "1X",
       "pp_label": "\ud83d\udee1\ufe0f 1X",
       "pp_i_casa": 5.7,
       "pp_i_ospite": 2.18,
       "pp_D": 3.52,
       "pp_pct": 62.8,
-      "correct_pp": null,
-      "result": null,
-      "goals_home": null,
-      "goals_away": null,
-      "correct_1x2": null,
-      "correct_over": null,
-      "correct_btts": null,
-      "verified_at": null
+      "correct_pp": false,
+      "result": "2",
+      "goals_home": 1,
+      "goals_away": 3,
+      "correct_1x2": false,
+      "correct_over": true,
+      "correct_btts": true,
+      "verified_at": "2026-05-12T07:52:34.656268",
+      "odds_movement_pct": 1.78,
+      "odds_is_sharp": false
     },
     {
       "fixture_id": "545990",
@@ -24503,27 +24517,29 @@
       "pred_combo_prob": 0.8148,
       "pred_over15": 0.651,
       "pred_under35": 0.8148,
-      "correct_combo": null,
+      "correct_combo": true,
       "ov_score": null,
       "ov_edge": null,
       "ov_misalign": null,
       "ov_movement": null,
       "ov_is_sharp": null,
-      "clv": null,
+      "clv": -18.14,
       "pp_result": "X",
       "pp_label": "\u2696\ufe0f FISSA X",
       "pp_i_casa": 1.95,
       "pp_i_ospite": 3.8,
       "pp_D": -1.85,
       "pp_pct": 43.2,
-      "correct_pp": null,
-      "result": null,
-      "goals_home": null,
-      "goals_away": null,
-      "correct_1x2": null,
-      "correct_over": null,
-      "correct_btts": null,
-      "verified_at": null
+      "correct_pp": false,
+      "result": "1",
+      "goals_home": 2,
+      "goals_away": 0,
+      "correct_1x2": true,
+      "correct_over": true,
+      "correct_btts": true,
+      "verified_at": "2026-05-12T07:52:34.915129",
+      "odds_movement_pct": -7.96,
+      "odds_is_sharp": false
     },
     {
       "fixture_id": "545991",
@@ -24573,7 +24589,8 @@
       "correct_btts": false,
       "verified_at": "2026-05-11T08:33:49.025117",
       "odds_movement_pct": -5.02,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "545992",
@@ -24601,27 +24618,29 @@
       "pred_combo_prob": 0.8024,
       "pred_over15": 0.6656,
       "pred_under35": 0.8024,
-      "correct_combo": null,
+      "correct_combo": false,
       "ov_score": null,
       "ov_edge": null,
       "ov_misalign": null,
       "ov_movement": null,
       "ov_is_sharp": null,
-      "clv": null,
+      "clv": 5.52,
       "pp_result": "X2",
       "pp_label": "\ud83d\udee1\ufe0f X2",
       "pp_i_casa": 3.45,
       "pp_i_ospite": 7.42,
       "pp_D": -3.97,
       "pp_pct": 35.5,
-      "correct_pp": null,
-      "result": null,
-      "goals_home": null,
-      "goals_away": null,
-      "correct_1x2": null,
-      "correct_over": null,
-      "correct_btts": null,
-      "verified_at": null
+      "correct_pp": true,
+      "result": "X",
+      "goals_home": 0,
+      "goals_away": 0,
+      "correct_1x2": false,
+      "correct_over": true,
+      "correct_btts": true,
+      "verified_at": "2026-05-12T07:52:35.156164",
+      "odds_movement_pct": 3.81,
+      "odds_is_sharp": false
     },
     {
       "fixture_id": "545993",
@@ -24671,7 +24690,8 @@
       "correct_btts": true,
       "verified_at": "2026-05-11T08:33:49.326533",
       "odds_movement_pct": 2.44,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "537167",
@@ -24874,7 +24894,8 @@
       "correct_btts": true,
       "verified_at": "2026-05-11T08:34:21.023682",
       "odds_movement_pct": 22.89,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "537165",
@@ -24924,7 +24945,8 @@
       "correct_btts": true,
       "verified_at": "2026-05-11T08:34:21.168691",
       "odds_movement_pct": 0.49,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "537173",
@@ -24974,7 +24996,8 @@
       "correct_btts": false,
       "verified_at": "2026-05-11T08:34:21.313201",
       "odds_movement_pct": 8.28,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "537171",
@@ -25024,7 +25047,8 @@
       "correct_btts": false,
       "verified_at": "2026-05-11T08:34:21.463279",
       "odds_movement_pct": 49.5,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "538137",
@@ -25074,7 +25098,8 @@
       "correct_btts": false,
       "verified_at": "2026-05-11T08:34:28.738110",
       "odds_movement_pct": 9.22,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "538138",
@@ -25124,7 +25149,8 @@
       "correct_btts": true,
       "verified_at": "2026-05-11T08:34:28.893818",
       "odds_movement_pct": 2.42,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "538142",
@@ -25174,7 +25200,8 @@
       "correct_btts": true,
       "verified_at": "2026-05-11T08:34:29.048393",
       "odds_movement_pct": 14.34,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "544555",
@@ -25224,7 +25251,8 @@
       "correct_btts": true,
       "verified_at": "2026-05-11T08:34:36.397176",
       "odds_movement_pct": -1.2,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "544551",
@@ -25274,7 +25302,8 @@
       "correct_btts": true,
       "verified_at": "2026-05-11T08:34:36.543596",
       "odds_movement_pct": -2.3,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "544559",
@@ -25324,7 +25353,8 @@
       "correct_btts": true,
       "verified_at": "2026-05-11T08:34:36.701817",
       "odds_movement_pct": -16.72,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "544553",
@@ -25374,7 +25404,8 @@
       "correct_btts": false,
       "verified_at": "2026-05-11T08:34:36.859062",
       "odds_movement_pct": -9.34,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "540702",
@@ -25424,7 +25455,8 @@
       "correct_btts": true,
       "verified_at": "2026-05-11T08:33:56.635229",
       "odds_movement_pct": 4.52,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "540700",
@@ -25474,7 +25506,8 @@
       "correct_btts": true,
       "verified_at": "2026-05-11T08:33:56.785710",
       "odds_movement_pct": -3.39,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "542698",
@@ -25524,7 +25557,8 @@
       "correct_btts": true,
       "verified_at": "2026-05-11T08:34:04.819748",
       "odds_movement_pct": 0.23,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "542699",
@@ -25574,7 +25608,8 @@
       "correct_btts": false,
       "verified_at": "2026-05-11T08:34:04.973680",
       "odds_movement_pct": 3.51,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "542701",
@@ -25624,7 +25659,8 @@
       "correct_btts": true,
       "verified_at": "2026-05-11T08:34:05.147103",
       "odds_movement_pct": -19.76,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "542702",
@@ -25674,7 +25710,8 @@
       "correct_btts": true,
       "verified_at": "2026-05-11T08:34:05.328281",
       "odds_movement_pct": 5.41,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "537734",
@@ -25724,7 +25761,8 @@
       "correct_btts": true,
       "verified_at": "2026-05-11T08:34:13.549325",
       "odds_movement_pct": -0.68,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "537735",
@@ -25822,7 +25860,8 @@
       "correct_btts": false,
       "verified_at": "2026-05-11T08:34:13.706133",
       "odds_movement_pct": 5.26,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "537737",
@@ -25872,7 +25911,8 @@
       "correct_btts": false,
       "verified_at": "2026-05-11T08:34:13.854197",
       "odds_movement_pct": 1.48,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "545994",
@@ -25900,27 +25940,29 @@
       "pred_combo_prob": 0.7405,
       "pred_over15": 0.7286,
       "pred_under35": 0.7405,
-      "correct_combo": null,
+      "correct_combo": false,
       "ov_score": null,
       "ov_edge": null,
       "ov_misalign": null,
       "ov_movement": null,
       "ov_is_sharp": null,
-      "clv": null,
+      "clv": -39.1,
       "pp_result": "12",
       "pp_label": "\ud83d\udd00 1-2",
       "pp_i_casa": 4.35,
       "pp_i_ospite": 10.16,
       "pp_D": -5.81,
       "pp_pct": 28.8,
-      "correct_pp": null,
-      "result": null,
-      "goals_home": null,
-      "goals_away": null,
-      "correct_1x2": null,
-      "correct_over": null,
-      "correct_btts": null,
-      "verified_at": null
+      "correct_pp": true,
+      "result": "2",
+      "goals_home": 1,
+      "goals_away": 4,
+      "correct_1x2": true,
+      "correct_over": false,
+      "correct_btts": false,
+      "verified_at": "2026-05-12T07:52:35.406797",
+      "odds_movement_pct": 12.95,
+      "odds_is_sharp": false
     },
     {
       "fixture_id": "545995",
@@ -25948,27 +25990,29 @@
       "pred_combo_prob": 0.864,
       "pred_over15": 0.5835,
       "pred_under35": 0.864,
-      "correct_combo": null,
+      "correct_combo": true,
       "ov_score": 30.0,
       "ov_edge": -9.3,
       "ov_misalign": null,
       "ov_movement": null,
       "ov_is_sharp": null,
-      "clv": null,
+      "clv": -3.34,
       "pp_result": "1X",
       "pp_label": "\ud83d\udee1\ufe0f 1X",
       "pp_i_casa": 6.45,
       "pp_i_ospite": 2.78,
       "pp_D": 3.67,
       "pp_pct": 63.4,
-      "correct_pp": null,
-      "result": null,
-      "goals_home": null,
-      "goals_away": null,
-      "correct_1x2": null,
-      "correct_over": null,
-      "correct_btts": null,
-      "verified_at": null
+      "correct_pp": true,
+      "result": "1",
+      "goals_home": 2,
+      "goals_away": 0,
+      "correct_1x2": true,
+      "correct_over": true,
+      "correct_btts": true,
+      "verified_at": "2026-05-12T07:52:35.637525",
+      "odds_movement_pct": 19.9,
+      "odds_is_sharp": false
     },
     {
       "fixture_id": "545996",
@@ -25996,27 +26040,29 @@
       "pred_combo_prob": 0.7677,
       "pred_over15": 0.7677,
       "pred_under35": 0.6935,
-      "correct_combo": null,
+      "correct_combo": false,
       "ov_score": null,
       "ov_edge": null,
       "ov_misalign": null,
       "ov_movement": null,
       "ov_is_sharp": null,
-      "clv": null,
+      "clv": 11.71,
       "pp_result": "12",
       "pp_label": "\ud83d\udd00 1-2",
       "pp_i_casa": 11.55,
       "pp_i_ospite": 7.06,
       "pp_D": 4.49,
       "pp_pct": 66.4,
-      "correct_pp": null,
-      "result": null,
-      "goals_home": null,
-      "goals_away": null,
-      "correct_1x2": null,
-      "correct_over": null,
-      "correct_btts": null,
-      "verified_at": null
+      "correct_pp": false,
+      "result": "X",
+      "goals_home": 2,
+      "goals_away": 2,
+      "correct_1x2": false,
+      "correct_over": true,
+      "correct_btts": true,
+      "verified_at": "2026-05-12T07:52:35.877151",
+      "odds_movement_pct": 2.92,
+      "odds_is_sharp": false
     },
     {
       "fixture_id": "538144",
@@ -26066,7 +26112,8 @@
       "correct_btts": false,
       "verified_at": "2026-05-11T08:34:29.220420",
       "odds_movement_pct": 7.43,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "537166",
@@ -26116,7 +26163,8 @@
       "correct_btts": false,
       "verified_at": "2026-05-11T08:34:21.617935",
       "odds_movement_pct": 6.7,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "537172",
@@ -26144,27 +26192,29 @@
       "pred_combo_prob": 0.7426,
       "pred_over15": 0.7267,
       "pred_under35": 0.7426,
-      "correct_combo": null,
+      "correct_combo": false,
       "ov_score": 32.0,
       "ov_edge": -11.5,
       "ov_misalign": null,
       "ov_movement": null,
       "ov_is_sharp": null,
-      "clv": null,
+      "clv": 10.11,
       "pp_result": "X",
       "pp_label": "\u2696\ufe0f FISSA X",
       "pp_i_casa": 9.3,
       "pp_i_ospite": 8.96,
       "pp_D": 0.34,
       "pp_pct": 51.2,
-      "correct_pp": null,
-      "result": null,
-      "goals_home": null,
-      "goals_away": null,
-      "correct_1x2": null,
-      "correct_over": null,
-      "correct_btts": null,
-      "verified_at": null
+      "correct_pp": false,
+      "result": "2",
+      "goals_home": 2,
+      "goals_away": 3,
+      "correct_1x2": false,
+      "correct_over": false,
+      "correct_btts": true,
+      "verified_at": "2026-05-12T07:52:50.080932",
+      "odds_movement_pct": 0.0,
+      "odds_is_sharp": false
     },
     {
       "fixture_id": "538143",
@@ -26192,27 +26242,29 @@
       "pred_combo_prob": 0.8332,
       "pred_over15": 0.8332,
       "pred_under35": 0.595,
-      "correct_combo": null,
+      "correct_combo": false,
       "ov_score": 58.0,
       "ov_edge": 12.7,
       "ov_misalign": null,
       "ov_movement": null,
       "ov_is_sharp": null,
-      "clv": null,
+      "clv": 9.84,
       "pp_result": "12",
       "pp_label": "\ud83d\udd00 1-2",
       "pp_i_casa": 0.0,
       "pp_i_ospite": 6.12,
       "pp_D": -6.12,
       "pp_pct": 27.7,
-      "correct_pp": null,
-      "result": null,
-      "goals_home": null,
-      "goals_away": null,
-      "correct_1x2": null,
-      "correct_over": null,
-      "correct_btts": null,
-      "verified_at": null
+      "correct_pp": false,
+      "result": "X",
+      "goals_home": 1,
+      "goals_away": 1,
+      "correct_1x2": false,
+      "correct_over": false,
+      "correct_btts": true,
+      "verified_at": "2026-05-12T07:52:57.226409",
+      "odds_movement_pct": 1.13,
+      "odds_is_sharp": false
     },
     {
       "fixture_id": "544560",
@@ -26240,27 +26292,29 @@
       "pred_combo_prob": 0.8004,
       "pred_over15": 0.668,
       "pred_under35": 0.8004,
-      "correct_combo": null,
+      "correct_combo": false,
       "ov_score": 61.7,
       "ov_edge": 5.6,
       "ov_misalign": null,
       "ov_movement": null,
       "ov_is_sharp": null,
-      "clv": null,
+      "clv": -0.84,
       "pp_result": "12",
       "pp_label": "\ud83d\udd00 1-2",
       "pp_i_casa": 8.7,
       "pp_i_ospite": 2.9,
       "pp_D": 5.8,
       "pp_pct": 71.2,
-      "correct_pp": null,
-      "result": null,
-      "goals_home": null,
-      "goals_away": null,
-      "correct_1x2": null,
-      "correct_over": null,
-      "correct_btts": null,
-      "verified_at": null
+      "correct_pp": false,
+      "result": "X",
+      "goals_home": 1,
+      "goals_away": 1,
+      "correct_1x2": false,
+      "correct_over": true,
+      "correct_btts": false,
+      "verified_at": "2026-05-12T07:53:04.986394",
+      "odds_movement_pct": 2.89,
+      "odds_is_sharp": false
     },
     {
       "fixture_id": "542665",
@@ -29575,7 +29629,103 @@
       "correct_over": null,
       "correct_btts": null,
       "verified_at": null
+    },
+    {
+      "fixture_id": "538145",
+      "home": "AFC Bournemouth",
+      "away": "Manchester City FC",
+      "league": "Premier League",
+      "comp_code": "PL",
+      "season": "2025/2026",
+      "stage": "REGULAR_SEASON",
+      "matchday": 37,
+      "first_leg": null,
+      "date": "19/05/2026",
+      "time": "19:30",
+      "predicted_at": "2026-05-12T07:48:41.999241",
+      "pred_home": 0.0982,
+      "pred_draw": 0.3307,
+      "pred_away": 0.5711,
+      "pred_over25": 0.5762,
+      "pred_btts": 0.6029,
+      "pred_best": "2",
+      "pred_conf": 0.2147,
+      "pred_raw_conf": 0.2147,
+      "pred_combo_label": "2+O1.5",
+      "pred_combo_leg": "O1.5",
+      "pred_combo_prob": 0.8005,
+      "pred_over15": 0.8005,
+      "pred_under35": 0.6478,
+      "correct_combo": null,
+      "ov_score": null,
+      "ov_edge": null,
+      "ov_misalign": null,
+      "ov_movement": null,
+      "ov_is_sharp": null,
+      "clv": null,
+      "pp_result": "X2",
+      "pp_label": "\ud83d\udee1\ufe0f X2",
+      "pp_i_casa": 5.85,
+      "pp_i_ospite": 9.44,
+      "pp_D": -3.59,
+      "pp_pct": 36.9,
+      "correct_pp": null,
+      "result": null,
+      "goals_home": null,
+      "goals_away": null,
+      "correct_1x2": null,
+      "correct_over": null,
+      "correct_btts": null,
+      "verified_at": null
+    },
+    {
+      "fixture_id": "544570",
+      "home": "Real Madrid CF",
+      "away": "Real Oviedo",
+      "league": "La Liga",
+      "comp_code": "PD",
+      "season": "2025/2026",
+      "stage": "REGULAR_SEASON",
+      "matchday": 36,
+      "first_leg": null,
+      "date": "14/05/2026",
+      "time": "20:30",
+      "predicted_at": "2026-05-12T07:49:09.590402",
+      "pred_home": 0.685,
+      "pred_draw": 0.2659,
+      "pred_away": 0.0491,
+      "pred_over25": 0.6085,
+      "pred_btts": 0.5336,
+      "pred_best": "1",
+      "pred_conf": 0.5092,
+      "pred_raw_conf": 0.5092,
+      "pred_combo_label": "1+O1.5",
+      "pred_combo_leg": "O1.5",
+      "pred_combo_prob": 0.8215,
+      "pred_over15": 0.8215,
+      "pred_under35": 0.6148,
+      "correct_combo": null,
+      "ov_score": 34.4,
+      "ov_edge": -9.3,
+      "ov_misalign": null,
+      "ov_movement": null,
+      "ov_is_sharp": null,
+      "clv": null,
+      "pp_result": "12",
+      "pp_label": "\ud83d\udd00 1-2",
+      "pp_i_casa": 8.1,
+      "pp_i_ospite": 3.46,
+      "pp_D": 4.64,
+      "pp_pct": 66.9,
+      "correct_pp": null,
+      "result": null,
+      "goals_home": null,
+      "goals_away": null,
+      "correct_1x2": null,
+      "correct_over": null,
+      "correct_btts": null,
+      "verified_at": null
     }
   ],
-  "last_updated": "2026-05-11T08:34:44.946395"
+  "last_updated": "2026-05-12T07:53:26.386867"
 }
