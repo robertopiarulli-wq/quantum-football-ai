@@ -26621,7 +26621,8 @@
       "correct_btts": true,
       "verified_at": "2026-05-18T08:52:46.500742",
       "odds_movement_pct": -7.32,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "540703",
@@ -27283,7 +27284,8 @@
       "correct_btts": true,
       "verified_at": "2026-05-18T08:52:46.648749",
       "odds_movement_pct": 7.5,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "537177",
@@ -27333,7 +27335,8 @@
       "correct_btts": false,
       "verified_at": "2026-05-18T08:52:46.794919",
       "odds_movement_pct": -5.31,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "537178",
@@ -27383,7 +27386,8 @@
       "correct_btts": false,
       "verified_at": "2026-05-18T08:52:46.968218",
       "odds_movement_pct": 19.78,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "537179",
@@ -27433,7 +27437,8 @@
       "correct_btts": true,
       "verified_at": "2026-05-18T08:52:47.117333",
       "odds_movement_pct": -2.27,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "537180",
@@ -27483,7 +27488,8 @@
       "correct_btts": false,
       "verified_at": "2026-05-18T08:52:47.300977",
       "odds_movement_pct": 6.84,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "537181",
@@ -27533,7 +27539,8 @@
       "correct_btts": true,
       "verified_at": "2026-05-18T08:52:47.458813",
       "odds_movement_pct": -2.19,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "537182",
@@ -27583,7 +27590,8 @@
       "correct_btts": true,
       "verified_at": "2026-05-18T08:52:47.604009",
       "odds_movement_pct": 26.35,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "537183",
@@ -27633,7 +27641,8 @@
       "correct_btts": false,
       "verified_at": "2026-05-18T08:52:47.745050",
       "odds_movement_pct": 18.97,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "537184",
@@ -27683,7 +27692,8 @@
       "correct_btts": true,
       "verified_at": "2026-05-18T08:52:47.889731",
       "odds_movement_pct": 29.23,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "544563",
@@ -27886,7 +27896,8 @@
       "correct_btts": true,
       "verified_at": "2026-05-18T08:52:54.972955",
       "odds_movement_pct": 1.87,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "538148",
@@ -27936,7 +27947,8 @@
       "correct_btts": true,
       "verified_at": "2026-05-18T08:52:55.134727",
       "odds_movement_pct": 1.79,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "538150",
@@ -27986,7 +27998,8 @@
       "correct_btts": true,
       "verified_at": "2026-05-18T08:52:55.289217",
       "odds_movement_pct": 6.21,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "544562",
@@ -28495,7 +28508,8 @@
       "correct_btts": true,
       "verified_at": "2026-05-18T08:52:37.719682",
       "odds_movement_pct": -0.73,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "538151",
@@ -28545,7 +28559,8 @@
       "correct_btts": false,
       "verified_at": "2026-05-18T08:52:55.440840",
       "odds_movement_pct": 9.55,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "538154",
@@ -28595,7 +28610,8 @@
       "correct_btts": true,
       "verified_at": "2026-05-18T08:52:55.585714",
       "odds_movement_pct": 13.24,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "538153",
@@ -28645,7 +28661,8 @@
       "correct_btts": true,
       "verified_at": "2026-05-18T08:52:55.729865",
       "odds_movement_pct": 13.57,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "538147",
@@ -28673,27 +28690,29 @@
       "pred_combo_prob": 0.8685,
       "pred_over15": 0.8685,
       "pred_under35": 0.5276,
-      "correct_combo": null,
+      "correct_combo": false,
       "ov_score": 31.6,
       "ov_edge": -21.0,
       "ov_misalign": null,
       "ov_movement": null,
       "ov_is_sharp": null,
-      "clv": null,
+      "clv": -24.99,
       "pp_result": "1",
       "pp_label": "\ud83c\udfaf FISSA 1",
       "pp_i_casa": 9.45,
       "pp_i_ospite": 0.74,
       "pp_D": 8.71,
       "pp_pct": 81.8,
-      "correct_pp": null,
-      "result": null,
-      "goals_home": null,
-      "goals_away": null,
-      "correct_1x2": null,
-      "correct_over": null,
-      "correct_btts": null,
-      "verified_at": null
+      "correct_pp": true,
+      "result": "1",
+      "goals_home": 1,
+      "goals_away": 0,
+      "correct_1x2": true,
+      "correct_over": false,
+      "correct_btts": false,
+      "verified_at": "2026-05-19T08:36:46.577318",
+      "odds_movement_pct": 0.0,
+      "odds_is_sharp": false
     },
     {
       "fixture_id": "544561",
@@ -29047,7 +29066,8 @@
       "correct_btts": false,
       "verified_at": "2026-05-18T08:53:02.617507",
       "odds_movement_pct": 5.95,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "542704",
@@ -29145,7 +29165,8 @@
       "correct_btts": true,
       "verified_at": "2026-05-18T08:53:02.768342",
       "odds_movement_pct": -22.15,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "542706",
@@ -29195,7 +29216,8 @@
       "correct_btts": false,
       "verified_at": "2026-05-18T08:53:02.921896",
       "odds_movement_pct": -2.94,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "542707",
@@ -29245,7 +29267,8 @@
       "correct_btts": false,
       "verified_at": "2026-05-18T08:53:03.072208",
       "odds_movement_pct": -8.47,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "542708",
@@ -29295,7 +29318,8 @@
       "correct_btts": true,
       "verified_at": "2026-05-18T08:53:03.215878",
       "odds_movement_pct": -0.97,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "542709",
@@ -29345,7 +29369,8 @@
       "correct_btts": false,
       "verified_at": "2026-05-18T08:53:03.396081",
       "odds_movement_pct": 0.0,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "542710",
@@ -29395,7 +29420,8 @@
       "correct_btts": true,
       "verified_at": "2026-05-18T08:53:03.537691",
       "odds_movement_pct": 10.21,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "537739",
@@ -29445,7 +29471,8 @@
       "correct_btts": false,
       "verified_at": "2026-05-18T08:52:37.909749",
       "odds_movement_pct": 0.67,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "537740",
@@ -29495,7 +29522,8 @@
       "correct_btts": true,
       "verified_at": "2026-05-18T08:52:38.073939",
       "odds_movement_pct": 7.87,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "537741",
@@ -29545,7 +29573,8 @@
       "correct_btts": true,
       "verified_at": "2026-05-18T08:52:38.229519",
       "odds_movement_pct": 10.7,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "537742",
@@ -29595,7 +29624,8 @@
       "correct_btts": true,
       "verified_at": "2026-05-18T08:52:38.387808",
       "odds_movement_pct": 1.48,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "537743",
@@ -29645,7 +29675,8 @@
       "correct_btts": false,
       "verified_at": "2026-05-18T08:52:38.539785",
       "odds_movement_pct": -13.52,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "537744",
@@ -29695,7 +29726,8 @@
       "correct_btts": true,
       "verified_at": "2026-05-18T08:52:38.694424",
       "odds_movement_pct": 4.67,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "537745",
@@ -29745,7 +29777,8 @@
       "correct_btts": false,
       "verified_at": "2026-05-18T08:52:39.040855",
       "odds_movement_pct": -0.32,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "537746",
@@ -29795,7 +29828,8 @@
       "correct_btts": true,
       "verified_at": "2026-05-18T08:52:39.188231",
       "odds_movement_pct": 0.51,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "538145",
@@ -29944,7 +29978,8 @@
       "correct_btts": false,
       "verified_at": "2026-05-18T08:53:10.755223",
       "odds_movement_pct": -1.75,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "544572",
@@ -29994,7 +30029,8 @@
       "correct_btts": false,
       "verified_at": "2026-05-18T08:53:10.894448",
       "odds_movement_pct": 1.12,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "544573",
@@ -30044,7 +30080,8 @@
       "correct_btts": true,
       "verified_at": "2026-05-18T08:53:11.072475",
       "odds_movement_pct": -4.35,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "538149",
@@ -30142,7 +30179,8 @@
       "correct_btts": true,
       "verified_at": "2026-05-18T08:53:11.228742",
       "odds_movement_pct": 0.43,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "544575",
@@ -30192,7 +30230,8 @@
       "correct_btts": false,
       "verified_at": "2026-05-18T08:53:11.370690",
       "odds_movement_pct": -0.46,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "544576",
@@ -30242,7 +30281,8 @@
       "correct_btts": true,
       "verified_at": "2026-05-18T08:53:11.513935",
       "odds_movement_pct": -5.67,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "544577",
@@ -30292,7 +30332,8 @@
       "correct_btts": true,
       "verified_at": "2026-05-18T08:53:11.662996",
       "odds_movement_pct": 1.82,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "542711",
@@ -30342,7 +30383,8 @@
       "correct_btts": true,
       "verified_at": "2026-05-18T08:53:03.680208",
       "odds_movement_pct": 1.09,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "544578",
@@ -30392,7 +30434,8 @@
       "correct_btts": true,
       "verified_at": "2026-05-18T08:53:11.814400",
       "odds_movement_pct": -0.26,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "544579",
@@ -30442,7 +30485,8 @@
       "correct_btts": true,
       "verified_at": "2026-05-18T08:53:11.962155",
       "odds_movement_pct": 0.93,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "544580",
@@ -30492,7 +30536,8 @@
       "correct_btts": false,
       "verified_at": "2026-05-18T08:53:12.305929",
       "odds_movement_pct": 0.92,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "557983",
@@ -31357,7 +31402,535 @@
       "correct_over": null,
       "correct_btts": null,
       "verified_at": null
+    },
+    {
+      "fixture_id": "538162",
+      "home": "Nottingham Forest FC",
+      "away": "AFC Bournemouth",
+      "league": "Premier League",
+      "comp_code": "PL",
+      "season": "2025/2026",
+      "stage": "REGULAR_SEASON",
+      "matchday": 38,
+      "first_leg": null,
+      "date": "24/05/2026",
+      "time": "16:00",
+      "predicted_at": "2026-05-19T08:33:43.146063",
+      "pred_home": 0.2111,
+      "pred_draw": 0.3587,
+      "pred_away": 0.4302,
+      "pred_over25": 0.6028,
+      "pred_btts": 0.6234,
+      "pred_best": "2",
+      "pred_conf": 0.188,
+      "pred_raw_conf": 0.188,
+      "pred_combo_label": "X+O1.5",
+      "pred_combo_leg": "O1.5",
+      "pred_combo_prob": 0.8179,
+      "pred_over15": 0.8179,
+      "pred_under35": 0.6207,
+      "correct_combo": null,
+      "ov_score": 30.0,
+      "ov_edge": -1.0,
+      "ov_misalign": null,
+      "ov_movement": null,
+      "ov_is_sharp": null,
+      "clv": null,
+      "pp_result": "X2",
+      "pp_label": "\ud83d\udee1\ufe0f X2",
+      "pp_i_casa": 4.8,
+      "pp_i_ospite": 8.2,
+      "pp_D": -3.4,
+      "pp_pct": 37.6,
+      "correct_pp": null,
+      "result": null,
+      "goals_home": null,
+      "goals_away": null,
+      "correct_1x2": null,
+      "correct_over": null,
+      "correct_btts": null,
+      "verified_at": null
+    },
+    {
+      "fixture_id": "544581",
+      "home": "Deportivo Alav\u00e9s",
+      "away": "Rayo Vallecano de Madrid",
+      "league": "La Liga",
+      "comp_code": "PD",
+      "season": "2025/2026",
+      "stage": "REGULAR_SEASON",
+      "matchday": 38,
+      "first_leg": null,
+      "date": "23/05/2026",
+      "time": "20:00",
+      "predicted_at": "2026-05-19T08:34:06.272277",
+      "pred_home": 0.391,
+      "pred_draw": 0.3098,
+      "pred_away": 0.2992,
+      "pred_over25": 0.4562,
+      "pred_btts": 0.4981,
+      "pred_best": "1",
+      "pred_conf": 0.3894,
+      "pred_raw_conf": 0.3894,
+      "pred_combo_label": "X+U3.5",
+      "pred_combo_leg": "U3.5",
+      "pred_combo_prob": 0.7576,
+      "pred_over15": 0.7127,
+      "pred_under35": 0.7576,
+      "correct_combo": null,
+      "ov_score": 35.2,
+      "ov_edge": -3.1,
+      "ov_misalign": null,
+      "ov_movement": null,
+      "ov_is_sharp": null,
+      "clv": null,
+      "pp_result": "1X",
+      "pp_label": "\ud83d\udee1\ufe0f 1X",
+      "pp_i_casa": 6.0,
+      "pp_i_ospite": 3.84,
+      "pp_D": 2.16,
+      "pp_pct": 57.9,
+      "correct_pp": null,
+      "result": null,
+      "goals_home": null,
+      "goals_away": null,
+      "correct_1x2": null,
+      "correct_over": null,
+      "correct_btts": null,
+      "verified_at": null
+    },
+    {
+      "fixture_id": "544582",
+      "home": "Real Betis Balompi\u00e9",
+      "away": "Levante UD",
+      "league": "La Liga",
+      "comp_code": "PD",
+      "season": "2025/2026",
+      "stage": "REGULAR_SEASON",
+      "matchday": 38,
+      "first_leg": null,
+      "date": "23/05/2026",
+      "time": "20:00",
+      "predicted_at": "2026-05-19T08:34:06.840884",
+      "pred_home": 0.3882,
+      "pred_draw": 0.3066,
+      "pred_away": 0.3052,
+      "pred_over25": 0.5317,
+      "pred_btts": 0.5385,
+      "pred_best": "1",
+      "pred_conf": 0.39,
+      "pred_raw_conf": 0.39,
+      "pred_combo_label": "X+O1.5",
+      "pred_combo_leg": "O1.5",
+      "pred_combo_prob": 0.7698,
+      "pred_over15": 0.7698,
+      "pred_under35": 0.6908,
+      "correct_combo": null,
+      "ov_score": 35.7,
+      "ov_edge": -2.7,
+      "ov_misalign": null,
+      "ov_movement": null,
+      "ov_is_sharp": null,
+      "clv": null,
+      "pp_result": "1X",
+      "pp_label": "\ud83d\udee1\ufe0f 1X",
+      "pp_i_casa": 7.05,
+      "pp_i_ospite": 3.8,
+      "pp_D": 3.25,
+      "pp_pct": 61.9,
+      "correct_pp": null,
+      "result": null,
+      "goals_home": null,
+      "goals_away": null,
+      "correct_1x2": null,
+      "correct_over": null,
+      "correct_btts": null,
+      "verified_at": null
+    },
+    {
+      "fixture_id": "544583",
+      "home": "RC Celta de Vigo",
+      "away": "Sevilla FC",
+      "league": "La Liga",
+      "comp_code": "PD",
+      "season": "2025/2026",
+      "stage": "REGULAR_SEASON",
+      "matchday": 38,
+      "first_leg": null,
+      "date": "23/05/2026",
+      "time": "20:00",
+      "predicted_at": "2026-05-19T08:34:07.474403",
+      "pred_home": 0.2559,
+      "pred_draw": 0.2954,
+      "pred_away": 0.4487,
+      "pred_over25": 0.6021,
+      "pred_btts": 0.6171,
+      "pred_best": "2",
+      "pred_conf": 0.4142,
+      "pred_raw_conf": 0.4142,
+      "pred_combo_label": "X+O1.5",
+      "pred_combo_leg": "O1.5",
+      "pred_combo_prob": 0.8174,
+      "pred_over15": 0.8174,
+      "pred_under35": 0.6215,
+      "correct_combo": null,
+      "ov_score": 59.4,
+      "ov_edge": 25.2,
+      "ov_misalign": null,
+      "ov_movement": null,
+      "ov_is_sharp": null,
+      "clv": null,
+      "pp_result": "X",
+      "pp_label": "\u2696\ufe0f FISSA X",
+      "pp_i_casa": 2.55,
+      "pp_i_ospite": 2.76,
+      "pp_D": -0.21,
+      "pp_pct": 49.2,
+      "correct_pp": null,
+      "result": null,
+      "goals_home": null,
+      "goals_away": null,
+      "correct_1x2": null,
+      "correct_over": null,
+      "correct_btts": null,
+      "verified_at": null
+    },
+    {
+      "fixture_id": "544584",
+      "home": "RCD Espanyol de Barcelona",
+      "away": "Real Sociedad de F\u00fatbol",
+      "league": "La Liga",
+      "comp_code": "PD",
+      "season": "2025/2026",
+      "stage": "REGULAR_SEASON",
+      "matchday": 38,
+      "first_leg": null,
+      "date": "23/05/2026",
+      "time": "20:00",
+      "predicted_at": "2026-05-19T08:34:08.063805",
+      "pred_home": 0.3562,
+      "pred_draw": 0.305,
+      "pred_away": 0.3388,
+      "pred_over25": 0.4778,
+      "pred_btts": 0.525,
+      "pred_best": "X",
+      "pred_conf": 0.3772,
+      "pred_raw_conf": 0.3772,
+      "pred_combo_label": "X+U3.5",
+      "pred_combo_leg": "U3.5",
+      "pred_combo_prob": 0.7393,
+      "pred_over15": 0.7297,
+      "pred_under35": 0.7393,
+      "correct_combo": null,
+      "ov_score": 36.5,
+      "ov_edge": 3.3,
+      "ov_misalign": null,
+      "ov_movement": null,
+      "ov_is_sharp": null,
+      "clv": null,
+      "pp_result": "X",
+      "pp_label": "\u2696\ufe0f FISSA X",
+      "pp_i_casa": 3.45,
+      "pp_i_ospite": 2.62,
+      "pp_D": 0.83,
+      "pp_pct": 53.0,
+      "correct_pp": null,
+      "result": null,
+      "goals_home": null,
+      "goals_away": null,
+      "correct_1x2": null,
+      "correct_over": null,
+      "correct_btts": null,
+      "verified_at": null
+    },
+    {
+      "fixture_id": "544585",
+      "home": "Getafe CF",
+      "away": "CA Osasuna",
+      "league": "La Liga",
+      "comp_code": "PD",
+      "season": "2025/2026",
+      "stage": "REGULAR_SEASON",
+      "matchday": 38,
+      "first_leg": null,
+      "date": "23/05/2026",
+      "time": "20:00",
+      "predicted_at": "2026-05-19T08:34:08.732679",
+      "pred_home": 0.4976,
+      "pred_draw": 0.2985,
+      "pred_away": 0.2039,
+      "pred_over25": 0.3152,
+      "pred_btts": 0.3804,
+      "pred_best": "1",
+      "pred_conf": 0.4253,
+      "pred_raw_conf": 0.4253,
+      "pred_combo_label": "1+U3.5",
+      "pred_combo_leg": "U3.5",
+      "pred_combo_prob": 0.8625,
+      "pred_over15": 0.5858,
+      "pred_under35": 0.8625,
+      "correct_combo": null,
+      "ov_score": 75.4,
+      "ov_edge": 14.1,
+      "ov_misalign": null,
+      "ov_movement": null,
+      "ov_is_sharp": null,
+      "clv": null,
+      "pp_result": "12",
+      "pp_label": "\ud83d\udd00 1-2",
+      "pp_i_casa": 6.75,
+      "pp_i_ospite": 1.4,
+      "pp_D": 5.35,
+      "pp_pct": 69.5,
+      "correct_pp": null,
+      "result": null,
+      "goals_home": null,
+      "goals_away": null,
+      "correct_1x2": null,
+      "correct_over": null,
+      "correct_btts": null,
+      "verified_at": null
+    },
+    {
+      "fixture_id": "544586",
+      "home": "RCD Mallorca",
+      "away": "Real Oviedo",
+      "league": "La Liga",
+      "comp_code": "PD",
+      "season": "2025/2026",
+      "stage": "REGULAR_SEASON",
+      "matchday": 38,
+      "first_leg": null,
+      "date": "23/05/2026",
+      "time": "20:00",
+      "predicted_at": "2026-05-19T08:34:09.378535",
+      "pred_home": 0.4634,
+      "pred_draw": 0.3047,
+      "pred_away": 0.2319,
+      "pred_over25": 0.5586,
+      "pred_btts": 0.5508,
+      "pred_best": "1",
+      "pred_conf": 0.4138,
+      "pred_raw_conf": 0.4138,
+      "pred_combo_label": "X+O1.5",
+      "pred_combo_leg": "O1.5",
+      "pred_combo_prob": 0.7886,
+      "pred_over15": 0.7886,
+      "pred_under35": 0.6651,
+      "correct_combo": null,
+      "ov_score": 34.0,
+      "ov_edge": -18.3,
+      "ov_misalign": null,
+      "ov_movement": null,
+      "ov_is_sharp": null,
+      "clv": null,
+      "pp_result": "12",
+      "pp_label": "\ud83d\udd00 1-2",
+      "pp_i_casa": 8.7,
+      "pp_i_ospite": 3.56,
+      "pp_D": 5.14,
+      "pp_pct": 68.8,
+      "correct_pp": null,
+      "result": null,
+      "goals_home": null,
+      "goals_away": null,
+      "correct_1x2": null,
+      "correct_over": null,
+      "correct_btts": null,
+      "verified_at": null
+    },
+    {
+      "fixture_id": "544587",
+      "home": "Real Madrid CF",
+      "away": "Athletic Club",
+      "league": "La Liga",
+      "comp_code": "PD",
+      "season": "2025/2026",
+      "stage": "REGULAR_SEASON",
+      "matchday": 38,
+      "first_leg": null,
+      "date": "23/05/2026",
+      "time": "20:00",
+      "predicted_at": "2026-05-19T08:34:10.055409",
+      "pred_home": 0.6914,
+      "pred_draw": 0.2603,
+      "pred_away": 0.0483,
+      "pred_over25": 0.5712,
+      "pred_btts": 0.5244,
+      "pred_best": "1",
+      "pred_conf": 0.5114,
+      "pred_raw_conf": 0.5114,
+      "pred_combo_label": "1+O1.5",
+      "pred_combo_leg": "O1.5",
+      "pred_combo_prob": 0.7971,
+      "pred_over15": 0.7971,
+      "pred_under35": 0.6528,
+      "correct_combo": null,
+      "ov_score": 62.9,
+      "ov_edge": 5.7,
+      "ov_misalign": null,
+      "ov_movement": null,
+      "ov_is_sharp": null,
+      "clv": null,
+      "pp_result": "12",
+      "pp_label": "\ud83d\udd00 1-2",
+      "pp_i_casa": 10.65,
+      "pp_i_ospite": 2.76,
+      "pp_D": 7.89,
+      "pp_pct": 78.8,
+      "correct_pp": null,
+      "result": null,
+      "goals_home": null,
+      "goals_away": null,
+      "correct_1x2": null,
+      "correct_over": null,
+      "correct_btts": null,
+      "verified_at": null
+    },
+    {
+      "fixture_id": "544589",
+      "home": "Valencia CF",
+      "away": "FC Barcelona",
+      "league": "La Liga",
+      "comp_code": "PD",
+      "season": "2025/2026",
+      "stage": "REGULAR_SEASON",
+      "matchday": 38,
+      "first_leg": null,
+      "date": "23/05/2026",
+      "time": "20:00",
+      "predicted_at": "2026-05-19T08:34:10.706385",
+      "pred_home": 0.05,
+      "pred_draw": 0.2633,
+      "pred_away": 0.6867,
+      "pred_over25": 0.5644,
+      "pred_btts": 0.5874,
+      "pred_best": "2",
+      "pred_conf": 0.5041,
+      "pred_raw_conf": 0.5041,
+      "pred_combo_label": "2+O1.5",
+      "pred_combo_leg": "O1.5",
+      "pred_combo_prob": 0.7925,
+      "pred_over15": 0.7925,
+      "pred_under35": 0.6596,
+      "correct_combo": null,
+      "ov_score": 74.7,
+      "ov_edge": 17.9,
+      "ov_misalign": null,
+      "ov_movement": null,
+      "ov_is_sharp": null,
+      "clv": null,
+      "pp_result": "12",
+      "pp_label": "\ud83d\udd00 1-2",
+      "pp_i_casa": 5.25,
+      "pp_i_ospite": 9.42,
+      "pp_D": -4.17,
+      "pp_pct": 34.8,
+      "correct_pp": null,
+      "result": null,
+      "goals_home": null,
+      "goals_away": null,
+      "correct_1x2": null,
+      "correct_over": null,
+      "correct_btts": null,
+      "verified_at": null
+    },
+    {
+      "fixture_id": "544590",
+      "home": "Girona FC",
+      "away": "Elche CF",
+      "league": "La Liga",
+      "comp_code": "PD",
+      "season": "2025/2026",
+      "stage": "REGULAR_SEASON",
+      "matchday": 38,
+      "first_leg": null,
+      "date": "23/05/2026",
+      "time": "20:00",
+      "predicted_at": "2026-05-19T08:34:11.649982",
+      "pred_home": 0.3468,
+      "pred_draw": 0.3066,
+      "pred_away": 0.3467,
+      "pred_over25": 0.5317,
+      "pred_btts": 0.5603,
+      "pred_best": "X",
+      "pred_conf": 0.3575,
+      "pred_raw_conf": 0.3575,
+      "pred_combo_label": "X+O1.5",
+      "pred_combo_leg": "O1.5",
+      "pred_combo_prob": 0.7698,
+      "pred_over15": 0.7698,
+      "pred_under35": 0.6908,
+      "correct_combo": null,
+      "ov_score": 54.5,
+      "ov_edge": 6.9,
+      "ov_misalign": null,
+      "ov_movement": null,
+      "ov_is_sharp": null,
+      "clv": null,
+      "pp_result": "1X",
+      "pp_label": "\ud83d\udee1\ufe0f 1X",
+      "pp_i_casa": 5.55,
+      "pp_i_ospite": 2.5,
+      "pp_D": 3.05,
+      "pp_pct": 61.1,
+      "correct_pp": null,
+      "result": null,
+      "goals_home": null,
+      "goals_away": null,
+      "correct_1x2": null,
+      "correct_over": null,
+      "correct_btts": null,
+      "verified_at": null
+    },
+    {
+      "fixture_id": "544588",
+      "home": "Villarreal CF",
+      "away": "Club Atl\u00e9tico de Madrid",
+      "league": "La Liga",
+      "comp_code": "PD",
+      "season": "2025/2026",
+      "stage": "REGULAR_SEASON",
+      "matchday": 38,
+      "first_leg": null,
+      "date": "24/05/2026",
+      "time": "20:00",
+      "predicted_at": "2026-05-19T08:34:12.326586",
+      "pred_home": 0.4502,
+      "pred_draw": 0.2994,
+      "pred_away": 0.2504,
+      "pred_over25": 0.5575,
+      "pred_btts": 0.5602,
+      "pred_best": "1",
+      "pred_conf": 0.3411,
+      "pred_raw_conf": 0.3411,
+      "pred_combo_label": "X+O1.5",
+      "pred_combo_leg": "O1.5",
+      "pred_combo_prob": 0.7878,
+      "pred_over15": 0.7878,
+      "pred_under35": 0.6663,
+      "correct_combo": null,
+      "ov_score": 65.7,
+      "ov_edge": 5.9,
+      "ov_misalign": null,
+      "ov_movement": null,
+      "ov_is_sharp": null,
+      "clv": null,
+      "pp_result": "12",
+      "pp_label": "\ud83d\udd00 1-2",
+      "pp_i_casa": 10.35,
+      "pp_i_ospite": 5.94,
+      "pp_D": 4.41,
+      "pp_pct": 66.1,
+      "correct_pp": null,
+      "result": null,
+      "goals_home": null,
+      "goals_away": null,
+      "correct_1x2": null,
+      "correct_over": null,
+      "correct_btts": null,
+      "verified_at": null
     }
   ],
-  "last_updated": "2026-05-18T08:53:19.505738"
+  "last_updated": "2026-05-19T08:37:08.730416"
 }
