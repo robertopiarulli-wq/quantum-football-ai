@@ -1,1 +1,66 @@
-ghghg
+name: Quantum Football AI - Daily Predictions
+
+"on":
+  schedule:
+    - cron: "0 5 * * *"
+  workflow_dispatch:
+
+jobs:
+  predict:
+    name: Run Quantum Predictions
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install requests numpy
+
+      - name: Run quantum predictions
+        env:
+          API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
+          FOOTBALL_DATA_KEY: ${{ secrets.FOOTBALL_DATA_KEY }}
+          IBM_QUANTUM_TOKEN: ${{ secrets.IBM_QUANTUM_TOKEN }}
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT: ${{ secrets.TELEGRAM_CHAT }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASS: ${{ secrets.SMTP_PASS }}
+          SMTP_TO: ${{ secrets.SMTP_TO }}
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+        run: python quantum_predict_v3.py
+
+      - name: Commit risultati nel repo
+        run: |
+          git config user.name "Quantum Football Bot"
+          git config user.email "bot@quantum-football.ai"
+          git add -f predictions_output.json || true
+          git add -f weights.json || true
+          git add -f fixtures_today.json || true
+          git add -f history.json || true
+          git add -f elo_ratings.json || true
+          git status
+          git commit -m "🤖 Previsioni $(date '+%d/%m/%Y %H:%M')" || echo "Nessuna modifica da committare"
+          git push https://x-access-token:${{ github.token }}@github.com/robertopiarulli-wq/quantum-football-ai.git || echo "PUSH FALLITO"
+
+      - name: Upload artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: predictions-${{ github.run_number }}
+          path: |
+            predictions_output.json
+            weights.json
+            fixtures_today.json
+          retention-days: 30
+          if-no-files-found: warn
