@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-26T08:35:27.565197",
-  "date": "26/05/2026",
+  "generated_at": "2026-05-27T08:42:54.534287",
+  "date": "27/05/2026",
   "total": 1,
   "fixtures": [
     {
@@ -11,21 +11,21 @@
       "date": "30/05/2026",
       "time": "17:00",
       "pred": {
-        "home": 0.5276,
-        "draw": 0.2432,
-        "away": 0.2292,
-        "dc1x": 0.7708,
-        "dcx2": 0.4724,
-        "dc12": 0.7568,
+        "home": 0.517,
+        "draw": 0.2446,
+        "away": 0.2384,
+        "dc1x": 0.7616,
+        "dcx2": 0.483,
+        "dc12": 0.7554,
         "over25": 0.7363,
         "under25": 0.2637,
         "bttsY": 0.7269,
         "bttsN": 0.2731,
         "xg_h": "1.86",
         "xg_a": "1.97",
-        "conf": 0.6552,
+        "conf": 0.6498,
         "best": "1",
-        "bestP": 0.5276,
+        "bestP": 0.517,
         "combo": "1+O1.5",
         "comboP": 0.8954
       },
@@ -38,26 +38,26 @@
         "pp_pct": 50.8
       },
       "ov": {
-        "score": 77.1,
-        "pin1": 2.38,
-        "pinX": 3.31,
-        "pin2": 3.2,
-        "novig_1": 40.6,
-        "novig_X": 29.2,
+        "score": 77.7,
+        "pin1": 2.36,
+        "pinX": 3.36,
+        "pin2": 3.21,
+        "novig_1": 41.0,
+        "novig_X": 28.8,
         "novig_2": 30.2,
-        "mkt_prob": 40.6,
-        "vig_pct": 3.48,
-        "edge": 12.2,
+        "mkt_prob": 41.0,
+        "vig_pct": 3.29,
+        "edge": 10.7,
         "misalign": null,
         "market_fav": "1",
         "components": {
           "value": 40.0,
           "coherence": 30.0,
           "movement": 2.0,
-          "liquidity": 5.1
+          "liquidity": 5.7
         },
-        "movement_pct": 3.93,
-        "surprise_idx": 0.18
+        "movement_pct": 3.06,
+        "surprise_idx": 0.184
       }
     }
   ]
