@@ -50,19 +50,19 @@
     "ov_score": 77.7,
     "ov_details": {
       "pinnacle_1": 2.36,
-      "pinnacle_X": 3.36,
-      "pinnacle_2": 3.21,
+      "pinnacle_X": 3.35,
+      "pinnacle_2": 3.22,
       "novig_1": 41.0,
-      "novig_X": 28.8,
-      "novig_2": 30.2,
-      "vig_pct": 3.29,
+      "novig_X": 28.9,
+      "novig_2": 30.1,
+      "vig_pct": 3.28,
       "our_prob": 51.7,
       "mkt_prob": 41.0,
       "value_edge": 10.7,
       "market_favorite": "1",
       "movement_pct": 3.06,
       "is_sharp": false,
-      "snapshots": 5,
+      "snapshots": 6,
       "open_home": 2.29,
       "ov_score": 77.7,
       "components": {
@@ -73,6 +73,6 @@
       }
     },
     "surprise_idx": 0.184,
-    "generated_at": "2026-05-27T08:41:16.685630"
+    "generated_at": "2026-05-28T08:44:46.871436"
   }
 ]

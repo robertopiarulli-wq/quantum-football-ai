@@ -25794,27 +25794,29 @@
       "pred_combo_prob": 0.6306,
       "pred_over15": 0.8238,
       "pred_under35": 0.6109,
-      "correct_combo": null,
+      "correct_combo": false,
       "ov_score": 55.2,
       "ov_edge": 15.6,
       "ov_misalign": null,
       "ov_movement": null,
       "ov_is_sharp": null,
-      "clv": null,
+      "clv": -19.98,
       "pp_result": "X2",
       "pp_label": "\ud83d\udee1\ufe0f X2",
       "pp_i_casa": 3.15,
       "pp_i_ospite": 5.82,
       "pp_D": -2.67,
       "pp_pct": 40.3,
-      "correct_pp": null,
-      "result": null,
-      "goals_home": null,
-      "goals_away": null,
-      "correct_1x2": null,
-      "correct_over": null,
-      "correct_btts": null,
-      "verified_at": null
+      "correct_pp": false,
+      "result": "1",
+      "goals_home": 2,
+      "goals_away": 0,
+      "correct_1x2": false,
+      "correct_over": false,
+      "correct_btts": false,
+      "verified_at": "2026-05-28T08:46:34.001550",
+      "odds_movement_pct": 3.64,
+      "odds_is_sharp": false
     },
     {
       "fixture_id": "537736",
@@ -32174,5 +32176,5 @@
       "verified_at": null
     }
   ],
-  "last_updated": "2026-05-27T08:43:15.515907"
+  "last_updated": "2026-05-28T08:46:48.051368"
 }
