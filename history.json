@@ -25816,7 +25816,8 @@
       "correct_btts": false,
       "verified_at": "2026-05-28T08:46:34.001550",
       "odds_movement_pct": 3.64,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "537736",
@@ -32176,5 +32177,5 @@
       "verified_at": null
     }
   ],
-  "last_updated": "2026-05-28T08:46:48.051368"
+  "last_updated": "2026-05-29T06:50:21.408442"
 }
