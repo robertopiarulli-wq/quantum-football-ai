@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-29T08:45:41.991403",
-  "date": "29/05/2026",
+  "generated_at": "2026-05-30T07:44:59.063709",
+  "date": "30/05/2026",
   "total": 1,
   "fixtures": [
     {
@@ -38,26 +38,26 @@
         "pp_pct": 50.8
       },
       "ov": {
-        "score": 77.7,
-        "pin1": 2.36,
-        "pinX": 3.37,
-        "pin2": 3.2,
-        "novig_1": 41.0,
-        "novig_X": 28.7,
-        "novig_2": 30.2,
-        "mkt_prob": 41.0,
-        "vig_pct": 3.3,
-        "edge": 10.7,
+        "score": 81.5,
+        "pin1": 2.46,
+        "pinX": 3.34,
+        "pin2": 3.17,
+        "novig_1": 39.8,
+        "novig_X": 29.3,
+        "novig_2": 30.9,
+        "mkt_prob": 39.8,
+        "vig_pct": 2.14,
+        "edge": 11.9,
         "misalign": null,
         "market_fav": "1",
         "components": {
           "value": 40.0,
           "coherence": 30.0,
           "movement": 2.0,
-          "liquidity": 5.7
+          "liquidity": 9.5
         },
-        "movement_pct": 3.06,
-        "surprise_idx": 0.184
+        "movement_pct": 7.42,
+        "surprise_idx": 0.17
       }
     }
   ]
