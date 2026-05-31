@@ -1,64 +1,6 @@
 {
-  "generated_at": "2026-05-30T07:44:59.063709",
-  "date": "30/05/2026",
-  "total": 1,
-  "fixtures": [
-    {
-      "home": "Paris Saint-Germain FC",
-      "away": "Arsenal FC",
-      "league": "Champions League",
-      "fixture_id": 552096,
-      "date": "30/05/2026",
-      "time": "17:00",
-      "pred": {
-        "home": 0.517,
-        "draw": 0.2446,
-        "away": 0.2384,
-        "dc1x": 0.7616,
-        "dcx2": 0.483,
-        "dc12": 0.7554,
-        "over25": 0.7363,
-        "under25": 0.2637,
-        "bttsY": 0.7269,
-        "bttsN": 0.2731,
-        "xg_h": "1.86",
-        "xg_a": "1.97",
-        "conf": 0.6498,
-        "best": "1",
-        "bestP": 0.517,
-        "combo": "1+O1.5",
-        "comboP": 0.8954
-      },
-      "pp": {
-        "pp_i_casa": 9.75,
-        "pp_i_ospite": 9.54,
-        "pp_D": 0.21,
-        "pp_result": "X",
-        "pp_label": "\u2696\ufe0f FISSA X",
-        "pp_pct": 50.8
-      },
-      "ov": {
-        "score": 81.5,
-        "pin1": 2.46,
-        "pinX": 3.34,
-        "pin2": 3.17,
-        "novig_1": 39.8,
-        "novig_X": 29.3,
-        "novig_2": 30.9,
-        "mkt_prob": 39.8,
-        "vig_pct": 2.14,
-        "edge": 11.9,
-        "misalign": null,
-        "market_fav": "1",
-        "components": {
-          "value": 40.0,
-          "coherence": 30.0,
-          "movement": 2.0,
-          "liquidity": 9.5
-        },
-        "movement_pct": 7.42,
-        "surprise_idx": 0.17
-      }
-    }
-  ]
+  "generated_at": "2026-05-31T08:18:21.952881",
+  "date": "31/05/2026",
+  "total": 0,
+  "fixtures": []
 }
