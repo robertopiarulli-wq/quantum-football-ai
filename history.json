@@ -32176,8 +32176,9 @@
       "correct_btts": true,
       "verified_at": "2026-05-31T08:18:35.764805",
       "odds_movement_pct": 7.42,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     }
   ],
-  "last_updated": "2026-05-31T08:18:36.367028"
+  "last_updated": "2026-06-01T10:25:04.518118"
 }
