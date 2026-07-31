@@ -1,6 +1,116 @@
 {
-  "generated_at": "2026-07-30T07:37:01.601915",
-  "date": "30/07/2026",
-  "total": 0,
-  "fixtures": []
+  "generated_at": "2026-07-31T07:54:03.838310",
+  "date": "31/07/2026",
+  "total": 2,
+  "fixtures": [
+    {
+      "home": "SC Cambuur-Leeuwarden",
+      "away": "SBV Excelsior",
+      "league": "Eredivisie",
+      "fixture_id": 558214,
+      "date": "07/08/2026",
+      "time": "19:00",
+      "pred": {
+        "home": 0.4329,
+        "draw": 0.2984,
+        "away": 0.2687,
+        "dc1x": 0.7313,
+        "dcx2": 0.5671,
+        "dc12": 0.7016,
+        "over25": 0.5185,
+        "under25": 0.4815,
+        "bttsY": 0.5582,
+        "bttsN": 0.4418,
+        "xg_h": "1.38",
+        "xg_a": "1.38",
+        "conf": 0.3363,
+        "best": "1",
+        "bestP": 0.4329,
+        "combo": "X+O1.5",
+        "comboP": 0.7603
+      },
+      "pp": {
+        "pp_i_casa": 0.0,
+        "pp_i_ospite": 0.0,
+        "pp_D": 0.0,
+        "pp_result": "X",
+        "pp_label": "\u2696\ufe0f FISSA X",
+        "pp_pct": 50.0
+      },
+      "ov": {
+        "score": null,
+        "pin1": null,
+        "pinX": null,
+        "pin2": null,
+        "novig_1": null,
+        "novig_X": null,
+        "novig_2": null,
+        "mkt_prob": null,
+        "vig_pct": null,
+        "edge": null,
+        "misalign": null,
+        "market_fav": null,
+        "components": {},
+        "movement_pct": null,
+        "surprise_idx": 0.358
+      }
+    },
+    {
+      "home": "GD Estoril Praia",
+      "away": "FC Famalic\u00e3o",
+      "league": "Primeira Liga",
+      "fixture_id": 567264,
+      "date": "07/08/2026",
+      "time": "20:15",
+      "pred": {
+        "home": 0.2827,
+        "draw": 0.3273,
+        "away": 0.39,
+        "dc1x": 0.61,
+        "dcx2": 0.7173,
+        "dc12": 0.6727,
+        "over25": 0.4485,
+        "under25": 0.5515,
+        "bttsY": 0.497,
+        "bttsN": 0.503,
+        "xg_h": "1.09",
+        "xg_a": "1.38",
+        "conf": 0.1761,
+        "best": "2",
+        "bestP": 0.39,
+        "combo": "X+U3.5",
+        "comboP": 0.764
+      },
+      "pp": {
+        "pp_i_casa": 0.0,
+        "pp_i_ospite": 0.0,
+        "pp_D": 0.0,
+        "pp_result": "X",
+        "pp_label": "\u2696\ufe0f FISSA X",
+        "pp_pct": 50.0
+      },
+      "ov": {
+        "score": 30.0,
+        "pin1": 3.49,
+        "pinX": 3.01,
+        "pin2": 2.29,
+        "novig_1": 27.2,
+        "novig_X": 31.5,
+        "novig_2": 41.4,
+        "mkt_prob": 41.4,
+        "vig_pct": 5.54,
+        "edge": -2.4,
+        "misalign": null,
+        "market_fav": "2",
+        "components": {
+          "value": 0.0,
+          "coherence": 30.0,
+          "movement": 0.0,
+          "liquidity": 0.0
+        },
+        "movement_pct": null,
+        "surprise_idx": 0.158
+      }
+    }
+  ]
 }
