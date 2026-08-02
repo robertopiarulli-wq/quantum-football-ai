@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-08-01T07:31:12.650014",
-  "date": "01/08/2026",
-  "total": 9,
+  "generated_at": "2026-08-02T07:35:42.144149",
+  "date": "02/08/2026",
+  "total": 17,
   "fixtures": [
     {
       "home": "SC Cambuur-Leeuwarden",
@@ -108,7 +108,7 @@
           "movement": 0.0,
           "liquidity": 0.0
         },
-        "movement_pct": null,
+        "movement_pct": 0.0,
         "surprise_idx": 0.488
       }
     },
@@ -165,7 +165,7 @@
           "movement": 0.0,
           "liquidity": 0.0
         },
-        "movement_pct": null,
+        "movement_pct": 0.0,
         "surprise_idx": 0.398
       }
     },
@@ -205,15 +205,15 @@
       },
       "ov": {
         "score": 30.0,
-        "pin1": 1.23,
-        "pinX": 7.48,
-        "pin2": 8.82,
-        "novig_1": 76.7,
-        "novig_X": 12.6,
-        "novig_2": 10.7,
-        "mkt_prob": 76.7,
-        "vig_pct": 6.01,
-        "edge": -14.6,
+        "pin1": 1.22,
+        "pinX": 7.51,
+        "pin2": 8.85,
+        "novig_1": 76.9,
+        "novig_X": 12.5,
+        "novig_2": 10.6,
+        "mkt_prob": 76.9,
+        "vig_pct": 6.58,
+        "edge": -14.9,
         "misalign": null,
         "market_fav": "1",
         "components": {
@@ -222,7 +222,7 @@
           "movement": 0.0,
           "liquidity": 0.0
         },
-        "movement_pct": null,
+        "movement_pct": -0.81,
         "surprise_idx": 0.488
       }
     },
@@ -279,8 +279,236 @@
           "movement": 0.0,
           "liquidity": 0.0
         },
-        "movement_pct": null,
+        "movement_pct": 0.0,
         "surprise_idx": 0.473
+      }
+    },
+    {
+      "home": "Sparta Rotterdam",
+      "away": "Feyenoord Rotterdam",
+      "league": "Eredivisie",
+      "fixture_id": 558219,
+      "date": "09/08/2026",
+      "time": "11:15",
+      "pred": {
+        "home": 0.2793,
+        "draw": 0.277,
+        "away": 0.4437,
+        "dc1x": 0.5563,
+        "dcx2": 0.7207,
+        "dc12": 0.723,
+        "over25": 0.5447,
+        "under25": 0.4553,
+        "bttsY": 0.5721,
+        "bttsN": 0.4279,
+        "xg_h": "1.26",
+        "xg_a": "1.6",
+        "conf": 0.2461,
+        "best": "2",
+        "bestP": 0.4437,
+        "combo": "X+O1.5",
+        "comboP": 0.7789
+      },
+      "pp": {
+        "pp_i_casa": 0.0,
+        "pp_i_ospite": 0.0,
+        "pp_D": 0.0,
+        "pp_result": "X",
+        "pp_label": "\u2696\ufe0f FISSA X",
+        "pp_pct": 50.0
+      },
+      "ov": {
+        "score": 30.0,
+        "pin1": 4.42,
+        "pinX": 4.18,
+        "pin2": 1.68,
+        "novig_1": 21.3,
+        "novig_X": 22.6,
+        "novig_2": 56.1,
+        "mkt_prob": 56.1,
+        "vig_pct": 6.07,
+        "edge": -11.8,
+        "misalign": null,
+        "market_fav": "2",
+        "components": {
+          "value": 0.0,
+          "coherence": 30.0,
+          "movement": 0.0,
+          "liquidity": 0.0
+        },
+        "movement_pct": null,
+        "surprise_idx": 0.229
+      }
+    },
+    {
+      "home": "FC Groningen",
+      "away": "FC Utrecht",
+      "league": "Eredivisie",
+      "fixture_id": 558220,
+      "date": "09/08/2026",
+      "time": "13:30",
+      "pred": {
+        "home": 0.4119,
+        "draw": 0.297,
+        "away": 0.291,
+        "dc1x": 0.709,
+        "dcx2": 0.5881,
+        "dc12": 0.703,
+        "over25": 0.5447,
+        "under25": 0.4553,
+        "bttsY": 0.5721,
+        "bttsN": 0.4279,
+        "xg_h": "1.26",
+        "xg_a": "1.6",
+        "conf": 0.3298,
+        "best": "1",
+        "bestP": 0.4119,
+        "combo": "X+O1.5",
+        "comboP": 0.7789
+      },
+      "pp": {
+        "pp_i_casa": 0.0,
+        "pp_i_ospite": 0.0,
+        "pp_D": 0.0,
+        "pp_result": "X",
+        "pp_label": "\u2696\ufe0f FISSA X",
+        "pp_pct": 50.0
+      },
+      "ov": {
+        "score": 36.7,
+        "pin1": 2.38,
+        "pinX": 3.4,
+        "pin2": 2.94,
+        "novig_1": 39.9,
+        "novig_X": 27.9,
+        "novig_2": 32.3,
+        "mkt_prob": 39.9,
+        "vig_pct": 5.44,
+        "edge": 1.3,
+        "misalign": null,
+        "market_fav": "1",
+        "components": {
+          "value": 6.7,
+          "coherence": 30.0,
+          "movement": 0.0,
+          "liquidity": 0.0
+        },
+        "movement_pct": null,
+        "surprise_idx": 0.171
+      }
+    },
+    {
+      "home": "PEC Zwolle",
+      "away": "AFC Ajax",
+      "league": "Eredivisie",
+      "fixture_id": 558221,
+      "date": "09/08/2026",
+      "time": "13:30",
+      "pred": {
+        "home": 0.2664,
+        "draw": 0.275,
+        "away": 0.4586,
+        "dc1x": 0.5414,
+        "dcx2": 0.7336,
+        "dc12": 0.725,
+        "over25": 0.5447,
+        "under25": 0.4553,
+        "bttsY": 0.5721,
+        "bttsN": 0.4279,
+        "xg_h": "1.26",
+        "xg_a": "1.6",
+        "conf": 0.2507,
+        "best": "2",
+        "bestP": 0.4586,
+        "combo": "X+O1.5",
+        "comboP": 0.7789
+      },
+      "pp": {
+        "pp_i_casa": 0.0,
+        "pp_i_ospite": 0.0,
+        "pp_D": 0.0,
+        "pp_result": "X",
+        "pp_label": "\u2696\ufe0f FISSA X",
+        "pp_pct": 50.0
+      },
+      "ov": {
+        "score": 30.0,
+        "pin1": 5.68,
+        "pinX": 4.67,
+        "pin2": 1.49,
+        "novig_1": 16.6,
+        "novig_X": 20.2,
+        "novig_2": 63.2,
+        "mkt_prob": 63.2,
+        "vig_pct": 6.13,
+        "edge": -17.4,
+        "misalign": null,
+        "market_fav": "2",
+        "components": {
+          "value": 0.0,
+          "coherence": 30.0,
+          "movement": 0.0,
+          "liquidity": 0.0
+        },
+        "movement_pct": null,
+        "surprise_idx": 0.286
+      }
+    },
+    {
+      "home": "SC Heerenveen",
+      "away": "FC Twente '65",
+      "league": "Eredivisie",
+      "fixture_id": 558222,
+      "date": "09/08/2026",
+      "time": "15:45",
+      "pred": {
+        "home": 0.4322,
+        "draw": 0.2983,
+        "away": 0.2695,
+        "dc1x": 0.7305,
+        "dcx2": 0.5678,
+        "dc12": 0.7017,
+        "over25": 0.5185,
+        "under25": 0.4815,
+        "bttsY": 0.5582,
+        "bttsN": 0.4418,
+        "xg_h": "1.38",
+        "xg_a": "1.38",
+        "conf": 0.3361,
+        "best": "1",
+        "bestP": 0.4322,
+        "combo": "X+O1.5",
+        "comboP": 0.7603
+      },
+      "pp": {
+        "pp_i_casa": 0.0,
+        "pp_i_ospite": 0.0,
+        "pp_D": 0.0,
+        "pp_result": "X",
+        "pp_label": "\u2696\ufe0f FISSA X",
+        "pp_pct": 50.0
+      },
+      "ov": {
+        "score": 55.0,
+        "pin1": 3.08,
+        "pinX": 3.74,
+        "pin2": 2.16,
+        "novig_1": 30.8,
+        "novig_X": 25.3,
+        "novig_2": 43.9,
+        "mkt_prob": 30.8,
+        "vig_pct": 5.5,
+        "edge": 12.5,
+        "misalign": null,
+        "market_fav": "2",
+        "components": {
+          "value": 40.0,
+          "coherence": 15.0,
+          "movement": 0.0,
+          "liquidity": 0.0
+        },
+        "movement_pct": null,
+        "surprise_idx": 0.114
       }
     },
     {
@@ -445,7 +673,7 @@
           "movement": 0.0,
           "liquidity": 0.0
         },
-        "movement_pct": null,
+        "movement_pct": 0.0,
         "surprise_idx": 0.175
       }
     },
@@ -485,15 +713,15 @@
       },
       "ov": {
         "score": 30.0,
-        "pin1": 12.28,
-        "pinX": 6.72,
+        "pin1": 12.58,
+        "pinX": 6.9,
         "pin2": 1.19,
-        "novig_1": 7.6,
-        "novig_X": 13.9,
-        "novig_2": 78.5,
-        "mkt_prob": 78.5,
-        "vig_pct": 7.06,
-        "edge": -37.1,
+        "novig_1": 7.5,
+        "novig_X": 13.6,
+        "novig_2": 78.9,
+        "mkt_prob": 78.9,
+        "vig_pct": 6.48,
+        "edge": -37.5,
         "misalign": null,
         "market_fav": "2",
         "components": {
@@ -502,8 +730,236 @@
           "movement": 0.0,
           "liquidity": 0.0
         },
+        "movement_pct": 2.44,
+        "surprise_idx": 0.397
+      }
+    },
+    {
+      "home": "FC Porto",
+      "away": "FC Alverca",
+      "league": "Primeira Liga",
+      "fixture_id": 567265,
+      "date": "09/08/2026",
+      "time": "18:00",
+      "pred": {
+        "home": 0.6617,
+        "draw": 0.2917,
+        "away": 0.0466,
+        "dc1x": 0.9534,
+        "dcx2": 0.3383,
+        "dc12": 0.7083,
+        "over25": 0.4847,
+        "under25": 0.5153,
+        "bttsY": 0.5057,
+        "bttsN": 0.4943,
+        "xg_h": "1.61",
+        "xg_a": "1.0",
+        "conf": 0.3179,
+        "best": "1",
+        "bestP": 0.6617,
+        "combo": "1+O1.5",
+        "comboP": 0.735
+      },
+      "pp": {
+        "pp_i_casa": 0.0,
+        "pp_i_ospite": 0.0,
+        "pp_D": 0.0,
+        "pp_result": "X",
+        "pp_label": "\u2696\ufe0f FISSA X",
+        "pp_pct": 50.0
+      },
+      "ov": {
+        "score": 30.0,
+        "pin1": 1.17,
+        "pinX": 7.15,
+        "pin2": 13.48,
+        "novig_1": 80.0,
+        "novig_X": 13.1,
+        "novig_2": 6.9,
+        "mkt_prob": 80.0,
+        "vig_pct": 6.87,
+        "edge": -13.8,
+        "misalign": null,
+        "market_fav": "1",
+        "components": {
+          "value": 0.0,
+          "coherence": 30.0,
+          "movement": 0.0,
+          "liquidity": 0.0
+        },
         "movement_pct": null,
-        "surprise_idx": 0.395
+        "surprise_idx": 0.488
+      }
+    },
+    {
+      "home": "Moreirense FC",
+      "away": "Sporting Clube de Braga",
+      "league": "Primeira Liga",
+      "fixture_id": 567259,
+      "date": "09/08/2026",
+      "time": "20:30",
+      "pred": {
+        "home": 0.3821,
+        "draw": 0.3404,
+        "away": 0.2775,
+        "dc1x": 0.7225,
+        "dcx2": 0.6179,
+        "dc12": 0.6596,
+        "over25": 0.4237,
+        "under25": 0.5763,
+        "bttsY": 0.483,
+        "bttsN": 0.517,
+        "xg_h": "1.19",
+        "xg_a": "1.19",
+        "conf": 0.2485,
+        "best": "1",
+        "bestP": 0.3821,
+        "combo": "X+U3.5",
+        "comboP": 0.7839
+      },
+      "pp": {
+        "pp_i_casa": 0.0,
+        "pp_i_ospite": 0.0,
+        "pp_D": 0.0,
+        "pp_result": "X",
+        "pp_label": "\u2696\ufe0f FISSA X",
+        "pp_pct": 50.0
+      },
+      "ov": {
+        "score": 55.0,
+        "pin1": 4.66,
+        "pinX": 3.7,
+        "pin2": 1.74,
+        "novig_1": 20.2,
+        "novig_X": 25.5,
+        "novig_2": 54.2,
+        "mkt_prob": 20.2,
+        "vig_pct": 5.96,
+        "edge": 18.0,
+        "misalign": null,
+        "market_fav": "2",
+        "components": {
+          "value": 40.0,
+          "coherence": 15.0,
+          "movement": 0.0,
+          "liquidity": 0.0
+        },
+        "movement_pct": null,
+        "surprise_idx": 0.188
+      }
+    },
+    {
+      "home": "Gil Vicente FC",
+      "away": "Rio Ave FC",
+      "league": "Primeira Liga",
+      "fixture_id": 567261,
+      "date": "09/08/2026",
+      "time": "20:30",
+      "pred": {
+        "home": 0.4019,
+        "draw": 0.3434,
+        "away": 0.2547,
+        "dc1x": 0.7453,
+        "dcx2": 0.5981,
+        "dc12": 0.6566,
+        "over25": 0.4237,
+        "under25": 0.5763,
+        "bttsY": 0.483,
+        "bttsN": 0.517,
+        "xg_h": "1.19",
+        "xg_a": "1.19",
+        "conf": 0.2534,
+        "best": "1",
+        "bestP": 0.4019,
+        "combo": "X+U3.5",
+        "comboP": 0.7839
+      },
+      "pp": {
+        "pp_i_casa": 0.0,
+        "pp_i_ospite": 0.0,
+        "pp_D": 0.0,
+        "pp_result": "X",
+        "pp_label": "\u2696\ufe0f FISSA X",
+        "pp_pct": 50.0
+      },
+      "ov": {
+        "score": 30.0,
+        "pin1": 1.85,
+        "pinX": 3.6,
+        "pin2": 4.18,
+        "novig_1": 51.1,
+        "novig_X": 26.3,
+        "novig_2": 22.6,
+        "mkt_prob": 51.1,
+        "vig_pct": 5.76,
+        "edge": -10.9,
+        "misalign": null,
+        "market_fav": "1",
+        "components": {
+          "value": 0.0,
+          "coherence": 30.0,
+          "movement": 0.0,
+          "liquidity": 0.0
+        },
+        "movement_pct": null,
+        "surprise_idx": 0.181
+      }
+    },
+    {
+      "home": "Sport Lisboa e Benfica",
+      "away": "Acad\u00e9mico de Viseu FC",
+      "league": "Primeira Liga",
+      "fixture_id": 567262,
+      "date": "09/08/2026",
+      "time": "20:30",
+      "pred": {
+        "home": 0.6593,
+        "draw": 0.2939,
+        "away": 0.0468,
+        "dc1x": 0.9532,
+        "dcx2": 0.3407,
+        "dc12": 0.7061,
+        "over25": 0.4847,
+        "under25": 0.5153,
+        "bttsY": 0.5057,
+        "bttsN": 0.4943,
+        "xg_h": "1.61",
+        "xg_a": "1.0",
+        "conf": 0.3173,
+        "best": "1",
+        "bestP": 0.6593,
+        "combo": "1+O1.5",
+        "comboP": 0.735
+      },
+      "pp": {
+        "pp_i_casa": 0.0,
+        "pp_i_ospite": 0.0,
+        "pp_D": 0.0,
+        "pp_result": "X",
+        "pp_label": "\u2696\ufe0f FISSA X",
+        "pp_pct": 50.0
+      },
+      "ov": {
+        "score": 30.0,
+        "pin1": 1.11,
+        "pinX": 9.4,
+        "pin2": 18.53,
+        "novig_1": 84.9,
+        "novig_X": 10.0,
+        "novig_2": 5.1,
+        "mkt_prob": 84.9,
+        "vig_pct": 6.13,
+        "edge": -19.0,
+        "misalign": null,
+        "market_fav": "1",
+        "components": {
+          "value": 0.0,
+          "coherence": 30.0,
+          "movement": 0.0,
+          "liquidity": 0.0
+        },
+        "movement_pct": null,
+        "surprise_idx": 0.488
       }
     }
   ]
