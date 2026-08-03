@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-08-02T07:35:42.144149",
-  "date": "02/08/2026",
-  "total": 17,
+  "generated_at": "2026-08-03T08:33:32.750102",
+  "date": "03/08/2026",
+  "total": 18,
   "fixtures": [
     {
       "home": "SC Cambuur-Leeuwarden",
@@ -205,15 +205,15 @@
       },
       "ov": {
         "score": 30.0,
-        "pin1": 1.22,
-        "pinX": 7.51,
-        "pin2": 8.85,
-        "novig_1": 76.9,
-        "novig_X": 12.5,
-        "novig_2": 10.6,
-        "mkt_prob": 76.9,
-        "vig_pct": 6.58,
-        "edge": -14.9,
+        "pin1": 1.21,
+        "pinX": 7.83,
+        "pin2": 9.53,
+        "novig_1": 78.0,
+        "novig_X": 12.1,
+        "novig_2": 9.9,
+        "mkt_prob": 78.0,
+        "vig_pct": 5.91,
+        "edge": -16.0,
         "misalign": null,
         "market_fav": "1",
         "components": {
@@ -222,7 +222,7 @@
           "movement": 0.0,
           "liquidity": 0.0
         },
-        "movement_pct": -0.81,
+        "movement_pct": -1.63,
         "surprise_idx": 0.488
       }
     },
@@ -319,14 +319,14 @@
       },
       "ov": {
         "score": 30.0,
-        "pin1": 4.42,
-        "pinX": 4.18,
+        "pin1": 4.5,
+        "pinX": 4.12,
         "pin2": 1.68,
-        "novig_1": 21.3,
-        "novig_X": 22.6,
+        "novig_1": 21.0,
+        "novig_X": 22.9,
         "novig_2": 56.1,
         "mkt_prob": 56.1,
-        "vig_pct": 6.07,
+        "vig_pct": 6.02,
         "edge": -11.8,
         "misalign": null,
         "market_fav": "2",
@@ -336,8 +336,8 @@
           "movement": 0.0,
           "liquidity": 0.0
         },
-        "movement_pct": null,
-        "surprise_idx": 0.229
+        "movement_pct": 1.81,
+        "surprise_idx": 0.233
       }
     },
     {
@@ -393,7 +393,7 @@
           "movement": 0.0,
           "liquidity": 0.0
         },
-        "movement_pct": null,
+        "movement_pct": 0.0,
         "surprise_idx": 0.171
       }
     },
@@ -450,7 +450,7 @@
           "movement": 0.0,
           "liquidity": 0.0
         },
-        "movement_pct": null,
+        "movement_pct": 0.0,
         "surprise_idx": 0.286
       }
     },
@@ -507,7 +507,7 @@
           "movement": 0.0,
           "liquidity": 0.0
         },
-        "movement_pct": null,
+        "movement_pct": 0.0,
         "surprise_idx": 0.114
       }
     },
@@ -771,14 +771,14 @@
       "ov": {
         "score": 30.0,
         "pin1": 1.17,
-        "pinX": 7.15,
-        "pin2": 13.48,
+        "pinX": 7.18,
+        "pin2": 13.54,
         "novig_1": 80.0,
-        "novig_X": 13.1,
+        "novig_X": 13.0,
         "novig_2": 6.9,
         "mkt_prob": 80.0,
-        "vig_pct": 6.87,
-        "edge": -13.8,
+        "vig_pct": 6.78,
+        "edge": -13.9,
         "misalign": null,
         "market_fav": "1",
         "components": {
@@ -787,7 +787,7 @@
           "movement": 0.0,
           "liquidity": 0.0
         },
-        "movement_pct": null,
+        "movement_pct": 0.0,
         "surprise_idx": 0.488
       }
     },
@@ -844,7 +844,7 @@
           "movement": 0.0,
           "liquidity": 0.0
         },
-        "movement_pct": null,
+        "movement_pct": 0.0,
         "surprise_idx": 0.188
       }
     },
@@ -901,7 +901,7 @@
           "movement": 0.0,
           "liquidity": 0.0
         },
-        "movement_pct": null,
+        "movement_pct": 0.0,
         "surprise_idx": 0.181
       }
     },
@@ -942,14 +942,14 @@
       "ov": {
         "score": 30.0,
         "pin1": 1.11,
-        "pinX": 9.4,
-        "pin2": 18.53,
-        "novig_1": 84.9,
+        "pinX": 9.48,
+        "pin2": 18.78,
+        "novig_1": 85.0,
         "novig_X": 10.0,
-        "novig_2": 5.1,
-        "mkt_prob": 84.9,
-        "vig_pct": 6.13,
-        "edge": -19.0,
+        "novig_2": 5.0,
+        "mkt_prob": 85.0,
+        "vig_pct": 5.96,
+        "edge": -19.1,
         "misalign": null,
         "market_fav": "1",
         "components": {
@@ -958,8 +958,65 @@
           "movement": 0.0,
           "liquidity": 0.0
         },
-        "movement_pct": null,
+        "movement_pct": 0.0,
         "surprise_idx": 0.488
+      }
+    },
+    {
+      "home": "CD Santa Clara",
+      "away": "CD Nacional",
+      "league": "Primeira Liga",
+      "fixture_id": 567257,
+      "date": "10/08/2026",
+      "time": "20:15",
+      "pred": {
+        "home": 0.4988,
+        "draw": 0.3427,
+        "away": 0.1585,
+        "dc1x": 0.8415,
+        "dcx2": 0.5012,
+        "dc12": 0.6573,
+        "over25": 0.4237,
+        "under25": 0.5763,
+        "bttsY": 0.483,
+        "bttsN": 0.517,
+        "xg_h": "1.19",
+        "xg_a": "1.19",
+        "conf": 0.2775,
+        "best": "1",
+        "bestP": 0.4988,
+        "combo": "1+U3.5",
+        "comboP": 0.7839
+      },
+      "pp": {
+        "pp_i_casa": 0.0,
+        "pp_i_ospite": 0.0,
+        "pp_D": 0.0,
+        "pp_result": "X",
+        "pp_label": "\u2696\ufe0f FISSA X",
+        "pp_pct": 50.0
+      },
+      "ov": {
+        "score": 34.2,
+        "pin1": 1.93,
+        "pinX": 3.41,
+        "pin2": 4.08,
+        "novig_1": 49.0,
+        "novig_X": 27.8,
+        "novig_2": 23.2,
+        "mkt_prob": 49.0,
+        "vig_pct": 5.65,
+        "edge": 0.8,
+        "misalign": null,
+        "market_fav": "1",
+        "components": {
+          "value": 4.2,
+          "coherence": 30.0,
+          "movement": 0.0,
+          "liquidity": 0.0
+        },
+        "movement_pct": null,
+        "surprise_idx": 0.163
       }
     }
   ]
