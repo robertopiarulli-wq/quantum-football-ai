@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-03T08:33:32.750102",
-  "date": "03/08/2026",
+  "generated_at": "2026-08-04T07:44:13.868269",
+  "date": "04/08/2026",
   "total": 18,
   "fixtures": [
     {
@@ -148,15 +148,15 @@
       },
       "ov": {
         "score": 30.0,
-        "pin1": 1.61,
-        "pinX": 4.24,
-        "pin2": 4.94,
-        "novig_1": 58.6,
-        "novig_X": 22.3,
-        "novig_2": 19.1,
-        "mkt_prob": 58.6,
-        "vig_pct": 5.94,
-        "edge": -17.5,
+        "pin1": 1.62,
+        "pinX": 4.21,
+        "pin2": 4.85,
+        "novig_1": 58.2,
+        "novig_X": 22.4,
+        "novig_2": 19.4,
+        "mkt_prob": 58.2,
+        "vig_pct": 6.1,
+        "edge": -17.1,
         "misalign": null,
         "market_fav": "1",
         "components": {
@@ -165,8 +165,8 @@
           "movement": 0.0,
           "liquidity": 0.0
         },
-        "movement_pct": 0.0,
-        "surprise_idx": 0.398
+        "movement_pct": 0.62,
+        "surprise_idx": 0.393
       }
     },
     {
@@ -204,25 +204,25 @@
         "pp_pct": 50.0
       },
       "ov": {
-        "score": 30.0,
-        "pin1": 1.21,
-        "pinX": 7.83,
-        "pin2": 9.53,
-        "novig_1": 78.0,
-        "novig_X": 12.1,
-        "novig_2": 9.9,
-        "mkt_prob": 78.0,
-        "vig_pct": 5.91,
-        "edge": -16.0,
+        "score": 40.0,
+        "pin1": 1.17,
+        "pinX": 8.56,
+        "pin2": 11.07,
+        "novig_1": 80.5,
+        "novig_X": 11.0,
+        "novig_2": 8.5,
+        "mkt_prob": 80.5,
+        "vig_pct": 6.19,
+        "edge": -18.4,
         "misalign": null,
         "market_fav": "1",
         "components": {
           "value": 0.0,
           "coherence": 30.0,
-          "movement": 0.0,
+          "movement": 10.0,
           "liquidity": 0.0
         },
-        "movement_pct": -1.63,
+        "movement_pct": -4.88,
         "surprise_idx": 0.488
       }
     },
@@ -262,15 +262,15 @@
       },
       "ov": {
         "score": 30.0,
-        "pin1": 1.45,
-        "pinX": 4.79,
-        "pin2": 6.04,
-        "novig_1": 64.8,
-        "novig_X": 19.6,
+        "pin1": 1.44,
+        "pinX": 4.91,
+        "pin2": 6.01,
+        "novig_1": 65.2,
+        "novig_X": 19.1,
         "novig_2": 15.6,
-        "mkt_prob": 64.8,
-        "vig_pct": 6.4,
-        "edge": -17.8,
+        "mkt_prob": 65.2,
+        "vig_pct": 6.45,
+        "edge": -18.2,
         "misalign": null,
         "market_fav": "1",
         "components": {
@@ -279,8 +279,8 @@
           "movement": 0.0,
           "liquidity": 0.0
         },
-        "movement_pct": 0.0,
-        "surprise_idx": 0.473
+        "movement_pct": -0.69,
+        "surprise_idx": 0.478
       }
     },
     {
@@ -320,13 +320,13 @@
       "ov": {
         "score": 30.0,
         "pin1": 4.5,
-        "pinX": 4.12,
+        "pinX": 4.14,
         "pin2": 1.68,
         "novig_1": 21.0,
-        "novig_X": 22.9,
-        "novig_2": 56.1,
-        "mkt_prob": 56.1,
-        "vig_pct": 6.02,
+        "novig_X": 22.8,
+        "novig_2": 56.2,
+        "mkt_prob": 56.2,
+        "vig_pct": 5.9,
         "edge": -11.8,
         "misalign": null,
         "market_fav": "2",
@@ -433,15 +433,15 @@
       },
       "ov": {
         "score": 30.0,
-        "pin1": 5.68,
-        "pinX": 4.67,
-        "pin2": 1.49,
-        "novig_1": 16.6,
-        "novig_X": 20.2,
-        "novig_2": 63.2,
-        "mkt_prob": 63.2,
-        "vig_pct": 6.13,
-        "edge": -17.4,
+        "pin1": 5.57,
+        "pinX": 4.63,
+        "pin2": 1.5,
+        "novig_1": 16.9,
+        "novig_X": 20.3,
+        "novig_2": 62.8,
+        "mkt_prob": 62.8,
+        "vig_pct": 6.22,
+        "edge": -16.9,
         "misalign": null,
         "market_fav": "2",
         "components": {
@@ -450,8 +450,8 @@
           "movement": 0.0,
           "liquidity": 0.0
         },
-        "movement_pct": 0.0,
-        "surprise_idx": 0.286
+        "movement_pct": -1.94,
+        "surprise_idx": 0.283
       }
     },
     {
@@ -942,14 +942,14 @@
       "ov": {
         "score": 30.0,
         "pin1": 1.11,
-        "pinX": 9.48,
-        "pin2": 18.78,
-        "novig_1": 85.0,
-        "novig_X": 10.0,
+        "pinX": 9.35,
+        "pin2": 18.94,
+        "novig_1": 84.9,
+        "novig_X": 10.1,
         "novig_2": 5.0,
-        "mkt_prob": 85.0,
-        "vig_pct": 5.96,
-        "edge": -19.1,
+        "mkt_prob": 84.9,
+        "vig_pct": 6.07,
+        "edge": -19.0,
         "misalign": null,
         "market_fav": "1",
         "components": {
@@ -1015,7 +1015,7 @@
           "movement": 0.0,
           "liquidity": 0.0
         },
-        "movement_pct": null,
+        "movement_pct": 0.0,
         "surprise_idx": 0.163
       }
     }
