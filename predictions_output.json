@@ -50,7 +50,7 @@
     "ov_score": null,
     "ov_details": {},
     "surprise_idx": 0.358,
-    "generated_at": "2026-08-06T07:42:30.424763"
+    "generated_at": "2026-08-07T06:10:51.327128"
   },
   {
     "league": "Eredivisie",
@@ -115,7 +115,7 @@
       "market_favorite": "1",
       "movement_pct": 6.43,
       "is_sharp": false,
-      "snapshots": 6,
+      "snapshots": 7,
       "open_home": 1.4,
       "ov_score": 32.0,
       "components": {
@@ -126,7 +126,7 @@
       }
     },
     "surprise_idx": 0.455,
-    "generated_at": "2026-08-06T07:42:31.547603"
+    "generated_at": "2026-08-07T06:10:53.112246"
   },
   {
     "league": "Eredivisie",
@@ -178,20 +178,20 @@
     },
     "ov_score": 30.0,
     "ov_details": {
-      "pinnacle_1": 1.63,
-      "pinnacle_X": 4.18,
-      "pinnacle_2": 4.78,
-      "novig_1": 57.8,
-      "novig_X": 22.5,
-      "novig_2": 19.7,
-      "vig_pct": 6.19,
+      "pinnacle_1": 1.65,
+      "pinnacle_X": 4.16,
+      "pinnacle_2": 4.71,
+      "novig_1": 57.2,
+      "novig_X": 22.7,
+      "novig_2": 20.1,
+      "vig_pct": 5.88,
       "our_prob": 41.1,
-      "mkt_prob": 57.8,
-      "value_edge": -16.7,
+      "mkt_prob": 57.2,
+      "value_edge": -16.2,
       "market_favorite": "1",
-      "movement_pct": 1.24,
+      "movement_pct": 2.48,
       "is_sharp": false,
-      "snapshots": 6,
+      "snapshots": 7,
       "open_home": 1.61,
       "ov_score": 30.0,
       "components": {
@@ -201,8 +201,8 @@
         "liquidity": 0.0
       }
     },
-    "surprise_idx": 0.388,
-    "generated_at": "2026-08-06T07:42:32.418880"
+    "surprise_idx": 0.381,
+    "generated_at": "2026-08-07T06:10:53.950185"
   },
   {
     "league": "Eredivisie",
@@ -254,20 +254,20 @@
     },
     "ov_score": 40.0,
     "ov_details": {
-      "pinnacle_1": 1.17,
-      "pinnacle_X": 8.5,
-      "pinnacle_2": 11.0,
-      "novig_1": 80.4,
-      "novig_X": 11.1,
-      "novig_2": 8.6,
-      "vig_pct": 6.33,
+      "pinnacle_1": 1.18,
+      "pinnacle_X": 8.43,
+      "pinnacle_2": 10.91,
+      "novig_1": 80.1,
+      "novig_X": 11.2,
+      "novig_2": 8.7,
+      "vig_pct": 5.77,
       "our_prob": 62.0,
-      "mkt_prob": 80.4,
-      "value_edge": -18.3,
+      "mkt_prob": 80.1,
+      "value_edge": -18.1,
       "market_favorite": "1",
-      "movement_pct": -4.88,
+      "movement_pct": -4.07,
       "is_sharp": false,
-      "snapshots": 6,
+      "snapshots": 7,
       "open_home": 1.23,
       "ov_score": 40.0,
       "components": {
@@ -278,7 +278,7 @@
       }
     },
     "surprise_idx": 0.488,
-    "generated_at": "2026-08-06T07:42:33.062506"
+    "generated_at": "2026-08-07T06:10:55.062086"
   },
   {
     "league": "Eredivisie",
@@ -343,7 +343,7 @@
       "market_favorite": "1",
       "movement_pct": -0.69,
       "is_sharp": false,
-      "snapshots": 6,
+      "snapshots": 7,
       "open_home": 1.45,
       "ov_score": 30.0,
       "components": {
@@ -354,7 +354,7 @@
       }
     },
     "surprise_idx": 0.478,
-    "generated_at": "2026-08-06T07:42:34.136315"
+    "generated_at": "2026-08-07T06:10:55.826667"
   },
   {
     "league": "Eredivisie",
@@ -419,7 +419,7 @@
       "market_favorite": "2",
       "movement_pct": 1.81,
       "is_sharp": false,
-      "snapshots": 5,
+      "snapshots": 6,
       "open_home": 4.42,
       "ov_score": 30.0,
       "components": {
@@ -430,7 +430,7 @@
       }
     },
     "surprise_idx": 0.233,
-    "generated_at": "2026-08-06T07:42:34.971240"
+    "generated_at": "2026-08-07T06:10:57.176884"
   },
   {
     "league": "Eredivisie",
@@ -480,33 +480,33 @@
       "pp_label": "\u2696\ufe0f FISSA X",
       "pp_pct": 50.0
     },
-    "ov_score": 41.0,
+    "ov_score": 41.7,
     "ov_details": {
-      "pinnacle_1": 2.31,
-      "pinnacle_X": 3.4,
+      "pinnacle_1": 2.32,
+      "pinnacle_X": 3.39,
       "pinnacle_2": 3.04,
-      "novig_1": 41.0,
-      "novig_X": 27.9,
-      "novig_2": 31.1,
-      "vig_pct": 5.6,
+      "novig_1": 40.9,
+      "novig_X": 28.0,
+      "novig_2": 31.2,
+      "vig_pct": 5.5,
       "our_prob": 41.2,
-      "mkt_prob": 41.0,
-      "value_edge": 0.2,
+      "mkt_prob": 40.9,
+      "value_edge": 0.3,
       "market_favorite": "1",
-      "movement_pct": -2.94,
+      "movement_pct": -2.52,
       "is_sharp": false,
-      "snapshots": 5,
+      "snapshots": 6,
       "open_home": 2.38,
-      "ov_score": 41.0,
+      "ov_score": 41.7,
       "components": {
-        "value": 1.0,
+        "value": 1.7,
         "coherence": 30.0,
         "movement": 10.0,
         "liquidity": 0.0
       }
     },
-    "surprise_idx": 0.184,
-    "generated_at": "2026-08-06T07:42:35.615000"
+    "surprise_idx": 0.183,
+    "generated_at": "2026-08-07T06:10:57.882713"
   },
   {
     "league": "Eredivisie",
@@ -556,33 +556,33 @@
       "pp_label": "\u2696\ufe0f FISSA X",
       "pp_pct": 50.0
     },
-    "ov_score": 40.0,
+    "ov_score": 30.0,
     "ov_details": {
-      "pinnacle_1": 5.52,
-      "pinnacle_X": 4.61,
-      "pinnacle_2": 1.51,
-      "novig_1": 17.1,
-      "novig_X": 20.5,
-      "novig_2": 62.5,
-      "vig_pct": 6.03,
+      "pinnacle_1": 5.71,
+      "pinnacle_X": 4.71,
+      "pinnacle_2": 1.48,
+      "novig_1": 16.5,
+      "novig_X": 20.0,
+      "novig_2": 63.6,
+      "vig_pct": 6.31,
       "our_prob": 45.9,
-      "mkt_prob": 62.5,
-      "value_edge": -16.6,
+      "mkt_prob": 63.6,
+      "value_edge": -17.7,
       "market_favorite": "2",
-      "movement_pct": -2.82,
+      "movement_pct": 0.53,
       "is_sharp": false,
-      "snapshots": 5,
+      "snapshots": 6,
       "open_home": 5.68,
-      "ov_score": 40.0,
+      "ov_score": 30.0,
       "components": {
         "value": 0.0,
         "coherence": 30.0,
-        "movement": 10.0,
+        "movement": 0.0,
         "liquidity": 0.0
       }
     },
-    "surprise_idx": 0.28,
-    "generated_at": "2026-08-06T07:42:36.107106"
+    "surprise_idx": 0.287,
+    "generated_at": "2026-08-07T06:10:59.228365"
   },
   {
     "league": "Eredivisie",
@@ -634,20 +634,20 @@
     },
     "ov_score": 55.0,
     "ov_details": {
-      "pinnacle_1": 3.08,
-      "pinnacle_X": 3.74,
-      "pinnacle_2": 2.16,
-      "novig_1": 30.8,
-      "novig_X": 25.3,
-      "novig_2": 43.9,
-      "vig_pct": 5.5,
+      "pinnacle_1": 3.03,
+      "pinnacle_X": 3.76,
+      "pinnacle_2": 2.17,
+      "novig_1": 31.2,
+      "novig_X": 25.2,
+      "novig_2": 43.6,
+      "vig_pct": 5.68,
       "our_prob": 43.2,
-      "mkt_prob": 30.8,
-      "value_edge": 12.5,
+      "mkt_prob": 31.2,
+      "value_edge": 12.0,
       "market_favorite": "2",
-      "movement_pct": 0.0,
+      "movement_pct": -1.62,
       "is_sharp": false,
-      "snapshots": 5,
+      "snapshots": 6,
       "open_home": 3.08,
       "ov_score": 55.0,
       "components": {
@@ -657,8 +657,61 @@
         "liquidity": 0.0
       }
     },
-    "surprise_idx": 0.114,
-    "generated_at": "2026-08-06T07:42:36.539653"
+    "surprise_idx": 0.109,
+    "generated_at": "2026-08-07T06:10:59.938283"
+  },
+  {
+    "league": "Eredivisie",
+    "comp_code": "DED",
+    "season": "2026/2027",
+    "fixture_id": 558223,
+    "home": "Telstar 1963",
+    "away": "Sparta Rotterdam",
+    "date": "14/08/2026",
+    "time": "19:00",
+    "stage": "REGULAR_SEASON",
+    "matchday": 2,
+    "first_leg": null,
+    "prediction": {
+      "home": 0.5636724121551514,
+      "draw": 0.28316,
+      "away": 0.15316758784484857,
+      "quantum_used": false,
+      "goals_factor": 1.1,
+      "dc_1x": 0.8468324121551514,
+      "dc_x2": 0.4363275878448486,
+      "dc_12": 0.7168399999999999,
+      "over_25": 0.5185432952869836,
+      "under_25": 0.4814567047130164,
+      "over_15": 0.7603,
+      "under_35": 0.703,
+      "over_35": 0.297,
+      "btts_y": 0.5582486695972146,
+      "btts_n": 0.44175133040278536,
+      "xg_home": 1.38,
+      "xg_away": 1.38,
+      "combo_label": "1+O1.5",
+      "combo_leg": "O1.5",
+      "combo_prob": 0.7603,
+      "combo_score": 0.4285,
+      "combo_certain": true,
+      "confidence": 0.3771,
+      "raw_confidence": 0.3771,
+      "best_out": "1",
+      "best_val": 0.5636724121551514
+    },
+    "pp": {
+      "pp_i_casa": 0.0,
+      "pp_i_ospite": 0.0,
+      "pp_D": 0.0,
+      "pp_result": "X",
+      "pp_label": "\u2696\ufe0f FISSA X",
+      "pp_pct": 50.0
+    },
+    "ov_score": null,
+    "ov_details": {},
+    "surprise_idx": 0.358,
+    "generated_at": "2026-08-07T06:11:00.157961"
   },
   {
     "league": "Primeira Liga",
@@ -708,33 +761,33 @@
       "pp_label": "\u2696\ufe0f FISSA X",
       "pp_pct": 50.0
     },
-    "ov_score": 46.0,
+    "ov_score": 48.0,
     "ov_details": {
-      "pinnacle_1": 3.09,
-      "pinnacle_X": 3.17,
-      "pinnacle_2": 2.4,
-      "novig_1": 30.6,
-      "novig_X": 29.9,
-      "novig_2": 39.5,
-      "vig_pct": 5.57,
+      "pinnacle_1": 3.06,
+      "pinnacle_X": 3.27,
+      "pinnacle_2": 2.43,
+      "novig_1": 31.3,
+      "novig_X": 29.3,
+      "novig_2": 39.4,
+      "vig_pct": 4.41,
       "our_prob": 39.0,
-      "mkt_prob": 39.5,
-      "value_edge": -0.5,
+      "mkt_prob": 39.4,
+      "value_edge": -0.4,
       "market_favorite": "2",
-      "movement_pct": -11.46,
+      "movement_pct": -12.32,
       "is_sharp": false,
-      "snapshots": 7,
+      "snapshots": 8,
       "open_home": 3.49,
-      "ov_score": 46.0,
+      "ov_score": 48.0,
       "components": {
         "value": 0.0,
         "coherence": 30.0,
         "movement": 16.0,
-        "liquidity": 0.0
+        "liquidity": 2.0
       }
     },
-    "surprise_idx": 0.117,
-    "generated_at": "2026-08-06T07:42:59.312680"
+    "surprise_idx": 0.108,
+    "generated_at": "2026-08-07T06:11:23.089532"
   },
   {
     "league": "Primeira Liga",
@@ -787,7 +840,7 @@
     "ov_score": null,
     "ov_details": {},
     "surprise_idx": 0.358,
-    "generated_at": "2026-08-06T07:42:59.559185"
+    "generated_at": "2026-08-07T06:11:23.316347"
   },
   {
     "league": "Primeira Liga",
@@ -837,33 +890,33 @@
       "pp_label": "\u2696\ufe0f FISSA X",
       "pp_pct": 50.0
     },
-    "ov_score": 51.8,
+    "ov_score": 51.3,
     "ov_details": {
-      "pinnacle_1": 1.85,
-      "pinnacle_X": 3.61,
-      "pinnacle_2": 4.17,
-      "novig_1": 51.1,
-      "novig_X": 26.2,
-      "novig_2": 22.7,
-      "vig_pct": 5.74,
+      "pinnacle_1": 1.92,
+      "pinnacle_X": 3.54,
+      "pinnacle_2": 3.93,
+      "novig_1": 49.2,
+      "novig_X": 26.7,
+      "novig_2": 24.1,
+      "vig_pct": 5.78,
       "our_prob": 33.6,
-      "mkt_prob": 26.2,
-      "value_edge": 7.4,
+      "mkt_prob": 26.7,
+      "value_edge": 6.9,
       "market_favorite": "1",
-      "movement_pct": 0.0,
+      "movement_pct": 3.78,
       "is_sharp": false,
-      "snapshots": 6,
+      "snapshots": 7,
       "open_home": 1.85,
-      "ov_score": 51.8,
+      "ov_score": 51.3,
       "components": {
-        "value": 36.8,
+        "value": 34.3,
         "coherence": 15.0,
-        "movement": 0.0,
+        "movement": 2.0,
         "liquidity": 0.0
       }
     },
-    "surprise_idx": 0.175,
-    "generated_at": "2026-08-06T07:43:00.584767"
+    "surprise_idx": 0.169,
+    "generated_at": "2026-08-07T06:11:24.325235"
   },
   {
     "league": "Primeira Liga",
@@ -928,7 +981,7 @@
       "market_favorite": "2",
       "movement_pct": -5.37,
       "is_sharp": false,
-      "snapshots": 6,
+      "snapshots": 7,
       "open_home": 12.28,
       "ov_score": 46.0,
       "components": {
@@ -939,7 +992,7 @@
       }
     },
     "surprise_idx": 0.389,
-    "generated_at": "2026-08-06T07:43:01.403027"
+    "generated_at": "2026-08-07T06:11:25.069177"
   },
   {
     "league": "Primeira Liga",
@@ -1004,7 +1057,7 @@
       "market_favorite": "1",
       "movement_pct": 0.0,
       "is_sharp": false,
-      "snapshots": 5,
+      "snapshots": 6,
       "open_home": 1.17,
       "ov_score": 30.0,
       "components": {
@@ -1015,7 +1068,7 @@
       }
     },
     "surprise_idx": 0.488,
-    "generated_at": "2026-08-06T07:43:02.232785"
+    "generated_at": "2026-08-07T06:11:25.775657"
   },
   {
     "league": "Primeira Liga",
@@ -1067,20 +1120,20 @@
     },
     "ov_score": 55.0,
     "ov_details": {
-      "pinnacle_1": 4.76,
-      "pinnacle_X": 3.73,
-      "pinnacle_2": 1.72,
-      "novig_1": 19.8,
-      "novig_X": 25.3,
-      "novig_2": 54.9,
-      "vig_pct": 5.96,
+      "pinnacle_1": 4.7,
+      "pinnacle_X": 3.71,
+      "pinnacle_2": 1.73,
+      "novig_1": 20.1,
+      "novig_X": 25.4,
+      "novig_2": 54.5,
+      "vig_pct": 6.03,
       "our_prob": 38.2,
-      "mkt_prob": 19.8,
-      "value_edge": 18.4,
+      "mkt_prob": 20.1,
+      "value_edge": 18.1,
       "market_favorite": "2",
-      "movement_pct": 2.15,
+      "movement_pct": 0.86,
       "is_sharp": false,
-      "snapshots": 5,
+      "snapshots": 6,
       "open_home": 4.66,
       "ov_score": 55.0,
       "components": {
@@ -1090,8 +1143,8 @@
         "liquidity": 0.0
       }
     },
-    "surprise_idx": 0.19,
-    "generated_at": "2026-08-06T07:43:03.084519"
+    "surprise_idx": 0.189,
+    "generated_at": "2026-08-07T06:11:26.470272"
   },
   {
     "league": "Primeira Liga",
@@ -1156,7 +1209,7 @@
       "market_favorite": "1",
       "movement_pct": 3.78,
       "is_sharp": false,
-      "snapshots": 5,
+      "snapshots": 6,
       "open_home": 1.85,
       "ov_score": 32.0,
       "components": {
@@ -1167,7 +1220,7 @@
       }
     },
     "surprise_idx": 0.174,
-    "generated_at": "2026-08-06T07:43:03.712206"
+    "generated_at": "2026-08-07T06:11:27.188092"
   },
   {
     "league": "Primeira Liga",
@@ -1219,20 +1272,20 @@
     },
     "ov_score": 30.0,
     "ov_details": {
-      "pinnacle_1": 1.11,
-      "pinnacle_X": 9.41,
-      "pinnacle_2": 19.06,
-      "novig_1": 85.0,
-      "novig_X": 10.0,
-      "novig_2": 5.0,
-      "vig_pct": 5.96,
+      "pinnacle_1": 1.1,
+      "pinnacle_X": 9.72,
+      "pinnacle_2": 20.01,
+      "novig_1": 85.6,
+      "novig_X": 9.7,
+      "novig_2": 4.7,
+      "vig_pct": 6.19,
       "our_prob": 65.9,
-      "mkt_prob": 85.0,
-      "value_edge": -19.1,
+      "mkt_prob": 85.6,
+      "value_edge": -19.7,
       "market_favorite": "1",
-      "movement_pct": 0.0,
+      "movement_pct": -0.9,
       "is_sharp": false,
-      "snapshots": 5,
+      "snapshots": 6,
       "open_home": 1.11,
       "ov_score": 30.0,
       "components": {
@@ -1243,7 +1296,7 @@
       }
     },
     "surprise_idx": 0.488,
-    "generated_at": "2026-08-06T07:43:04.227482"
+    "generated_at": "2026-08-07T06:11:27.873345"
   },
   {
     "league": "Primeira Liga",
@@ -1293,32 +1346,138 @@
       "pp_label": "\u2696\ufe0f FISSA X",
       "pp_pct": 50.0
     },
-    "ov_score": 34.2,
+    "ov_score": 46.0,
     "ov_details": {
-      "pinnacle_1": 1.93,
-      "pinnacle_X": 3.41,
-      "pinnacle_2": 4.08,
-      "novig_1": 49.0,
-      "novig_X": 27.8,
-      "novig_2": 23.2,
-      "vig_pct": 5.65,
+      "pinnacle_1": 1.83,
+      "pinnacle_X": 3.46,
+      "pinnacle_2": 4.48,
+      "novig_1": 51.6,
+      "novig_X": 27.3,
+      "novig_2": 21.1,
+      "vig_pct": 5.87,
       "our_prob": 49.9,
-      "mkt_prob": 49.0,
-      "value_edge": 0.8,
+      "mkt_prob": 51.6,
+      "value_edge": -1.7,
       "market_favorite": "1",
-      "movement_pct": 0.0,
+      "movement_pct": -5.18,
       "is_sharp": false,
-      "snapshots": 4,
+      "snapshots": 5,
       "open_home": 1.93,
-      "ov_score": 34.2,
+      "ov_score": 46.0,
       "components": {
-        "value": 4.2,
+        "value": 0.0,
         "coherence": 30.0,
-        "movement": 0.0,
+        "movement": 16.0,
         "liquidity": 0.0
       }
     },
-    "surprise_idx": 0.163,
-    "generated_at": "2026-08-06T07:43:04.870775"
+    "surprise_idx": 0.169,
+    "generated_at": "2026-08-07T06:11:29.035919"
+  },
+  {
+    "league": "Primeira Liga",
+    "comp_code": "PPL",
+    "season": "2026/2027",
+    "fixture_id": 567268,
+    "home": "Sporting Clube de Portugal",
+    "away": "Vit\u00f3ria SC",
+    "date": "14/08/2026",
+    "time": "20:15",
+    "stage": "REGULAR_SEASON",
+    "matchday": 2,
+    "first_leg": null,
+    "prediction": {
+      "home": 0.6097057638698287,
+      "draw": 0.32802000000000003,
+      "away": 0.0622742361301713,
+      "quantum_used": false,
+      "goals_factor": 0.95,
+      "dc_1x": 0.9377257638698286,
+      "dc_x2": 0.39029423613017133,
+      "dc_12": 0.67198,
+      "over_25": 0.4484686561232474,
+      "under_25": 0.5515313438767526,
+      "over_15": 0.7065,
+      "under_35": 0.764,
+      "over_35": 0.236,
+      "btts_y": 0.49699957044662585,
+      "btts_n": 0.5030004295533741,
+      "xg_home": 1.38,
+      "xg_away": 1.09,
+      "combo_label": "1+U3.5",
+      "combo_leg": "U3.5",
+      "combo_prob": 0.764,
+      "combo_score": 0.4658,
+      "combo_certain": true,
+      "confidence": 0.305,
+      "raw_confidence": 0.305,
+      "best_out": "1",
+      "best_val": 0.6097057638698287
+    },
+    "pp": {
+      "pp_i_casa": 0.0,
+      "pp_i_ospite": 0.0,
+      "pp_D": 0.0,
+      "pp_result": "X",
+      "pp_label": "\u2696\ufe0f FISSA X",
+      "pp_pct": 50.0
+    },
+    "ov_score": null,
+    "ov_details": {},
+    "surprise_idx": 0.358,
+    "generated_at": "2026-08-07T06:11:29.286719"
+  },
+  {
+    "league": "Championship",
+    "comp_code": "ELC",
+    "season": "2026/2027",
+    "fixture_id": 561761,
+    "home": "Wolverhampton Wanderers FC",
+    "away": "Blackburn Rovers FC",
+    "date": "14/08/2026",
+    "time": "20:00",
+    "stage": "REGULAR_SEASON",
+    "matchday": 1,
+    "first_leg": null,
+    "prediction": {
+      "home": 0.39901806459694633,
+      "draw": 0.29262000000000005,
+      "away": 0.3083619354030536,
+      "quantum_used": false,
+      "goals_factor": 1.0,
+      "dc_1x": 0.6916380645969464,
+      "dc_x2": 0.6009819354030537,
+      "dc_12": 0.7073799999999999,
+      "over_25": 0.4561868841166705,
+      "under_25": 0.5438131158833295,
+      "over_15": 0.7127,
+      "under_35": 0.7576,
+      "over_35": 0.2424,
+      "btts_y": 0.5090754049035185,
+      "btts_n": 0.49092459509648145,
+      "xg_home": 1.25,
+      "xg_away": 1.25,
+      "combo_label": "X+U3.5",
+      "combo_leg": "U3.5",
+      "combo_prob": 0.7576,
+      "combo_score": 0.2217,
+      "combo_certain": true,
+      "confidence": 0.3164,
+      "raw_confidence": 0.3164,
+      "best_out": "1",
+      "best_val": 0.39901806459694633
+    },
+    "pp": {
+      "pp_i_casa": 0.0,
+      "pp_i_ospite": 0.0,
+      "pp_D": 0.0,
+      "pp_result": "X",
+      "pp_label": "\u2696\ufe0f FISSA X",
+      "pp_pct": 50.0
+    },
+    "ov_score": null,
+    "ov_details": {},
+    "surprise_idx": 0.358,
+    "generated_at": "2026-08-07T06:11:51.527692"
   }
 ]
