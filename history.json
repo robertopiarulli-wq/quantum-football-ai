@@ -34087,7 +34087,8 @@
       "correct_btts": true,
       "verified_at": "2026-08-18T05:35:55.962217",
       "odds_movement_pct": -5.71,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "558225",
@@ -34793,7 +34794,8 @@
       "correct_btts": true,
       "verified_at": "2026-08-18T05:36:03.219838",
       "odds_movement_pct": 15.87,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "564628",
@@ -37002,7 +37004,8 @@
       "correct_1x2": false,
       "correct_over": true,
       "correct_btts": true,
-      "verified_at": "2026-08-18T05:36:29.141442"
+      "verified_at": "2026-08-18T05:36:29.141442",
+      "elo_updated": true
     },
     {
       "fixture_id": "561773",
@@ -37869,5 +37872,5 @@
       "verified_at": null
     }
   ],
-  "last_updated": "2026-08-18T05:36:29.324820"
+  "last_updated": "2026-08-19T05:37:42.094460"
 }
