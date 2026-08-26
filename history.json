@@ -37526,7 +37526,8 @@
       "correct_btts": true,
       "verified_at": "2026-08-25T05:38:01.011391",
       "odds_movement_pct": -0.45,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "558638",
@@ -37576,7 +37577,8 @@
       "correct_btts": false,
       "verified_at": "2026-08-25T05:38:01.259958",
       "odds_movement_pct": 8.23,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "560551",
@@ -37626,7 +37628,8 @@
       "correct_btts": true,
       "verified_at": "2026-08-25T05:38:08.039355",
       "odds_movement_pct": 24.12,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "564644",
@@ -37876,7 +37879,8 @@
       "correct_btts": true,
       "verified_at": "2026-08-25T05:37:46.567990",
       "odds_movement_pct": 1.64,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "567280",
@@ -37977,7 +37981,8 @@
       "correct_btts": true,
       "verified_at": "2026-08-25T05:37:54.178169",
       "odds_movement_pct": -2.81,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "561782",
@@ -38076,7 +38081,8 @@
       "correct_btts": false,
       "verified_at": "2026-08-25T05:37:47.107394",
       "odds_movement_pct": -7.95,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "564637",
@@ -38104,27 +38110,29 @@
       "pred_combo_prob": 0.7576,
       "pred_over15": 0.7127,
       "pred_under35": 0.7576,
-      "correct_combo": null,
+      "correct_combo": false,
       "ov_score": 70.2,
       "ov_edge": 12.0,
       "ov_misalign": null,
       "ov_movement": null,
       "ov_is_sharp": null,
-      "clv": null,
+      "clv": -16.44,
       "pp_result": "X",
       "pp_label": "\u2696\ufe0f FISSA X",
       "pp_i_casa": 0.0,
       "pp_i_ospite": 0.0,
       "pp_D": 0.0,
       "pp_pct": 50.0,
-      "correct_pp": null,
-      "result": null,
-      "goals_home": null,
-      "goals_away": null,
-      "correct_1x2": null,
-      "correct_over": null,
-      "correct_btts": null,
-      "verified_at": null
+      "correct_pp": false,
+      "result": "2",
+      "goals_home": 0,
+      "goals_away": 1,
+      "correct_1x2": false,
+      "correct_over": true,
+      "correct_btts": false,
+      "verified_at": "2026-08-26T05:41:03.234459",
+      "odds_movement_pct": 8.58,
+      "odds_is_sharp": false
     },
     {
       "fixture_id": "565776",
@@ -41726,7 +41734,55 @@
       "correct_over": null,
       "correct_btts": null,
       "verified_at": null
+    },
+    {
+      "fixture_id": "564651",
+      "home": "RC Deportivo La Coru\u00f1a",
+      "away": "Valencia CF",
+      "league": "La Liga",
+      "comp_code": "PD",
+      "season": "2026/2027",
+      "stage": "REGULAR_SEASON",
+      "matchday": 3,
+      "first_leg": null,
+      "date": "30/08/2026",
+      "time": "18:30",
+      "predicted_at": "2026-08-26T05:37:22.864446",
+      "pred_home": 0.4307,
+      "pred_draw": 0.3009,
+      "pred_away": 0.2684,
+      "pred_over25": 0.2,
+      "pred_btts": 0.1548,
+      "pred_best": "1",
+      "pred_conf": 0.3396,
+      "pred_raw_conf": 0.3396,
+      "pred_combo_label": "X+U3.5",
+      "pred_combo_leg": "U3.5",
+      "pred_combo_prob": 0.95,
+      "pred_over15": 0.2642,
+      "pred_under35": 0.95,
+      "correct_combo": null,
+      "ov_score": 67.8,
+      "ov_edge": 6.4,
+      "ov_misalign": null,
+      "ov_movement": null,
+      "ov_is_sharp": null,
+      "clv": null,
+      "pp_result": "X",
+      "pp_label": "\u2696\ufe0f FISSA X",
+      "pp_i_casa": 0.75,
+      "pp_i_ospite": 0.0,
+      "pp_D": 0.75,
+      "pp_pct": 52.7,
+      "correct_pp": null,
+      "result": null,
+      "goals_home": null,
+      "goals_away": null,
+      "correct_1x2": null,
+      "correct_over": null,
+      "correct_btts": null,
+      "verified_at": null
     }
   ],
-  "last_updated": "2026-08-25T05:38:27.827069"
+  "last_updated": "2026-08-26T05:41:42.030370"
 }
