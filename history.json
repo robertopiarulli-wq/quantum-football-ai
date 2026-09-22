@@ -53146,7 +53146,8 @@
       "correct_btts": false,
       "verified_at": "2026-09-21T10:29:57.331461",
       "odds_movement_pct": 4.64,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "565809",
@@ -53400,7 +53401,8 @@
       "correct_btts": true,
       "verified_at": "2026-09-21T10:30:04.907459",
       "odds_movement_pct": -4.06,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "565805",
@@ -53448,7 +53450,8 @@
       "correct_1x2": false,
       "correct_over": false,
       "correct_btts": false,
-      "verified_at": "2026-09-21T10:30:05.261784"
+      "verified_at": "2026-09-21T10:30:05.261784",
+      "elo_updated": true
     },
     {
       "fixture_id": "559677",
@@ -53702,7 +53705,8 @@
       "correct_btts": true,
       "verified_at": "2026-09-21T10:29:41.070108",
       "odds_movement_pct": 17.65,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "558889",
@@ -54156,7 +54160,8 @@
       "correct_btts": true,
       "verified_at": "2026-09-21T10:30:12.610132",
       "odds_movement_pct": 3.63,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "558592",
@@ -54206,7 +54211,8 @@
       "correct_btts": false,
       "verified_at": "2026-09-21T10:30:12.966164",
       "odds_movement_pct": -3.65,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "560585",
@@ -54256,7 +54262,8 @@
       "correct_btts": false,
       "verified_at": "2026-09-21T10:29:57.766817",
       "odds_movement_pct": -9.47,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "560590",
@@ -54306,7 +54313,8 @@
       "correct_btts": false,
       "verified_at": "2026-09-21T10:29:57.960973",
       "odds_movement_pct": 3.88,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "564680",
@@ -54761,7 +54769,8 @@
       "correct_btts": true,
       "verified_at": "2026-09-21T10:30:05.412503",
       "odds_movement_pct": -4.5,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "559678",
@@ -54811,7 +54820,8 @@
       "correct_btts": false,
       "verified_at": "2026-09-21T10:29:41.913612",
       "odds_movement_pct": -9.71,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "559675",
@@ -54861,7 +54871,8 @@
       "correct_btts": true,
       "verified_at": "2026-09-21T10:29:42.329398",
       "odds_movement_pct": 0.47,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "558885",
@@ -54911,7 +54922,8 @@
       "correct_btts": false,
       "verified_at": "2026-09-21T10:30:28.513263",
       "odds_movement_pct": 3.15,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "558882",
@@ -54961,7 +54973,8 @@
       "correct_btts": true,
       "verified_at": "2026-09-21T10:30:28.671135",
       "odds_movement_pct": 0.0,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "558884",
@@ -55011,7 +55024,8 @@
       "correct_btts": false,
       "verified_at": "2026-09-21T10:30:28.839939",
       "odds_movement_pct": 0.0,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "558883",
@@ -55061,7 +55075,8 @@
       "correct_btts": true,
       "verified_at": "2026-09-21T10:30:29.178680",
       "odds_movement_pct": 22.22,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "567315",
@@ -55111,7 +55126,8 @@
       "correct_btts": false,
       "verified_at": "2026-09-21T10:29:49.348096",
       "odds_movement_pct": -4.61,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "567317",
@@ -55161,7 +55177,8 @@
       "correct_btts": false,
       "verified_at": "2026-09-21T10:29:49.557644",
       "odds_movement_pct": -2.33,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "567314",
@@ -55211,7 +55228,8 @@
       "correct_btts": false,
       "verified_at": "2026-09-21T10:29:49.975160",
       "odds_movement_pct": -0.8,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "561825",
@@ -55751,7 +55769,8 @@
       "correct_btts": false,
       "verified_at": "2026-09-21T10:30:13.119180",
       "odds_movement_pct": 0.31,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "558595",
@@ -55801,7 +55820,8 @@
       "correct_btts": true,
       "verified_at": "2026-09-21T10:30:13.480479",
       "odds_movement_pct": 0.0,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "558597",
@@ -55851,7 +55871,8 @@
       "correct_btts": true,
       "verified_at": "2026-09-21T10:30:13.829120",
       "odds_movement_pct": -0.79,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "560583",
@@ -55901,7 +55922,8 @@
       "correct_btts": true,
       "verified_at": "2026-09-21T10:29:58.123730",
       "odds_movement_pct": 3.7,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "564692",
@@ -56155,7 +56177,8 @@
       "correct_btts": false,
       "verified_at": "2026-09-21T10:29:50.377712",
       "odds_movement_pct": -5.03,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "567316",
@@ -56205,7 +56228,8 @@
       "correct_btts": true,
       "verified_at": "2026-09-21T10:29:50.764301",
       "odds_movement_pct": 6.09,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "561855",
@@ -56404,7 +56428,8 @@
       "correct_btts": true,
       "verified_at": "2026-09-21T10:30:20.626822",
       "odds_movement_pct": -5.63,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "564688",
@@ -56454,7 +56479,8 @@
       "correct_btts": true,
       "verified_at": "2026-09-21T10:30:20.977177",
       "odds_movement_pct": -3.86,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "564695",
@@ -56504,7 +56530,8 @@
       "correct_btts": true,
       "verified_at": "2026-09-21T10:30:21.346240",
       "odds_movement_pct": 26.71,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "564696",
@@ -56554,7 +56581,8 @@
       "correct_btts": true,
       "verified_at": "2026-09-21T10:30:21.501616",
       "odds_movement_pct": 2.0,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "564689",
@@ -56604,7 +56632,8 @@
       "correct_btts": true,
       "verified_at": "2026-09-21T10:30:21.851325",
       "odds_movement_pct": 3.64,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "561851",
@@ -56652,7 +56681,8 @@
       "correct_1x2": true,
       "correct_over": false,
       "correct_btts": false,
-      "verified_at": "2026-09-21T10:30:35.737648"
+      "verified_at": "2026-09-21T10:30:35.737648",
+      "elo_updated": true
     },
     {
       "fixture_id": "561850",
@@ -56700,8 +56730,9 @@
       "correct_1x2": false,
       "correct_over": true,
       "correct_btts": true,
-      "verified_at": "2026-09-21T10:30:35.892436"
+      "verified_at": "2026-09-21T10:30:35.892436",
+      "elo_updated": true
     }
   ],
-  "last_updated": "2026-09-21T10:30:36.043110"
+  "last_updated": "2026-09-22T09:43:01.898991"
 }
