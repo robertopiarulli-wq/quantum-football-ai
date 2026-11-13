@@ -1,6 +1,173 @@
 {
-  "generated_at": "2026-11-12T13:36:52.399379",
-  "date": "12/11/2026",
-  "total": 0,
-  "fixtures": []
+  "generated_at": "2026-11-13T12:56:57.464387",
+  "date": "13/11/2026",
+  "total": 3,
+  "fixtures": [
+    {
+      "home": "Athletic Club",
+      "away": "RCD Espanyol de Barcelona",
+      "league": "La Liga",
+      "fixture_id": 564748,
+      "date": "20/11/2026",
+      "time": "21:00",
+      "pred": {
+        "home": 0.6026,
+        "draw": 0.2976,
+        "away": 0.0998,
+        "dc1x": 0.9002,
+        "dcx2": 0.3974,
+        "dc12": 0.7024,
+        "over25": 0.4562,
+        "under25": 0.5438,
+        "bttsY": 0.4911,
+        "bttsN": 0.5089,
+        "xg_h": "1.5",
+        "xg_a": "1.0",
+        "conf": 0.5408,
+        "best": "1",
+        "bestP": 0.6026,
+        "combo": "1+U3.5",
+        "comboP": 0.7576
+      },
+      "pp": {
+        "pp_i_casa": 9.3,
+        "pp_i_ospite": 5.86,
+        "pp_D": 3.44,
+        "pp_result": "1X",
+        "pp_label": "\ud83d\udee1\ufe0f 1X",
+        "pp_pct": 62.6
+      },
+      "ov": {
+        "score": 33.5,
+        "pin1": 1.49,
+        "pinX": 4.53,
+        "pin2": 6.78,
+        "novig_1": 64.6,
+        "novig_X": 21.2,
+        "novig_2": 14.2,
+        "mkt_prob": 64.6,
+        "vig_pct": 3.94,
+        "edge": -4.3,
+        "misalign": null,
+        "market_fav": "1",
+        "components": {
+          "value": 0.0,
+          "coherence": 30.0,
+          "movement": 0.0,
+          "liquidity": 3.5
+        },
+        "movement_pct": null,
+        "surprise_idx": 0.471
+      }
+    },
+    {
+      "home": "FC Bayern M\u00fcnchen",
+      "away": "1. FC K\u00f6ln",
+      "league": "Bundesliga",
+      "fixture_id": 565859,
+      "date": "20/11/2026",
+      "time": "20:30",
+      "pred": {
+        "home": 0.7437,
+        "draw": 0.2159,
+        "away": 0.0404,
+        "dc1x": 0.9596,
+        "dcx2": 0.2563,
+        "dc12": 0.7841,
+        "over25": 0.85,
+        "under25": 0.15,
+        "bttsY": 0.6231,
+        "bttsN": 0.3769,
+        "xg_h": "4.02",
+        "xg_a": "1.01",
+        "conf": 0.488,
+        "best": "1",
+        "bestP": 0.7437,
+        "combo": "1+O1.5",
+        "comboP": 0.95
+      },
+      "pp": {
+        "pp_i_casa": 11.4,
+        "pp_i_ospite": 0.88,
+        "pp_D": 10.52,
+        "pp_result": "1",
+        "pp_label": "\ud83c\udfaf FISSA 1",
+        "pp_pct": 88.4
+      },
+      "ov": {
+        "score": null,
+        "pin1": null,
+        "pinX": null,
+        "pin2": null,
+        "novig_1": null,
+        "novig_X": null,
+        "novig_2": null,
+        "mkt_prob": null,
+        "vig_pct": null,
+        "edge": null,
+        "misalign": null,
+        "market_fav": null,
+        "components": {},
+        "movement_pct": null,
+        "surprise_idx": 0.358
+      }
+    },
+    {
+      "home": "ES Troyes AC",
+      "away": "Le Havre AC",
+      "league": "Ligue 1",
+      "fixture_id": 559622,
+      "date": "20/11/2026",
+      "time": "20:45",
+      "pred": {
+        "home": 0.5801,
+        "draw": 0.2961,
+        "away": 0.1238,
+        "dc1x": 0.8762,
+        "dcx2": 0.4199,
+        "dc12": 0.7039,
+        "over25": 0.7058,
+        "under25": 0.2942,
+        "bttsY": 0.7011,
+        "bttsN": 0.2989,
+        "xg_h": "1.71",
+        "xg_a": "1.94",
+        "conf": 0.3417,
+        "best": "1",
+        "bestP": 0.5801,
+        "combo": "1+O1.5",
+        "comboP": 0.879
+      },
+      "pp": {
+        "pp_i_casa": 2.25,
+        "pp_i_ospite": 1.86,
+        "pp_D": 0.39,
+        "pp_result": "X",
+        "pp_label": "\u2696\ufe0f FISSA X",
+        "pp_pct": 51.4
+      },
+      "ov": {
+        "score": 74.2,
+        "pin1": 2.05,
+        "pinX": 3.62,
+        "pin2": 3.66,
+        "novig_1": 47.0,
+        "novig_X": 26.6,
+        "novig_2": 26.3,
+        "mkt_prob": 47.0,
+        "vig_pct": 3.73,
+        "edge": 11.0,
+        "misalign": null,
+        "market_fav": "1",
+        "components": {
+          "value": 40.0,
+          "coherence": 30.0,
+          "movement": 0.0,
+          "liquidity": 4.2
+        },
+        "movement_pct": null,
+        "surprise_idx": 0.257
+      }
+    }
+  ]
 }
