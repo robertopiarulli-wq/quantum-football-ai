@@ -47,33 +47,33 @@
       "pp_label": "\ud83d\udee1\ufe0f 1X",
       "pp_pct": 59.8
     },
-    "ov_score": 33.0,
+    "ov_score": 34.0,
     "ov_details": {
       "pinnacle_1": 1.3,
-      "pinnacle_X": 5.93,
-      "pinnacle_2": 9.69,
-      "novig_1": 73.9,
-      "novig_X": 16.2,
-      "novig_2": 9.9,
-      "vig_pct": 4.11,
+      "pinnacle_X": 5.98,
+      "pinnacle_2": 9.86,
+      "novig_1": 74.1,
+      "novig_X": 16.1,
+      "novig_2": 9.8,
+      "vig_pct": 3.79,
       "our_prob": 73.8,
-      "mkt_prob": 73.9,
-      "value_edge": -0.1,
+      "mkt_prob": 74.1,
+      "value_edge": -0.4,
       "market_favorite": "1",
       "movement_pct": 0.0,
       "is_sharp": false,
-      "snapshots": 2,
+      "snapshots": 3,
       "open_home": 1.3,
-      "ov_score": 33.0,
+      "ov_score": 34.0,
       "components": {
         "value": 0.0,
         "coherence": 30.0,
         "movement": 0.0,
-        "liquidity": 3.0
+        "liquidity": 4.0
       }
     },
     "surprise_idx": 0.488,
-    "generated_at": "2026-11-15T12:32:44.685824"
+    "generated_at": "2026-11-16T13:25:05.659196"
   },
   {
     "league": "Serie A",
@@ -123,33 +123,33 @@
       "pp_label": "\ud83d\udd00 1-2",
       "pp_pct": 75.0
     },
-    "ov_score": 65.4,
+    "ov_score": 75.5,
     "ov_details": {
-      "pinnacle_1": 1.36,
-      "pinnacle_X": 5.29,
-      "pinnacle_2": 8.47,
-      "novig_1": 70.5,
-      "novig_X": 18.1,
-      "novig_2": 11.3,
-      "vig_pct": 4.24,
+      "pinnacle_1": 1.4,
+      "pinnacle_X": 5.15,
+      "pinnacle_2": 8.07,
+      "novig_1": 69.2,
+      "novig_X": 18.8,
+      "novig_2": 12.0,
+      "vig_pct": 3.24,
       "our_prob": 77.1,
-      "mkt_prob": 70.5,
-      "value_edge": 6.6,
+      "mkt_prob": 69.2,
+      "value_edge": 7.9,
       "market_favorite": "1",
-      "movement_pct": 0.0,
+      "movement_pct": 2.94,
       "is_sharp": false,
-      "snapshots": 2,
+      "snapshots": 3,
       "open_home": 1.36,
-      "ov_score": 65.4,
+      "ov_score": 75.5,
       "components": {
-        "value": 32.9,
+        "value": 39.6,
         "coherence": 30.0,
         "movement": 0.0,
-        "liquidity": 2.5
+        "liquidity": 5.9
       }
     },
     "surprise_idx": 0.488,
-    "generated_at": "2026-11-15T12:32:46.243236"
+    "generated_at": "2026-11-16T13:25:06.499527"
   },
   {
     "league": "Serie A",
@@ -199,33 +199,33 @@
       "pp_label": "\ud83d\udd00 1-2",
       "pp_pct": 20.8
     },
-    "ov_score": 32.8,
+    "ov_score": 45.6,
     "ov_details": {
-      "pinnacle_1": 9.85,
-      "pinnacle_X": 5.85,
-      "pinnacle_2": 1.3,
-      "novig_1": 9.8,
-      "novig_X": 16.4,
-      "novig_2": 73.8,
-      "vig_pct": 4.17,
+      "pinnacle_1": 9.63,
+      "pinnacle_X": 5.82,
+      "pinnacle_2": 1.32,
+      "novig_1": 10.1,
+      "novig_X": 16.6,
+      "novig_2": 73.3,
+      "vig_pct": 3.32,
       "our_prob": 72.0,
-      "mkt_prob": 73.8,
-      "value_edge": -1.9,
+      "mkt_prob": 73.3,
+      "value_edge": -1.3,
       "market_favorite": "2",
-      "movement_pct": 0.0,
+      "movement_pct": -2.23,
       "is_sharp": false,
-      "snapshots": 2,
+      "snapshots": 3,
       "open_home": 9.85,
-      "ov_score": 32.8,
+      "ov_score": 45.6,
       "components": {
         "value": 0.0,
         "coherence": 30.0,
-        "movement": 0.0,
-        "liquidity": 2.8
+        "movement": 10.0,
+        "liquidity": 5.6
       }
     },
-    "surprise_idx": 0.369,
-    "generated_at": "2026-11-15T12:32:47.882758"
+    "surprise_idx": 0.365,
+    "generated_at": "2026-11-16T13:25:07.377565"
   },
   {
     "league": "Serie A",
@@ -275,33 +275,33 @@
       "pp_label": "\u2696\ufe0f FISSA X",
       "pp_pct": 51.8
     },
-    "ov_score": 33.2,
+    "ov_score": 35.8,
     "ov_details": {
-      "pinnacle_1": 1.49,
-      "pinnacle_X": 4.64,
-      "pinnacle_2": 6.5,
-      "novig_1": 64.5,
+      "pinnacle_1": 1.5,
+      "pinnacle_X": 4.68,
+      "pinnacle_2": 6.57,
+      "novig_1": 64.6,
       "novig_X": 20.7,
-      "novig_2": 14.8,
-      "vig_pct": 4.05,
+      "novig_2": 14.7,
+      "vig_pct": 3.25,
       "our_prob": 57.9,
-      "mkt_prob": 64.5,
-      "value_edge": -6.6,
+      "mkt_prob": 64.6,
+      "value_edge": -6.7,
       "market_favorite": "1",
-      "movement_pct": 0.0,
+      "movement_pct": 0.67,
       "is_sharp": false,
-      "snapshots": 2,
+      "snapshots": 3,
       "open_home": 1.49,
-      "ov_score": 33.2,
+      "ov_score": 35.8,
       "components": {
         "value": 0.0,
         "coherence": 30.0,
         "movement": 0.0,
-        "liquidity": 3.2
+        "liquidity": 5.8
       }
     },
-    "surprise_idx": 0.469,
-    "generated_at": "2026-11-15T12:32:49.151346"
+    "surprise_idx": 0.471,
+    "generated_at": "2026-11-16T13:25:08.005105"
   },
   {
     "league": "Serie A",
@@ -354,26 +354,30 @@
     "ov_score": 50.7,
     "ov_details": {
       "pinnacle_1": 1.36,
-      "pinnacle_X": 5.45,
-      "pinnacle_2": 8.29,
-      "novig_1": 70.7,
+      "pinnacle_X": 5.48,
+      "pinnacle_2": 8.4,
+      "novig_1": 70.9,
       "novig_X": 17.6,
-      "novig_2": 11.6,
-      "vig_pct": 3.94,
+      "novig_2": 11.5,
+      "vig_pct": 3.68,
       "our_prob": 74.2,
-      "mkt_prob": 70.7,
-      "value_edge": 3.4,
+      "mkt_prob": 70.9,
+      "value_edge": 3.3,
       "market_favorite": "1",
+      "movement_pct": 0.0,
+      "is_sharp": false,
+      "snapshots": 2,
+      "open_home": 1.36,
       "ov_score": 50.7,
       "components": {
-        "value": 17.2,
+        "value": 16.3,
         "coherence": 30.0,
         "movement": 0.0,
-        "liquidity": 3.5
+        "liquidity": 4.4
       }
     },
     "surprise_idx": 0.488,
-    "generated_at": "2026-11-15T12:32:50.397014"
+    "generated_at": "2026-11-16T13:25:08.565084"
   },
   {
     "league": "Serie A",
@@ -423,29 +427,33 @@
       "pp_label": "\u2696\ufe0f FISSA X",
       "pp_pct": 47.9
     },
-    "ov_score": 72.9,
+    "ov_score": 73.5,
     "ov_details": {
-      "pinnacle_1": 1.72,
-      "pinnacle_X": 3.86,
-      "pinnacle_2": 4.98,
-      "novig_1": 55.8,
-      "novig_X": 24.9,
-      "novig_2": 19.3,
-      "vig_pct": 4.13,
+      "pinnacle_1": 1.77,
+      "pinnacle_X": 3.78,
+      "pinnacle_2": 4.76,
+      "novig_1": 54.3,
+      "novig_X": 25.4,
+      "novig_2": 20.2,
+      "vig_pct": 3.96,
       "our_prob": 70.6,
-      "mkt_prob": 55.8,
-      "value_edge": 14.8,
+      "mkt_prob": 54.3,
+      "value_edge": 16.3,
       "market_favorite": "1",
-      "ov_score": 72.9,
+      "movement_pct": 2.91,
+      "is_sharp": false,
+      "snapshots": 2,
+      "open_home": 1.72,
+      "ov_score": 73.5,
       "components": {
         "value": 40.0,
         "coherence": 30.0,
         "movement": 0.0,
-        "liquidity": 2.9
+        "liquidity": 3.5
       }
     },
-    "surprise_idx": 0.364,
-    "generated_at": "2026-11-15T12:32:52.038344"
+    "surprise_idx": 0.346,
+    "generated_at": "2026-11-16T13:25:09.264085"
   },
   {
     "league": "Serie A",
@@ -495,29 +503,33 @@
       "pp_label": "\ud83d\udee1\ufe0f 1X",
       "pp_pct": 60.3
     },
-    "ov_score": 52.2,
+    "ov_score": 56.5,
     "ov_details": {
-      "pinnacle_1": 2.73,
-      "pinnacle_X": 3.43,
-      "pinnacle_2": 2.65,
-      "novig_1": 35.4,
-      "novig_X": 28.2,
-      "novig_2": 36.4,
-      "vig_pct": 3.52,
+      "pinnacle_1": 2.8,
+      "pinnacle_X": 3.38,
+      "pinnacle_2": 2.61,
+      "novig_1": 34.5,
+      "novig_X": 28.5,
+      "novig_2": 37.0,
+      "vig_pct": 3.61,
       "our_prob": 41.8,
-      "mkt_prob": 35.4,
-      "value_edge": 6.5,
+      "mkt_prob": 34.5,
+      "value_edge": 7.4,
       "market_favorite": "2",
-      "ov_score": 52.2,
+      "movement_pct": 2.56,
+      "is_sharp": false,
+      "snapshots": 2,
+      "open_home": 2.73,
+      "ov_score": 56.5,
       "components": {
-        "value": 32.3,
+        "value": 36.9,
         "coherence": 15.0,
         "movement": 0.0,
-        "liquidity": 4.9
+        "liquidity": 4.6
       }
     },
-    "surprise_idx": 0.117,
-    "generated_at": "2026-11-15T12:32:53.266590"
+    "surprise_idx": 0.106,
+    "generated_at": "2026-11-16T13:25:09.841498"
   },
   {
     "league": "Serie A",
@@ -567,29 +579,33 @@
       "pp_label": "\ud83d\udd00 1-2",
       "pp_pct": 68.5
     },
-    "ov_score": 73.0,
+    "ov_score": 83.5,
     "ov_details": {
-      "pinnacle_1": 1.58,
-      "pinnacle_X": 4.58,
-      "pinnacle_2": 5.27,
-      "novig_1": 60.8,
-      "novig_X": 21.0,
-      "novig_2": 18.2,
-      "vig_pct": 4.1,
+      "pinnacle_1": 1.54,
+      "pinnacle_X": 4.71,
+      "pinnacle_2": 5.62,
+      "novig_1": 62.5,
+      "novig_X": 20.4,
+      "novig_2": 17.1,
+      "vig_pct": 3.96,
       "our_prob": 73.4,
-      "mkt_prob": 60.8,
-      "value_edge": 12.6,
+      "mkt_prob": 62.5,
+      "value_edge": 10.9,
       "market_favorite": "1",
-      "ov_score": 73.0,
+      "movement_pct": -2.53,
+      "is_sharp": false,
+      "snapshots": 2,
+      "open_home": 1.58,
+      "ov_score": 83.5,
       "components": {
         "value": 40.0,
         "coherence": 30.0,
-        "movement": 0.0,
-        "liquidity": 3.0
+        "movement": 10.0,
+        "liquidity": 3.5
       }
     },
-    "surprise_idx": 0.424,
-    "generated_at": "2026-11-15T12:32:54.584210"
+    "surprise_idx": 0.445,
+    "generated_at": "2026-11-16T13:25:10.504838"
   },
   {
     "league": "Serie A",
@@ -639,29 +655,105 @@
       "pp_label": "\ud83d\udee1\ufe0f X2",
       "pp_pct": 38.2
     },
-    "ov_score": 32.6,
+    "ov_score": 32.8,
     "ov_details": {
-      "pinnacle_1": 4.85,
-      "pinnacle_X": 4.57,
-      "pinnacle_2": 1.62,
-      "novig_1": 19.8,
-      "novig_X": 21.0,
-      "novig_2": 59.2,
-      "vig_pct": 4.23,
+      "pinnacle_1": 4.8,
+      "pinnacle_X": 4.55,
+      "pinnacle_2": 1.63,
+      "novig_1": 20.0,
+      "novig_X": 21.1,
+      "novig_2": 58.9,
+      "vig_pct": 4.16,
       "our_prob": 50.4,
-      "mkt_prob": 59.2,
-      "value_edge": -8.9,
+      "mkt_prob": 58.9,
+      "value_edge": -8.5,
       "market_favorite": "2",
-      "ov_score": 32.6,
+      "movement_pct": -1.03,
+      "is_sharp": false,
+      "snapshots": 2,
+      "open_home": 4.85,
+      "ov_score": 32.8,
       "components": {
         "value": 0.0,
         "coherence": 30.0,
         "movement": 0.0,
-        "liquidity": 2.6
+        "liquidity": 2.8
       }
     },
-    "surprise_idx": 0.248,
-    "generated_at": "2026-11-15T12:32:55.496679"
+    "surprise_idx": 0.245,
+    "generated_at": "2026-11-16T13:25:11.141060"
+  },
+  {
+    "league": "Serie A",
+    "comp_code": "SA",
+    "season": "2026/2027",
+    "fixture_id": 558519,
+    "home": "AC Monza",
+    "away": "ACF Fiorentina",
+    "date": "23/11/2026",
+    "time": "20:45",
+    "stage": "REGULAR_SEASON",
+    "matchday": 12,
+    "first_leg": null,
+    "prediction": {
+      "home": 0.33561891239743835,
+      "draw": 0.23184000000000002,
+      "away": 0.4325410876025616,
+      "quantum_used": false,
+      "goals_factor": 0.95,
+      "dc_1x": 0.5674589123974384,
+      "dc_x2": 0.6643810876025616,
+      "dc_12": 0.76816,
+      "over_25": 0.7311033222888894,
+      "under_25": 0.2688966777111106,
+      "over_15": 0.8926,
+      "under_35": 0.4735,
+      "over_35": 0.5265,
+      "btts_y": 0.7218826611121616,
+      "btts_n": 0.2781173388878384,
+      "xg_home": 1.99,
+      "xg_away": 1.8,
+      "combo_label": "2+BTTS",
+      "combo_leg": "BTTS",
+      "combo_prob": 0.7219,
+      "combo_score": 0.3122,
+      "combo_certain": true,
+      "confidence": 0.4232,
+      "raw_confidence": 0.4232,
+      "best_out": "2",
+      "best_val": 0.4325410876025616
+    },
+    "pp": {
+      "pp_i_casa": 4.95,
+      "pp_i_ospite": 6.0,
+      "pp_D": -1.05,
+      "pp_result": "X",
+      "pp_label": "\u2696\ufe0f FISSA X",
+      "pp_pct": 46.2
+    },
+    "ov_score": 34.0,
+    "ov_details": {
+      "pinnacle_1": 3.75,
+      "pinnacle_X": 3.83,
+      "pinnacle_2": 1.96,
+      "novig_1": 25.7,
+      "novig_X": 25.1,
+      "novig_2": 49.1,
+      "vig_pct": 3.8,
+      "our_prob": 43.3,
+      "mkt_prob": 49.1,
+      "value_edge": -5.9,
+      "market_favorite": "2",
+      "ov_score": 34.0,
+      "components": {
+        "value": 0.0,
+        "coherence": 30.0,
+        "movement": 0.0,
+        "liquidity": 4.0
+      }
+    },
+    "surprise_idx": 0.176,
+    "generated_at": "2026-11-16T13:25:11.711674"
   },
   {
     "league": "Premier League",
@@ -711,33 +803,33 @@
       "pp_label": "\ud83d\udd00 1-2",
       "pp_pct": 71.1
     },
-    "ov_score": 34.8,
+    "ov_score": 35.3,
     "ov_details": {
       "pinnacle_1": 1.41,
-      "pinnacle_X": 5.37,
-      "pinnacle_2": 7.14,
-      "novig_1": 68.5,
-      "novig_X": 18.0,
+      "pinnacle_X": 5.39,
+      "pinnacle_2": 7.17,
+      "novig_1": 68.6,
+      "novig_X": 17.9,
       "novig_2": 13.5,
-      "vig_pct": 3.55,
+      "vig_pct": 3.42,
       "our_prob": 64.9,
-      "mkt_prob": 68.5,
-      "value_edge": -3.6,
+      "mkt_prob": 68.6,
+      "value_edge": -3.7,
       "market_favorite": "1",
       "movement_pct": 0.71,
       "is_sharp": false,
-      "snapshots": 2,
+      "snapshots": 3,
       "open_home": 1.4,
-      "ov_score": 34.8,
+      "ov_score": 35.3,
       "components": {
         "value": 0.0,
         "coherence": 30.0,
         "movement": 0.0,
-        "liquidity": 4.8
+        "liquidity": 5.3
       }
     },
     "surprise_idx": 0.488,
-    "generated_at": "2026-11-15T12:33:19.432839"
+    "generated_at": "2026-11-16T13:25:34.078007"
   },
   {
     "league": "Premier League",
@@ -787,33 +879,33 @@
       "pp_label": "\ud83d\udd00 1-2",
       "pp_pct": 68.7
     },
-    "ov_score": 33.9,
+    "ov_score": 35.9,
     "ov_details": {
-      "pinnacle_1": 1.9,
-      "pinnacle_X": 3.79,
-      "pinnacle_2": 4.03,
+      "pinnacle_1": 1.91,
+      "pinnacle_X": 3.82,
+      "pinnacle_2": 4.05,
       "novig_1": 50.7,
       "novig_X": 25.4,
       "novig_2": 23.9,
-      "vig_pct": 3.83,
+      "vig_pct": 3.23,
       "our_prob": 48.6,
       "mkt_prob": 50.7,
       "value_edge": -2.1,
       "market_favorite": "1",
-      "movement_pct": 0.0,
+      "movement_pct": 0.53,
       "is_sharp": false,
-      "snapshots": 2,
+      "snapshots": 3,
       "open_home": 1.9,
-      "ov_score": 33.9,
+      "ov_score": 35.9,
       "components": {
         "value": 0.0,
         "coherence": 30.0,
         "movement": 0.0,
-        "liquidity": 3.9
+        "liquidity": 5.9
       }
     },
     "surprise_idx": 0.203,
-    "generated_at": "2026-11-15T12:33:20.034983"
+    "generated_at": "2026-11-16T13:25:34.639675"
   },
   {
     "league": "Premier League",
@@ -863,33 +955,33 @@
       "pp_label": "\ud83d\udee1\ufe0f 1X",
       "pp_pct": 58.4
     },
-    "ov_score": 72.2,
+    "ov_score": 78.3,
     "ov_details": {
-      "pinnacle_1": 1.79,
-      "pinnacle_X": 3.85,
-      "pinnacle_2": 4.57,
-      "novig_1": 53.9,
-      "novig_X": 25.0,
-      "novig_2": 21.1,
-      "vig_pct": 3.72,
+      "pinnacle_1": 1.85,
+      "pinnacle_X": 3.82,
+      "pinnacle_2": 4.37,
+      "novig_1": 52.4,
+      "novig_X": 25.4,
+      "novig_2": 22.2,
+      "vig_pct": 3.12,
       "our_prob": 61.5,
-      "mkt_prob": 53.9,
-      "value_edge": 7.6,
+      "mkt_prob": 52.4,
+      "value_edge": 9.0,
       "market_favorite": "1",
-      "movement_pct": 0.0,
+      "movement_pct": 3.35,
       "is_sharp": false,
-      "snapshots": 2,
+      "snapshots": 3,
       "open_home": 1.79,
-      "ov_score": 72.2,
+      "ov_score": 78.3,
       "components": {
-        "value": 38.0,
+        "value": 40.0,
         "coherence": 30.0,
-        "movement": 0.0,
-        "liquidity": 4.3
+        "movement": 2.0,
+        "liquidity": 6.3
       }
     },
-    "surprise_idx": 0.19,
-    "generated_at": "2026-11-15T12:33:21.696433"
+    "surprise_idx": 0.185,
+    "generated_at": "2026-11-16T13:25:35.188295"
   },
   {
     "league": "Premier League",
@@ -939,33 +1031,33 @@
       "pp_label": "\ud83d\udee1\ufe0f 1X",
       "pp_pct": 57.4
     },
-    "ov_score": 72.9,
+    "ov_score": 76.0,
     "ov_details": {
-      "pinnacle_1": 2.02,
-      "pinnacle_X": 3.61,
-      "pinnacle_2": 3.76,
-      "novig_1": 47.7,
+      "pinnacle_1": 2.04,
+      "pinnacle_X": 3.63,
+      "pinnacle_2": 3.77,
+      "novig_1": 47.5,
       "novig_X": 26.7,
-      "novig_2": 25.6,
-      "vig_pct": 3.8,
+      "novig_2": 25.7,
+      "vig_pct": 3.09,
       "our_prob": 55.5,
-      "mkt_prob": 47.7,
-      "value_edge": 7.8,
+      "mkt_prob": 47.5,
+      "value_edge": 7.9,
       "market_favorite": "1",
-      "movement_pct": 0.0,
+      "movement_pct": 0.99,
       "is_sharp": false,
-      "snapshots": 2,
+      "snapshots": 3,
       "open_home": 2.02,
-      "ov_score": 72.9,
+      "ov_score": 76.0,
       "components": {
-        "value": 38.9,
+        "value": 39.6,
         "coherence": 30.0,
         "movement": 0.0,
-        "liquidity": 4.0
+        "liquidity": 6.4
       }
     },
     "surprise_idx": 0.18,
-    "generated_at": "2026-11-15T12:33:22.619110"
+    "generated_at": "2026-11-16T13:25:36.016551"
   },
   {
     "league": "Premier League",
@@ -1015,33 +1107,33 @@
       "pp_label": "\u2696\ufe0f FISSA X",
       "pp_pct": 53.9
     },
-    "ov_score": 33.1,
+    "ov_score": 35.6,
     "ov_details": {
-      "pinnacle_1": 1.55,
-      "pinnacle_X": 4.52,
-      "pinnacle_2": 5.74,
+      "pinnacle_1": 1.56,
+      "pinnacle_X": 4.55,
+      "pinnacle_2": 5.8,
       "novig_1": 62.0,
       "novig_X": 21.3,
       "novig_2": 16.7,
-      "vig_pct": 4.06,
+      "vig_pct": 3.32,
       "our_prob": 52.4,
       "mkt_prob": 62.0,
-      "value_edge": -9.6,
+      "value_edge": -9.7,
       "market_favorite": "1",
-      "movement_pct": 0.0,
+      "movement_pct": 0.65,
       "is_sharp": false,
-      "snapshots": 2,
+      "snapshots": 3,
       "open_home": 1.55,
-      "ov_score": 33.1,
+      "ov_score": 35.6,
       "components": {
         "value": 0.0,
         "coherence": 30.0,
         "movement": 0.0,
-        "liquidity": 3.1
+        "liquidity": 5.6
       }
     },
     "surprise_idx": 0.243,
-    "generated_at": "2026-11-15T12:33:23.926265"
+    "generated_at": "2026-11-16T13:25:36.609602"
   },
   {
     "league": "Premier League",
@@ -1091,33 +1183,33 @@
       "pp_label": "\u2696\ufe0f FISSA X",
       "pp_pct": 57.2
     },
-    "ov_score": 74.7,
+    "ov_score": 76.5,
     "ov_details": {
-      "pinnacle_1": 2.45,
-      "pinnacle_X": 3.61,
-      "pinnacle_2": 2.85,
-      "novig_1": 39.4,
+      "pinnacle_1": 2.46,
+      "pinnacle_X": 3.63,
+      "pinnacle_2": 2.87,
+      "novig_1": 39.5,
       "novig_X": 26.7,
-      "novig_2": 33.9,
-      "vig_pct": 3.6,
+      "novig_2": 33.8,
+      "vig_pct": 3.04,
       "our_prob": 56.3,
-      "mkt_prob": 39.4,
+      "mkt_prob": 39.5,
       "value_edge": 16.9,
       "market_favorite": "1",
-      "movement_pct": 0.0,
+      "movement_pct": 0.41,
       "is_sharp": false,
-      "snapshots": 2,
+      "snapshots": 3,
       "open_home": 2.45,
-      "ov_score": 74.7,
+      "ov_score": 76.5,
       "components": {
         "value": 40.0,
         "coherence": 30.0,
         "movement": 0.0,
-        "liquidity": 4.7
+        "liquidity": 6.5
       }
     },
     "surprise_idx": 0.181,
-    "generated_at": "2026-11-15T12:33:24.535986"
+    "generated_at": "2026-11-16T13:25:37.204772"
   },
   {
     "league": "Premier League",
@@ -1167,33 +1259,33 @@
       "pp_label": "\ud83d\udd00 1-2",
       "pp_pct": 31.9
     },
-    "ov_score": 50.4,
+    "ov_score": 50.7,
     "ov_details": {
-      "pinnacle_1": 5.64,
-      "pinnacle_X": 4.28,
-      "pinnacle_2": 1.59,
-      "novig_1": 17.1,
-      "novig_X": 22.5,
-      "novig_2": 60.5,
-      "vig_pct": 3.99,
+      "pinnacle_1": 5.8,
+      "pinnacle_X": 4.34,
+      "pinnacle_2": 1.58,
+      "novig_1": 16.7,
+      "novig_X": 22.2,
+      "novig_2": 61.1,
+      "vig_pct": 3.57,
       "our_prob": 63.9,
-      "mkt_prob": 60.5,
-      "value_edge": 3.4,
+      "mkt_prob": 61.1,
+      "value_edge": 2.8,
       "market_favorite": "2",
-      "movement_pct": 0.18,
+      "movement_pct": 3.02,
       "is_sharp": false,
-      "snapshots": 2,
+      "snapshots": 3,
       "open_home": 5.63,
-      "ov_score": 50.4,
+      "ov_score": 50.7,
       "components": {
-        "value": 17.1,
+        "value": 13.9,
         "coherence": 30.0,
-        "movement": 0.0,
-        "liquidity": 3.4
+        "movement": 2.0,
+        "liquidity": 4.8
       }
     },
-    "surprise_idx": 0.28,
-    "generated_at": "2026-11-15T12:33:25.447212"
+    "surprise_idx": 0.285,
+    "generated_at": "2026-11-16T13:25:37.863898"
   },
   {
     "league": "Premier League",
@@ -1243,29 +1335,33 @@
       "pp_label": "\ud83d\udee1\ufe0f X2",
       "pp_pct": 38.3
     },
-    "ov_score": 33.3,
+    "ov_score": 33.2,
     "ov_details": {
-      "pinnacle_1": 6.18,
-      "pinnacle_X": 4.54,
-      "pinnacle_2": 1.52,
-      "novig_1": 15.6,
-      "novig_X": 21.2,
-      "novig_2": 63.3,
-      "vig_pct": 4.0,
+      "pinnacle_1": 6.31,
+      "pinnacle_X": 4.55,
+      "pinnacle_2": 1.51,
+      "novig_1": 15.2,
+      "novig_X": 21.1,
+      "novig_2": 63.6,
+      "vig_pct": 4.05,
       "our_prob": 48.3,
-      "mkt_prob": 63.3,
-      "value_edge": -14.9,
+      "mkt_prob": 63.6,
+      "value_edge": -15.3,
       "market_favorite": "2",
-      "ov_score": 33.3,
+      "movement_pct": 2.1,
+      "is_sharp": false,
+      "snapshots": 2,
+      "open_home": 6.18,
+      "ov_score": 33.2,
       "components": {
         "value": 0.0,
         "coherence": 30.0,
         "movement": 0.0,
-        "liquidity": 3.3
+        "liquidity": 3.2
       }
     },
-    "surprise_idx": 0.233,
-    "generated_at": "2026-11-15T12:33:26.055605"
+    "surprise_idx": 0.235,
+    "generated_at": "2026-11-16T13:25:38.608031"
   },
   {
     "league": "Premier League",
@@ -1315,29 +1411,105 @@
       "pp_label": "\u2696\ufe0f FISSA X",
       "pp_pct": 53.1
     },
-    "ov_score": 33.6,
+    "ov_score": 34.2,
     "ov_details": {
-      "pinnacle_1": 1.77,
-      "pinnacle_X": 4.13,
-      "pinnacle_2": 4.31,
-      "novig_1": 54.4,
-      "novig_X": 23.3,
-      "novig_2": 22.3,
-      "vig_pct": 3.91,
+      "pinnacle_1": 1.78,
+      "pinnacle_X": 4.23,
+      "pinnacle_2": 4.18,
+      "novig_1": 54.1,
+      "novig_X": 22.8,
+      "novig_2": 23.1,
+      "vig_pct": 3.74,
       "our_prob": 50.3,
-      "mkt_prob": 54.4,
-      "value_edge": -4.0,
+      "mkt_prob": 54.1,
+      "value_edge": -3.8,
       "market_favorite": "1",
-      "ov_score": 33.6,
+      "movement_pct": 0.56,
+      "is_sharp": false,
+      "snapshots": 2,
+      "open_home": 1.77,
+      "ov_score": 34.2,
       "components": {
         "value": 0.0,
         "coherence": 30.0,
         "movement": 0.0,
-        "liquidity": 3.6
+        "liquidity": 4.2
       }
     },
-    "surprise_idx": 0.218,
-    "generated_at": "2026-11-15T12:33:27.719002"
+    "surprise_idx": 0.224,
+    "generated_at": "2026-11-16T13:25:39.208787"
+  },
+  {
+    "league": "Premier League",
+    "comp_code": "PL",
+    "season": "2026/2027",
+    "fixture_id": 560649,
+    "home": "Brentford FC",
+    "away": "Everton FC",
+    "date": "23/11/2026",
+    "time": "21:00",
+    "stage": "REGULAR_SEASON",
+    "matchday": 11,
+    "first_leg": null,
+    "prediction": {
+      "home": 0.4674603164158839,
+      "draw": 0.35704,
+      "away": 0.17549968358411605,
+      "quantum_used": false,
+      "goals_factor": 1.1,
+      "dc_1x": 0.824500316415884,
+      "dc_x2": 0.5325396835841161,
+      "dc_12": 0.64296,
+      "over_25": 0.43550778804432366,
+      "under_25": 0.5644922119556763,
+      "over_15": 0.6959,
+      "under_35": 0.7745,
+      "over_35": 0.2255,
+      "btts_y": 0.4338586405274041,
+      "btts_n": 0.5661413594725959,
+      "xg_home": 1.65,
+      "xg_away": 0.77,
+      "combo_label": "X+U3.5",
+      "combo_leg": "U3.5",
+      "combo_prob": 0.7745,
+      "combo_score": 0.2765,
+      "combo_certain": true,
+      "confidence": 0.2235,
+      "raw_confidence": 0.2235,
+      "best_out": "1",
+      "best_val": 0.4674603164158839
+    },
+    "pp": {
+      "pp_i_casa": 8.55,
+      "pp_i_ospite": 4.54,
+      "pp_D": 4.01,
+      "pp_result": "12",
+      "pp_label": "\ud83d\udd00 1-2",
+      "pp_pct": 64.6
+    },
+    "ov_score": 37.4,
+    "ov_details": {
+      "pinnacle_1": 2.09,
+      "pinnacle_X": 3.71,
+      "pinnacle_2": 3.46,
+      "novig_1": 46.1,
+      "novig_X": 26.0,
+      "novig_2": 27.9,
+      "vig_pct": 3.7,
+      "our_prob": 46.7,
+      "mkt_prob": 46.1,
+      "value_edge": 0.6,
+      "market_favorite": "1",
+      "ov_score": 37.4,
+      "components": {
+        "value": 3.0,
+        "coherence": 30.0,
+        "movement": 0.0,
+        "liquidity": 4.3
+      }
+    },
+    "surprise_idx": 0.196,
+    "generated_at": "2026-11-16T13:25:39.788402"
   },
   {
     "league": "La Liga",
@@ -1387,33 +1559,33 @@
       "pp_label": "\ud83d\udee1\ufe0f 1X",
       "pp_pct": 62.6
     },
-    "ov_score": 34.5,
+    "ov_score": 35.8,
     "ov_details": {
-      "pinnacle_1": 1.49,
-      "pinnacle_X": 4.56,
-      "pinnacle_2": 6.85,
-      "novig_1": 64.8,
-      "novig_X": 21.2,
-      "novig_2": 14.1,
-      "vig_pct": 3.64,
+      "pinnacle_1": 1.51,
+      "pinnacle_X": 4.52,
+      "pinnacle_2": 6.7,
+      "novig_1": 64.1,
+      "novig_X": 21.4,
+      "novig_2": 14.4,
+      "vig_pct": 3.27,
       "our_prob": 60.3,
-      "mkt_prob": 64.8,
-      "value_edge": -4.5,
+      "mkt_prob": 64.1,
+      "value_edge": -3.9,
       "market_favorite": "1",
-      "movement_pct": 0.0,
+      "movement_pct": 1.34,
       "is_sharp": false,
-      "snapshots": 3,
+      "snapshots": 4,
       "open_home": 1.49,
-      "ov_score": 34.5,
+      "ov_score": 35.8,
       "components": {
         "value": 0.0,
         "coherence": 30.0,
         "movement": 0.0,
-        "liquidity": 4.5
+        "liquidity": 5.8
       }
     },
-    "surprise_idx": 0.473,
-    "generated_at": "2026-11-15T12:33:51.081056"
+    "surprise_idx": 0.464,
+    "generated_at": "2026-11-16T13:26:02.364094"
   },
   {
     "league": "La Liga",
@@ -1463,33 +1635,33 @@
       "pp_label": "\u2696\ufe0f FISSA X",
       "pp_pct": 54.5
     },
-    "ov_score": 41.2,
+    "ov_score": 53.9,
     "ov_details": {
-      "pinnacle_1": 2.14,
-      "pinnacle_X": 3.47,
-      "pinnacle_2": 3.57,
-      "novig_1": 45.1,
-      "novig_X": 27.8,
-      "novig_2": 27.1,
-      "vig_pct": 3.56,
+      "pinnacle_1": 2.24,
+      "pinnacle_X": 3.42,
+      "pinnacle_2": 3.43,
+      "novig_1": 43.3,
+      "novig_X": 28.4,
+      "novig_2": 28.3,
+      "vig_pct": 3.04,
       "our_prob": 46.4,
-      "mkt_prob": 45.1,
-      "value_edge": 1.3,
+      "mkt_prob": 43.3,
+      "value_edge": 3.1,
       "market_favorite": "1",
-      "movement_pct": 0.0,
+      "movement_pct": 4.67,
       "is_sharp": false,
-      "snapshots": 2,
+      "snapshots": 3,
       "open_home": 2.14,
-      "ov_score": 41.2,
+      "ov_score": 53.9,
       "components": {
-        "value": 6.4,
+        "value": 15.3,
         "coherence": 30.0,
-        "movement": 0.0,
-        "liquidity": 4.8
+        "movement": 2.0,
+        "liquidity": 6.5
       }
     },
-    "surprise_idx": 0.234,
-    "generated_at": "2026-11-15T12:33:52.043749"
+    "surprise_idx": 0.212,
+    "generated_at": "2026-11-16T13:26:02.973999"
   },
   {
     "league": "La Liga",
@@ -1539,33 +1711,33 @@
       "pp_label": "\ud83d\udee1\ufe0f 1X",
       "pp_pct": 58.2
     },
-    "ov_score": 50.0,
+    "ov_score": 59.8,
     "ov_details": {
-      "pinnacle_1": 1.96,
-      "pinnacle_X": 3.55,
-      "pinnacle_2": 4.07,
-      "novig_1": 49.2,
-      "novig_X": 27.2,
-      "novig_2": 23.7,
-      "vig_pct": 3.76,
+      "pinnacle_1": 2.02,
+      "pinnacle_X": 3.52,
+      "pinnacle_2": 3.94,
+      "novig_1": 47.9,
+      "novig_X": 27.5,
+      "novig_2": 24.6,
+      "vig_pct": 3.29,
       "our_prob": 52.3,
-      "mkt_prob": 49.2,
-      "value_edge": 3.2,
+      "mkt_prob": 47.9,
+      "value_edge": 4.4,
       "market_favorite": "1",
-      "movement_pct": 0.0,
+      "movement_pct": 3.06,
       "is_sharp": false,
-      "snapshots": 2,
+      "snapshots": 3,
       "open_home": 1.96,
-      "ov_score": 50.0,
+      "ov_score": 59.8,
       "components": {
-        "value": 15.9,
+        "value": 22.1,
         "coherence": 30.0,
-        "movement": 0.0,
-        "liquidity": 4.1
+        "movement": 2.0,
+        "liquidity": 5.7
       }
     },
-    "surprise_idx": 0.284,
-    "generated_at": "2026-11-15T12:33:52.954361"
+    "surprise_idx": 0.268,
+    "generated_at": "2026-11-16T13:26:03.599667"
   },
   {
     "league": "La Liga",
@@ -1615,33 +1787,33 @@
       "pp_label": "\u2696\ufe0f FISSA X",
       "pp_pct": 43.4
     },
-    "ov_score": 34.6,
+    "ov_score": 36.7,
     "ov_details": {
-      "pinnacle_1": 3.12,
-      "pinnacle_X": 3.61,
-      "pinnacle_2": 2.28,
+      "pinnacle_1": 3.14,
+      "pinnacle_X": 3.64,
+      "pinnacle_2": 2.29,
       "novig_1": 30.9,
       "novig_X": 26.7,
-      "novig_2": 42.3,
-      "vig_pct": 3.61,
+      "novig_2": 42.4,
+      "vig_pct": 2.99,
       "our_prob": 41.0,
-      "mkt_prob": 42.3,
+      "mkt_prob": 42.4,
       "value_edge": -1.4,
       "market_favorite": "2",
-      "movement_pct": 0.0,
+      "movement_pct": 0.64,
       "is_sharp": false,
-      "snapshots": 2,
+      "snapshots": 3,
       "open_home": 3.12,
-      "ov_score": 34.6,
+      "ov_score": 36.7,
       "components": {
         "value": 0.0,
         "coherence": 30.0,
         "movement": 0.0,
-        "liquidity": 4.6
+        "liquidity": 6.7
       }
     },
     "surprise_idx": 0.113,
-    "generated_at": "2026-11-15T12:33:53.552017"
+    "generated_at": "2026-11-16T13:26:04.222681"
   },
   {
     "league": "La Liga",
@@ -1691,33 +1863,33 @@
       "pp_label": "\ud83c\udfaf FISSA 1",
       "pp_pct": 91.2
     },
-    "ov_score": 31.1,
+    "ov_score": 34.1,
     "ov_details": {
-      "pinnacle_1": 1.2,
-      "pinnacle_X": 7.0,
-      "pinnacle_2": 14.17,
-      "novig_1": 79.6,
+      "pinnacle_1": 1.21,
+      "pinnacle_X": 7.03,
+      "pinnacle_2": 14.52,
+      "novig_1": 79.7,
       "novig_X": 13.7,
-      "novig_2": 6.7,
-      "vig_pct": 4.68,
+      "novig_2": 6.6,
+      "vig_pct": 3.76,
       "our_prob": 75.8,
-      "mkt_prob": 79.6,
+      "mkt_prob": 79.7,
       "value_edge": -3.8,
       "market_favorite": "1",
-      "movement_pct": -0.83,
+      "movement_pct": 0.0,
       "is_sharp": false,
-      "snapshots": 2,
+      "snapshots": 3,
       "open_home": 1.21,
-      "ov_score": 31.1,
+      "ov_score": 34.1,
       "components": {
         "value": 0.0,
         "coherence": 30.0,
         "movement": 0.0,
-        "liquidity": 1.1
+        "liquidity": 4.1
       }
     },
     "surprise_idx": 0.488,
-    "generated_at": "2026-11-15T12:33:54.480154"
+    "generated_at": "2026-11-16T13:26:04.819824"
   },
   {
     "league": "La Liga",
@@ -1767,29 +1939,33 @@
       "pp_label": "\ud83d\udd00 1-2",
       "pp_pct": 74.2
     },
-    "ov_score": 31.8,
+    "ov_score": 33.5,
     "ov_details": {
       "pinnacle_1": 1.21,
-      "pinnacle_X": 7.02,
-      "pinnacle_2": 13.2,
-      "novig_1": 79.1,
-      "novig_X": 13.6,
-      "novig_2": 7.2,
-      "vig_pct": 4.47,
+      "pinnacle_X": 7.2,
+      "pinnacle_2": 13.46,
+      "novig_1": 79.5,
+      "novig_X": 13.4,
+      "novig_2": 7.1,
+      "vig_pct": 3.96,
       "our_prob": 72.9,
-      "mkt_prob": 79.1,
-      "value_edge": -6.3,
+      "mkt_prob": 79.5,
+      "value_edge": -6.6,
       "market_favorite": "1",
-      "ov_score": 31.8,
+      "movement_pct": 0.0,
+      "is_sharp": false,
+      "snapshots": 2,
+      "open_home": 1.21,
+      "ov_score": 33.5,
       "components": {
         "value": 0.0,
         "coherence": 30.0,
         "movement": 0.0,
-        "liquidity": 1.8
+        "liquidity": 3.5
       }
     },
     "surprise_idx": 0.488,
-    "generated_at": "2026-11-15T12:33:55.416172"
+    "generated_at": "2026-11-16T13:26:05.404043"
   },
   {
     "league": "La Liga",
@@ -1852,6 +2028,10 @@
       "mkt_prob": 30.0,
       "value_edge": 8.6,
       "market_favorite": "2",
+      "movement_pct": 0.0,
+      "is_sharp": false,
+      "snapshots": 2,
+      "open_home": 3.21,
       "ov_score": 58.8,
       "components": {
         "value": 40.0,
@@ -1861,7 +2041,7 @@
       }
     },
     "surprise_idx": 0.124,
-    "generated_at": "2026-11-15T12:33:56.050210"
+    "generated_at": "2026-11-16T13:26:05.969717"
   },
   {
     "league": "La Liga",
@@ -1911,29 +2091,33 @@
       "pp_label": "\ud83d\udd00 1-2",
       "pp_pct": 65.8
     },
-    "ov_score": 33.9,
+    "ov_score": 33.6,
     "ov_details": {
-      "pinnacle_1": 1.77,
-      "pinnacle_X": 3.8,
+      "pinnacle_1": 1.78,
+      "pinnacle_X": 3.74,
       "pinnacle_2": 4.76,
-      "novig_1": 54.4,
-      "novig_X": 25.4,
+      "novig_1": 54.1,
+      "novig_X": 25.7,
       "novig_2": 20.2,
-      "vig_pct": 3.82,
+      "vig_pct": 3.93,
       "our_prob": 53.7,
-      "mkt_prob": 54.4,
-      "value_edge": -0.7,
+      "mkt_prob": 54.1,
+      "value_edge": -0.4,
       "market_favorite": "1",
-      "ov_score": 33.9,
+      "movement_pct": 0.56,
+      "is_sharp": false,
+      "snapshots": 2,
+      "open_home": 1.77,
+      "ov_score": 33.6,
       "components": {
         "value": 0.0,
         "coherence": 30.0,
         "movement": 0.0,
-        "liquidity": 3.9
+        "liquidity": 3.6
       }
     },
-    "surprise_idx": 0.347,
-    "generated_at": "2026-11-15T12:33:56.673210"
+    "surprise_idx": 0.343,
+    "generated_at": "2026-11-16T13:26:06.578389"
   },
   {
     "league": "La Liga",
@@ -1983,29 +2167,105 @@
       "pp_label": "\ud83d\udee1\ufe0f X2",
       "pp_pct": 39.9
     },
-    "ov_score": 33.5,
+    "ov_score": 44.0,
     "ov_details": {
-      "pinnacle_1": 5.77,
-      "pinnacle_X": 4.02,
-      "pinnacle_2": 1.62,
-      "novig_1": 16.7,
-      "novig_X": 23.9,
-      "novig_2": 59.4,
-      "vig_pct": 3.94,
+      "pinnacle_1": 5.61,
+      "pinnacle_X": 3.94,
+      "pinnacle_2": 1.65,
+      "novig_1": 17.2,
+      "novig_X": 24.4,
+      "novig_2": 58.4,
+      "vig_pct": 3.81,
       "our_prob": 45.5,
-      "mkt_prob": 59.4,
-      "value_edge": -13.9,
+      "mkt_prob": 58.4,
+      "value_edge": -12.9,
       "market_favorite": "2",
-      "ov_score": 33.5,
+      "movement_pct": -2.77,
+      "is_sharp": false,
+      "snapshots": 2,
+      "open_home": 5.77,
+      "ov_score": 44.0,
       "components": {
         "value": 0.0,
         "coherence": 30.0,
-        "movement": 0.0,
-        "liquidity": 3.5
+        "movement": 10.0,
+        "liquidity": 4.0
       }
     },
-    "surprise_idx": 0.285,
-    "generated_at": "2026-11-15T12:33:57.872506"
+    "surprise_idx": 0.279,
+    "generated_at": "2026-11-16T13:26:07.140398"
+  },
+  {
+    "league": "La Liga",
+    "comp_code": "PD",
+    "season": "2026/2027",
+    "fixture_id": 564757,
+    "home": "Levante UD",
+    "away": "Elche CF",
+    "date": "23/11/2026",
+    "time": "21:00",
+    "stage": "REGULAR_SEASON",
+    "matchday": 13,
+    "first_leg": null,
+    "prediction": {
+      "home": 0.48419571932164196,
+      "draw": 0.30502000000000007,
+      "away": 0.21078428067835797,
+      "quantum_used": false,
+      "goals_factor": 1.0,
+      "dc_1x": 0.789215719321642,
+      "dc_x2": 0.515804280678358,
+      "dc_12": 0.6949799999999999,
+      "over_25": 0.7367096559056839,
+      "under_25": 0.26329034409431606,
+      "over_15": 0.8956,
+      "under_35": 0.4664,
+      "over_35": 0.5336,
+      "btts_y": 0.7256219677445642,
+      "btts_n": 0.2743780322554358,
+      "xg_home": 1.8,
+      "xg_away": 2.04,
+      "combo_label": "1+BTTS",
+      "combo_leg": "BTTS",
+      "combo_prob": 0.7256,
+      "combo_score": 0.3513,
+      "combo_certain": true,
+      "confidence": 0.3621,
+      "raw_confidence": 0.3621,
+      "best_out": "1",
+      "best_val": 0.48419571932164196
+    },
+    "pp": {
+      "pp_i_casa": 6.3,
+      "pp_i_ospite": 7.54,
+      "pp_D": -1.24,
+      "pp_result": "X",
+      "pp_label": "\u2696\ufe0f FISSA X",
+      "pp_pct": 45.5
+    },
+    "ov_score": 58.5,
+    "ov_details": {
+      "pinnacle_1": 2.21,
+      "pinnacle_X": 3.58,
+      "pinnacle_2": 3.3,
+      "novig_1": 43.7,
+      "novig_X": 27.0,
+      "novig_2": 29.3,
+      "vig_pct": 3.48,
+      "our_prob": 48.4,
+      "mkt_prob": 43.7,
+      "value_edge": 4.7,
+      "market_favorite": "1",
+      "ov_score": 58.5,
+      "components": {
+        "value": 23.4,
+        "coherence": 30.0,
+        "movement": 0.0,
+        "liquidity": 5.1
+      }
+    },
+    "surprise_idx": 0.217,
+    "generated_at": "2026-11-16T13:26:07.812245"
   },
   {
     "league": "Bundesliga",
@@ -2058,7 +2318,7 @@
     "ov_score": null,
     "ov_details": {},
     "surprise_idx": 0.358,
-    "generated_at": "2026-11-15T12:34:20.349976"
+    "generated_at": "2026-11-16T13:26:30.053381"
   },
   {
     "league": "Bundesliga",
@@ -2108,33 +2368,33 @@
       "pp_label": "\ud83d\udd00 1-2",
       "pp_pct": 70.5
     },
-    "ov_score": 30.4,
+    "ov_score": 33.0,
     "ov_details": {
-      "pinnacle_1": 1.26,
-      "pinnacle_X": 7.1,
-      "pinnacle_2": 8.74,
-      "novig_1": 75.7,
-      "novig_X": 13.4,
+      "pinnacle_1": 1.27,
+      "pinnacle_X": 7.13,
+      "pinnacle_2": 8.83,
+      "novig_1": 75.6,
+      "novig_X": 13.5,
       "novig_2": 10.9,
-      "vig_pct": 4.89,
+      "vig_pct": 4.09,
       "our_prob": 66.5,
-      "mkt_prob": 75.7,
+      "mkt_prob": 75.6,
       "value_edge": -9.1,
       "market_favorite": "1",
-      "movement_pct": 0.0,
+      "movement_pct": 0.79,
       "is_sharp": false,
-      "snapshots": 2,
+      "snapshots": 3,
       "open_home": 1.26,
-      "ov_score": 30.4,
+      "ov_score": 33.0,
       "components": {
         "value": 0.0,
         "coherence": 30.0,
         "movement": 0.0,
-        "liquidity": 0.4
+        "liquidity": 3.0
       }
     },
     "surprise_idx": 0.488,
-    "generated_at": "2026-11-15T12:34:20.965488"
+    "generated_at": "2026-11-16T13:26:30.636966"
   },
   {
     "league": "Bundesliga",
@@ -2184,33 +2444,33 @@
       "pp_label": "\ud83d\udee1\ufe0f 1X",
       "pp_pct": 58.1
     },
-    "ov_score": 32.4,
+    "ov_score": 35.7,
     "ov_details": {
-      "pinnacle_1": 5.21,
-      "pinnacle_X": 4.59,
-      "pinnacle_2": 1.58,
-      "novig_1": 18.4,
-      "novig_X": 20.9,
-      "novig_2": 60.7,
-      "vig_pct": 4.27,
+      "pinnacle_1": 5.17,
+      "pinnacle_X": 4.58,
+      "pinnacle_2": 1.61,
+      "novig_1": 18.7,
+      "novig_X": 21.1,
+      "novig_2": 60.1,
+      "vig_pct": 3.29,
       "our_prob": 47.4,
-      "mkt_prob": 60.7,
-      "value_edge": -13.3,
+      "mkt_prob": 60.1,
+      "value_edge": -12.8,
       "market_favorite": "2",
-      "movement_pct": 0.0,
+      "movement_pct": -0.77,
       "is_sharp": false,
-      "snapshots": 2,
+      "snapshots": 3,
       "open_home": 5.21,
-      "ov_score": 32.4,
+      "ov_score": 35.7,
       "components": {
         "value": 0.0,
         "coherence": 30.0,
         "movement": 0.0,
-        "liquidity": 2.4
+        "liquidity": 5.7
       }
     },
-    "surprise_idx": 0.264,
-    "generated_at": "2026-11-15T12:34:21.981344"
+    "surprise_idx": 0.261,
+    "generated_at": "2026-11-16T13:26:31.206559"
   },
   {
     "league": "Bundesliga",
@@ -2263,7 +2523,7 @@
     "ov_score": null,
     "ov_details": {},
     "surprise_idx": 0.358,
-    "generated_at": "2026-11-15T12:34:22.171673"
+    "generated_at": "2026-11-16T13:26:31.433196"
   },
   {
     "league": "Bundesliga",
@@ -2313,33 +2573,33 @@
       "pp_label": "\ud83d\udd00 1-2",
       "pp_pct": 30.4
     },
-    "ov_score": 63.9,
+    "ov_score": 65.9,
     "ov_details": {
-      "pinnacle_1": 4.87,
-      "pinnacle_X": 4.44,
-      "pinnacle_2": 1.64,
+      "pinnacle_1": 4.91,
+      "pinnacle_X": 4.43,
+      "pinnacle_2": 1.65,
       "novig_1": 19.7,
-      "novig_X": 21.6,
-      "novig_2": 58.6,
-      "vig_pct": 4.03,
+      "novig_X": 21.8,
+      "novig_2": 58.5,
+      "vig_pct": 3.55,
       "our_prob": 64.7,
-      "mkt_prob": 58.6,
-      "value_edge": 6.1,
+      "mkt_prob": 58.5,
+      "value_edge": 6.2,
       "market_favorite": "2",
-      "movement_pct": 0.0,
+      "movement_pct": 0.82,
       "is_sharp": false,
-      "snapshots": 2,
+      "snapshots": 3,
       "open_home": 4.87,
-      "ov_score": 63.9,
+      "ov_score": 65.9,
       "components": {
-        "value": 30.6,
+        "value": 31.0,
         "coherence": 30.0,
         "movement": 0.0,
-        "liquidity": 3.2
+        "liquidity": 4.8
       }
     },
     "surprise_idx": 0.249,
-    "generated_at": "2026-11-15T12:34:23.072894"
+    "generated_at": "2026-11-16T13:26:31.996550"
   },
   {
     "league": "Bundesliga",
@@ -2389,33 +2649,33 @@
       "pp_label": "\ud83d\udee1\ufe0f 1X",
       "pp_pct": 59.3
     },
-    "ov_score": 74.1,
+    "ov_score": 76.6,
     "ov_details": {
-      "pinnacle_1": 2.32,
-      "pinnacle_X": 3.95,
-      "pinnacle_2": 2.83,
-      "novig_1": 41.5,
-      "novig_X": 24.4,
-      "novig_2": 34.1,
-      "vig_pct": 3.76,
+      "pinnacle_1": 2.33,
+      "pinnacle_X": 4.02,
+      "pinnacle_2": 2.84,
+      "novig_1": 41.7,
+      "novig_X": 24.1,
+      "novig_2": 34.2,
+      "vig_pct": 3.01,
       "our_prob": 52.5,
-      "mkt_prob": 41.5,
-      "value_edge": 11.0,
+      "mkt_prob": 41.7,
+      "value_edge": 10.9,
       "market_favorite": "1",
-      "movement_pct": 0.0,
+      "movement_pct": 0.43,
       "is_sharp": false,
-      "snapshots": 2,
+      "snapshots": 3,
       "open_home": 2.32,
-      "ov_score": 74.1,
+      "ov_score": 76.6,
       "components": {
         "value": 40.0,
         "coherence": 30.0,
         "movement": 0.0,
-        "liquidity": 4.1
+        "liquidity": 6.6
       }
     },
-    "surprise_idx": 0.191,
-    "generated_at": "2026-11-15T12:34:23.962788"
+    "surprise_idx": 0.193,
+    "generated_at": "2026-11-16T13:26:32.602833"
   },
   {
     "league": "Bundesliga",
@@ -2465,33 +2725,33 @@
       "pp_label": "\ud83d\udd00 1-2",
       "pp_pct": 32.7
     },
-    "ov_score": 37.4,
+    "ov_score": 37.8,
     "ov_details": {
-      "pinnacle_1": 3.98,
-      "pinnacle_X": 4.15,
+      "pinnacle_1": 4.01,
+      "pinnacle_X": 4.2,
       "pinnacle_2": 1.83,
-      "novig_1": 24.2,
-      "novig_X": 23.2,
-      "novig_2": 52.6,
-      "vig_pct": 3.87,
+      "novig_1": 24.1,
+      "novig_X": 23.0,
+      "novig_2": 52.8,
+      "vig_pct": 3.39,
       "our_prob": 53.3,
-      "mkt_prob": 52.6,
-      "value_edge": 0.7,
+      "mkt_prob": 52.8,
+      "value_edge": 0.5,
       "market_favorite": "2",
-      "movement_pct": 0.0,
+      "movement_pct": 0.75,
       "is_sharp": false,
-      "snapshots": 2,
+      "snapshots": 3,
       "open_home": 3.98,
-      "ov_score": 37.4,
+      "ov_score": 37.8,
       "components": {
-        "value": 3.6,
+        "value": 2.4,
         "coherence": 30.0,
         "movement": 0.0,
-        "liquidity": 3.8
+        "liquidity": 5.4
       }
     },
-    "surprise_idx": 0.194,
-    "generated_at": "2026-11-15T12:34:24.570823"
+    "surprise_idx": 0.195,
+    "generated_at": "2026-11-16T13:26:33.179499"
   },
   {
     "league": "Bundesliga",
@@ -2541,29 +2801,33 @@
       "pp_label": "\ud83d\udee1\ufe0f X2",
       "pp_pct": 37.6
     },
-    "ov_score": 54.2,
+    "ov_score": 56.6,
     "ov_details": {
-      "pinnacle_1": 2.76,
-      "pinnacle_X": 3.88,
-      "pinnacle_2": 2.4,
-      "novig_1": 34.9,
-      "novig_X": 24.9,
-      "novig_2": 40.2,
-      "vig_pct": 3.67,
+      "pinnacle_1": 2.73,
+      "pinnacle_X": 3.96,
+      "pinnacle_2": 2.39,
+      "novig_1": 35.3,
+      "novig_X": 24.3,
+      "novig_2": 40.3,
+      "vig_pct": 3.72,
       "our_prob": 31.8,
-      "mkt_prob": 24.9,
-      "value_edge": 7.0,
+      "mkt_prob": 24.3,
+      "value_edge": 7.5,
       "market_favorite": "2",
-      "ov_score": 54.2,
+      "movement_pct": -1.09,
+      "is_sharp": false,
+      "snapshots": 2,
+      "open_home": 2.76,
+      "ov_score": 56.6,
       "components": {
-        "value": 34.8,
+        "value": 37.3,
         "coherence": 15.0,
         "movement": 0.0,
-        "liquidity": 4.4
+        "liquidity": 4.3
       }
     },
-    "surprise_idx": 0.111,
-    "generated_at": "2026-11-15T12:34:25.477351"
+    "surprise_idx": 0.115,
+    "generated_at": "2026-11-16T13:26:33.747534"
   },
   {
     "league": "Bundesliga",
@@ -2613,29 +2877,33 @@
       "pp_label": "\ud83d\udd00 1-2",
       "pp_pct": 73.0
     },
-    "ov_score": 33.4,
+    "ov_score": 40.8,
     "ov_details": {
-      "pinnacle_1": 1.68,
-      "pinnacle_X": 4.44,
-      "pinnacle_2": 4.56,
-      "novig_1": 57.2,
-      "novig_X": 21.7,
-      "novig_2": 21.1,
-      "vig_pct": 3.98,
+      "pinnacle_1": 1.73,
+      "pinnacle_X": 4.34,
+      "pinnacle_2": 4.34,
+      "novig_1": 55.6,
+      "novig_X": 22.2,
+      "novig_2": 22.2,
+      "vig_pct": 3.89,
       "our_prob": 57.1,
-      "mkt_prob": 57.2,
-      "value_edge": -0.2,
+      "mkt_prob": 55.6,
+      "value_edge": 1.4,
       "market_favorite": "1",
-      "ov_score": 33.4,
+      "movement_pct": 2.98,
+      "is_sharp": false,
+      "snapshots": 2,
+      "open_home": 1.68,
+      "ov_score": 40.8,
       "components": {
-        "value": 0.0,
+        "value": 7.1,
         "coherence": 30.0,
         "movement": 0.0,
-        "liquidity": 3.4
+        "liquidity": 3.7
       }
     },
-    "surprise_idx": 0.381,
-    "generated_at": "2026-11-15T12:34:26.378973"
+    "surprise_idx": 0.361,
+    "generated_at": "2026-11-16T13:26:34.348379"
   },
   {
     "league": "Ligue 1",
@@ -2685,33 +2953,33 @@
       "pp_label": "\u2696\ufe0f FISSA X",
       "pp_pct": 51.4
     },
-    "ov_score": 76.1,
+    "ov_score": 78.4,
     "ov_details": {
-      "pinnacle_1": 2.07,
-      "pinnacle_X": 3.63,
-      "pinnacle_2": 3.66,
-      "novig_1": 46.8,
-      "novig_X": 26.7,
-      "novig_2": 26.5,
-      "vig_pct": 3.18,
+      "pinnacle_1": 2.15,
+      "pinnacle_X": 3.57,
+      "pinnacle_2": 3.5,
+      "novig_1": 45.1,
+      "novig_X": 27.2,
+      "novig_2": 27.7,
+      "vig_pct": 3.09,
       "our_prob": 58.0,
-      "mkt_prob": 46.8,
-      "value_edge": 11.2,
+      "mkt_prob": 45.1,
+      "value_edge": 12.9,
       "market_favorite": "1",
-      "movement_pct": 0.98,
+      "movement_pct": 4.88,
       "is_sharp": false,
-      "snapshots": 3,
+      "snapshots": 4,
       "open_home": 2.05,
-      "ov_score": 76.1,
+      "ov_score": 78.4,
       "components": {
         "value": 40.0,
         "coherence": 30.0,
-        "movement": 0.0,
-        "liquidity": 6.1
+        "movement": 2.0,
+        "liquidity": 6.4
       }
     },
-    "surprise_idx": 0.255,
-    "generated_at": "2026-11-15T12:34:49.146716"
+    "surprise_idx": 0.234,
+    "generated_at": "2026-11-16T13:26:56.512625"
   },
   {
     "league": "Ligue 1",
@@ -2761,33 +3029,33 @@
       "pp_label": "\ud83d\udee1\ufe0f X2",
       "pp_pct": 38.6
     },
-    "ov_score": 33.0,
+    "ov_score": 35.4,
     "ov_details": {
-      "pinnacle_1": 6.09,
-      "pinnacle_X": 5.21,
-      "pinnacle_2": 1.46,
-      "novig_1": 15.8,
-      "novig_X": 18.4,
+      "pinnacle_1": 6.15,
+      "pinnacle_X": 5.24,
+      "pinnacle_2": 1.47,
+      "novig_1": 15.7,
+      "novig_X": 18.5,
       "novig_2": 65.8,
-      "vig_pct": 4.11,
+      "vig_pct": 3.37,
       "our_prob": 65.6,
       "mkt_prob": 65.8,
       "value_edge": -0.2,
       "market_favorite": "2",
-      "movement_pct": 0.0,
+      "movement_pct": 0.99,
       "is_sharp": false,
-      "snapshots": 2,
+      "snapshots": 3,
       "open_home": 6.09,
-      "ov_score": 33.0,
+      "ov_score": 35.4,
       "components": {
         "value": 0.0,
         "coherence": 30.0,
         "movement": 0.0,
-        "liquidity": 3.0
+        "liquidity": 5.4
       }
     },
-    "surprise_idx": 0.296,
-    "generated_at": "2026-11-15T12:34:49.787175"
+    "surprise_idx": 0.297,
+    "generated_at": "2026-11-16T13:26:57.262323"
   },
   {
     "league": "Ligue 1",
@@ -2837,33 +3105,33 @@
       "pp_label": "\ud83d\udee1\ufe0f 1X",
       "pp_pct": 62.5
     },
-    "ov_score": 32.4,
+    "ov_score": 34.2,
     "ov_details": {
-      "pinnacle_1": 1.4,
-      "pinnacle_X": 5.24,
-      "pinnacle_2": 7.27,
-      "novig_1": 68.5,
-      "novig_X": 18.3,
-      "novig_2": 13.2,
-      "vig_pct": 4.27,
+      "pinnacle_1": 1.44,
+      "pinnacle_X": 5.03,
+      "pinnacle_2": 6.94,
+      "novig_1": 66.9,
+      "novig_X": 19.2,
+      "novig_2": 13.9,
+      "vig_pct": 3.73,
       "our_prob": 62.6,
-      "mkt_prob": 68.5,
-      "value_edge": -5.9,
+      "mkt_prob": 66.9,
+      "value_edge": -4.3,
       "market_favorite": "1",
-      "movement_pct": 0.0,
+      "movement_pct": 2.86,
       "is_sharp": false,
-      "snapshots": 2,
+      "snapshots": 3,
       "open_home": 1.4,
-      "ov_score": 32.4,
+      "ov_score": 34.2,
       "components": {
         "value": 0.0,
         "coherence": 30.0,
         "movement": 0.0,
-        "liquidity": 2.4
+        "liquidity": 4.2
       }
     },
     "surprise_idx": 0.488,
-    "generated_at": "2026-11-15T12:34:50.369544"
+    "generated_at": "2026-11-16T13:26:57.880919"
   },
   {
     "league": "Ligue 1",
@@ -2913,33 +3181,33 @@
       "pp_label": "\u2696\ufe0f FISSA X",
       "pp_pct": 54.8
     },
-    "ov_score": 33.4,
+    "ov_score": 35.6,
     "ov_details": {
       "pinnacle_1": 1.83,
-      "pinnacle_X": 4.15,
-      "pinnacle_2": 3.96,
-      "novig_1": 52.5,
+      "pinnacle_X": 4.18,
+      "pinnacle_2": 4.04,
+      "novig_1": 52.9,
       "novig_X": 23.2,
-      "novig_2": 24.3,
-      "vig_pct": 3.99,
+      "novig_2": 24.0,
+      "vig_pct": 3.32,
       "our_prob": 42.8,
-      "mkt_prob": 52.5,
-      "value_edge": -9.7,
+      "mkt_prob": 52.9,
+      "value_edge": -10.1,
       "market_favorite": "1",
       "movement_pct": 0.0,
       "is_sharp": false,
-      "snapshots": 2,
+      "snapshots": 3,
       "open_home": 1.83,
-      "ov_score": 33.4,
+      "ov_score": 35.6,
       "components": {
         "value": 0.0,
         "coherence": 30.0,
         "movement": 0.0,
-        "liquidity": 3.4
+        "liquidity": 5.6
       }
     },
-    "surprise_idx": 0.324,
-    "generated_at": "2026-11-15T12:34:50.962008"
+    "surprise_idx": 0.329,
+    "generated_at": "2026-11-16T13:26:58.496962"
   },
   {
     "league": "Ligue 1",
@@ -2989,33 +3257,33 @@
       "pp_label": "\ud83d\udd00 1-2",
       "pp_pct": 69.6
     },
-    "ov_score": 74.7,
+    "ov_score": 76.6,
     "ov_details": {
-      "pinnacle_1": 2.43,
-      "pinnacle_X": 3.28,
-      "pinnacle_2": 3.13,
-      "novig_1": 39.7,
+      "pinnacle_1": 2.44,
+      "pinnacle_X": 3.3,
+      "pinnacle_2": 3.15,
+      "novig_1": 39.8,
       "novig_X": 29.4,
       "novig_2": 30.8,
-      "vig_pct": 3.59,
+      "vig_pct": 3.03,
       "our_prob": 63.5,
-      "mkt_prob": 39.7,
+      "mkt_prob": 39.8,
       "value_edge": 23.8,
       "market_favorite": "1",
-      "movement_pct": 0.0,
+      "movement_pct": 0.41,
       "is_sharp": false,
-      "snapshots": 2,
+      "snapshots": 3,
       "open_home": 2.43,
-      "ov_score": 74.7,
+      "ov_score": 76.6,
       "components": {
         "value": 40.0,
         "coherence": 30.0,
         "movement": 0.0,
-        "liquidity": 4.7
+        "liquidity": 6.6
       }
     },
-    "surprise_idx": 0.169,
-    "generated_at": "2026-11-15T12:34:52.243054"
+    "surprise_idx": 0.17,
+    "generated_at": "2026-11-16T13:26:59.110501"
   },
   {
     "league": "Ligue 1",
@@ -3065,33 +3333,33 @@
       "pp_label": "\u2696\ufe0f FISSA X",
       "pp_pct": 46.1
     },
-    "ov_score": 60.2,
+    "ov_score": 64.9,
     "ov_details": {
-      "pinnacle_1": 2.21,
-      "pinnacle_X": 3.8,
-      "pinnacle_2": 3.11,
-      "novig_1": 43.6,
+      "pinnacle_1": 2.25,
+      "pinnacle_X": 3.82,
+      "pinnacle_2": 3.08,
+      "novig_1": 43.1,
       "novig_X": 25.4,
-      "novig_2": 31.0,
-      "vig_pct": 3.72,
+      "novig_2": 31.5,
+      "vig_pct": 3.09,
       "our_prob": 48.8,
-      "mkt_prob": 43.6,
-      "value_edge": 5.2,
+      "mkt_prob": 43.1,
+      "value_edge": 5.7,
       "market_favorite": "1",
-      "movement_pct": 0.0,
+      "movement_pct": 1.81,
       "is_sharp": false,
-      "snapshots": 2,
+      "snapshots": 3,
       "open_home": 2.21,
-      "ov_score": 60.2,
+      "ov_score": 64.9,
       "components": {
-        "value": 25.9,
+        "value": 28.5,
         "coherence": 30.0,
         "movement": 0.0,
-        "liquidity": 4.3
+        "liquidity": 6.4
       }
     },
-    "surprise_idx": 0.216,
-    "generated_at": "2026-11-15T12:34:53.480572"
+    "surprise_idx": 0.21,
+    "generated_at": "2026-11-16T13:26:59.667037"
   },
   {
     "league": "Ligue 1",
@@ -3154,6 +3422,10 @@
       "mkt_prob": 71.2,
       "value_edge": 0.3,
       "market_favorite": "1",
+      "movement_pct": 0.0,
+      "is_sharp": false,
+      "snapshots": 2,
+      "open_home": 1.35,
       "ov_score": 35.0,
       "components": {
         "value": 1.7,
@@ -3163,7 +3435,7 @@
       }
     },
     "surprise_idx": 0.488,
-    "generated_at": "2026-11-15T12:34:54.696986"
+    "generated_at": "2026-11-16T13:27:00.265939"
   },
   {
     "league": "Ligue 1",
@@ -3213,29 +3485,33 @@
       "pp_label": "\u2696\ufe0f FISSA X",
       "pp_pct": 56.9
     },
-    "ov_score": 59.3,
+    "ov_score": 59.6,
     "ov_details": {
-      "pinnacle_1": 2.86,
+      "pinnacle_1": 2.92,
       "pinnacle_X": 3.5,
-      "pinnacle_2": 2.49,
-      "novig_1": 33.7,
+      "pinnacle_2": 2.45,
+      "novig_1": 33.1,
       "novig_X": 27.6,
-      "novig_2": 38.7,
-      "vig_pct": 3.7,
+      "novig_2": 39.4,
+      "vig_pct": 3.63,
       "our_prob": 43.1,
-      "mkt_prob": 33.7,
-      "value_edge": 9.3,
+      "mkt_prob": 33.1,
+      "value_edge": 10.0,
       "market_favorite": "2",
-      "ov_score": 59.3,
+      "movement_pct": 2.1,
+      "is_sharp": false,
+      "snapshots": 2,
+      "open_home": 2.86,
+      "ov_score": 59.6,
       "components": {
         "value": 40.0,
         "coherence": 15.0,
         "movement": 0.0,
-        "liquidity": 4.3
+        "liquidity": 4.6
       }
     },
-    "surprise_idx": 0.096,
-    "generated_at": "2026-11-15T12:34:55.316931"
+    "surprise_idx": 0.089,
+    "generated_at": "2026-11-16T13:27:00.895279"
   },
   {
     "league": "Ligue 1",
@@ -3285,29 +3561,33 @@
       "pp_label": "\ud83d\udd00 1-2",
       "pp_pct": 72.3
     },
-    "ov_score": 47.1,
+    "ov_score": 53.7,
     "ov_details": {
-      "pinnacle_1": 1.46,
-      "pinnacle_X": 4.98,
-      "pinnacle_2": 6.46,
-      "novig_1": 65.8,
-      "novig_X": 19.3,
-      "novig_2": 14.9,
-      "vig_pct": 4.05,
+      "pinnacle_1": 1.49,
+      "pinnacle_X": 4.87,
+      "pinnacle_2": 6.15,
+      "novig_1": 64.6,
+      "novig_X": 19.8,
+      "novig_2": 15.7,
+      "vig_pct": 3.91,
       "our_prob": 68.6,
-      "mkt_prob": 65.8,
-      "value_edge": 2.8,
+      "mkt_prob": 64.6,
+      "value_edge": 4.0,
       "market_favorite": "1",
-      "ov_score": 47.1,
+      "movement_pct": 2.05,
+      "is_sharp": false,
+      "snapshots": 2,
+      "open_home": 1.46,
+      "ov_score": 53.7,
       "components": {
-        "value": 13.9,
+        "value": 20.1,
         "coherence": 30.0,
         "movement": 0.0,
-        "liquidity": 3.2
+        "liquidity": 3.6
       }
     },
-    "surprise_idx": 0.485,
-    "generated_at": "2026-11-15T12:34:55.918745"
+    "surprise_idx": 0.471,
+    "generated_at": "2026-11-16T13:27:01.468610"
   },
   {
     "league": "Eredivisie",
@@ -3360,19 +3640,19 @@
     "ov_score": 30.0,
     "ov_details": {
       "pinnacle_1": 4.05,
-      "pinnacle_X": 4.55,
-      "pinnacle_2": 1.71,
-      "novig_1": 23.5,
-      "novig_X": 20.9,
-      "novig_2": 55.6,
-      "vig_pct": 5.15,
+      "pinnacle_X": 4.59,
+      "pinnacle_2": 1.7,
+      "novig_1": 23.4,
+      "novig_X": 20.7,
+      "novig_2": 55.9,
+      "vig_pct": 5.3,
       "our_prob": 43.4,
-      "mkt_prob": 55.6,
-      "value_edge": -12.2,
+      "mkt_prob": 55.9,
+      "value_edge": -12.4,
       "market_favorite": "2",
       "movement_pct": -0.25,
       "is_sharp": false,
-      "snapshots": 2,
+      "snapshots": 3,
       "open_home": 4.06,
       "ov_score": 30.0,
       "components": {
@@ -3382,8 +3662,8 @@
         "liquidity": 0.0
       }
     },
-    "surprise_idx": 0.203,
-    "generated_at": "2026-11-15T12:35:32.480967"
+    "surprise_idx": 0.204,
+    "generated_at": "2026-11-16T13:27:36.620340"
   },
   {
     "league": "Eredivisie",
@@ -3435,20 +3715,20 @@
     },
     "ov_score": 30.0,
     "ov_details": {
-      "pinnacle_1": 1.19,
-      "pinnacle_X": 8.0,
-      "pinnacle_2": 10.86,
-      "novig_1": 79.5,
-      "novig_X": 11.8,
-      "novig_2": 8.7,
-      "vig_pct": 5.74,
+      "pinnacle_1": 1.18,
+      "pinnacle_X": 8.2,
+      "pinnacle_2": 11.34,
+      "novig_1": 80.1,
+      "novig_X": 11.5,
+      "novig_2": 8.3,
+      "vig_pct": 5.76,
       "our_prob": 68.5,
-      "mkt_prob": 79.5,
-      "value_edge": -10.9,
+      "mkt_prob": 80.1,
+      "value_edge": -11.6,
       "market_favorite": "1",
-      "movement_pct": 0.0,
+      "movement_pct": -0.84,
       "is_sharp": false,
-      "snapshots": 2,
+      "snapshots": 3,
       "open_home": 1.19,
       "ov_score": 30.0,
       "components": {
@@ -3459,7 +3739,7 @@
       }
     },
     "surprise_idx": 0.488,
-    "generated_at": "2026-11-15T12:35:33.416077"
+    "generated_at": "2026-11-16T13:27:37.258629"
   },
   {
     "league": "Eredivisie",
@@ -3512,7 +3792,7 @@
     "ov_score": null,
     "ov_details": {},
     "surprise_idx": 0.358,
-    "generated_at": "2026-11-15T12:35:33.608392"
+    "generated_at": "2026-11-16T13:27:37.488344"
   },
   {
     "league": "Eredivisie",
@@ -3562,33 +3842,33 @@
       "pp_label": "\u2696\ufe0f FISSA X",
       "pp_pct": 46.9
     },
-    "ov_score": 60.7,
+    "ov_score": 57.2,
     "ov_details": {
-      "pinnacle_1": 2.08,
-      "pinnacle_X": 3.58,
-      "pinnacle_2": 3.47,
-      "novig_1": 45.9,
-      "novig_X": 26.7,
-      "novig_2": 27.5,
-      "vig_pct": 4.83,
+      "pinnacle_1": 2.05,
+      "pinnacle_X": 3.68,
+      "pinnacle_2": 3.45,
+      "novig_1": 46.5,
+      "novig_X": 25.9,
+      "novig_2": 27.6,
+      "vig_pct": 4.94,
       "our_prob": 51.9,
-      "mkt_prob": 45.9,
-      "value_edge": 6.0,
+      "mkt_prob": 46.5,
+      "value_edge": 5.4,
       "market_favorite": "1",
-      "movement_pct": 1.96,
+      "movement_pct": 0.49,
       "is_sharp": false,
-      "snapshots": 2,
+      "snapshots": 3,
       "open_home": 2.04,
-      "ov_score": 60.7,
+      "ov_score": 57.2,
       "components": {
-        "value": 30.1,
+        "value": 27.0,
         "coherence": 30.0,
         "movement": 0.0,
-        "liquidity": 0.6
+        "liquidity": 0.2
       }
     },
-    "surprise_idx": 0.244,
-    "generated_at": "2026-11-15T12:35:34.599787"
+    "surprise_idx": 0.251,
+    "generated_at": "2026-11-16T13:27:38.187195"
   },
   {
     "league": "Eredivisie",
@@ -3638,33 +3918,33 @@
       "pp_label": "\ud83d\udd00 1-2",
       "pp_pct": 34.6
     },
-    "ov_score": 44.7,
+    "ov_score": 43.3,
     "ov_details": {
-      "pinnacle_1": 2.4,
-      "pinnacle_X": 3.88,
-      "pinnacle_2": 2.68,
-      "novig_1": 39.8,
-      "novig_X": 24.6,
-      "novig_2": 35.6,
-      "vig_pct": 4.75,
+      "pinnacle_1": 2.42,
+      "pinnacle_X": 3.87,
+      "pinnacle_2": 2.66,
+      "novig_1": 39.5,
+      "novig_X": 24.7,
+      "novig_2": 35.9,
+      "vig_pct": 4.76,
       "our_prob": 41.4,
-      "mkt_prob": 35.6,
-      "value_edge": 5.8,
+      "mkt_prob": 35.9,
+      "value_edge": 5.5,
       "market_favorite": "1",
-      "movement_pct": 0.0,
+      "movement_pct": 0.83,
       "is_sharp": false,
-      "snapshots": 2,
+      "snapshots": 3,
       "open_home": 2.4,
-      "ov_score": 44.7,
+      "ov_score": 43.3,
       "components": {
-        "value": 28.8,
+        "value": 27.5,
         "coherence": 15.0,
         "movement": 0.0,
         "liquidity": 0.8
       }
     },
-    "surprise_idx": 0.17,
-    "generated_at": "2026-11-15T12:35:35.202190"
+    "surprise_idx": 0.166,
+    "generated_at": "2026-11-16T13:27:38.895959"
   },
   {
     "league": "Eredivisie",
@@ -3717,16 +3997,20 @@
     "ov_score": 30.0,
     "ov_details": {
       "pinnacle_1": 1.06,
-      "pinnacle_X": 15.21,
-      "pinnacle_2": 20.86,
-      "novig_1": 89.2,
+      "pinnacle_X": 15.25,
+      "pinnacle_2": 20.98,
+      "novig_1": 89.3,
       "novig_X": 6.2,
       "novig_2": 4.5,
-      "vig_pct": 5.71,
+      "vig_pct": 5.66,
       "our_prob": 71.5,
-      "mkt_prob": 89.2,
+      "mkt_prob": 89.3,
       "value_edge": -17.8,
       "market_favorite": "1",
+      "movement_pct": 0.0,
+      "is_sharp": false,
+      "snapshots": 2,
+      "open_home": 1.06,
       "ov_score": 30.0,
       "components": {
         "value": 0.0,
@@ -3736,7 +4020,7 @@
       }
     },
     "surprise_idx": 0.488,
-    "generated_at": "2026-11-15T12:35:35.813987"
+    "generated_at": "2026-11-16T13:27:39.588957"
   },
   {
     "league": "Eredivisie",
@@ -3788,17 +4072,21 @@
     },
     "ov_score": 30.0,
     "ov_details": {
-      "pinnacle_1": 4.12,
-      "pinnacle_X": 4.24,
+      "pinnacle_1": 4.1,
+      "pinnacle_X": 4.22,
       "pinnacle_2": 1.75,
-      "novig_1": 23.1,
+      "novig_1": 23.2,
       "novig_X": 22.5,
-      "novig_2": 54.4,
-      "vig_pct": 5.0,
+      "novig_2": 54.3,
+      "vig_pct": 5.23,
       "our_prob": 44.2,
-      "mkt_prob": 54.4,
-      "value_edge": -10.2,
+      "mkt_prob": 54.3,
+      "value_edge": -10.1,
       "market_favorite": "2",
+      "movement_pct": -0.49,
+      "is_sharp": false,
+      "snapshots": 2,
+      "open_home": 4.12,
       "ov_score": 30.0,
       "components": {
         "value": 0.0,
@@ -3807,8 +4095,8 @@
         "liquidity": 0.0
       }
     },
-    "surprise_idx": 0.207,
-    "generated_at": "2026-11-15T12:35:36.436015"
+    "surprise_idx": 0.206,
+    "generated_at": "2026-11-16T13:27:40.221698"
   },
   {
     "league": "Eredivisie",
@@ -3871,6 +4159,10 @@
       "mkt_prob": 80.7,
       "value_edge": -9.4,
       "market_favorite": "1",
+      "movement_pct": 0.0,
+      "is_sharp": false,
+      "snapshots": 2,
+      "open_home": 1.17,
       "ov_score": 30.0,
       "components": {
         "value": 0.0,
@@ -3880,7 +4172,7 @@
       }
     },
     "surprise_idx": 0.488,
-    "generated_at": "2026-11-15T12:35:37.370260"
+    "generated_at": "2026-11-16T13:27:40.833536"
   },
   {
     "league": "Eredivisie",
@@ -3943,6 +4235,10 @@
       "mkt_prob": 58.2,
       "value_edge": -14.5,
       "market_favorite": "1",
+      "movement_pct": 0.0,
+      "is_sharp": false,
+      "snapshots": 2,
+      "open_home": 1.63,
       "ov_score": 30.0,
       "components": {
         "value": 0.0,
@@ -3952,7 +4248,7 @@
       }
     },
     "surprise_idx": 0.393,
-    "generated_at": "2026-11-15T12:35:38.300311"
+    "generated_at": "2026-11-16T13:27:41.486974"
   },
   {
     "league": "Championship",
@@ -3967,45 +4263,45 @@
     "matchday": 16,
     "first_leg": null,
     "prediction": {
-      "home": 0.6509469266479578,
+      "home": 0.6569469266479578,
       "draw": 0.27160000000000006,
-      "away": 0.0774530733520421,
+      "away": 0.0714530733520421,
       "quantum_used": false,
       "goals_factor": 1.0,
-      "dc_1x": 0.9225469266479579,
-      "dc_x2": 0.34905307335204216,
+      "dc_1x": 0.9285469266479579,
+      "dc_x2": 0.34305307335204216,
       "dc_12": 0.7283999999999999,
-      "over_25": 0.48157042406394956,
-      "under_25": 0.5184295759360504,
-      "over_15": 0.7326,
-      "under_35": 0.736,
-      "over_35": 0.264,
-      "btts_y": 0.523066520741483,
-      "btts_n": 0.47693347925851703,
-      "xg_home": 1.45,
-      "xg_away": 1.15,
+      "over_25": 0.4171752074102224,
+      "under_25": 0.5828247925897776,
+      "over_15": 0.6805,
+      "under_35": 0.7891,
+      "over_35": 0.2109,
+      "btts_y": 0.4728996200703818,
+      "btts_n": 0.5271003799296182,
+      "xg_home": 1.3,
+      "xg_away": 1.05,
       "combo_label": "1+U3.5",
       "combo_leg": "U3.5",
-      "combo_prob": 0.736,
-      "combo_score": 0.4791,
+      "combo_prob": 0.7891,
+      "combo_score": 0.5184,
       "combo_certain": true,
-      "confidence": 0.393,
-      "raw_confidence": 0.393,
+      "confidence": 0.3948,
+      "raw_confidence": 0.3948,
       "best_out": "1",
-      "best_val": 0.6509469266479578
+      "best_val": 0.6569469266479578
     },
     "pp": {
       "pp_i_casa": 0.0,
-      "pp_i_ospite": 0.0,
-      "pp_D": 0.0,
+      "pp_i_ospite": 0.86,
+      "pp_D": -0.86,
       "pp_result": "X",
       "pp_label": "\u2696\ufe0f FISSA X",
-      "pp_pct": 50.0
+      "pp_pct": 46.9
     },
     "ov_score": null,
     "ov_details": {},
     "surprise_idx": 0.358,
-    "generated_at": "2026-11-15T12:36:06.728719"
+    "generated_at": "2026-11-16T13:28:09.759606"
   },
   {
     "league": "Championship",
@@ -4020,32 +4316,32 @@
     "matchday": 16,
     "first_leg": null,
     "prediction": {
-      "home": 0.4784302610266148,
+      "home": 0.41743026102661474,
       "draw": 0.29586,
-      "away": 0.2257097389733852,
+      "away": 0.28670973897338525,
       "quantum_used": false,
       "goals_factor": 1.0,
-      "dc_1x": 0.7742902610266148,
-      "dc_x2": 0.5215697389733852,
+      "dc_1x": 0.7132902610266147,
+      "dc_x2": 0.5825697389733853,
       "dc_12": 0.70414,
-      "over_25": 0.4561868841166705,
-      "under_25": 0.5438131158833295,
-      "over_15": 0.7127,
-      "under_35": 0.7576,
-      "over_35": 0.2424,
-      "btts_y": 0.5090754049035185,
-      "btts_n": 0.49092459509648145,
-      "xg_home": 1.25,
-      "xg_away": 1.25,
-      "combo_label": "1+U3.5",
-      "combo_leg": "U3.5",
-      "combo_prob": 0.7576,
-      "combo_score": 0.3624,
+      "over_25": 0.5185432952869836,
+      "under_25": 0.4814567047130164,
+      "over_15": 0.7603,
+      "under_35": 0.703,
+      "over_35": 0.297,
+      "btts_y": 0.5453945738329989,
+      "btts_n": 0.45460542616700106,
+      "xg_home": 1.15,
+      "xg_away": 1.6,
+      "combo_label": "X+O1.5",
+      "combo_leg": "O1.5",
+      "combo_prob": 0.7603,
+      "combo_score": 0.2249,
       "combo_certain": true,
-      "confidence": 0.3406,
-      "raw_confidence": 0.3406,
+      "confidence": 0.2308,
+      "raw_confidence": 0.2308,
       "best_out": "1",
-      "best_val": 0.4784302610266148
+      "best_val": 0.41743026102661474
     },
     "pp": {
       "pp_i_casa": 0.0,
@@ -4058,7 +4354,7 @@
     "ov_score": null,
     "ov_details": {},
     "surprise_idx": 0.358,
-    "generated_at": "2026-11-15T12:36:06.931486"
+    "generated_at": "2026-11-16T13:28:09.965207"
   },
   {
     "league": "Championship",
@@ -4111,7 +4407,7 @@
     "ov_score": null,
     "ov_details": {},
     "surprise_idx": 0.358,
-    "generated_at": "2026-11-15T12:36:07.140993"
+    "generated_at": "2026-11-16T13:28:10.182665"
   },
   {
     "league": "Championship",
@@ -4164,7 +4460,7 @@
     "ov_score": null,
     "ov_details": {},
     "surprise_idx": 0.358,
-    "generated_at": "2026-11-15T12:36:07.361638"
+    "generated_at": "2026-11-16T13:28:10.389699"
   },
   {
     "league": "Championship",
@@ -4179,45 +4475,45 @@
     "matchday": 16,
     "first_leg": null,
     "prediction": {
-      "home": 0.4218659448183709,
+      "home": 0.35986594481837086,
       "draw": 0.29606000000000005,
-      "away": 0.28207405518162904,
+      "away": 0.3440740551816291,
       "quantum_used": false,
       "goals_factor": 1.0,
-      "dc_1x": 0.717925944818371,
-      "dc_x2": 0.5781340551816291,
+      "dc_1x": 0.655925944818371,
+      "dc_x2": 0.6401340551816291,
       "dc_12": 0.70394,
-      "over_25": 0.506375508926538,
-      "under_25": 0.49362449107346196,
-      "over_15": 0.7513,
-      "under_35": 0.7141,
-      "over_35": 0.2859,
-      "btts_y": 0.5487249914479668,
-      "btts_n": 0.4512750085520332,
-      "xg_home": 1.35,
-      "xg_away": 1.35,
+      "over_25": 0.5423791164789342,
+      "under_25": 0.4576208835210658,
+      "over_15": 0.7773,
+      "under_35": 0.6808,
+      "over_35": 0.3192,
+      "btts_y": 0.5730645540140828,
+      "btts_n": 0.42693544598591715,
+      "xg_home": 1.3,
+      "xg_away": 1.55,
       "combo_label": "X+O1.5",
       "combo_leg": "O1.5",
-      "combo_prob": 0.7513,
-      "combo_score": 0.2224,
+      "combo_prob": 0.7773,
+      "combo_score": 0.2301,
       "combo_certain": true,
-      "confidence": 0.3234,
-      "raw_confidence": 0.3234,
-      "best_out": "1",
-      "best_val": 0.4218659448183709
+      "confidence": 0.2133,
+      "raw_confidence": 0.2133,
+      "best_out": "X",
+      "best_val": 0.29606000000000005
     },
     "pp": {
       "pp_i_casa": 0.0,
-      "pp_i_ospite": 0.0,
-      "pp_D": 0.0,
-      "pp_result": "X",
-      "pp_label": "\u2696\ufe0f FISSA X",
-      "pp_pct": 50.0
+      "pp_i_ospite": 2.42,
+      "pp_D": -2.42,
+      "pp_result": "X2",
+      "pp_label": "\ud83d\udee1\ufe0f X2",
+      "pp_pct": 41.2
     },
     "ov_score": null,
     "ov_details": {},
     "surprise_idx": 0.358,
-    "generated_at": "2026-11-15T12:36:07.555449"
+    "generated_at": "2026-11-16T13:28:10.598321"
   },
   {
     "league": "Championship",
@@ -4270,7 +4566,7 @@
     "ov_score": null,
     "ov_details": {},
     "surprise_idx": 0.358,
-    "generated_at": "2026-11-15T12:36:07.773777"
+    "generated_at": "2026-11-16T13:28:10.836898"
   },
   {
     "league": "Championship",
@@ -4323,7 +4619,7 @@
     "ov_score": null,
     "ov_details": {},
     "surprise_idx": 0.358,
-    "generated_at": "2026-11-15T12:36:08.354097"
+    "generated_at": "2026-11-16T13:28:11.028982"
   },
   {
     "league": "Championship",
@@ -4376,7 +4672,7 @@
     "ov_score": null,
     "ov_details": {},
     "surprise_idx": 0.358,
-    "generated_at": "2026-11-15T12:36:08.877006"
+    "generated_at": "2026-11-16T13:28:11.216106"
   },
   {
     "league": "Championship",
@@ -4429,7 +4725,7 @@
     "ov_score": null,
     "ov_details": {},
     "surprise_idx": 0.358,
-    "generated_at": "2026-11-15T12:36:09.451137"
+    "generated_at": "2026-11-16T13:28:11.409332"
   },
   {
     "league": "Championship",
@@ -4482,6 +4778,6 @@
     "ov_score": null,
     "ov_details": {},
     "surprise_idx": 0.358,
-    "generated_at": "2026-11-15T12:36:09.681143"
+    "generated_at": "2026-11-16T13:28:11.600544"
   }
 ]
