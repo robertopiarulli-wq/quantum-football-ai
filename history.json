@@ -84138,7 +84138,8 @@
       "correct_btts": true,
       "verified_at": "2026-11-26T14:52:25.439209",
       "odds_movement_pct": 74.11,
-      "odds_is_sharp": false
+      "odds_is_sharp": false,
+      "elo_updated": true
     },
     {
       "fixture_id": "565869",
@@ -86932,7 +86933,8 @@
       "correct_1x2": true,
       "correct_over": true,
       "correct_btts": true,
-      "verified_at": "2026-11-26T14:53:01.251125"
+      "verified_at": "2026-11-26T14:53:01.251125",
+      "elo_updated": true
     },
     {
       "fixture_id": "558509",
@@ -87748,7 +87750,8 @@
       "correct_1x2": true,
       "correct_over": true,
       "correct_btts": true,
-      "verified_at": "2026-11-26T14:53:01.752383"
+      "verified_at": "2026-11-26T14:53:01.752383",
+      "elo_updated": true
     },
     {
       "fixture_id": "558510",
@@ -87942,7 +87945,8 @@
       "correct_btts": false,
       "verified_at": "2026-11-26T14:52:25.960624",
       "odds_movement_pct": null,
-      "odds_is_sharp": null
+      "odds_is_sharp": null,
+      "elo_updated": true
     },
     {
       "fixture_id": "575406",
@@ -87992,7 +87996,8 @@
       "correct_btts": false,
       "verified_at": "2026-11-26T14:52:26.597443",
       "odds_movement_pct": null,
-      "odds_is_sharp": null
+      "odds_is_sharp": null,
+      "elo_updated": true
     },
     {
       "fixture_id": "575407",
@@ -88042,7 +88047,8 @@
       "correct_btts": false,
       "verified_at": "2026-11-26T14:52:26.812312",
       "odds_movement_pct": null,
-      "odds_is_sharp": null
+      "odds_is_sharp": null,
+      "elo_updated": true
     },
     {
       "fixture_id": "575408",
@@ -88092,7 +88098,8 @@
       "correct_btts": true,
       "verified_at": "2026-11-26T14:52:27.027946",
       "odds_movement_pct": null,
-      "odds_is_sharp": null
+      "odds_is_sharp": null,
+      "elo_updated": true
     },
     {
       "fixture_id": "575409",
@@ -88142,7 +88149,8 @@
       "correct_btts": false,
       "verified_at": "2026-11-26T14:52:27.239621",
       "odds_movement_pct": null,
-      "odds_is_sharp": null
+      "odds_is_sharp": null,
+      "elo_updated": true
     },
     {
       "fixture_id": "575410",
@@ -88192,7 +88200,8 @@
       "correct_btts": true,
       "verified_at": "2026-11-26T14:52:27.465462",
       "odds_movement_pct": null,
-      "odds_is_sharp": null
+      "odds_is_sharp": null,
+      "elo_updated": true
     },
     {
       "fixture_id": "575411",
@@ -88242,7 +88251,8 @@
       "correct_btts": true,
       "verified_at": "2026-11-26T14:52:27.677444",
       "odds_movement_pct": null,
-      "odds_is_sharp": null
+      "odds_is_sharp": null,
+      "elo_updated": true
     },
     {
       "fixture_id": "575412",
@@ -88290,7 +88300,8 @@
       "correct_1x2": false,
       "correct_over": false,
       "correct_btts": true,
-      "verified_at": "2026-11-26T14:52:27.869504"
+      "verified_at": "2026-11-26T14:52:27.869504",
+      "elo_updated": true
     },
     {
       "fixture_id": "561964",
@@ -88338,7 +88349,8 @@
       "correct_1x2": true,
       "correct_over": true,
       "correct_btts": true,
-      "verified_at": "2026-11-26T14:53:01.975143"
+      "verified_at": "2026-11-26T14:53:01.975143",
+      "elo_updated": true
     },
     {
       "fixture_id": "561962",
@@ -88386,7 +88398,8 @@
       "correct_1x2": true,
       "correct_over": false,
       "correct_btts": false,
-      "verified_at": "2026-11-26T14:53:02.207338"
+      "verified_at": "2026-11-26T14:53:02.207338",
+      "elo_updated": true
     },
     {
       "fixture_id": "561968",
@@ -88867,7 +88880,199 @@
       "correct_over": null,
       "correct_btts": null,
       "verified_at": null
+    },
+    {
+      "fixture_id": "565882",
+      "home": "FC Bayern M\u00fcnchen",
+      "away": "SC Paderborn 07",
+      "league": "Bundesliga",
+      "comp_code": "BL1",
+      "season": "2026/2027",
+      "stage": "REGULAR_SEASON",
+      "matchday": 12,
+      "first_leg": null,
+      "date": "04/12/2026",
+      "time": "20:30",
+      "predicted_at": "2026-11-27T14:48:29.049842",
+      "pred_home": 0.7229,
+      "pred_draw": 0.2347,
+      "pred_away": 0.0425,
+      "pred_over25": 0.7969,
+      "pred_btts": 0.5354,
+      "pred_best": "1",
+      "pred_conf": 0.483,
+      "pred_raw_conf": 0.483,
+      "pred_combo_label": "1+O1.5",
+      "pred_combo_leg": "O1.5",
+      "pred_combo_prob": 0.9254,
+      "pred_over15": 0.9254,
+      "pred_under35": 0.3853,
+      "correct_combo": null,
+      "ov_score": 30.2,
+      "ov_edge": -16.8,
+      "ov_misalign": null,
+      "ov_movement": null,
+      "ov_is_sharp": null,
+      "clv": null,
+      "pp_result": "1",
+      "pp_label": "\ud83c\udfaf FISSA 1",
+      "pp_i_casa": 12.15,
+      "pp_i_ospite": 1.62,
+      "pp_D": 10.53,
+      "pp_pct": 88.4,
+      "correct_pp": null,
+      "result": null,
+      "goals_home": null,
+      "goals_away": null,
+      "correct_1x2": null,
+      "correct_over": null,
+      "correct_btts": null,
+      "verified_at": null
+    },
+    {
+      "fixture_id": "559609",
+      "home": "Toulouse FC",
+      "away": "Paris Saint-Germain FC",
+      "league": "Ligue 1",
+      "comp_code": "FL1",
+      "season": "2026/2027",
+      "stage": "REGULAR_SEASON",
+      "matchday": 13,
+      "first_leg": null,
+      "date": "04/12/2026",
+      "time": "20:45",
+      "predicted_at": "2026-11-27T14:48:59.650391",
+      "pred_home": 0.05,
+      "pred_draw": 0.2527,
+      "pred_away": 0.6973,
+      "pred_over25": 0.6379,
+      "pred_btts": 0.6286,
+      "pred_best": "2",
+      "pred_conf": 0.374,
+      "pred_raw_conf": 0.374,
+      "pred_combo_label": "2+O1.5",
+      "pred_combo_leg": "O1.5",
+      "pred_combo_prob": 0.8398,
+      "pred_over15": 0.8398,
+      "pred_under35": 0.5833,
+      "correct_combo": null,
+      "ov_score": 62.4,
+      "ov_edge": 6.5,
+      "ov_misalign": null,
+      "ov_movement": null,
+      "ov_is_sharp": null,
+      "clv": null,
+      "pp_result": "2",
+      "pp_label": "\ud83c\udfaf FISSA 2",
+      "pp_i_casa": 5.1,
+      "pp_i_ospite": 13.54,
+      "pp_D": -8.44,
+      "pp_pct": 19.2,
+      "correct_pp": null,
+      "result": null,
+      "goals_home": null,
+      "goals_away": null,
+      "correct_1x2": null,
+      "correct_over": null,
+      "correct_btts": null,
+      "verified_at": null
+    },
+    {
+      "fixture_id": "558812",
+      "home": "Telstar 1963",
+      "away": "FC Groningen",
+      "league": "Eredivisie",
+      "comp_code": "DED",
+      "season": "2026/2027",
+      "stage": "REGULAR_SEASON",
+      "matchday": 15,
+      "first_leg": null,
+      "date": "04/12/2026",
+      "time": "20:00",
+      "predicted_at": "2026-11-27T14:49:41.754062",
+      "pred_home": 0.3678,
+      "pred_draw": 0.2929,
+      "pred_away": 0.3393,
+      "pred_over25": 0.85,
+      "pred_btts": 0.82,
+      "pred_best": "X",
+      "pred_conf": 0.2688,
+      "pred_raw_conf": 0.2688,
+      "pred_combo_label": "X+BTTS",
+      "pred_combo_leg": "BTTS",
+      "pred_combo_prob": 0.82,
+      "pred_over15": 0.95,
+      "pred_under35": 0.2198,
+      "correct_combo": null,
+      "ov_score": null,
+      "ov_edge": null,
+      "ov_misalign": null,
+      "ov_movement": null,
+      "ov_is_sharp": null,
+      "clv": null,
+      "pp_result": "X",
+      "pp_label": "\u2696\ufe0f FISSA X",
+      "pp_i_casa": 4.65,
+      "pp_i_ospite": 6.02,
+      "pp_D": -1.37,
+      "pp_pct": 45.0,
+      "correct_pp": null,
+      "result": null,
+      "goals_home": null,
+      "goals_away": null,
+      "correct_1x2": null,
+      "correct_over": null,
+      "correct_btts": null,
+      "verified_at": null
+    },
+    {
+      "fixture_id": "567365",
+      "home": "Sporting Clube de Portugal",
+      "away": "CS Mar\u00edtimo",
+      "league": "Primeira Liga",
+      "comp_code": "PPL",
+      "season": "2026/2027",
+      "stage": "REGULAR_SEASON",
+      "matchday": 13,
+      "first_leg": null,
+      "date": "04/12/2026",
+      "time": "21:15",
+      "predicted_at": "2026-11-27T14:50:09.606767",
+      "pred_home": 0.6696,
+      "pred_draw": 0.2852,
+      "pred_away": 0.0453,
+      "pred_over25": 0.6033,
+      "pred_btts": 0.5637,
+      "pred_best": "1",
+      "pred_conf": 0.3162,
+      "pred_raw_conf": 0.3162,
+      "pred_combo_label": "1+O1.5",
+      "pred_combo_leg": "O1.5",
+      "pred_combo_prob": 0.8182,
+      "pred_over15": 0.8182,
+      "pred_under35": 0.6202,
+      "correct_combo": null,
+      "ov_score": null,
+      "ov_edge": null,
+      "ov_misalign": null,
+      "ov_movement": null,
+      "ov_is_sharp": null,
+      "clv": null,
+      "pp_result": "12",
+      "pp_label": "\ud83d\udd00 1-2",
+      "pp_i_casa": 7.95,
+      "pp_i_ospite": 3.0,
+      "pp_D": 4.95,
+      "pp_pct": 68.1,
+      "correct_pp": null,
+      "result": null,
+      "goals_home": null,
+      "goals_away": null,
+      "correct_1x2": null,
+      "correct_over": null,
+      "correct_btts": null,
+      "verified_at": null
     }
   ],
-  "last_updated": "2026-11-26T14:53:02.431994"
+  "last_updated": "2026-11-27T14:52:38.702559"
 }
